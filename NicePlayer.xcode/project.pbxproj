@@ -1119,7 +1119,8 @@
 			fileEncoding = 4;
 			isa = PBXFileReference;
 			lastKnownFileType = sourcecode.c.objc;
-			path = NiceWinController.m;
+			name = NiceWinController.m;
+			path = Classes/NiceWinController.m;
 			refType = 4;
 			sourceTree = "<group>";
 		};
