@@ -65,8 +65,8 @@
 -(BOOL)hasEnded:(id)sender;
 -(BOOL)muted;
 -(void)setMuted:(BOOL)aBool;
--(long)currentMovieTime;
--(long)totalTime;
+-(double)currentMovieTime;
+-(double)totalTime;
 -(void)drawMovieFrame;
 -(void)setLoopMode:(NSQTMovieLoopMode)flag;
 

@@ -22,6 +22,10 @@
 
 +(id)blankImage;
 
+-(double)totalTimePrecise;
+-(long)currentMovieTimePrecise;
+-(void)setCurrentMovieTimePrecise:(long)newMovieTime;
+-(long)currentMovieTimeScale;
 -(void)incrementMovieTime:(long)timeDifference inDirection:(enum direction)aDirection;
 -(void)stepFrameInDirection:(int)aDirection;
 

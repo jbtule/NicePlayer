@@ -38,7 +38,7 @@
 		[self setOpaque:YES];
 		[self useOptimizedDrawing:YES];
 		[self setHasShadow:YES];
-		
+                theWindowIsFloating = NO;
 		dropScreen = NO;
 		presentScreen = NO;
         isFilling = NO;
@@ -453,12 +453,13 @@
 
 -(BOOL)windowIsFloating
 {
-	return windowIsFloating;
+	return theWindowIsFloating;
 }
+
 
 -(void)toggleWindowFloat
 {
-	if(windowIsFloating)
+	if(theWindowIsFloating)
 		[self unfloatWindow];
 	else
 		[self floatWindow];
@@ -528,13 +529,13 @@
 -(void)floatWindow
 {
     [self setLevel:NSFloatingWindowLevel];
-	windowIsFloating = 1;
+	theWindowIsFloating = YES;
 }
 
 -(void)unfloatWindow
 {
     [self setLevel:NSNormalWindowLevel];
-	windowIsFloating = 0;
+	theWindowIsFloating = NO;
 }
 
 -(BOOL)isFullScreen
@@ -698,7 +699,14 @@
 	float newWidth = (([self frame].size.height / ratio.height) * ratio.width);
 	if(isFilling | isWidthFilling){
 		float width = [[self screen] frame].size.width;
-		return NSMakeSize(width, (width / ratio.width) * ratio.height);
+            
+                float height = [[self screen] frame].size.height;
+                float calcHeigth =(width / ratio.width) * ratio.height;
+                if(calcHeigth >height){
+                    return NSMakeSize((height / ratio.height) * ratio.width, height);
+                }else{
+                    return NSMakeSize(width, (width / ratio.width) * ratio.height);
+                }
 	}
 	return NSMakeSize(newWidth, [self frame].size.height);
 }

@@ -17,12 +17,32 @@ enum{
     NPFITWIDTH = 'npfw'
 };
 
+enum{
+    NPAVERAGE ='npav',
+    NPFLOATING ='npft',
+};
 
 @implementation NiceWindow (NiceWindowScripting)
 
 +(BOOL)accessInstanceVariablesDirectly
 {
 	return NO;
+}
+
+-(int)floating{
+    if([self windowIsFloating])
+        return NPFLOATING;
+    else
+        return NPAVERAGE;
+}
+
+-(void)setFloating:(int)aHeight
+{
+    if(NPAVERAGE ==aHeight)
+        [self unfloatWindow];
+    else
+        [self floatWindow];
+    [[NiceController controller] changedWindow:nil];
 }
 
 -(void)handleResizeCommand:(id)sender{

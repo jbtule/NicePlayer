@@ -429,29 +429,39 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 #pragma mark -
 #pragma mark Calculations
 
--(long)totalTime
+
+-(double)currentMovieFrameRate{
+    DVDFormat outFormat;
+    DVDGetFormatStandard(&outFormat);
+    if(outFormat == kDVDFormatPAL)
+        return 25.0;
+    else
+        return 29.97;
+}
+
+-(double)totalTime
 {
 	DVDTimePosition outTime;
 	UInt16 outFrames;
 	
 	DVDGetTime(kDVDTimeCodeTitleDurationSeconds, &outTime, &outFrames);
-	return (long)outTime;
+	return (double)outTime + (outFrames/[self currentMovieFrameRate]);
 }
 
--(long)currentMovieTime
+-(double)currentMovieTime
 {
 	DVDTimePosition outTime;
 	UInt16 outFrames;
 	
 	DVDGetTime(kDVDTimeCodeElapsedSeconds, &outTime, &outFrames);
-	return (long)outTime;
+	return (double)outTime + (outFrames/[self currentMovieFrameRate]);
 }
 
--(void)setCurrentMovieTime:(long)newMovieTime
+-(void)setCurrentMovieTime:(double)newMovieTime
 {
 	BOOL isp;
 	DVDIsPaused(&isp);
-	DVDSetTime(kDVDTimeCodeElapsedSeconds, newMovieTime, 0);
+	DVDSetTime(kDVDTimeCodeElapsedSeconds, (long)newMovieTime, 0);
 	if(isp)
 		DVDPause();
 	else
@@ -634,7 +644,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 		switch(eCode){
 			case kDVDAudioExtensionCodeDirectorsComment1:
 			case kDVDAudioExtensionCodeDirectorsComment2:
-				label = [label StringByAppendingString:@" / Director's Commentary"];
+				label = [label stringByAppendingString:@" / Director's Commentary"];
 		}
 		newItem = [[[NSMenuItem alloc] initWithTitle:label
 											  action:@selector(selectAudio:)

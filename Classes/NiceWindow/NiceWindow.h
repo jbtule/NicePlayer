@@ -42,7 +42,7 @@
 	BOOL isInitialDisplay;    
     
     BOOL dropScreen;		/* Controls movie dropping onto other screens (not the primary display) */
-	BOOL windowIsFloating;
+	BOOL theWindowIsFloating;
 	
     id timeUpdaterTimer;
 	id initialFadeObjects;
@@ -87,6 +87,7 @@
 -(BOOL)toggleWindowFullScreen;
 -(void)unFullScreen;
 -(BOOL)windowIsFloating;
+-(void)setWindowIsFloating:(BOOL)aBOOL;
 -(void)toggleWindowFloat;
 
 #pragma mark Window Attributes

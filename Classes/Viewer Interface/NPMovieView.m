@@ -553,9 +553,18 @@
 	return [trueMovieView naturalSize];
 }
 
--(long)currentMovieTime
+-(double)currentMovieTime
 {
 	return [trueMovieView currentMovieTime];
+}
+
+-(double)currentMovieFrameRate{
+    return [trueMovieView currentMovieFrameRate];
+}
+
+-(void)setCurrentMovieTime:(double)aDouble
+{
+    [trueMovieView setCurrentMovieTime:aDouble];
 }
 
 -(BOOL)hasEnded:(id)sender
@@ -600,7 +609,7 @@
 		[trueMovieView setMuted:NO];
 }
 
--(long)totalTime
+-(double)totalTime
 {
 	return [trueMovieView totalTime];
 }

@@ -22,6 +22,10 @@
 					<cocoa name="npfitwidth"/>
 				</enumerator>
 			</enumeration>
+			<enumeration name="height levels" code="nphl">
+				<enumerator name="average" code="npav"/>
+				<enumerator name="hovering" code="npft"/>
+			</enumeration>
 		</types>
 		<classes>
 			<class name="application" code="NIap" description="" inherits="NSCoreSuite.NSApplication">
@@ -72,6 +76,15 @@
 					<property name="previous movie" code="NPpr" description="Previous movie in playlist" type="movie" access="r">
 						<cocoa method="prevMovie"/>
 					</property>
+					<property name="duration" code="npdn" description="Duration of the currently playing movie." type="real" access="r">
+						<cocoa method="currentMovieDuration"/>
+					</property>
+					<property name="elapsed time" code="npet" description="elapsed time of the currently playing movie" type="real">
+						<cocoa method="currentMovieTime"/>
+					</property>
+					<property name="frame rate" code="npfr" description="frame rate of the currently playing movie" type="real" access="r">
+						<cocoa method="currentMovieFrameRate"/>
+					</property>
 				</properties>
 				<responds-to-commands>
 					<responds-to name="play">
@@ -98,6 +111,9 @@
 					<responds-to name="skip backward">
 						<cocoa method="handleSkipBackwardCommand:"/>
 					</responds-to>
+					<responds-to name="center">
+						<cocoa method="center:"/>
+					</responds-to>
 				</responds-to-commands>
 			</class>
 			<class name="window" code="cwin" description="The NicePlayer window." plural="windows" inherits="NSCoreSuite.NSWindow">
@@ -112,6 +128,9 @@
 					<property name="playlist" code="NPpl" description="The document whose contents are being displayed in the window." type="movie" access="r">
 						<cocoa method="documentMovie"/>
 					</property>
+					<property name="level" code="npht" description="is the window floating about all others" type="height levels">
+						<cocoa method="floating"/>
+					</property>
 				</properties>
 				<responds-to-commands>
 					<responds-to name="enter full screen">
@@ -122,6 +141,9 @@
 					</responds-to>
 					<responds-to name="rescale">
 						<cocoa method="handleResizeCommand:"/>
+					</responds-to>
+					<responds-to name="center">
+						<cocoa method="center:"/>
 					</responds-to>
 				</responds-to-commands>
 			</class>
@@ -172,7 +194,6 @@
 				<parameter name="at index" code="NIat" description="The index to add the file at in the playlist." type="integer" optional="optional"/>
 				<parameter name="to" code="NIto" description="The playlist to add to" type="playlist"/>
 			</command>
-			<command name="toggle playlist drawer" code="NIceTGDR"/>
 			<command name="toggle mute" code="NIcetgmt" description="Toggle whether sound is muted."/>
 			<command name="decrease volume" code="NIcevlde">
 				<direct-parameter type="playlist"/>
@@ -194,6 +215,9 @@
 				<parameter name="to" code="npto" type="scales">
 					<cocoa key="to"/>
 				</parameter>
+			</command>
+			<command name="center" code="Nicecent" description="Center the window">
+				<direct-parameter type="window"/>
 			</command>
 		</commands>
 	</suite>

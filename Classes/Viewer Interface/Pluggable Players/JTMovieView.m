@@ -240,29 +240,61 @@
 #pragma mark -
 #pragma mark Calculations
 
--(long)totalTime
+-(double)totalTime
 {
-	Movie tempMovie = [[self movie] QTMovie];
-    TimeRecord tempRecord;
-    GetMovieTime(tempMovie, &tempRecord);
+	return (double)[self totalTimePrecise] / [self currentMovieTimeScale];
+}
+
+-(double)currentMovieTime
+{
 	
-	return GetMovieDuration(tempMovie) / tempRecord.scale;
+    return (double)[self currentMovieTimePrecise] / [self currentMovieTimeScale];
 }
 
--(long)currentMovieTime
+-(void)setCurrentMovieTime:(double)newMovieTime
 {
-	Movie tempMovie = [[self movie] QTMovie];
-    TimeRecord tempRecord;
-    TimeValue tempTime = GetMovieTime(tempMovie, &tempRecord);
-    return tempTime / tempRecord.scale;
+    [self setCurrentMovieTimePrecise:newMovieTime * [self currentMovieTimeScale]];
 }
 
--(void)setCurrentMovieTime:(long)newMovieTime
-{
+-(double)totalTimePrecise{
     Movie tempMovie = [[self movie] QTMovie];
-    TimeRecord tempRecord;
-    GetMovieTime(tempMovie, &tempRecord);
-	SetMovieTimeValue(tempMovie, newMovieTime * tempRecord.scale);
+    return GetMovieDuration(tempMovie);
+}
+
+-(double)currentMovieFrameRate{
+    int sampleSize =5;
+    OSType myTypes[1];
+    Movie tempMovie = [[self movie] QTMovie];
+    TimeValue newTime;
+    TimeValue tempTime = 0;
+    myTypes[0] =VisualMediaCharacteristic;      // we want video samples
+    int myCount =0;
+    while(tempTime<=(sampleSize *[self currentMovieTimeScale]) && myCount <= (sampleSize*[self currentMovieTimeScale]) ){
+        
+        GetMovieNextInterestingTime(tempMovie, nextTimeStep, 1, myTypes, tempTime, fixed1, &newTime, NULL);
+        if(tempTime== newTime)
+            break;
+        tempTime =newTime;
+        myCount++;
+    }
+    
+    
+    return (double)myCount /((double)newTime/[self currentMovieTimeScale]);
+}
+
+-(long)currentMovieTimeScale{
+    Movie tempMovie = [[self movie] QTMovie];
+    return GetMovieTimeScale(tempMovie);
+}
+
+-(long)currentMovieTimePrecise{
+    Movie tempMovie = [[self movie] QTMovie];
+    return  GetMovieTime(tempMovie, NULL);
+}
+
+-(void)setCurrentMovieTimePrecise:(long)newMovieTime{
+    Movie tempMovie = [[self movie] QTMovie];
+    SetMovieTimeValue(tempMovie, newMovieTime);
 }
 
 -(void)incrementMovieTime:(long)timeDifference inDirection:(enum direction)aDirection;

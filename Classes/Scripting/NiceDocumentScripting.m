@@ -11,6 +11,22 @@
 
 @implementation NiceDocument (NiceDocumentScripting)
 
+-(double)currentMovieDuration{
+    return [theMovieView totalTime];
+}
+
+-(double)currentMovieFrameRate{
+    return [theMovieView currentMovieFrameRate];
+}
+
+-(double)currentMovieTime{
+    return [theMovieView currentMovieTime];
+
+}
+-(void)setCurrentMovieTime:(double)aTime{
+    [theMovieView setCurrentMovieTime:aTime];
+}
+
 -(NSArray *)niceMovies{
     id collectMovies(id each, void* context){
         return [NiceMovie movieWithURL:each andPlaylist:self];

@@ -63,9 +63,11 @@ enum direction { DIRECTION_BACKWARD = -1, DIRECTION_FORWARD = 1};
 -(void)stepBackward;
 -(void)stepForward;
 
--(long)totalTime;
--(long)currentMovieTime;
--(void)setCurrentMovieTime:(long)newMovieTime;
+
+-(double)totalTime;
+-(double)currentMovieTime;
+-(void)setCurrentMovieTime:(double)newMovieTime;
+-(double)currentMovieFrameRate;
 
 -(id)menuPrefix;
 -(id)menuTitle;
