@@ -460,11 +460,9 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:self];
 }
 
--(void)toggleSubTitles
+-(void)hideSubPictures
 {
-	BOOL isp;
-	DVDIsDisplayingSubPicture(&isp);
-	DVDDisplaySubPicture(!isp);
+	DVDDisplaySubPicture(NO);
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:self];
 }
 
@@ -601,7 +599,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 }
 -(id)audioMenu
 {
-	id audioMenu = [[NSMenu alloc] initWithTitle:@"Chapter Menu"];
+	id audioMenu = [[NSMenu alloc] initWithTitle:@"Audio Menu"];
 	id newItem;
 	unsigned short audios;
 	unsigned short current;
@@ -610,7 +608,35 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	DVDGetNumAudioStreams(&audios);
 	DVDGetAudioStream(&current);
 	for(i = 1; i < (audios + 1); i++){
-		newItem = [[[NSMenuItem alloc] initWithTitle:[[NSNumber numberWithUnsignedInt:i] stringValue]
+		NSString *label;
+		DVDLanguageCode lCode;
+		DVDSubpictureExtensionCode eCode;
+		DVDGetAudioLanguageCodeByStream(i, &lCode, &eCode);
+		switch(lCode){
+			case kDVDLanguageCodeJapanese:
+				label = @"Japanese";
+				break;
+			case kDVDLanguageCodeEnglish:
+				label = @"English";
+				break;
+			case kDVDLanguageCodeFrench:
+				label = @"French";
+				break;
+			case kDVDLanguageCodeGerman:
+				label = @"German";
+				break;
+			case kDVDLanguageCodeRussian:
+				label = @"Russian";
+				break;
+			default:
+				label = [[NSNumber numberWithUnsignedInt:i] stringValue];
+		}
+		switch(eCode){
+			case kDVDAudioExtensionCodeDirectorsComment1:
+			case kDVDAudioExtensionCodeDirectorsComment2:
+				label = [label StringByAppendingString:@" / Director's Commentary"];
+		}
+		newItem = [[[NSMenuItem alloc] initWithTitle:label
 											  action:@selector(selectAudio:)
 									   keyEquivalent:@""] autorelease];
 		[newItem setTarget:self];
@@ -663,20 +689,44 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	DVDGetNumSubPictureStreams(&subs);
 	DVDGetSubPictureStream(&current);
 	
-	newItem = [[[NSMenuItem alloc] initWithTitle:@"Show Subtitles"
-										  action:@selector(toggleSubTitles)
+	newItem = [[[NSMenuItem alloc] initWithTitle:@"Hide Subtitles"
+										  action:@selector(hideSubPictures)
 								   keyEquivalent:@""] autorelease];
 	DVDIsDisplayingSubPicture(&isp);
 	if(isp)
-		[newItem setState:NSOnState];
-	else
 		[newItem setState:NSOffState];
+	else
+		[newItem setState:NSOnState];
 	[newItem setTarget:self];
 	[subPicturesMenu addItem:newItem];
 	[subPicturesMenu addItem:[NSMenuItem separatorItem]];
 	
 	for(i = 1; i < (subs + 1); i++){
-		newItem = [[[NSMenuItem alloc] initWithTitle:[[NSNumber numberWithUnsignedInt:i] stringValue]
+		NSString *label;
+		DVDLanguageCode lCode;
+		DVDSubpictureExtensionCode eCode;
+		DVDGetSubPictureLanguageCodeByStream(i, &lCode, &eCode);
+		switch(lCode){
+			case kDVDLanguageCodeJapanese:
+				label = @"Japanese";
+				break;
+			case kDVDLanguageCodeEnglish:
+				label = @"English";
+				break;
+			case kDVDLanguageCodeFrench:
+				label = @"French";
+				break;
+			case kDVDLanguageCodeGerman:
+				label = @"German";
+				break;
+			case kDVDLanguageCodeRussian:
+				label = @"Russian";
+				break;
+			default:
+				label = [[NSNumber numberWithUnsignedInt:i] stringValue];
+		}
+		
+		newItem = [[[NSMenuItem alloc] initWithTitle:label
 											  action:@selector(selectSubPicture:)
 									   keyEquivalent:@""] autorelease];
 		[newItem setTarget:self];
