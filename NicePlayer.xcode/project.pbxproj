@@ -223,8 +223,8 @@
 			lastKnownFileType = text.xml;
 			name = NicePlayer.sdef;
 			path = Resources/NicePlayer.sdef;
-			refType = 4;
-			sourceTree = "<group>";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
 		};
 		2513D30607BDACA700BB6055 = {
 			fileRef = 2513D30507BDACA700BB6055;
@@ -569,8 +569,7 @@
 			fileEncoding = 4;
 			isa = PBXFileReference;
 			lastKnownFileType = sourcecode.c.h;
-			name = NiceControllerScripting.h;
-			path = Classes/Scripting/NiceControllerScripting.h;
+			path = NiceControllerScripting.h;
 			refType = 4;
 			sourceTree = "<group>";
 		};
@@ -1025,6 +1024,7 @@
 			);
 			isa = PBXGroup;
 			name = Scripting;
+			path = Classes/Scripting;
 			refType = 4;
 			sourceTree = "<group>";
 		};
@@ -1032,8 +1032,7 @@
 			fileEncoding = 4;
 			isa = PBXFileReference;
 			lastKnownFileType = sourcecode.c.objc;
-			name = NiceDocumentScripting.m;
-			path = Classes/Scripting/NiceDocumentScripting.m;
+			path = NiceDocumentScripting.m;
 			refType = 4;
 			sourceTree = "<group>";
 		};
@@ -1047,8 +1046,7 @@
 			fileEncoding = 4;
 			isa = PBXFileReference;
 			lastKnownFileType = sourcecode.c.objc;
-			name = NiceWindowScripting.m;
-			path = Classes/Scripting/NiceWindowScripting.m;
+			path = NiceWindowScripting.m;
 			refType = 4;
 			sourceTree = "<group>";
 		};
@@ -1062,8 +1060,7 @@
 			fileEncoding = 4;
 			isa = PBXFileReference;
 			lastKnownFileType = sourcecode.c.objc;
-			name = NiceControllerScripting.m;
-			path = Classes/Scripting/NiceControllerScripting.m;
+			path = NiceControllerScripting.m;
 			refType = 4;
 			sourceTree = "<group>";
 		};
@@ -2706,18 +2703,20 @@
 		3EF158C707C7F9CA00AE56D7 = {
 			fileEncoding = 4;
 			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.c.h;
-			path = NiceMovie.h;
-			refType = 4;
-			sourceTree = "<group>";
+			lastKnownFileType = file;
+			name = NiceMovie.h;
+			path = Classes/Scripting/NiceMovie.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
 		};
 		3EF158C807C7F9CA00AE56D7 = {
 			fileEncoding = 4;
 			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.c.objc;
-			path = NiceMovie.m;
-			refType = 4;
-			sourceTree = "<group>";
+			lastKnownFileType = file;
+			name = NiceMovie.m;
+			path = Classes/Scripting/NiceMovie.m;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
 		};
 		3EF158C907C7F9CA00AE56D7 = {
 			fileRef = 3EF158C707C7F9CA00AE56D7;
@@ -2737,18 +2736,12 @@
 			settings = {
 			};
 		};
-		3EF158CC07C7F9CA00AE56D7 = {
-			fileRef = 3EF158C807C7F9CA00AE56D7;
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
 		3EF15EC707C8230400AE56D7 = {
 			fileEncoding = 4;
 			isa = PBXFileReference;
 			lastKnownFileType = text.xml;
 			name = NSCoreSuite.sdef;
-			path = Resources/NSCoreSuite.sdef;
+			path = ../../Resources/NSCoreSuite.sdef;
 			refType = 4;
 			sourceTree = "<group>";
 		};
@@ -2767,18 +2760,20 @@
 		3EF15F3507C8405700AE56D7 = {
 			fileEncoding = 4;
 			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.c.h;
-			path = NPApplicationScripting.h;
-			refType = 4;
-			sourceTree = "<group>";
+			lastKnownFileType = file;
+			name = NPApplicationScripting.h;
+			path = Classes/Scripting/NPApplicationScripting.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
 		};
 		3EF15F3607C8405700AE56D7 = {
 			fileEncoding = 4;
 			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.c.objc;
-			path = NPApplicationScripting.m;
-			refType = 4;
-			sourceTree = "<group>";
+			lastKnownFileType = file;
+			name = NPApplicationScripting.m;
+			path = Classes/Scripting/NPApplicationScripting.m;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
 		};
 		3EF15F3707C8405700AE56D7 = {
 			fileRef = 3EF15F3507C8405700AE56D7;
@@ -2798,27 +2793,23 @@
 			settings = {
 			};
 		};
-		3EF15F3A07C8405700AE56D7 = {
-			fileRef = 3EF15F3607C8405700AE56D7;
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
 		3EF15FD007C8553B00AE56D7 = {
 			fileEncoding = 4;
 			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.c.h;
-			path = NPAddCommand.h;
-			refType = 4;
-			sourceTree = "<group>";
+			lastKnownFileType = file;
+			name = NPAddCommand.h;
+			path = Classes/Scripting/NPAddCommand.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
 		};
 		3EF15FD107C8553B00AE56D7 = {
 			fileEncoding = 4;
 			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.c.objc;
-			path = NPAddCommand.m;
-			refType = 4;
-			sourceTree = "<group>";
+			lastKnownFileType = file;
+			name = NPAddCommand.m;
+			path = Classes/Scripting/NPAddCommand.m;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
 		};
 		3EF15FD207C8553B00AE56D7 = {
 			fileRef = 3EF15FD007C8553B00AE56D7;
@@ -2834,12 +2825,6 @@
 		};
 		3EF15FD407C8553B00AE56D7 = {
 			fileRef = 3EF15FD007C8553B00AE56D7;
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		3EF15FD507C8553B00AE56D7 = {
-			fileRef = 3EF15FD107C8553B00AE56D7;
 			isa = PBXBuildFile;
 			settings = {
 			};
@@ -3111,9 +3096,6 @@
 				25D2ED0C07BF6066004BEF7D,
 				253C064E07C0891300172C2F,
 				25E3AEFF07C0A65000746EA4,
-				3EF158CC07C7F9CA00AE56D7,
-				3EF15F3A07C8405700AE56D7,
-				3EF15FD507C8553B00AE56D7,
 			);
 			isa = PBXSourcesBuildPhase;
 			runOnlyForDeploymentPostprocessing = 0;
