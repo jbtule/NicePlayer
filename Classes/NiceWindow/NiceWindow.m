@@ -740,9 +740,7 @@
             [[[NSDocumentController sharedDocumentController] backgroundWindow] setFrame:[[NSScreen mainScreen]frame] 
 																				 display:YES];
             if([[NSScreen mainScreen] isEqualTo:[[NSScreen screens] objectAtIndex:0]])
-                HideMenuBar();
-            else
-                ShowMenuBar();
+				SetSystemUIMode(kUIModeAllHidden, kUIOptionAutoShowMenuBar);
             dropScreen = YES;
         }
         [self showOverLayTitle];

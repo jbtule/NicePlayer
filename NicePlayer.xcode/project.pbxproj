@@ -260,7 +260,7 @@
 		2513D30507BDACA700BB6055 = {
 			fileEncoding = 4;
 			isa = PBXFileReference;
-			lastKnownFileType = text;
+			lastKnownFileType = text.xml;
 			name = NicePlayer.sdef;
 			path = Resources/NicePlayer.sdef;
 			refType = 4;
@@ -980,6 +980,63 @@
 			settings = {
 			};
 		};
+		25D2E7B407BF36D5004BEF7D = {
+			children = (
+				25D2ED0B07BF6066004BEF7D,
+				25D2E7C207BF3758004BEF7D,
+				25D2E84007BF3B44004BEF7D,
+				2513D30507BDACA700BB6055,
+			);
+			isa = PBXGroup;
+			name = Scripting;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		25D2E7C207BF3758004BEF7D = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = NiceDocumentScripting.m;
+			path = Classes/Scripting/NiceDocumentScripting.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		25D2E7C407BF3758004BEF7D = {
+			fileRef = 25D2E7C207BF3758004BEF7D;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		25D2E84007BF3B44004BEF7D = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = NiceWindowScripting.m;
+			path = Classes/Scripting/NiceWindowScripting.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		25D2E84207BF3B44004BEF7D = {
+			fileRef = 25D2E84007BF3B44004BEF7D;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		25D2ED0B07BF6066004BEF7D = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = NiceControllerScripting.m;
+			path = Classes/Scripting/NiceControllerScripting.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		25D2ED0C07BF6066004BEF7D = {
+			fileRef = 25D2ED0B07BF6066004BEF7D;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
 		25E1090F076CF11100042500 = {
 			fileEncoding = 4;
 			isa = PBXFileReference;
@@ -1048,6 +1105,7 @@
 			children = (
 				2513CDB307BC658F00BB6055,
 				2A37F4ABFDCFA73011CA2CEA,
+				25D2E7B407BF36D5004BEF7D,
 				2A37F4AFFDCFA73011CA2CEA,
 				2A37F4B8FDCFA73011CA2CEA,
 				2A37F4C3FDCFA73011CA2CEA,
@@ -1155,7 +1213,6 @@
 		};
 		2A37F4B8FDCFA73011CA2CEA = {
 			children = (
-				2513D30507BDACA700BB6055,
 				2513D20407BDA31600BB6055,
 				3EC66F12077525AD00B50A61,
 				3E8C96C1073EF4730048CB70,
@@ -2847,6 +2904,9 @@
 				251FBBE207BC201900D147E5,
 				2513D2F607BDAC4200BB6055,
 				250EA9D307BEE4FD00187F9D,
+				25D2E7C407BF3758004BEF7D,
+				25D2E84207BF3B44004BEF7D,
+				25D2ED0C07BF6066004BEF7D,
 			);
 			isa = PBXSourcesBuildPhase;
 			runOnlyForDeploymentPostprocessing = 0;

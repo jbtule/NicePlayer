@@ -1,68 +1,187 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE dictionary SYSTEM "file://localhost/System/Library/DTDs/sdef.dtd">
 <dictionary title="NicePlayer Dictionary">
-  <suite name="NicePlayer Suite" code="NIce"
-    description="Applescript for the Nicest Media Player on the Mac">
-    <classes>
-      <class name="application" code="capp" description="" 
-        inherits="NSCoreSuite.NSApplication">
-        <cocoa class="NPApplication"/>
-			<properties>
-				<property name="name" code="pnam" type="string" access="r" description="The name of the application."/>
-				<property name="frontmost" code="pisf" type="boolean" access="r" description="Is this the frontmost (active) application?">
-				<cocoa method="isActive"/>
-				</property>
-				<property name="version" code="vers" type="string" access="r" description="The version of the application."/>
-			</properties>
-        </class>
-		<class name="document" code="docu" description="A document.">
+	<suite name="NicePlayer Suite" code="NIce" description="Applescript for the Nicest Media Player on the Mac">
+		<classes>
+			<class name="application" code="NPap" description="" inherits="NSCoreSuite.NSApplication">
+				<cocoa class="NPApplication"/>
+				<elements>
+					<element type="movie" access="r">
+						<cocoa method="orderedDocuments"/>
+					</element>
+					<element type="window" access="r">
+						<cocoa method="orderedWindows"/>
+					</element>
+				</elements>
+				<properties>
+					<property name="name" code="pnam" description="The name of the application." type="string" access="r"/>
+					<property name="frontmost" code="pisf" description="Is this the frontmost (active) application?" type="boolean" access="r">
+						<cocoa method="isActive"/>
+					</property>
+					<property name="version" code="vers" description="The version of the application." type="string" access="r"/>
+				</properties>
+			</class>
+			<class name="movie" code="NPdc" description="The NicePlayer currently playing movie." plural="movies">
 				<cocoa class="NiceDocument"/>
 				<properties>
-					<property name="path" code="ppth" type="string" description="The document's path.">
+					<property name="path" code="ppth" description="The path to the movie." type="string">
 						<cocoa method="fileName"/>
 					</property>
-					<property name="name" code="pnam" type="string" description="The document's name.">
+					<property name="name" code="pnam" description="The name of the movie window." type="string">
 						<cocoa method="lastComponentOfFileName"/>
+					</property>
+					<property name="window" code="cwin" description="The window instance containing the movie." type="window" access="r">
+						<cocoa method="window"/>
 					</property>
 				</properties>
 				<responds-to-commands>
-					<responds-to name="play index">
-						<cocoa method="playAtIndex:"/>
+					<responds-to name="play">
+						<cocoa method="play:"/>
 					</responds-to>
-					<responds-to name="play next">
-						<cocoa method="playNext:"/>
+					<responds-to name="pause">
+						<cocoa method="handlePauseCommand:"/>
 					</responds-to>
-					<responds-to name="play previous">
-						<cocoa method="playPrev"/>
+					<responds-to name="playpause">
+						<cocoa method="handlePlayPauseCommand:"/>
 					</responds-to>
 				</responds-to-commands>
 			</class>
-			<class name="window" code="cwin" description="A window.">
-				<cocoa class="NSWindow"/>
+			<class name="window" code="cwin" description="The NicePlayer window." plural="windows">
+				<cocoa class="NiceWindow"/>
 				<properties>
-					<property name="name" code="pnam" type="string" description="The full title of the window.">
+					<property name="name" code="pnam" description="The full title of the window." type="string">
 						<cocoa method="title"/>
 					</property>
-					<property name="id" code="ID  " type="number" access="r" description="The unique identifier of the window.">
+					<property name="id" code="ID  " description="The unique identifier of the window." type="number" access="r">
 						<cocoa method="uniqueID"/>
 					</property>
-					<property name="document" code="docu" type="document" access="r" description="The document whose contents are being displayed in the window."/>
-					<property name="index" code="pidx" type="number" description="The index of the window in the back-to-front window ordering.">
-						<!-- the type is supposed to be "integer" -->
+					<property name="document" code="docu" description="The document whose contents are being displayed in the window." type="document" access="r"/>
+					<property name="index" code="pidx" description="The index of the window in the back-to-front window ordering." type="number">
+						<!-- the type is supposed to be &quot;integer&quot;-->
 						<cocoa method="orderedIndex"/>
 					</property>
-					<property name="visible" code="pvis" type="boolean" description="Whether the window is currently visible.">
+					<property name="visible" code="pvis" description="Whether the window is currently visible." type="boolean">
 						<cocoa method="isVisible"/>
 					</property>
 				</properties>
+				<responds-to-commands>
+					<responds-to name="toggle full screen">
+						<cocoa method="handleToggleFullScreenCommand:"/>
+					</responds-to>
+					<responds-to name="normal screen">
+						<cocoa method="handleNormalScreenCommand:"/>
+					</responds-to>
+					<responds-to name="full screen">
+						<cocoa method="handleFullScreenCommand:"/>
+					</responds-to>
+				</responds-to-commands>
 			</class>
-			</classes>
-			<commands>
-				<command name="play index" code="NPPlindx" description="Play movie at playlist index.">
-					<direct-parameter type="number" description="The index of the movie to play in the playlist."/>
-				</command>
-				<command name="play next" code="NPPlnext" description="Play next movie in playlist."/>
-				<command name="play previous" code="NPPlprev" description="Play previous movie in playlist."/>
-			</commands>
-  </suite>
+			<class name="item" code="cobj" description="A scriptable object.">
+				<cocoa class="AbstractObject"/>
+				<properties>
+					<property name="class" code="pcls" description="The class of the object." type="type" access="r">
+						<cocoa method="classCode"/>
+					</property>
+					<property name="properties" code="pALL" description="All of the object&apos;" type="record">
+						<cocoa method="scriptingProperties"/>
+					</property>
+				</properties>
+				<responds-to-commands>
+					<!--
+						The blank method declarations are needed to emulate the existing
+						NSCoreSuite.scriptSuite.framework.  Ordinarily, you wouldn&apos;-->
+					<responds-to name="count">
+						<cocoa method=""/>
+					</responds-to>
+					<responds-to name="delete">
+						<cocoa method=""/>
+					</responds-to>
+					<responds-to name="duplicate">
+						<cocoa method=""/>
+					</responds-to>
+					<responds-to name="exists">
+						<cocoa method=""/>
+					</responds-to>
+					<responds-to name="get">
+						<cocoa method=""/>
+					</responds-to>
+					<responds-to name="move">
+						<cocoa method=""/>
+					</responds-to>
+					<responds-to name="set">
+						<cocoa method=""/>
+					</responds-to>
+				</responds-to-commands>
+			</class>
+		</classes>
+		<commands>
+			<command name="play" code="NIceplay"/>
+			<command name="pause" code="NIcepaus"/>
+			<command name="playpause" code="NIceplps"/>
+			<command name="toggle full screen" code="NIcetfsn"/>
+			<command name="full screen" code="NIceflsn"/>
+			<command name="normal screen" code="NIcenlsn"/>
+			<!-- &quot;get&quot;-->
+			<command name="get" code="coregetd" description="Get the data for an object.">
+				<cocoa class="NSGetCommand"/>
+				<direct-parameter type="object"/>
+				<result type="any"/>
+			</command>
+			<command name="count" code="corecnte" description="Return the number of elements of a particular class within an object.">
+				<cocoa class="NSCountCommand"/>
+				<direct-parameter type="object" description="the object whose elements are to be counted"/>
+				<result type="integer" description="the number of elements"/>
+				<parameter name="each" code="kocl" description="The class of objects to be counted." type="type" optional="optional">
+					<cocoa key="ObjectClass"/>
+				</parameter>
+			</command>
+			<command name="delete" code="coredelo" description="Delete an object.">
+				<cocoa class="NSDeleteCommand"/>
+				<direct-parameter type="object" description="the object to delete"/>
+			</command>
+			<command name="duplicate" code="coreclon" description="Copy object(s) and put the copies at a new location.">
+				<cocoa name="Copy" class="NSCloneCommand"/>
+				<direct-parameter type="object" description="the object(s) to duplicate"/>
+				<!-- &quot;duplicate&quot; is supposed to return the new objects.
+				&lt;result type=&quot;object&quot; description=&quot;to the duplicated object(s)&quot;/&gt;-->
+				<parameter name="to" code="insh" description="The location for the new object(s)." type="location">
+					<!-- &quot;to&quot;-->
+					<cocoa key="ToLocation"/>
+				</parameter>
+				<parameter name="with properties" code="prdt" description="Properties to be set in the new duplicated object(s)." type="record" optional="optional">
+					<cocoa key="WithProperties"/>
+				</parameter>
+			</command>
+			<command name="exists" code="coredoex" description="Verify if an object exists.">
+				<cocoa class="NSExistsCommand"/>
+				<direct-parameter type="object" description="the object in question"/>
+				<result type="boolean" description="true if it exists, false if not"/>
+			</command>
+			<!-- &quot;get&quot;-->
+			<command name="get" code="coregetd" description="Get the data for an object.">
+				<cocoa class="NSGetCommand"/>
+				<direct-parameter type="object"/>
+				<result type="any"/>
+			</command>
+			<command name="move" code="coremove" description="Move object(s) to a new location.">
+				<cocoa class="NSMoveCommand"/>
+				<direct-parameter type="object" description="the object(s) to move"/>
+				<!-- &quot;move&quot; is supposed to return the relocated objects.
+				&lt;result type=&quot;object&quot; description=&quot;to the object(s) after they have been moved&quot;/&gt;-->
+				<parameter name="to" code="insh" description="The new location for the object(s)." type="location">
+					<cocoa key="ToLocation"/>
+				</parameter>
+			</command>
+			<!-- &quot;set&quot;-->
+			<command name="set" code="coresetd" description="Set an object&apos;">
+				<cocoa class="NSSetCommand"/>
+				<direct-parameter type="object"/>
+				<!-- &quot;set&quot; is supposed to return the fully evaluated &quot;to&quot; data.
+				&lt;result type=&quot;any&quot;/&gt;-->
+				<parameter name="to" code="data" description="The new value." type="any">
+					<cocoa key="Value"/>
+				</parameter>
+			</command>
+		</commands>
+	</suite>
 </dictionary>

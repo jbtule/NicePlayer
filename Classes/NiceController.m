@@ -122,14 +122,6 @@ id controller;
     
     tempRect.origin.y=tempRect.size.height -24;
     tempRect.size.height =32;
-    if(NSMouseInRect([NSEvent mouseLocation], tempRect, YES)){
-        if(!IsMenuBarVisible()){
-            showingMenubar= YES;
-            ShowMenuBar();   
-        }
-    }else if (showingMenubar){
-        HideMenuBar();   
-    }
 }
 
 -(id)mainDocument
@@ -213,7 +205,8 @@ id controller;
 {
     fullScreenMode = YES;
 	if([[NSScreen mainScreen] isEqualTo:[[NSScreen screens] objectAtIndex:0]])
-            HideMenuBar();
+		SetSystemUIMode(kUIModeAllHidden, kUIOptionAutoShowMenuBar);
+
 	[backgroundWindow setFrame:[[NSScreen mainScreen] frame] display:YES];
 	[backgroundWindow orderBack:nil];
 }
@@ -231,7 +224,7 @@ id controller;
  
     fullScreenMode = YES;
 
-    HideMenuBar();
+	SetSystemUIMode(kUIModeAllHidden, kUIOptionAutoShowMenuBar);
 }
 
 
@@ -250,7 +243,7 @@ id controller;
 {
     fullScreenMode = NO;
     showingMenubar = NO;
-    ShowMenuBar();
+	SetSystemUIMode(kUIModeNormal, kUIModeNormal);
 	[backgroundWindow orderOut:nil];
 	[self unpresentAllScreeens];
 }
