@@ -15,7 +15,7 @@
 {
 	enum play_states oldPlayState;
 	NSURL *urlToOpen;
-	BOOL isMuted;
+	BOOL muted;
         NSDictionary* movieCache;
 }
 

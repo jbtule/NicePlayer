@@ -358,7 +358,7 @@
 			buildRules = (
 			);
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = "\"$(HOME)/Library/Frameworks\" /Users/qin/Desktop/DVDPlayer";
+				FRAMEWORK_SEARCH_PATHS = "\"$(HOME)/Library/Frameworks\"";
 				GCC_ENABLE_TRIGRAPHS = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

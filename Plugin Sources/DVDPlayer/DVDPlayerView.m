@@ -295,7 +295,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 #pragma mark Volume
 
--(BOOL)isMuted
+-(BOOL)muted
 {
 	BOOL isp;
 	DVDIsMuted(&isp);
@@ -628,7 +628,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(void)resizingMovie:(NSNotification *)notification
 {
-	NSSize newSize = NSSizeFromString([notification userInfo]);
+	NSSize newSize = NSSizeFromString((NSString *)[notification userInfo]);
 	[self updateBounds:NSMakeRect([self frame].origin.x,
 								  [self frame].origin.y,
 								  newSize.width,

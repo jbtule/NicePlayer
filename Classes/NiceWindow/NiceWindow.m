@@ -142,7 +142,7 @@
 
 -(void)updateVolume
 {
-    [theVolumeView setMuted:[theMovieView isMuted]];
+    [theVolumeView setMuted:[theMovieView muted]];
     [theVolumeView setVolume:[theMovieView volume]];
     miniVolume =[theMovieView volume];
 }

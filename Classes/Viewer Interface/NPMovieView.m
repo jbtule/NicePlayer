@@ -203,7 +203,7 @@
 
 -(void)toggleMute
 {
-	if([trueMovieView isMuted])
+	if([trueMovieView muted])
 		[trueMovieView setMuted:NO];
 	else
 		[trueMovieView setMuted:YES];
@@ -263,8 +263,6 @@
                         [ [[self window]delegate] playNext];
                         break;
                     }
-                    
-                    
 			if(![anEvent isARepeat])
 				[self ffStart];
 			else
@@ -546,9 +544,14 @@
 	return [trueMovieView hasEnded:sender];
 }
 
--(BOOL)isMuted
+-(BOOL)muted
 {
-	return [trueMovieView isMuted];
+	return [trueMovieView muted];
+}
+
+-(void)setMuted:(BOOL)aBool
+{
+	[trueMovieView setMuted:aBool];
 }
 
 -(float)volume

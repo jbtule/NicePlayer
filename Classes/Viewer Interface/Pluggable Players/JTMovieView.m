@@ -59,7 +59,7 @@
 		oldPlayState = STATE_INACTIVE;
 		[self setAutoresizingMask:(NSViewWidthSizable | NSViewHeightSizable)];
 		[self showController:NO adjustingSize:NO];
-		isMuted = [super isMuted];
+		muted = [super isMuted];
 		if(![self movie]){
 			id blank = [[NSBundle mainBundle] pathForResource:@"black" ofType:@"png"];
 			if(!blank)
@@ -121,14 +121,14 @@
 
 #pragma mark Volume
 
--(BOOL)isMuted
+-(BOOL)muted
 {
-	return isMuted;
+	return muted;
 }
 
 -(void)setMuted:(BOOL)aBOOL
 {
-	isMuted = aBOOL;
+	muted = aBOOL;
     [super setMuted:aBOOL];
 }
 

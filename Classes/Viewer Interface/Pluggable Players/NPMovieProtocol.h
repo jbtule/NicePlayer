@@ -44,7 +44,7 @@ enum direction { DIRECTION_BACKWARD = -1, DIRECTION_FORWARD = 1};
 -(NSSize)naturalSize;
 -(void)setLoopMode:(NSQTMovieLoopMode)flag;
 
--(BOOL)isMuted;
+-(BOOL)muted;
 -(void)setMuted:(BOOL)aBOOL;
 -(float)volume;
 -(void)setVolume:(float)aVolume;
@@ -63,9 +63,6 @@ enum direction { DIRECTION_BACKWARD = -1, DIRECTION_FORWARD = 1};
 -(long)totalTime;
 -(long)currentMovieTime;
 -(void)setCurrentMovieTime:(long)newMovieTime;
-
--(float)volume;
--(void)setVolume:(float)aVolume;
 
 -(id)menuTitle;
 -(id)pluginMenu;
