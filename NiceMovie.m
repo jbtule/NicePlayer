@@ -47,8 +47,10 @@
 }
 
 -(void)handlePlayCommand:(id)sender{
-    if([self playlist]  != nil)
+    if([self playlist]  != nil){
         [[self playlist]  playAtIndex: [self index]];
+        [[self playlist] play:self];
+    }
 }
 
 -(NSString*)name{
