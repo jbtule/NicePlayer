@@ -530,7 +530,7 @@
 	for(i = 0; i < [pluginMenu count]; i++)
 		[contextMenu addItem:[pluginMenu objectAtIndex:i]];
 	
-	[(NiceDocument *) [[self window] delegate] rebuildMenu];
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:nil];
 }
 
 

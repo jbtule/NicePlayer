@@ -25,6 +25,11 @@ id rowsToFileNames(id obj, void* playList){
         theRandomizePlayList = [[NSMutableArray alloc] init];
         theRepeatMode = [[Preferences mainPrefs] defaultRepeatMode];
 		movieMenuItem = nil;
+		menuObjects = nil;
+		[[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(rebuildMenu)
+                                                     name:@"RebuildAllMenus"
+                                                   object:nil];
     }
 	
     return self;
@@ -130,7 +135,7 @@ id rowsToFileNames(id obj, void* playList){
 	}
 
 	/* Initialize the window stuff for movie playback. */
-	[self rebuildMenu];
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:nil];
 	[theWindow restoreVolume];
 	[self calculateAspectRatio];
 	if(isFirst)
@@ -227,26 +232,48 @@ id rowsToFileNames(id obj, void* playList){
 	return [[[NSApp mainMenu] itemWithTitle:@"Movie"] submenu];
 }
 
+/* Always call this method by raising the notification "RebuildAllMenus" otherwise
+stuff won't work properly! */
 -(void)rebuildMenu
 {
-	unsigned i;
-	
-	if(movieMenuItem != nil && ([[self movieMenu] indexOfItem:movieMenuItem] != -1))
+	int i;
+	id pluginMenu = [theMovieView pluginMenu];
+
+	if(movieMenuItem != nil && ([[self movieMenu] indexOfItem:movieMenuItem] != -1)){
 		[[self movieMenu] removeItem:movieMenuItem];
+		movieMenuItem = nil;
+	}
 	
-	id mSubMenu = [[NSMenu alloc] initWithTitle:[theMovieView menuTitle]];
-	id mSubMenuItem = [[NSMenuItem alloc] initWithTitle:[theMovieView menuTitle]
+	if(menuObjects != nil){
+		for(i = 0; i < (int)[menuObjects count]; i++)
+			[[self movieMenu] removeItem:[menuObjects objectAtIndex:i]];
+		[menuObjects release];
+		menuObjects = nil;
+	}
+	
+	movieMenuItem = [[NSMenuItem alloc] initWithTitle:[theMovieView menuTitle]
 												 action:nil
 										  keyEquivalent:@""];
-	movieMenuItem = mSubMenuItem;
-	[mSubMenuItem setSubmenu:mSubMenu];
-	[[self movieMenu] insertItem:mSubMenuItem atIndex:[[self movieMenu] numberOfItems]];
-	while([mSubMenu numberOfItems] > 0)
-		[mSubMenu removeItemAtIndex:0];
-	
-	id pluginMenu = [theMovieView pluginMenu];
-	for(i = 0; i < [pluginMenu count]; i++)
-		[mSubMenu addItem:[pluginMenu objectAtIndex:i]];
+
+	if([[self window] isKeyWindow]){
+		menuObjects = [[NSMutableArray array] retain];
+		[movieMenuItem setEnabled:NO];
+		[[self movieMenu] insertItem:movieMenuItem atIndex:0];
+		for(i = ((int)[pluginMenu count] - 1); i >= 0; i--){	// Reverse iteration for easier addition
+			[[self movieMenu] insertItem:[pluginMenu objectAtIndex:i] atIndex:1];
+			[menuObjects addObject:[pluginMenu objectAtIndex:i]];
+		}
+	} else {
+		[movieMenuItem setEnabled:YES];
+		id mSubMenu = [[NSMenu alloc] initWithTitle:[theMovieView menuTitle]];
+		[movieMenuItem setSubmenu:mSubMenu];
+		[[self movieMenu] insertItem:movieMenuItem atIndex:[[self movieMenu] numberOfItems]];
+		while([mSubMenu numberOfItems] > 0)
+			[mSubMenu removeItemAtIndex:0];
+		
+		for(i = 0; i < (int)[pluginMenu count]; i++)
+			[mSubMenu addItem:[pluginMenu objectAtIndex:i]];
+}
 }
 
 -(id)window

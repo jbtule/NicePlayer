@@ -108,12 +108,18 @@
 	[self setOverLayVolumeLocation];
 }
 
-- (BOOL)canBecomeMainWindow
+-(BOOL)canBecomeMainWindow
 {
     return YES;
 }
 
-- (BOOL)canBecomeKeyWindow
+-(void)becomeKeyWindow
+{
+	[super becomeKeyWindow];
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:nil];
+}
+
+-(BOOL)canBecomeKeyWindow
 {
     return YES;
 }
