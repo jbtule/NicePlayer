@@ -45,6 +45,7 @@
 {
 	NSRect subview = NSMakeRect(0, 0, [self frame].size.width, [self frame].size.height);
 	[self close];
+	[trueMovieView release];
 	trueMovieView = [[JTMovieView alloc] initWithFrame:subview];
 	[trueMovieView registerForDraggedTypes:[(NiceWindow *)[self window] acceptableDragTypes]];
 	[self addSubview:trueMovieView];
