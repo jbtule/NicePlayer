@@ -117,9 +117,9 @@
 	};
 	253C014E07C00DF200172C2F = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1461, 552}}";
+			sepNavIntBoundsRect = "{{0, 0}, {627, 316}}";
 			sepNavSelRange = "{157, 26}";
-			sepNavVisRect = "{{0, 0}, {1461, 552}}";
+			sepNavVisRect = "{{0, 0}, {627, 316}}";
 		};
 	};
 	257029AC0734CE4E00967356 = {
@@ -140,9 +140,9 @@
 	};
 	257029C10734D14500967356 = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {714, 839}}";
+			sepNavIntBoundsRect = "{{0, 0}, {627, 923}}";
 			sepNavSelRange = "{0, 0}";
-			sepNavVisRect = "{{0, 18}, {714, 636}}";
+			sepNavVisRect = "{{0, 14}, {627, 316}}";
 		};
 	};
 	257029C20734D14500967356 = {
@@ -1137,6 +1137,26 @@
 			3EA665EC07CD630500421E7E = 3EA665EC07CD630500421E7E;
 			3EA665ED07CD630500421E7E = 3EA665ED07CD630500421E7E;
 			3EA665EE07CD630500421E7E = 3EA665EE07CD630500421E7E;
+			3EA665F307CD645B00421E7E = 3EA665F307CD645B00421E7E;
+			3EA665F407CD645B00421E7E = 3EA665F407CD645B00421E7E;
+			3EA665F507CD645B00421E7E = 3EA665F507CD645B00421E7E;
+			3EA665F607CD645B00421E7E = 3EA665F607CD645B00421E7E;
+			3EA665F707CD645B00421E7E = 3EA665F707CD645B00421E7E;
+			3EA665F807CD645B00421E7E = 3EA665F807CD645B00421E7E;
+			3EA665F907CD645B00421E7E = 3EA665F907CD645B00421E7E;
+			3EA665FA07CD645B00421E7E = 3EA665FA07CD645B00421E7E;
+			3EA665FF07CD649800421E7E = 3EA665FF07CD649800421E7E;
+			3EA6660007CD649800421E7E = 3EA6660007CD649800421E7E;
+			3EA6660107CD649800421E7E = 3EA6660107CD649800421E7E;
+			3EA6660407CD64BE00421E7E = 3EA6660407CD64BE00421E7E;
+			3EA6660507CD64BE00421E7E = 3EA6660507CD64BE00421E7E;
+			3EA6660607CD64BE00421E7E = 3EA6660607CD64BE00421E7E;
+			3EA6660907CD64F900421E7E = 3EA6660907CD64F900421E7E;
+			3EA6660A07CD64F900421E7E = 3EA6660A07CD64F900421E7E;
+			3EA6660B07CD64F900421E7E = 3EA6660B07CD64F900421E7E;
+			3EA6660E07CD650500421E7E = 3EA6660E07CD650500421E7E;
+			3EA6660F07CD650500421E7E = 3EA6660F07CD650500421E7E;
+			3EA6661007CD650500421E7E = 3EA6661007CD650500421E7E;
 			3EAF0085079F55AD00369B91 = 3EAF0085079F55AD00369B91;
 			3EAF0096079F564800369B91 = 3EAF0096079F564800369B91;
 			3EAF00AF079F567B00369B91 = 3EAF00AF079F567B00369B91;
@@ -4226,6 +4246,206 @@
 		vrLen = 0;
 		vrLoc = 0;
 	};
+	3EA665F307CD645B00421E7E = {
+		fRef = 25D2E7C207BF3758004BEF7D;
+		isa = PBXTextBookmark;
+		name = getNextIndex;
+		rLen = 12;
+		rLoc = 963;
+		rType = 0;
+		vrLen = 323;
+		vrLoc = 0;
+	};
+	3EA665F407CD645B00421E7E = {
+		fRef = 3EF158C807C7F9CA00AE56D7;
+		isa = PBXTextBookmark;
+		name = "NiceMovie.m: 42";
+		rLen = 0;
+		rLoc = 831;
+		rType = 0;
+		vrLen = 449;
+		vrLoc = 838;
+	};
+	3EA665F507CD645B00421E7E = {
+		fRef = 257029C10734D14500967356;
+		isa = PBXTextBookmark;
+		name = "PreferencesController.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 516;
+		vrLoc = 4;
+	};
+	3EA665F607CD645B00421E7E = {
+		fRef = 253C014E07C00DF200172C2F;
+		isa = PBXTextBookmark;
+		name = "#import \"NiceController.h\"";
+		rLen = 26;
+		rLoc = 157;
+		rType = 0;
+		vrLen = 378;
+		vrLoc = 0;
+	};
+	3EA665F707CD645B00421E7E = {
+		fRef = 3EF158C807C7F9CA00AE56D7;
+		isa = PBXTextBookmark;
+		name = "NiceMovie.m: 42";
+		rLen = 0;
+		rLoc = 831;
+		rType = 0;
+		vrLen = 449;
+		vrLoc = 838;
+	};
+	3EA665F807CD645B00421E7E = {
+		fRef = 257029C10734D14500967356;
+		isa = PBXTextBookmark;
+		name = "PreferencesController.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 516;
+		vrLoc = 4;
+	};
+	3EA665F907CD645B00421E7E = {
+		fRef = 253C014E07C00DF200172C2F;
+		isa = PBXTextBookmark;
+		name = "#import \"NiceController.h\"";
+		rLen = 26;
+		rLoc = 157;
+		rType = 0;
+		vrLen = 378;
+		vrLoc = 0;
+	};
+	3EA665FA07CD645B00421E7E = {
+		fRef = 25D2E7C207BF3758004BEF7D;
+		isa = PBXTextBookmark;
+		name = "indexForMovie:(NiceMovie*)aMovie";
+		rLen = 32;
+		rLoc = 1274;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	3EA665FF07CD649800421E7E = {
+		fRef = 25D2E7C207BF3758004BEF7D;
+		isa = PBXTextBookmark;
+		name = getNextIndex;
+		rLen = 12;
+		rLoc = 963;
+		rType = 0;
+		vrLen = 323;
+		vrLoc = 0;
+	};
+	3EA6660007CD649800421E7E = {
+		fRef = 253C014E07C00DF200172C2F;
+		isa = PBXTextBookmark;
+		name = "#import \"NiceController.h\"";
+		rLen = 26;
+		rLoc = 157;
+		rType = 0;
+		vrLen = 378;
+		vrLoc = 0;
+	};
+	3EA6660107CD649800421E7E = {
+		fRef = 25D2E7C207BF3758004BEF7D;
+		isa = PBXTextBookmark;
+		name = "indexForMovie:(NiceMovie*)aMovie";
+		rLen = 32;
+		rLoc = 1274;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	3EA6660407CD64BE00421E7E = {
+		fRef = 25D2E7C207BF3758004BEF7D;
+		isa = PBXTextBookmark;
+		name = getNextIndex;
+		rLen = 12;
+		rLoc = 963;
+		rType = 0;
+		vrLen = 323;
+		vrLoc = 0;
+	};
+	3EA6660507CD64BE00421E7E = {
+		fRef = 253C014E07C00DF200172C2F;
+		isa = PBXTextBookmark;
+		name = "#import \"NiceController.h\"";
+		rLen = 26;
+		rLoc = 157;
+		rType = 0;
+		vrLen = 378;
+		vrLoc = 0;
+	};
+	3EA6660607CD64BE00421E7E = {
+		fRef = 25D2E7C207BF3758004BEF7D;
+		isa = PBXTextBookmark;
+		name = "indexForMovie:(NiceMovie*)aMovie";
+		rLen = 32;
+		rLoc = 1274;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	3EA6660907CD64F900421E7E = {
+		fRef = 25D2E7C207BF3758004BEF7D;
+		isa = PBXTextBookmark;
+		name = getNextIndex;
+		rLen = 12;
+		rLoc = 963;
+		rType = 0;
+		vrLen = 323;
+		vrLoc = 0;
+	};
+	3EA6660A07CD64F900421E7E = {
+		fRef = 253C014E07C00DF200172C2F;
+		isa = PBXTextBookmark;
+		name = "#import \"NiceController.h\"";
+		rLen = 26;
+		rLoc = 157;
+		rType = 0;
+		vrLen = 378;
+		vrLoc = 0;
+	};
+	3EA6660B07CD64F900421E7E = {
+		fRef = 25D2E7C207BF3758004BEF7D;
+		isa = PBXTextBookmark;
+		name = "indexForMovie:(NiceMovie*)aMovie";
+		rLen = 32;
+		rLoc = 1274;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	3EA6660E07CD650500421E7E = {
+		fRef = 25D2E7C207BF3758004BEF7D;
+		isa = PBXTextBookmark;
+		name = getNextIndex;
+		rLen = 12;
+		rLoc = 963;
+		rType = 0;
+		vrLen = 323;
+		vrLoc = 0;
+	};
+	3EA6660F07CD650500421E7E = {
+		fRef = 253C014E07C00DF200172C2F;
+		isa = PBXTextBookmark;
+		name = "#import \"NiceController.h\"";
+		rLen = 26;
+		rLoc = 157;
+		rType = 0;
+		vrLen = 378;
+		vrLoc = 0;
+	};
+	3EA6661007CD650500421E7E = {
+		fRef = 25D2E7C207BF3758004BEF7D;
+		isa = PBXTextBookmark;
+		name = "indexForMovie:(NiceMovie*)aMovie";
+		rLen = 32;
+		rLoc = 1274;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
 	3EAF0085079F55AD00369B91 = {
 		fRef = 3EEDF761065B4CFF00E3545C;
 		isa = PBXBookmark;
@@ -5496,8 +5716,8 @@
 	3EF158C807C7F9CA00AE56D7 = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {627, 1119}}";
-			sepNavSelRange = "{1062, 0}";
-			sepNavVisRect = "{{0, 406}, {627, 316}}";
+			sepNavSelRange = "{831, 0}";
+			sepNavVisRect = "{{0, 592}, {627, 316}}";
 			sepNavWindowFrame = "{{110, 102}, {750, 502}}";
 		};
 	};

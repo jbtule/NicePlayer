@@ -254,8 +254,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -313,13 +311,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>72</integer>
+									<integer>73</integer>
 									<integer>66</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 391}, {375, 819}}</string>
+							<string>{{0, 833}, {375, 819}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -362,7 +360,7 @@
 										<key>PBXProjectModuleLabel</key>
 										<string>NiceDocumentScripting.m</string>
 										<key>bookmark</key>
-										<string>3EA665EC07CD630500421E7E</string>
+										<string>3EA6660E07CD650500421E7E</string>
 										<key>history</key>
 										<array>
 											<string>3EB6437D07072092007BACF7</string>
@@ -646,7 +644,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>NiceMovie.m</string>
+								<string>NiceControllerScripting.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -654,9 +652,9 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>NiceMovie.m</string>
+										<string>NiceControllerScripting.h</string>
 										<key>bookmark</key>
-										<string>3EA665ED07CD630500421E7E</string>
+										<string>3EA6660F07CD650500421E7E</string>
 										<key>history</key>
 										<array>
 											<string>3EB6437D07072092007BACF7</string>
@@ -725,7 +723,6 @@
 											<string>3EAF00D807A32AB900369B91</string>
 											<string>3E16044607A46EBC000386D6</string>
 											<string>3E160BC507AC60F1000386D6</string>
-											<string>3E160BE007AC6219000386D6</string>
 											<string>3E160BF307AC649F000386D6</string>
 											<string>3E160C0B07AC6724000386D6</string>
 											<string>3E160C2307AC8536000386D6</string>
@@ -765,7 +762,6 @@
 											<string>3E21295C07C8A46D003F405A</string>
 											<string>3E21296807C8A533003F405A</string>
 											<string>3E21296907C8A533003F405A</string>
-											<string>3E49DC9707C96D49009BA150</string>
 											<string>3E49DCB607C96F3A009BA150</string>
 											<string>3E49DCB707C96F3A009BA150</string>
 											<string>3E49DCB907C96F3A009BA150</string>
@@ -774,11 +770,9 @@
 											<string>3E49DCBC07C96F3A009BA150</string>
 											<string>3E49DCDE07C98017009BA150</string>
 											<string>3E49DCDF07C98017009BA150</string>
-											<string>3EA665A107CD626800421E7E</string>
-										</array>
-										<key>nextStack</key>
-										<array>
-											<string>3E49DCE207C98017009BA150</string>
+											<string>3EA665F407CD645B00421E7E</string>
+											<string>3EA665F507CD645B00421E7E</string>
+											<string>3EA665F607CD645B00421E7E</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -915,6 +909,8 @@
 											<string>3E21293C07C8A1A6003F405A</string>
 											<string>3E21295307C8A3BA003F405A</string>
 											<string>3E49DCC007C96F3A009BA150</string>
+											<string>3EA665F707CD645B00421E7E</string>
+											<string>3EA665F807CD645B00421E7E</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -936,6 +932,8 @@
 							<string>333pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -989,7 +987,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>130900741.18206245</real>
+	<real>130901253.21842079</real>
 	<key>ToolbarDisplayMode</key>
 	<integer>1</integer>
 	<key>ToolbarIsVisible</key>
@@ -1509,7 +1507,7 @@
 										<key>PBXProjectModuleLabel</key>
 										<string>NiceDocumentScripting.m</string>
 										<key>bookmark</key>
-										<string>3EA665EE07CD630500421E7E</string>
+										<string>3EA6661007CD650500421E7E</string>
 										<key>history</key>
 										<array>
 											<string>3EF1611D07C8998500AE56D7</string>
