@@ -104,9 +104,7 @@
 
 -(void)drawMovieFrame
 {
-	if(![self isPlaying]){
-		[self setNeedsDisplay:YES];
-	}
+	[self setNeedsDisplay:YES];
 }
 
 -(NSSize)naturalSize
@@ -170,6 +168,7 @@
 -(void)start
 {
 	[super start:self];
+	theFirstDraw = YES;
 	[self setNeedsDisplay:YES];
 }
 
