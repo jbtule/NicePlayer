@@ -2,7 +2,7 @@
 <!DOCTYPE dictionary SYSTEM "file://localhost/System/Library/DTDs/sdef.dtd">
 <dictionary title="NicePlayer Dictionary">
 	<suite name="NicePlayer Suite" code="NIce" description="Applescript for the Nicest Media Player on the Mac">
-		<cocoa name="NPSuite"/>
+		<cocoa name="NicePlayerSuite"/>
 		<classes>
 			<class name="application" code="NIap" description="" inherits="NSCoreSuite.NSApplication">
 				<cocoa class="NPApplication"/>
@@ -66,6 +66,9 @@
 				<properties>
 					<property name="playlist is showing" code="plsh" type="boolean">
 						<cocoa method="playlistShowing"/>
+					</property>
+					<property name="bounds" code="pbnd" description="The bounding rectangle of the window." type="location">
+						<cocoa method="boundsAsQDRect"/>
 					</property>
 					<property name="movie" code="docu" description="The document whose contents are being displayed in the window." type="movie" access="r">
 						<cocoa method="documentMovie"/>
