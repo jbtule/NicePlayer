@@ -16,7 +16,7 @@
 					defer:(BOOL)flag
 {
     if(self = [super initWithContentRect:contentRect
-							   styleMask:NSBorderlessWindowMask
+							   styleMask:NSTexturedBackgroundWindowMask
 								 backing:NSBackingStoreBuffered
 								   defer:YES]){
 		[[NSNotificationCenter defaultCenter] addObserver:self

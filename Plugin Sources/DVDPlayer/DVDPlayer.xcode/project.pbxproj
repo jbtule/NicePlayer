@@ -155,7 +155,7 @@
 //104
 		1058C7ACFEA557BF11CA2CBB = {
 			children = (
-				2513C60B07BC5C9F00BB6055,
+				253C025507C057B600172C2F,
 				1058C7ADFEA557BF11CA2CBB,
 			);
 			isa = PBXGroup;
@@ -294,15 +294,16 @@
 			settings = {
 			};
 		};
-		2513C60B07BC5C9F00BB6055 = {
+		253C025507C057B600172C2F = {
 			isa = PBXFileReference;
 			lastKnownFileType = wrapper.framework;
-			path = DVDPlayback.framework;
-			refType = 4;
-			sourceTree = "<group>";
+			name = DVDPlayback.framework;
+			path = /System/Library/Frameworks/DVDPlayback.framework;
+			refType = 0;
+			sourceTree = "<absolute>";
 		};
-		2513C60C07BC5C9F00BB6055 = {
-			fileRef = 2513C60B07BC5C9F00BB6055;
+		253C025607C057B600172C2F = {
+			fileRef = 253C025507C057B600172C2F;
 			isa = PBXBuildFile;
 			settings = {
 			};
@@ -441,7 +442,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D5B49B4048680CD000E48DA,
-				2513C60C07BC5C9F00BB6055,
+				253C025607C057B600172C2F,
 			);
 			isa = PBXFrameworksBuildPhase;
 			runOnlyForDeploymentPostprocessing = 0;
