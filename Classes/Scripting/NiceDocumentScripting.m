@@ -7,8 +7,25 @@
 //
 
 #import "NiceDocument.h"
+#import "NiceMovie.h"
 
 @implementation NiceDocument (NiceDocumentScripting)
+
+-(NSArray *)niceMovies{
+    id collectMovies(id each, void* context){
+        return [NiceMovie movieWithURL:each andPlaylist:self];
+    }
+    
+    return [thePlaylist collectUsingFunction:collectMovies context:nil];
+    
+}
+
+-(int)indexForMovie:(NiceMovie*)aMovie{
+ 
+   return [thePlaylist indexOfObject:[aMovie URL]];
+    
+}
+
 
 +(BOOL)accessInstanceVariablesDirectly
 {

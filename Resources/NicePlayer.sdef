@@ -7,16 +7,24 @@
 			<class name="application" code="NIap" description="" inherits="NSCoreSuite.NSApplication">
 				<cocoa class="NPApplication"/>
 				<elements>
-					<element type="movie" access="r">
+					<element type="playlist" access="r">
 						<cocoa method="orderedDocuments"/>
 					</element>
 					<element type="window" access="r">
 						<cocoa method="movieWindows"/>
 					</element>
+					<element type="movie" access="r">
+						<cocoa method="niceMovies"/>
+					</element>
 				</elements>
 			</class>
-			<class name="movie" code="docu" description="The NicePlayer currently playing movie." plural="movies" inherits="NSCoreSuite.NSDocument">
+			<class name="playlist" code="NPpl" description="The NicePlayer currently playing movie." plural="playlists" inherits="NSCoreSuite.NSDocument">
 				<cocoa class="NiceDocument"/>
+				<elements>
+					<element type="movie" access="r">
+						<cocoa method="niceMovies"/>
+					</element>
+				</elements>
 				<properties>
 					<property name="muted" code="NPmd" description="If the sound is muted." type="boolean">
 						<cocoa method="muted"/>
@@ -70,7 +78,7 @@
 					<property name="bounds" code="pbnd" description="The bounding rectangle of the window." type="location">
 						<cocoa method="boundsAsQDRect"/>
 					</property>
-					<property name="movie" code="docu" description="The document whose contents are being displayed in the window." type="movie" access="r">
+					<property name="playlist" code="NPpl" description="The document whose contents are being displayed in the window." type="movie" access="r">
 						<cocoa method="documentMovie"/>
 					</property>
 				</properties>
@@ -89,6 +97,22 @@
 					</responds-to>
 					<responds-to name="toggle playlist drawer">
 						<cocoa method="handleTogglePlaylistDrawer:"/>
+					</responds-to>
+				</responds-to-commands>
+			</class>
+			<class name="movie" code="NPmv" plural="movies" inherits="NSCoreSuite.AbstractObject">
+				<cocoa class="NiceMovie"/>
+				<properties>
+					<property name="name" code="pnam" description="The movie name" type="string" access="r">
+						<cocoa method="name"/>
+					</property>
+					<property name="path" code="ppth" description="the files applscript path" type="string" access="r">
+						<cocoa method="applescriptPath"/>
+					</property>
+				</properties>
+				<responds-to-commands>
+					<responds-to name="play">
+						<cocoa method="handlePlayCommand:"/>
 					</responds-to>
 				</responds-to-commands>
 			</class>

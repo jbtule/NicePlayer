@@ -133,15 +133,10 @@
 
 -(NSArray *)movieWindows
 {
-	unsigned i;
-	NSArray *oWin = [super orderedWindows];
-	NSMutableArray *newWin = [NSMutableArray array];
-	for(i = 0; i < [oWin count]; i++){
-		if([[oWin objectAtIndex:i] isKindOfClass:[NiceWindow class]]){
-			[newWin addObject:[oWin objectAtIndex:i]];
-		}
-	}
-	return newWin;
+        BOOL selectNiceWindow(id each, void* context){
+            return [each isKindOfClass:[NiceWindow class]];
+        }
+	return [[super orderedWindows] selectUsingFunction:selectNiceWindow context:nil];
 }
 
 #pragma mark -
