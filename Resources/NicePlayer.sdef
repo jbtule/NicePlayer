@@ -2,8 +2,16 @@
 <!DOCTYPE dictionary SYSTEM "file://localhost/System/Library/DTDs/sdef.dtd">
 <dictionary title="NicePlayer Dictionary">
 	<suite name="NicePlayer Suite" code="NIce" description="Applescript for the Nicest Media Player on the Mac">
+		<cocoa name="NPSuite"/>
+		<types>
+			<enumeration name="save options" code="savo">
+				<enumerator name="yes" code="yes " description="Save the file."/>
+				<enumerator name="no" code="no  " description="Do not save the file."/>
+				<enumerator name="ask" code="ask " description="Ask the user whether or not to save the file."/>
+			</enumeration>
+		</types>
 		<classes>
-			<class name="application" code="NPap" description="" inherits="NSCoreSuite.NSApplication">
+			<class name="application" code="capp" description="" inherits="NSCoreSuite.NSApplication">
 				<cocoa class="NPApplication"/>
 				<elements>
 					<element type="movie" access="r">
@@ -20,8 +28,19 @@
 					</property>
 					<property name="version" code="vers" description="The version of the application." type="string" access="r"/>
 				</properties>
+				<responds-to-events>
+					<responds-to name="open">
+						<cocoa method="handleOpenScriptCommand:"/>
+					</responds-to>
+					<responds-to name="print">
+						<cocoa method="handlePrintScriptCommand:"/>
+					</responds-to>
+					<responds-to name="quit">
+						<cocoa method="handleQuitScriptCommand:"/>
+					</responds-to>
+				</responds-to-events>
 			</class>
-			<class name="movie" code="NPdc" description="The NicePlayer currently playing movie." plural="movies">
+			<class name="movie" code="docu" description="The NicePlayer currently playing movie." plural="movies">
 				<cocoa class="NiceDocument"/>
 				<properties>
 					<property name="muted" code="NPmd" description="If the sound is muted." type="boolean">
@@ -32,6 +51,15 @@
 					</property>
 					<property name="window" code="cwin" type="window" access="r">
 						<cocoa method="window"/>
+					</property>
+					<property name="path" code="ppth" description="The document&apos;" type="string">
+						<cocoa method="fileName"/>
+					</property>
+					<property name="modified" code="imod" description="Has the document been modified since the last save?" type="boolean" access="r">
+						<cocoa method="isDocumentEdited"/>
+					</property>
+					<property name="name" code="pnam" description="The document&apos;" type="string">
+						<cocoa method="lastComponentOfFileName"/>
 					</property>
 				</properties>
 				<responds-to-commands>
@@ -76,6 +104,50 @@
 					<property name="movie" code="NPme" description="The document whose contents are being displayed in the window." type="movie" access="r">
 						<cocoa method="documentMovie"/>
 					</property>
+					<property name="name" code="pnam" description="The full title of the window." type="string">
+						<cocoa method="title"/>
+					</property>
+					<property name="id" code="ID  " description="The unique identifier of the window." type="number" access="r">
+						<cocoa method="uniqueID"/>
+					</property>
+					<property name="bounds" code="pbnd" description="The bounding rectangle of the window." type="rectangle">
+						<cocoa method="boundsAsQDRect"/>
+					</property>
+					<property name="document" code="docu" description="The document whose contents are being displayed in the window." type="document" access="r"/>
+					<property name="closeable" code="hclb" description="Whether the window has a close box." type="boolean" access="r">
+						<cocoa method="hasCloseBox"/>
+					</property>
+					<property name="titled" code="ptit" description="Whether the window has a title bar." type="boolean" access="r">
+						<cocoa method="hasTitleBar"/>
+					</property>
+					<property name="index" code="pidx" description="The index of the window in the back-to-front window ordering." type="number">
+						<!-- the type is supposed to be &quot;integer&quot;-->
+						<cocoa method="orderedIndex"/>
+					</property>
+					<property name="floating" code="isfl" description="Whether the window floats." type="boolean" access="r">
+						<cocoa method="isFloatingPanel"/>
+					</property>
+					<property name="miniaturizable" code="ismn" description="Whether the window can be miniaturized." type="boolean" access="r">
+						<cocoa method="isMiniaturizable"/>
+					</property>
+					<property name="miniaturized" code="pmnd" description="Whether the window is currently miniaturized." type="boolean">
+						<cocoa method="isMiniaturized"/>
+					</property>
+					<property name="modal" code="pmod" description="Whether the window is the application&apos;" type="boolean" access="r">
+						<cocoa method="isModalPanel"/>
+					</property>
+					<property name="resizable" code="prsz" description="Whether the window can be resized." type="boolean" access="r">
+						<cocoa method="isResizable"/>
+					</property>
+					<property name="visible" code="pvis" description="Whether the window is currently visible." type="boolean">
+						<cocoa method="isVisible"/>
+					</property>
+					<property name="zoomable" code="iszm" description="Whether the window can be zoomed." type="boolean" access="r">
+						<cocoa method="isZoomable"/>
+					</property>
+					<property name="zoomed" code="pzum" description="Whether the window is currently zoomed." type="boolean">
+						<cocoa method="isZoomed"/>
+					</property>
 				</properties>
 				<responds-to-commands>
 					<responds-to name="add to playlist">
@@ -95,6 +167,12 @@
 					</responds-to>
 					<responds-to name="close">
 						<cocoa method="handleCloseWindowCommand:"/>
+					</responds-to>
+					<responds-to name="print">
+						<cocoa method="handlePrintScriptCommand:"/>
+					</responds-to>
+					<responds-to name="save">
+						<cocoa method="handleSaveScriptCommand:"/>
 					</responds-to>
 				</responds-to-commands>
 			</class>
@@ -155,9 +233,16 @@
 			<command name="start rewinding" code="NIcerwst"/>
 			<command name="start fast forwarding" code="NIceffst"/>
 			<command name="stop fast forwarding" code="NIceffsp"/>
+			<!-- The old Core Suite: the object model commands, plus a few more. -->
 			<command name="close" code="coreclos" description="Close an object.">
 				<cocoa class="NSCloseCommand"/>
 				<direct-parameter type="object" description="the object to close"/>
+				<parameter name="saving" code="savo" description="Specifies whether changes should be saved before closing." type="save options" optional="optional">
+					<cocoa key="SaveOptions"/>
+				</parameter>
+				<parameter name="saving in" code="kfil" description="The file in which to save the object." type="file" optional="optional">
+					<cocoa key="File"/>
+				</parameter>
 			</command>
 		</commands>
 	</suite>
