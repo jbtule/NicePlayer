@@ -118,6 +118,10 @@
 											 selector:@selector(stop)
 												 name:@"StopAllMovies"
 											   object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(rebuildMenu)
+												 name:@"RebuildMenu"
+											   object:trueMovieView];
 }
 
 -(NSView *)hitTest:(NSPoint)aPoint

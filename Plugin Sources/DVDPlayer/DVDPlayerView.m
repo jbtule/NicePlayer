@@ -185,11 +185,6 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	else
 		DVDOpenMediaVolume(&fsref);
 	[self aspectRatioChanged];
-	
-	[[NSNotificationCenter defaultCenter] addObserver:self
-											 selector:@selector(resizingMovie:)
-												 name:@"ChangingSize"
-											   object:[self window]];
 }
 
 /**
@@ -202,8 +197,11 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 {
 	NSString *s = [anEvent charactersIgnoringModifiers];
 	unichar c = [s characterAtIndex:0];
+	BOOL onMenu;
+	DVDMenu whichMenu;
+	DVDIsOnMenu(&onMenu, &whichMenu);
 	/* This handles keyboard nav for DVD Menu support and such */
-	if(([anEvent modifierFlags] & NSShiftKeyMask) &&  !([anEvent modifierFlags] & NSCommandKeyMask)){
+	if(onMenu && ([anEvent modifierFlags] & NSShiftKeyMask)){
 		DVDUserNavigation inNavigation;
 		switch (c) {
 			case NSUpArrowFunctionKey:
@@ -231,7 +229,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 		DVDDoUserNavigation(inNavigation);
 	}
 	
-	if(([anEvent modifierFlags] & NSShiftKeyMask) &&  ([anEvent modifierFlags] & NSCommandKeyMask)){
+	if(!onMenu && ([anEvent modifierFlags] & NSShiftKeyMask)){
 		switch (c) {
 			case NSLeftArrowFunctionKey:
 				[self previousChapter];
@@ -347,8 +345,10 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	DVDIsPaused(&isp);
 	if(isp)
 		DVDResume();
-	else
+	else {
 		DVDPlay();
+		[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildMenu" object:self];
+	}
 }
 
 -(void)stop
@@ -441,7 +441,14 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(void)setCurrentMovieTime:(long)newMovieTime
 {
+	BOOL isp;
+	DVDIsPaused(&isp);
 	DVDSetTime(kDVDTimeCodeElapsedSeconds, newMovieTime, 0);
+	if(isp)
+		DVDPause();
+	else
+		DVDResume();
+	DVDUpdateVideo();
 }
 
 #pragma mark -
@@ -455,7 +462,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 -(id)menuTitle
 {
 	NSString *file = [[[[myURL absoluteString] stringByDeletingLastPathComponent] lastPathComponent] stringByDeletingPathExtension];
-	file = (CFStringRef)CFURLCreateStringByReplacingPercentEscapes(NULL, (CFStringRef)file, (CFStringRef)@"");
+	file = (NSString *)CFURLCreateStringByReplacingPercentEscapes(NULL, (CFStringRef)file, (CFStringRef)@"");
 	return [file autorelease];
 }
 
@@ -641,19 +648,6 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 }
 
 #pragma mark -
-#pragma mark Notification Methods
-
--(void)resizingMovie:(NSNotification *)notification
-{
-	NSSize newSize = NSSizeFromString((NSString *)[notification userInfo]);
-	[self updateBounds:NSMakeRect([self frame].origin.x,
-								  [self frame].origin.y,
-								  newSize.width,
-								  newSize.height)];
-	DVDUpdateVideo();
-}
-
-#pragma mark -
 #pragma mark Wrapper Methods
 
 -(void)gotoMainMenu
@@ -683,27 +677,62 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(void)gotoTitle:(id)anObject
 {
+	BOOL isp;
+	DVDIsPaused(&isp);
 	DVDSetTitle([anObject tag]);
+	if(isp)
+		DVDPause();
+	else
+		DVDResume();
+	DVDUpdateVideo();
 }
 
 -(void)gotoChapter:(id)anObject
 {
+	BOOL isp;
+	DVDIsPaused(&isp);
 	DVDSetChapter([anObject tag]);
+	if(isp)
+		DVDPause();
+	else
+		DVDResume();
+	DVDUpdateVideo();
 }
 
 -(void)selectAudio:(id)anObject
 {
+	BOOL isp;
+	DVDIsPaused(&isp);
 	DVDSetAudioStream([anObject tag]);
+	if(isp)
+		DVDPause();
+	else
+		DVDResume();
+	DVDUpdateVideo();
 }
 
 -(void)DVDSetAngle:(id)anObject
 {
+	BOOL isp;
+	DVDIsPaused(&isp);
 	DVDSetAngle([anObject tag]);
+	if(isp)
+		DVDPause();
+	else
+		DVDResume();
+	DVDUpdateVideo();
 }
 
 -(void)selectSubPicture:(id)anObject
 {
+	BOOL isp;
+	DVDIsPaused(&isp);
 	DVDSetSubPictureStream([anObject tag]);
+	if(isp)
+		DVDPause();
+	else
+		DVDResume();
+	DVDUpdateVideo();
 }
 
 @end
