@@ -362,7 +362,7 @@
 										<key>PBXProjectModuleLabel</key>
 										<string>NPApplication.m</string>
 										<key>bookmark</key>
-										<string>3E5AA48B07DC138A0036FBF1</string>
+										<string>3E5AA48E07DC14AD0036FBF1</string>
 										<key>history</key>
 										<array>
 											<string>3EB6437D07072092007BACF7</string>
@@ -751,8 +751,8 @@
 	<key>WindowOrderList</key>
 	<array>
 		<string>3EC6F2CD0735CBD6003079FC</string>
-		<string>1C0AD2B3069F1EA900FABCE6</string>
 		<string>/Users/tuley/Documents/Projects/NicePlayer Project/NicePlayer/NicePlayer.xcode</string>
+		<string>1C0AD2B3069F1EA900FABCE6</string>
 	</array>
 	<key>WindowString</key>
 	<string>488 220 1012 900 0 0 1920 1178 </string>
