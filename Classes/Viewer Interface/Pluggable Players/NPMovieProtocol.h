@@ -64,6 +64,7 @@ enum direction { DIRECTION_BACKWARD = -1, DIRECTION_FORWARD = 1};
 -(void)stepBackward;
 -(void)stepForward;
 
+-(BOOL)hasEnded:(id)sender;
 
 -(double)totalTime;
 -(double)currentMovieTime;

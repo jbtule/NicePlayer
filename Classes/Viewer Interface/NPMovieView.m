@@ -30,6 +30,7 @@
         trueMovieView = [[JTMovieView alloc] initWithFrame:subview];
         contextMenu = [[NSMenu alloc] initWithTitle:@"NicePlayer"];
         wasPlaying = NO;
+	isBlank = YES;
         [self addSubview:trueMovieView];
         [self setAutoresizesSubviews:YES];
     }
@@ -71,7 +72,7 @@
 
 -(BOOL)openURL:(NSURL *)url
 {
-    if([trueMovieView openURL:url]){
+    if((isBlank == NO) && [trueMovieView openURL:url]){
         [self loadMovie];
         return YES;
     }
@@ -98,6 +99,10 @@
         [self finalProxyViewLoad];
     }
     
+    if(url == [NPMovieView blankImage])
+	isBlank = YES;
+    else
+	isBlank = !didOpen;
     return didOpen;
 }
 

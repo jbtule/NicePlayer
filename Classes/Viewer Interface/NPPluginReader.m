@@ -71,25 +71,25 @@ static NPPluginReader *pluginReader = nil;
 
 -(void)generatePluggables
 {
-	NSArray *array = [[self builtinPlayerClasses] arrayByAddingObjectsFromArray:[self packagePluggables]];
-	
-	pluggablesArray = [[NSMutableArray array] retain];
-	allowedExtensions = [[NSMutableArray array] retain];
-	pluggableDict = [[NSMutableDictionary dictionary] retain];
-	
-	id anObject;
-	unsigned i;
-	
-	/* Sets up plugin information that we might need later. */
-	for(i = 0; i < [array count]; i++){
-		anObject = [array objectAtIndex:i];
-		id plugInfo = [NSMutableDictionary dictionaryWithDictionary:[anObject plugInfo]];
-		[plugInfo setObject:anObject forKey:@"Class"];
-		[plugInfo setObject:[NSNumber numberWithBool:YES] forKey:@"Chosen"];
-		[allowedExtensions addObjectsFromArray:[plugInfo valueForKey:@"FileExtensions"]];
-		[pluggableDict setObject:plugInfo forKey:[plugInfo valueForKey:@"Name"]];
-		[pluggablesArray addObject:[plugInfo valueForKey:@"Name"]];
-	}
+    NSArray *array = [[self packagePluggables] arrayByAddingObjectsFromArray:[self builtinPlayerClasses]];
+    
+    pluggablesArray = [[NSMutableArray array] retain];
+    allowedExtensions = [[NSMutableArray array] retain];
+    pluggableDict = [[NSMutableDictionary dictionary] retain];
+    
+    id anObject;
+    unsigned i;
+    
+    /* Sets up plugin information that we might need later. */
+    for(i = 0; i < [array count]; i++){
+	anObject = [array objectAtIndex:i];
+	id plugInfo = [NSMutableDictionary dictionaryWithDictionary:[anObject plugInfo]];
+	[plugInfo setObject:anObject forKey:@"Class"];
+	[plugInfo setObject:[NSNumber numberWithBool:YES] forKey:@"Chosen"];
+	[allowedExtensions addObjectsFromArray:[plugInfo valueForKey:@"FileExtensions"]];
+	[pluggableDict setObject:plugInfo forKey:[plugInfo valueForKey:@"Name"]];
+	[pluggablesArray addObject:[plugInfo valueForKey:@"Name"]];
+    }
 }
 
 -(id)builtinPlayerClasses
@@ -100,18 +100,30 @@ static NPPluginReader *pluginReader = nil;
 /* Finds all package pluggables and gets their information. */
 -(id)packagePluggables
 {
-	NSMutableArray *objectArray = [NSMutableArray array];
-	NSArray *pluginPaths = [NSBundle pathsForResourcesOfType:@"nicebundle"
-												 inDirectory:[[NSBundle mainBundle] builtInPlugInsPath]];
-	NSEnumerator *e = [pluginPaths objectEnumerator];
-	id anObject;
-	
-	while (anObject = [e nextObject]) {
-		id aBundle = [NSBundle bundleWithPath:anObject];
-		[aBundle load];
-		[objectArray addObject:[aBundle principalClass]];
-	}
-	return objectArray;
+    NSMutableArray *objectArray = [NSMutableArray array];
+    NSMutableArray *pluginPaths = [NSMutableArray array];
+    
+    [pluginPaths addObjectsFromArray:
+	[NSBundle pathsForResourcesOfType:@"nicebundle"
+			      inDirectory:[[NSBundle mainBundle] builtInPlugInsPath]]];
+    [pluginPaths addObjectsFromArray:
+	    [NSBundle pathsForResourcesOfType:@"nicebundle"
+				  inDirectory:@"/Library/Application Support/NicePlayer/Plugins"]];
+    [pluginPaths addObjectsFromArray:
+	    [NSBundle pathsForResourcesOfType:@"nicebundle"
+				  inDirectory:
+		[@"~/Library/Application Support/NicePlayer/Plugins" stringByExpandingTildeInPath]]];
+    NSLog(@"%@", pluginPaths);
+    NSEnumerator *e = [pluginPaths objectEnumerator];
+    id anObject;
+    
+    while (anObject = [e nextObject]) {
+	id aBundle = [NSBundle bundleWithPath:anObject];
+	if(![aBundle load])
+	    continue;
+	[objectArray addObject:[aBundle principalClass]];
+    }
+    return objectArray;
 }
 
 @end
