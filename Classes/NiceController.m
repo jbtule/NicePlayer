@@ -1,5 +1,5 @@
 /**
- * NiceController.m
+* NiceController.m
  * NicePlayer
  *
  * The NicePlayer document controller.
@@ -16,12 +16,12 @@ id controller;
 #pragma mark Class Methods
 +(id)controller
 {
-	return controller;
+    return controller;
 }
 
 +(void)setController:(id)aNiceController
 {
-	controller = aNiceController;
+    controller = aNiceController;
 }
 
 #pragma mark Instance Methods
@@ -33,28 +33,28 @@ id controller;
     fullScreenMode =  NO;
     showingMenubar = NO;
     mouseMoveTimer = [NSTimer scheduledTimerWithTimeInterval:.2
-													  target:self
-													selector:@selector(checkMouseLocation:)
-													userInfo:nil repeats:YES]; // Auto-hides mouse.
+                                                      target:self
+                                                    selector:@selector(checkMouseLocation:)
+                                                    userInfo:nil repeats:YES]; // Auto-hides mouse.
     lastCursorMoveDate = [[NSDate alloc] init];
     backgroundWindow = [[BlackWindow alloc] init];
     backgroundWindows = nil;
     presentWindow = nil;
-	[NiceController setController:self];
-	[[NSNotificationCenter defaultCenter] addObserver:self
-											 selector:@selector(changedWindow:)
-												 name:@"NSWindowDidBecomeMainNotification"
-											   object:nil];
-	antiSleepTimer = [NSTimer scheduledTimerWithTimeInterval:30.0
-													  target:self
-													selector:@selector(preventSleep:)
-													userInfo:nil repeats:YES];
-	[NSApp setDelegate:self];
+    [NiceController setController:self];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(changedWindow:)
+                                                 name:@"NSWindowDidBecomeMainNotification"
+                                               object:nil];
+    antiSleepTimer = [NSTimer scheduledTimerWithTimeInterval:30.0
+                                                      target:self
+                                                    selector:@selector(preventSleep:)
+                                                    userInfo:nil repeats:YES];
+    [NSApp setDelegate:self];
 }
 
 -(void)dealloc{
     [mouseMoveTimer invalidate];
-	[antiSleepTimer invalidate];
+    [antiSleepTimer invalidate];
     [lastCursorMoveDate release];
     [backgroundWindows release];
     [super dealloc];
@@ -67,53 +67,54 @@ id controller;
 
 -(int)runModalOpenPanel:(NSOpenPanel *)openPanel forTypes:(NSArray *)openableFileExtensions
 {
-	[openPanel setAllowsMultipleSelection:YES];
-	[openPanel setCanChooseDirectories:YES];
-	[openPanel setCanChooseFiles:YES];
-	
-	return [super runModalOpenPanel:openPanel
-						   forTypes:[[NPPluginReader pluginReader] allowedExtensions]];
+    [openPanel setAllowsMultipleSelection:YES];
+    [openPanel setCanChooseDirectories:YES];
+    [openPanel setCanChooseFiles:YES];
+    
+    return [super runModalOpenPanel:openPanel
+                           forTypes:[[NPPluginReader pluginReader] allowedExtensions]];
 }
 
 /**
- * Takes an array of NSString files, converts them to NSURLs and opens them, adding subsequent files to the
+* Takes an array of NSString files, converts them to NSURLs and opens them, adding subsequent files to the
  *	playlist.
  */
 -(void)openFiles:(NSArray *)files
 {
     id tempDoc = nil;
     unsigned i;
-
+    
     files =[files collectUsingFunction:NPConvertFileNamesToURLs context:nil];
     files= NPSortUrls(files);
     for (i = 0; i < [files count]; i++){
         id tempURL = [files objectAtIndex:i];
-		if([[Preferences mainPrefs] defaultOpenMode]){
-			[self openDocumentWithContentsOfURL:tempURL display:YES];
-			continue;
-		}
+        if([[Preferences mainPrefs] defaultOpenMode]){
+            [self openDocumentWithContentsOfURL:tempURL display:YES];
+            continue;
+        }
         if(i==0){
-			id docArray = [NSApp orderedDocuments];
-			if([docArray count] > 0){
-				id document = [docArray objectAtIndex:0];
-				if(([document isKindOfClass:[NiceDocument class]]) && ![document isActive])
-					tempDoc = document;
-				else
-					tempDoc = [self openDocumentWithContentsOfURL:tempURL display:YES];
-			} else
-				tempDoc = [self openDocumentWithContentsOfURL:tempURL display:YES];
-			[tempDoc loadURL:tempURL firstTime:YES];
-			
-			if([[self mainDocument] isActive]){
-				if([[Preferences mainPrefs] movieOpenedFullScreen])
-					[self enterFullScreen];
-				if([[Preferences mainPrefs] movieOpenedPlay])
-					[[self mainDocument] play:self];
-			}
-		} else
-			[tempDoc addURLToPlaylist:tempURL];
+            id docArray = [NSApp orderedDocuments];
+            if([docArray count] > 0){
+                id document = [docArray objectAtIndex:0];
+                if(([document isKindOfClass:[NiceDocument class]]) && ![document isActive])
+                    tempDoc = document;
+                else
+                    tempDoc = [self openDocumentWithContentsOfURL:tempURL display:YES];
+            } else
+                tempDoc = [self openDocumentWithContentsOfURL:tempURL display:YES];
+            [tempDoc loadURL:tempURL firstTime:YES];
+            
+            if([[self mainDocument] isActive]){
+                if([[Preferences mainPrefs] movieOpenedFullScreen])
+                    [self enterFullScreen];
+                if([[Preferences mainPrefs] movieOpenedPlay])
+                    [[self mainDocument] play:self];
+            }
+        } else
+            [tempDoc addURLToPlaylist:tempURL];
     }
-	
+    
+
 	[tempDoc openPlaylistDrawerConditional:self];
 }
 
@@ -139,14 +140,14 @@ id controller;
 /* As per Technical Q&A QA1160: http://developer.apple.com/qa/qa2004/qa1160.html */
 -(void)preventSleep:(id)sender
 {
-	NSArray *docList = [NSApp orderedDocuments];
-	id e = [docList objectEnumerator];
-	id anObject;
-	while(anObject = [e nextObject]){
-		if([anObject isPlaying]){
-			return;
-		}
-	}
+    NSArray *docList = [NSApp orderedDocuments];
+    id e = [docList objectEnumerator];
+    id anObject;
+    while(anObject = [e nextObject]){
+        if([anObject isPlaying]){
+            return;
+        }
+    }
 }
 
 -(id)mainDocument
@@ -156,8 +157,8 @@ id controller;
 
 -(void)changedWindow:(NSNotification *)notification
 {
-	if([[NSApp mainWindow] isKindOfClass:[NiceWindow class]])
-		[toggleOnTopMenuItem setState:[((NiceWindow *)[NSApp mainWindow]) windowIsFloating]];
+    if([[NSApp mainWindow] isKindOfClass:[NiceWindow class]])
+        [toggleOnTopMenuItem setState:[((NiceWindow *)[NSApp mainWindow]) windowIsFloating]];
 }
 
 #pragma mark Interface
@@ -166,7 +167,7 @@ id controller;
 {
     NSArray* tempFiles = [self fileNamesFromRunningOpenPanel];
 				
-	[self openFiles:tempFiles];
+    [self openFiles:tempFiles];
 }
 
 -(IBAction)newDocument:(id)sender
@@ -184,20 +185,20 @@ id controller;
     }else{
         [[NSNotificationCenter defaultCenter] postNotificationName:@"PresentMultiple" object:nil];
         [self presentAllScreeens];
-		if([[Preferences mainPrefs] autoplayOnFullScreen]){
-			[[NSNotificationCenter defaultCenter] postNotificationName:@"PlayAllMovies" object:nil];
-		}
+        if([[Preferences mainPrefs] autoplayOnFullScreen]){
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"PlayAllMovies" object:nil];
+        }
     }
 }
 
 -(IBAction)playAll:(id)sender
 {
-	[[NSNotificationCenter defaultCenter] postNotificationName:@"PlayAllMovies" object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"PlayAllMovies" object:nil];
 }
 
 -(IBAction)stopAll:(id)sender
 {
-	[[NSNotificationCenter defaultCenter] postNotificationName:@"StopAllMovies" object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"StopAllMovies" object:nil];
 }
 
 
@@ -220,7 +221,7 @@ id controller;
 
 -(IBAction)toggleAlwaysOnTop:(id)sender
 {
-	[((NiceWindow *)[NSApp mainWindow]) toggleWindowFloat];
+    [((NiceWindow *)[NSApp mainWindow]) toggleWindowFloat];
 }
 
 #pragma mark -
@@ -229,11 +230,11 @@ id controller;
 -(void)presentScreen
 {
     fullScreenMode = YES;
-	if([[NSScreen mainScreen] isEqualTo:[[NSScreen screens] objectAtIndex:0]])
-		SetSystemUIMode(kUIModeAllHidden, kUIOptionAutoShowMenuBar);
-
-	[backgroundWindow setFrame:[[NSScreen mainScreen] frame] display:YES];
-	[backgroundWindow orderBack:nil];
+    if([[NSScreen mainScreen] isEqualTo:[[NSScreen screens] objectAtIndex:0]])
+        SetSystemUIMode(kUIModeAllHidden, kUIOptionAutoShowMenuBar);
+    
+    [backgroundWindow setFrame:[[NSScreen mainScreen] frame] display:YES];
+    [backgroundWindow orderBack:nil];
 }
 
 -(void)presentAllScreeens
@@ -246,47 +247,47 @@ id controller;
         return tBWindow;
     }
     backgroundWindows = [[[NSScreen screens] collectUsingFunction:makeBackgrounds context:nil] retain];
- 
+    
     fullScreenMode = YES;
-
-	SetSystemUIMode(kUIModeAllHidden, kUIOptionAutoShowMenuBar);
+    
+    SetSystemUIMode(kUIModeAllHidden, kUIOptionAutoShowMenuBar);
 }
 
 
 -(void)unpresentAllScreeens
 {
     [backgroundWindows makeObjectsPerformSelector:@selector(close)];
-
+    
     [backgroundWindows release];
     backgroundWindows = nil;
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"unPresentMultiple" object:nil];
-
+    
 }
 
 -(void)unpresentScreen
 {
     fullScreenMode = NO;
     showingMenubar = NO;
-	SetSystemUIMode(kUIModeNormal, kUIModeNormal);
-	[backgroundWindow orderOut:nil];
-	[self unpresentAllScreeens];
+    SetSystemUIMode(kUIModeNormal, kUIModeNormal);
+    [backgroundWindow orderOut:nil];
+    [self unpresentAllScreeens];
 }
 
 -(void)enterFullScreen
 {
     id tempWindow = [NSApp bestMovieWindow];
-        [tempWindow makeFullScreen];
-	[self presentScreen];
-	[backgroundWindow setPresentingWindow:tempWindow];
+    [tempWindow makeFullScreen];
+    [self presentScreen];
+    [backgroundWindow setPresentingWindow:tempWindow];
 }
 
 -(void)exitFullScreen
 {
-	id tempWindow = [NSApp bestMovieWindow];
-	if(tempWindow != nil)
-		[tempWindow makeNormalScreen];
-	[self unpresentScreen];
+    id tempWindow = [NSApp bestMovieWindow];
+    if(tempWindow != nil)
+        [tempWindow makeNormalScreen];
+    [self unpresentScreen];
 }
 
 #pragma mark -
@@ -314,14 +315,14 @@ id controller;
 
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector{
     NSString* aString = NSStringFromSelector(aSelector);
-
+    
     id tSig =[super methodSignatureForSelector:aSelector];
     
     if(tSig == nil && [aString hasPrefix:@"ALL"]){
-
+        
         return [super methodSignatureForSelector:@selector(dummyMethod:)];
     }else{
-
+        
         return tSig;
     }
 }
@@ -329,24 +330,24 @@ id controller;
 - (void)forwardInvocation:(NSInvocation *)anInvocation{
     
     NSString* aString = NSStringFromSelector([anInvocation selector]);
-   if([aString hasPrefix:@"ALL"] ){//&& [[anInvocation methodSignature]numberOfArguments]==3 && *[[anInvocation methodSignature]getArgumentTypeAtIndex:2]==NSObjCObjectType
+    if([aString hasPrefix:@"ALL"] ){//&& [[anInvocation methodSignature]numberOfArguments]==3 && *[[anInvocation methodSignature]getArgumentTypeAtIndex:2]==NSObjCObjectType
         NSObject* anArgumet = nil;
-
+        
         [anInvocation getArgument:&anArgumet atIndex:2];
-    
+        
         
         id swapForWindows(id each, void* context){
-         
+            
             return [each window];
             
         }
         
         aString = [aString substringFromIndex:3];
-
+        
         [[[self documents] collectUsingFunction:swapForWindows context:nil] makeObjectsPerformSelector:NSSelectorFromString(aString) withObject:nil];
-   }else{
-       [super forwardInvocation:anInvocation];
-   }    
+    }else{
+        [super forwardInvocation:anInvocation];
+    }    
 }
 
 @end

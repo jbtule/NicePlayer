@@ -15,6 +15,7 @@
 	BOOL dragButton;
 	id trueMovieView;
 	id contextMenu;
+        BOOL theWasPlaying;
 }
 
 +(id)blankImage;
@@ -42,7 +43,7 @@
 -(float)volume;
 
 -(BOOL)isPlaying;
-
+-(BOOL)wasPlaying;
 -(void)finalProxyViewLoad;
 
 -(void)showOverLayVolume;

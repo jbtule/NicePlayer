@@ -337,7 +337,7 @@
 	<key>CFBundleIconFile</key>
 	<string>NiceIcon</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.nice.niceplayer</string>
+	<string>indy.jt.niceplayer</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

@@ -1,5 +1,5 @@
 /**
- * NiceController.h
+* NiceController.h
  * NicePlayer
  */
 
@@ -17,11 +17,11 @@
     NSPoint lastMouseLocation;
     NSTimer* mouseMoveTimer;
     id backgroundWindow;
-	id prefWindow;
+    id prefWindow;
     id presentWindow;
     NSArray* backgroundWindows;
-	id toggleOnTopMenuItem;
-	id antiSleepTimer;
+    id toggleOnTopMenuItem;
+    id antiSleepTimer;
 }
 
 +(NiceController *)controller;

@@ -22,9 +22,7 @@
 	IBOutlet id defaultOpenMode;
 
 	IBOutlet id rrSpeedSlider;
-	IBOutlet id rrSpeedText;
 	IBOutlet id ffSpeedSlider;
-	IBOutlet id ffSpeedText;
 
 	IBOutlet id autoplayOnFullScreen;
 	IBOutlet id autostopOnNormalScreen;
