@@ -131,6 +131,19 @@
 	}
 }
 
+-(NSArray *)orderedWindows
+{
+	int i;
+	NSArray *oWin = [super orderedWindows];
+	NSMutableArray *newWin = [NSMutableArray array];
+	for(i = 0; i < [oWin count]; i++){
+		if([[oWin objectAtIndex:i] isKindOfClass:[NiceWindow class]]){
+			[newWin addObject:[oWin objectAtIndex:i]];
+		}
+	}
+	return newWin;
+}
+
 #pragma mark -
 #pragma mark Delegate Methods
 
