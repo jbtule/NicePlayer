@@ -447,11 +447,8 @@
 
 - (void)mouseDragged:(NSEvent *)anEvent
 {
-    if(dragButton){
-        
-    }else{
+    if(!dragButton)
         [((NiceWindow *)[self window]) mouseDragged:anEvent];
-    }
 }
 
 -(void)scrollWheel:(NSEvent *)anEvent

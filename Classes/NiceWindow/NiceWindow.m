@@ -17,7 +17,7 @@
 					defer:(BOOL)flag
 {
     if(self = [super initWithContentRect:contentRect
-							   styleMask:NSTexturedBackgroundWindowMask
+							   styleMask:NSBorderlessWindowMask
 								 backing:NSBackingStoreBuffered
 								   defer:YES]){
 		[[NSNotificationCenter defaultCenter] addObserver:self
@@ -560,29 +560,23 @@
 {
     float newHeight = aSize.height;
     float newWidth = aSize.width;
-
+	
     if(newHeight <= [self minSize].height) {
         newHeight = [self frame].size.height;
         newWidth = [self frame].size.width;
     }
-	
-	[[NSNotificationCenter defaultCenter] postNotificationName:@"ChangingSize"
-														object:self
-													  userInfo:(NSDictionary *) 
-		NSStringFromSize(NSMakeSize(newHeight, newWidth))];
 
-		switch([[Preferences mainPrefs] scrollResizePin]){
-			case PIN_LEFT_TOP:
-				[self setFrame:NSMakeRect([self frame].origin.x,
-										  [self frame].origin.y + ([self frame].size.height - newHeight),
-										  newWidth, newHeight) display:YES animate:animate];
-				break;
-			case PIN_CENTER:
-				[self setFrame:NSMakeRect([self frame].origin.x+(([self frame].size.width-newWidth)/2),
-										  [self frame].origin.y+(([self frame].size.height-newHeight)/2),
-										  newWidth, newHeight)
-					   display:YES animate:animate];
-				break;
+	switch([[Preferences mainPrefs] scrollResizePin]){
+		case PIN_LEFT_TOP:
+			[self setFrame:NSMakeRect([self frame].origin.x,
+									  [self frame].origin.y + ([self frame].size.height - newHeight),
+									  newWidth, newHeight) display:YES animate:animate];
+			break;
+		case PIN_CENTER:
+			[self setFrame:NSMakeRect([self frame].origin.x+(([self frame].size.width-newWidth)/2),
+									  [self frame].origin.y+(([self frame].size.height-newHeight)/2),
+									  newWidth, newHeight) display:YES animate:animate];
+			break;
 	}
 }
 
@@ -593,7 +587,7 @@
 -(void)resize:(float)amount animate:(BOOL)animate
 {
     float deltaHeight = amount;
-    float newHeight = [self frame].size.height + deltaHeight;
+	float newHeight = [self frame].size.height + deltaHeight;
     float newWidth = ([self aspectRatio].width/[self aspectRatio].height)*newHeight;
     
     if(newHeight <= [self minSize].height) {
