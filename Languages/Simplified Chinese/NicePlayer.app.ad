@@ -1,0 +1,1453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Comment here. (1.0a10c2) -->
+<Proj>
+<ProjName>NicePlayer.app</ProjName>
+
+<!--                                           -->
+<!--    NicePlayer.app/../InfoPlist.strings    -->
+<!--                                           -->
+<File>
+<Filepath>NicePlayer.app/Contents/Frameworks/IndyKit.framework/Versions/A/Resources/English.lproj/InfoPlist.strings</Filepath>
+
+<TextItem>
+<Description></Description>
+<Position>CFBundleGetInfoString</Position>
+<TranslationSet>
+
+	<base loc="en"          >IndyKit version 1.03a2, Copyright (c) 2004 James Tuley.</base>
+	<tran loc="zh_CN" origin=""></tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> Localized versions of Info.plist keys </Description>
+<Position>CFBundleName</Position>
+<TranslationSet>
+
+	<base loc="en"          >IndyKit</base>
+	<tran loc="zh_CN" origin=""></tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description></Description>
+<Position>CFBundleShortVersionString</Position>
+<TranslationSet>
+
+	<base loc="en"          >1.03a2</base>
+	<tran loc="zh_CN" origin=""></tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description></Description>
+<Position>NSHumanReadableCopyright</Position>
+<TranslationSet>
+
+	<base loc="en"          >Copyright (c) James Tuley.</base>
+	<tran loc="zh_CN" origin=""></tran>
+
+</TranslationSet>
+</TextItem>
+
+</File>
+
+<!--                                              -->
+<!--    NicePlayer.app/../MainMenu.nib.strings    -->
+<!--                                              -->
+<File>
+<Filepath>NicePlayer.app/Contents/Resources/English.lproj/MainMenu.nib.strings</Filepath>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Help&gt; (oid:103) </Description>
+<Position>103</Position>
+<TranslationSet>
+
+	<base loc="en"          >Help</base>
+	<tran loc="zh_CN" origin="">帮助</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenu : &lt;title:Help&gt; (oid:106) </Description>
+<Position>106</Position>
+<TranslationSet>
+
+	<base loc="en"          >Help</base>
+	<tran loc="zh_CN" origin="">帮助</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:NicePlayer Help&gt; (oid:111) </Description>
+<Position>111</Position>
+<TranslationSet>
+
+	<base loc="en"          >NicePlayer Help</base>
+	<tran loc="zh_CN" origin="">好玩儿的帮助</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Revert&gt; (oid:112) </Description>
+<Position>112</Position>
+<TranslationSet>
+
+	<base loc="en"          >Revert</base>
+	<tran loc="zh_CN" origin="">复原</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Open Recent&gt; (oid:124) </Description>
+<Position>124</Position>
+<TranslationSet>
+
+	<base loc="en"          >Open Recent</base>
+	<tran loc="zh_CN" origin="">打开最近使用的</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenu : &lt;title:Open Recent&gt; (oid:125) </Description>
+<Position>125</Position>
+<TranslationSet>
+
+	<base loc="en"          >Open Recent</base>
+	<tran loc="zh_CN" origin="">打开最近使用的</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Clear Menu&gt; (oid:126) </Description>
+<Position>126</Position>
+<TranslationSet>
+
+	<base loc="en"          >Clear Menu</base>
+	<tran loc="zh_CN" origin="">清除菜单</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Preferences…&gt; (oid:129) </Description>
+<Position>129</Position>
+<TranslationSet>
+
+	<base loc="en"          >Preferences…</base>
+	<tran loc="zh_CN" origin="">预置⋯</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenu : &lt;title:Services&gt; (oid:130) </Description>
+<Position>130</Position>
+<TranslationSet>
+
+	<base loc="en"          >Services</base>
+	<tran loc="zh_CN" origin="">服务</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Services&gt; (oid:131) </Description>
+<Position>131</Position>
+<TranslationSet>
+
+	<base loc="en"          >Services</base>
+	<tran loc="zh_CN" origin="">服务</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Hide NicePlayer&gt; (oid:134) </Description>
+<Position>134</Position>
+<TranslationSet>
+
+	<base loc="en"          >Hide NicePlayer</base>
+	<tran loc="zh_CN" origin="">隐藏好玩儿的</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Quit NicePlayer&gt; (oid:136) </Description>
+<Position>136</Position>
+<TranslationSet>
+
+	<base loc="en"          >Quit NicePlayer</base>
+	<tran loc="zh_CN" origin="">退出好玩儿的</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Hide Others&gt; (oid:145) </Description>
+<Position>145</Position>
+<TranslationSet>
+
+	<base loc="en"          >Hide Others</base>
+	<tran loc="zh_CN" origin="">隐藏其他</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Show All&gt; (oid:150) </Description>
+<Position>150</Position>
+<TranslationSet>
+
+	<base loc="en"          >Show All</base>
+	<tran loc="zh_CN" origin="">显示全部</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Copy&gt; (oid:157) </Description>
+<Position>157</Position>
+<TranslationSet>
+
+	<base loc="en"          >Copy</base>
+	<tran loc="zh_CN" origin="">拷贝</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Undo&gt; (oid:158) </Description>
+<Position>158</Position>
+<TranslationSet>
+
+	<base loc="en"          >Undo</base>
+	<tran loc="zh_CN" origin="">还原</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Cut&gt; (oid:160) </Description>
+<Position>160</Position>
+<TranslationSet>
+
+	<base loc="en"          >Cut</base>
+	<tran loc="zh_CN" origin="">剪切</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Edit&gt; (oid:163) </Description>
+<Position>163</Position>
+<TranslationSet>
+
+	<base loc="en"          >Edit</base>
+	<tran loc="zh_CN" origin="">编辑</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Delete&gt; (oid:164) </Description>
+<Position>164</Position>
+<TranslationSet>
+
+	<base loc="en"          >Delete</base>
+	<tran loc="zh_CN" origin="">删除</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenu : &lt;title:Edit&gt; (oid:169) </Description>
+<Position>169</Position>
+<TranslationSet>
+
+	<base loc="en"          >Edit</base>
+	<tran loc="zh_CN" origin="">编辑</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Paste&gt; (oid:171) </Description>
+<Position>171</Position>
+<TranslationSet>
+
+	<base loc="en"          >Paste</base>
+	<tran loc="zh_CN" origin="">粘贴</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Select All&gt; (oid:172) </Description>
+<Position>172</Position>
+<TranslationSet>
+
+	<base loc="en"          >Select All</base>
+	<tran loc="zh_CN" origin="">全选</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Redo&gt; (oid:173) </Description>
+<Position>173</Position>
+<TranslationSet>
+
+	<base loc="en"          >Redo</base>
+	<tran loc="zh_CN" origin="">重做</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Spelling&gt; (oid:184) </Description>
+<Position>184</Position>
+<TranslationSet>
+
+	<base loc="en"          >Spelling</base>
+	<tran loc="zh_CN" origin="">拼写</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenu : &lt;title:Spelling&gt; (oid:185) </Description>
+<Position>185</Position>
+<TranslationSet>
+
+	<base loc="en"          >Spelling</base>
+	<tran loc="zh_CN" origin="">拼写</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Spelling…&gt; (oid:187) </Description>
+<Position>187</Position>
+<TranslationSet>
+
+	<base loc="en"          >Spelling…</base>
+	<tran loc="zh_CN" origin="">拼写⋯</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Check Spelling&gt; (oid:189) </Description>
+<Position>189</Position>
+<TranslationSet>
+
+	<base loc="en"          >Check Spelling</base>
+	<tran loc="zh_CN" origin="">检查拼写</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Check Spelling as You Type&gt; (oid:191) </Description>
+<Position>191</Position>
+<TranslationSet>
+
+	<base loc="en"          >Check Spelling as You Type</base>
+	<tran loc="zh_CN" origin="">键入时检查拼写</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Window&gt; (oid:19) </Description>
+<Position>19</Position>
+<TranslationSet>
+
+	<base loc="en"          >Window</base>
+	<tran loc="zh_CN" origin="">窗口</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Zoom&gt; (oid:203) </Description>
+<Position>203</Position>
+<TranslationSet>
+
+	<base loc="en"          >Zoom</base>
+	<tran loc="zh_CN" origin="">缩放窗口</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Movie&gt; (oid:213) </Description>
+<Position>213</Position>
+<TranslationSet>
+
+	<base loc="en"          >Movie</base>
+	<tran loc="zh_CN" origin="">影片</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenu : &lt;title:Movie&gt; (oid:214) </Description>
+<Position>214</Position>
+<TranslationSet>
+
+	<base loc="en"          >Movie</base>
+	<tran loc="zh_CN" origin="">影片</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Show Playlist&gt; (oid:220) </Description>
+<Position>220</Position>
+<TranslationSet>
+
+	<base loc="en"          >Show Playlist</base>
+	<tran loc="zh_CN" origin="">给我看那个玩目录</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Add to Playlist...&gt; (oid:222) </Description>
+<Position>222</Position>
+<TranslationSet>
+
+	<base loc="en"          >Add to Playlist...</base>
+	<tran loc="zh_CN" origin="">加到目录</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Half Size&gt; (oid:225) </Description>
+<Position>225</Position>
+<TranslationSet>
+
+	<base loc="en"          >Half Size</base>
+	<tran loc="zh_CN" origin="">一半大小</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Normal Size&gt; (oid:226) </Description>
+<Position>226</Position>
+<TranslationSet>
+
+	<base loc="en"          >Normal Size</base>
+	<tran loc="zh_CN" origin="">正常大小</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Double Size&gt; (oid:227) </Description>
+<Position>227</Position>
+<TranslationSet>
+
+	<base loc="en"          >Double Size</base>
+	<tran loc="zh_CN" origin="">两倍大小</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Fill Screen&gt; (oid:228) </Description>
+<Position>228</Position>
+<TranslationSet>
+
+	<base loc="en"          >Fill Screen</base>
+	<tran loc="zh_CN" origin="">全窗口</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Email the Authors&gt; (oid:233) </Description>
+<Position>233</Position>
+<TranslationSet>
+
+	<base loc="en"          >Email the Authors</base>
+	<tran loc="zh_CN" origin="">打一个电子邮件到那些作者</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Center&gt; (oid:236) </Description>
+<Position>236</Position>
+<TranslationSet>
+
+	<base loc="en"          >Center</base>
+	<tran loc="zh_CN" origin="">中间</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Fill Width&gt; (oid:238) </Description>
+<Position>238</Position>
+<TranslationSet>
+
+	<base loc="en"          >Fill Width</base>
+	<tran loc="zh_CN" origin="">最大的宽度</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Minimize&gt; (oid:23) </Description>
+<Position>23</Position>
+<TranslationSet>
+
+	<base loc="en"          >Minimize</base>
+	<tran loc="zh_CN" origin="">最小化窗口</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Window is Always On Top&gt; (oid:240) </Description>
+<Position>240</Position>
+<TranslationSet>
+
+	<base loc="en"          >Window is Always On Top</base>
+	<tran loc="zh_CN" origin="">窗口总是在上面</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenu : &lt;title:Window&gt; (oid:24) </Description>
+<Position>24</Position>
+<TranslationSet>
+
+	<base loc="en"          >Window</base>
+	<tran loc="zh_CN" origin="">窗口</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Check For Updates...&gt; (oid:253) </Description>
+<Position>253</Position>
+<TranslationSet>
+
+	<base loc="en"          >Check For Updates...</base>
+	<tran loc="zh_CN" origin="">找新的发行⋯</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Half Size All&gt; (oid:257) </Description>
+<Position>257</Position>
+<TranslationSet>
+
+	<base loc="en"          >Half Size All</base>
+	<tran loc="zh_CN" origin="">所有做一半大小</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Normal Size All&gt; (oid:259) </Description>
+<Position>259</Position>
+<TranslationSet>
+
+	<base loc="en"          >Normal Size All</base>
+	<tran loc="zh_CN" origin="">所有做正常大小</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Double Size All&gt; (oid:261) </Description>
+<Position>261</Position>
+<TranslationSet>
+
+	<base loc="en"          >Double Size All</base>
+	<tran loc="zh_CN" origin="">所有做两倍大小</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Fill Screen All&gt; (oid:265) </Description>
+<Position>265</Position>
+<TranslationSet>
+
+	<base loc="en"          >Fill Screen All</base>
+	<tran loc="zh_CN" origin="">所有做全屏幕</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Fill Width All&gt; (oid:267) </Description>
+<Position>267</Position>
+<TranslationSet>
+
+	<base loc="en"          >Fill Width All</base>
+	<tran loc="zh_CN" origin="">所有做最大的宽度</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Stop All Simultaneously &gt; (oid:272) </Description>
+<Position>272</Position>
+<TranslationSet>
+
+	<base loc="en"          >Stop All Simultaneously </base>
+	<tran loc="zh_CN" origin="">一起一块儿停</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Play All Simultaneously&gt; (oid:273) </Description>
+<Position>273</Position>
+<TranslationSet>
+
+	<base loc="en"          >Play All Simultaneously</base>
+	<tran loc="zh_CN" origin="">一起一块儿放</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Full Screen&gt; (oid:281) </Description>
+<Position>281</Position>
+<TranslationSet>
+
+	<base loc="en"          >Full Screen</base>
+	<tran loc="zh_CN" origin="">全屏幕</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Present All&gt; (oid:282) </Description>
+<Position>282</Position>
+<TranslationSet>
+
+	<base loc="en"          >Present All</base>
+	<tran loc="zh_CN" origin="">一起都看</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenu : &lt;title:MainMenu&gt; (oid:29) </Description>
+<Position>29</Position>
+<TranslationSet>
+
+	<base loc="en"          >MainMenu</base>
+	<tran loc="zh_CN" origin=""></tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:NicePlayer&gt; (oid:56) </Description>
+<Position>56</Position>
+<TranslationSet>
+
+	<base loc="en"          >NicePlayer</base>
+	<tran loc="zh_CN" origin="">好玩儿</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenu : &lt;title:NicePlayer&gt; (oid:57) </Description>
+<Position>57</Position>
+<TranslationSet>
+
+	<base loc="en"          >NicePlayer</base>
+	<tran loc="zh_CN" origin="">好玩儿</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:About NicePlayer&gt; (oid:58) </Description>
+<Position>58</Position>
+<TranslationSet>
+
+	<base loc="en"          >About NicePlayer</base>
+	<tran loc="zh_CN" origin="">好玩儿</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Bring All to Front&gt; (oid:5) </Description>
+<Position>5</Position>
+<TranslationSet>
+
+	<base loc="en"          >Bring All to Front</base>
+	<tran loc="zh_CN" origin="">全部调到前面</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Open…&gt; (oid:72) </Description>
+<Position>72</Position>
+<TranslationSet>
+
+	<base loc="en"          >Open…</base>
+	<tran loc="zh_CN" origin="">打开⋯</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Close&gt; (oid:73) </Description>
+<Position>73</Position>
+<TranslationSet>
+
+	<base loc="en"          >Close</base>
+	<tran loc="zh_CN" origin="">关闭</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Save&gt; (oid:75) </Description>
+<Position>75</Position>
+<TranslationSet>
+
+	<base loc="en"          >Save</base>
+	<tran loc="zh_CN" origin="">存储</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Page Setup…&gt; (oid:77) </Description>
+<Position>77</Position>
+<TranslationSet>
+
+	<base loc="en"          >Page Setup…</base>
+	<tran loc="zh_CN" origin="">页面设置⋯</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Print…&gt; (oid:78) </Description>
+<Position>78</Position>
+<TranslationSet>
+
+	<base loc="en"          >Print…</base>
+	<tran loc="zh_CN" origin="">打印⋯</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Save As…&gt; (oid:80) </Description>
+<Position>80</Position>
+<TranslationSet>
+
+	<base loc="en"          >Save As…</base>
+	<tran loc="zh_CN" origin="">存储为⋯</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenu : &lt;title:File&gt; (oid:81) </Description>
+<Position>81</Position>
+<TranslationSet>
+
+	<base loc="en"          >File</base>
+	<tran loc="zh_CN" origin="">文件</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:New&gt; (oid:82) </Description>
+<Position>82</Position>
+<TranslationSet>
+
+	<base loc="en"          >New</base>
+	<tran loc="zh_CN" origin="">新播放程序窗口</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:File&gt; (oid:83) </Description>
+<Position>83</Position>
+<TranslationSet>
+
+	<base loc="en"          >File</base>
+	<tran loc="zh_CN" origin="">文件</tran>
+
+</TranslationSet>
+</TextItem>
+
+</File>
+
+<!--                                                 -->
+<!--    NicePlayer.app/../Preferences.nib.strings    -->
+<!--                                                 -->
+<File>
+<Filepath>NicePlayer.app/Contents/Resources/English.lproj/Preferences.nib.strings</Filepath>
+
+<TextItem>
+<Description> NSMenu : &lt;title:OtherViews&gt; (oid:237) </Description>
+<Position>237</Position>
+<TranslationSet>
+
+	<base loc="en"          >OtherViews</base>
+	<tran loc="zh_CN" origin=""></tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenu : &lt;title:OtherViews&gt; (oid:238) </Description>
+<Position>238</Position>
+<TranslationSet>
+
+	<base loc="en"          >OtherViews</base>
+	<tran loc="zh_CN" origin=""></tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSTextField (5) : &lt;title:5&gt; (oid:239) </Description>
+<Position>239</Position>
+<TranslationSet>
+
+	<base loc="en"          >5</base>
+	<tran loc="zh_CN" origin="">五</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSTextField (Double Click on Movie:) : &lt;title:Double Click on Movie:&gt; (oid:240) </Description>
+<Position>240</Position>
+<TranslationSet>
+
+	<base loc="en"          >Double Click on Movie:</base>
+	<tran loc="zh_CN" origin="">连按在影片</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenu : &lt;title:OtherViews&gt; (oid:241) </Description>
+<Position>241</Position>
+<TranslationSet>
+
+	<base loc="en"          >OtherViews</base>
+	<tran loc="zh_CN" origin=""></tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSTextField (Default Time Display:) : &lt;title:Default Time Display:&gt; (oid:242) </Description>
+<Position>242</Position>
+<TranslationSet>
+
+	<base loc="en"          >Default Time Display:</base>
+	<tran loc="zh_CN" origin="">普通的时间展览：</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSTextField (Rewind Speed:) : &lt;title:Rewind Speed:&gt; (oid:243) </Description>
+<Position>243</Position>
+<TranslationSet>
+
+	<base loc="en"          >Rewind Speed:</base>
+	<tran loc="zh_CN" origin="">倒带的速度：</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSTextField (Seconds) : &lt;title:Seconds&gt; (oid:244) </Description>
+<Position>244</Position>
+<TranslationSet>
+
+	<base loc="en"          >Seconds</base>
+	<tran loc="zh_CN" origin="">秒钟</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSTextField (5) : &lt;title:5&gt; (oid:245) </Description>
+<Position>245</Position>
+<TranslationSet>
+
+	<base loc="en"          >5</base>
+	<tran loc="zh_CN" origin="">五</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Elapsed Time&gt; (oid:247) </Description>
+<Position>247</Position>
+<TranslationSet>
+
+	<base loc="en"          >Elapsed Time</base>
+	<tran loc="zh_CN" origin="">当前时间：sh</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSTextField (Scroll Wheel Resize:) : &lt;title:Scroll Wheel Resize:&gt; (oid:249) </Description>
+<Position>249</Position>
+<TranslationSet>
+
+	<base loc="en"          >Scroll Wheel Resize:</base>
+	<tran loc="zh_CN" origin="">滚动旋转到道大小</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Repeat Single Movie&gt; (oid:250) </Description>
+<Position>250</Position>
+<TranslationSet>
+
+	<base loc="en"          >Repeat Single Movie</base>
+	<tran loc="zh_CN" origin="">再放这盘影片</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSTextField (Default Repeat Mode:) : &lt;title:Default Repeat Mode:&gt; (oid:251) </Description>
+<Position>251</Position>
+<TranslationSet>
+
+	<base loc="en"          >Default Repeat Mode:</base>
+	<tran loc="zh_CN" origin="">自己再来：</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSTextField (Seconds) : &lt;title:Seconds&gt; (oid:252) </Description>
+<Position>252</Position>
+<TranslationSet>
+
+	<base loc="en"                         >Seconds</base>
+	<tran loc="zh_CN" origin="AD matched text">秒</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSTextField (Fast Forward Speed:) : &lt;title:Fast Forward Speed:&gt; (oid:253) </Description>
+<Position>253</Position>
+<TranslationSet>
+
+	<base loc="en"          >Fast Forward Speed:</base>
+	<tran loc="zh_CN" origin="">快速的速度：</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Plays/Pauses Movie&gt; (oid:254) </Description>
+<Position>254</Position>
+<TranslationSet>
+
+	<base loc="en"          >Plays/Pauses Movie</base>
+	<tran loc="zh_CN" origin="">放／停影片</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Makes Window Full Screen&gt; (oid:256) </Description>
+<Position>256</Position>
+<TranslationSet>
+
+	<base loc="en"          >Makes Window Full Screen</base>
+	<tran loc="zh_CN" origin="">做窗口全屏幕</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Do Not Repeat&gt; (oid:257) </Description>
+<Position>257</Position>
+<TranslationSet>
+
+	<base loc="en"          >Do Not Repeat</base>
+	<tran loc="zh_CN" origin="">别再放这盘影片</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Repeat List&gt; (oid:258) </Description>
+<Position>258</Position>
+<TranslationSet>
+
+	<base loc="en"          >Repeat List</base>
+	<tran loc="zh_CN" origin="">再放这个目录</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Center Pinned&gt; (oid:259) </Description>
+<Position>259</Position>
+<TranslationSet>
+
+	<base loc="en"          >Center Pinned</base>
+	<tran loc="zh_CN" origin="">从中间</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenu : &lt;title:OtherViews&gt; (oid:262) </Description>
+<Position>262</Position>
+<TranslationSet>
+
+	<base loc="en"          >OtherViews</base>
+	<tran loc="zh_CN" origin=""></tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Left Top Pinned&gt; (oid:263) </Description>
+<Position>263</Position>
+<TranslationSet>
+
+	<base loc="en"          >Left Top Pinned</base>
+	<tran loc="zh_CN" origin="">从左边</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Time Remaining&gt; (oid:265) </Description>
+<Position>265</Position>
+<TranslationSet>
+
+	<base loc="en"          >Time Remaining</base>
+	<tran loc="zh_CN" origin="">剩下的时间</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSButton (Play Movie Automatically) : &lt;title:Play Movie Automatically&gt; (oid:270) </Description>
+<Position>270.1</Position>
+<TranslationSet>
+
+	<base loc="en"          >Play Movie Automatically</base>
+	<tran loc="zh_CN" origin="">自己开始放影片</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSButton (Window Always on Top) : &lt;title:Window Always on Top&gt; (oid:272) </Description>
+<Position>272.1</Position>
+<TranslationSet>
+
+	<base loc="en"          >Window Always on Top</base>
+	<tran loc="zh_CN" origin="">窗口总是在上头</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSButton (Stop Movie Automatically) : &lt;title:Stop Movie Automatically&gt; (oid:273) </Description>
+<Position>273.1</Position>
+<TranslationSet>
+
+	<base loc="en"          >Stop Movie Automatically</base>
+	<tran loc="zh_CN" origin="">自己停影片</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSButton (Play Movie) : &lt;title:Play Movie&gt; (oid:274) </Description>
+<Position>274.1</Position>
+<TranslationSet>
+
+	<base loc="en"          >Play Movie</base>
+	<tran loc="zh_CN" origin="">放影片</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSButton (Switch to Full Screen) : &lt;title:Switch to Full Screen&gt; (oid:276) </Description>
+<Position>276.1</Position>
+<TranslationSet>
+
+	<base loc="en"          >Switch to Full Screen</base>
+	<tran loc="zh_CN" origin="">换到全屏幕</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSTextField (When Movie Enters Full Screen:) : &lt;title:When Movie Enters Full Screen:&gt; (oid:277) </Description>
+<Position>277</Position>
+<TranslationSet>
+
+	<base loc="en"          >When Movie Enters Full Screen:</base>
+	<tran loc="zh_CN" origin="">影片换到全屏幕的时候：</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSTextField (When Movie is Opened:) : &lt;title:When Movie is Opened:&gt; (oid:278) </Description>
+<Position>278</Position>
+<TranslationSet>
+
+	<base loc="en"          >When Movie is Opened:</base>
+	<tran loc="zh_CN" origin="">影片打开的时候：</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSTableColumn : &lt;title:Use&gt; (oid:283) </Description>
+<Position>283</Position>
+<TranslationSet>
+
+	<base loc="en"          >Use</base>
+	<tran loc="zh_CN" origin=""></tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSTextField (Try to open files with viewers in this order:) : &lt;title:Try to open files with viewers in this order:&gt; (oid:285) </Description>
+<Position>285</Position>
+<TranslationSet>
+
+	<base loc="en"          >Try to open files with viewers in this order:</base>
+	<tran loc="zh_CN" origin="">试打开影片用录像机在这个顺序</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSTableColumn : &lt;title:Viewer&gt; (oid:286) </Description>
+<Position>286</Position>
+<TranslationSet>
+
+	<base loc="en"          >Viewer</base>
+	<tran loc="zh_CN" origin=""></tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSTextField (When Movie is Done Playing:) : &lt;title:When Movie is Done Playing:&gt; (oid:318) </Description>
+<Position>318</Position>
+<TranslationSet>
+
+	<base loc="en"          >When Movie is Done Playing:</base>
+	<tran loc="zh_CN" origin="">影片完了的时候：</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSButton (Leave Full Screen Mode Automatically) : &lt;title:Leave Full Screen Mode Automatically&gt; (oid:319) </Description>
+<Position>319.1</Position>
+<TranslationSet>
+
+	<base loc="en"          >Leave Full Screen Mode Automatically</base>
+	<tran loc="zh_CN" origin="">自己从全屏幕走</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSTextField (Dropping Multiple Files onto Dock Icon:) : &lt;title:Dropping Multiple Files onto Dock Icon:&gt; (oid:322) </Description>
+<Position>322</Position>
+<TranslationSet>
+
+	<base loc="en"          >Dropping Multiple Files onto Dock Icon:</base>
+	<tran loc="zh_CN" origin="">拖很多的文件到 Dock 的时候：</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Open in New Windows&gt; (oid:323) </Description>
+<Position>323</Position>
+<TranslationSet>
+
+	<base loc="en"          >Open in New Windows</base>
+	<tran loc="zh_CN" origin="">打开在新的窗口</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenu : &lt;title:OtherViews&gt; (oid:324) </Description>
+<Position>324</Position>
+<TranslationSet>
+
+	<base loc="en"          >OtherViews</base>
+	<tran loc="zh_CN" origin=""></tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Add to Single Playlist&gt; (oid:326) </Description>
+<Position>326</Position>
+<TranslationSet>
+
+	<base loc="en"          >Add to Single Playlist</base>
+	<tran loc="zh_CN" origin="">加到一个播放列表</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> PrefPluginConfig : &lt;title:Options&gt; (oid:330) </Description>
+<Position>330</Position>
+<TranslationSet>
+
+	<base loc="en"          >Options</base>
+	<tran loc="zh_CN" origin="">选项</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> JTPreferenceWindow (Preferences) : &lt;title:Preferences&gt; (oid:6) </Description>
+<Position>6</Position>
+<TranslationSet>
+
+	<base loc="en"          >Preferences</base>
+	<tran loc="zh_CN" origin="">预置</tran>
+
+</TranslationSet>
+</TextItem>
+
+</File>
+
+<!--                                                  -->
+<!--    NicePlayer.app/../NiceDocument.nib.strings    -->
+<!--                                                  -->
+<File>
+<Filepath>NicePlayer.app/Contents/Resources/English.lproj/NiceDocument.nib.strings</Filepath>
+
+<TextItem>
+<Description> OverlayWindow (Panel) : &lt;title:Panel&gt; (oid:105) </Description>
+<Position>105</Position>
+<TranslationSet>
+
+	<base loc="en"          >Panel</base>
+	<tran loc="zh_CN" origin=""></tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> OverlayWindow (Panel) : &lt;title:Panel&gt; (oid:127) </Description>
+<Position>127</Position>
+<TranslationSet>
+
+	<base loc="en"          >Panel</base>
+	<tran loc="zh_CN" origin=""></tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSTextField (System Font Text) : &lt;title:System Font Text&gt; (oid:129) </Description>
+<Position>129</Position>
+<TranslationSet>
+
+	<base loc="en"          >System Font Text</base>
+	<tran loc="zh_CN" origin=""></tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> OverlayControllerWindow (Panel) : &lt;title:Panel&gt; (oid:33) </Description>
+<Position>33</Position>
+<TranslationSet>
+
+	<base loc="en"          >Panel</base>
+	<tran loc="zh_CN" origin=""></tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> ControlPlay (Play) : &lt;title:Play&gt; (oid:34) </Description>
+<Position>34.1</Position>
+<TranslationSet>
+
+	<base loc="en"          >Play</base>
+	<tran loc="zh_CN" origin=""></tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> ControlRR (RR) : &lt;title:RR&gt; (oid:35) </Description>
+<Position>35.1</Position>
+<TranslationSet>
+
+	<base loc="en"          >RR</base>
+	<tran loc="zh_CN" origin=""></tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> ControlFF (FF) : &lt;title:FF&gt; (oid:36) </Description>
+<Position>36.1</Position>
+<TranslationSet>
+
+	<base loc="en"          >FF</base>
+	<tran loc="zh_CN" origin=""></tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSTextField (Playlist:) : &lt;title:Playlist:&gt; (oid:54) </Description>
+<Position>54</Position>
+<TranslationSet>
+
+	<base loc="en"          >Playlist:</base>
+	<tran loc="zh_CN" origin=""></tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NiceWindow (Window) : &lt;title:Window&gt; (oid:5) </Description>
+<Position>5</Position>
+<TranslationSet>
+
+	<base loc="en"                         >Window</base>
+	<tran loc="zh_CN" origin="AD matched text">窗口</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSButton (Button) : &lt;title:Button&gt; (oid:84) </Description>
+<Position>84.1</Position>
+<TranslationSet>
+
+	<base loc="en"          >Button</base>
+	<tran loc="zh_CN" origin=""></tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> OverlayWindow (Window) : &lt;title:Window&gt; (oid:89) </Description>
+<Position>89</Position>
+<TranslationSet>
+
+	<base loc="en"                         >Window</base>
+	<tran loc="zh_CN" origin="AD matched text">窗口</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> ClickableTextField (Window Title) : &lt;title:Window Title&gt; (oid:92) </Description>
+<Position>92</Position>
+<TranslationSet>
+
+	<base loc="en"          >Window Title</base>
+	<tran loc="zh_CN" origin=""></tran>
+
+</TranslationSet>
+</TextItem>
+
+</File>
+
+<!--                                           -->
+<!--    NicePlayer.app/../InfoPlist.strings    -->
+<!--                                           -->
+<File>
+<Filepath>NicePlayer.app/Contents/Resources/English.lproj/InfoPlist.strings</Filepath>
+
+<TextItem>
+<Description>mCFBundleShortVersionString = "0.90";</Description>
+<Position>CFBundleGetInfoString</Position>
+<TranslationSet>
+
+	<base loc="en"          >NicePlayer version 0.90, Copyright (c) 2004-2005 James Tuley, Robert Chin.</base>
+	<tran loc="zh_CN" origin="">好玩儿</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> Localized versions of Info.plist keys </Description>
+<Position>CFBundleName</Position>
+<TranslationSet>
+
+	<base loc="en"          >NicePlayer</base>
+	<tran loc="zh_CN" origin="">好玩儿</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description></Description>
+<Position>NSHumanReadableCopyright</Position>
+<TranslationSet>
+
+	<base loc="en"          >Copyright (c) 2004-2005 James Tuley, Robert Chin.</base>
+	<tran loc="zh_CN" origin=""></tran>
+
+</TranslationSet>
+</TextItem>
+
+</File>
+</Proj>

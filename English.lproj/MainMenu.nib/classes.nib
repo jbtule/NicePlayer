@@ -1,0 +1,89 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {
+                addToPlaylist = id; 
+                center = id; 
+                doubleSize = id; 
+                fillScreenSize = id; 
+                fillWidthSize = id; 
+                halfSize = id; 
+                normalSize = id; 
+                togglePlaylistDrawer = id; 
+            }; 
+            CLASS = FirstResponder; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {close = id; }; 
+            CLASS = MainWindowProxy; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {checkForUpdates = id; checkForUpdates2 = id; emailAuthor = id; }; 
+            CLASS = NSApplication; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSResponder; 
+        }, 
+        {
+            ACTIONS = {
+                ALLdoubleSize = id; 
+                ALLfillScreenSize = id; 
+                ALLfillWidthSize = id; 
+                ALLhalfSize = id; 
+                ALLnormalSize = id; 
+                emailAuthor = id; 
+                playAll = id; 
+                presentMultiple = id; 
+                showPreferences = id; 
+                stopAll = id; 
+                toggleAlwaysOnTop = id; 
+                toggleFullScreen = id; 
+            }; 
+            CLASS = NiceController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                backgroundWindow = id; 
+                mainWindowProxy = id; 
+                prefWindow = id; 
+                presentWindow = id; 
+                toggleOnTopMenuItem = id; 
+            }; 
+            SUPERCLASS = NSDocumentController; 
+        }, 
+        {
+            ACTIONS = {
+                center = id; 
+                doubleSize = id; 
+                fillScreenSize = id; 
+                fillWidthSize = id; 
+                halfSize = id; 
+                normalSize = id; 
+                performClose = id; 
+                performMiniaturize = id; 
+                updateByTime = id; 
+            }; 
+            CLASS = NiceWindow; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                theFFButton = id; 
+                theMovieView = id; 
+                theOverlaySubTitle = id; 
+                theOverlayTitleBar = id; 
+                theOverlayVolume = id; 
+                theOverlayWindow = id; 
+                thePlayButton = id; 
+                theRRButton = id; 
+                theScrubBar = id; 
+                theTimeField = id; 
+                theTitleField = id; 
+                theVolumeView = id; 
+                timeUpdaterTimer = id; 
+            }; 
+            SUPERCLASS = NSWindow; 
+        }
+    ); 
+    IBVersion = 1; 
+}

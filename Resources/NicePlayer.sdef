@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dictionary SYSTEM "file://localhost/System/Library/DTDs/sdef.dtd">
+<dictionary title="NicePlayer Dictionary">
+  <suite name="NicePlayer Suite" code="NIce"
+    description="Applescript for the Nicest Media Player on the Mac">
+    <classes>
+      <class name="application" code="capp" description="" 
+        inherits="NSCoreSuite.NSApplication">
+        <cocoa class="NPApplication"/>
+			<properties>
+				<property name="name" code="pnam" type="string" access="r" description="The name of the application."/>
+				<property name="frontmost" code="pisf" type="boolean" access="r" description="Is this the frontmost (active) application?">
+				<cocoa method="isActive"/>
+				</property>
+				<property name="version" code="vers" type="string" access="r" description="The version of the application."/>
+			</properties>
+        </class>
+		<class name="document" code="docu" description="A document.">
+				<cocoa class="NiceDocument"/>
+				<properties>
+					<property name="path" code="ppth" type="string" description="The document's path.">
+						<cocoa method="fileName"/>
+					</property>
+					<property name="name" code="pnam" type="string" description="The document's name.">
+						<cocoa method="lastComponentOfFileName"/>
+					</property>
+				</properties>
+				<responds-to-commands>
+					<responds-to name="play index">
+						<cocoa method="playAtIndex:"/>
+					</responds-to>
+					<responds-to name="play next">
+						<cocoa method="playNext:"/>
+					</responds-to>
+					<responds-to name="play previous">
+						<cocoa method="playPrev"/>
+					</responds-to>
+				</responds-to-commands>
+			</class>
+			<class name="window" code="cwin" description="A window.">
+				<cocoa class="NSWindow"/>
+				<properties>
+					<property name="name" code="pnam" type="string" description="The full title of the window.">
+						<cocoa method="title"/>
+					</property>
+					<property name="id" code="ID  " type="number" access="r" description="The unique identifier of the window.">
+						<cocoa method="uniqueID"/>
+					</property>
+					<property name="document" code="docu" type="document" access="r" description="The document whose contents are being displayed in the window."/>
+					<property name="index" code="pidx" type="number" description="The index of the window in the back-to-front window ordering.">
+						<!-- the type is supposed to be "integer" -->
+						<cocoa method="orderedIndex"/>
+					</property>
+					<property name="visible" code="pvis" type="boolean" description="Whether the window is currently visible.">
+						<cocoa method="isVisible"/>
+					</property>
+				</properties>
+			</class>
+			</classes>
+			<commands>
+				<command name="play index" code="NPPlindx" description="Play movie at playlist index.">
+					<direct-parameter type="number" description="The index of the movie to play in the playlist."/>
+				</command>
+				<command name="play next" code="NPPlnext" description="Play next movie in playlist."/>
+				<command name="play previous" code="NPPlprev" description="Play previous movie in playlist."/>
+			</commands>
+  </suite>
+</dictionary>

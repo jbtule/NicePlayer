@@ -1,0 +1,62 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {CLASS = JTPreferenceWindow; LANGUAGE = ObjC; SUPERCLASS = NSWindow; }, 
+        {CLASS = PrefPluginConfig; LANGUAGE = ObjC; SUPERCLASS = NSTableColumn; }, 
+        {
+            CLASS = Preferences; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {doubleClickMoviePref = id; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {
+                autoplayOnFullScreen = id; 
+                autostopOnNormalScreen = id; 
+                defaultOpenMode = id; 
+                defaultRepeatMode = id; 
+                defaultTimeDisplay = id; 
+                doubleClickMoviePref = id; 
+                fadeOverlays = id; 
+                ffSpeed = id; 
+                movieOpenedFullScreen = id; 
+                movieOpenedPlay = id; 
+                rightClickMoviePref = id; 
+                rrSpeed = id; 
+                scrollResizePin = id; 
+                showInitialOverlays = id; 
+                windowAlwaysOnTop = id; 
+                windowLeaveFullScreen = id; 
+            }; 
+            CLASS = PreferencesController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                autoplayOnFullScreen = id; 
+                autostopOnNormalScreen = id; 
+                bundlePriorityTable = id; 
+                defaultOpenMode = id; 
+                defaultRepeatMode = id; 
+                defaultTimeDisplay = id; 
+                doubleClickMoviePref = id; 
+                fadeOverlays = id; 
+                ffSpeedSlider = id; 
+                ffSpeedText = id; 
+                movieOpenedFullScreen = id; 
+                movieOpenedPlay = id; 
+                paneActions = id; 
+                paneMain = id; 
+                paneView = id; 
+                prefWindow = id; 
+                rightClickMoviePref = id; 
+                rrSpeedSlider = id; 
+                rrSpeedText = id; 
+                scrollResizePin = id; 
+                showInitialOverlays = id; 
+                windowAlwaysOnTop = id; 
+                windowLeaveFullScreen = id; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

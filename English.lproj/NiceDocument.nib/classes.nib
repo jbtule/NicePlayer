@@ -1,0 +1,105 @@
+{
+    IBClasses = (
+        {
+            CLASS = ClickableTextField; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {theNiceWindow = id; }; 
+            SUPERCLASS = NSTextField; 
+        }, 
+        {CLASS = ControlButton; LANGUAGE = ObjC; SUPERCLASS = NSButton; }, 
+        {CLASS = ControlFF; LANGUAGE = ObjC; SUPERCLASS = ControlButton; }, 
+        {CLASS = ControlPlay; LANGUAGE = ObjC; SUPERCLASS = ControlButton; }, 
+        {CLASS = ControlRR; LANGUAGE = ObjC; SUPERCLASS = ControlButton; }, 
+        {
+            ACTIONS = {addToPlaylist = id; }; 
+            CLASS = FirstResponder; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {ff = id; playToggle = id; rr = id; scrub = id; }; 
+            CLASS = JTMovieView; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {overlayWindow = id; }; 
+            SUPERCLASS = NSMovieView; 
+        }, 
+        {CLASS = JTPreferenceWindow; LANGUAGE = ObjC; SUPERCLASS = NSWindow; }, 
+        {
+            CLASS = NPMovieView; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {trueMovieView = id; }; 
+            SUPERCLASS = NSView; 
+        }, 
+        {
+            ACTIONS = {
+                addToPlaylist = id; 
+                choosePlaylistItem = id; 
+                closePlaylistDrawer = id; 
+                play = id; 
+                playNext = id; 
+                togglePlaylistDrawer = id; 
+                toggleRandomMode = id; 
+                toggleRepeatMode = id; 
+            }; 
+            CLASS = NiceDocument; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                theMovieView = id; 
+                thePlaylistDrawer = id; 
+                thePlaylistTable = id; 
+                theRepeatButton = id; 
+                theWindow = NiceWindow; 
+            }; 
+            SUPERCLASS = NSDocument; 
+        }, 
+        {CLASS = NiceDrawer; LANGUAGE = ObjC; SUPERCLASS = NSView; }, 
+        {CLASS = NiceScrubber; LANGUAGE = ObjC; SUPERCLASS = NSView; }, 
+        {
+            ACTIONS = {
+                center = id; 
+                doubleSize = id; 
+                fillScreenSize = id; 
+                fillWidthSize = id; 
+                halfSize = id; 
+                normalSize = id; 
+                performClose = id; 
+                performMiniaturize = id; 
+                updateByTime = id; 
+            }; 
+            CLASS = NiceWindow; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                theFFButton = id; 
+                theMovieView = id; 
+                theOverlaySubTitle = id; 
+                theOverlayTitleBar = id; 
+                theOverlayVolume = id; 
+                theOverlayWindow = id; 
+                thePlayButton = id; 
+                theRRButton = id; 
+                theScrubBar = id; 
+                theTimeField = id; 
+                theTitleField = id; 
+                theVolumeView = id; 
+                timeUpdaterTimer = id; 
+            }; 
+            SUPERCLASS = NSWindow; 
+        }, 
+        {
+            CLASS = OverlayControllerWindow; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {ffButton = NSButton; rrButton = NSButton; }; 
+            SUPERCLASS = OverlayWindow; 
+        }, 
+        {CLASS = OverlayWindow; LANGUAGE = ObjC; SUPERCLASS = NSWindow; }, 
+        {
+            CLASS = ScriptingDelegate; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {movieView = id; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = TimeDisplayField; LANGUAGE = ObjC; SUPERCLASS = NSTextField; }, 
+        {CLASS = VolumeView; LANGUAGE = ObjC; SUPERCLASS = NSImageView; }
+    ); 
+    IBVersion = 1; 
+}
