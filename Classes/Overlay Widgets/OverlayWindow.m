@@ -1,5 +1,5 @@
 /**
- * OverlayWindow.m
+* OverlayWindow.m
  * NicePlayer
  *
  * The superclass that sets up all of the states necessary for the overlay
@@ -31,18 +31,41 @@
     return NO;
 }
 
+
+-(void)setAlphaValue:(float)windowAlpha
+{
+    [super setAlphaValue:windowAlpha];
+    
+    if(windowAlpha ==0.0){
+        id tWin =[self parentWindow];
+        [tWin removeChildWindow:self];
+        [self orderWindow:NSWindowBelow relativeTo:[[tWin parentWindow] windowNumber]];
+        [tWin addChildWindow:self ordered:NSWindowBelow];
+    }else if(windowAlpha ==1.0){
+        id tWin =[self parentWindow];
+        [tWin removeChildWindow:self];
+        [self orderWindow:NSWindowAbove relativeTo:[[tWin parentWindow] windowNumber]];
+        [tWin addChildWindow:self ordered:NSWindowAbove]; 
+    }
+
+}
+
+-(void)resetWindowLevels{
+    [self setLevel:[[self parentWindow] level]];
+}
+
 - (void)mouseMoved:(NSEvent *)anEvent
 {
-	NSEvent *newEvent = [NSEvent mouseEventWithType:NSMouseMoved
-										   location:[((NiceWindow *)[self parentWindow]) convertScreenToBase:[NSEvent mouseLocation]]
-									  modifierFlags:0
-										  timestamp:0
-									   windowNumber:0
-											context:nil
-										eventNumber:0
-										 clickCount:0
-										   pressure:1.0];
-	[((NiceWindow *)[self parentWindow]) mouseMoved:newEvent];
+    NSEvent *newEvent = [NSEvent mouseEventWithType:NSMouseMoved
+                                           location:[((NiceWindow *)[self parentWindow]) convertScreenToBase:[NSEvent mouseLocation]]
+                                      modifierFlags:0
+                                          timestamp:0
+                                       windowNumber:0
+                                            context:nil
+                                        eventNumber:0
+                                         clickCount:0
+                                           pressure:1.0];
+    [((NiceWindow *)[self parentWindow]) mouseMoved:newEvent];
 }
 
 @end

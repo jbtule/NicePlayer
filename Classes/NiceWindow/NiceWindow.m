@@ -272,9 +272,9 @@
 {
     [anOverlay setFrame:aFrame display:NO];
     [self addChildWindow:anOverlay ordered:NSWindowAbove];
-    
     [anOverlay setAlphaValue:(isVisible ? 1.0 : 0.0)];
-    [anOverlay setLevel:[self level]];
+    if([anOverlay respondsToSelector:@selector(resetWindowLevels)])
+        [anOverlay resetWindowLevels];
     [anOverlay orderFront:self];	
 }
 
@@ -308,6 +308,21 @@
     isInitialDisplay = NO;
     initialFadeTimer = nil;
 }
+
+-(void)showOverLayTitle
+{
+    if((titleOverlayIsShowing) && !(isInitialDisplay))
+        return;
+
+    if(isInitialDisplay)
+        [initialFadeObjects removeObject:theOverlayTitleBar];
+        
+    [self setOverlayTitleLocation];
+    [[FadeOut fadeOut] removeWindow:theOverlayTitleBar];
+    [theOverlayTitleBar setAlphaValue:1.0];
+    titleOverlayIsShowing = YES;
+}
+
 
 -(void)showOverLayWindow
 {
@@ -363,19 +378,19 @@
     [self setShowsResizeIndicator:NO];
     windowOverlayIsShowing = NO;
 }
--(void)showOverLayTitle
+
+-(void)hideOverLayTitle
 {
-    if((titleOverlayIsShowing) && !(isInitialDisplay))
+    if(titleOverlayIsShowing == NO)
         return;
-    
+
     if(isInitialDisplay)
-        [initialFadeObjects removeObject:theOverlayTitleBar];
-    
-    [self setOverlayTitleLocation];
-    [[FadeOut fadeOut] removeWindow:theOverlayTitleBar];
-    [theOverlayTitleBar setAlphaValue:1.0];
-    titleOverlayIsShowing = YES;
+        [self hideInitialWindows];
+    else
+        [[FadeOut fadeOut] addWindow:theOverlayTitleBar];
+    titleOverlayIsShowing = NO;
 }
+
 
 /**
 * All of this logic is to set the location of the title bar that appears upon mouseover -- its location is
@@ -406,17 +421,6 @@
                                                 24) display:YES];
 }
 
--(void)hideOverLayTitle
-{
-    if(titleOverlayIsShowing == NO)
-        return;
-    
-    if(isInitialDisplay)
-        [self hideInitialWindows];
-    else
-        [[FadeOut fadeOut] addWindow:theOverlayTitleBar];
-    titleOverlayIsShowing = NO;
-}
 
 -(void)showOverLayVolume
 {
@@ -564,11 +568,13 @@
     id enumerator = [[self childWindows] objectEnumerator];
     id object;
     
+    [super setLevel:windowLevel];
+
     while(object = [enumerator nextObject]){
-        [object setLevel:windowLevel];   
+        if([object respondsToSelector:@selector(resetWindowLevels)])
+            [object resetWindowLevels];
     }
     
-    [super setLevel:windowLevel];
 }
 
 /**
@@ -792,9 +798,6 @@
 {
     if([self inResizeLocation:theEvent])
         resizeDrag = YES;
-    
-    if([theEvent clickCount] == 2)
-        [self toggleWindowFloat];
 }
 
 -(void)mouseDragged:(NSEvent *)anEvent

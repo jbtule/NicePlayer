@@ -20,4 +20,14 @@
 	}
 }
 
+-(void)setNeedsDisplay:(BOOL)aNeedsDisplay{
+    
+    if([[self window] alphaValue] == 0){
+        [super setNeedsDisplay:NO];
+    }else{
+        [super setNeedsDisplay:aNeedsDisplay];
+    }
+    
+}
+
 @end
