@@ -170,6 +170,7 @@
 -(void)start
 {
 	[super start:self];
+	[self setNeedsDisplay:YES];
 }
 
 -(void)stop
