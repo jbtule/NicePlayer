@@ -21,19 +21,14 @@
     NSLog(@"%@",[sender evaluatedArguments]);
 }
 
--(void)handleFullScreenCommand:(id)sender
+-(void)handleEnterFullScreenCommand:(id)sender
 {
-	[[NiceController controller] handleEnterFullScreen:self];
+    [[NiceController controller] handleEnterFullScreen:self];
 }
 
--(void)handleNormalScreenCommand:(id)sender
+-(void)handleExitFullScreenCommand:(id)sender
 {
-	[[NiceController controller] handleExitFullScreen:self];
-}
-
--(void)handleToggleFullScreenCommand:(id)sender
-{
-	[[NiceController controller] handleToggleFullScreen:self];
+    [[NiceController controller] handleExitFullScreen:self];
 }
 
 -(void)handleAddURLToPlaylistCommand:(id)sender

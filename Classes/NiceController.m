@@ -276,15 +276,15 @@ id controller;
 
 -(void)enterFullScreen
 {
-	id tempWindow = [NSApp mainWindow];
-	[tempWindow makeFullScreen];
+    id tempWindow = [NSApp bestMovieWindow];
+        [tempWindow makeFullScreen];
 	[self presentScreen];
 	[backgroundWindow setPresentingWindow:tempWindow];
 }
 
 -(void)exitFullScreen
 {
-	id tempWindow = [NSApp mainWindow];
+	id tempWindow = [NSApp bestMovieWindow];
 	if(tempWindow != nil)
 		[tempWindow makeNormalScreen];
 	[self unpresentScreen];

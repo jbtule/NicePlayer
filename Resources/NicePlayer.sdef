@@ -17,6 +17,14 @@
 						<cocoa method="niceMovies"/>
 					</element>
 				</elements>
+				<responds-to-commands>
+					<responds-to name="enter full screen">
+						<cocoa method="handleEnterFullScreenCommand:"/>
+					</responds-to>
+					<responds-to name="exit full screen">
+						<cocoa method="handleExitFullScreenCommand:"/>
+					</responds-to>
+				</responds-to-commands>
 			</class>
 			<class name="playlist" code="NPpl" description="The NicePlayer currently playing movie." plural="playlists" inherits="NSCoreSuite.NSDocument">
 				<cocoa class="NiceDocument"/>
@@ -92,17 +100,11 @@
 					</property>
 				</properties>
 				<responds-to-commands>
-					<responds-to name="toggle full screen">
-						<cocoa method="handleToggleFullScreenCommand:"/>
+					<responds-to name="enter full screen">
+						<cocoa method="handleEnterFullScreenCommand:"/>
 					</responds-to>
-					<responds-to name="normal screen">
-						<cocoa method="handleNormalScreenCommand:"/>
-					</responds-to>
-					<responds-to name="full screen">
-						<cocoa method="handleFullScreenCommand:"/>
-					</responds-to>
-					<responds-to name="toggle playlist drawer">
-						<cocoa method="handleTogglePlaylistDrawer:"/>
+					<responds-to name="exit full screen">
+						<cocoa method="handleExitFullScreenCommand:"/>
 					</responds-to>
 				</responds-to-commands>
 			</class>
@@ -139,9 +141,8 @@
 			<command name="play" code="NIceplay"/>
 			<command name="pause" code="NIcepaus"/>
 			<command name="playpause" code="NIceplps"/>
-			<command name="toggle full screen" code="NIcetfsn"/>
-			<command name="full screen" code="NIceflsn"/>
-			<command name="normal screen" code="NIcenlsn"/>
+			<command name="enter full screen" code="NIceflsn"/>
+			<command name="exit full screen" code="NIcenlsn"/>
 			<command name="add" code="NIceatpl" description="file or movie to the playlist.">
 				<cocoa name="NPAddCommand" class="NPAddCommand"/>
 				<direct-parameter type="any" description="files or movies"/>

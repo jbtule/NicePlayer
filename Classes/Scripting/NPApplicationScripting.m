@@ -22,4 +22,17 @@
     return tArray;
 }
 
+
+-(void)handleEnterFullScreenCommand:(id)sender
+{
+    [[NiceController controller] enterFullScreen];
+}
+
+-(void)handleExitFullScreenCommand:(id)sender
+{
+    [[NiceController controller] exitFullScreen];
+}
+
+
+
 @end
