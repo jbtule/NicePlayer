@@ -9,6 +9,14 @@
 #import "NiceWindow.h"
 #import "NiceDocument.h"
 #import "NiceControllerScripting.h"
+enum{
+    NPDOUBLE = 'npdo',
+    NPHALF = 'nphl',
+    NPNORMAL ='npno',
+    NPFILL = 'npfl',
+    NPFITWIDTH = 'npfw'
+};
+
 
 @implementation NiceWindow (NiceWindowScripting)
 
@@ -18,7 +26,29 @@
 }
 
 -(void)handleResizeCommand:(id)sender{
-    NSLog(@"%@",[sender evaluatedArguments]);
+    NSDictionary* tDict =[sender evaluatedArguments];
+
+    int value = [[tDict objectForKey:@"by"] intValue];
+    switch(value){
+        case NPHALF:
+            [self halfSize:self];
+            break;
+        case NPNORMAL:
+            [self normalSize:self];
+            break;
+        case NPDOUBLE:
+            [self doubleSize:self];
+            break;
+        case NPFILL:
+            [self fillScreenSize:self];
+            break;
+        case NPFITWIDTH:
+            [self fillWidthSize:self];
+            break;
+        default:
+            NSLog(@"enum %d",value);
+    }
+    
 }
 
 -(void)handleEnterFullScreenCommand:(id)sender

@@ -254,8 +254,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -312,7 +310,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>73</integer>
+									<integer>76</integer>
 									<integer>66</integer>
 									<integer>0</integer>
 								</array>
@@ -643,7 +641,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>NiceControllerScripting.h</string>
+								<string>NiceWindowScripting.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -651,9 +649,9 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>NiceControllerScripting.h</string>
+										<string>NiceWindowScripting.m</string>
 										<key>bookmark</key>
-										<string>3EBF3AE707D17A7000B30DAB</string>
+										<string>3EBF3B5507D1832F00B30DAB</string>
 										<key>history</key>
 										<array>
 											<string>3EB6437D07072092007BACF7</string>
@@ -757,7 +755,6 @@
 											<string>3EBF396D07D166C200B30DAB</string>
 											<string>3EBF39C107D16CB300B30DAB</string>
 											<string>3EBF39C207D16CB300B30DAB</string>
-											<string>3EBF3A0607D16FC500B30DAB</string>
 											<string>3EBF3A0D07D16FC500B30DAB</string>
 											<string>3EBF3A2807D1708C00B30DAB</string>
 											<string>3EBF3A4A07D1721000B30DAB</string>
@@ -767,13 +764,14 @@
 											<string>3EBF3A8707D1765B00B30DAB</string>
 											<string>3EBF3A8807D1765B00B30DAB</string>
 											<string>3EBF3A8907D1765B00B30DAB</string>
-											<string>3EBF3ACB07D1790000B30DAB</string>
-											<string>3EBF3ACC07D1790000B30DAB</string>
-											<string>3EBF3ACD07D1790000B30DAB</string>
-											<string>3EBF3ACE07D1790000B30DAB</string>
 											<string>3EBF3ADD07D179E600B30DAB</string>
-											<string>3EBF3AE407D17A7000B30DAB</string>
-											<string>3EBF3AE507D17A7000B30DAB</string>
+											<string>3EBF3AE907D17AF000B30DAB</string>
+											<string>3EBF3B1807D17F5C00B30DAB</string>
+											<string>3EBF3B2807D1808900B30DAB</string>
+											<string>3EBF3B2907D1808900B30DAB</string>
+											<string>3EBF3B3507D180AD00B30DAB</string>
+											<string>3EBF3B3607D180AD00B30DAB</string>
+											<string>3EBF3B3707D180AD00B30DAB</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -1016,6 +1014,22 @@
 											<string>3EBF3AD807D179AE00B30DAB</string>
 											<string>3EBF3ADF07D179E600B30DAB</string>
 											<string>3EBF3AE607D17A7000B30DAB</string>
+											<string>3EBF3AEB07D17AF000B30DAB</string>
+											<string>3EBF3AF907D17EBB00B30DAB</string>
+											<string>3EBF3AFA07D17EBB00B30DAB</string>
+											<string>3EBF3B0207D17EC100B30DAB</string>
+											<string>3EBF3B0907D17F0C00B30DAB</string>
+											<string>3EBF3B0A07D17F0C00B30DAB</string>
+											<string>3EBF3B0B07D17F0C00B30DAB</string>
+											<string>3EBF3B0C07D17F0C00B30DAB</string>
+											<string>3EBF3B1A07D17F5C00B30DAB</string>
+											<string>3EBF3B1B07D17F5C00B30DAB</string>
+											<string>3EBF3B2B07D1808900B30DAB</string>
+											<string>3EBF3B2C07D1808900B30DAB</string>
+											<string>3EBF3B2D07D1808900B30DAB</string>
+											<string>3EBF3B3207D1809400B30DAB</string>
+											<string>3EBF3B3807D180AD00B30DAB</string>
+											<string>3EBF3B3907D180AD00B30DAB</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -1090,7 +1104,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>131168880.9153339</real>
+	<real>131171119.39987503</real>
 	<key>ToolbarDisplayMode</key>
 	<integer>1</integer>
 	<key>ToolbarIsVisible</key>
@@ -1107,9 +1121,10 @@
 	<array>
 		<string>3EC6F2CD0735CBD6003079FC</string>
 		<string>3EBF3AA307D1768B00B30DAB</string>
+		<string>3EBF3B5207D182DC00B30DAB</string>
 		<string>3E99510507D154340002C1F4</string>
-		<string>1C0AD2B3069F1EA900FABCE6</string>
 		<string>/Users/tuley/Documents/Projects/NicePlayer Project/NicePlayer/NicePlayer.xcode</string>
+		<string>1C0AD2B3069F1EA900FABCE6</string>
 	</array>
 	<key>WindowString</key>
 	<string>758 213 978 918 0 0 1920 1178 </string>
@@ -1131,7 +1146,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>NiceDocumentScripting.m</string>
+								<string>NiceWindowScripting.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -1139,17 +1154,19 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CD052900623707200166675</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>NiceDocumentScripting.m</string>
+										<string>NiceWindowScripting.m</string>
 										<key>bookmark</key>
-										<string>3EBF3AE807D17A7000B30DAB</string>
+										<string>3EBF3B5607D1832F00B30DAB</string>
 										<key>history</key>
 										<array>
 											<string>3EBF3A9F07D1768B00B30DAB</string>
-											<string>3EBF3AA007D1768B00B30DAB</string>
+											<string>3EBF3B4E07D182DC00B30DAB</string>
+											<string>3EBF3B4F07D182DC00B30DAB</string>
 										</array>
 										<key>prevStack</key>
 										<array>
 											<string>3EBF3AA107D1768B00B30DAB</string>
+											<string>3EBF3B5007D182DC00B30DAB</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -1562,7 +1579,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {678, 489}}</string>
 								<key>RubberWindowFrame</key>
-								<string>244 226 678 532 0 0 1920 1178 </string>
+								<string>93 231 678 532 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXRunSessionModule</string>
@@ -1592,7 +1609,7 @@
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.run</string>
 			<key>WindowString</key>
-			<string>244 226 678 532 0 0 1920 1178 </string>
+			<string>93 231 678 532 0 0 1920 1178 </string>
 			<key>WindowToolGUID</key>
 			<string>1C0AD2B3069F1EA900FABCE6</string>
 			<key>WindowToolIsVisible</key>

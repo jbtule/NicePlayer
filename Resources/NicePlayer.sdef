@@ -3,6 +3,26 @@
 <dictionary title="NicePlayer Dictionary">
 	<suite name="NicePlayer Suite" code="NIce" description="Applescript for the Nicest Media Player on the Mac">
 		<cocoa name="NicePlayerSuite"/>
+		<types>
+			<enumeration name="scales" code="npsl">
+				<cocoa name="npscales"/>
+				<enumerator name="half" code="nphl">
+					<cocoa name="nphalf"/>
+				</enumerator>
+				<enumerator name="normal" code="npno">
+					<cocoa name="npnormal"/>
+				</enumerator>
+				<enumerator name="double" code="npdo">
+					<cocoa name="npdouble"/>
+				</enumerator>
+				<enumerator name="fill" code="npfl">
+					<cocoa name="npfill"/>
+				</enumerator>
+				<enumerator name="fit width" code="npfw">
+					<cocoa name="npfitwidth"/>
+				</enumerator>
+			</enumeration>
+		</types>
 		<classes>
 			<class name="application" code="NIap" description="" inherits="NSCoreSuite.NSApplication">
 				<cocoa class="NPApplication"/>
@@ -100,6 +120,9 @@
 					<responds-to name="exit full screen">
 						<cocoa method="handleExitFullScreenCommand:"/>
 					</responds-to>
+					<responds-to name="rescale">
+						<cocoa method="handleResizeCommand:"/>
+					</responds-to>
 				</responds-to-commands>
 			</class>
 			<class name="movie" code="NPmv" plural="movies" inherits="item">
@@ -164,6 +187,11 @@
 			</command>
 			<command name="skip backward" code="NPskipbw" description="Skips backward default amount of time">
 				<parameter name="by" code="npby" description="amount in seconds" type="number" optional="optional">
+					<cocoa key="by"/>
+				</parameter>
+			</command>
+			<command name="rescale" code="NIceresl">
+				<parameter name="by" code="npby" type="scales">
 					<cocoa key="by"/>
 				</parameter>
 			</command>
