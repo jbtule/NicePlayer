@@ -12,6 +12,11 @@
 
 @implementation NiceWindow (NiceWindowScripting)
 
++(BOOL)accessInstanceVariablesDirectly
+{
+	return NO;
+}
+
 -(void)handleFullScreenCommand:(id)sender
 {
 	[[NiceController controller] handleEnterFullScreen:self];
@@ -46,6 +51,11 @@
 	return [[[self windowController] document] isPlaylistEmpty];
 }
 
+-(id)documentMovie
+{
+	return [[self windowController] document];
+}
+
 -(void)setPlaylistShowing:(BOOL)aBool
 {
 	if(aBool)
@@ -59,8 +69,10 @@
 	[[[self windowController] document] togglePlaylistDrawer:sender];
 }
 
--(void)handleCloseCommand:(NSCloseCommand *)command
+-(void)handleCloseWindowCommand:(id)sender
 {
+	if([self isFullScreen])
+		[self unFullScreen];
 	[self close];
 }
 

@@ -11,6 +11,11 @@
 
 @implementation NiceController (NiceControllerScripting)
 
++(BOOL)accessInstanceVariablesDirectly
+{
+	return NO;
+}
+
 -(void)handleEnterFullScreen:(id)tempWindow
 {
 	[NSApp activateIgnoringOtherApps:YES];

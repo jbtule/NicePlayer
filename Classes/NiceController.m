@@ -82,7 +82,7 @@ id controller;
 {
     id tempDoc = nil;
     unsigned i;
-    
+
     files =[files collectUsingFunction:NPConvertFileNamesToURLs context:nil];
     files= NPSortUrls(files);
     for (i = 0; i < [files count]; i++){

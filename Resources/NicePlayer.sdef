@@ -20,32 +20,18 @@
 					</property>
 					<property name="version" code="vers" description="The version of the application." type="string" access="r"/>
 				</properties>
-				<responds-to-commands>
-					<responds-to name="open">
-						<cocoa method="handleOpenScriptCommand:"/>
-					</responds-to>
-					<responds-to name="quit">
-						<cocoa method="handleQuitScriptCommand:"/>
-					</responds-to>
-				</responds-to-commands>
 			</class>
 			<class name="movie" code="NPdc" description="The NicePlayer currently playing movie." plural="movies">
 				<cocoa class="NiceDocument"/>
 				<properties>
-					<property name="path" code="ppth" description="The path to the movie." type="string">
-						<cocoa method="fileName"/>
-					</property>
-					<property name="name" code="pnam" description="The name of the movie window." type="string">
-						<cocoa method="lastComponentOfFileName"/>
-					</property>
-					<property name="window" code="cwin" description="The window instance containing the movie." type="window" access="r">
-						<cocoa method="window"/>
-					</property>
 					<property name="muted" code="NPmd" description="If the sound is muted." type="boolean">
 						<cocoa method="muted"/>
 					</property>
-					<property name="volume" code="NPvm" description="The audio volume." type="boolean">
+					<property name="volume" code="NPvm" description="The audio volume." type="number">
 						<cocoa method="volume"/>
+					</property>
+					<property name="window" code="cwin" type="window" access="r">
+						<cocoa method="window"/>
 					</property>
 				</properties>
 				<responds-to-commands>
@@ -84,22 +70,11 @@
 			<class name="window" code="cwin" description="The NicePlayer window." plural="windows">
 				<cocoa class="NiceWindow"/>
 				<properties>
-					<property name="name" code="pnam" description="The full title of the window." type="string">
-						<cocoa method="title"/>
-					</property>
-					<property name="id" code="ID  " description="The unique identifier of the window." type="number" access="r">
-						<cocoa method="uniqueID"/>
-					</property>
-					<property name="document" code="docu" description="The document whose contents are being displayed in the window." type="document" access="r"/>
-					<property name="index" code="pidx" description="The index of the window in the back-to-front window ordering." type="number">
-						<!-- the type is supposed to be &quot;integer&quot;-->
-						<cocoa method="orderedIndex"/>
-					</property>
-					<property name="visible" code="pvis" description="Whether the window is currently visible." type="boolean">
-						<cocoa method="isVisible"/>
-					</property>
 					<property name="playlist is showing" code="plsh" type="boolean">
 						<cocoa method="playlistShowing"/>
+					</property>
+					<property name="movie" code="NPme" description="The document whose contents are being displayed in the window." type="movie" access="r">
+						<cocoa method="documentMovie"/>
 					</property>
 				</properties>
 				<responds-to-commands>
@@ -115,11 +90,11 @@
 					<responds-to name="full screen">
 						<cocoa method="handleFullScreenCommand:"/>
 					</responds-to>
-					<responds-to name="close">
-						<cocoa method="handleCloseCommand:"/>
-					</responds-to>
 					<responds-to name="toggle playlist drawer">
 						<cocoa method="handleTogglePlaylistDrawer:"/>
+					</responds-to>
+					<responds-to name="close">
+						<cocoa method="handleCloseWindowCommand:"/>
 					</responds-to>
 				</responds-to-commands>
 			</class>
@@ -168,74 +143,10 @@
 			<command name="toggle full screen" code="NIcetfsn"/>
 			<command name="full screen" code="NIceflsn"/>
 			<command name="normal screen" code="NIcenlsn"/>
-			<!-- &quot;get&quot;-->
-			<command name="get" code="coregetd" description="Get the data for an object.">
-				<cocoa class="NSGetCommand"/>
-				<direct-parameter type="object"/>
-				<result type="any"/>
-			</command>
-			<command name="count" code="corecnte" description="Return the number of elements of a particular class within an object.">
-				<cocoa class="NSCountCommand"/>
-				<direct-parameter type="object" description="the object whose elements are to be counted"/>
-				<result type="integer" description="the number of elements"/>
-				<parameter name="each" code="kocl" description="The class of objects to be counted." type="type" optional="optional">
-					<cocoa key="ObjectClass"/>
-				</parameter>
-			</command>
-			<command name="delete" code="coredelo" description="Delete an object.">
-				<cocoa class="NSDeleteCommand"/>
-				<direct-parameter type="object" description="the object to delete"/>
-			</command>
-			<command name="duplicate" code="coreclon" description="Copy object(s) and put the copies at a new location.">
-				<cocoa name="Copy" class="NSCloneCommand"/>
-				<direct-parameter type="object" description="the object(s) to duplicate"/>
-				<!-- &quot;duplicate&quot; is supposed to return the new objects.
-				&lt;result type=&quot;object&quot; description=&quot;to the duplicated object(s)&quot;/&gt;-->
-				<parameter name="to" code="insh" description="The location for the new object(s)." type="location">
-					<!-- &quot;to&quot;-->
-					<cocoa key="ToLocation"/>
-				</parameter>
-				<parameter name="with properties" code="prdt" description="Properties to be set in the new duplicated object(s)." type="record" optional="optional">
-					<cocoa key="WithProperties"/>
-				</parameter>
-			</command>
-			<command name="exists" code="coredoex" description="Verify if an object exists.">
-				<cocoa class="NSExistsCommand"/>
-				<direct-parameter type="object" description="the object in question"/>
-				<result type="boolean" description="true if it exists, false if not"/>
-			</command>
-			<!-- &quot;get&quot;-->
-			<command name="get" code="coregetd" description="Get the data for an object.">
-				<cocoa class="NSGetCommand"/>
-				<direct-parameter type="object"/>
-				<result type="any"/>
-			</command>
-			<command name="move" code="coremove" description="Move object(s) to a new location.">
-				<cocoa class="NSMoveCommand"/>
-				<direct-parameter type="object" description="the object(s) to move"/>
-				<!-- &quot;move&quot; is supposed to return the relocated objects.
-				&lt;result type=&quot;object&quot; description=&quot;to the object(s) after they have been moved&quot;/&gt;-->
-				<parameter name="to" code="insh" description="The new location for the object(s)." type="location">
-					<cocoa key="ToLocation"/>
-				</parameter>
-			</command>
-			<!-- &quot;set&quot;-->
-			<command name="set" code="coresetd" description="Set an object&apos;">
-				<cocoa class="NSSetCommand"/>
-				<direct-parameter type="object"/>
-				<!-- &quot;set&quot; is supposed to return the fully evaluated &quot;to&quot; data.
-				&lt;result type=&quot;any&quot;/&gt;-->
-				<parameter name="to" code="data" description="The new value." type="any">
-					<cocoa key="Value"/>
-				</parameter>
-			</command>
-			<command name="open" code="aevtodoc" description="Open a movie."/>
-			<command name="quit" code="aevtquit" description="Quit the application."/>
 			<command name="add to playlist" code="NIceatpl" description="Add a file to the playlist.">
 				<parameter name="at index" code="NIat" description="The index to add the file at in the playlist." type="integer" optional="optional"/>
 				<parameter name="file" code="NIfl" description="The filename to add." type="file"/>
 			</command>
-			<command name="close" code="coreclos"/>
 			<command name="toggle playlist drawer" code="NIceTGDR"/>
 			<command name="toggle mute" code="NIcetgmt" description="Toggle whether sound is muted."/>
 			<command name="decrement volume" code="NIcevlde"/>
@@ -244,6 +155,10 @@
 			<command name="start rewinding" code="NIcerwst"/>
 			<command name="start fast forwarding" code="NIceffst"/>
 			<command name="stop fast forwarding" code="NIceffsp"/>
+			<command name="close" code="coreclos" description="Close an object.">
+				<cocoa class="NSCloseCommand"/>
+				<direct-parameter type="object" description="the object to close"/>
+			</command>
 		</commands>
 	</suite>
 </dictionary>

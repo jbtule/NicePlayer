@@ -10,6 +10,11 @@
 
 @implementation NiceDocument (NiceDocumentScripting)
 
++(BOOL)accessInstanceVariablesDirectly
+{
+	return NO;
+}
+
 -(void)handlePauseCommand:(id)sender
 {
 	[theMovieView stop];
@@ -99,9 +104,9 @@
 	[theMovieView toggleMute];
 }
 
--(void)volume
+-(float)volume
 {
-	[theMovieView volume];
+	return [theMovieView volume];
 }
 
 -(void)setVolume:(float)aFloat
@@ -109,9 +114,9 @@
 	[theMovieView setVolume:aFloat];
 }
 
--(void)muted
+-(BOOL)muted
 {
-	[theMovieView muted];
+	return [theMovieView muted];
 }
 
 -(void)setMuted:(BOOL)aBool

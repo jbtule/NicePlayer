@@ -1028,7 +1028,6 @@
 		};
 		25D2E7B407BF36D5004BEF7D = {
 			children = (
-				25E3AF6D07C121A800746EA4,
 				253C014E07C00DF200172C2F,
 				25D2ED0B07BF6066004BEF7D,
 				25D2E7C207BF3758004BEF7D,
@@ -1126,21 +1125,6 @@
 		};
 		25E3AEFF07C0A65000746EA4 = {
 			fileRef = 25E3AEFE07C0A65000746EA4;
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		25E3AF6D07C121A800746EA4 = {
-			fileEncoding = 4;
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.c.objc;
-			name = NiceAppScripting.m;
-			path = Classes/Scripting/NiceAppScripting.m;
-			refType = 4;
-			sourceTree = "<group>";
-		};
-		25E3AF6E07C121A800746EA4 = {
-			fileRef = 25E3AF6D07C121A800746EA4;
 			isa = PBXBuildFile;
 			settings = {
 			};
@@ -2989,7 +2973,6 @@
 				25D2ED0C07BF6066004BEF7D,
 				253C064E07C0891300172C2F,
 				25E3AEFF07C0A65000746EA4,
-				25E3AF6E07C121A800746EA4,
 			);
 			isa = PBXSourcesBuildPhase;
 			runOnlyForDeploymentPostprocessing = 0;

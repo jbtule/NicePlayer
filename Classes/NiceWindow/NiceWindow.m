@@ -85,6 +85,7 @@
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
 	[super close];
 }
+
 -(void)dealloc
 {
 	[initialFadeObjects release];
