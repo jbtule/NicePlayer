@@ -17,9 +17,6 @@
 					<element type="movie" access="r">
 						<cocoa method="orderedDocuments"/>
 					</element>
-					<element type="window" access="r">
-						<cocoa method="movieWindows"/>
-					</element>
 				</elements>
 				<properties>
 					<property name="name" code="pnam" description="The name of the application." type="string" access="r"/>
