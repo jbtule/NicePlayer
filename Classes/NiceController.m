@@ -42,13 +42,13 @@ id controller;
     presentWindow = nil;
 	[NiceController setController:self];
 	[[NSNotificationCenter defaultCenter] addObserver:self
-                                                selector:@selector(changedWindow:)
-                                                     name:@"NSWindowDidBecomeMainNotification"
-                                                   object:nil];
+											 selector:@selector(changedWindow:)
+												 name:@"NSWindowDidBecomeMainNotification"
+											   object:nil];
 	antiSleepTimer = [NSTimer scheduledTimerWithTimeInterval:30.0
 													  target:self
 													selector:@selector(preventSleep:)
-													userInfo:nil repeats:YES];;
+													userInfo:nil repeats:YES];
 }
 
 -(void)dealloc{
@@ -144,7 +144,6 @@ id controller;
 	id anObject;
 	while(anObject = [e nextObject]){
 		if([anObject isPlaying]){
-			UpdateSystemActivity(OverallAct);
 			return;
 		}
 	}
