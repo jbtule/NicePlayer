@@ -21,6 +21,7 @@
     id presentWindow;
     NSArray* backgroundWindows;
 	id toggleOnTopMenuItem;
+	id antiSleepTimer;
 }
 
 +(NiceController *)controller;

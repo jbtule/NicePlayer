@@ -160,6 +160,11 @@ int movieMenuLocationIndex = -1;
 	return hasRealMovie;
 }
 
+-(BOOL)isPlaying
+{
+	return [theMovieView isPlaying];
+}
+
 - (void)windowDidDeminiaturize:(NSNotification *)aNotification
 {
     [theWindow restoreVolume];

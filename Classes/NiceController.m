@@ -32,7 +32,10 @@ id controller;
     lastMouseLocation = NSMakePoint(0,0);
     fullScreenMode =  NO;
     showingMenubar = NO;
-    mouseMoveTimer = [NSTimer scheduledTimerWithTimeInterval:.2 target:self selector:@selector(checkMouseLocation:) userInfo:nil repeats:YES]; // Auto-hides mouse.
+    mouseMoveTimer = [NSTimer scheduledTimerWithTimeInterval:.2
+													  target:self
+													selector:@selector(checkMouseLocation:)
+													userInfo:nil repeats:YES]; // Auto-hides mouse.
     lastCursorMoveDate = [[NSDate alloc] init];
     backgroundWindow = [[BlackWindow alloc] init];
     backgroundWindows = nil;
@@ -42,10 +45,15 @@ id controller;
                                                 selector:@selector(changedWindow:)
                                                      name:@"NSWindowDidBecomeMainNotification"
                                                    object:nil];
+	antiSleepTimer = [NSTimer scheduledTimerWithTimeInterval:30.0
+													  target:self
+													selector:@selector(preventSleep:)
+													userInfo:nil repeats:YES];;
 }
 
 -(void)dealloc{
     [mouseMoveTimer invalidate];
+	[antiSleepTimer invalidate];
     [lastCursorMoveDate release];
     [backgroundWindows release];
     [super dealloc];
@@ -126,6 +134,20 @@ id controller;
     
     tempRect.origin.y=tempRect.size.height -24;
     tempRect.size.height =32;
+}
+
+/* As per Technical Q&A QA1160: http://developer.apple.com/qa/qa2004/qa1160.html */
+-(void)preventSleep:(id)sender
+{
+	NSArray *docList = [NSApp orderedDocuments];
+	id e = [docList objectEnumerator];
+	id anObject;
+	while(anObject = [e nextObject]){
+		if([anObject isPlaying]){
+			UpdateSystemActivity(OverallAct);
+			return;
+		}
+	}
 }
 
 -(id)mainDocument
