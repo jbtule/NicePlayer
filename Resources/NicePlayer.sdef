@@ -95,15 +95,6 @@
 					<responds-to name="toggle playlist drawer">
 						<cocoa method="handleTogglePlaylistDrawer:"/>
 					</responds-to>
-					<responds-to name="close">
-						<cocoa method="handleCloseWindowCommand:"/>
-					</responds-to>
-					<responds-to name="print">
-						<cocoa method="handlePrintScriptCommand:"/>
-					</responds-to>
-					<responds-to name="save">
-						<cocoa method="handleSaveScriptCommand:"/>
-					</responds-to>
 				</responds-to-commands>
 			</class>
 		</classes>
