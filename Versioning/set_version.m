@@ -37,10 +37,10 @@ int main (int argc, const char * argv[]) {
     }
 
     // try and set the requested key
-    [myDict setObject: [NSString stringWithCString:argv[4]] forKey: [NSString stringWithCString: argv[3]]];
+    [myDict setObject: [NSString stringWithCString:argv[3]] forKey: [NSString stringWithCString: argv[2]]];
 
     // Write requested value to file
-    [myDict writeToFile:[NSString stringWithCString:argv[2]] atomically:YES];
+    [myDict writeToFile:[NSString stringWithCString:argv[1]] atomically:YES];
 
     [pool release];
     return 0;
