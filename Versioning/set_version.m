@@ -11,7 +11,7 @@ int main (int argc, const char * argv[]) {
     if( argc != 5 ) {
       [[NSFileHandle fileHandleWithStandardError]
         writeData:
-          [[NSString stringWithFormat: @"usage: %s in.plist key value\n",
+          [[NSString stringWithFormat: @"usage: %s in.plist out.plist key value\n",
                      argv[0]
             ] dataUsingEncoding: NSASCIIStringEncoding]];
 
@@ -33,6 +33,7 @@ int main (int argc, const char * argv[]) {
             ] dataUsingEncoding: NSASCIIStringEncoding]];
 
       [pool release];
+      return -1;
       exit( 1 );
     }
 
@@ -40,7 +41,15 @@ int main (int argc, const char * argv[]) {
     [myDict setObject: [NSString stringWithCString:argv[4]] forKey: [NSString stringWithCString: argv[3]]];
 
     // Write requested value to file
-    [myDict writeToFile:[NSString stringWithCString:argv[2]] atomically:YES];
+    if(![myDict writeToFile:[NSString stringWithCString:argv[2]]
+    atomically:YES]){
+      [[NSFileHandle fileHandleWithStandardError]
+        writeData:
+          [[NSString stringWithFormat:
+                       @"Couldn't write file to %s\n", argv[2]
+            ] dataUsingEncoding: NSASCIIStringEncoding]];
+	return -1;
+    }
 
     [pool release];
     return 0;

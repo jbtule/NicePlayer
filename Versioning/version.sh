@@ -5,4 +5,4 @@ if [ ! -e Versioning/set_version ]; then
 fi
 
 REV="`/usr/local/subversion/bin/svn info | grep Revision | cut -f 2 -d ':' | cut -f 2 -d ' '`"
-Versioning/set_version Info.plist "$BUILD_DIR/$FULL_PRODUCT_NAME/Contents/Resources/Info.plist" CFBundleVersion $REV
+Versioning/set_version Info.plist "$BUILD_DIR/$FULL_PRODUCT_NAME/Contents/Info.plist" CFBundleVersion $REV
