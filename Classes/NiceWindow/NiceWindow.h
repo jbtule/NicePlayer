@@ -21,6 +21,7 @@
     IBOutlet id theOverlaySubTitle;
     IBOutlet id theVolumeView;
     IBOutlet id theTitleField;
+    IBOutlet id theShadowWindow;
 
     IBOutlet id theScrubBar;
     IBOutlet id theTimeField;
