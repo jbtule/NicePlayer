@@ -131,7 +131,7 @@
 	}
 }
 
--(NSArray *)orderedWindows
+-(NSArray *)movieWindows
 {
 	unsigned i;
 	NSArray *oWin = [super orderedWindows];

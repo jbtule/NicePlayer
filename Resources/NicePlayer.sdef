@@ -10,7 +10,7 @@
 						<cocoa method="orderedDocuments"/>
 					</element>
 					<element type="window" access="r">
-						<cocoa method="orderedWindows"/>
+						<cocoa method="movieWindows"/>
 					</element>
 				</elements>
 				<properties>
