@@ -7,7 +7,6 @@
 #import "../NiceWindow/NiceWindow.h"
 
 @interface OverlaysControl : NSObject {
-	id windows;
 }
 
 +(id)control;

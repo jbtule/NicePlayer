@@ -28,11 +28,11 @@
 													 name:@"unPresentMultiple"
 												   object:nil];
         
-		timeUpdaterTimer = [[NSTimer scheduledTimerWithTimeInterval:1
+		timeUpdaterTimer = [NSTimer scheduledTimerWithTimeInterval:1
 															 target:self
 														   selector:@selector(updateByTime:)
 														   userInfo:nil
-															repeats:YES] retain];
+															repeats:YES];
 		[self setBackgroundColor:[NSColor blackColor]];
 		[self setOpaque:YES];
 		[self useOptimizedDrawing:YES];
@@ -79,6 +79,8 @@
     [timeUpdaterTimer invalidate];
 	[theMovieView close];
 	[super close];
+	[[self windowController] release];
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark Overriden Methods
@@ -281,7 +283,7 @@
 
 -(void)showOverLayWindow
 {
-	if(windowOverlayIsShowing == YES)
+	if((windowOverlayIsShowing) && !(isInitialDisplay))
 		return;
 
 	[self setOverlayWindowLocation];
@@ -334,7 +336,7 @@
 }
 -(void)showOverLayTitle
 {
-	if(titleOverlayIsShowing == YES)
+	if((titleOverlayIsShowing) && !(isInitialDisplay))
 		return;
 	[self setOverlayTitleLocation];
 	[[FadeOut fadeOut] removeWindow:theOverlayTitleBar];

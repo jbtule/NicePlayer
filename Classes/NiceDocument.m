@@ -384,7 +384,7 @@ int movieMenuLocationIndex = -1;
 -(void)playAtIndex:(unsigned int)anIndex
 {
     id tempURL = [thePlaylist objectAtIndex:anIndex];
-	[theMovieView close];
+	[theMovieView closeReopen];
 	[self loadURL:tempURL firstTime:NO];
     [thePlaylistTable reloadData];
     [theMovieView start];

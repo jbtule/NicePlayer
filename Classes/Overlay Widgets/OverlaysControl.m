@@ -29,16 +29,9 @@ static id overlayControl = nil;
 		return overlayControl;
 	
 	if(self = [super init]){
-		windows = [[NSMutableSet set] retain];
-
 	}
 	
 	return self;
-}
-
--(void)dealloc
-{
-	[windows release];
 }
 
 -(BOOL)isLocation:(NSPoint)aScreenPoint inWindow:(id)aWindow

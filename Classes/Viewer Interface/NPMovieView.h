@@ -17,6 +17,7 @@
 
 -(BOOL)openURL:(NSURL *)url;
 -(void)loadMovie;
+-(void)closeReopen;
 
 -(void)mouseDoubleClick:(NSEvent *)anEvent;
 

@@ -32,7 +32,7 @@ id controller;
     lastMouseLocation = NSMakePoint(0,0);
     fullScreenMode =  NO;
     showingMenubar = NO;
-    mouseMoveTimer = [[NSTimer scheduledTimerWithTimeInterval:.2 target:self selector:@selector(checkMouseLocation:) userInfo:nil repeats:YES] retain]; // Auto-hides mouse.
+    mouseMoveTimer = [NSTimer scheduledTimerWithTimeInterval:.2 target:self selector:@selector(checkMouseLocation:) userInfo:nil repeats:YES]; // Auto-hides mouse.
     lastCursorMoveDate = [[NSDate alloc] init];
     backgroundWindow = [[BlackWindow alloc] init];
     backgroundWindows = nil;
@@ -46,7 +46,6 @@ id controller;
 
 -(void)dealloc{
     [mouseMoveTimer invalidate];
-    [mouseMoveTimer release];
     [lastCursorMoveDate release];
     [backgroundWindows release];
     [super dealloc];

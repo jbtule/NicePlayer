@@ -43,15 +43,24 @@
 	[trueMovieView registerForDraggedTypes:[(NiceWindow *)[self window] acceptableDragTypes]];
 }
 
--(void)close
+-(void)closeReopen
 {
 	NSRect subview = NSMakeRect(0, 0, [self frame].size.width, [self frame].size.height);
-	[trueMovieView close];
-	[trueMovieView removeFromSuperview];
-	[trueMovieView release];
+	[self close];
 	trueMovieView = [[JTMovieView alloc] initWithFrame:subview];
+	[trueMovieView registerForDraggedTypes:[(NiceWindow *)[self window] acceptableDragTypes]];
 	[self addSubview:trueMovieView];
 	[self finalProxyViewLoad];
+}
+
+-(void)close
+{
+	[trueMovieView close];
+	[trueMovieView removeFromSuperview];
+	[trueMovieView unregisterDraggedTypes];
+	[[NSNotificationCenter defaultCenter] removeObserver:trueMovieView];
+	[trueMovieView release];
+	[self unregisterDraggedTypes];
 }
 
 -(BOOL)openURL:(NSURL *)url
