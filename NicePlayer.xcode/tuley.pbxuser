@@ -166,7 +166,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {820, 8889}}";
 			sepNavSelRange = "{1716, 0}";
-			sepNavVisRect = "{{0, 0}, {820, 581}}";
+			sepNavVisRect = "{{0, 7}, {820, 581}}";
 			sepNavWindowFrame = "{{498, 230}, {750, 502}}";
 		};
 	};
@@ -233,7 +233,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {820, 601}}";
 			sepNavSelRange = "{0, 0}";
-			sepNavVisRect = "{{0, 7}, {820, 581}}";
+			sepNavVisRect = "{{0, 0}, {820, 581}}";
 		};
 	};
 	25E1090F076CF11100042500 = {
@@ -1453,6 +1453,26 @@
 			3EF1609707C86AB300AE56D7 = 3EF1609707C86AB300AE56D7;
 			3EF1609A07C86B0200AE56D7 = 3EF1609A07C86B0200AE56D7;
 			3EF1609B07C86B4400AE56D7 = 3EF1609B07C86B4400AE56D7;
+			3EF1609C07C86F0700AE56D7 = 3EF1609C07C86F0700AE56D7;
+			3EF1609D07C86F0700AE56D7 = 3EF1609D07C86F0700AE56D7;
+			3EF1609E07C86F0700AE56D7 = 3EF1609E07C86F0700AE56D7;
+			3EF1609F07C86F0700AE56D7 = 3EF1609F07C86F0700AE56D7;
+			3EF160A207C86F5700AE56D7 = 3EF160A207C86F5700AE56D7;
+			3EF160A307C86F5700AE56D7 = 3EF160A307C86F5700AE56D7;
+			3EF160A407C86F5700AE56D7 = 3EF160A407C86F5700AE56D7;
+			3EF160A507C86F5700AE56D7 = 3EF160A507C86F5700AE56D7;
+			3EF160A607C86F5700AE56D7 = 3EF160A607C86F5700AE56D7;
+			3EF160A707C86F5700AE56D7 = 3EF160A707C86F5700AE56D7;
+			3EF160A807C86F5700AE56D7 = 3EF160A807C86F5700AE56D7;
+			3EF160A907C86F5700AE56D7 = 3EF160A907C86F5700AE56D7;
+			3EF160AA07C86F5700AE56D7 = 3EF160AA07C86F5700AE56D7;
+			3EF160AB07C86F5700AE56D7 = 3EF160AB07C86F5700AE56D7;
+			3EF160AC07C86F5700AE56D7 = 3EF160AC07C86F5700AE56D7;
+			3EF160AD07C86F5700AE56D7 = 3EF160AD07C86F5700AE56D7;
+			3EF160AE07C86F5700AE56D7 = 3EF160AE07C86F5700AE56D7;
+			3EF160AF07C86FA500AE56D7 = 3EF160AF07C86FA500AE56D7;
+			3EF160B007C8700900AE56D7 = 3EF160B007C8700900AE56D7;
+			3EF160B107C8700F00AE56D7 = 3EF160B107C8700F00AE56D7;
 		};
 		sourceControlManager = 3EEDF63F065B3C5A00E3545C;
 		userBuildSettings = {
@@ -1461,8 +1481,8 @@
 	2A37F4ACFDCFA73011CA2CEA = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {820, 8497}}";
-			sepNavSelRange = "{11708, 41}";
-			sepNavVisRect = "{{0, 5953}, {820, 581}}";
+			sepNavSelRange = "{8387, 6}";
+			sepNavVisRect = "{{0, 3749}, {820, 581}}";
 			sepNavWindowFrame = "{{544, 188}, {750, 502}}";
 		};
 	};
@@ -3751,9 +3771,9 @@
 	};
 	3EF158C807C7F9CA00AE56D7 = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {820, 951}}";
-			sepNavSelRange = "{889, 0}";
-			sepNavVisRect = "{{0, 357}, {820, 581}}";
+			sepNavIntBoundsRect = "{{0, 0}, {820, 1063}}";
+			sepNavSelRange = "{839, 0}";
+			sepNavVisRect = "{{0, 196}, {820, 581}}";
 			sepNavWindowFrame = "{{110, 102}, {750, 502}}";
 		};
 	};
@@ -4492,7 +4512,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceMovie.m: 50";
 		rLen = 0;
-		rLoc = 1091;
+		rLoc = 1178;
 		rType = 0;
 		vrLen = 967;
 		vrLoc = 279;
@@ -4502,7 +4522,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceMovie.m: 46";
 		rLen = 0;
-		rLoc = 971;
+		rLoc = 1058;
 		rType = 0;
 		vrLen = 966;
 		vrLoc = 279;
@@ -4535,7 +4555,7 @@
 		isa = PBXTextBookmark;
 		name = objectSpecifier;
 		rLen = 15;
-		rLoc = 1033;
+		rLoc = 1120;
 		rType = 0;
 		vrLen = 964;
 		vrLoc = 279;
@@ -4555,7 +4575,7 @@
 		isa = PBXTextBookmark;
 		name = objectSpecifier;
 		rLen = 15;
-		rLoc = 1033;
+		rLoc = 1120;
 		rType = 0;
 		vrLen = 966;
 		vrLoc = 277;
@@ -4565,7 +4585,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceMovie.m: 51";
 		rLen = 0;
-		rLoc = 1251;
+		rLoc = 1338;
 		rType = 0;
 		vrLen = 966;
 		vrLoc = 277;
@@ -4575,7 +4595,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceMovie.m: 49";
 		rLen = 0;
-		rLoc = 1032;
+		rLoc = 1119;
 		rType = 0;
 		vrLen = 916;
 		vrLoc = 277;
@@ -4585,7 +4605,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceMovie.m: 49";
 		rLen = 0;
-		rLoc = 1032;
+		rLoc = 1119;
 		rType = 0;
 		vrLen = 916;
 		vrLoc = 277;
@@ -4595,7 +4615,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceMovie.m: 49";
 		rLen = 0;
-		rLoc = 1032;
+		rLoc = 1119;
 		rType = 0;
 		vrLen = 916;
 		vrLoc = 277;
@@ -4605,7 +4625,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceMovie.m: 46";
 		rLen = 0;
-		rLoc = 754;
+		rLoc = 843;
 		rType = 0;
 		vrLen = 943;
 		vrLoc = 277;
@@ -4615,7 +4635,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceMovie.m: 46";
 		rLen = 0;
-		rLoc = 754;
+		rLoc = 843;
 		rType = 0;
 		vrLen = 943;
 		vrLoc = 277;
@@ -4625,7 +4645,7 @@
 		isa = PBXTextBookmark;
 		name = NSIndexSpecifier;
 		rLen = 6;
-		rLoc = 965;
+		rLoc = 1052;
 		rType = 0;
 		vrLen = 969;
 		vrLoc = 277;
@@ -4635,7 +4655,7 @@
 		isa = PBXTextBookmark;
 		name = indexOfObjectInFoobazi;
 		rLen = 0;
-		rLoc = 1251;
+		rLoc = 1338;
 		rType = 0;
 		vrLen = 974;
 		vrLoc = 277;
@@ -4645,7 +4665,7 @@
 		isa = PBXTextBookmark;
 		name = NiceMovie;
 		rLen = 0;
-		rLoc = 1091;
+		rLoc = 1178;
 		rType = 0;
 		vrLen = 974;
 		vrLoc = 277;
@@ -4655,7 +4675,7 @@
 		isa = PBXTextBookmark;
 		name = NiceMovie;
 		rLen = 0;
-		rLoc = 1091;
+		rLoc = 1178;
 		rType = 0;
 		vrLen = 974;
 		vrLoc = 277;
@@ -4665,7 +4685,7 @@
 		isa = PBXTextBookmark;
 		name = NiceMovie;
 		rLen = 0;
-		rLoc = 1091;
+		rLoc = 1178;
 		rType = 0;
 		vrLen = 974;
 		vrLoc = 277;
@@ -4675,7 +4695,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceMovie.m: 50";
 		rLen = 0;
-		rLoc = 1097;
+		rLoc = 1184;
 		rType = 0;
 		vrLen = 968;
 		vrLoc = 277;
@@ -4685,7 +4705,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceMovie.m: 50";
 		rLen = 0;
-		rLoc = 1097;
+		rLoc = 1184;
 		rType = 0;
 		vrLen = 968;
 		vrLoc = 277;
@@ -4705,7 +4725,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceMovie.m: 56";
 		rLen = 0;
-		rLoc = 1251;
+		rLoc = 1338;
 		rType = 0;
 		vrLen = 955;
 		vrLoc = 401;
@@ -4715,7 +4735,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceMovie.m: 60";
 		rLen = 0;
-		rLoc = 1244;
+		rLoc = 1331;
 		rType = 0;
 		vrLen = 850;
 		vrLoc = 514;
@@ -4725,7 +4745,7 @@
 		isa = PBXTextBookmark;
 		name = "<#(NSScriptObjectSpecifier *)container#>";
 		rLen = 0;
-		rLoc = 1218;
+		rLoc = 1305;
 		rType = 0;
 		vrLen = 992;
 		vrLoc = 514;
@@ -4735,7 +4755,7 @@
 		isa = PBXTextBookmark;
 		name = "<#(NSScriptObjectSpecifier *)container#>";
 		rLen = 0;
-		rLoc = 1218;
+		rLoc = 1305;
 		rType = 0;
 		vrLen = 992;
 		vrLoc = 514;
@@ -4745,7 +4765,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceMovie.m: 60";
 		rLen = 0;
-		rLoc = 1244;
+		rLoc = 1331;
 		rType = 0;
 		vrLen = 935;
 		vrLoc = 514;
@@ -5083,7 +5103,7 @@
 		isa = PBXTextBookmark;
 		name = "g*)name{\n    return [[theURL path] lastPathComponent];\n}\n\n-(";
 		rLen = 56;
-		rLoc = 915;
+		rLoc = 1002;
 		rType = 0;
 		vrLen = 1041;
 		vrLoc = 432;
@@ -5230,7 +5250,7 @@
 		isa = PBXTextBookmark;
 		name = "g*)name{\n    return [[theURL path] lastPathComponent];\n}\n\n-(";
 		rLen = 56;
-		rLoc = 915;
+		rLoc = 1002;
 		rType = 0;
 		vrLen = 1041;
 		vrLoc = 432;
@@ -5474,7 +5494,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceMovie.m: 46";
 		rLen = 0;
-		rLoc = 1210;
+		rLoc = 1297;
 		rType = 0;
 		vrLen = 1006;
 		vrLoc = 328;
@@ -5514,7 +5534,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceMovie.m: 46";
 		rLen = 0;
-		rLoc = 1210;
+		rLoc = 1297;
 		rType = 0;
 		vrLen = 1012;
 		vrLoc = 37;
@@ -5534,7 +5554,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceMovie.m: 46";
 		rLen = 0;
-		rLoc = 1210;
+		rLoc = 1297;
 		rType = 0;
 		vrLen = 1006;
 		vrLoc = 328;
@@ -5624,7 +5644,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceMovie.m: 46";
 		rLen = 0;
-		rLoc = 1210;
+		rLoc = 1297;
 		rType = 0;
 		vrLen = 1011;
 		vrLoc = 328;
@@ -5644,7 +5664,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceMovie.m: 46";
 		rLen = 0;
-		rLoc = 1210;
+		rLoc = 1297;
 		rType = 0;
 		vrLen = 1011;
 		vrLoc = 328;
@@ -5654,7 +5674,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceMovie.m: 46";
 		rLen = 0;
-		rLoc = 1210;
+		rLoc = 1297;
 		rType = 0;
 		vrLen = 1011;
 		vrLoc = 328;
@@ -5664,7 +5684,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceMovie.m: 46";
 		rLen = 0;
-		rLoc = 1210;
+		rLoc = 1297;
 		rType = 0;
 		vrLen = 1011;
 		vrLoc = 328;
@@ -5674,7 +5694,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceMovie.m: 46";
 		rLen = 0;
-		rLoc = 1210;
+		rLoc = 1297;
 		rType = 0;
 		vrLen = 1011;
 		vrLoc = 328;
@@ -5684,7 +5704,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceMovie.m: 46";
 		rLen = 0;
-		rLoc = 1210;
+		rLoc = 1297;
 		rType = 0;
 		vrLen = 1011;
 		vrLoc = 328;
@@ -5724,7 +5744,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceMovie.m: 46";
 		rLen = 0;
-		rLoc = 1210;
+		rLoc = 1297;
 		rType = 0;
 		vrLen = 1011;
 		vrLoc = 328;
@@ -5734,7 +5754,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceMovie.m: 46";
 		rLen = 0;
-		rLoc = 1210;
+		rLoc = 1297;
 		rType = 0;
 		vrLen = 1011;
 		vrLoc = 328;
@@ -5774,7 +5794,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceMovie.m: 46";
 		rLen = 0;
-		rLoc = 1210;
+		rLoc = 1297;
 		rType = 0;
 		vrLen = 1011;
 		vrLoc = 328;
@@ -5804,7 +5824,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceMovie.m: 46";
 		rLen = 0;
-		rLoc = 1210;
+		rLoc = 1297;
 		rType = 0;
 		vrLen = 1011;
 		vrLoc = 328;
@@ -5894,7 +5914,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceMovie.m: 48";
 		rLen = 0;
-		rLoc = 1363;
+		rLoc = 1450;
 		rType = 0;
 		vrLen = 1160;
 		vrLoc = 162;
@@ -5904,7 +5924,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceMovie.m: 48";
 		rLen = 0;
-		rLoc = 1365;
+		rLoc = 1452;
 		rType = 0;
 		vrLen = 1160;
 		vrLoc = 162;
@@ -5914,7 +5934,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceMovie.m: 48";
 		rLen = 0;
-		rLoc = 1365;
+		rLoc = 1452;
 		rType = 0;
 		vrLen = 1160;
 		vrLoc = 162;
@@ -5924,7 +5944,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceMovie.m: 48";
 		rLen = 0;
-		rLoc = 1365;
+		rLoc = 1452;
 		rType = 0;
 		vrLen = 955;
 		vrLoc = 385;
@@ -5974,7 +5994,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceMovie.m: 48";
 		rLen = 0;
-		rLoc = 1365;
+		rLoc = 1452;
 		rType = 0;
 		vrLen = 955;
 		vrLoc = 385;
@@ -6084,7 +6104,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceMovie.m: 38";
 		rLen = 0;
-		rLoc = 904;
+		rLoc = 991;
 		rType = 0;
 		vrLen = 933;
 		vrLoc = 447;
@@ -6114,7 +6134,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceMovie.m: description";
 		rLen = 0;
-		rLoc = 906;
+		rLoc = 993;
 		rType = 0;
 		vrLen = 1026;
 		vrLoc = 328;
@@ -6144,7 +6164,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceMovie.m: 38";
 		rLen = 0;
-		rLoc = 904;
+		rLoc = 991;
 		rType = 0;
 		vrLen = 933;
 		vrLoc = 447;
@@ -6194,7 +6214,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceMovie.m: 43";
 		rLen = 0;
-		rLoc = 903;
+		rLoc = 990;
 		rType = 0;
 		vrLen = 949;
 		vrLoc = 539;
@@ -6204,7 +6224,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceMovie.m: 43";
 		rLen = 0;
-		rLoc = 903;
+		rLoc = 990;
 		rType = 0;
 		vrLen = 1023;
 		vrLoc = 447;
@@ -6224,7 +6244,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceMovie.m: 43";
 		rLen = 0;
-		rLoc = 903;
+		rLoc = 990;
 		rType = 0;
 		vrLen = 1023;
 		vrLoc = 447;
@@ -6263,8 +6283,8 @@
 		fRef = 3EF158C807C7F9CA00AE56D7;
 		isa = PBXTextBookmark;
 		name = "[";
-		rLen = 18;
-		rLoc = 717;
+		rLen = 8;
+		rLoc = 816;
 		rType = 0;
 		vrLen = 949;
 		vrLoc = 539;
@@ -6294,7 +6314,7 @@
 		isa = PBXTextBookmark;
 		name = "handlePlayCommand:";
 		rLen = 18;
-		rLoc = 800;
+		rLoc = 889;
 		rType = 0;
 		vrLen = 981;
 		vrLoc = 541;
@@ -6304,7 +6324,7 @@
 		isa = PBXTextBookmark;
 		name = "handlePlayCommand:";
 		rLen = 18;
-		rLoc = 800;
+		rLoc = 889;
 		rType = 0;
 		vrLen = 981;
 		vrLoc = 541;
@@ -6314,7 +6334,7 @@
 		isa = PBXTextBookmark;
 		name = "handlePlayCommand:";
 		rLen = 18;
-		rLoc = 800;
+		rLoc = 889;
 		rType = 0;
 		vrLen = 981;
 		vrLoc = 541;
@@ -6324,7 +6344,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceMovie.m: 43";
 		rLen = 0;
-		rLoc = 889;
+		rLoc = 987;
 		rType = 0;
 		vrLen = 994;
 		vrLoc = 541;
@@ -6334,7 +6354,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceMovie.m: 43";
 		rLen = 0;
-		rLoc = 889;
+		rLoc = 987;
 		rType = 0;
 		vrLen = 994;
 		vrLoc = 541;
@@ -6344,7 +6364,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceMovie.m: 43";
 		rLen = 0;
-		rLoc = 889;
+		rLoc = 987;
 		rType = 0;
 		vrLen = 994;
 		vrLoc = 541;
@@ -6354,7 +6374,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceMovie.m: 43";
 		rLen = 0;
-		rLoc = 889;
+		rLoc = 987;
 		rType = 0;
 		vrLen = 994;
 		vrLoc = 541;
@@ -6374,7 +6394,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceMovie.m: 43";
 		rLen = 0;
-		rLoc = 889;
+		rLoc = 987;
 		rType = 0;
 		vrLen = 994;
 		vrLoc = 541;
@@ -6695,7 +6715,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceMovie.m: 43";
 		rLen = 0;
-		rLoc = 889;
+		rLoc = 987;
 		rType = 0;
 		vrLen = 996;
 		vrLoc = 539;
@@ -6725,7 +6745,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceMovie.m: 43";
 		rLen = 0;
-		rLoc = 889;
+		rLoc = 987;
 		rType = 0;
 		vrLen = 996;
 		vrLoc = 539;
@@ -6735,7 +6755,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceMovie.m: 43";
 		rLen = 0;
-		rLoc = 889;
+		rLoc = 987;
 		rType = 0;
 		vrLen = 994;
 		vrLoc = 541;
@@ -6765,7 +6785,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceMovie.m: 43";
 		rLen = 0;
-		rLoc = 889;
+		rLoc = 987;
 		rType = 0;
 		vrLen = 994;
 		vrLoc = 541;
@@ -7065,7 +7085,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceMovie.m: 43";
 		rLen = 0;
-		rLoc = 889;
+		rLoc = 987;
 		rType = 0;
 		vrLen = 996;
 		vrLoc = 539;
@@ -7115,7 +7135,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceMovie.m: 43";
 		rLen = 0;
-		rLoc = 889;
+		rLoc = 987;
 		rType = 0;
 		vrLen = 996;
 		vrLoc = 539;
@@ -8180,6 +8200,206 @@
 		rType = 0;
 		vrLen = 1162;
 		vrLoc = 637;
+	};
+	3EF1609C07C86F0700AE56D7 = {
+		fRef = 3EF15FD107C8553B00AE56D7;
+		isa = PBXTextBookmark;
+		name = "NPAddCommand.m: 42";
+		rLen = 0;
+		rLoc = 1168;
+		rType = 0;
+		vrLen = 1162;
+		vrLoc = 637;
+	};
+	3EF1609D07C86F0700AE56D7 = {
+		fRef = 3EF158C807C7F9CA00AE56D7;
+		isa = PBXTextBookmark;
+		name = "NiceMovie.m: 43";
+		rLen = 0;
+		rLoc = 987;
+		rType = 0;
+		vrLen = 996;
+		vrLoc = 539;
+	};
+	3EF1609E07C86F0700AE56D7 = {
+		fRef = 3EF15FD107C8553B00AE56D7;
+		isa = PBXTextBookmark;
+		name = "NPAddCommand.m: 42";
+		rLen = 0;
+		rLoc = 1168;
+		rType = 0;
+		vrLen = 1162;
+		vrLoc = 637;
+	};
+	3EF1609F07C86F0700AE56D7 = {
+		fRef = 3EF158C807C7F9CA00AE56D7;
+		isa = PBXTextBookmark;
+		name = "NiceMovie.m: 38";
+		rLen = 0;
+		rLoc = 771;
+		rType = 0;
+		vrLen = 762;
+		vrLoc = 485;
+	};
+	3EF160A207C86F5700AE56D7 = {
+		fRef = 25D2ED0B07BF6066004BEF7D;
+		isa = PBXTextBookmark;
+		name = "NiceControllerScripting.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 820;
+		vrLoc = 0;
+	};
+	3EF160A307C86F5700AE56D7 = {
+		fRef = 257D61670753F92D00702BD0;
+		isa = PBXTextBookmark;
+		name = "NPMovieView.m: 58";
+		rLen = 0;
+		rLoc = 1716;
+		rType = 0;
+		vrLen = 1296;
+		vrLoc = 0;
+	};
+	3EF160A407C86F5700AE56D7 = {
+		fRef = 2A37F4ACFDCFA73011CA2CEA;
+		isa = PBXTextBookmark;
+		name = window;
+		rLen = 6;
+		rLoc = 8387;
+		rType = 0;
+		vrLen = 1230;
+		vrLoc = 7555;
+	};
+	3EF160A507C86F5700AE56D7 = {
+		fRef = 25D2E7C207BF3758004BEF7D;
+		isa = PBXTextBookmark;
+		name = "indexForMovie:(NiceMovie*)aMovie";
+		rLen = 32;
+		rLoc = 484;
+		rType = 0;
+		vrLen = 708;
+		vrLoc = 147;
+	};
+	3EF160A607C86F5700AE56D7 = {
+		fRef = 3EF158C807C7F9CA00AE56D7;
+		isa = PBXTextBookmark;
+		name = window;
+		rLen = 6;
+		rLoc = 763;
+		rType = 0;
+		vrLen = 762;
+		vrLoc = 485;
+	};
+	3EF160A707C86F5700AE56D7 = {
+		fRef = 3EF158C807C7F9CA00AE56D7;
+		isa = PBXTextBookmark;
+		name = window;
+		rLen = 6;
+		rLoc = 763;
+		rType = 0;
+		vrLen = 762;
+		vrLoc = 485;
+	};
+	3EF160A807C86F5700AE56D7 = {
+		fRef = 25D2E7C207BF3758004BEF7D;
+		isa = PBXTextBookmark;
+		name = "indexForMovie:(NiceMovie*)aMovie";
+		rLen = 32;
+		rLoc = 484;
+		rType = 0;
+		vrLen = 708;
+		vrLoc = 147;
+	};
+	3EF160A907C86F5700AE56D7 = {
+		fRef = 25D2ED0B07BF6066004BEF7D;
+		isa = PBXTextBookmark;
+		name = "NiceControllerScripting.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 820;
+		vrLoc = 0;
+	};
+	3EF160AA07C86F5700AE56D7 = {
+		fRef = 25D2E7C207BF3758004BEF7D;
+		isa = PBXTextBookmark;
+		name = "indexForMovie:(NiceMovie*)aMovie";
+		rLen = 32;
+		rLoc = 484;
+		rType = 0;
+		vrLen = 708;
+		vrLoc = 147;
+	};
+	3EF160AB07C86F5700AE56D7 = {
+		fRef = 257D61670753F92D00702BD0;
+		isa = PBXTextBookmark;
+		name = "NPMovieView.m: 58";
+		rLen = 0;
+		rLoc = 1716;
+		rType = 0;
+		vrLen = 1296;
+		vrLoc = 0;
+	};
+	3EF160AC07C86F5700AE56D7 = {
+		fRef = 2A37F4ACFDCFA73011CA2CEA;
+		isa = PBXTextBookmark;
+		name = window;
+		rLen = 6;
+		rLoc = 8387;
+		rType = 0;
+		vrLen = 1230;
+		vrLoc = 7555;
+	};
+	3EF160AD07C86F5700AE56D7 = {
+		fRef = 25D2E7C207BF3758004BEF7D;
+		isa = PBXTextBookmark;
+		name = "indexForMovie:(NiceMovie*)aMovie";
+		rLen = 32;
+		rLoc = 484;
+		rType = 0;
+		vrLen = 708;
+		vrLoc = 147;
+	};
+	3EF160AE07C86F5700AE56D7 = {
+		fRef = 3EF158C807C7F9CA00AE56D7;
+		isa = PBXTextBookmark;
+		name = "NiceMovie.m: 43";
+		rLen = 0;
+		rLoc = 839;
+		rType = 0;
+		vrLen = 760;
+		vrLoc = 325;
+	};
+	3EF160AF07C86FA500AE56D7 = {
+		fRef = 3EF158C807C7F9CA00AE56D7;
+		isa = PBXTextBookmark;
+		name = "NiceMovie.m: 43";
+		rLen = 0;
+		rLoc = 839;
+		rType = 0;
+		vrLen = 760;
+		vrLoc = 325;
+	};
+	3EF160B007C8700900AE56D7 = {
+		fRef = 3EF158C807C7F9CA00AE56D7;
+		isa = PBXTextBookmark;
+		name = "NiceMovie.m: 43";
+		rLen = 0;
+		rLoc = 839;
+		rType = 0;
+		vrLen = 760;
+		vrLoc = 325;
+	};
+	3EF160B107C8700F00AE56D7 = {
+		fRef = 3EF158C807C7F9CA00AE56D7;
+		isa = PBXTextBookmark;
+		name = "NiceMovie.m: 43";
+		rLen = 0;
+		rLoc = 839;
+		rType = 0;
+		vrLen = 760;
+		vrLoc = 325;
 	};
 	8D15AC270486D014006FF6A4 = {
 		activeExec = 0;

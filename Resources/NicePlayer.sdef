@@ -106,6 +106,12 @@
 					<property name="path" code="ppth" description="the files applscript path" type="string" access="r">
 						<cocoa method="applescriptPath"/>
 					</property>
+					<property name="window" code="cwin" type="window">
+						<cocoa method="window"/>
+					</property>
+					<property name="playlist" code="NPpl" type="playlist">
+						<cocoa method="playlist"/>
+					</property>
 				</properties>
 				<responds-to-commands>
 					<responds-to name="play">

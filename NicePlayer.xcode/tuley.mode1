@@ -311,13 +311,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>68</integer>
+									<integer>72</integer>
 									<integer>66</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 969}, {305, 844}}</string>
+							<string>{{0, 901}, {305, 844}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -334,7 +334,7 @@
 							<real>283</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>872 114 1195 904 0 0 1920 1178 </string>
+						<string>569 136 1195 904 0 0 1920 1178 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -350,7 +350,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>NPAddCommand.m</string>
+								<string>NiceMovie.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -358,9 +358,9 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>NPAddCommand.m</string>
+										<string>NiceMovie.m</string>
 										<key>bookmark</key>
-										<string>3EF1609B07C86B4400AE56D7</string>
+										<string>3EF160B107C8700F00AE56D7</string>
 										<key>history</key>
 										<array>
 											<string>3EB6437D07072092007BACF7</string>
@@ -445,7 +445,6 @@
 											<string>3EF158CF07C7FD0200AE56D7</string>
 											<string>3EF15EF107C8368000AE56D7</string>
 											<string>3EF15F0B07C83CB100AE56D7</string>
-											<string>3EF15F0C07C83CB100AE56D7</string>
 											<string>3EF15F3B07C8414F00AE56D7</string>
 											<string>3EF15F4107C8414F00AE56D7</string>
 											<string>3EF15F6C07C844B500AE56D7</string>
@@ -457,8 +456,6 @@
 											<string>3EF15FA807C84F2700AE56D7</string>
 											<string>3EF15FBC07C8514900AE56D7</string>
 											<string>3EF1600A07C8594900AE56D7</string>
-											<string>3EF1601207C85B0800AE56D7</string>
-											<string>3EF1601907C85C4E00AE56D7</string>
 											<string>3EF1602707C85D2E00AE56D7</string>
 											<string>3EF1603507C85F5E00AE56D7</string>
 											<string>3EF1603B07C85F9300AE56D7</string>
@@ -467,11 +464,14 @@
 											<string>3EF1603E07C85F9300AE56D7</string>
 											<string>3EF1604A07C8615900AE56D7</string>
 											<string>3EF1605007C861C400AE56D7</string>
-											<string>3EF1608707C8697100AE56D7</string>
-											<string>3EF1608807C8697100AE56D7</string>
 											<string>3EF1609107C86AA200AE56D7</string>
 											<string>3EF1609207C86AA200AE56D7</string>
-											<string>3EF1609307C86AA200AE56D7</string>
+											<string>3EF1609C07C86F0700AE56D7</string>
+											<string>3EF160A207C86F5700AE56D7</string>
+											<string>3EF160A307C86F5700AE56D7</string>
+											<string>3EF160A407C86F5700AE56D7</string>
+											<string>3EF160A507C86F5700AE56D7</string>
+											<string>3EF160A607C86F5700AE56D7</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -695,6 +695,14 @@
 											<string>3EF1608C07C8697100AE56D7</string>
 											<string>3EF1609407C86AA200AE56D7</string>
 											<string>3EF1609507C86AA200AE56D7</string>
+											<string>3EF1609E07C86F0700AE56D7</string>
+											<string>3EF160A707C86F5700AE56D7</string>
+											<string>3EF160A807C86F5700AE56D7</string>
+											<string>3EF160A907C86F5700AE56D7</string>
+											<string>3EF160AA07C86F5700AE56D7</string>
+											<string>3EF160AB07C86F5700AE56D7</string>
+											<string>3EF160AC07C86F5700AE56D7</string>
+											<string>3EF160AD07C86F5700AE56D7</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -708,7 +716,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {867, 598}}</string>
 								<key>RubberWindowFrame</key>
-								<string>872 114 1195 904 0 0 1920 1178 </string>
+								<string>569 136 1195 904 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -728,7 +736,7 @@
 								<key>Frame</key>
 								<string>{{0, 605}, {867, 257}}</string>
 								<key>RubberWindowFrame</key>
-								<string>872 114 1195 904 0 0 1920 1178 </string>
+								<string>569 136 1195 904 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -767,7 +775,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>130575172.70441368</real>
+	<real>130576399.94076526</real>
 	<key>ToolbarDisplayMode</key>
 	<integer>1</integer>
 	<key>ToolbarIsVisible</key>
@@ -782,6 +790,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>3E4F63BE074F30D6009EF3E7</string>
 		<string>3EF1607407C8667C00AE56D7</string>
 		<string>1CD10A99069EF8BA00B06720</string>
@@ -791,11 +800,11 @@
 		<string>3EF15F6A07C841D800AE56D7</string>
 		<string>3EF1603907C85F5E00AE56D7</string>
 		<string>3EF15EEC07C8360300AE56D7</string>
-		<string>1C0AD2B3069F1EA900FABCE6</string>
 		<string>/Users/tuley/Documents/Projects/NicePlayer Project/NicePlayer/NicePlayer.xcode</string>
+		<string>1C0AD2B3069F1EA900FABCE6</string>
 	</array>
 	<key>WindowString</key>
-	<string>872 114 1195 904 0 0 1920 1178 </string>
+	<string>569 136 1195 904 0 0 1920 1178 </string>
 	<key>WindowTools</key>
 	<array>
 		<dict>
@@ -1051,6 +1060,8 @@
 							<string>170pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -1086,8 +1097,8 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C530D57069F1CE1000CFCEE</string>
-				<string>3EF55BEE07C6C08D00DA564C</string>
-				<string>3EF55BEF07C6C08D00DA564C</string>
+				<string>3EF160A007C86F0D00AE56D7</string>
+				<string>3EF160A107C86F0D00AE56D7</string>
 				<string>1CDD528C0622207200134675</string>
 				<string>1CD0528E0623707200166675</string>
 			</array>
