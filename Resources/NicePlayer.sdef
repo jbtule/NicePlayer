@@ -72,6 +72,12 @@
 					<responds-to name="increase volume">
 						<cocoa method="handleIncrementVolumeCommand:"/>
 					</responds-to>
+					<responds-to name="skip forward">
+						<cocoa method="handleSkipForwardCommand:"/>
+					</responds-to>
+					<responds-to name="skip backward">
+						<cocoa method="handleSkipBackwardCommand:"/>
+					</responds-to>
 				</responds-to-commands>
 			</class>
 			<class name="window" code="cwin" description="The NicePlayer window." plural="windows" inherits="NSCoreSuite.NSWindow">
@@ -150,6 +156,16 @@
 			</command>
 			<command name="increase volume" code="NIcevlin">
 				<direct-parameter type="playlist"/>
+			</command>
+			<command name="skip forward" code="NPskipff" description="Skips forwards default amount of time">
+				<parameter name="by" code="npby" type="number" optional="optional">
+					<cocoa key="by"/>
+				</parameter>
+			</command>
+			<command name="skip backward" code="NPskipbw" description="Skips backward default amount of time">
+				<parameter name="by" code="npby" description="amount in seconds" type="number" optional="optional">
+					<cocoa key="by"/>
+				</parameter>
 			</command>
 		</commands>
 	</suite>

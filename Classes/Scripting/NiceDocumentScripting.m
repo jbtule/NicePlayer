@@ -106,6 +106,27 @@
                                                   repeats:YES];
 }
 
+-(void)handleSkipForwardCommand:(id)sender{
+    NSDictionary *tEArgs = [sender evaluatedArguments];
+    NSNumber *amount =[tEArgs objectForKey:@"by"];
+    if(amount ==nil){
+        [theMovieView ffDo];
+    }else{
+        [theMovieView ffDo:[amount intValue]];
+    }
+}
+
+-(void)handleSkipBackwardCommand:(id)sender{
+    NSDictionary *tEArgs = [sender evaluatedArguments];
+    NSNumber *amount =[tEArgs objectForKey:@"by"];
+    if(amount ==nil){
+        [theMovieView rrDo];
+    }else{
+        [theMovieView rrDo:[amount intValue]];
+    }
+}
+
+
 -(void)handleFFStartCommand:(id)sender
 {
     [self stopExistingTimer];

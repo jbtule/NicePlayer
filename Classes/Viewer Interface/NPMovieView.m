@@ -163,10 +163,13 @@
 
 -(void)ffDo
 {
-    [((NiceWindow *)[self window]) showOverLayWindow];
-	[trueMovieView ffDo:[[Preferences mainPrefs] ffSpeed]];
-    [((NiceWindow *)[self window]) updateByTime:nil];
+    [self ffDo:[[Preferences mainPrefs] ffSpeed]];
+}
 
+-(void)ffDo:(int)aSeconds{
+    [((NiceWindow *)[self window]) showOverLayWindow];
+    [trueMovieView ffDo:aSeconds];
+    [((NiceWindow *)[self window]) updateByTime:nil];
 }
 
 -(void)ffEnd
@@ -188,10 +191,13 @@
 
 -(void)rrDo
 {
-    [((NiceWindow *)[self window]) showOverLayWindow];
-	[trueMovieView rrDo:[[Preferences mainPrefs] rrSpeed]];
-    [((NiceWindow *)[self window]) updateByTime:nil];
+	[self rrDo:[[Preferences mainPrefs] rrSpeed]];
+}
 
+-(void)rrDo:(int)aSeconds{
+    [((NiceWindow *)[self window]) showOverLayWindow];
+    [trueMovieView rrDo:aSeconds];
+    [((NiceWindow *)[self window]) updateByTime:nil];
 }
 
 -(void)rrEnd
