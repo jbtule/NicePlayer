@@ -12,15 +12,7 @@ id rowsToFileNames(id obj, void* playList){
     return [[(id)playList objectAtIndex:[obj intValue]] path];
 }
 
-int movieMenuLocationIndex = -1;
-
 @implementation NiceDocument
-
-+(void)initialize
-{
-	if(movieMenuLocationIndex == -1)
-		movieMenuLocationIndex = [[NSApp mainMenu] indexOfItemWithTitle:@"Movie"];
-}
 
 - (id)init
 {
@@ -32,7 +24,7 @@ int movieMenuLocationIndex = -1;
         thePlaylist = [[NSMutableArray alloc] init];
         theRandomizePlayList = [[NSMutableArray alloc] init];
         theRepeatMode = [[Preferences mainPrefs] defaultRepeatMode];
-		movieMenuItem = [[NSApp mainMenu] itemWithTitle:@"Movie"];
+		movieMenuItem = nil;
     }
 	
     return self;
@@ -40,8 +32,8 @@ int movieMenuLocationIndex = -1;
 
 -(void)dealloc
 {
-	if(movieMenuItem != nil && ([[NSApp mainMenu] indexOfItem:movieMenuItem] != -1))
-		[[NSApp mainMenu] removeItem:movieMenuItem];
+	if(movieMenuItem != nil && ([[self movieMenu] indexOfItem:movieMenuItem] != -1))
+		[[self movieMenu] removeItem:movieMenuItem];
 
     [theSubtitle release];
     [theCurrentURL release];
@@ -225,21 +217,30 @@ int movieMenuLocationIndex = -1;
     }
 }
 
--(id)subTitle{
+-(id)subTitle
+{
     return theSubtitle;
+}
+
+-(NSMenu *)movieMenu
+{
+	return [[[NSApp mainMenu] itemWithTitle:@"Movie"] submenu];
 }
 
 -(void)rebuildMenu
 {
 	unsigned i;
-	if(movieMenuItem != nil && ([[NSApp mainMenu] indexOfItem:movieMenuItem] != -1))
-		[[NSApp mainMenu] removeItem:movieMenuItem];
+	
+	if(movieMenuItem != nil && ([[self movieMenu] indexOfItem:movieMenuItem] != -1))
+		[[self movieMenu] removeItem:movieMenuItem];
 	
 	id mSubMenu = [[NSMenu alloc] initWithTitle:[theMovieView menuTitle]];
-	id mSubMenuItem = [[NSMenuItem alloc] initWithTitle:[theMovieView menuTitle] action:nil keyEquivalent:@""];
+	id mSubMenuItem = [[NSMenuItem alloc] initWithTitle:[theMovieView menuTitle]
+												 action:nil
+										  keyEquivalent:@""];
 	movieMenuItem = mSubMenuItem;
 	[mSubMenuItem setSubmenu:mSubMenu];
-	[[NSApp mainMenu] insertItem:mSubMenuItem atIndex:movieMenuLocationIndex];
+	[[self movieMenu] insertItem:mSubMenuItem atIndex:[[self movieMenu] numberOfItems]];
 	while([mSubMenu numberOfItems] > 0)
 		[mSubMenu removeItemAtIndex:0];
 	

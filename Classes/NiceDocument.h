@@ -48,6 +48,7 @@
 -(NSString *)windowNibName;
 -(void)movieHasEnded;
 -(id)subTitle;
+-(NSMenu *)movieMenu;
 -(void)rebuildMenu;
 -(id)window;
 -(NSSize)calculateAspectRatio;
