@@ -5,7 +5,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import "../Viewer Interface/NPMovieView.h"
-#import "../NiceDocument.h"
+#import "NiceDocument.h"
 #import "../Preferences/Preferences.h"
 #import "../Overlay Widgets/OverlaysControl.h"
 #import "../NiceController.h"

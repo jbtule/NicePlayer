@@ -41,6 +41,12 @@
 					<property name="window" code="cwin" description="The window instance containing the movie." type="window" access="r">
 						<cocoa method="window"/>
 					</property>
+					<property name="muted" code="NPmd" description="If the sound is muted." type="boolean">
+						<cocoa method="muted"/>
+					</property>
+					<property name="volume" code="NPvm" description="The audio volume." type="boolean">
+						<cocoa method="volume"/>
+					</property>
 				</properties>
 				<responds-to-commands>
 					<responds-to name="play">
@@ -51,6 +57,27 @@
 					</responds-to>
 					<responds-to name="playpause">
 						<cocoa method="handlePlayPauseCommand:"/>
+					</responds-to>
+					<responds-to name="toggle mute">
+						<cocoa method="handleToggleMuteCommand:"/>
+					</responds-to>
+					<responds-to name="decrement volume">
+						<cocoa method="handleDecrementVolumeCommand:"/>
+					</responds-to>
+					<responds-to name="increment volume">
+						<cocoa method="handleIncrementVolumeCommand:"/>
+					</responds-to>
+					<responds-to name="start rewinding">
+						<cocoa method="handleRRStartCommand:"/>
+					</responds-to>
+					<responds-to name="stop rewinding">
+						<cocoa method="handleRRStopCommand:"/>
+					</responds-to>
+					<responds-to name="start fast forwarding">
+						<cocoa method="handleFFStartCommand:"/>
+					</responds-to>
+					<responds-to name="stop fast forwarding">
+						<cocoa method="handleFFStopCommand:"/>
 					</responds-to>
 				</responds-to-commands>
 			</class>
@@ -210,6 +237,13 @@
 			</command>
 			<command name="close" code="coreclos"/>
 			<command name="toggle playlist drawer" code="NIceTGDR"/>
+			<command name="toggle mute" code="NIcetgmt" description="Toggle whether sound is muted."/>
+			<command name="decrement volume" code="NIcevlde"/>
+			<command name="increment volume" code="NIcevlin"/>
+			<command name="stop rewinding" code="NIcerwsp"/>
+			<command name="start rewinding" code="NIcerwst"/>
+			<command name="start fast forwarding" code="NIceffst"/>
+			<command name="stop fast forwarding" code="NIceffsp"/>
 		</commands>
 	</suite>
 </dictionary>

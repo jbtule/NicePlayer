@@ -4,7 +4,7 @@
  */
 
 #import <Cocoa/Cocoa.h>
-
+#import "NPMovieView.h"
 
 @interface ControlButton : NSButton {
 	id actionView;

@@ -10,10 +10,8 @@
  */
 
 #import "NPMovieView.h"
-#import "NPPluginReader.h"
 #import "../Overlay Widgets/Control Buttons/ControlButton.h"
 #import "../Overlay Widgets/Control Buttons/ControlPlay.h"
-#import "Pluggable Players/NPMovieProtocol.h"
 @class JTMovieView;
 @class DVDPlayerView;
 @class NPPluginReader;
@@ -102,9 +100,7 @@
 
 -(void)precacheURL:(NSURL*)url{
     [trueMovieView precacheURL:url];
-
 }
-
 
 -(void)loadMovie
 {

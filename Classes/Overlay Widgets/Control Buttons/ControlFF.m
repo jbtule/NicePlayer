@@ -6,7 +6,6 @@
  */
 
 #import "ControlFF.h"
-#import "../../Viewer Interface/NPMovieView.h"
 
 @implementation ControlFF
 

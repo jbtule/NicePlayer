@@ -6,7 +6,6 @@
  */
 
 #import "ControlPlay.h"
-#import "../../Viewer Interface/NPMovieView.h"
 
 @implementation ControlPlay
 

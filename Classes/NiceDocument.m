@@ -28,6 +28,7 @@ int movieMenuLocationIndex = -1;
         hasRealMovie = NO;
         isRandom = NO;
         theSubtitle = nil;
+		asffrrTimer = nil;
         thePlaylist = [[NSMutableArray alloc] init];
         theRandomizePlayList = [[NSMutableArray alloc] init];
         theRepeatMode = [[Preferences mainPrefs] defaultRepeatMode];
@@ -387,6 +388,8 @@ int movieMenuLocationIndex = -1;
 	[self loadURL:tempURL firstTime:NO];
     [thePlaylistTable reloadData];
     [theMovieView start];
+	/* This precaching isn't going to work unless you run some sort of detection first
+		to make sure the next URL can be loaded by the existing plugin. */
    // [self preloadNext];
     
 }

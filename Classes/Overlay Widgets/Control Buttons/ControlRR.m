@@ -6,7 +6,6 @@
  */
 
 #import "ControlRR.h"
-#import "../../Viewer Interface/NPMovieView.h"
 
 @implementation ControlRR
 

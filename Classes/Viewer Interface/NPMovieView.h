@@ -5,7 +5,11 @@
 
 #import <Cocoa/Cocoa.h>
 #import "Pluggable Players/NPMovieProtocol.h"
-#import "../NiceWindow/NiceWindow.h"
+#import "NiceWindow.h"
+#import "ControlButton.h"
+#import "NPPluginReader.h"
+
+@class ControlPlay;
 
 @interface NPMovieView : NSView {
 	BOOL dragButton;
@@ -31,8 +35,13 @@
 -(void)rrDo;
 -(void)rrEnd;
 
+-(void)toggleMute;
+-(void)incrementVolume;
+-(void)decrementVolume;
 -(void)setVolume:(float)aVolume;
 -(float)volume;
+
+-(BOOL)isPlaying;
 
 -(void)finalProxyViewLoad;
 
@@ -43,6 +52,7 @@
 -(void)hideOverlayWithSelector:(NSString *)aStringSelector;
 
 -(id)myMenu;
+-(id)menuTitle;
 -(id)pluginMenu;
 -(id)contextualMenu;
 -(void)rebuildMenu;
@@ -53,8 +63,11 @@
 -(double)scrubLocation:(id)sender;
 -(NSSize)naturalSize;
 -(BOOL)hasEnded:(id)sender;
+-(BOOL)muted;
+-(void)setMuted:(BOOL)aBool;
 -(long)currentMovieTime;
 -(long)totalTime;
 -(void)drawMovieFrame;
+-(void)setLoopMode:(NSQTMovieLoopMode)flag;
 
 @end

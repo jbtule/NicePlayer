@@ -6,17 +6,17 @@
 #import <Cocoa/Cocoa.h>
 #import <Carbon/Carbon.h>
 #import <IndyKit/IndyFoundation.h>
+#import "Viewer Interface/NPMovieView.h"
 #import "NiceWindow/NiceWindow.h"
 #import "Preferences/Preferences.h"
 #import "Subtitle.h"
 
-
-
 @class NiceWindow;
+@class NPMovieView;
 
 @interface NiceDocument : NSDocument
 {
-    IBOutlet id theMovieView;
+    IBOutlet NPMovieView *theMovieView;
     id theSubtitle;
     IBOutlet id thePlaylistDrawer;
     IBOutlet id thePlaylistTable;
@@ -29,6 +29,8 @@
 	BOOL hasRealMovie;
 	BOOL isRandom;
 	id movieMenuItem;
+	
+	id asffrrTimer;
 }
 
 -(NSData *)dataRepresentationOfType:(NSString *)aType;
