@@ -16,10 +16,9 @@
 	[super finishLaunching];
 	lastPoint = [NSEvent mouseLocation];
 	inactiveTimer = nil;
-        
-        [NSApp checkForUpdates:nil];
-            
 	[self setDelegate:self];
+        
+	[NSApp checkForUpdates:nil];            
 }
 
 /**
@@ -165,6 +164,7 @@
 
 -(void)application:(NSApplication *)sender openFiles:(NSArray *)filenames
 {
+	NSLog(@"%@ open %@", sender, filenames);
     [[NiceController controller] openFiles:filenames];
 }
 

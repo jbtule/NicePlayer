@@ -79,11 +79,15 @@
 {
 	[timeUpdaterTimer invalidate];
 	[theMovieView close];
-	[initialFadeObjects release];
 	if(initialFadeTimer)
 		[initialFadeTimer invalidate];
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
 	[super close];
+}
+-(void)dealloc
+{
+	[initialFadeObjects release];
+	[super dealloc];
 }
 
 #pragma mark Overriden Methods

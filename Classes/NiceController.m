@@ -84,9 +84,14 @@ id controller;
 			continue;
 		}
         if(i==0){
-			if(([[self mainDocument] isKindOfClass:[NiceDocument class]]) && ![[self mainDocument] active])
-				tempDoc = [self mainDocument];
-			else
+			id docArray = [NSApp orderedDocuments];
+			if([docArray count] > 0){
+				id document = [docArray objectAtIndex:0];
+				if(([document isKindOfClass:[NiceDocument class]]) && ![document active])
+					tempDoc = document;
+				else
+					tempDoc = [self openDocumentWithContentsOfURL:tempURL display:YES];
+			} else
 				tempDoc = [self openDocumentWithContentsOfURL:tempURL display:YES];
 			[tempDoc loadURL:tempURL firstTime:YES];
 			

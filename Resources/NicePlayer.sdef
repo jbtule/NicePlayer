@@ -20,6 +20,14 @@
 					</property>
 					<property name="version" code="vers" description="The version of the application." type="string" access="r"/>
 				</properties>
+				<responds-to-commands>
+					<responds-to name="open">
+						<cocoa method="handleOpenScriptCommand:"/>
+					</responds-to>
+					<responds-to name="quit">
+						<cocoa method="handleQuitScriptCommand:"/>
+					</responds-to>
+				</responds-to-commands>
 			</class>
 			<class name="movie" code="NPdc" description="The NicePlayer currently playing movie." plural="movies">
 				<cocoa class="NiceDocument"/>
@@ -182,6 +190,8 @@
 					<cocoa key="Value"/>
 				</parameter>
 			</command>
+			<command name="open" code="aevtodoc" description="Open a movie."/>
+			<command name="quit" code="aevtquit" description="Quit the application."/>
 		</commands>
 	</suite>
 </dictionary>

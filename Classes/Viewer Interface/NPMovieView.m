@@ -59,8 +59,13 @@
 	[trueMovieView removeFromSuperview];
 	[trueMovieView unregisterDraggedTypes];
 	[[NSNotificationCenter defaultCenter] removeObserver:trueMovieView];
-	[trueMovieView release];
 	[self unregisterDraggedTypes];
+}
+
+-(void)dealloc
+{
+	[trueMovieView autorelease];
+	[super dealloc];
 }
 
 -(BOOL)openURL:(NSURL *)url
