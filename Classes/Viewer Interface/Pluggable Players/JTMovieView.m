@@ -122,11 +122,11 @@
 
 - (void)drawRect:(NSRect)aRect{
     if(!theFirstDraw){
-    [[NSGraphicsContext currentContext] saveGraphicsState];
-    [[NSColor blackColor] set];
-        NSRectFill(aRect);
-    [[NSGraphicsContext currentContext] restoreGraphicsState];
-    theFirstDraw=YES;
+		[[NSGraphicsContext currentContext] saveGraphicsState];
+		[[NSColor blackColor] set];
+		NSRectFill(aRect);
+		[[NSGraphicsContext currentContext] restoreGraphicsState];
+		theFirstDraw=YES;
     }
     [super drawRect:aRect];
 }
@@ -168,8 +168,6 @@
 -(void)start
 {
 	[super start:self];
-	theFirstDraw = YES;
-	[self setNeedsDisplay:YES];
 }
 
 -(void)stop

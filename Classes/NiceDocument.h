@@ -71,7 +71,7 @@
 -(IBAction)openPlaylistDrawer:(id)sender;
 -(IBAction)closePlaylistDrawer:(id)sender;
 -(IBAction)choosePlaylistItem:(id)sender;
--(void)playAtIndex:(unsigned int)anIndex;
+-(void)playAtIndex:(unsigned int)anIndex obeyingPreviousState:(BOOL)aBool;
 -(IBAction)addToPlaylist:(id)sender;
 -(void)addURLToPlaylist:(NSURL*)aURL;
 -(void)addURLToPlaylist:(NSURL*)aURL atIndex:(int)index;

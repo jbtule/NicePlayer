@@ -53,7 +53,7 @@
 -(void)handlePlayCommand:(id)sender{
     if([self playlist]  != nil){
         if(![[[self playlist] currentMovie] isEqualTo:self])
-            [[self playlist]  playAtIndex: [self index]-1];
+            [[self playlist]  playAtIndex:([self index] - 1) obeyingPreviousState:NO];
         [[self playlist] play:self];
     }
 }
@@ -61,7 +61,7 @@
 -(void)handlePauseCommand:(id)sender{
     if([self playlist]  != nil){
         if(![[[self playlist] currentMovie] isEqualTo:self])
-            [[self playlist]  playAtIndex: [self index]-1];
+            [[self playlist]  playAtIndex:([self index] - 1) obeyingPreviousState:NO];
         [[self playlist] pause:self];
     }
 }

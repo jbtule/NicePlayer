@@ -382,7 +382,7 @@ stuff won't work properly! */
     }
     
     if( (anIndex >= 0) && (anIndex < (int)[thePlaylist count])){
-        [self playAtIndex:anIndex];
+        [self playAtIndex:anIndex obeyingPreviousState:YES];
     }
 }
 
@@ -408,29 +408,27 @@ stuff won't work properly! */
     int anIndex =  [self getPrevIndex];
     
     if((anIndex >= 0) && (anIndex < (int)[thePlaylist count])){
-        [self playAtIndex:anIndex];
+        [self playAtIndex:anIndex obeyingPreviousState:YES];
     }
 }
 
 /**
 * Responsible for controlling what to do when a playlist item is changed.
  */
--(void)playAtIndex:(unsigned int)anIndex
+-(void)playAtIndex:(unsigned int)anIndex obeyingPreviousState:(BOOL)aBool
 {
-    
-    BOOL isPlaying=[theMovieView wasPlaying];
-    
     id tempURL = [thePlaylist objectAtIndex:anIndex];
     [theMovieView closeReopen];
     [self loadURL:tempURL firstTime:NO];
     [thePlaylistTable reloadData];
     
-    if(isPlaying)
-        [theMovieView start];
-    else
-        [theMovieView stop];
-
-    
+	if(aBool){
+		if([theMovieView wasPlaying])
+			[theMovieView start];
+		else
+			[theMovieView stop];
+	} else
+		[theMovieView start];
 }
 
 #pragma mark -
@@ -459,7 +457,7 @@ stuff won't work properly! */
 
 -(IBAction)choosePlaylistItem:(id)sender
 {
-    [self playAtIndex:[sender selectedRow]];
+    [self playAtIndex:[sender selectedRow] obeyingPreviousState:NO];
 }
 
 -(IBAction)addToPlaylist:(id)sender
