@@ -17,6 +17,10 @@
 	return NO;
 }
 
+-(void)handleResizeCommand:(id)sender{
+    NSLog(@"%@",[sender evaluatedArguments]);
+}
+
 -(void)handleFullScreenCommand:(id)sender
 {
 	[[NiceController controller] handleEnterFullScreen:self];

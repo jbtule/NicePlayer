@@ -10,10 +10,10 @@
 	};
 	2513D30507BDACA700BB6055 = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {705, 2198}}";
-			sepNavSelRange = "{5933, 0}";
-			sepNavVisRect = "{{0, 126}, {705, 443}}";
-			sepNavWindowFrame = "{{314, 398}, {750, 502}}";
+			sepNavIntBoundsRect = "{{0, 0}, {812, 2436}}";
+			sepNavSelRange = "{6771, 0}";
+			sepNavVisRect = "{{0, 0}, {812, 322}}";
+			sepNavWindowFrame = "{{590, 146}, {750, 502}}";
 		};
 	};
 	2523738E074414690064B556 = {
@@ -216,17 +216,17 @@
 	};
 	25D2E7C207BF3758004BEF7D = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {820, 2057}}";
+			sepNavIntBoundsRect = "{{0, 0}, {812, 2057}}";
 			sepNavSelRange = "{484, 32}";
-			sepNavVisRect = "{{0, 84}, {820, 581}}";
+			sepNavVisRect = "{{0, 84}, {812, 322}}";
 			sepNavWindowFrame = "{{107, 587}, {750, 502}}";
 		};
 	};
 	25D2E84007BF3B44004BEF7D = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {820, 1189}}";
-			sepNavSelRange = "{666, 48}";
-			sepNavVisRect = "{{0, 43}, {820, 581}}";
+			sepNavIntBoundsRect = "{{0, 0}, {812, 1245}}";
+			sepNavSelRange = "{347, 19}";
+			sepNavVisRect = "{{0, 140}, {812, 322}}";
 		};
 	};
 	25D2ED0B07BF6066004BEF7D = {
@@ -319,9 +319,9 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					573,
+					566,
 					20,
-					103,
+					102,
 					43,
 					43,
 					20,
@@ -1473,6 +1473,98 @@
 			3EF160AF07C86FA500AE56D7 = 3EF160AF07C86FA500AE56D7;
 			3EF160B007C8700900AE56D7 = 3EF160B007C8700900AE56D7;
 			3EF160B107C8700F00AE56D7 = 3EF160B107C8700F00AE56D7;
+			3EF160B207C872C500AE56D7 = 3EF160B207C872C500AE56D7;
+			3EF160B307C873AC00AE56D7 = 3EF160B307C873AC00AE56D7;
+			3EF160B407C873AC00AE56D7 = 3EF160B407C873AC00AE56D7;
+			3EF160B507C873AC00AE56D7 = 3EF160B507C873AC00AE56D7;
+			3EF160B607C873AC00AE56D7 = 3EF160B607C873AC00AE56D7;
+			3EF160B907C8794100AE56D7 = 3EF160B907C8794100AE56D7;
+			3EF160BA07C8794600AE56D7 = 3EF160BA07C8794600AE56D7;
+			3EF160BB07C8794600AE56D7 = 3EF160BB07C8794600AE56D7;
+			3EF160BC07C87E9500AE56D7 = 3EF160BC07C87E9500AE56D7;
+			3EF160BD07C87E9500AE56D7 = 3EF160BD07C87E9500AE56D7;
+			3EF160BE07C87E9500AE56D7 = 3EF160BE07C87E9500AE56D7;
+			3EF160BF07C87E9500AE56D7 = 3EF160BF07C87E9500AE56D7;
+			3EF160C007C87EAC00AE56D7 = 3EF160C007C87EAC00AE56D7;
+			3EF160C107C87EB000AE56D7 = 3EF160C107C87EB000AE56D7;
+			3EF160C207C87EF700AE56D7 = 3EF160C207C87EF700AE56D7;
+			3EF160C307C87F0900AE56D7 = 3EF160C307C87F0900AE56D7;
+			3EF160C407C87F7800AE56D7 = 3EF160C407C87F7800AE56D7;
+			3EF160C507C87F8B00AE56D7 = 3EF160C507C87F8B00AE56D7;
+			3EF160C607C87FA900AE56D7 = 3EF160C607C87FA900AE56D7;
+			3EF160C707C87FE600AE56D7 = 3EF160C707C87FE600AE56D7;
+			3EF160C907C87FF500AE56D7 = 3EF160C907C87FF500AE56D7;
+			3EF160CA07C87FF500AE56D7 = 3EF160CA07C87FF500AE56D7;
+			3EF160CB07C87FF500AE56D7 = 3EF160CB07C87FF500AE56D7;
+			3EF160CC07C8802200AE56D7 = 3EF160CC07C8802200AE56D7;
+			3EF160CD07C8802200AE56D7 = 3EF160CD07C8802200AE56D7;
+			3EF160CE07C8802200AE56D7 = 3EF160CE07C8802200AE56D7;
+			3EF160CF07C8802200AE56D7 = 3EF160CF07C8802200AE56D7;
+			3EF160D007C8802200AE56D7 = 3EF160D007C8802200AE56D7;
+			3EF160D107C8802D00AE56D7 = 3EF160D107C8802D00AE56D7;
+			3EF160D207C8803600AE56D7 = 3EF160D207C8803600AE56D7;
+			3EF160D307C8809C00AE56D7 = 3EF160D307C8809C00AE56D7;
+			3EF160D607C8815B00AE56D7 = 3EF160D607C8815B00AE56D7;
+			3EF160D707C8815B00AE56D7 = 3EF160D707C8815B00AE56D7;
+			3EF160D807C8815B00AE56D7 = 3EF160D807C8815B00AE56D7;
+			3EF160DA07C8826200AE56D7 = 3EF160DA07C8826200AE56D7;
+			3EF160DB07C8826200AE56D7 = 3EF160DB07C8826200AE56D7;
+			3EF160DC07C8826D00AE56D7 = 3EF160DC07C8826D00AE56D7;
+			3EF160DE07C882A200AE56D7 = 3EF160DE07C882A200AE56D7;
+			3EF160DF07C882A200AE56D7 = 3EF160DF07C882A200AE56D7;
+			3EF160E207C8830300AE56D7 = 3EF160E207C8830300AE56D7;
+			3EF160E307C8830300AE56D7 = 3EF160E307C8830300AE56D7;
+			3EF160E407C8830D00AE56D7 = 3EF160E407C8830D00AE56D7;
+			3EF160E507C8835900AE56D7 = 3EF160E507C8835900AE56D7;
+			3EF160E607C8837900AE56D7 = 3EF160E607C8837900AE56D7;
+			3EF160E707C8838600AE56D7 = 3EF160E707C8838600AE56D7;
+			3EF160E807C8838600AE56D7 = 3EF160E807C8838600AE56D7;
+			3EF160E907C8839E00AE56D7 = 3EF160E907C8839E00AE56D7;
+			3EF160EA07C883B000AE56D7 = 3EF160EA07C883B000AE56D7;
+			3EF160EB07C883B000AE56D7 = 3EF160EB07C883B000AE56D7;
+			3EF160EC07C883B500AE56D7 = 3EF160EC07C883B500AE56D7;
+			3EF160ED07C883D200AE56D7 = 3EF160ED07C883D200AE56D7;
+			3EF160EE07C8842700AE56D7 = 3EF160EE07C8842700AE56D7;
+			3EF160EF07C8842700AE56D7 = 3EF160EF07C8842700AE56D7;
+			3EF160F007C8846500AE56D7 = 3EF160F007C8846500AE56D7;
+			3EF160F107C8846500AE56D7 = 3EF160F107C8846500AE56D7;
+			3EF160F207C8848200AE56D7 = 3EF160F207C8848200AE56D7;
+			3EF160F307C884A700AE56D7 = 3EF160F307C884A700AE56D7;
+			3EF160F407C884A700AE56D7 = 3EF160F407C884A700AE56D7;
+			3EF160F507C8850D00AE56D7 = 3EF160F507C8850D00AE56D7;
+			3EF160F607C8850D00AE56D7 = 3EF160F607C8850D00AE56D7;
+			3EF160F707C8857000AE56D7 = 3EF160F707C8857000AE56D7;
+			3EF160F807C885CE00AE56D7 = 3EF160F807C885CE00AE56D7;
+			3EF160FB07C8862700AE56D7 = 3EF160FB07C8862700AE56D7;
+			3EF160FC07C8863800AE56D7 = 3EF160FC07C8863800AE56D7;
+			3EF160FD07C8877A00AE56D7 = 3EF160FD07C8877A00AE56D7;
+			3EF160FE07C8879500AE56D7 = 3EF160FE07C8879500AE56D7;
+			3EF160FF07C887AA00AE56D7 = 3EF160FF07C887AA00AE56D7;
+			3EF1610007C887B800AE56D7 = 3EF1610007C887B800AE56D7;
+			3EF1610107C8881900AE56D7 = 3EF1610107C8881900AE56D7;
+			3EF1610207C8882B00AE56D7 = 3EF1610207C8882B00AE56D7;
+			3EF1610307C8882B00AE56D7 = 3EF1610307C8882B00AE56D7;
+			3EF1610407C88A7600AE56D7 = 3EF1610407C88A7600AE56D7;
+			3EF1610507C88A7600AE56D7 = 3EF1610507C88A7600AE56D7;
+			3EF1610607C88ABD00AE56D7 = 3EF1610607C88ABD00AE56D7;
+			3EF1610707C88ABD00AE56D7 = 3EF1610707C88ABD00AE56D7;
+			3EF1610807C88AE200AE56D7 = 3EF1610807C88AE200AE56D7;
+			3EF1610907C88AE200AE56D7 = 3EF1610907C88AE200AE56D7;
+			3EF1610A07C88AE200AE56D7 = 3EF1610A07C88AE200AE56D7;
+			3EF1610B07C88AE600AE56D7 = 3EF1610B07C88AE600AE56D7;
+			3EF1610C07C88AE600AE56D7 = 3EF1610C07C88AE600AE56D7;
+			3EF1610D07C88AF700AE56D7 = 3EF1610D07C88AF700AE56D7;
+			3EF1610E07C88AF700AE56D7 = 3EF1610E07C88AF700AE56D7;
+			3EF1610F07C88C9100AE56D7 = 3EF1610F07C88C9100AE56D7;
+			3EF1611007C88C9500AE56D7 = 3EF1611007C88C9500AE56D7;
+			3EF1611107C88CB900AE56D7 = 3EF1611107C88CB900AE56D7;
+			3EF1611207C88CB900AE56D7 = 3EF1611207C88CB900AE56D7;
+			3EF1611307C88CB900AE56D7 = 3EF1611307C88CB900AE56D7;
+			3EF1611407C88CB900AE56D7 = 3EF1611407C88CB900AE56D7;
+			3EF1611507C88CCF00AE56D7 = 3EF1611507C88CCF00AE56D7;
+			3EF1611607C88CCF00AE56D7 = 3EF1611607C88CCF00AE56D7;
+			3EF1611707C88CE600AE56D7 = 3EF1611707C88CE600AE56D7;
+			3EF1611807C88CE600AE56D7 = 3EF1611807C88CE600AE56D7;
 		};
 		sourceControlManager = 3EEDF63F065B3C5A00E3545C;
 		userBuildSettings = {
@@ -3842,7 +3934,7 @@
 		isa = PBXTextBookmark;
 		name = "NicePlayer.sdef: 20";
 		rLen = 0;
-		rLoc = 768;
+		rLoc = 305;
 		rType = 0;
 		vrLen = 2204;
 		vrLoc = 0;
@@ -3942,7 +4034,7 @@
 		isa = PBXTextBookmark;
 		name = "NicePlayer.sdef: 130";
 		rLen = 0;
-		rLoc = 4899;
+		rLoc = 4436;
 		rType = 0;
 		vrLen = 2273;
 		vrLoc = 0;
@@ -3962,7 +4054,7 @@
 		isa = PBXTextBookmark;
 		name = "-(void)handleAddURLToPlaylistCommand:(id)sender\n";
 		rLen = 48;
-		rLoc = 666;
+		rLoc = 754;
 		rType = 0;
 		vrLen = 1340;
 		vrLoc = 0;
@@ -3982,7 +4074,7 @@
 		isa = PBXTextBookmark;
 		name = "NicePlayer.sdef: 130";
 		rLen = 0;
-		rLoc = 4899;
+		rLoc = 4436;
 		rType = 0;
 		vrLen = 2276;
 		vrLoc = 0;
@@ -4002,7 +4094,7 @@
 		isa = PBXTextBookmark;
 		name = "-(void)handleAddURLToPlaylistCommand:(id)sender\n";
 		rLen = 48;
-		rLoc = 666;
+		rLoc = 754;
 		rType = 0;
 		vrLen = 1340;
 		vrLoc = 0;
@@ -4012,7 +4104,7 @@
 		isa = PBXTextBookmark;
 		name = "-(void)handleAddURLToPlaylistCommand:(id)sender\n";
 		rLen = 48;
-		rLoc = 666;
+		rLoc = 754;
 		rType = 0;
 		vrLen = 1340;
 		vrLoc = 0;
@@ -4152,7 +4244,7 @@
 		isa = PBXTextBookmark;
 		name = "NicePlayer.sdef: 427";
 		rLen = 0;
-		rLoc = 4899;
+		rLoc = 4436;
 		rType = 0;
 		vrLen = 1649;
 		vrLoc = 0;
@@ -4162,7 +4254,7 @@
 		isa = PBXTextBookmark;
 		name = "NicePlayer.sdef: 427";
 		rLen = 0;
-		rLoc = 4899;
+		rLoc = 4436;
 		rType = 0;
 		vrLen = 1649;
 		vrLoc = 0;
@@ -4172,7 +4264,7 @@
 		isa = PBXTextBookmark;
 		name = "NicePlayer.sdef: 117";
 		rLen = 0;
-		rLoc = 4899;
+		rLoc = 4436;
 		rType = 0;
 		vrLen = 1622;
 		vrLoc = 0;
@@ -4182,7 +4274,7 @@
 		isa = PBXTextBookmark;
 		name = "NicePlayer.sdef: 117";
 		rLen = 0;
-		rLoc = 4899;
+		rLoc = 4436;
 		rType = 0;
 		vrLen = 1622;
 		vrLoc = 0;
@@ -4192,7 +4284,7 @@
 		isa = PBXTextBookmark;
 		name = "NicePlayer.sdef: 117";
 		rLen = 0;
-		rLoc = 4899;
+		rLoc = 4436;
 		rType = 0;
 		vrLen = 1622;
 		vrLoc = 0;
@@ -4202,7 +4294,7 @@
 		isa = PBXTextBookmark;
 		name = "NicePlayer.sdef: 117";
 		rLen = 0;
-		rLoc = 4899;
+		rLoc = 4436;
 		rType = 0;
 		vrLen = 1622;
 		vrLoc = 0;
@@ -4212,7 +4304,7 @@
 		isa = PBXTextBookmark;
 		name = "NicePlayer.sdef: 117";
 		rLen = 0;
-		rLoc = 4899;
+		rLoc = 4436;
 		rType = 0;
 		vrLen = 1622;
 		vrLoc = 0;
@@ -4222,7 +4314,7 @@
 		isa = PBXTextBookmark;
 		name = "NicePlayer.sdef: 117";
 		rLen = 0;
-		rLoc = 4899;
+		rLoc = 4436;
 		rType = 0;
 		vrLen = 1622;
 		vrLoc = 0;
@@ -4232,7 +4324,7 @@
 		isa = PBXTextBookmark;
 		name = "NicePlayer.sdef: 133";
 		rLen = 0;
-		rLoc = 5502;
+		rLoc = 5039;
 		rType = 0;
 		vrLen = 1590;
 		vrLoc = 0;
@@ -4242,7 +4334,7 @@
 		isa = PBXTextBookmark;
 		name = "NicePlayer.sdef: 133";
 		rLen = 0;
-		rLoc = 5502;
+		rLoc = 5039;
 		rType = 0;
 		vrLen = 1590;
 		vrLoc = 0;
@@ -4252,7 +4344,7 @@
 		isa = PBXTextBookmark;
 		name = "NicePlayer.sdef: 133";
 		rLen = 0;
-		rLoc = 5502;
+		rLoc = 5039;
 		rType = 0;
 		vrLen = 1590;
 		vrLoc = 0;
@@ -4262,7 +4354,7 @@
 		isa = PBXTextBookmark;
 		name = "NicePlayer.sdef: 133";
 		rLen = 0;
-		rLoc = 5502;
+		rLoc = 5039;
 		rType = 0;
 		vrLen = 1590;
 		vrLoc = 0;
@@ -4272,7 +4364,7 @@
 		isa = PBXTextBookmark;
 		name = "NicePlayer.sdef: 133";
 		rLen = 0;
-		rLoc = 5502;
+		rLoc = 5039;
 		rType = 0;
 		vrLen = 1590;
 		vrLoc = 0;
@@ -4302,7 +4394,7 @@
 		isa = PBXTextBookmark;
 		name = "NicePlayer.sdef: 133";
 		rLen = 0;
-		rLoc = 5502;
+		rLoc = 5039;
 		rType = 0;
 		vrLen = 1590;
 		vrLoc = 0;
@@ -4442,7 +4534,7 @@
 		isa = PBXTextBookmark;
 		name = "-(void)handleAddURLToPlaylistCommand:(id)sender\n";
 		rLen = 48;
-		rLoc = 666;
+		rLoc = 754;
 		rType = 0;
 		vrLen = 959;
 		vrLoc = 0;
@@ -4492,7 +4584,7 @@
 		isa = PBXTextBookmark;
 		name = "-(void)handleAddURLToPlaylistCommand:(id)sender\n";
 		rLen = 48;
-		rLoc = 666;
+		rLoc = 754;
 		rType = 0;
 		vrLen = 959;
 		vrLoc = 0;
@@ -4785,7 +4877,7 @@
 		isa = PBXTextBookmark;
 		name = "-(void)handleAddURLToPlaylistCommand:(id)sender\n";
 		rLen = 48;
-		rLoc = 666;
+		rLoc = 754;
 		rType = 0;
 		vrLen = 959;
 		vrLoc = 0;
@@ -4895,7 +4987,7 @@
 		isa = PBXTextBookmark;
 		name = "-(void)handleAddURLToPlaylistCommand:(id)sender\n";
 		rLen = 48;
-		rLoc = 666;
+		rLoc = 754;
 		rType = 0;
 		vrLen = 959;
 		vrLoc = 0;
@@ -5123,7 +5215,7 @@
 		isa = PBXTextBookmark;
 		name = "-(id)documentMovie\n";
 		rLen = 19;
-		rLoc = 1275;
+		rLoc = 1363;
 		rType = 0;
 		vrLen = 1022;
 		vrLoc = 716;
@@ -5270,7 +5362,7 @@
 		isa = PBXTextBookmark;
 		name = "-(id)documentMovie\n";
 		rLen = 19;
-		rLoc = 1275;
+		rLoc = 1363;
 		rType = 0;
 		vrLen = 1022;
 		vrLoc = 716;
@@ -5384,7 +5476,7 @@
 		isa = PBXTextBookmark;
 		name = "NicePlayer.sdef: 133";
 		rLen = 0;
-		rLoc = 5502;
+		rLoc = 5039;
 		rType = 0;
 		vrLen = 1590;
 		vrLoc = 0;
@@ -5404,7 +5496,7 @@
 		isa = PBXTextBookmark;
 		name = "NicePlayer.sdef: 133";
 		rLen = 0;
-		rLoc = 5502;
+		rLoc = 5039;
 		rType = 0;
 		vrLen = 1590;
 		vrLoc = 0;
@@ -5414,7 +5506,7 @@
 		isa = PBXTextBookmark;
 		name = "NicePlayer.sdef: 136";
 		rLen = 0;
-		rLoc = 5592;
+		rLoc = 5129;
 		rType = 0;
 		vrLen = 1584;
 		vrLoc = 0;
@@ -5444,7 +5536,7 @@
 		isa = PBXTextBookmark;
 		name = "NicePlayer.sdef: 136";
 		rLen = 0;
-		rLoc = 5592;
+		rLoc = 5129;
 		rType = 0;
 		vrLen = 1584;
 		vrLoc = 0;
@@ -5974,7 +6066,7 @@
 		isa = PBXTextBookmark;
 		name = "-(BOOL)playlistShowing\n";
 		rLen = 23;
-		rLoc = 1185;
+		rLoc = 1273;
 		rType = 0;
 		vrLen = 973;
 		vrLoc = 490;
@@ -6024,7 +6116,7 @@
 		isa = PBXTextBookmark;
 		name = "-(BOOL)playlistShowing\n";
 		rLen = 23;
-		rLoc = 1185;
+		rLoc = 1273;
 		rType = 0;
 		vrLen = 973;
 		vrLoc = 490;
@@ -6384,7 +6476,7 @@
 		isa = PBXTextBookmark;
 		name = "-(BOOL)playlistShowing\n";
 		rLen = 23;
-		rLoc = 1185;
+		rLoc = 1273;
 		rType = 0;
 		vrLen = 1012;
 		vrLoc = 445;
@@ -6404,7 +6496,7 @@
 		isa = PBXTextBookmark;
 		name = "-(BOOL)playlistShowing\n";
 		rLen = 23;
-		rLoc = 1185;
+		rLoc = 1273;
 		rType = 0;
 		vrLen = 1012;
 		vrLoc = 445;
@@ -6414,7 +6506,7 @@
 		isa = PBXTextBookmark;
 		name = "-(BOOL)playlistShowing\n";
 		rLen = 23;
-		rLoc = 1185;
+		rLoc = 1273;
 		rType = 0;
 		vrLen = 1012;
 		vrLoc = 445;
@@ -6424,7 +6516,7 @@
 		isa = PBXTextBookmark;
 		name = "-(BOOL)playlistShowing\n";
 		rLen = 23;
-		rLoc = 1185;
+		rLoc = 1273;
 		rType = 0;
 		vrLen = 1012;
 		vrLoc = 445;
@@ -6434,7 +6526,7 @@
 		isa = PBXTextBookmark;
 		name = "-(BOOL)playlistShowing\n";
 		rLen = 23;
-		rLoc = 1185;
+		rLoc = 1273;
 		rType = 0;
 		vrLen = 1012;
 		vrLoc = 445;
@@ -6444,7 +6536,7 @@
 		isa = PBXTextBookmark;
 		name = "-(BOOL)playlistShowing\n";
 		rLen = 23;
-		rLoc = 1185;
+		rLoc = 1273;
 		rType = 0;
 		vrLen = 1012;
 		vrLoc = 445;
@@ -6458,9 +6550,9 @@
 	};
 	3EF15FD107C8553B00AE56D7 = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {820, 937}}";
-			sepNavSelRange = "{1168, 0}";
-			sepNavVisRect = "{{0, 356}, {820, 581}}";
+			sepNavIntBoundsRect = "{{0, 0}, {705, 937}}";
+			sepNavSelRange = "{1517, 0}";
+			sepNavVisRect = "{{0, 490}, {705, 443}}";
 		};
 	};
 	3EF15FD807C8554500AE56D7 = {
@@ -6468,7 +6560,7 @@
 		isa = PBXTextBookmark;
 		name = "-(BOOL)playlistShowing\n";
 		rLen = 23;
-		rLoc = 1185;
+		rLoc = 1273;
 		rType = 0;
 		vrLen = 1012;
 		vrLoc = 445;
@@ -6488,7 +6580,7 @@
 		isa = PBXTextBookmark;
 		name = "-(BOOL)playlistShowing\n";
 		rLen = 23;
-		rLoc = 1185;
+		rLoc = 1273;
 		rType = 0;
 		vrLen = 1012;
 		vrLoc = 445;
@@ -6575,7 +6667,7 @@
 		isa = PBXTextBookmark;
 		name = "NicePlayer.sdef: 137";
 		rLen = 0;
-		rLoc = 5592;
+		rLoc = 5129;
 		rType = 0;
 		vrLen = 1584;
 		vrLoc = 0;
@@ -6585,7 +6677,7 @@
 		isa = PBXTextBookmark;
 		name = "NicePlayer.sdef: 142";
 		rLen = 0;
-		rLoc = 5805;
+		rLoc = 5342;
 		rType = 0;
 		vrLen = 1854;
 		vrLoc = 3951;
@@ -6595,7 +6687,7 @@
 		isa = PBXTextBookmark;
 		name = "NicePlayer.sdef: 142";
 		rLen = 0;
-		rLoc = 5805;
+		rLoc = 5342;
 		rType = 0;
 		vrLen = 1854;
 		vrLoc = 3951;
@@ -6605,7 +6697,7 @@
 		isa = PBXTextBookmark;
 		name = "NicePlayer.sdef: 142";
 		rLen = 0;
-		rLoc = 5805;
+		rLoc = 5342;
 		rType = 0;
 		vrLen = 1854;
 		vrLoc = 3951;
@@ -6615,7 +6707,7 @@
 		isa = PBXTextBookmark;
 		name = "NicePlayer.sdef: 142";
 		rLen = 0;
-		rLoc = 5805;
+		rLoc = 5342;
 		rType = 0;
 		vrLen = 1854;
 		vrLoc = 3951;
@@ -6625,7 +6717,7 @@
 		isa = PBXTextBookmark;
 		name = "NicePlayer.sdef: 142";
 		rLen = 0;
-		rLoc = 5805;
+		rLoc = 5342;
 		rType = 0;
 		vrLen = 1854;
 		vrLoc = 3951;
@@ -6635,7 +6727,7 @@
 		isa = PBXTextBookmark;
 		name = "NicePlayer.sdef: 142";
 		rLen = 0;
-		rLoc = 5805;
+		rLoc = 5342;
 		rType = 0;
 		vrLen = 1854;
 		vrLoc = 3951;
@@ -6645,7 +6737,7 @@
 		isa = PBXTextBookmark;
 		name = "NicePlayer.sdef: 142";
 		rLen = 0;
-		rLoc = 5805;
+		rLoc = 5342;
 		rType = 0;
 		vrLen = 1854;
 		vrLoc = 3951;
@@ -6665,7 +6757,7 @@
 		isa = PBXTextBookmark;
 		name = "NicePlayer.sdef: 142";
 		rLen = 0;
-		rLoc = 5805;
+		rLoc = 5342;
 		rType = 0;
 		vrLen = 1854;
 		vrLoc = 3951;
@@ -6765,7 +6857,7 @@
 		isa = PBXTextBookmark;
 		name = "-(BOOL)playlistShowing\n";
 		rLen = 23;
-		rLoc = 1185;
+		rLoc = 1273;
 		rType = 0;
 		vrLen = 1011;
 		vrLoc = 446;
@@ -6795,7 +6887,7 @@
 		isa = PBXTextBookmark;
 		name = "-(BOOL)playlistShowing\n";
 		rLen = 23;
-		rLoc = 1185;
+		rLoc = 1273;
 		rType = 0;
 		vrLen = 1011;
 		vrLoc = 446;
@@ -6845,7 +6937,7 @@
 		isa = PBXTextBookmark;
 		name = "NSDictionary *eArgs = [sender evaluatedArguments];";
 		rLen = 50;
-		rLoc = 717;
+		rLoc = 805;
 		rType = 0;
 		vrLen = 1011;
 		vrLoc = 446;
@@ -6875,7 +6967,7 @@
 		isa = PBXTextBookmark;
 		name = "NSDictionary *eArgs = [sender evaluatedArguments];";
 		rLen = 50;
-		rLoc = 717;
+		rLoc = 805;
 		rType = 0;
 		vrLen = 1011;
 		vrLoc = 446;
@@ -6885,7 +6977,7 @@
 		isa = PBXTextBookmark;
 		name = "NSDictionary *eArgs = [sender evaluatedArguments];";
 		rLen = 50;
-		rLoc = 717;
+		rLoc = 805;
 		rType = 0;
 		vrLen = 1011;
 		vrLoc = 446;
@@ -6915,7 +7007,7 @@
 		isa = PBXTextBookmark;
 		name = "NSDictionary *eArgs = [sender evaluatedArguments];";
 		rLen = 50;
-		rLoc = 717;
+		rLoc = 805;
 		rType = 0;
 		vrLen = 1011;
 		vrLoc = 446;
@@ -7115,7 +7207,7 @@
 		isa = PBXTextBookmark;
 		name = "-(void)handleAddURLToPlaylistCommand:(id)sender\n";
 		rLen = 48;
-		rLoc = 666;
+		rLoc = 754;
 		rType = 0;
 		vrLen = 1011;
 		vrLoc = 446;
@@ -7175,7 +7267,7 @@
 		isa = PBXTextBookmark;
 		name = "-(void)handleAddURLToPlaylistCommand:(id)sender\n";
 		rLen = 48;
-		rLoc = 666;
+		rLoc = 754;
 		rType = 0;
 		vrLen = 1011;
 		vrLoc = 446;
@@ -7185,7 +7277,7 @@
 		isa = PBXTextBookmark;
 		name = "-(void)handleAddURLToPlaylistCommand:(id)sender\n";
 		rLen = 48;
-		rLoc = 666;
+		rLoc = 754;
 		rType = 0;
 		vrLen = 1011;
 		vrLoc = 446;
@@ -7195,7 +7287,7 @@
 		isa = PBXTextBookmark;
 		name = "-(void)handleAddURLToPlaylistCommand:(id)sender\n";
 		rLen = 48;
-		rLoc = 666;
+		rLoc = 754;
 		rType = 0;
 		vrLen = 753;
 		vrLoc = 1021;
@@ -7245,7 +7337,7 @@
 		isa = PBXTextBookmark;
 		name = "-(void)handleAddURLToPlaylistCommand:(id)sender\n";
 		rLen = 48;
-		rLoc = 666;
+		rLoc = 754;
 		rType = 0;
 		vrLen = 753;
 		vrLoc = 1021;
@@ -7402,7 +7494,7 @@
 		isa = PBXTextBookmark;
 		name = "NicePlayer.sdef: 140";
 		rLen = 0;
-		rLoc = 5715;
+		rLoc = 5252;
 		rType = 0;
 		vrLen = 1791;
 		vrLoc = 3924;
@@ -7456,7 +7548,7 @@
 		isa = PBXTextBookmark;
 		name = "NicePlayer.sdef: 140";
 		rLen = 0;
-		rLoc = 5715;
+		rLoc = 5252;
 		rType = 0;
 		vrLen = 1791;
 		vrLoc = 3924;
@@ -7466,7 +7558,7 @@
 		isa = PBXTextBookmark;
 		name = "NicePlayer.sdef: 140";
 		rLen = 0;
-		rLoc = 5715;
+		rLoc = 5252;
 		rType = 0;
 		vrLen = 1605;
 		vrLoc = 2867;
@@ -7476,7 +7568,7 @@
 		isa = PBXTextBookmark;
 		name = "NicePlayer.sdef: 140";
 		rLen = 0;
-		rLoc = 5715;
+		rLoc = 5252;
 		rType = 0;
 		vrLen = 1708;
 		vrLoc = 3546;
@@ -7486,7 +7578,7 @@
 		isa = PBXTextBookmark;
 		name = "NicePlayer.sdef: 145";
 		rLen = 0;
-		rLoc = 5879;
+		rLoc = 5416;
 		rType = 0;
 		vrLen = 1566;
 		vrLoc = 3546;
@@ -7496,7 +7588,7 @@
 		isa = PBXTextBookmark;
 		name = "NicePlayer.sdef: 145";
 		rLen = 0;
-		rLoc = 5879;
+		rLoc = 5416;
 		rType = 0;
 		vrLen = 1566;
 		vrLoc = 3546;
@@ -7506,7 +7598,7 @@
 		isa = PBXTextBookmark;
 		name = "NicePlayer.sdef: 145";
 		rLen = 0;
-		rLoc = 5879;
+		rLoc = 5416;
 		rType = 0;
 		vrLen = 1558;
 		vrLoc = 3090;
@@ -7516,7 +7608,7 @@
 		isa = PBXTextBookmark;
 		name = "NicePlayer.sdef: 145";
 		rLen = 0;
-		rLoc = 5879;
+		rLoc = 5416;
 		rType = 0;
 		vrLen = 1558;
 		vrLoc = 3090;
@@ -8036,7 +8128,7 @@
 		isa = PBXTextBookmark;
 		name = "-(void)handleAddURLToPlaylistCommand:(id)sender\n";
 		rLen = 48;
-		rLoc = 666;
+		rLoc = 754;
 		rType = 0;
 		vrLen = 969;
 		vrLoc = 325;
@@ -8076,7 +8168,7 @@
 		isa = PBXTextBookmark;
 		name = "-(void)handleAddURLToPlaylistCommand:(id)sender\n";
 		rLen = 48;
-		rLoc = 666;
+		rLoc = 754;
 		rType = 0;
 		vrLen = 969;
 		vrLoc = 325;
@@ -8086,7 +8178,7 @@
 		isa = PBXTextBookmark;
 		name = "-(void)handleAddURLToPlaylistCommand:(id)sender\n";
 		rLen = 48;
-		rLoc = 666;
+		rLoc = 754;
 		rType = 0;
 		vrLen = 969;
 		vrLoc = 325;
@@ -8096,7 +8188,7 @@
 		isa = PBXTextBookmark;
 		name = "-(void)handleAddURLToPlaylistCommand:(id)sender\n";
 		rLen = 48;
-		rLoc = 666;
+		rLoc = 754;
 		rType = 0;
 		vrLen = 969;
 		vrLoc = 325;
@@ -8106,7 +8198,7 @@
 		isa = PBXTextBookmark;
 		name = "-(void)handleAddURLToPlaylistCommand:(id)sender\n";
 		rLen = 48;
-		rLoc = 666;
+		rLoc = 754;
 		rType = 0;
 		vrLen = 969;
 		vrLoc = 325;
@@ -8116,7 +8208,7 @@
 		isa = PBXTextBookmark;
 		name = "-(void)handleAddURLToPlaylistCommand:(id)sender\n";
 		rLen = 48;
-		rLoc = 666;
+		rLoc = 754;
 		rType = 0;
 		vrLen = 1032;
 		vrLoc = 44;
@@ -8146,7 +8238,7 @@
 		isa = PBXTextBookmark;
 		name = "-(void)handleAddURLToPlaylistCommand:(id)sender\n";
 		rLen = 48;
-		rLoc = 666;
+		rLoc = 754;
 		rType = 0;
 		vrLen = 1032;
 		vrLoc = 44;
@@ -8400,6 +8492,926 @@
 		rType = 0;
 		vrLen = 760;
 		vrLoc = 325;
+	};
+	3EF160B207C872C500AE56D7 = {
+		fRef = 3EF158C807C7F9CA00AE56D7;
+		isa = PBXTextBookmark;
+		name = "NiceMovie.m: 43";
+		rLen = 0;
+		rLoc = 839;
+		rType = 0;
+		vrLen = 760;
+		vrLoc = 325;
+	};
+	3EF160B307C873AC00AE56D7 = {
+		fRef = 3EF158C807C7F9CA00AE56D7;
+		isa = PBXTextBookmark;
+		name = "NiceMovie.m: 43";
+		rLen = 0;
+		rLoc = 839;
+		rType = 0;
+		vrLen = 760;
+		vrLoc = 325;
+	};
+	3EF160B407C873AC00AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 145";
+		rLen = 0;
+		rLoc = 5416;
+		rType = 0;
+		vrLen = 1546;
+		vrLoc = 3090;
+	};
+	3EF160B507C873AC00AE56D7 = {
+		fRef = 3EF158C807C7F9CA00AE56D7;
+		isa = PBXTextBookmark;
+		name = "NiceMovie.m: 43";
+		rLen = 0;
+		rLoc = 839;
+		rType = 0;
+		vrLen = 760;
+		vrLoc = 325;
+	};
+	3EF160B607C873AC00AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 145";
+		rLen = 0;
+		rLoc = 5416;
+		rType = 0;
+		vrLen = 1546;
+		vrLoc = 3090;
+	};
+	3EF160B907C8794100AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 145";
+		rLen = 0;
+		rLoc = 5416;
+		rType = 0;
+		vrLen = 1546;
+		vrLoc = 3090;
+	};
+	3EF160BA07C8794600AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 145";
+		rLen = 0;
+		rLoc = 5416;
+		rType = 0;
+		vrLen = 860;
+		vrLoc = 3090;
+	};
+	3EF160BB07C8794600AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 145";
+		rLen = 0;
+		rLoc = 5416;
+		rType = 0;
+		vrLen = 860;
+		vrLoc = 3090;
+	};
+	3EF160BC07C87E9500AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 166";
+		rLen = 0;
+		rLoc = 6385;
+		rType = 0;
+		vrLen = 905;
+		vrLoc = 3190;
+	};
+	3EF160BD07C87E9500AE56D7 = {
+		fRef = 25D2E84007BF3B44004BEF7D;
+		isa = PBXTextBookmark;
+		name = "-(void)handleFullScreenCommand:(id)sender\n";
+		rLen = 42;
+		rLoc = 428;
+		rType = 0;
+		vrLen = 448;
+		vrLoc = 44;
+	};
+	3EF160BE07C87E9500AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 166";
+		rLen = 0;
+		rLoc = 6385;
+		rType = 0;
+		vrLen = 905;
+		vrLoc = 3190;
+	};
+	3EF160BF07C87E9500AE56D7 = {
+		fRef = 25D2E84007BF3B44004BEF7D;
+		isa = PBXTextBookmark;
+		name = "NiceWindowScripting.m: 21";
+		rLen = 0;
+		rLoc = 424;
+		rType = 0;
+		vrLen = 487;
+		vrLoc = 44;
+	};
+	3EF160C007C87EAC00AE56D7 = {
+		fRef = 25D2E84007BF3B44004BEF7D;
+		isa = PBXTextBookmark;
+		name = "NiceWindowScripting.m: 21";
+		rLen = 0;
+		rLoc = 424;
+		rType = 0;
+		vrLen = 487;
+		vrLoc = 44;
+	};
+	3EF160C107C87EB000AE56D7 = {
+		fRef = 25D2E84007BF3B44004BEF7D;
+		isa = PBXTextBookmark;
+		name = "NiceWindowScripting.m: 21";
+		rLen = 0;
+		rLoc = 424;
+		rType = 0;
+		vrLen = 487;
+		vrLoc = 44;
+	};
+	3EF160C207C87EF700AE56D7 = {
+		fRef = 25D2E84007BF3B44004BEF7D;
+		isa = PBXTextBookmark;
+		name = "NiceWindowScripting.m: 21";
+		rLen = 0;
+		rLoc = 424;
+		rType = 0;
+		vrLen = 487;
+		vrLoc = 44;
+	};
+	3EF160C307C87F0900AE56D7 = {
+		fRef = 25D2E84007BF3B44004BEF7D;
+		isa = PBXTextBookmark;
+		name = "NiceWindowScripting.m: 21";
+		rLen = 0;
+		rLoc = 424;
+		rType = 0;
+		vrLen = 487;
+		vrLoc = 44;
+	};
+	3EF160C407C87F7800AE56D7 = {
+		fRef = 25D2E84007BF3B44004BEF7D;
+		isa = PBXTextBookmark;
+		name = "NiceWindowScripting.m: 21";
+		rLen = 0;
+		rLoc = 424;
+		rType = 0;
+		vrLen = 487;
+		vrLoc = 44;
+	};
+	3EF160C507C87F8B00AE56D7 = {
+		fRef = 25D2E84007BF3B44004BEF7D;
+		isa = PBXTextBookmark;
+		name = "NiceWindowScripting.m: 21";
+		rLen = 0;
+		rLoc = 424;
+		rType = 0;
+		vrLen = 487;
+		vrLoc = 44;
+	};
+	3EF160C607C87FA900AE56D7 = {
+		fRef = 25D2E84007BF3B44004BEF7D;
+		isa = PBXTextBookmark;
+		name = "NiceWindowScripting.m: 21";
+		rLen = 0;
+		rLoc = 424;
+		rType = 0;
+		vrLen = 487;
+		vrLoc = 44;
+	};
+	3EF160C707C87FE600AE56D7 = {
+		fRef = 25D2E84007BF3B44004BEF7D;
+		isa = PBXTextBookmark;
+		name = "NiceWindowScripting.m: 21";
+		rLen = 0;
+		rLoc = 424;
+		rType = 0;
+		vrLen = 487;
+		vrLoc = 44;
+	};
+	3EF160C907C87FF500AE56D7 = {
+		fRef = 25D2E84007BF3B44004BEF7D;
+		isa = PBXTextBookmark;
+		name = "NiceWindowScripting.m: 21";
+		rLen = 0;
+		rLoc = 424;
+		rType = 0;
+		vrLen = 487;
+		vrLoc = 44;
+	};
+	3EF160CA07C87FF500AE56D7 = {
+		fRef = 25D2E84007BF3B44004BEF7D;
+		isa = PBXTextBookmark;
+		name = "NiceWindowScripting.m: 21";
+		rLen = 0;
+		rLoc = 424;
+		rType = 0;
+		vrLen = 487;
+		vrLoc = 44;
+	};
+	3EF160CB07C87FF500AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 165";
+		rLen = 0;
+		rLoc = 6385;
+		rType = 0;
+		vrLen = 905;
+		vrLoc = 3190;
+	};
+	3EF160CC07C8802200AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 165";
+		rLen = 0;
+		rLoc = 6385;
+		rType = 0;
+		vrLen = 905;
+		vrLoc = 3190;
+	};
+	3EF160CD07C8802200AE56D7 = {
+		fRef = 25D2E7C207BF3758004BEF7D;
+		isa = PBXTextBookmark;
+		name = "indexForMovie:(NiceMovie*)aMovie";
+		rLen = 32;
+		rLoc = 484;
+		rType = 0;
+		vrLen = 434;
+		vrLoc = 147;
+	};
+	3EF160CE07C8802200AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 165";
+		rLen = 0;
+		rLoc = 6385;
+		rType = 0;
+		vrLen = 905;
+		vrLoc = 3190;
+	};
+	3EF160CF07C8802200AE56D7 = {
+		fRef = 25D2E7C207BF3758004BEF7D;
+		isa = PBXTextBookmark;
+		name = "indexForMovie:(NiceMovie*)aMovie";
+		rLen = 32;
+		rLoc = 484;
+		rType = 0;
+		vrLen = 434;
+		vrLoc = 147;
+	};
+	3EF160D007C8802200AE56D7 = {
+		fRef = 25D2E84007BF3B44004BEF7D;
+		isa = PBXTextBookmark;
+		name = handleResizeCommand;
+		rLen = 19;
+		rLoc = 347;
+		rType = 0;
+		vrLen = 492;
+		vrLoc = 197;
+	};
+	3EF160D107C8802D00AE56D7 = {
+		fRef = 25D2E84007BF3B44004BEF7D;
+		isa = PBXTextBookmark;
+		name = handleResizeCommand;
+		rLen = 19;
+		rLoc = 347;
+		rType = 0;
+		vrLen = 492;
+		vrLoc = 197;
+	};
+	3EF160D207C8803600AE56D7 = {
+		fRef = 25D2E84007BF3B44004BEF7D;
+		isa = PBXTextBookmark;
+		name = handleResizeCommand;
+		rLen = 19;
+		rLoc = 347;
+		rType = 0;
+		vrLen = 492;
+		vrLoc = 197;
+	};
+	3EF160D307C8809C00AE56D7 = {
+		fRef = 25D2E84007BF3B44004BEF7D;
+		isa = PBXTextBookmark;
+		name = handleResizeCommand;
+		rLen = 19;
+		rLoc = 347;
+		rType = 0;
+		vrLen = 492;
+		vrLoc = 197;
+	};
+	3EF160D607C8815B00AE56D7 = {
+		fRef = 25D2E84007BF3B44004BEF7D;
+		isa = PBXTextBookmark;
+		name = handleResizeCommand;
+		rLen = 19;
+		rLoc = 347;
+		rType = 0;
+		vrLen = 492;
+		vrLoc = 197;
+	};
+	3EF160D707C8815B00AE56D7 = {
+		fRef = 25D2E84007BF3B44004BEF7D;
+		isa = PBXTextBookmark;
+		name = handleResizeCommand;
+		rLen = 19;
+		rLoc = 347;
+		rType = 0;
+		vrLen = 492;
+		vrLoc = 197;
+	};
+	3EF160D807C8815B00AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 165";
+		rLen = 0;
+		rLoc = 6385;
+		rType = 0;
+		vrLen = 905;
+		vrLoc = 3190;
+	};
+	3EF160DA07C8826200AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 169";
+		rLen = 0;
+		rLoc = 6520;
+		rType = 0;
+		vrLen = 905;
+		vrLoc = 3209;
+	};
+	3EF160DB07C8826200AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 169";
+		rLen = 0;
+		rLoc = 6520;
+		rType = 0;
+		vrLen = 905;
+		vrLoc = 3209;
+	};
+	3EF160DC07C8826D00AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 169";
+		rLen = 0;
+		rLoc = 6520;
+		rType = 0;
+		vrLen = 905;
+		vrLoc = 3209;
+	};
+	3EF160DE07C882A200AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 169";
+		rLen = 0;
+		rLoc = 6520;
+		rType = 0;
+		vrLen = 905;
+		vrLoc = 3209;
+	};
+	3EF160DF07C882A200AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 169";
+		rLen = 0;
+		rLoc = 6520;
+		rType = 0;
+		vrLen = 905;
+		vrLoc = 3209;
+	};
+	3EF160E207C8830300AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 169";
+		rLen = 0;
+		rLoc = 6520;
+		rType = 0;
+		vrLen = 905;
+		vrLoc = 3209;
+	};
+	3EF160E307C8830300AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 169";
+		rLen = 0;
+		rLoc = 6520;
+		rType = 0;
+		vrLen = 905;
+		vrLoc = 3209;
+	};
+	3EF160E407C8830D00AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 169";
+		rLen = 0;
+		rLoc = 6520;
+		rType = 0;
+		vrLen = 905;
+		vrLoc = 3209;
+	};
+	3EF160E507C8835900AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 169";
+		rLen = 0;
+		rLoc = 6520;
+		rType = 0;
+		vrLen = 905;
+		vrLoc = 3209;
+	};
+	3EF160E607C8837900AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 169";
+		rLen = 0;
+		rLoc = 6520;
+		rType = 0;
+		vrLen = 905;
+		vrLoc = 3209;
+	};
+	3EF160E707C8838600AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 169";
+		rLen = 0;
+		rLoc = 6520;
+		rType = 0;
+		vrLen = 905;
+		vrLoc = 3209;
+	};
+	3EF160E807C8838600AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 169";
+		rLen = 0;
+		rLoc = 6520;
+		rType = 0;
+		vrLen = 905;
+		vrLoc = 3209;
+	};
+	3EF160E907C8839E00AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 169";
+		rLen = 0;
+		rLoc = 6510;
+		rType = 0;
+		vrLen = 905;
+		vrLoc = 3209;
+	};
+	3EF160EA07C883B000AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 169";
+		rLen = 0;
+		rLoc = 6510;
+		rType = 0;
+		vrLen = 905;
+		vrLoc = 3209;
+	};
+	3EF160EB07C883B000AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 169";
+		rLen = 0;
+		rLoc = 6510;
+		rType = 0;
+		vrLen = 905;
+		vrLoc = 3209;
+	};
+	3EF160EC07C883B500AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 169";
+		rLen = 0;
+		rLoc = 6510;
+		rType = 0;
+		vrLen = 905;
+		vrLoc = 3209;
+	};
+	3EF160ED07C883D200AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 169";
+		rLen = 0;
+		rLoc = 6510;
+		rType = 0;
+		vrLen = 905;
+		vrLoc = 3209;
+	};
+	3EF160EE07C8842700AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 169";
+		rLen = 0;
+		rLoc = 6510;
+		rType = 0;
+		vrLen = 905;
+		vrLoc = 3209;
+	};
+	3EF160EF07C8842700AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 169";
+		rLen = 0;
+		rLoc = 6510;
+		rType = 0;
+		vrLen = 905;
+		vrLoc = 3209;
+	};
+	3EF160F007C8846500AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 169";
+		rLen = 0;
+		rLoc = 6520;
+		rType = 0;
+		vrLen = 905;
+		vrLoc = 3209;
+	};
+	3EF160F107C8846500AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 169";
+		rLen = 0;
+		rLoc = 6520;
+		rType = 0;
+		vrLen = 905;
+		vrLoc = 3209;
+	};
+	3EF160F207C8848200AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 169";
+		rLen = 0;
+		rLoc = 6520;
+		rType = 0;
+		vrLen = 905;
+		vrLoc = 3209;
+	};
+	3EF160F307C884A700AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 169";
+		rLen = 0;
+		rLoc = 6520;
+		rType = 0;
+		vrLen = 905;
+		vrLoc = 3209;
+	};
+	3EF160F407C884A700AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 169";
+		rLen = 0;
+		rLoc = 6520;
+		rType = 0;
+		vrLen = 905;
+		vrLoc = 3209;
+	};
+	3EF160F507C8850D00AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 169";
+		rLen = 0;
+		rLoc = 6535;
+		rType = 0;
+		vrLen = 905;
+		vrLoc = 3213;
+	};
+	3EF160F607C8850D00AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 169";
+		rLen = 0;
+		rLoc = 6535;
+		rType = 0;
+		vrLen = 905;
+		vrLoc = 3213;
+	};
+	3EF160F707C8857000AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 6";
+		rLen = 0;
+		rLoc = 304;
+		rType = 0;
+		vrLen = 917;
+		vrLoc = 0;
+	};
+	3EF160F807C885CE00AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 152";
+		rLen = 0;
+		rLoc = 6147;
+		rType = 0;
+		vrLen = 949;
+		vrLoc = 0;
+	};
+	3EF160FB07C8862700AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 152";
+		rLen = 0;
+		rLoc = 6147;
+		rType = 0;
+		vrLen = 949;
+		vrLoc = 0;
+	};
+	3EF160FC07C8863800AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 152";
+		rLen = 0;
+		rLoc = 6147;
+		rType = 0;
+		vrLen = 949;
+		vrLoc = 0;
+	};
+	3EF160FD07C8877A00AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 152";
+		rLen = 0;
+		rLoc = 6147;
+		rType = 0;
+		vrLen = 949;
+		vrLoc = 0;
+	};
+	3EF160FE07C8879500AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 152";
+		rLen = 0;
+		rLoc = 6147;
+		rType = 0;
+		vrLen = 949;
+		vrLoc = 0;
+	};
+	3EF160FF07C887AA00AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 152";
+		rLen = 0;
+		rLoc = 6147;
+		rType = 0;
+		vrLen = 949;
+		vrLoc = 0;
+	};
+	3EF1610007C887B800AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 152";
+		rLen = 0;
+		rLoc = 6147;
+		rType = 0;
+		vrLen = 949;
+		vrLoc = 0;
+	};
+	3EF1610107C8881900AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 152";
+		rLen = 0;
+		rLoc = 6147;
+		rType = 0;
+		vrLen = 949;
+		vrLoc = 0;
+	};
+	3EF1610207C8882B00AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 152";
+		rLen = 0;
+		rLoc = 6147;
+		rType = 0;
+		vrLen = 949;
+		vrLoc = 0;
+	};
+	3EF1610307C8882B00AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 152";
+		rLen = 0;
+		rLoc = 6147;
+		rType = 0;
+		vrLen = 949;
+		vrLoc = 0;
+	};
+	3EF1610407C88A7600AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 165";
+		rLen = 0;
+		rLoc = 6688;
+		rType = 0;
+		vrLen = 997;
+		vrLoc = 0;
+	};
+	3EF1610507C88A7600AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 165";
+		rLen = 0;
+		rLoc = 6688;
+		rType = 0;
+		vrLen = 997;
+		vrLoc = 0;
+	};
+	3EF1610607C88ABD00AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 165";
+		rLen = 0;
+		rLoc = 6688;
+		rType = 0;
+		vrLen = 997;
+		vrLoc = 0;
+	};
+	3EF1610707C88ABD00AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 165";
+		rLen = 0;
+		rLoc = 6688;
+		rType = 0;
+		vrLen = 997;
+		vrLoc = 0;
+	};
+	3EF1610807C88AE200AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 165";
+		rLen = 0;
+		rLoc = 6688;
+		rType = 0;
+		vrLen = 997;
+		vrLoc = 0;
+	};
+	3EF1610907C88AE200AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 165";
+		rLen = 0;
+		rLoc = 6688;
+		rType = 0;
+		vrLen = 997;
+		vrLoc = 0;
+	};
+	3EF1610A07C88AE200AE56D7 = {
+		fRef = 25D2E84007BF3B44004BEF7D;
+		isa = PBXTextBookmark;
+		name = handleResizeCommand;
+		rLen = 19;
+		rLoc = 347;
+		rType = 0;
+		vrLen = 444;
+		vrLoc = 197;
+	};
+	3EF1610B07C88AE600AE56D7 = {
+		fRef = 25D2E84007BF3B44004BEF7D;
+		isa = PBXTextBookmark;
+		name = handleResizeCommand;
+		rLen = 19;
+		rLoc = 347;
+		rType = 0;
+		vrLen = 444;
+		vrLoc = 197;
+	};
+	3EF1610C07C88AE600AE56D7 = {
+		fRef = 25D2E84007BF3B44004BEF7D;
+		isa = PBXTextBookmark;
+		name = handleResizeCommand;
+		rLen = 19;
+		rLoc = 347;
+		rType = 0;
+		vrLen = 444;
+		vrLoc = 197;
+	};
+	3EF1610D07C88AF700AE56D7 = {
+		fRef = 25D2E84007BF3B44004BEF7D;
+		isa = PBXTextBookmark;
+		name = handleResizeCommand;
+		rLen = 19;
+		rLoc = 347;
+		rType = 0;
+		vrLen = 444;
+		vrLoc = 197;
+	};
+	3EF1610E07C88AF700AE56D7 = {
+		fRef = 25D2E84007BF3B44004BEF7D;
+		isa = PBXTextBookmark;
+		name = handleResizeCommand;
+		rLen = 19;
+		rLoc = 347;
+		rType = 0;
+		vrLen = 444;
+		vrLoc = 197;
+	};
+	3EF1610F07C88C9100AE56D7 = {
+		fRef = 25D2E84007BF3B44004BEF7D;
+		isa = PBXTextBookmark;
+		name = handleResizeCommand;
+		rLen = 19;
+		rLoc = 347;
+		rType = 0;
+		vrLen = 444;
+		vrLoc = 197;
+	};
+	3EF1611007C88C9500AE56D7 = {
+		fRef = 25D2E84007BF3B44004BEF7D;
+		isa = PBXTextBookmark;
+		name = handleResizeCommand;
+		rLen = 19;
+		rLoc = 347;
+		rType = 0;
+		vrLen = 444;
+		vrLoc = 197;
+	};
+	3EF1611107C88CB900AE56D7 = {
+		fRef = 25D2E84007BF3B44004BEF7D;
+		isa = PBXTextBookmark;
+		name = handleResizeCommand;
+		rLen = 19;
+		rLoc = 347;
+		rType = 0;
+		vrLen = 444;
+		vrLoc = 197;
+	};
+	3EF1611207C88CB900AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 164";
+		rLen = 0;
+		rLoc = 6688;
+		rType = 0;
+		vrLen = 997;
+		vrLoc = 0;
+	};
+	3EF1611307C88CB900AE56D7 = {
+		fRef = 25D2E84007BF3B44004BEF7D;
+		isa = PBXTextBookmark;
+		name = handleResizeCommand;
+		rLen = 19;
+		rLoc = 347;
+		rType = 0;
+		vrLen = 444;
+		vrLoc = 197;
+	};
+	3EF1611407C88CB900AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 164";
+		rLen = 0;
+		rLoc = 6688;
+		rType = 0;
+		vrLen = 997;
+		vrLoc = 0;
+	};
+	3EF1611507C88CCF00AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 168";
+		rLen = 0;
+		rLoc = 6771;
+		rType = 0;
+		vrLen = 997;
+		vrLoc = 0;
+	};
+	3EF1611607C88CCF00AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 168";
+		rLen = 0;
+		rLoc = 6771;
+		rType = 0;
+		vrLen = 997;
+		vrLoc = 0;
+	};
+	3EF1611707C88CE600AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 168";
+		rLen = 0;
+		rLoc = 6771;
+		rType = 0;
+		vrLen = 997;
+		vrLoc = 0;
+	};
+	3EF1611807C88CE600AE56D7 = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 168";
+		rLen = 0;
+		rLoc = 6771;
+		rType = 0;
+		vrLen = 997;
+		vrLoc = 0;
 	};
 	8D15AC270486D014006FF6A4 = {
 		activeExec = 0;
