@@ -50,15 +50,18 @@
                 showPreferences = id; 
                 stopAll = id; 
                 toggleAlwaysOnTop = id; 
+                toggleFixedAspectRatio = id; 
                 toggleFullScreen = id; 
             }; 
             CLASS = NiceController; 
             LANGUAGE = ObjC; 
             OUTLETS = {
+                antiSleepTimer = id; 
                 backgroundWindow = id; 
                 mainWindowProxy = id; 
                 prefWindow = id; 
                 presentWindow = id; 
+                toggleFixedAspectMenuItem = id; 
                 toggleOnTopMenuItem = id; 
             }; 
             SUPERCLASS = NSDocumentController; 

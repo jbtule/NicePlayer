@@ -20,8 +20,9 @@
     id prefWindow;
     id presentWindow;
     NSArray* backgroundWindows;
-    id toggleOnTopMenuItem;
+    IBOutlet id toggleOnTopMenuItem;
     id antiSleepTimer;
+    IBOutlet id toggleFixedAspectMenuItem;
 }
 
 +(NiceController *)controller;
@@ -43,6 +44,7 @@
 -(IBAction)toggleFullScreen:(id)sender;
 -(IBAction)showPreferences:(id)sender;
 -(IBAction)toggleAlwaysOnTop:(id)sender;
+-(IBAction)toggleFixedAspectRatio:(id)sender;
 
 #pragma mark -
 #pragma mark Presentation

@@ -157,8 +157,10 @@ id controller;
 
 -(void)changedWindow:(NSNotification *)notification
 {
-    if([[NSApp mainWindow] isKindOfClass:[NiceWindow class]])
+    if([[NSApp mainWindow] isKindOfClass:[NiceWindow class]]){
         [toggleOnTopMenuItem setState:[((NiceWindow *)[NSApp mainWindow]) windowIsFloating]];
+        [toggleFixedAspectMenuItem setState:[((NiceWindow *)[NSApp mainWindow]) windowIsFixedAspect]];
+    }
 }
 
 #pragma mark Interface
@@ -222,6 +224,13 @@ id controller;
 -(IBAction)toggleAlwaysOnTop:(id)sender
 {
     [((NiceWindow *)[NSApp mainWindow]) toggleWindowFloat];
+    [toggleOnTopMenuItem setState:[((NiceWindow *)[NSApp mainWindow]) windowIsFloating]];
+}
+
+-(IBAction)toggleFixedAspectRatio:(id)sender
+{
+    [((NiceWindow *)[NSApp mainWindow]) toggleFixedAspectRatio];
+    [toggleFixedAspectMenuItem setState:[((NiceWindow *)[NSApp mainWindow]) windowIsFixedAspect]];
 }
 
 #pragma mark -

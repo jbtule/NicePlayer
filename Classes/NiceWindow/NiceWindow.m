@@ -46,6 +46,7 @@
         miniVolume = 1;
         windowOverlayIsShowing = NO;
         titleOverlayIsShowing = NO;
+	fixedAspectRatio = YES;
         initialFadeTimer = nil;
         isInitialDisplay = [[Preferences mainPrefs] showInitialOverlays];
         timeDisplayStyle = [[Preferences mainPrefs] defaultTimeDisplay];
@@ -457,6 +458,18 @@
     return theWindowIsFloating;
 }
 
+-(BOOL)windowIsFixedAspect
+{
+    return fixedAspectRatio;
+}
+
+-(void)toggleFixedAspectRatio
+{
+    if(fixedAspectRatio)
+	[self setResizeIncrements:NSMakeSize(1.0,1.0)];
+    else
+	[self setAspectRatio:aspectRatio];
+}
 
 -(void)toggleWindowFloat
 {
@@ -464,7 +477,6 @@
         [self unfloatWindow];
     else
         [self floatWindow];
-    [[NiceController controller] changedWindow:nil];
 }
 
 #pragma mark Window Attributes
@@ -678,13 +690,29 @@
 - (void)setAspectRatio:(NSSize)ratio
 {   
     [super setAspectRatio:ratio];
+    aspectRatio = ratio;
     [self setMinSize:NSMakeSize(([self aspectRatio].width/[self aspectRatio].height) *[self minSize].height,[self minSize].height)];
+    fixedAspectRatio = YES;
+}
+
+-(void)setResizeIncrements:(NSSize)increments
+{
+    [super setResizeIncrements:increments];
+    fixedAspectRatio = NO;
 }
 
 -(void)setFrameOrigin:(NSPoint)aPoint
 {
     [super setFrameOrigin:aPoint];
     [theOverlayWindow setResizeOrigin:aPoint];
+}
+
+- (NSSize)aspectRatio
+{
+    if(fixedAspectRatio)
+	return [super aspectRatio];
+    else
+	return NSMakeSize([self frame].size.width, [self frame].size.height);
 }
 
 /**
@@ -771,11 +799,16 @@
 
 -(void)mouseDragged:(NSEvent *)anEvent
 {
-    if(resizeDrag /*|| [self inResizeLocation:anEvent] */){
-        
-        [self resize:[anEvent deltaY] animate:NO];
-        
-    }else{
+    if(resizeDrag){
+        if(fixedAspectRatio)
+	    [self resize:[anEvent deltaY] animate:NO];
+	else {
+	    float newHeight = [self frame].size.height + [anEvent deltaY];
+	    float newWidth = [self frame].size.width + [anEvent deltaX];
+	    
+	    [self resizeWithSize:NSMakeSize(newWidth, newHeight) animate:NO];
+	}
+    } else {
         if(fullScreen && !NSEqualRects([[[NSDocumentController sharedDocumentController] backgroundWindow] frame],[[NSScreen mainScreen]frame])){
             [[[NSDocumentController sharedDocumentController] backgroundWindow] setFrame:[[NSScreen mainScreen]frame] 
                                                                                  display:YES];

@@ -28,8 +28,8 @@
     IBOutlet id theRRButton;
     IBOutlet id theFFButton;
 	
-	BOOL windowOverlayIsShowing;
-	BOOL titleOverlayIsShowing;
+    BOOL windowOverlayIsShowing;
+    BOOL titleOverlayIsShowing;
 	
     BOOL resizeDrag;
     BOOL scrubbingDrag;
@@ -39,18 +39,21 @@
     BOOL fillWidthScreen;
     BOOL isFilling;
     BOOL isWidthFilling;
-	BOOL isInitialDisplay;    
+    BOOL isInitialDisplay;    
+    BOOL fixedAspectRatio;
     
     BOOL dropScreen;		/* Controls movie dropping onto other screens (not the primary display) */
-	BOOL theWindowIsFloating;
+    BOOL theWindowIsFloating;
 	
     id timeUpdaterTimer;
-	id initialFadeObjects;
+    id initialFadeObjects;
     int oldWindowLevel;
-	int timeDisplayStyle;
+    int timeDisplayStyle;
     float miniVolume;
     NSRect beforeFullScreen;
-	id initialFadeTimer;
+    id initialFadeTimer;
+	
+    NSSize aspectRatio;
 }
 
 - (BOOL)validateMenuItem:(NSMenuItem*)anItem;
@@ -87,7 +90,9 @@
 -(BOOL)toggleWindowFullScreen;
 -(void)unFullScreen;
 -(BOOL)windowIsFloating;
+-(BOOL)windowIsFixedAspect;
 -(void)setWindowIsFloating:(BOOL)aBOOL;
+-(void)toggleFixedAspectRatio;
 -(void)toggleWindowFloat;
 
 #pragma mark Window Attributes
