@@ -17,6 +17,7 @@
 	NSURL *myURL;
 	NSMovie *film;
 	BOOL muted;
+        BOOL theFirstDraw;
 	NSDictionary* movieCache;
 }
 

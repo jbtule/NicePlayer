@@ -57,6 +57,7 @@
 -(id)initWithFrame:(NSRect)frame
 {
 	if(self = [super initWithFrame:frame]){
+                theFirstDraw =NO;
 		oldPlayState = STATE_INACTIVE;
 		[self setAutoresizingMask:(NSViewWidthSizable | NSViewHeightSizable)];
 		[self showController:NO adjustingSize:NO];
@@ -121,12 +122,13 @@
 }
 
 - (void)drawRect:(NSRect)aRect{
-    
+    if(!theFirstDraw){
     [[NSGraphicsContext currentContext] saveGraphicsState];
-        [[NSColor blackColor] set];
+    [[NSColor blackColor] set];
         NSRectFill(aRect);
     [[NSGraphicsContext currentContext] restoreGraphicsState];
-
+    theFirstDraw=YES;
+    }
     [super drawRect:aRect];
 }
 #pragma mark Volume

@@ -18,7 +18,7 @@
 	inactiveTimer = nil;
 	[self setDelegate:self];
         
-	[NSApp checkForUpdates:nil];            
+	[NSApp automaticCheckForUpdates:self];            
 }
 
 /**
