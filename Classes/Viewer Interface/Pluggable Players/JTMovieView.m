@@ -36,7 +36,7 @@
 	return NO;
 }
 
-+(id)configureNib
++(id)configureNibView
 {
 	return nil;
 }

@@ -245,6 +245,20 @@
 			shellPath = /bin/sh;
 			shellScript = "/Developer/Tools/sdp -f st -o \"$BUILD_DIR/$FULL_PRODUCT_NAME/Contents/Resources\" \"$SOURCE_ROOT/Resources/NicePlayer.sdef\"";
 		};
+		251C7DAD07E54DCE009D5C9A = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.nib;
+			name = DVDPrefs.nib;
+			path = "Plugin Sources/DVDPlayer/Resources/English.lproj/DVDPrefs.nib";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		251C7DAE07E54DCE009D5C9A = {
+			fileRef = 251C7DAD07E54DCE009D5C9A;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
 		251FBBDF07BC201900D147E5 = {
 			fileEncoding = 4;
 			isa = PBXFileReference;
@@ -1157,6 +1171,7 @@
 				2A37F4B8FDCFA73011CA2CEA,
 				2A37F4C3FDCFA73011CA2CEA,
 				19C28FB0FE9D524F11CA2CBB,
+				251C7DAD07E54DCE009D5C9A,
 			);
 			isa = PBXGroup;
 			name = NicePlayer;
@@ -3028,6 +3043,7 @@
 				3EC66FD5077525AD00B50A61,
 				2513D30607BDACA700BB6055,
 				253C02E507C061E100172C2F,
+				251C7DAE07E54DCE009D5C9A,
 			);
 			isa = PBXResourcesBuildPhase;
 			runOnlyForDeploymentPostprocessing = 0;

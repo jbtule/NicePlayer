@@ -24,7 +24,7 @@ enum direction { DIRECTION_BACKWARD = -1, DIRECTION_FORWARD = 1};
  
 +(NSDictionary *)plugInfo;
 +(BOOL)hasConfigurableNib;
-+(id)configureNib;
++(id)configureNibView;
 
 -(id)initWithFrame:(NSRect)frame;
 -(void)close;

@@ -48,11 +48,23 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 +(BOOL)hasConfigurableNib
 {
-	return NO;
+	return YES;
 }
 
-+(id)configureNib
++(id)configureNibView
 {
+	static id myNib = nil;
+	NSArray *tmpArray;
+	
+	if(!myNib)
+		myNib = [[NSNib alloc] initWithNibNamed:@"DVDPrefs" bundle:[NSBundle bundleForClass:[self class]]];
+	[myNib instantiateNibWithOwner:nil topLevelObjects:&tmpArray];
+	id anObject, e;
+	e = [tmpArray objectEnumerator];
+	while(anObject = [e nextObject]){
+		if([anObject isKindOfClass:[NSView class]])
+			return anObject;
+	}
 	return nil;
 }
 

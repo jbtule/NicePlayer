@@ -9,8 +9,17 @@
 #import <Cocoa/Cocoa.h>
 
 
-@interface PrefPluginConfig : NSTableColumn {
-
+@interface PrefPluginConfig : NSTableView {
+	IBOutlet id nameLabel;
+	IBOutlet id visibleView;
+	IBOutlet id insertView;
+	NSRect oldWindowFrame;
+	NSRect oldViewFrame;
+	NSView *currSubview;
 }
+
+-(id)classForRow:(int)row;
+-(void)hideWidgets;
+-(void)showWidgets;
 
 @end

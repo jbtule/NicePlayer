@@ -87,6 +87,7 @@
 		};
 		089C167CFE841241C02AAC07 = {
 			children = (
+				251C7DB107E54E0E009D5C9A,
 				8D5B49B7048680CD000E48DA,
 				089C167DFE841241C02AAC07,
 			);
@@ -129,6 +130,8 @@
 				2513C5DE07BC5B1E00BB6055,
 				2513C5DB07BC5B1E00BB6055,
 				2513C5DA07BC5B1E00BB6055,
+				251C7DBE07E54E37009D5C9A,
+				251C7DBF07E54E37009D5C9A,
 			);
 			isa = PBXGroup;
 			name = Classes;
@@ -294,6 +297,57 @@
 			settings = {
 			};
 		};
+		251C7DAF07E54DF6009D5C9A = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.nib;
+			name = English;
+			path = Resources/English.lproj/DVDPrefs.nib;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		251C7DB107E54E0E009D5C9A = {
+			children = (
+				251C7DAF07E54DF6009D5C9A,
+			);
+			isa = PBXVariantGroup;
+			name = DVDPrefs.nib;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		251C7DB207E54E0E009D5C9A = {
+			fileRef = 251C7DB107E54E0E009D5C9A;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		251C7DBE07E54E37009D5C9A = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = DVDPrefController.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		251C7DBF07E54E37009D5C9A = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = DVDPrefController.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		251C7DC007E54E37009D5C9A = {
+			fileRef = 251C7DBE07E54E37009D5C9A;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		251C7DC107E54E37009D5C9A = {
+			fileRef = 251C7DBF07E54E37009D5C9A;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
 		253C025507C057B600172C2F = {
 			isa = PBXFileReference;
 			lastKnownFileType = wrapper.framework;
@@ -396,6 +450,7 @@
 				2513C5E107BC5B1E00BB6055,
 				2513C5E207BC5B1E00BB6055,
 				2513C5E807BC5B8A00BB6055,
+				251C7DC007E54E37009D5C9A,
 			);
 			isa = PBXHeadersBuildPhase;
 			runOnlyForDeploymentPostprocessing = 0;
@@ -410,6 +465,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D5B49B0048680CD000E48DA,
+				251C7DB207E54E0E009D5C9A,
 			);
 			isa = PBXResourcesBuildPhase;
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,6 +482,7 @@
 				8D5B49B2048680CD000E48DA,
 				2513C5DF07BC5B1E00BB6055,
 				2513C5E307BC5B1E00BB6055,
+				251C7DC107E54E37009D5C9A,
 			);
 			isa = PBXSourcesBuildPhase;
 			runOnlyForDeploymentPostprocessing = 0;

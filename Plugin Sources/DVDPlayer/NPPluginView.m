@@ -17,7 +17,7 @@
 	return NO;
 }
 
-+(void)displayConfigureNib
++(id)configureNibView
 {
 	NSLog(@"Error");
 }

@@ -2,7 +2,12 @@
     IBClasses = (
         {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
         {CLASS = JTPreferenceWindow; LANGUAGE = ObjC; SUPERCLASS = NSWindow; }, 
-        {CLASS = PrefPluginConfig; LANGUAGE = ObjC; SUPERCLASS = NSTableColumn; }, 
+        {
+            CLASS = PrefPluginConfig; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {insertView = id; nameLabel = id; visibleView = id; }; 
+            SUPERCLASS = NSTableView; 
+        }, 
         {
             CLASS = Preferences; 
             LANGUAGE = ObjC; 
