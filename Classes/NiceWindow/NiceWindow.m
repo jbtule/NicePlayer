@@ -567,23 +567,21 @@
 	
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"ChangingSize"
 														object:self
-													  userInfo:(NSDictionary *)NSStringFromSize(NSMakeSize(newHeight, newWidth))];
-	if(fullScreen){
-		NSRect centeredRect = [self centeredLocation];
-		[self setFrame:NSMakeRect(centeredRect.origin.x, centeredRect.origin.y,
-								  [self frame].size.width, [self frame].size.height) display:NO animate:NO];
-	}
+													  userInfo:(NSDictionary *) 
+		NSStringFromSize(NSMakeSize(newHeight, newWidth))];
 
-	switch([[Preferences mainPrefs] scrollResizePin]){
-		case PIN_LEFT_TOP:
-			[self setFrame:NSMakeRect([self frame].origin.x, [self frame].origin.y + ([self frame].size.height - newHeight),
-									  newWidth, newHeight) display:YES animate:animate];
-			break;
-		case PIN_CENTER:
-			[self setFrame:NSMakeRect([self frame].origin.x+(([self frame].size.width-newWidth)/2),
-									  [self frame].origin.y+(([self frame].size.height-newHeight)/2), newWidth, newHeight)
-				   display:YES animate:animate];
-			break;
+		switch([[Preferences mainPrefs] scrollResizePin]){
+			case PIN_LEFT_TOP:
+				[self setFrame:NSMakeRect([self frame].origin.x,
+										  [self frame].origin.y + ([self frame].size.height - newHeight),
+										  newWidth, newHeight) display:YES animate:animate];
+				break;
+			case PIN_CENTER:
+				[self setFrame:NSMakeRect([self frame].origin.x+(([self frame].size.width-newWidth)/2),
+										  [self frame].origin.y+(([self frame].size.height-newHeight)/2),
+										  newWidth, newHeight)
+					   display:YES animate:animate];
+				break;
 	}
 }
 
