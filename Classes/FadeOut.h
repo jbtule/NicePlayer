@@ -19,6 +19,7 @@
 -(void)initialFadeForObjects:(id)anArray;
 -(void)doInitialFadeForObjects:(id)aTimer;
 -(void)addWindow:(id)anObject;
+-(void)removeWindow:(id)anObject;
 -(void)destroyAndCreateTimer;
 -(void)updateAlphaValues;
 -(void)testForRemoval;

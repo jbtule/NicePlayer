@@ -71,6 +71,13 @@ static id fadeOutInstance = nil;
 		[anObject setAlphaValue:0.0];
 }
 
+-(void)removeWindow:(id)anObject
+{
+	if([[Preferences mainPrefs] fadeOverlays]){
+		[windowList removeObject:anObject];
+	}
+}
+
 -(void)destroyAndCreateTimer
 {
 	if(([windowList count] > 0) && (faderTimer == nil)){

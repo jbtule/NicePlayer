@@ -16,7 +16,7 @@
 					defer:(BOOL)flag
 {
     if(self = [super initWithContentRect:contentRect
-							   styleMask:NSTexturedBackgroundWindowMask
+							   styleMask:NSBorderlessWindowMask
 								 backing:NSBackingStoreBuffered
 								   defer:YES]){
 		[[NSNotificationCenter defaultCenter] addObserver:self
@@ -88,11 +88,6 @@
     [self hideOverLayWindow];
     [self hideOverLayTitle];
     [super resignMainWindow];
-}
-
-- (void)makeKeyWindow
-{
-    [super makeKeyWindow];
 }
 
 -(void)setFrame:(NSRect)frameRect display:(BOOL)displayFlag
@@ -273,6 +268,17 @@
 	isInitialDisplay = NO;
 }
 
+-(void)hideAllImmediately
+{
+	[[FadeOut fadeOut] removeWindow:theOverlayWindow];
+	[[FadeOut fadeOut] removeWindow:theOverlayTitleBar];
+	[[FadeOut fadeOut] removeWindow:theOverlayVolume];
+	[theOverlayWindow setAlphaValue:0.0];
+	[theOverlayTitleBar setAlphaValue:0.0];
+	[theOverlayVolume setAlphaValue:0.0];
+	isInitialDisplay = NO;
+}
+
 -(void)showOverLayWindow
 {
 	if(windowOverlayIsShowing == YES)
@@ -280,6 +286,7 @@
 
 	[self setOverlayWindowLocation];
     [self updateByTime:self];
+	[[FadeOut fadeOut] removeWindow:theOverlayWindow];
     [theOverlayWindow setAlphaValue:1.0];
     [self setShowsResizeIndicator:YES];
 	windowOverlayIsShowing = YES;
@@ -293,7 +300,7 @@
 -(void)setOverlayWindowLocation
 {
 	NSRect frame = [self frame];
-	NSRect visibleFrame = [[NSScreen mainScreen] visibleFrame];
+	NSRect mainFrame = [[NSScreen mainScreen] frame];
 	if(!fullScreen){
         if([[NSScreen mainScreen] visibleFrame].origin.y < frame.origin.y){
             [theOverlayWindow setFrame:NSMakeRect(frame.origin.x,
@@ -302,14 +309,14 @@
 												  32) display:YES];
 		}	else{
 			[theOverlayWindow setFrame:NSMakeRect(frame.origin.x,
-												  visibleFrame.origin.y,
+												  [[NSScreen mainScreen] visibleFrame].origin.y,
 												  frame.size.width-16,
 													  32) display:YES];
 		}
 	} else
-        [theOverlayWindow setFrame:NSMakeRect(visibleFrame.origin.x,
-											  visibleFrame.origin.y,
-											  visibleFrame.size.width-16,
+        [theOverlayWindow setFrame:NSMakeRect(mainFrame.origin.x,
+											  mainFrame.origin.y,
+											  mainFrame.size.width-16,
 											  32) display:YES];
 }
 
@@ -330,6 +337,7 @@
 	if(titleOverlayIsShowing == YES)
 		return;
 	[self setOverlayTitleLocation];
+	[[FadeOut fadeOut] removeWindow:theOverlayTitleBar];
     [theOverlayTitleBar setAlphaValue:1.0];
 	titleOverlayIsShowing = YES;
 }
@@ -376,9 +384,9 @@
 }
 
 -(void)showOverLayVolume
-{   
+{
+	[[FadeOut fadeOut] removeWindow:theOverlayVolume];
     [theOverlayVolume setAlphaValue:1.0];
-
 }
 
 -(void)setOverLayVolumeLocation
@@ -443,6 +451,7 @@
 	if([[Preferences mainPrefs] autoplayOnFullScreen]){
 		[theMovieView start];
 	};
+	[self hideAllImmediately];
 }
 
 -(void)makeNormalScreen
@@ -529,6 +538,9 @@
         newWidth = [self frame].size.width;
     }
 	
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"ChangingSize"
+														object:self
+													  userInfo:NSStringFromSize(NSMakeSize(newHeight, newWidth))];
 	if(fullScreen){
 		NSRect centeredRect = [self centeredLocation];
 		[self setFrame:NSMakeRect(centeredRect.origin.x, centeredRect.origin.y,

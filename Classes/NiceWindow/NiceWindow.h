@@ -67,6 +67,7 @@
 -(void)putOverlay:(id)anOverlay inFrame:(NSRect)aFrame withVisibility:(BOOL)isVisible;
 -(void)hideOverlays;
 -(void)hideInitialWindows;
+-(void)hideAllImmediately;
 -(void)showOverLayWindow;
 -(void)setOverlayWindowLocation;
 -(void)hideOverLayWindow;

@@ -185,6 +185,11 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	else
 		DVDOpenMediaVolume(&fsref);
 	[self aspectRatioChanged];
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(resizingMovie:)
+												 name:@"ChangingSize"
+											   object:[self window]];
 }
 
 /**
@@ -616,6 +621,19 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	}
 	
 	return subPicturesMenu;
+}
+
+#pragma mark -
+#pragma mark Notification Methods
+
+-(void)resizingMovie:(NSNotification *)notification
+{
+	NSSize newSize = NSSizeFromString([notification userInfo]);
+	[self updateBounds:NSMakeRect([self frame].origin.x,
+								  [self frame].origin.y,
+								  newSize.width,
+								  newSize.height)];
+	DVDUpdateVideo();
 }
 
 #pragma mark -
