@@ -37,9 +37,16 @@ id rowsToFileNames(id obj, void* playList){
 
 -(void)dealloc
 {
+	int i;
+	
 	if(movieMenuItem != nil && ([[self movieMenu] indexOfItem:movieMenuItem] != -1))
 		[[self movieMenu] removeItem:movieMenuItem];
-
+	
+	if(menuObjects != nil){
+		for(i = 0; i < (int)[menuObjects count]; i++)
+			[[self movieMenu] removeItem:[menuObjects objectAtIndex:i]];
+		[menuObjects release];
+	}
     [theSubtitle release];
     [theCurrentURL release];
     [theRandomizePlayList release];

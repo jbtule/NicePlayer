@@ -318,7 +318,6 @@
     [self updateByTime:self];
 	[[FadeOut fadeOut] removeWindow:theOverlayWindow];
     [theOverlayWindow setAlphaValue:1.0];
-    [self setShowsResizeIndicator:YES];
 	windowOverlayIsShowing = YES;
 }
 
@@ -360,7 +359,6 @@
 		[[FadeOut fadeOut] addWindow:theOverlayWindow];
 	[self setShowsResizeIndicator:NO];
 	windowOverlayIsShowing = NO;
-
 }
 -(void)showOverLayTitle
 {

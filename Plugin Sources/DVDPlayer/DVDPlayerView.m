@@ -107,6 +107,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
  */
 -(void)close
 {
+	[updateChapterTimer invalidate];
 	DVDUnregisterEventCallBack(cid);
 	DVDStop();
 	if([[[myURL path] lastPathComponent] isEqualToString:@"VIDEO_TS"])
@@ -185,6 +186,11 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	else
 		DVDOpenMediaVolume(&fsref);
 	[self aspectRatioChanged];
+	updateChapterTimer = [NSTimer scheduledTimerWithTimeInterval:30
+														target:self
+													  selector:@selector(rebuildMenuTimer)
+													  userInfo:nil
+													   repeats:YES];
 }
 
 /**
@@ -347,7 +353,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 		DVDResume();
 	else {
 		DVDPlay();
-		[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildMenu" object:self];
+		[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:self];
 	}
 }
 
@@ -359,11 +365,13 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 -(void)previousChapter
 {
     DVDPreviousChapter();
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:self];
 }
 
 -(void)nextChapter
 {
     DVDNextChapter();
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:self];
 }
 
 /**
@@ -449,6 +457,15 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	else
 		DVDResume();
 	DVDUpdateVideo();
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:self];
+}
+
+-(void)toggleSubTitles
+{
+	BOOL isp;
+	DVDIsDisplayingSubPicture(&isp);
+	DVDDisplaySubPicture(!isp);
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:self];
 }
 
 #pragma mark -
@@ -470,6 +487,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 {
 	id pluginMenu = [[NSMutableArray array] retain];
 	id newItem;
+	BOOL isp;
 	
 	newItem = [[[NSMenuItem alloc] initWithTitle:@"Main Menu"
 										  action:@selector(gotoMainMenu)
@@ -486,6 +504,12 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	newItem = [[[NSMenuItem alloc] initWithTitle:@"Return to Title"
 										  action:@selector(returnToTitle)
 								   keyEquivalent:@""] autorelease];
+	DVDMenu tmp;
+	DVDIsOnMenu(&isp, &tmp);
+	if(isp)
+		[newItem setEnabled:YES];
+	else
+		[newItem setEnabled:NO];
 	[newItem setTarget:self];
 	[pluginMenu addObject:newItem];
 	
@@ -505,6 +529,12 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 										  action:nil
 								   keyEquivalent:@""] autorelease];
 	[newItem setSubmenu:[self audioMenu]];	
+	[pluginMenu addObject:newItem];
+
+	newItem = [[[NSMenuItem alloc] initWithTitle:@"Subtitles"
+										  action:nil
+								   keyEquivalent:@""] autorelease];
+	[newItem setSubmenu:[self subPictureMenu]];	
 	[pluginMenu addObject:newItem];
 
 	newItem = [[[NSMenuItem alloc] initWithTitle:@"Angle"
@@ -628,16 +658,31 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	unsigned short subs;
 	unsigned short current;
 	unsigned short i;
+	BOOL isp;
 	
 	DVDGetNumSubPictureStreams(&subs);
 	DVDGetSubPictureStream(&current);
+	
+	newItem = [[[NSMenuItem alloc] initWithTitle:@"Show Subtitles"
+										  action:@selector(toggleSubTitles)
+								   keyEquivalent:@""] autorelease];
+	DVDIsDisplayingSubPicture(&isp);
+	if(isp)
+		[newItem setState:NSOnState];
+	else
+		[newItem setState:NSOffState];
+	[newItem setTarget:self];
+	[subPicturesMenu addItem:newItem];
+	[subPicturesMenu addItem:[NSMenuItem separatorItem]];
+	
 	for(i = 1; i < (subs + 1); i++){
 		newItem = [[[NSMenuItem alloc] initWithTitle:[[NSNumber numberWithUnsignedInt:i] stringValue]
 											  action:@selector(selectSubPicture:)
 									   keyEquivalent:@""] autorelease];
 		[newItem setTarget:self];
 		[newItem setTag:i];
-		if(i == current)
+		DVDIsDisplayingSubPicture(&isp);
+		if((i == current) && isp)
 			[newItem setState:NSOnState];
 		else
 			[newItem setState:NSOffState];
@@ -685,6 +730,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	else
 		DVDResume();
 	DVDUpdateVideo();
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:self];
 }
 
 -(void)gotoChapter:(id)anObject
@@ -697,6 +743,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	else
 		DVDResume();
 	DVDUpdateVideo();
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:self];
 }
 
 -(void)selectAudio:(id)anObject
@@ -709,6 +756,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	else
 		DVDResume();
 	DVDUpdateVideo();
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:self];
 }
 
 -(void)DVDSetAngle:(id)anObject
@@ -721,6 +769,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	else
 		DVDResume();
 	DVDUpdateVideo();
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:self];
 }
 
 -(void)selectSubPicture:(id)anObject
@@ -733,8 +782,13 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	else
 		DVDResume();
 	DVDUpdateVideo();
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:self];
 }
 
+-(void)rebuildMenuTimer
+{
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:self];
+}
 @end
 
 void fatalError(DVDErrorCode inError, UInt32 inRefCon)
