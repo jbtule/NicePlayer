@@ -29,7 +29,7 @@
 		NSRect subview = NSMakeRect(0, 0, aRect.size.width, aRect.size.height);
 		trueMovieView = [[JTMovieView alloc] initWithFrame:subview];
 		contextMenu = [[NSMenu alloc] initWithTitle:@"NicePlayer"];
-                theWasPlaying=NO;
+		wasPlaying = NO;
 		[self addSubview:trueMovieView];
 		[self setAutoresizesSubviews:YES];
 	}
@@ -144,14 +144,14 @@
 
 -(void)start
 {
-    theWasPlaying =YES;
+    wasPlaying = YES;
 	[trueMovieView start];
     [[((NiceWindow *)[self window]) playButton] changeToProperButton:[trueMovieView isPlaying]];
 }
 
 -(void)stop
 {
-    theWasPlaying =NO;
+    wasPlaying = NO;
 
  	[(<NPMoviePlayer>)trueMovieView stop];
     [[((NiceWindow *)[self window]) playButton] changeToProperButton:[trueMovieView isPlaying]];
@@ -252,8 +252,9 @@
 	return [trueMovieView isPlaying];
 }
 
--(BOOL)wasPlaying{
-    return theWasPlaying;
+-(BOOL)wasPlaying
+{
+    return wasPlaying;
 }
 
 #pragma mark -

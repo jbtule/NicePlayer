@@ -15,7 +15,7 @@
 	BOOL dragButton;
 	id trueMovieView;
 	id contextMenu;
-        BOOL theWasPlaying;
+	BOOL wasPlaying;
 }
 
 +(id)blankImage;
