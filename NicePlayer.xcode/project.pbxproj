@@ -396,6 +396,7 @@
 		};
 		252BD45D07697C6A006CF96B = {
 			children = (
+				25E3AEFE07C0A65000746EA4,
 				2A37F4AEFDCFA73011CA2CEA,
 				2A37F4ACFDCFA73011CA2CEA,
 				251FBBDF07BC201900D147E5,
@@ -1109,6 +1110,20 @@
 		};
 		25E10912076CF11100042500 = {
 			fileRef = 25E10910076CF11100042500;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		25E3AEFE07C0A65000746EA4 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = NiceWinController.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		25E3AEFF07C0A65000746EA4 = {
+			fileRef = 25E3AEFE07C0A65000746EA4;
 			isa = PBXBuildFile;
 			settings = {
 			};
@@ -2956,6 +2971,7 @@
 				25D2E84207BF3B44004BEF7D,
 				25D2ED0C07BF6066004BEF7D,
 				253C064E07C0891300172C2F,
+				25E3AEFF07C0A65000746EA4,
 			);
 			isa = PBXSourcesBuildPhase;
 			runOnlyForDeploymentPostprocessing = 0;

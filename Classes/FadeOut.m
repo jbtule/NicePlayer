@@ -34,10 +34,10 @@ static id fadeOutInstance = nil;
 	return self;
 }
 
--(void)initialFadeForDict:(id)aDictionary
+-(id)initialFadeForDict:(id)aDictionary
 {
 	if([[Preferences mainPrefs] showInitialOverlays]){
-		[NSTimer scheduledTimerWithTimeInterval:INITIAL_FADE_DURATION
+		return [NSTimer scheduledTimerWithTimeInterval:INITIAL_FADE_DURATION
 										 target:self
 									   selector:@selector(doInitialFadeForDict:)
 									   userInfo:aDictionary
@@ -47,6 +47,7 @@ static id fadeOutInstance = nil;
 		while(anObject = [e nextObject]){
 			[anObject setAlphaValue:0.0];
 		}
+		return nil;
 	}
 }
 
@@ -60,8 +61,8 @@ static id fadeOutInstance = nil;
 		while(anObject = [e nextObject]){
 			[anObject setAlphaValue:0.0];
 		}
-		[[[aTimer userInfo] objectForKey:@"Window"] initialFadeComplete];
 	}
+	[[[aTimer userInfo] objectForKey:@"Window"] initialFadeComplete];
 }
 
 -(void)addWindow:(id)anObject

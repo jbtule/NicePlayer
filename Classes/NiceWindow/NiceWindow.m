@@ -45,6 +45,7 @@
         miniVolume = 1;
 		windowOverlayIsShowing = NO;
 		titleOverlayIsShowing = NO;
+		initialFadeTimer = nil;
 		isInitialDisplay = [[Preferences mainPrefs] showInitialOverlays];
 		timeDisplayStyle = [[Preferences mainPrefs] defaultTimeDisplay];
 	}
@@ -78,14 +79,11 @@
 {
 	[timeUpdaterTimer invalidate];
 	[theMovieView close];
+	[initialFadeObjects release];
+	if(initialFadeTimer)
+		[initialFadeTimer invalidate];
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
 	[super close];
-}
-
--(void)dealloc
-{
-	NSLog(@"Dealloc");
-	[super dealloc];
 }
 
 #pragma mark Overriden Methods
@@ -253,7 +251,7 @@
 		[NSArray arrayWithObjects:self,	initialFadeObjects,	nil]
 														 forKeys:
 		[NSArray arrayWithObjects:@"Window", @"Fade", nil]];
-	[[FadeOut fadeOut] initialFadeForDict:fadeDict];
+	initialFadeTimer = [[FadeOut fadeOut] initialFadeForDict:fadeDict];
 }
 
 -(void)putOverlay:(id)anOverlay inFrame:(NSRect)aFrame withVisibility:(BOOL)isVisible
@@ -294,6 +292,7 @@
 -(void)initialFadeComplete
 {
 	isInitialDisplay = NO;
+	initialFadeTimer = nil;
 }
 
 -(void)showOverLayWindow

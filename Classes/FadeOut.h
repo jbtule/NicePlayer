@@ -16,7 +16,7 @@
 
 +(id)fadeOut;
 -(id)init;
--(void)initialFadeForDict:(id)anArray;
+-(id)initialFadeForDict:(id)anArray;
 -(void)doInitialFadeForDict:(id)aTimer;
 -(void)addWindow:(id)anObject;
 -(void)removeWindow:(id)anObject;

@@ -50,6 +50,7 @@
 	int timeDisplayStyle;
     float miniVolume;
     NSRect beforeFullScreen;
+	id initialFadeTimer;
 }
 
 - (BOOL)validateMenuItem:(NSMenuItem*)anItem;
