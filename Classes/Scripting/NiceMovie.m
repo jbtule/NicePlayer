@@ -53,6 +53,7 @@
     }
 }
 
+
 -(NSString*)name{
     return [[theURL path] lastPathComponent];
 }

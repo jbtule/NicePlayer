@@ -1491,6 +1491,24 @@
 			settings = {
 			};
 		};
+		3E49DCB207C96EFA009BA150 = {
+			fileRef = 3EF15FD107C8553B00AE56D7;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3E49DCB307C96EFD009BA150 = {
+			fileRef = 3EF15F3607C8405700AE56D7;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3E49DCB407C96F01009BA150 = {
+			fileRef = 3EF158C807C7F9CA00AE56D7;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
 		3E4DF83506630D50001B9AC5 = {
 			children = (
 				3E4DF83606630D50001B9AC5,
@@ -2703,7 +2721,7 @@
 		3EF158C707C7F9CA00AE56D7 = {
 			fileEncoding = 4;
 			isa = PBXFileReference;
-			lastKnownFileType = file;
+			lastKnownFileType = sourcecode.c.h;
 			name = NiceMovie.h;
 			path = Classes/Scripting/NiceMovie.h;
 			refType = 2;
@@ -2712,7 +2730,7 @@
 		3EF158C807C7F9CA00AE56D7 = {
 			fileEncoding = 4;
 			isa = PBXFileReference;
-			lastKnownFileType = file;
+			lastKnownFileType = sourcecode.c.objc;
 			name = NiceMovie.m;
 			path = Classes/Scripting/NiceMovie.m;
 			refType = 2;
@@ -2760,7 +2778,7 @@
 		3EF15F3507C8405700AE56D7 = {
 			fileEncoding = 4;
 			isa = PBXFileReference;
-			lastKnownFileType = file;
+			lastKnownFileType = sourcecode.c.h;
 			name = NPApplicationScripting.h;
 			path = Classes/Scripting/NPApplicationScripting.h;
 			refType = 2;
@@ -2769,7 +2787,7 @@
 		3EF15F3607C8405700AE56D7 = {
 			fileEncoding = 4;
 			isa = PBXFileReference;
-			lastKnownFileType = file;
+			lastKnownFileType = sourcecode.c.objc;
 			name = NPApplicationScripting.m;
 			path = Classes/Scripting/NPApplicationScripting.m;
 			refType = 2;
@@ -2796,7 +2814,7 @@
 		3EF15FD007C8553B00AE56D7 = {
 			fileEncoding = 4;
 			isa = PBXFileReference;
-			lastKnownFileType = file;
+			lastKnownFileType = sourcecode.c.h;
 			name = NPAddCommand.h;
 			path = Classes/Scripting/NPAddCommand.h;
 			refType = 2;
@@ -2805,7 +2823,7 @@
 		3EF15FD107C8553B00AE56D7 = {
 			fileEncoding = 4;
 			isa = PBXFileReference;
-			lastKnownFileType = file;
+			lastKnownFileType = sourcecode.c.objc;
 			name = NPAddCommand.m;
 			path = Classes/Scripting/NPAddCommand.m;
 			refType = 2;
@@ -3096,6 +3114,9 @@
 				25D2ED0C07BF6066004BEF7D,
 				253C064E07C0891300172C2F,
 				25E3AEFF07C0A65000746EA4,
+				3E49DCB207C96EFA009BA150,
+				3E49DCB307C96EFD009BA150,
+				3E49DCB407C96F01009BA150,
 			);
 			isa = PBXSourcesBuildPhase;
 			runOnlyForDeploymentPostprocessing = 0;

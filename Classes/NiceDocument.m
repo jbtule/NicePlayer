@@ -343,12 +343,13 @@ stuff won't work properly! */
     [self playNext];
 }
 
-/**
-* Chooses the proper playlist item and calls playAtIndex:
- */
--(void)playNext
-{	
-    unsigned anIndex = [thePlaylist indexOfObject:theCurrentURL];
+
+
+-(int)getNextIndex{
+    int anIndex = [thePlaylist indexOfObject:theCurrentURL];
+    
+    if([thePlaylist isEmpty])
+        return -1;
     
     if(isRandom){
         anIndex = ((float)random()/RAND_MAX)*[thePlaylist count];
@@ -356,14 +357,20 @@ stuff won't work properly! */
         anIndex++;
     }
     
+    return anIndex;
+}
+
+
+-(void)playNext
+{	
+    int anIndex = [self getNextIndex];
+    
     if(anIndex >= [thePlaylist count]){
         if(REPEAT_LIST == theRepeatMode){
             anIndex = 0;
         } else {
             if([[Preferences mainPrefs] windowLeaveFullScreen] && [[self window] isFullScreen])
                 [[self window] unFullScreen];
-			if([thePlaylist count] <= 0)
-				return;
         }
     }
     
@@ -372,47 +379,26 @@ stuff won't work properly! */
     }
 }
 
--(void)preloadNext
-{	
-    unsigned anIndex = [thePlaylist indexOfObject:theCurrentURL];
-
-    if(isRandom){
-        return;
-    }else{
-        anIndex++;
-    }
-    
-    if(anIndex >= [thePlaylist count]){
-        if(REPEAT_LIST == theRepeatMode){
-            anIndex = 0;
-        } else {
-            if([[Preferences mainPrefs] windowLeaveFullScreen] && [[self window] isFullScreen])
-                [[self window] unFullScreen];
-            if([thePlaylist count] <= 0)
-                return;
-        }
-    }
-    
-    if((anIndex >= 0) && (anIndex < [thePlaylist count])){
-        id tempURL = [thePlaylist objectAtIndex:anIndex];
-		[theMovieView precacheURL:tempURL];
-    }
-}
 
 /**
  * Chooses the proper playlist item and calls playAtIndex:
  */
--(void)playPrev
-{
-	unsigned anIndex = [thePlaylist indexOfObject:theCurrentURL];
-	
+
+-(int)getPrevIndex{
+    int anIndex = [thePlaylist indexOfObject:theCurrentURL];
+    
     if(anIndex ==0){
         if ([thePlaylist isEmpty])
-            return;
+            return -1;
         anIndex = [thePlaylist count];   
     }
     
-    anIndex--;
+   return anIndex;
+}
+
+-(void)playPrev
+{
+    int anIndex =  [self getPrevIndex];
     
     if((anIndex >= 0) && (anIndex < [thePlaylist count])){
 		[self playAtIndex:anIndex];
@@ -434,9 +420,7 @@ stuff won't work properly! */
     
     if(isPlaying)
         [theMovieView start];
-	/* This precaching isn't going to work unless you run some sort of detection first
-		to make sure the next URL can be loaded by the existing plugin. */
-   // [self preloadNext];
+
     
 }
 

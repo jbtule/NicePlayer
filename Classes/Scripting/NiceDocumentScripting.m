@@ -20,6 +20,39 @@
     
 }
 
+-(NiceMovie*)currentMovie;
+{
+    if(theCurrentURL !=nil){
+        return [NiceMovie movieWithURL:theCurrentURL andPlaylist:self];
+    }else{
+        return nil;
+    }
+}
+
+-(NiceMovie*)prevMovie;
+{
+    int anIndex =  [self getPrevIndex];
+    
+    if((anIndex >= 0) && (anIndex < [thePlaylist count])){
+        return [NiceMovie movieWithURL:[thePlaylist objectAtIndex:anIndex] andPlaylist:self];
+    }else{
+        return nil;
+    }
+}
+
+-(NiceMovie*)nextMovie;
+{
+    int anIndex =  [self getNextIndex];
+    if(anIndex >= [thePlaylist count] && REPEAT_LIST == theRepeatMode)
+            anIndex = 0;
+
+    if((anIndex >= 0) && (anIndex < [thePlaylist count])){
+        return [NiceMovie movieWithURL:[thePlaylist objectAtIndex:anIndex] andPlaylist:self];
+    }else{
+        return nil;
+    }
+}
+
 -(int)indexForMovie:(NiceMovie*)aMovie{
  
    return [thePlaylist indexOfObject:[aMovie URL]];

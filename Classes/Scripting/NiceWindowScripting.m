@@ -38,16 +38,16 @@
 
 -(void)handleAddURLToPlaylistCommand:(id)sender
 {
-	NSDictionary *eArgs = [sender evaluatedArguments];
-	NSURL *newURL = (NSURL *)CFURLCreateWithFileSystemPath(NULL, (CFStringRef)[eArgs objectForKey:@"file"],
-														   kCFURLHFSPathStyle, NO);
-	if([eArgs objectForKey:@"atIndex"] != nil)
-		[[[self windowController] document] addURLToPlaylist:newURL
-													 atIndex:[[eArgs objectForKey:@"atIndex"] intValue]];
-	else
-		[[[self windowController] document] addURLToPlaylist:newURL];
+    NSDictionary *eArgs = [sender evaluatedArguments];
+    NSURL *newURL = (NSURL *)CFURLCreateWithFileSystemPath(NULL, (CFStringRef)[eArgs objectForKey:@"file"],
+                                                           kCFURLHFSPathStyle, NO);
+    if([eArgs objectForKey:@"atIndex"] != nil)
+        [[[self windowController] document] addURLToPlaylist:newURL
+                                                     atIndex:[[eArgs objectForKey:@"atIndex"] intValue]];
+    else
+        [[[self windowController] document] addURLToPlaylist:newURL];
     
-	[newURL release];
+    [newURL release];
 }
 
 -(BOOL)playlistShowing

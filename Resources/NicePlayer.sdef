@@ -35,6 +35,15 @@
 					<property name="window" code="cwin" type="window" access="r">
 						<cocoa method="window"/>
 					</property>
+					<property name="current" code="NPCu" description="current movie in playlist" type="movie" access="r">
+						<cocoa method="currentMovie"/>
+					</property>
+					<property name="next" code="NPne" description="next movie in playlist" type="movie" access="r">
+						<cocoa method="nextMovie"/>
+					</property>
+					<property name="previous" code="NPpr" description="Previous movie in playlist" type="movie" access="r">
+						<cocoa method="prevMovie"/>
+					</property>
 				</properties>
 				<responds-to-commands>
 					<responds-to name="play">
