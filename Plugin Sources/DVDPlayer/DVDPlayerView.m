@@ -146,16 +146,27 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 																	description:&description
 																		   type:&fileSystemType];
 	if((isMountPoint & removableFlag) || ([[[url path] lastPathComponent] isEqualToString:@"VIDEO_TS"])){
-		myURL = [url retain];
+		myURL = url;
+	} else {
+		NSString *sub_videots = [[url path] stringByAppendingPathComponent:@"VIDEO_TS"];
+		BOOL isDir;
+		if([[NSFileManager defaultManager] fileExistsAtPath:sub_videots isDirectory:&isDir] && isDir)
+			myURL = [NSURL fileURLWithPath:sub_videots];
+		else {
+			return NO;
+		}
+	}
+	
+	FSRef fsref;
+	CFURLGetFSRef((CFURLRef)myURL, &fsref);
+
+	BOOL isValid;
+	DVDIsValidMediaRef(&fsref, &isValid);
+	if(isValid){
+		[myURL retain];
 		return YES;
 	}
 	
-	NSString *sub_videots = [[url path] stringByAppendingPathComponent:@"VIDEO_TS"];
-	BOOL isDir;
-	if([[NSFileManager defaultManager] fileExistsAtPath:sub_videots isDirectory:&isDir] && isDir){
-		myURL = [[NSURL fileURLWithPath:sub_videots] retain];
-		return YES;
-	}
 	myURL = nil;
 	return NO;
 }
