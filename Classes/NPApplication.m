@@ -133,7 +133,7 @@
 
 -(NSArray *)orderedWindows
 {
-	int i;
+	unsigned i;
 	NSArray *oWin = [super orderedWindows];
 	NSMutableArray *newWin = [NSMutableArray array];
 	for(i = 0; i < [oWin count]; i++){
