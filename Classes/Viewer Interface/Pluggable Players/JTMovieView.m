@@ -61,6 +61,7 @@
 		oldPlayState = STATE_INACTIVE;
 		[self setAutoresizingMask:(NSViewWidthSizable | NSViewHeightSizable)];
 		[self showController:NO adjustingSize:NO];
+		[self setEditable:NO];
 		muted = [super isMuted];
 		if(![self movie]){
 			id blank = [[NSBundle mainBundle] pathForResource:@"black" ofType:@"png"];
@@ -72,8 +73,7 @@
 			id movie = [[NSMovie alloc] initWithURL:blankURL byReference:YES];
 			if(!movie)
 				return nil;
-			[self setMovie:movie];
-			[movie autorelease];
+			[self setMovie:[movie autorelease]];
 		}
 	}
 	
@@ -82,11 +82,12 @@
 
 -(void)close
 {
+	[film release];
 }
 
 -(void)loadMovie
 {
-	[self setMovie:[film autorelease]];
+	[self setMovie:film];
 }
 
 -(void)keyDown:(NSEvent *)anEvent
@@ -378,4 +379,10 @@
 {
 	return [[self window] performDragOperation:sender];
 }
+
+-(void)concludeDragOperation:(id <NSDraggingInfo>)sender
+{
+	[[self window] concludeDragOperation:sender];
+}
+
 @end

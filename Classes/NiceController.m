@@ -114,8 +114,7 @@ id controller;
 			[tempDoc addURLToPlaylist:tempURL];
     }
 	
-    if ([files count]> 1)
-		[tempDoc togglePlaylistDrawer:self];
+	[tempDoc openPlaylistDrawerConditional:self];
 }
 
 -(void)checkMouseLocation:(id)sender

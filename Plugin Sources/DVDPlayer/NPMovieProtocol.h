@@ -9,6 +9,7 @@
  */
 
 #import <Cocoa/Cocoa.h>
+#import <AppKit/NSDragging.h>
 
 enum direction { DIRECTION_BACKWARD = -1, DIRECTION_FORWARD = 1};
 
@@ -63,10 +64,11 @@ enum direction { DIRECTION_BACKWARD = -1, DIRECTION_FORWARD = 1};
 -(void)stepBackward;
 -(void)stepForward;
 
--(double)currentMovieFrameRate;
+
 -(double)totalTime;
 -(double)currentMovieTime;
 -(void)setCurrentMovieTime:(double)newMovieTime;
+-(double)currentMovieFrameRate;
 
 -(id)menuPrefix;
 -(id)menuTitle;

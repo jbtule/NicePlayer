@@ -43,6 +43,11 @@
 	return [[self window] performDragOperation:sender];
 }
 
+-(void)concludeDragOperation:(id <NSDraggingInfo>)sender
+{
+	[[self window] concludeDragOperation:sender];
+}
+
 -(void)ffStart:(int)seconds
 {
 	if(oldPlayState == STATE_INACTIVE)

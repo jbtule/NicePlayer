@@ -884,6 +884,10 @@
 	return YES;
 }
 
+-(void)concludeDragOperation:(id <NSDraggingInfo>)sender
+{
+}
+
 -(NSArray *)acceptableDragTypes
 {
 	return [NSArray arrayWithObjects:NSFilenamesPboardType,nil];

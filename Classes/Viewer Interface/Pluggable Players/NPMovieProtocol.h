@@ -9,6 +9,7 @@
  */
 
 #import <Cocoa/Cocoa.h>
+#import <AppKit/NSDragging.h>
 
 enum direction { DIRECTION_BACKWARD = -1, DIRECTION_FORWARD = 1};
 

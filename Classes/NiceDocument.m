@@ -371,7 +371,7 @@ stuff won't work properly! */
 {	
     int anIndex = [self getNextIndex];
     
-    if(anIndex >= [thePlaylist count]){
+    if(anIndex >= (int)[thePlaylist count]){
         if(REPEAT_LIST == theRepeatMode){
             anIndex = 0;
         } else {
@@ -380,7 +380,7 @@ stuff won't work properly! */
         }
     }
     
-    if( (anIndex >= 0) && (anIndex < [thePlaylist count])){
+    if( (anIndex >= 0) && (anIndex < (int)[thePlaylist count])){
 		[self playAtIndex:anIndex];
     }
 }
@@ -406,7 +406,7 @@ stuff won't work properly! */
 {
     int anIndex =  [self getPrevIndex];
     
-    if((anIndex >= 0) && (anIndex < [thePlaylist count])){
+    if((anIndex >= 0) && (anIndex < (int)[thePlaylist count])){
 		[self playAtIndex:anIndex];
     }
 }
