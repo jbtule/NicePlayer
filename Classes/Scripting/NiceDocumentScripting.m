@@ -142,11 +142,17 @@
 -(void)handleIncrementVolumeCommand:(id)sender
 {
 	[theMovieView incrementVolume];
+        [theMovieView showOverLayVolume];
+        [theMovieView smartHideMouseOverOverlays];
+
+
 }
 
 -(void)handleDecrementVolumeCommand:(id)sender
 {
-	[theMovieView decrementVolume];
+    [theMovieView decrementVolume];
+    [theMovieView showOverLayVolume];
+    [theMovieView smartHideMouseOverOverlays];
 }
 
 -(void)handleToggleMuteCommand:(id)sender

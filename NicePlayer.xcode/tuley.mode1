@@ -254,8 +254,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -312,14 +310,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>7</integer>
-									<integer>3</integer>
-									<integer>2</integer>
+									<integer>75</integer>
+									<integer>66</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {375, 819}}</string>
+							<string>{{0, 799}, {375, 819}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -644,7 +641,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>NiceController.m</string>
+								<string>NiceDocumentScripting.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -652,9 +649,9 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>NiceController.m</string>
+										<string>NiceDocumentScripting.m</string>
 										<key>bookmark</key>
-										<string>3EBF393B07D1623500B30DAB</string>
+										<string>3EBF395A07D1646A00B30DAB</string>
 										<key>history</key>
 										<array>
 											<string>3EB6437D07072092007BACF7</string>
@@ -753,20 +750,22 @@
 											<string>3E21296907C8A533003F405A</string>
 											<string>3E49DCDF07C98017009BA150</string>
 											<string>3EA665F507CD645B00421E7E</string>
-											<string>3EBF38C307D15BE000B30DAB</string>
 											<string>3EBF38CB07D15CDF00B30DAB</string>
-											<string>3EBF38CE07D15CDF00B30DAB</string>
 											<string>3EBF38DD07D15DCE00B30DAB</string>
 											<string>3EBF38DE07D15DCE00B30DAB</string>
-											<string>3EBF38DF07D15DCE00B30DAB</string>
-											<string>3EBF38EF07D15EC400B30DAB</string>
 											<string>3EBF38FA07D15FF700B30DAB</string>
-											<string>3EBF392007D161E900B30DAB</string>
 											<string>3EBF392107D161E900B30DAB</string>
-											<string>3EBF392207D161E900B30DAB</string>
 											<string>3EBF392307D161E900B30DAB</string>
 											<string>3EBF393407D1621C00B30DAB</string>
-											<string>3EBF393A07D1623500B30DAB</string>
+											<string>3EBF394007D163F700B30DAB</string>
+											<string>3EBF394107D163F700B30DAB</string>
+											<string>3EBF394207D163F700B30DAB</string>
+											<string>3EBF394307D163F700B30DAB</string>
+											<string>3EBF394407D163F700B30DAB</string>
+											<string>3EBF394507D163F700B30DAB</string>
+											<string>3EBF394607D163F700B30DAB</string>
+											<string>3EBF394707D163F700B30DAB</string>
+											<string>3EBF394807D163F700B30DAB</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -935,6 +934,21 @@
 											<string>3EBF392D07D161E900B30DAB</string>
 											<string>3EBF393607D1621C00B30DAB</string>
 											<string>3EBF393707D1621C00B30DAB</string>
+											<string>3EBF394907D163F700B30DAB</string>
+											<string>3EBF394A07D163F700B30DAB</string>
+											<string>3EBF394B07D163F700B30DAB</string>
+											<string>3EBF394C07D163F700B30DAB</string>
+											<string>3EBF394D07D163F700B30DAB</string>
+											<string>3EBF394E07D163F700B30DAB</string>
+											<string>3EBF394F07D163F700B30DAB</string>
+											<string>3EBF395007D163F700B30DAB</string>
+											<string>3EBF395107D163F700B30DAB</string>
+											<string>3EBF395207D163F700B30DAB</string>
+											<string>3EBF395307D163F700B30DAB</string>
+											<string>3EBF395407D163F700B30DAB</string>
+											<string>3EBF395507D163F700B30DAB</string>
+											<string>3EBF395607D163F700B30DAB</string>
+											<string>3EBF395707D163F700B30DAB</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -1009,7 +1023,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>131162677.25184198</real>
+	<real>131163242.47688478</real>
 	<key>ToolbarDisplayMode</key>
 	<integer>1</integer>
 	<key>ToolbarIsVisible</key>
@@ -1026,8 +1040,8 @@
 	<array>
 		<string>3EC6F2CD0735CBD6003079FC</string>
 		<string>3E99510507D154340002C1F4</string>
-		<string>1C0AD2B3069F1EA900FABCE6</string>
 		<string>/Users/tuley/Documents/Projects/NicePlayer Project/NicePlayer/NicePlayer.xcode</string>
+		<string>1C0AD2B3069F1EA900FABCE6</string>
 	</array>
 	<key>WindowString</key>
 	<string>758 252 1072 879 0 0 1920 1178 </string>
@@ -1059,7 +1073,7 @@
 										<key>PBXProjectModuleLabel</key>
 										<string>NPApplication.m</string>
 										<key>bookmark</key>
-										<string>3EBF393C07D1623500B30DAB</string>
+										<string>3EBF395B07D1646A00B30DAB</string>
 										<key>history</key>
 										<array>
 											<string>3EBF391E07D1612D00B30DAB</string>

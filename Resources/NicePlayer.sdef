@@ -66,10 +66,10 @@
 					<responds-to name="toggle mute">
 						<cocoa method="handleToggleMuteCommand:"/>
 					</responds-to>
-					<responds-to name="decrement volume">
+					<responds-to name="decrease volume">
 						<cocoa method="handleDecrementVolumeCommand:"/>
 					</responds-to>
-					<responds-to name="increment volume">
+					<responds-to name="increase volume">
 						<cocoa method="handleIncrementVolumeCommand:"/>
 					</responds-to>
 					<responds-to name="start rewinding">
@@ -151,12 +151,12 @@
 			</command>
 			<command name="toggle playlist drawer" code="NIceTGDR"/>
 			<command name="toggle mute" code="NIcetgmt" description="Toggle whether sound is muted."/>
-			<command name="decrement volume" code="NIcevlde"/>
-			<command name="increment volume" code="NIcevlin"/>
-			<command name="stop rewinding" code="NIcerwsp"/>
-			<command name="start rewinding" code="NIcerwst"/>
-			<command name="start fast forwarding" code="NIceffst"/>
-			<command name="stop fast forwarding" code="NIceffsp"/>
+			<command name="decrease volume" code="NIcevlde">
+				<direct-parameter type="playlist"/>
+			</command>
+			<command name="increase volume" code="NIcevlin">
+				<direct-parameter type="playlist"/>
+			</command>
 		</commands>
 	</suite>
 </dictionary>
