@@ -227,9 +227,10 @@
 	[self putOverlay:theOverlayWindow
 			 inFrame:NSMakeRect(currentFrame.origin.x,
 								currentFrame.origin.y,
-								currentFrame.size.width-16,
+								currentFrame.size.width,
 								32)
 	  withVisibility:YES];
+	[theOverlayWindow createResizeTriangle];
 	[self putOverlay:theOverlayTitleBar
 			 inFrame:NSMakeRect(currentFrame.origin.x,
 								currentFrame.origin.y + currentFrame.size.height-24,
@@ -319,18 +320,18 @@
         if([[NSScreen mainScreen] visibleFrame].origin.y < frame.origin.y){
             [theOverlayWindow setFrame:NSMakeRect(frame.origin.x,
 												  frame.origin.y,
-												  frame.size.width-16,
+												  frame.size.width,
 												  32) display:YES];
 		}	else{
 			[theOverlayWindow setFrame:NSMakeRect(frame.origin.x,
 												  [[NSScreen mainScreen] visibleFrame].origin.y,
-												  frame.size.width-16,
+												  frame.size.width,
 													  32) display:YES];
 		}
 	} else
         [theOverlayWindow setFrame:NSMakeRect(mainFrame.origin.x,
 											  mainFrame.origin.y,
-											  mainFrame.size.width-16,
+											  mainFrame.size.width,
 											  32) display:YES];
 }
 

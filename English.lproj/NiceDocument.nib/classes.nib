@@ -88,10 +88,11 @@
         {
             CLASS = OverlayControllerWindow; 
             LANGUAGE = ObjC; 
-            OUTLETS = {ffButton = NSButton; rrButton = NSButton; }; 
+            OUTLETS = {ffButton = NSButton; overlayResize = NSWindow; rrButton = NSButton; }; 
             SUPERCLASS = OverlayWindow; 
         }, 
         {CLASS = OverlayWindow; LANGUAGE = ObjC; SUPERCLASS = NSWindow; }, 
+        {CLASS = ResizeTriangle; LANGUAGE = ObjC; SUPERCLASS = NSWindow; }, 
         {
             CLASS = ScriptingDelegate; 
             LANGUAGE = ObjC; 

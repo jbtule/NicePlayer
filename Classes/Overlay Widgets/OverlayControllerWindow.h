@@ -10,7 +10,12 @@
 {
     IBOutlet NSButton* ffButton;
     IBOutlet NSButton* rrButton;
-
-    
+	
+    IBOutlet NSWindow* overlayResize;
+	
+	BOOL holdsResizeTriangle;
 }
+
+-(void)createResizeTriangle;
+
 @end

@@ -17,11 +17,8 @@
                                           backing:NSBackingStoreBuffered
                                             defer:YES];
     [result setBackgroundColor: [NSColor clearColor]];
-
-    [result setOpaque:NO];
-    
+    [self setOpaque:NO];
     return result;
-    
 }
 
 - (BOOL)canBecomeMainWindow
