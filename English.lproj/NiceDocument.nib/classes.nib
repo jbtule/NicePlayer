@@ -72,8 +72,6 @@
             CLASS = NiceWindow; 
             LANGUAGE = ObjC; 
             OUTLETS = {
-                initialFadeObjects = id; 
-                initialFadeTimer = id; 
                 theFFButton = id; 
                 theMovieView = id; 
                 theOverlaySubTitle = id; 
@@ -83,7 +81,6 @@
                 thePlayButton = id; 
                 theRRButton = id; 
                 theScrubBar = id; 
-                theShadowWindow = id; 
                 theTimeField = id; 
                 theTitleField = id; 
                 theVolumeView = id; 
@@ -103,7 +100,6 @@
             SUPERCLASS = OverlayWindow; 
         }, 
         {CLASS = OverlayWindow; LANGUAGE = ObjC; SUPERCLASS = NSWindow; }, 
-        {CLASS = ParentShadowWindow; LANGUAGE = ObjC; SUPERCLASS = NSWindow; }, 
         {CLASS = ResizeTriangle; LANGUAGE = ObjC; SUPERCLASS = NSWindow; }, 
         {
             CLASS = ScriptingDelegate; 

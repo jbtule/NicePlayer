@@ -25,26 +25,25 @@
                                                      name:@"PresentMultiple"
                                                    object:nil];
 		[[NSNotificationCenter defaultCenter] addObserver:self
-                                                         selector:@selector(unPresentMultiple)
-                                                             name:@"unPresentMultiple"
-                                                        object:nil];
+												 selector:@selector(unPresentMultiple)
+													 name:@"unPresentMultiple"
+												   object:nil];
         
 		timeUpdaterTimer = [NSTimer scheduledTimerWithTimeInterval:1
-                                                                        target:self
-                                                                  selector:@selector(updateByTime:)
-                                                                  userInfo:nil
-                                                                   repeats:YES];
-
+															 target:self
+														   selector:@selector(updateByTime:)
+														   userInfo:nil
+															repeats:YES];
 		[self setBackgroundColor:[NSColor blackColor]];
 		[self setOpaque:YES];
 		[self useOptimizedDrawing:YES];
-		[self setHasShadow:NO];
+		[self setHasShadow:YES];
 		
 		dropScreen = NO;
 		presentScreen = NO;
-                isFilling = NO;
-                isWidthFilling = NO;
-                miniVolume = 1;
+        isFilling = NO;
+        isWidthFilling = NO;
+        miniVolume = 1;
 		windowOverlayIsShowing = NO;
 		titleOverlayIsShowing = NO;
 		initialFadeTimer = nil;
@@ -75,7 +74,6 @@
 	[thePlayButton setActionView:theMovieView];
 	[theRRButton setActionView:theMovieView];
 	[theFFButton setActionView:theMovieView];
-        [theShadowWindow setBackgroundColor:[NSColor blackColor]];
 }
 
 -(void)close
@@ -102,35 +100,12 @@
     [super resignMainWindow];
 }
 
-- (void)becomeKeyWindow{
-    //[self setHasShadow:YES];
-    //[theShadowWindow setAlphaValue:0.0];
-    
-   
-    [super becomeKeyWindow];
-    [theShadowWindow setHasShadow:NO];
-    [theShadowWindow setHasShadow:YES];
-
-}
-
-- (void)resignKeyWindow{
-    //[theShadowWindow setAlphaValue:1.0];
-    //[self setHasShadow:YES];
-   // theShadowWindow->theIsKey=false;
-    [super resignKeyWindow];
-    [theShadowWindow setHasShadow:NO];
-    [theShadowWindow setHasShadow:YES];
-
-}
-
 -(void)setFrame:(NSRect)frameRect display:(BOOL)displayFlag
 {
     [super setFrame:frameRect display:displayFlag];
-        [theShadowWindow setFrame:frameRect display:displayFlag];
-        [self setOverlayWindowLocation];
-        [self setOverlayTitleLocation];
-        [self setOverLayVolumeLocation];
-   
+	[self setOverlayWindowLocation];
+	[self setOverlayTitleLocation];
+	[self setOverLayVolumeLocation];
 }
 
 - (BOOL)canBecomeMainWindow
@@ -282,19 +257,12 @@
 														 forKeys:
 		[NSArray arrayWithObjects:@"Window", @"Fade", nil]];
 	initialFadeTimer = [[FadeOut fadeOut] initialFadeForDict:fadeDict];
-        
-        [self putOverlay:theShadowWindow inFrame:[self frame] withVisibility:YES ordered:NSWindowBelow];
 }
 
 -(void)putOverlay:(id)anOverlay inFrame:(NSRect)aFrame withVisibility:(BOOL)isVisible
 {
-    [self putOverlay:anOverlay inFrame:aFrame withVisibility:isVisible ordered:NSWindowAbove];
-}
-
--(void)putOverlay:(id)anOverlay inFrame:(NSRect)aFrame withVisibility:(BOOL)isVisible ordered:(int)aWindowOrder
-{
-    [anOverlay setFrame:aFrame display:NO];
-    [self addChildWindow:anOverlay ordered:aWindowOrder];
+	[anOverlay setFrame:aFrame display:NO];
+    [self addChildWindow:anOverlay ordered:NSWindowAbove];
     
     [anOverlay setAlphaValue:(isVisible ? 1.0 : 0.0)];
     [anOverlay setLevel:[self level]];
