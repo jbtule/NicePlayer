@@ -60,6 +60,9 @@ enum direction { DIRECTION_BACKWARD = -1, DIRECTION_FORWARD = 1};
 -(void)rrDo:(int)seconds;
 -(void)rrEnd;
 
+-(void)stepBackward;
+-(void)stepForward;
+
 -(long)totalTime;
 -(long)currentMovieTime;
 -(void)setCurrentMovieTime:(long)newMovieTime;

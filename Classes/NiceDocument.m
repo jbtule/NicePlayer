@@ -314,6 +314,7 @@ int movieMenuLocationIndex = -1;
 -(void)playNext
 {	
     unsigned anIndex = [thePlaylist indexOfObject:theCurrentURL];
+	BOOL isPlaying = [theMovieView isPlaying];
     
     if(isRandom){
         anIndex = ((float)random()/RAND_MAX)*[thePlaylist count];
@@ -332,7 +333,7 @@ int movieMenuLocationIndex = -1;
         }
     }
     
-    if(anIndex >=0 && anIndex < [thePlaylist count]){
+    if(isPlaying && (anIndex >= 0) && (anIndex < [thePlaylist count])){
 		[self playAtIndex:anIndex];
     }
 }
@@ -340,7 +341,7 @@ int movieMenuLocationIndex = -1;
 -(void)preloadNext
 {	
     unsigned anIndex = [thePlaylist indexOfObject:theCurrentURL];
-    
+
     if(isRandom){
         return;
     }else{
@@ -358,18 +359,20 @@ int movieMenuLocationIndex = -1;
         }
     }
     
-    if(anIndex >=0 && anIndex < [thePlaylist count]){
+    if((anIndex >= 0) && (anIndex < [thePlaylist count])){
         id tempURL = [thePlaylist objectAtIndex:anIndex];
-	[theMovieView precacheURL:tempURL];
+		[theMovieView precacheURL:tempURL];
     }
 }
 
 /**
  * Chooses the proper playlist item and calls playAtIndex:
  */
--(void)playPrev{
-      unsigned anIndex = [thePlaylist indexOfObject:theCurrentURL];
-    
+-(void)playPrev
+{
+	unsigned anIndex = [thePlaylist indexOfObject:theCurrentURL];
+    BOOL isPlaying = [theMovieView isPlaying];
+	
     if(anIndex ==0){
         if ([thePlaylist isEmpty])
             return;
@@ -378,7 +381,7 @@ int movieMenuLocationIndex = -1;
     
     anIndex--;
     
-    if(anIndex >=0 && anIndex < [thePlaylist count]){
+    if(isPlaying && (anIndex >= 0) && (anIndex < [thePlaylist count])){
 		[self playAtIndex:anIndex];
     }
 }

@@ -403,6 +403,16 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	[super rrEnd];
 }
 
+-(void)stepBackward
+{
+	//DVDStepFrame(kDVDScanDirectionBackward);
+}
+
+-(void)stepForward
+{
+	DVDStepFrame(kDVDScanDirectionForward);
+}
+
 -(BOOL)hasEnded:(id)sender
 {
 	return NO;

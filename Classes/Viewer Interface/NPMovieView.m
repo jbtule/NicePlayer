@@ -255,23 +255,28 @@
 			}
 			break;
 		case NSRightArrowFunctionKey:
-                    if([anEvent modifierFlags] & NSCommandKeyMask){
-                        [ [[self window]delegate] playNext];
-                        break;
-                    }
+			if([anEvent modifierFlags] & NSCommandKeyMask){
+				[[[self window] delegate] playNext];
+				break;
+			}
+			if([anEvent modifierFlags] & NSAlternateKeyMask){
+				[trueMovieView stepForward];
+				break;
+			}
 			if(![anEvent isARepeat])
 				[self ffStart];
 			else
 				[self ffDo];
 			break;
 		case NSLeftArrowFunctionKey:
-                    if([anEvent modifierFlags] & NSCommandKeyMask){
-                        if([self currentMovieTime] > 2)
-                            [trueMovieView setCurrentMovieTime:0];
-                        else
-                           [(NiceDocument *) [[self window] delegate] playPrev];
-                        break;
-                    }
+			if([anEvent modifierFlags] & NSCommandKeyMask){
+				[[[self window] delegate] playPrev];
+				break;
+			}
+			if([anEvent modifierFlags] & NSAlternateKeyMask){
+				[trueMovieView stepBackward];
+				break;
+			}
 			if(![anEvent isARepeat])
 				[self rrStart];
 			else

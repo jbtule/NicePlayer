@@ -23,5 +23,6 @@
 +(id)blankImage;
 
 -(void)incrementMovieTime:(long)timeDifference inDirection:(enum direction)aDirection;
+-(void)stepFrameInDirection:(int)aDirection;
 
 @end
