@@ -241,6 +241,13 @@
 								  NSMidX(currentFrame) - NSMidX([theOverlayVolume frame]),
 								  NSMidY(currentFrame) - NSMidY([theOverlayVolume frame]))
 	  withVisibility:NO];
+
+	initialFadeObjects = [[NSMutableSet setWithObjects:theOverlayWindow, theOverlayTitleBar, nil] retain];
+	NSDictionary *fadeDict = [NSDictionary dictionaryWithObjects:
+		[NSArray arrayWithObjects:self,	initialFadeObjects,	nil]
+														 forKeys:
+		[NSArray arrayWithObjects:@"Window", @"Fade", nil]];
+	[[FadeOut fadeOut] initialFadeForDict:fadeDict];
 }
 
 -(void)putOverlay:(id)anOverlay inFrame:(NSRect)aFrame withVisibility:(BOOL)isVisible
@@ -250,10 +257,7 @@
     
     [anOverlay setAlphaValue:(isVisible ? 1.0 : 0.0)];
     [anOverlay setLevel:[self level]];
-    [anOverlay orderFront:self];
-	
-	[[FadeOut fadeOut] initialFadeForObjects:
-		[NSArray arrayWithObjects:theOverlayWindow, theOverlayTitleBar, nil]];
+    [anOverlay orderFront:self];	
 }
 
 -(void)hideOverlays
@@ -281,11 +285,19 @@
 	isInitialDisplay = NO;
 }
 
+-(void)initialFadeComplete
+{
+	isInitialDisplay = NO;
+}
+
 -(void)showOverLayWindow
 {
 	if((windowOverlayIsShowing) && !(isInitialDisplay))
 		return;
 
+	if(isInitialDisplay)
+		[initialFadeObjects removeObject:theOverlayWindow];
+	
 	[self setOverlayWindowLocation];
     [self updateByTime:self];
 	[[FadeOut fadeOut] removeWindow:theOverlayWindow];
@@ -338,6 +350,10 @@
 {
 	if((titleOverlayIsShowing) && !(isInitialDisplay))
 		return;
+
+	if(isInitialDisplay)
+		[initialFadeObjects removeObject:theOverlayTitleBar];
+	
 	[self setOverlayTitleLocation];
 	[[FadeOut fadeOut] removeWindow:theOverlayTitleBar];
     [theOverlayTitleBar setAlphaValue:1.0];
@@ -542,7 +558,7 @@
 	
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"ChangingSize"
 														object:self
-													  userInfo:NSStringFromSize(NSMakeSize(newHeight, newWidth))];
+													  userInfo:(NSDictionary *)NSStringFromSize(NSMakeSize(newHeight, newWidth))];
 	if(fullScreen){
 		NSRect centeredRect = [self centeredLocation];
 		[self setFrame:NSMakeRect(centeredRect.origin.x, centeredRect.origin.y,

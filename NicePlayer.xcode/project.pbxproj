@@ -606,6 +606,21 @@
 			settings = {
 			};
 		};
+		253C014E07C00DF200172C2F = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = NiceControllerScripting.h;
+			path = Classes/Scripting/NiceControllerScripting.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		253C014F07C00DF200172C2F = {
+			fileRef = 253C014E07C00DF200172C2F;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
 		257029A40732D1B300967356 = {
 			children = (
 				257029A50732D1B300967356,
@@ -982,6 +997,7 @@
 		};
 		25D2E7B407BF36D5004BEF7D = {
 			children = (
+				253C014E07C00DF200172C2F,
 				25D2ED0B07BF6066004BEF7D,
 				25D2E7C207BF3758004BEF7D,
 				25D2E84007BF3B44004BEF7D,
@@ -2778,6 +2794,7 @@
 				251FBBE107BC201900D147E5,
 				2513D2F507BDAC4200BB6055,
 				250EA9D207BEE4FD00187F9D,
+				253C014F07C00DF200172C2F,
 			);
 			isa = PBXHeadersBuildPhase;
 			runOnlyForDeploymentPostprocessing = 0;

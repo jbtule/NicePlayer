@@ -10,14 +10,14 @@
 
 
 @interface FadeOut : NSObject {
-	NSMutableSet *windowList;
+	NSMutableSet *windowSet;
 	NSTimer *faderTimer;
 }
 
 +(id)fadeOut;
 -(id)init;
--(void)initialFadeForObjects:(id)anArray;
--(void)doInitialFadeForObjects:(id)aTimer;
+-(void)initialFadeForDict:(id)anArray;
+-(void)doInitialFadeForDict:(id)aTimer;
 -(void)addWindow:(id)anObject;
 -(void)removeWindow:(id)anObject;
 -(void)destroyAndCreateTimer;

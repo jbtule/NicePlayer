@@ -7,6 +7,7 @@
 //
 
 #import "NiceWindow.h"
+#import "NiceControllerScripting.h"
 
 @implementation NiceWindow (NiceWindowScripting)
 

@@ -45,6 +45,7 @@
 	BOOL windowIsFloating;
 	
     id timeUpdaterTimer;
+	id initialFadeObjects;
     int oldWindowLevel;
 	int timeDisplayStyle;
     float miniVolume;
@@ -68,6 +69,7 @@
 -(void)hideOverlays;
 -(void)hideInitialWindows;
 -(void)hideAllImmediately;
+-(void)initialFadeComplete;
 -(void)showOverLayWindow;
 -(void)setOverlayWindowLocation;
 -(void)hideOverLayWindow;

@@ -7,6 +7,7 @@
 //
 
 #import "NiceController.h"
+#import "NiceControllerScripting.h"
 
 @implementation NiceController (NiceControllerScripting)
 

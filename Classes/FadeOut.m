@@ -8,6 +8,7 @@
 
 #import "FadeOut.h"
 #import "Preferences.h"
+#import "NiceWindow.h"
 
 #define INITIAL_FADE_DURATION	5.0
 #define ALPHA_VALUE_DELTA		0.04
@@ -27,45 +28,46 @@ static id fadeOutInstance = nil;
 -(id)init
 {
 	if(self = [super init]){
-		windowList = [[NSMutableSet set] retain];
+		windowSet = [[NSMutableSet set] retain];
 		faderTimer = nil;
 	}
 	return self;
 }
 
--(void)initialFadeForObjects:(id)anArray
+-(void)initialFadeForDict:(id)aDictionary
 {
 	if([[Preferences mainPrefs] showInitialOverlays]){
 		[NSTimer scheduledTimerWithTimeInterval:INITIAL_FADE_DURATION
 										 target:self
-									   selector:@selector(doInitialFadeForObjects:)
-									   userInfo:anArray
+									   selector:@selector(doInitialFadeForDict:)
+									   userInfo:aDictionary
 										repeats:NO];
 	} else {
-		id anObject, e = [anArray objectEnumerator];
+		id anObject, e = [[aDictionary objectForKey:@"Fade"] objectEnumerator];
 		while(anObject = [e nextObject]){
 			[anObject setAlphaValue:0.0];
 		}
 	}
 }
 
--(void)doInitialFadeForObjects:(NSTimer *)aTimer
+-(void)doInitialFadeForDict:(NSTimer *)aTimer
 {
 	if([[Preferences mainPrefs] fadeOverlays]){
-		[windowList addObjectsFromArray:[aTimer userInfo]];
+		[windowSet unionSet:[[aTimer userInfo] objectForKey:@"Fade"]];
 		[self destroyAndCreateTimer];
 	} else {
 		id anObject, e = [[aTimer userInfo] objectEnumerator];
 		while(anObject = [e nextObject]){
 			[anObject setAlphaValue:0.0];
 		}
+		[[[aTimer userInfo] objectForKey:@"Window"] initialFadeComplete];
 	}
 }
 
 -(void)addWindow:(id)anObject
 {
 	if([[Preferences mainPrefs] fadeOverlays]){
-		[windowList addObject:anObject];
+		[windowSet addObject:anObject];
 		[self destroyAndCreateTimer];
 	} else
 		[anObject setAlphaValue:0.0];
@@ -73,19 +75,19 @@ static id fadeOutInstance = nil;
 
 -(void)removeWindow:(id)anObject
 {
-	[windowList removeObject:anObject];
+	[windowSet removeObject:anObject];
 }
 
 -(void)destroyAndCreateTimer
 {
-	if(([windowList count] > 0) && (faderTimer == nil)){
+	if(([windowSet count] > 0) && (faderTimer == nil)){
 		faderTimer = [NSTimer scheduledTimerWithTimeInterval:TIMER_INTERVAL
 													  target:self
 													selector:@selector(updateAlphaValues)
 													userInfo:nil
 													 repeats:YES];
 	}
-	if(([windowList count] == 0) && (faderTimer != nil)){
+	if(([windowSet count] == 0) && (faderTimer != nil)){
 		[faderTimer invalidate];
 		faderTimer = nil;
 	}
@@ -93,7 +95,7 @@ static id fadeOutInstance = nil;
 
 -(void)updateAlphaValues
 {
-	id anObject, e = [windowList objectEnumerator];
+	id anObject, e = [windowSet objectEnumerator];
 	while(anObject = [e nextObject]){
 		float newValue = [anObject alphaValue] - ALPHA_VALUE_DELTA;
 		newValue = (newValue < 0.0) ? 0.0 : newValue;
@@ -106,14 +108,14 @@ static id fadeOutInstance = nil;
 -(void)testForRemoval
 {
 	id newSet = [[NSMutableSet set] retain];
-	id anObject, e = [windowList objectEnumerator];
+	id anObject, e = [windowSet objectEnumerator];
 	while(anObject = [e nextObject]){
 		if([anObject alphaValue] > 0.0)
 			[newSet addObject:anObject];
 	}
 	
-	[windowList release];
-	windowList = newSet;
+	[windowSet release];
+	windowSet = newSet;
 }
 
 @end
