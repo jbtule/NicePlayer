@@ -1010,6 +1010,8 @@
 		};
 		25D2E7B407BF36D5004BEF7D = {
 			children = (
+				3EF15FD007C8553B00AE56D7,
+				3EF15FD107C8553B00AE56D7,
 				3EF15F3507C8405700AE56D7,
 				3EF15F3607C8405700AE56D7,
 				3EF158C707C7F9CA00AE56D7,
@@ -2176,6 +2178,7 @@
 				3EEB7DB9076B754F0090E740,
 				3EF158C907C7F9CA00AE56D7,
 				3EF15F3707C8405700AE56D7,
+				3EF15FD207C8553B00AE56D7,
 			);
 			isa = PBXHeadersBuildPhase;
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2218,6 +2221,7 @@
 				3EEB7DBA076B754F0090E740,
 				3EF158CA07C7F9CA00AE56D7,
 				3EF15F3807C8405700AE56D7,
+				3EF15FD307C8553B00AE56D7,
 			);
 			isa = PBXSourcesBuildPhase;
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2800,6 +2804,46 @@
 			settings = {
 			};
 		};
+		3EF15FD007C8553B00AE56D7 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = NPAddCommand.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3EF15FD107C8553B00AE56D7 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = NPAddCommand.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3EF15FD207C8553B00AE56D7 = {
+			fileRef = 3EF15FD007C8553B00AE56D7;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3EF15FD307C8553B00AE56D7 = {
+			fileRef = 3EF15FD107C8553B00AE56D7;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3EF15FD407C8553B00AE56D7 = {
+			fileRef = 3EF15FD007C8553B00AE56D7;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3EF15FD507C8553B00AE56D7 = {
+			fileRef = 3EF15FD107C8553B00AE56D7;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
 //3E0
 //3E1
 //3E2
@@ -2936,6 +2980,7 @@
 				253C064D07C0891300172C2F,
 				3EF158CB07C7F9CA00AE56D7,
 				3EF15F3907C8405700AE56D7,
+				3EF15FD407C8553B00AE56D7,
 			);
 			isa = PBXHeadersBuildPhase;
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3068,6 +3113,7 @@
 				25E3AEFF07C0A65000746EA4,
 				3EF158CC07C7F9CA00AE56D7,
 				3EF15F3A07C8405700AE56D7,
+				3EF15FD507C8553B00AE56D7,
 			);
 			isa = PBXSourcesBuildPhase;
 			runOnlyForDeploymentPostprocessing = 0;

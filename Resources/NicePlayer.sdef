@@ -83,9 +83,6 @@
 					</property>
 				</properties>
 				<responds-to-commands>
-					<responds-to name="add to playlist">
-						<cocoa method="handleAddURLToPlaylistCommand:"/>
-					</responds-to>
 					<responds-to name="toggle full screen">
 						<cocoa method="handleToggleFullScreenCommand:"/>
 					</responds-to>
@@ -100,7 +97,7 @@
 					</responds-to>
 				</responds-to-commands>
 			</class>
-			<class name="movie" code="NPmv" plural="movies" inherits="NSCoreSuite.AbstractObject">
+			<class name="movie" code="NPmv" plural="movies" inherits="item">
 				<cocoa class="NiceMovie"/>
 				<properties>
 					<property name="name" code="pnam" description="The movie name" type="string" access="r">
@@ -114,6 +111,12 @@
 					<responds-to name="play">
 						<cocoa method="handlePlayCommand:"/>
 					</responds-to>
+					<responds-to name="add"/>
+				</responds-to-commands>
+			</class>
+			<class name="item" code="cobj" plural="items" inherits="NSCoreSuite.AbstractObject">
+				<responds-to-commands>
+					<responds-to name="add"/>
 				</responds-to-commands>
 			</class>
 		</classes>
@@ -124,9 +127,11 @@
 			<command name="toggle full screen" code="NIcetfsn"/>
 			<command name="full screen" code="NIceflsn"/>
 			<command name="normal screen" code="NIcenlsn"/>
-			<command name="add to playlist" code="NIceatpl" description="Add a file to the playlist.">
+			<command name="add" code="NIceatpl" description="file or movie to the playlist.">
+				<cocoa name="NPAddCommand" class="NPAddCommand"/>
+				<direct-parameter type="any" description="files or movies"/>
 				<parameter name="at index" code="NIat" description="The index to add the file at in the playlist." type="integer" optional="optional"/>
-				<parameter name="file" code="NIfl" description="The filename to add." type="file"/>
+				<parameter name="to" code="NIto" description="The playlist to add to" type="playlist"/>
 			</command>
 			<command name="toggle playlist drawer" code="NIceTGDR"/>
 			<command name="toggle mute" code="NIcetgmt" description="Toggle whether sound is muted."/>
