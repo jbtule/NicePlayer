@@ -338,6 +338,11 @@ stuff won't work properly! */
 	[theMovieView start];
 }
 
+-(void)pause:(id)sender
+{
+    [theMovieView stop];
+}
+
 -(void)playNext:(id)sender
 {
     [self playNext];

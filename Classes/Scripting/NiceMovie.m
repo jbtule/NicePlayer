@@ -46,10 +46,23 @@
     return [self name];
 }
 
+-(BOOL)isEqual:(id)aMovie{
+    return [[self URL] isEqual:[aMovie URL]] && [[self playlist] isEqual:[aMovie playlist]];
+}
+
 -(void)handlePlayCommand:(id)sender{
     if([self playlist]  != nil){
-        [[self playlist]  playAtIndex: [self index]];
+        if(![[[self playlist] currentMovie] isEqualTo:self])
+            [[self playlist]  playAtIndex: [self index]-1];
         [[self playlist] play:self];
+    }
+}
+
+-(void)handlePauseCommand:(id)sender{
+    if([self playlist]  != nil){
+        if(![[[self playlist] currentMovie] isEqualTo:self])
+            [[self playlist]  playAtIndex: [self index]-1];
+        [[self playlist] pause:self];
     }
 }
 

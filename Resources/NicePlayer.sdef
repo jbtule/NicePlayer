@@ -43,13 +43,13 @@
 					<property name="window" code="cwin" type="window" access="r">
 						<cocoa method="window"/>
 					</property>
-					<property name="current" code="NPCu" description="current movie in playlist" type="movie" access="r">
-						<cocoa method="currentMovie"/>
-					</property>
-					<property name="next" code="NPne" description="next movie in playlist" type="movie" access="r">
+					<property name="next movie" code="NPne" description="next movie in playlist" type="movie" access="r">
 						<cocoa method="nextMovie"/>
 					</property>
-					<property name="previous" code="NPpr" description="Previous movie in playlist" type="movie" access="r">
+					<property name="current movie" code="NPCu" description="current movie in playlist" type="movie" access="r">
+						<cocoa method="currentMovie"/>
+					</property>
+					<property name="previous movie" code="NPpr" description="Previous movie in playlist" type="movie" access="r">
 						<cocoa method="prevMovie"/>
 					</property>
 				</properties>
@@ -58,7 +58,7 @@
 						<cocoa method="play:"/>
 					</responds-to>
 					<responds-to name="pause">
-						<cocoa method="handlePauseCommand:"/>
+						<cocoa method="pause:"/>
 					</responds-to>
 					<responds-to name="playpause">
 						<cocoa method="handlePlayPauseCommand:"/>
@@ -71,18 +71,6 @@
 					</responds-to>
 					<responds-to name="increase volume">
 						<cocoa method="handleIncrementVolumeCommand:"/>
-					</responds-to>
-					<responds-to name="start rewinding">
-						<cocoa method="handleRRStartCommand:"/>
-					</responds-to>
-					<responds-to name="stop rewinding">
-						<cocoa method="handleRRStopCommand:"/>
-					</responds-to>
-					<responds-to name="start fast forwarding">
-						<cocoa method="handleFFStartCommand:"/>
-					</responds-to>
-					<responds-to name="stop fast forwarding">
-						<cocoa method="handleFFStopCommand:"/>
 					</responds-to>
 				</responds-to-commands>
 			</class>
@@ -123,12 +111,18 @@
 					<property name="playlist" code="NPpl" type="playlist">
 						<cocoa method="playlist"/>
 					</property>
+					<property name="index" code="pidx" type="number">
+						<cocoa method="index"/>
+					</property>
 				</properties>
 				<responds-to-commands>
 					<responds-to name="play">
 						<cocoa method="handlePlayCommand:"/>
 					</responds-to>
 					<responds-to name="add"/>
+					<responds-to name="pause">
+						<cocoa method="handlePauseCommand:"/>
+					</responds-to>
 				</responds-to-commands>
 			</class>
 			<class name="item" code="cobj" plural="items" inherits="NSCoreSuite.AbstractObject">
