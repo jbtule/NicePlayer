@@ -57,7 +57,7 @@
 -(id)initWithFrame:(NSRect)frame
 {
 	if(self = [super initWithFrame:frame]){
-                theFirstDraw =NO;
+		theFirstDraw =NO;
 		oldPlayState = STATE_INACTIVE;
 		[self setAutoresizingMask:(NSViewWidthSizable | NSViewHeightSizable)];
 		[self showController:NO adjustingSize:NO];
@@ -82,12 +82,11 @@
 
 -(void)close
 {
-	[film release];
 }
 
 -(void)loadMovie
 {
-	[self setMovie:film];
+	[self setMovie:[film autorelease]];
 }
 
 -(void)keyDown:(NSEvent *)anEvent
