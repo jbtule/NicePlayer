@@ -36,6 +36,11 @@
 		[overlayResize setAlphaValue:windowAlpha];
 }
 
+-(void)setResizeOrigin:(NSPoint)aPoint
+{
+	[overlayResize setFrameOrigin:aPoint];
+}
+
 -(void)setFrame:(NSRect)frameRect display:(BOOL)flag
 {
 	[super setFrame:frameRect display:flag];

@@ -678,6 +678,12 @@
     [self setMinSize:NSMakeSize(([self aspectRatio].width/[self aspectRatio].height) *[self minSize].height,[self minSize].height)];
 }
 
+-(void)setFrameOrigin:(NSPoint)aPoint
+{
+	[super setFrameOrigin:aPoint];
+	[theOverlayWindow setResizeOrigin:aPoint];
+}
+
 /**
  * Get the size given the aspect ratio and current size. This returns a size that has the same height
  * as the current window, but with the width adjusted wrt to the aspect ratio. Or if the window is
