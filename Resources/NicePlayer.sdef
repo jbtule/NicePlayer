@@ -17,6 +17,9 @@
 					<element type="movie" access="r">
 						<cocoa method="orderedDocuments"/>
 					</element>
+					<element type="window" access="r">
+						<cocoa method="movieWindows"/>
+					</element>
 				</elements>
 				<properties>
 					<property name="name" code="pnam" description="The name of the application." type="string" access="r"/>
@@ -37,7 +40,7 @@
 					</responds-to>
 				</responds-to-events>
 			</class>
-			<class name="movie" code="docu" description="The NicePlayer currently playing movie." plural="movies">
+			<class name="movie" code="docu" description="The NicePlayer currently playing movie." plural="movies" inherits="NSCoreSuite.NSDocument">
 				<cocoa class="NiceDocument"/>
 				<properties>
 					<property name="muted" code="NPmd" description="If the sound is muted." type="boolean">
@@ -92,7 +95,7 @@
 					</responds-to>
 				</responds-to-commands>
 			</class>
-			<class name="window" code="cwin" description="The NicePlayer window." plural="windows">
+			<class name="window" code="cwin" description="The NicePlayer window." plural="windows" inherits="NSCoreSuite.NSWindow">
 				<cocoa class="NiceWindow"/>
 				<properties>
 					<property name="playlist is showing" code="plsh" type="boolean">
@@ -173,7 +176,7 @@
 					</responds-to>
 				</responds-to-commands>
 			</class>
-			<class name="item" code="cobj" description="A scriptable object.">
+			<class name="item" code="cobj" description="A scriptable object." inherits="NSCoreSuite.AbstractObject">
 				<cocoa class="AbstractObject"/>
 				<properties>
 					<property name="class" code="pcls" description="The class of the object." type="type" access="r">

@@ -49,6 +49,7 @@ id controller;
 													  target:self
 													selector:@selector(preventSleep:)
 													userInfo:nil repeats:YES];
+	[NSApp setDelegate:self];
 }
 
 -(void)dealloc{
@@ -341,15 +342,12 @@ id controller;
             
         }
         
-        
         aString = [aString substringFromIndex:3];
 
         [[[self documents] collectUsingFunction:swapForWindows context:nil] makeObjectsPerformSelector:NSSelectorFromString(aString) withObject:nil];
    }else{
        [super forwardInvocation:anInvocation];
-   }
-
-    
+   }    
 }
 
 @end
