@@ -4,7 +4,7 @@
 	<suite name="NicePlayer Suite" code="NIce" description="Applescript for the Nicest Media Player on the Mac">
 		<cocoa name="NPSuite"/>
 		<classes>
-			<class name="application" code="capp" description="" inherits="NSCoreSuite.NSApplication">
+			<class name="application" code="NIap" description="" inherits="NSCoreSuite.NSApplication">
 				<cocoa class="NPApplication"/>
 				<elements>
 					<element type="movie" access="r">
@@ -14,17 +14,6 @@
 						<cocoa method="movieWindows"/>
 					</element>
 				</elements>
-				<responds-to-events>
-					<responds-to name="open">
-						<cocoa method="handleOpenScriptCommand:"/>
-					</responds-to>
-					<responds-to name="print">
-						<cocoa method="handlePrintScriptCommand:"/>
-					</responds-to>
-					<responds-to name="quit">
-						<cocoa method="handleQuitScriptCommand:"/>
-					</responds-to>
-				</responds-to-events>
 			</class>
 			<class name="movie" code="docu" description="The NicePlayer currently playing movie." plural="movies" inherits="NSCoreSuite.NSDocument">
 				<cocoa class="NiceDocument"/>
@@ -34,6 +23,9 @@
 					</property>
 					<property name="volume" code="NPvm" description="The audio volume." type="number">
 						<cocoa method="volume"/>
+					</property>
+					<property name="window" code="cwin" type="window" access="r">
+						<cocoa method="window"/>
 					</property>
 				</properties>
 				<responds-to-commands>
@@ -75,7 +67,7 @@
 					<property name="playlist is showing" code="plsh" type="boolean">
 						<cocoa method="playlistShowing"/>
 					</property>
-					<property name="movie" code="NPme" description="The document whose contents are being displayed in the window." type="movie" access="r">
+					<property name="movie" code="docu" description="The document whose contents are being displayed in the window." type="movie" access="r">
 						<cocoa method="documentMovie"/>
 					</property>
 				</properties>
