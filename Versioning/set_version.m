@@ -8,7 +8,7 @@ int main (int argc, const char * argv[]) {
 
     // Check arguments; print usage if we don't have a filename and
     // the key to print
-    if( argc != 4 ) {
+    if( argc != 5 ) {
       [[NSFileHandle fileHandleWithStandardError]
         writeData:
           [[NSString stringWithFormat: @"usage: %s in.plist key value\n",
@@ -37,10 +37,10 @@ int main (int argc, const char * argv[]) {
     }
 
     // try and set the requested key
-    [myDict setObject: [NSString stringWithCString:argv[3]] forKey: [NSString stringWithCString: argv[2]]];
+    [myDict setObject: [NSString stringWithCString:argv[4]] forKey: [NSString stringWithCString: argv[3]]];
 
     // Write requested value to file
-    [myDict writeToFile:[NSString stringWithCString:argv[1]] atomically:YES];
+    [myDict writeToFile:[NSString stringWithCString:argv[2]] atomically:YES];
 
     [pool release];
     return 0;
