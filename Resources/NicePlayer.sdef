@@ -112,9 +112,6 @@
 					<property name="playlist is showing" code="plsh" description="If the playlist drawer is showing or not" type="boolean">
 						<cocoa method="playlistShowing"/>
 					</property>
-					<property name="bounds" code="pbnd" description="The bounding rectangle of the window." type="location">
-						<cocoa method="boundsAsQDRect"/>
-					</property>
 					<property name="playlist" code="NPpl" description="The document whose contents are being displayed in the window." type="movie" access="r">
 						<cocoa method="documentMovie"/>
 					</property>
