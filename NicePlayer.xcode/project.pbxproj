@@ -113,18 +113,6 @@
 			refType = 4;
 			sourceTree = "<group>";
 		};
-		2513CDAF07BC658900BB6055 = {
-			fileRef = 2513CDAD07BC658900BB6055;
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		2513CDB007BC658900BB6055 = {
-			fileRef = 2513CDAE07BC658900BB6055;
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
 		2513CDB307BC658F00BB6055 = {
 			children = (
 				2513CDAD07BC658900BB6055,
@@ -255,7 +243,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/Developer/Tools/sdp -f st -o \"$BUILD_DIR/$FULL_PRODUCT_NAME/Contents/Resources\" \"$SOURCE_ROOT/Resources/NicePlayer.sdef\"";
+			shellScript = "/Developer/Tools/sdp -f st -o \"$BUILD_DIR/$FULL_PRODUCT_NAME/Contents/Resources\" \"$SOURCE_ROOT/Resources/NicePlayer.sdef\"\n/Developer/Tools/sdp -f st -o \"$BUILD_DIR/$FULL_PRODUCT_NAME/Contents/Resources\" \"$SOURCE_ROOT/Resources/NSCoreSuite.sdef\"";
 		};
 		251FBBDF07BC201900D147E5 = {
 			fileEncoding = 4;
@@ -393,6 +381,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"$SOURCE_ROOT/Versioning/version.sh\"";
+		};
+		25296D6707C813BF00916400 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = text.xml;
+			name = NSCoreSuite.sdef;
+			path = Resources/NSCoreSuite.sdef;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		25296D6807C813BF00916400 = {
+			fileRef = 25296D6707C813BF00916400;
+			isa = PBXBuildFile;
+			settings = {
+			};
 		};
 		252BD45D07697C6A006CF96B = {
 			children = (
@@ -613,12 +616,6 @@
 			path = Resources/resize.png;
 			refType = 4;
 			sourceTree = "<group>";
-		};
-		253C02EA07C0632700172C2F = {
-			fileRef = 253C02E907C0632700172C2F;
-			isa = PBXBuildFile;
-			settings = {
-			};
 		};
 		253C064B07C0891300172C2F = {
 			fileEncoding = 4;
@@ -1033,6 +1030,7 @@
 				25D2E7C207BF3758004BEF7D,
 				25D2E84007BF3B44004BEF7D,
 				2513D30507BDACA700BB6055,
+				25296D6707C813BF00916400,
 			);
 			isa = PBXGroup;
 			name = Scripting;
@@ -2906,11 +2904,9 @@
 				25294AAB076E937E00D4B325,
 				25294AD5076E944900D4B325,
 				3EC66FD5077525AD00B50A61,
-				2513CDAF07BC658900BB6055,
-				2513CDB007BC658900BB6055,
 				2513D30607BDACA700BB6055,
 				253C02E507C061E100172C2F,
-				253C02EA07C0632700172C2F,
+				25296D6807C813BF00916400,
 			);
 			isa = PBXResourcesBuildPhase;
 			runOnlyForDeploymentPostprocessing = 0;

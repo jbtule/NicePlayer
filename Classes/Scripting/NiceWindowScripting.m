@@ -10,15 +10,6 @@
 #import "NiceDocument.h"
 #import "NiceControllerScripting.h"
 
-NSRect convertQDRectToNSRect(Rect inRect) {
-	NSRect outRect;
-	outRect.origin.x = inRect.left;
-	outRect.origin.y = inRect.bottom;
-	outRect.size.width = inRect.right - inRect.left;
-	outRect.size.height = inRect.top - inRect.bottom;
-	return outRect;
-}
-
 @implementation NiceWindow (NiceWindowScripting)
 
 +(BOOL)accessInstanceVariablesDirectly
