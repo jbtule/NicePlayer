@@ -6,7 +6,6 @@
  */
 
 #import "NiceDocument.h"
-#import "NiceWindowController.h"
 #import "Other Sources/NiceUtilities.h"
 
 id rowsToFileNames(id obj, void* playList){
@@ -202,10 +201,10 @@ int movieMenuLocationIndex = -1;
     return @"NiceDocument";
 }
 
--(void)makeWindowControllers
+- (void)showWindows
 {
-	[self addWindowController:[[NiceWindowController alloc] initWithWindowNibName:[self windowNibName]
-																			owner:self]];
+	[super showWindows];
+	[(NiceWindow *)[self window] setupOverlays];
 }
 
 /**

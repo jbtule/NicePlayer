@@ -76,11 +76,16 @@
 
 -(void)close
 {
-    [timeUpdaterTimer invalidate];
+	[timeUpdaterTimer invalidate];
 	[theMovieView close];
-	[super close];
-	[[self windowController] release];
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
+	[super close];
+}
+
+-(void)dealloc
+{
+	NSLog(@"Dealloc");
+	[super dealloc];
 }
 
 #pragma mark Overriden Methods

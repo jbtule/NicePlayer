@@ -43,4 +43,11 @@
 		[overlayResize setFrame:[[self parentWindow] frame] display:flag];
 }
 
+- (void)setLevel:(int)newLevel
+{
+	[super setLevel:newLevel];
+	if(holdsResizeTriangle)
+		[overlayResize setLevel:newLevel];
+}
+
 @end

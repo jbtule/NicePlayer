@@ -97,36 +97,6 @@
 //252
 //253
 //254
-		250EA9D007BEE4FD00187F9D = {
-			fileEncoding = 4;
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.c.h;
-			name = NiceWindowController.h;
-			path = Classes/NiceWindow/NiceWindowController.h;
-			refType = 4;
-			sourceTree = "<group>";
-		};
-		250EA9D107BEE4FD00187F9D = {
-			fileEncoding = 4;
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.c.objc;
-			name = NiceWindowController.m;
-			path = Classes/NiceWindow/NiceWindowController.m;
-			refType = 4;
-			sourceTree = "<group>";
-		};
-		250EA9D207BEE4FD00187F9D = {
-			fileRef = 250EA9D007BEE4FD00187F9D;
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		250EA9D307BEE4FD00187F9D = {
-			fileRef = 250EA9D107BEE4FD00187F9D;
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
 		2513CDAD07BC658900BB6055 = {
 			isa = PBXFileReference;
 			lastKnownFileType = wrapper.cfbundle;
@@ -432,8 +402,6 @@
 				251FBBE007BC201900D147E5,
 				3EEDF763065B507B00E3545C,
 				3EEDF764065B507B00E3545C,
-				250EA9D007BEE4FD00187F9D,
-				250EA9D107BEE4FD00187F9D,
 				3E01F2E8065E9C1D00905F96,
 				3E01F2E9065E9C1D00905F96,
 			);
@@ -2855,7 +2823,6 @@
 				25E10911076CF11100042500,
 				251FBBE107BC201900D147E5,
 				2513D2F507BDAC4200BB6055,
-				250EA9D207BEE4FD00187F9D,
 				253C014F07C00DF200172C2F,
 				253C064D07C0891300172C2F,
 			);
@@ -2985,7 +2952,6 @@
 				25E10912076CF11100042500,
 				251FBBE207BC201900D147E5,
 				2513D2F607BDAC4200BB6055,
-				250EA9D307BEE4FD00187F9D,
 				25D2E7C407BF3758004BEF7D,
 				25D2E84207BF3B44004BEF7D,
 				25D2ED0C07BF6066004BEF7D,

@@ -35,6 +35,7 @@
                 addToPlaylist = id; 
                 choosePlaylistItem = id; 
                 closePlaylistDrawer = id; 
+                openPlaylistDrawerConditional = id; 
                 play = id; 
                 playNext = id; 
                 togglePlaylistDrawer = id; 
@@ -44,10 +45,12 @@
             CLASS = NiceDocument; 
             LANGUAGE = ObjC; 
             OUTLETS = {
+                movieMenuItem = id; 
                 theMovieView = id; 
                 thePlaylistDrawer = id; 
                 thePlaylistTable = id; 
                 theRepeatButton = id; 
+                theSubtitle = id; 
                 theWindow = NiceWindow; 
             }; 
             SUPERCLASS = NSDocument; 
@@ -84,6 +87,11 @@
                 timeUpdaterTimer = id; 
             }; 
             SUPERCLASS = NSWindow; 
+        }, 
+        {
+            CLASS = NiceWindowController; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSWindowController; 
         }, 
         {
             CLASS = OverlayControllerWindow; 
