@@ -353,7 +353,7 @@
 	<key>JTAuthorEmail</key>
 	<string>niceplayer@indyjt.com</string>
 	<key>JTUpdateURL</key>
-	<string>http://indyjt.com/software/niceplayer/niceplayer.indyUpdate</string>
+	<string>http://indyjt.com/software/niceplayer/niceplayer2.indyUpdate</string>
 	<key>NSAppleScriptEnabled</key>
 	<string>YES</string>
 	<key>NSMainNibFile</key>
