@@ -1,0 +1,17 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {setLanguageAudio = id; setLanguageMenus = id; setLanguageSubtitles = id; }; 
+            CLASS = DVDPrefController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                languageAudioPopUp = id; 
+                languageMenusPopUp = id; 
+                languageSubtitlesPopUp = id; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }
+    ); 
+    IBVersion = 1; 
+}
