@@ -403,12 +403,34 @@
 </TextItem>
 
 <TextItem>
+<Description> NSMenuItem : &lt;title:Presentation&gt; (oid:213) </Description>
+<Position>213</Position>
+<TranslationSet>
+
+	<base loc="en"          >Presentation</base>
+	<tran loc="ja" origin="">表示</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
 <Description> NSMenu : &lt;title:Movie&gt; (oid:214) </Description>
 <Position>214</Position>
 <TranslationSet>
 
 	<base loc="en"          >Movie</base>
 	<tran loc="ja" origin="">ムービー</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenu : &lt;title:Presentation&gt; (oid:214) </Description>
+<Position>214</Position>
+<TranslationSet>
+
+	<base loc="en"          >Presentation</base>
+	<tran loc="ja" origin="">表示</tran>
 
 </TranslationSet>
 </TextItem>
@@ -656,6 +678,105 @@
 </TextItem>
 
 <TextItem>
+<Description> NSMenuItem : &lt;title:NicePlayer Web Site&gt; (oid:299) </Description>
+<Position>299</Position>
+<TranslationSet>
+
+	<base loc="en"          >NicePlayer Web Site</base>
+	<tran loc="ja" origin="">NicePlayerのWebサイト</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Donate to NicePlayer Project&gt; (oid:300) </Description>
+<Position>300</Position>
+<TranslationSet>
+
+	<base loc="en"          >Donate to NicePlayer Project</base>
+	<tran loc="ja" origin="">NicePlayer Projectへの寄付</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Support Wiki/FAQ (Online)&gt; (oid:303) </Description>
+<Position>303</Position>
+<TranslationSet>
+
+	<base loc="en"          >Support Wiki/FAQ (Online)</base>
+	<tran loc="ja" origin="">サポート Wiki/FAQ（オンライン）</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Submit Bug (Online)&gt; (oid:304) </Description>
+<Position>304</Position>
+<TranslationSet>
+
+	<base loc="en"          >Submit Bug (Online)</base>
+	<tran loc="ja" origin="">バグ報告（オンライン）</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Online Project Roadmap&gt; (oid:305) </Description>
+<Position>305</Position>
+<TranslationSet>
+
+	<base loc="en"          >Online Project Roadmap</base>
+	<tran loc="ja" origin="">ロードマップ（オンライン）</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Feature Request (Online)&gt; (oid:313) </Description>
+<Position>313</Position>
+<TranslationSet>
+
+	<base loc="en"          >Feature Request (Online)</base>
+	<tran loc="ja" origin="">機能要望はこちら（オンライン）</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Other Windows&gt; (oid:321) </Description>
+<Position>321</Position>
+<TranslationSet>
+
+	<base loc="en"          >Other Windows</base>
+	<tran loc="ja" origin="">他のウインドウ</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:NicePlayer&gt; (oid:56) </Description>
+<Position>56</Position>
+<TranslationSet>
+
+	<base loc="en"                         >NicePlayer</base>
+	<tran loc="ja" origin="AD matched text">NicePlayer</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenu : &lt;title:NicePlayer&gt; (oid:57) </Description>
+<Position>57</Position>
+<TranslationSet>
+
+	<base loc="en"                         >NicePlayer</base>
+	<tran loc="ja" origin="AD matched text">NicePlayer</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
 <Description> NSMenuItem : &lt;title:About NicePlayer&gt; (oid:58) </Description>
 <Position>58</Position>
 <TranslationSet>
@@ -851,6 +972,17 @@
 </TextItem>
 
 <TextItem>
+<Description> NSTextField (Skip Backward Interval:) : &lt;title:Skip Backward Interval:&gt; (oid:243) </Description>
+<Position>243</Position>
+<TranslationSet>
+
+	<base loc="en"          >Skip Backward Interval:</base>
+	<tran loc="ja" origin="">巻き戻しの間隔:</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
 <Description> NSTextField (Seconds) : &lt;title:Seconds&gt; (oid:244) </Description>
 <Position>244</Position>
 <TranslationSet>
@@ -879,6 +1011,17 @@
 
 	<base loc="en"          >Elapsed Time</base>
 	<tran loc="ja" origin="">経過時間</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSTextField (Resize From:) : &lt;title:Resize From:&gt; (oid:249) </Description>
+<Position>249</Position>
+<TranslationSet>
+
+	<base loc="en"          >Resize From:</base>
+	<tran loc="ja" origin="">リサイズの起点:</tran>
 
 </TranslationSet>
 </TextItem>
@@ -939,6 +1082,17 @@
 </TextItem>
 
 <TextItem>
+<Description> NSTextField (Skip Forward Interval:) : &lt;title:Skip Forward Interval:&gt; (oid:253) </Description>
+<Position>253</Position>
+<TranslationSet>
+
+	<base loc="en"          >Skip Forward Interval:</base>
+	<tran loc="ja" origin="">早送りの間隔:</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
 <Description> NSMenuItem : &lt;title:Plays/Pauses Movie&gt; (oid:254) </Description>
 <Position>254</Position>
 <TranslationSet>
@@ -988,7 +1142,7 @@
 <TranslationSet>
 
 	<base loc="en"          >Center Pinned</base>
-	<tran loc="ja" origin="">>中心を固定</tran>
+	<tran loc="ja" origin="">&gt;中心を固定</tran>
 
 </TranslationSet>
 </TextItem>
@@ -1000,6 +1154,17 @@
 
 	<base loc="en"          >Left Top Pinned</base>
 	<tran loc="ja" origin="">左上を固定</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Top Left Corner&gt; (oid:263) </Description>
+<Position>263</Position>
+<TranslationSet>
+
+	<base loc="en"          >Top Left Corner</base>
+	<tran loc="ja" origin="">左上</tran>
 
 </TranslationSet>
 </TextItem>
@@ -1159,6 +1324,17 @@
 </TextItem>
 
 <TextItem>
+<Description> NSTextField (Opening Multiple Files at once:) : &lt;title:Opening Multiple Files at once:&gt; (oid:322) </Description>
+<Position>322</Position>
+<TranslationSet>
+
+	<base loc="en"          >Opening Multiple Files at once:</base>
+	<tran loc="ja" origin="">複数ファイルを一度に開く:</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
 <Description> NSMenuItem : &lt;title:Open in New Windows&gt; (oid:323) </Description>
 <Position>323</Position>
 <TranslationSet>
@@ -1187,6 +1363,72 @@
 
 	<base loc="en"          >Options</base>
 	<tran loc="ja" origin="">オプション</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSTextField (Right Click on Movie:) : &lt;title:Right Click on Movie:&gt; (oid:332) </Description>
+<Position>332</Position>
+<TranslationSet>
+
+	<base loc="en"          >Right Click on Movie:</base>
+	<tran loc="ja" origin="">ムービー上での右クリック:</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Toggles Play/Pause&gt; (oid:333) </Description>
+<Position>333</Position>
+<TranslationSet>
+
+	<base loc="en"          >Toggles Play/Pause</base>
+	<tran loc="ja" origin="">再生/停止を切り換える</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSMenuItem : &lt;title:Opens Contextual Menu&gt; (oid:334) </Description>
+<Position>334</Position>
+<TranslationSet>
+
+	<base loc="en"          >Opens Contextual Menu</base>
+	<tran loc="ja" origin="">コンテクストメニューを開く</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSTextField (Overlay Fading:) : &lt;title:Overlay Fading:&gt; (oid:340) </Description>
+<Position>340</Position>
+<TranslationSet>
+
+	<base loc="en"          >Overlay Fading:</base>
+	<tran loc="ja" origin="">オーバーレイ:</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSButton (Display Overlays Initially in New Windows) : &lt;title:Display Overlays Initially in New Windows&gt; (oid:341) </Description>
+<Position>341.1</Position>
+<TranslationSet>
+
+	<base loc="en"          >Display Overlays Initially in New Windows</base>
+	<tran loc="ja" origin="">ファイルを開いた時にオーバーレイを表示する</tran>
+
+</TranslationSet>
+</TextItem>
+
+<TextItem>
+<Description> NSButton (Fade Overlays) : &lt;title:Fade Overlays&gt; (oid:342) </Description>
+<Position>342.1</Position>
+<TranslationSet>
+
+	<base loc="en"          >Fade Overlays</base>
+	<tran loc="ja" origin="">オーバーレイ消去時にフェードする</tran>
 
 </TranslationSet>
 </TextItem>
