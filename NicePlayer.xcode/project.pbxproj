@@ -243,7 +243,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/Developer/Tools/sdp -f st -o \"$BUILD_DIR/$FULL_PRODUCT_NAME/Contents/Resources\" \"$SOURCE_ROOT/Resources/NicePlayer.sdef\"\n/Developer/Tools/sdp -f st -o \"$BUILD_DIR/$FULL_PRODUCT_NAME/Contents/Resources\" \"$SOURCE_ROOT/Resources/NSCoreSuite.sdef\"";
+			shellScript = "/Developer/Tools/sdp -f st -o \"$BUILD_DIR/$FULL_PRODUCT_NAME/Contents/Resources\" \"$SOURCE_ROOT/Resources/NicePlayer.sdef\"";
 		};
 		251FBBDF07BC201900D147E5 = {
 			fileEncoding = 4;
@@ -1019,7 +1019,6 @@
 				25D2ED0B07BF6066004BEF7D,
 				25D2E7C207BF3758004BEF7D,
 				25D2E84007BF3B44004BEF7D,
-				3EF15EC707C8230400AE56D7,
 				2513D30507BDACA700BB6055,
 			);
 			isa = PBXGroup;
@@ -2223,7 +2222,6 @@
 				3E8C96DC073EF4730048CB70,
 				3EEB7F39076BB1F60090E740,
 				3EC66FD4077525AD00B50A61,
-				3EF15EC807C8230400AE56D7,
 			);
 			isa = PBXResourcesBuildPhase;
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2754,27 +2752,6 @@
 			settings = {
 			};
 		};
-		3EF15EC707C8230400AE56D7 = {
-			fileEncoding = 4;
-			isa = PBXFileReference;
-			lastKnownFileType = text.xml;
-			name = NSCoreSuite.sdef;
-			path = ../../Resources/NSCoreSuite.sdef;
-			refType = 4;
-			sourceTree = "<group>";
-		};
-		3EF15EC807C8230400AE56D7 = {
-			fileRef = 3EF15EC707C8230400AE56D7;
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		3EF15EC907C8230400AE56D7 = {
-			fileRef = 3EF15EC707C8230400AE56D7;
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
 		3EF15F3507C8405700AE56D7 = {
 			fileEncoding = 4;
 			isa = PBXFileReference;
@@ -3051,7 +3028,6 @@
 				3EC66FD5077525AD00B50A61,
 				2513D30607BDACA700BB6055,
 				253C02E507C061E100172C2F,
-				3EF15EC907C8230400AE56D7,
 			);
 			isa = PBXResourcesBuildPhase;
 			runOnlyForDeploymentPostprocessing = 0;

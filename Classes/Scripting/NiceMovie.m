@@ -71,19 +71,16 @@
     return [[theURL path] lastPathComponent];
 }
 
+
 - (NSScriptObjectSpecifier *) objectSpecifier
 {
     NSNameSpecifier *tSpecifier;
-    if(theParentPlaylist!=nil){
      tSpecifier = [[NSNameSpecifier alloc]
-      initWithContainerClassDescription:(NSScriptClassDescription *)[theParentPlaylist classDescription]
-                     containerSpecifier:[theParentPlaylist objectSpecifier] 
+      initWithContainerClassDescription:(NSScriptClassDescription *)[NSApp classDescription]
+                     containerSpecifier:[NSApp objectSpecifier] 
                                     key:@"niceMovies"];
         [tSpecifier setName:[self name]];
         return [tSpecifier autorelease];
-    }else{
-         return [super objectSpecifier];
-    }
   
 }
 

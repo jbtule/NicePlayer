@@ -16,6 +16,8 @@
 	return NO;
 }
 
+
+
 -(void)handleEnterFullScreen:(id)tempWindow
 {
 	[NSApp activateIgnoringOtherApps:YES];

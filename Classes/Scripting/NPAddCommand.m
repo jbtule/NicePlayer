@@ -23,8 +23,8 @@
         if ([each isKindOfClass: [NSScriptObjectSpecifier class]])
         {
             NSScriptObjectSpecifier *spec = (NSScriptObjectSpecifier *)each;
-            id container = [[spec containerSpecifier] objectsByEvaluatingSpecifier];
-            return [spec objectsByEvaluatingWithContainers: container];
+            
+            return [spec objectsByEvaluatingWithContainers: NSApp];
         }else{
             return each;
         }
@@ -35,6 +35,7 @@
 
 
 -(id)performDefaultImplementation{
+
     id tDArg = [self evaluatedDirectParameters];
     NSDictionary *tEArgs = [self evaluatedArguments];
     id tPlaylist = [tEArgs objectForKey:@"to"];

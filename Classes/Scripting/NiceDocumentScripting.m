@@ -180,6 +180,11 @@
     
 }
 
+-(BOOL)playlistShowing{
+    return [thePlaylistDrawer state] == NSDrawerOpenState 
+    || [thePlaylistDrawer state] == NSDrawerOpeningState;
+}
+
 -(void)handleDecrementVolumeCommand:(id)sender
 {
     [theMovieView decrementVolume];
@@ -214,18 +219,5 @@
     [theMovieView setMuted:aBool];
 }
 
-- (NSScriptObjectSpecifier *) objectSpecifier
-{
-    NSNameSpecifier *tSpecifier;
-
-        tSpecifier = [[NSNameSpecifier alloc]
-      initWithContainerClassDescription:(NSScriptClassDescription *)[[self window] classDescription]
-                     containerSpecifier:[[self window] objectSpecifier] 
-                                    key:@"documentMovie"];
-        [tSpecifier setName:[self displayName]];
-        return [tSpecifier autorelease];
-   
-    
-}
 
 @end

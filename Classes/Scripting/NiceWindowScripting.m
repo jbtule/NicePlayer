@@ -97,7 +97,7 @@ enum{
 
 -(BOOL)playlistShowing
 {
-	return [[[self windowController] document] isPlaylistEmpty];
+	return [[[self windowController] document] playlistShowing];
 }
 
 -(id)documentMovie

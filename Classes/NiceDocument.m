@@ -400,7 +400,7 @@ stuff won't work properly! */
         anIndex = [thePlaylist count];   
     }
     
-    return anIndex;
+    return anIndex -1;
 }
 
 -(void)playPrev
