@@ -87,7 +87,7 @@ id controller;
 			id docArray = [NSApp orderedDocuments];
 			if([docArray count] > 0){
 				id document = [docArray objectAtIndex:0];
-				if(([document isKindOfClass:[NiceDocument class]]) && ![document active])
+				if(([document isKindOfClass:[NiceDocument class]]) && ![document isActive])
 					tempDoc = document;
 				else
 					tempDoc = [self openDocumentWithContentsOfURL:tempURL display:YES];
@@ -95,7 +95,7 @@ id controller;
 				tempDoc = [self openDocumentWithContentsOfURL:tempURL display:YES];
 			[tempDoc loadURL:tempURL firstTime:YES];
 			
-			if([[self mainDocument] active]){
+			if([[self mainDocument] isActive]){
 				if([[Preferences mainPrefs] movieOpenedFullScreen])
 					[self enterFullScreen];
 				if([[Preferences mainPrefs] movieOpenedPlay])

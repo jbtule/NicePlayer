@@ -71,8 +71,14 @@
 					<property name="visible" code="pvis" description="Whether the window is currently visible." type="boolean">
 						<cocoa method="isVisible"/>
 					</property>
+					<property name="playlist is showing" code="plsh" type="boolean">
+						<cocoa method="playlistShowing"/>
+					</property>
 				</properties>
 				<responds-to-commands>
+					<responds-to name="add to playlist">
+						<cocoa method="handleAddURLToPlaylistCommand:"/>
+					</responds-to>
 					<responds-to name="toggle full screen">
 						<cocoa method="handleToggleFullScreenCommand:"/>
 					</responds-to>
@@ -81,6 +87,12 @@
 					</responds-to>
 					<responds-to name="full screen">
 						<cocoa method="handleFullScreenCommand:"/>
+					</responds-to>
+					<responds-to name="close">
+						<cocoa method="handleCloseCommand:"/>
+					</responds-to>
+					<responds-to name="toggle playlist drawer">
+						<cocoa method="handleTogglePlaylistDrawer:"/>
 					</responds-to>
 				</responds-to-commands>
 			</class>
@@ -192,6 +204,12 @@
 			</command>
 			<command name="open" code="aevtodoc" description="Open a movie."/>
 			<command name="quit" code="aevtquit" description="Quit the application."/>
+			<command name="add to playlist" code="NIceatpl" description="Add a file to the playlist.">
+				<parameter name="at index" code="NIat" description="The index to add the file at in the playlist." type="integer" optional="optional"/>
+				<parameter name="file" code="NIfl" description="The filename to add." type="file"/>
+			</command>
+			<command name="close" code="coreclos"/>
+			<command name="toggle playlist drawer" code="NIceTGDR"/>
 		</commands>
 	</suite>
 </dictionary>

@@ -7,6 +7,7 @@
 
 #import "NiceWindow.h"
 #import "FadeOut.h"
+#import "OverlayControllerWindow.h"
 
 @implementation NiceWindow
 

@@ -7,6 +7,7 @@
 //
 
 #import "NiceWindow.h"
+#import "NiceDocument.h"
 #import "NiceControllerScripting.h"
 
 @implementation NiceWindow (NiceWindowScripting)
@@ -24,6 +25,43 @@
 -(void)handleToggleFullScreenCommand:(id)sender
 {
 	[[NiceController controller] handleToggleFullScreen:self];
+}
+
+-(void)handleAddURLToPlaylistCommand:(id)sender
+{
+	NSDictionary *eArgs = [sender evaluatedArguments];
+	NSURL *newURL = (NSURL *)CFURLCreateWithFileSystemPath(NULL, (CFStringRef)[eArgs objectForKey:@"file"],
+														   kCFURLHFSPathStyle, NO);
+	if([eArgs objectForKey:@"atIndex"] != nil)
+		[[[self windowController] document] addURLToPlaylist:newURL
+													 atIndex:[[eArgs objectForKey:@"atIndex"] intValue]];
+	else
+		[[[self windowController] document] addURLToPlaylist:newURL];
+    
+	[newURL release];
+}
+
+-(BOOL)playlistShowing
+{
+	return [[[self windowController] document] isPlaylistEmpty];
+}
+
+-(void)setPlaylistShowing:(BOOL)aBool
+{
+	if(aBool)
+		[[[self windowController] document] openPlaylistDrawer:nil];
+	else
+		[[[self windowController] document] closePlaylistDrawer:nil];
+}
+
+-(void)handleTogglePlaylistDrawer:(id)sender
+{
+	[[[self windowController] document] togglePlaylistDrawer:sender];
+}
+
+-(void)handleCloseCommand:(NSCloseCommand *)command
+{
+	[self close];
 }
 
 @end

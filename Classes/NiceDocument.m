@@ -154,7 +154,7 @@ int movieMenuLocationIndex = -1;
 
 #pragma mark Window Information
 
--(BOOL)active
+-(BOOL)isActive
 {
 	return hasRealMovie;
 }
@@ -405,6 +405,11 @@ int movieMenuLocationIndex = -1;
     [thePlaylistDrawer toggle:sender];
 }
 
+-(IBAction)openPlaylistDrawer:(id)sender
+{
+    [thePlaylistDrawer open];
+}
+
 -(IBAction)closePlaylistDrawer:(id)sender
 {
     [thePlaylistDrawer close:sender];
@@ -442,8 +447,12 @@ int movieMenuLocationIndex = -1;
     if(anIndex == -1)
         anIndex = 0;
     
-    if ([thePlaylist count]==0)
-        theCurrentURL = [aURL retain];
+    if ([thePlaylist count]==0){
+		if(theCurrentURL == nil)
+			[self loadURL:aURL firstTime:NO];
+
+		theCurrentURL = [aURL retain];
+	}
     
     if(![thePlaylist containsObject:aURL]){
         [thePlaylist insertObject:aURL atIndex:anIndex];
@@ -467,6 +476,11 @@ int movieMenuLocationIndex = -1;
         [(NPMovieView *)theMovieView stop];
         [theMovieView openURL:[NPMovieView blankImage]];
     }
+}
+
+-(BOOL)isPlaylistEmpty
+{
+	return [thePlaylist isEmpty];
 }
 
 #pragma mark -

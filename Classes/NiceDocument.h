@@ -39,7 +39,7 @@
 
 #pragma mark Window Information
 
--(BOOL)active;
+-(BOOL)isActive;
 -(void)windowDidDeminiaturize:(NSNotification *)aNotification;
 -(void)windowControllerDidLoadNib:(NSWindowController *) aController;
 -(void)updateAfterLoad;
@@ -65,6 +65,7 @@
 
 -(IBAction)openPlaylistDrawerConditional:(id)sender;
 -(IBAction)togglePlaylistDrawer:(id)sender;
+-(IBAction)openPlaylistDrawer:(id)sender;
 -(IBAction)closePlaylistDrawer:(id)sender;
 -(IBAction)choosePlaylistItem:(id)sender;
 -(void)playAtIndex:(unsigned int)anIndex;
@@ -73,5 +74,6 @@
 -(void)addURLToPlaylist:(NSURL*)aURL atIndex:(int)index;
 -(void)removeURLFromPlaylist:(NSURL*)aURL;
 -(void)removeURLPlaceHolders;
+-(BOOL)isPlaylistEmpty;
 
 @end
