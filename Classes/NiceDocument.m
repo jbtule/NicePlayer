@@ -349,7 +349,6 @@ stuff won't work properly! */
 -(void)playNext
 {	
     unsigned anIndex = [thePlaylist indexOfObject:theCurrentURL];
-	BOOL isPlaying = [theMovieView isPlaying];
     
     if(isRandom){
         anIndex = ((float)random()/RAND_MAX)*[thePlaylist count];
@@ -368,7 +367,7 @@ stuff won't work properly! */
         }
     }
     
-    if(isPlaying && (anIndex >= 0) && (anIndex < [thePlaylist count])){
+    if( (anIndex >= 0) && (anIndex < [thePlaylist count])){
 		[self playAtIndex:anIndex];
     }
 }
@@ -406,7 +405,6 @@ stuff won't work properly! */
 -(void)playPrev
 {
 	unsigned anIndex = [thePlaylist indexOfObject:theCurrentURL];
-    BOOL isPlaying = [theMovieView isPlaying];
 	
     if(anIndex ==0){
         if ([thePlaylist isEmpty])
@@ -416,7 +414,7 @@ stuff won't work properly! */
     
     anIndex--;
     
-    if(isPlaying && (anIndex >= 0) && (anIndex < [thePlaylist count])){
+    if((anIndex >= 0) && (anIndex < [thePlaylist count])){
 		[self playAtIndex:anIndex];
     }
 }
@@ -426,11 +424,16 @@ stuff won't work properly! */
  */
 -(void)playAtIndex:(unsigned int)anIndex
 {
+    
+    BOOL isPlaying=[theMovieView isPlaying] || [theMovieView hasEnded:self];
+    
     id tempURL = [thePlaylist objectAtIndex:anIndex];
 	[theMovieView closeReopen];
 	[self loadURL:tempURL firstTime:NO];
     [thePlaylistTable reloadData];
-    [theMovieView start];
+    
+    if(isPlaying)
+        [theMovieView start];
 	/* This precaching isn't going to work unless you run some sort of detection first
 		to make sure the next URL can be loaded by the existing plugin. */
    // [self preloadNext];

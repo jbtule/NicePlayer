@@ -199,7 +199,7 @@
         [theOverlaySubTitle setStringValue:[tSubTitle stringForTime:(float)[theMovieView currentMovieTime]]];
     }
     
-    if([theMovieView hasEnded:self] && ![theScrubBar inUse]){
+    if([theMovieView hasEnded:self]){
         [[[self windowController] document] movieHasEnded];
     }
 	

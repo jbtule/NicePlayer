@@ -274,6 +274,9 @@
 			break;
 		case NSLeftArrowFunctionKey:
 			if([anEvent modifierFlags] & NSCommandKeyMask){
+                            if([self currentMovieTime] > 2)
+                                [trueMovieView setCurrentMovieTime:0];
+                            else
 				[[[self window] delegate] playPrev];
 				break;
 			}

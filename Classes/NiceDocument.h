@@ -30,7 +30,6 @@
 	BOOL isRandom;
 	id movieMenuItem;
 	NSMutableArray *menuObjects;
-	
 	id asffrrTimer;
 }
 
