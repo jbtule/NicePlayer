@@ -191,8 +191,8 @@
 				</parameter>
 			</command>
 			<command name="rescale" code="NIceresl">
-				<parameter name="by" code="npby" type="scales">
-					<cocoa key="by"/>
+				<parameter name="to" code="npto" type="scales">
+					<cocoa key="to"/>
 				</parameter>
 			</command>
 		</commands>

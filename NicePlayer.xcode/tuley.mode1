@@ -316,7 +316,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 811}, {375, 858}}</string>
+							<string>{{0, 0}, {375, 858}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -651,7 +651,7 @@
 										<key>PBXProjectModuleLabel</key>
 										<string>NiceWindowScripting.m</string>
 										<key>bookmark</key>
-										<string>3EBF3B5507D1832F00B30DAB</string>
+										<string>3EBF3B5D07D1840B00B30DAB</string>
 										<key>history</key>
 										<array>
 											<string>3EB6437D07072092007BACF7</string>
@@ -1104,7 +1104,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>131171119.39987503</real>
+	<real>131171339.03788152</real>
 	<key>ToolbarDisplayMode</key>
 	<integer>1</integer>
 	<key>ToolbarIsVisible</key>
@@ -1156,7 +1156,7 @@
 										<key>PBXProjectModuleLabel</key>
 										<string>NiceWindowScripting.m</string>
 										<key>bookmark</key>
-										<string>3EBF3B5607D1832F00B30DAB</string>
+										<string>3EBF3B5E07D1840B00B30DAB</string>
 										<key>history</key>
 										<array>
 											<string>3EBF3A9F07D1768B00B30DAB</string>
@@ -1579,7 +1579,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {678, 489}}</string>
 								<key>RubberWindowFrame</key>
-								<string>93 231 678 532 0 0 1920 1178 </string>
+								<string>933 316 678 532 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXRunSessionModule</string>
@@ -1609,7 +1609,7 @@
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.run</string>
 			<key>WindowString</key>
-			<string>93 231 678 532 0 0 1920 1178 </string>
+			<string>933 316 678 532 0 0 1920 1178 </string>
 			<key>WindowToolGUID</key>
 			<string>1C0AD2B3069F1EA900FABCE6</string>
 			<key>WindowToolIsVisible</key>

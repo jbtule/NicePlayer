@@ -28,7 +28,7 @@ enum{
 -(void)handleResizeCommand:(id)sender{
     NSDictionary* tDict =[sender evaluatedArguments];
 
-    int value = [[tDict objectForKey:@"by"] intValue];
+    int value = [[tDict objectForKey:@"to"] intValue];
     switch(value){
         case NPHALF:
             [self halfSize:self];
