@@ -487,7 +487,14 @@
 
 -(id)menuTitle
 {
-	return [trueMovieView menuTitle];
+	NSMutableString *string = [NSMutableString stringWithString:[trueMovieView menuPrefix]];
+	NSString *item = [trueMovieView menuTitle];
+	if([item length] > 0){
+		[string appendString:@"	("];
+		[string appendString:item];
+		[string appendString:@")"];
+	}
+	return string;
 }
 
 -(id)pluginMenu

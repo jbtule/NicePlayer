@@ -177,7 +177,6 @@
 
 -(void)application:(NSApplication *)sender openFiles:(NSArray *)filenames
 {
-	NSLog(@"%@ open %@", sender, filenames);
     [[NiceController controller] openFiles:filenames];
 }
 

@@ -14,9 +14,10 @@
 @interface JTMovieView : NSMovieView <NPMoviePlayer>
 {
 	enum play_states oldPlayState;
-	NSURL *urlToOpen;
+	NSURL *myURL;
+	NSMovie *film;
 	BOOL muted;
-        NSDictionary* movieCache;
+	NSDictionary* movieCache;
 }
 
 +(id)blankImage;

@@ -64,6 +64,7 @@ enum direction { DIRECTION_BACKWARD = -1, DIRECTION_FORWARD = 1};
 -(long)currentMovieTime;
 -(void)setCurrentMovieTime:(long)newMovieTime;
 
+-(id)menuPrefix;
 -(id)menuTitle;
 -(id)pluginMenu;
 

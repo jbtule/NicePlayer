@@ -43,10 +43,11 @@
 
 -(BOOL)openURL:(NSURL *)url
 {
-        urlToOpen = [[movieCache objectForKey:url] retain];
-        if(urlToOpen == NULL)
-            urlToOpen = [[NSMovie alloc] initWithURL:url byReference:YES];
-	return (urlToOpen) ? YES : NO;
+	myURL = url;
+	film = [[movieCache objectForKey:url] retain];
+	if(film == NULL)
+		film = [[NSMovie alloc] initWithURL:url byReference:YES];
+	return (film) ? YES : NO;
 }
 
 -(void)precacheURL:(NSURL*)url{
@@ -84,7 +85,7 @@
 
 -(void)loadMovie
 {
-	[self setMovie:[urlToOpen autorelease]];
+	[self setMovie:[film autorelease]];
 }
 
 -(void)keyDown:(NSEvent *)anEvent
@@ -249,9 +250,16 @@
 #pragma mark -
 #pragma mark Menus
 
+-(id)menuPrefix
+{
+	return @"QT";
+}
+
 -(id)menuTitle
 {
-	return @"QuickTime";
+	NSString *file = [[[myURL absoluteString] lastPathComponent] stringByDeletingPathExtension];
+	file = (CFStringRef)CFURLCreateStringByReplacingPercentEscapes(NULL, (CFStringRef)file, (CFStringRef)@"");
+	return [file autorelease];
 }
 
 -(id)pluginMenu

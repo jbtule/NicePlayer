@@ -109,7 +109,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 {
 	DVDUnregisterEventCallBack(cid);
 	DVDStop();
-	if([[[urlToOpen path] lastPathComponent] isEqualToString:@"VIDEO_TS"])
+	if([[[myURL path] lastPathComponent] isEqualToString:@"VIDEO_TS"])
 		DVDCloseMediaFile();
 	else
 		DVDCloseMediaVolume();
@@ -118,8 +118,8 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(void)dealloc
 {
-	if(urlToOpen)
-		[urlToOpen release];
+	if(myURL)
+		[myURL release];
 	[super dealloc];
 }
 
@@ -145,17 +145,17 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 																	description:&description
 																		   type:&fileSystemType];
 	if((isMountPoint & removableFlag) || ([[[url path] lastPathComponent] isEqualToString:@"VIDEO_TS"])){
-		urlToOpen = [url retain];
+		myURL = [url retain];
 		return YES;
 	}
 	
 	NSString *sub_videots = [[url path] stringByAppendingPathComponent:@"VIDEO_TS"];
 	BOOL isDir;
 	if([[NSFileManager defaultManager] fileExistsAtPath:sub_videots isDirectory:&isDir] && isDir){
-		urlToOpen = [[NSURL fileURLWithPath:sub_videots] retain];
+		myURL = [[NSURL fileURLWithPath:sub_videots] retain];
 		return YES;
 	}
-	urlToOpen = nil;
+	myURL = nil;
 	return NO;
 }
 
@@ -179,8 +179,8 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	DVDRegisterEventCallBack(aspectChange, &inCode, 1, (UInt32)self, &cid);
 	
 	FSRef fsref;
-	CFURLGetFSRef((CFURLRef)urlToOpen, &fsref);
-	if([[[urlToOpen path] lastPathComponent] isEqualToString:@"VIDEO_TS"])
+	CFURLGetFSRef((CFURLRef)myURL, &fsref);
+	if([[[myURL path] lastPathComponent] isEqualToString:@"VIDEO_TS"])
 		DVDOpenMediaFile(&fsref);
 	else
 		DVDOpenMediaVolume(&fsref);
@@ -437,9 +437,16 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 #pragma mark -
 #pragma mark Menus
 
--(id)menuTitle
+-(id)menuPrefix
 {
 	return @"DVD";
+}
+
+-(id)menuTitle
+{
+	NSString *file = [[[[myURL absoluteString] stringByDeletingLastPathComponent] lastPathComponent] stringByDeletingPathExtension];
+	file = (CFStringRef)CFURLCreateStringByReplacingPercentEscapes(NULL, (CFStringRef)file, (CFStringRef)@"");
+	return [file autorelease];
 }
 
 -(id)pluginMenu

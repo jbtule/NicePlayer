@@ -9,7 +9,7 @@
 
 @interface DVDPlayerView : NPPluginView <NPMoviePlayer>
 {
-	NSURL *urlToOpen;
+	NSURL *myURL;
 	BOOL isAspectRatioChanging;
 
 	UInt32 cid;
