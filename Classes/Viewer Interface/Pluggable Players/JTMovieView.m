@@ -120,6 +120,15 @@
 	[super setLoopMode:flag];
 }
 
+- (void)drawRect:(NSRect)aRect{
+    
+    [[NSGraphicsContext currentContext] saveGraphicsState];
+        [[NSColor blackColor] set];
+        NSRectFill(aRect);
+    [[NSGraphicsContext currentContext] restoreGraphicsState];
+
+    [super drawRect:aRect];
+}
 #pragma mark Volume
 
 -(BOOL)muted

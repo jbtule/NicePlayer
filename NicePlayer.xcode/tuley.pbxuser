@@ -53,9 +53,9 @@
 	};
 	252BD4FB076981DD006CF96B = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {533, 578}}";
+			sepNavIntBoundsRect = "{{0, 0}, {914, 578}}";
 			sepNavSelRange = "{0, 0}";
-			sepNavVisRect = "{{0, 0}, {533, 578}}";
+			sepNavVisRect = "{{0, 0}, {914, 578}}";
 		};
 	};
 	252BD4FC076981DD006CF96B = {
@@ -178,17 +178,17 @@
 	};
 	257D61660753F92D00702BD0 = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {533, 1035}}";
+			sepNavIntBoundsRect = "{{0, 0}, {914, 1035}}";
 			sepNavSelRange = "{1254, 16}";
-			sepNavVisRect = "{{0, 742}, {533, 293}}";
+			sepNavVisRect = "{{0, 71}, {914, 578}}";
 			sepNavWindowFrame = "{{429, 293}, {750, 502}}";
 		};
 	};
 	257D61670753F92D00702BD0 = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {914, 9155}}";
-			sepNavSelRange = "{13917, 21}";
-			sepNavVisRect = "{{0, 7586}, {914, 578}}";
+			sepNavIntBoundsRect = "{{0, 0}, {894, 9169}}";
+			sepNavSelRange = "{4353, 51}";
+			sepNavVisRect = "{{0, 0}, {0, 0}}";
 			sepNavWindowFrame = "{{498, 230}, {750, 502}}";
 		};
 	};
@@ -238,9 +238,9 @@
 	};
 	25D2E7C207BF3758004BEF7D = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {914, 3247}}";
-			sepNavSelRange = "{381, 21}";
-			sepNavVisRect = "{{0, 0}, {914, 578}}";
+			sepNavIntBoundsRect = "{{0, 0}, {705, 3247}}";
+			sepNavSelRange = "{488, 0}";
+			sepNavVisRect = "{{0, 0}, {705, 443}}";
 			sepNavWindowFrame = "{{443, 367}, {750, 502}}";
 		};
 	};
@@ -249,7 +249,7 @@
 			sepNavIntBoundsRect = "{{0, 0}, {894, 1819}}";
 			sepNavSelRange = "{411, 49}";
 			sepNavVisRect = "{{0, 0}, {0, 0}}";
-			sepNavWindowFrame = "{{176, 524}, {750, 502}}";
+			sepNavWindowFrame = "{{130, 566}, {750, 502}}";
 		};
 	};
 	25D2ED0B07BF6066004BEF7D = {
@@ -1734,6 +1734,62 @@
 			3EBF466607D1C94E00B30DAB = 3EBF466607D1C94E00B30DAB;
 			3EBF466807D1C98100B30DAB = 3EBF466807D1C98100B30DAB;
 			3EBF466907D1C98100B30DAB = 3EBF466907D1C98100B30DAB;
+			3EBF466B07D1C9D200B30DAB = 3EBF466B07D1C9D200B30DAB;
+			3EBF466C07D1C9D200B30DAB = 3EBF466C07D1C9D200B30DAB;
+			3EBF466E07D1C9D400B30DAB = 3EBF466E07D1C9D400B30DAB;
+			3EBF466F07D1C9F200B30DAB = 3EBF466F07D1C9F200B30DAB;
+			3EBF467007D1C9F200B30DAB = 3EBF467007D1C9F200B30DAB;
+			3EBF467107D1C9F200B30DAB = 3EBF467107D1C9F200B30DAB;
+			3EBF467307D1CA9000B30DAB = 3EBF467307D1CA9000B30DAB;
+			3EBF467407D1CA9000B30DAB = 3EBF467407D1CA9000B30DAB;
+			3EBF467607D1CDA000B30DAB = 3EBF467607D1CDA000B30DAB;
+			3EBF467707D1CDA000B30DAB = 3EBF467707D1CDA000B30DAB;
+			3EBF467907D24B6300B30DAB = 3EBF467907D24B6300B30DAB;
+			3EBF467A07D24B6300B30DAB = 3EBF467A07D24B6300B30DAB;
+			3EBF467C07D24BAC00B30DAB = 3EBF467C07D24BAC00B30DAB;
+			3EBF467D07D24BAD00B30DAB = 3EBF467D07D24BAD00B30DAB;
+			3EBF467F07D24EA100B30DAB = 3EBF467F07D24EA100B30DAB;
+			3EBF468007D24EA100B30DAB = 3EBF468007D24EA100B30DAB;
+			3EBF468207D250AF00B30DAB = 3EBF468207D250AF00B30DAB;
+			3EBF468307D250AF00B30DAB = 3EBF468307D250AF00B30DAB;
+			3EBF468507D2522200B30DAB = 3EBF468507D2522200B30DAB;
+			3EBF468607D2522200B30DAB = 3EBF468607D2522200B30DAB;
+			3EBF468807D2522600B30DAB = 3EBF468807D2522600B30DAB;
+			3EBF468A07D2532B00B30DAB = 3EBF468A07D2532B00B30DAB;
+			3EBF468B07D2532B00B30DAB = 3EBF468B07D2532B00B30DAB;
+			3EBF468C07D2532B00B30DAB = 3EBF468C07D2532B00B30DAB;
+			3EBF468D07D2532B00B30DAB = 3EBF468D07D2532B00B30DAB;
+			3EBF468E07D2532B00B30DAB = 3EBF468E07D2532B00B30DAB;
+			3EBF468F07D2532B00B30DAB = 3EBF468F07D2532B00B30DAB;
+			3EBF469007D2532B00B30DAB = 3EBF469007D2532B00B30DAB;
+			3EBF469107D2532B00B30DAB = 3EBF469107D2532B00B30DAB;
+			3EBF469207D2532B00B30DAB = 3EBF469207D2532B00B30DAB;
+			3EBF469307D2532B00B30DAB = 3EBF469307D2532B00B30DAB;
+			3EBF469407D2532B00B30DAB = 3EBF469407D2532B00B30DAB;
+			3EBF469707D253A600B30DAB = 3EBF469707D253A600B30DAB;
+			3EBF469807D253A600B30DAB = 3EBF469807D253A600B30DAB;
+			3EBF469907D253A600B30DAB = 3EBF469907D253A600B30DAB;
+			3EBF469A07D253A600B30DAB = 3EBF469A07D253A600B30DAB;
+			3EBF469B07D253A600B30DAB = 3EBF469B07D253A600B30DAB;
+			3EBF469C07D253A600B30DAB = 3EBF469C07D253A600B30DAB;
+			3EBF469D07D253A600B30DAB = 3EBF469D07D253A600B30DAB;
+			3EBF469E07D253A600B30DAB = 3EBF469E07D253A600B30DAB;
+			3EBF46A007D253B100B30DAB = 3EBF46A007D253B100B30DAB;
+			3EBF46A107D253B100B30DAB = 3EBF46A107D253B100B30DAB;
+			3EBF46A307D253E200B30DAB = 3EBF46A307D253E200B30DAB;
+			3EBF46A407D253E200B30DAB = 3EBF46A407D253E200B30DAB;
+			3EBF46A607D253F100B30DAB = 3EBF46A607D253F100B30DAB;
+			3EBF46A707D253F100B30DAB = 3EBF46A707D253F100B30DAB;
+			3EBF46A907D254DA00B30DAB = 3EBF46A907D254DA00B30DAB;
+			3EBF46AA07D254DA00B30DAB = 3EBF46AA07D254DA00B30DAB;
+			3EBF46AB07D254DA00B30DAB = 3EBF46AB07D254DA00B30DAB;
+			3EBF46AC07D254DA00B30DAB = 3EBF46AC07D254DA00B30DAB;
+			3EBF46AD07D254DA00B30DAB = 3EBF46AD07D254DA00B30DAB;
+			3EBF46AE07D254DA00B30DAB = 3EBF46AE07D254DA00B30DAB;
+			3EBF46B007D2559300B30DAB = 3EBF46B007D2559300B30DAB;
+			3EBF46B107D2559300B30DAB = 3EBF46B107D2559300B30DAB;
+			3EBF46B307D255A200B30DAB = 3EBF46B307D255A200B30DAB;
+			3EBF46B407D255A200B30DAB = 3EBF46B407D255A200B30DAB;
 			3EC671060775276E00B50A61 = 3EC671060775276E00B50A61;
 			3EC671080775276E00B50A61 = 3EC671080775276E00B50A61;
 			3EC6710A0775276E00B50A61 = 3EC6710A0775276E00B50A61;
@@ -1852,9 +1908,9 @@
 	};
 	2A37F4ACFDCFA73011CA2CEA = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {533, 9225}}";
-			sepNavSelRange = "{10326, 6}";
-			sepNavVisRect = "{{0, 5794}, {533, 578}}";
+			sepNavIntBoundsRect = "{{0, 0}, {914, 8399}}";
+			sepNavSelRange = "{9040, 24}";
+			sepNavVisRect = "{{0, 4240}, {914, 578}}";
 			sepNavWindowFrame = "{{452, 272}, {750, 502}}";
 		};
 	};
@@ -2480,7 +2536,7 @@
 		isa = PBXTextBookmark;
 		name = trueMovieView;
 		rLen = 13;
-		rLoc = 14097;
+		rLoc = 14134;
 		rType = 0;
 		vrLen = 1117;
 		vrLoc = 0;
@@ -2548,7 +2604,7 @@
 		isa = PBXTextBookmark;
 		name = "-(BOOL)hasEnded:(id)sender\n";
 		rLen = 27;
-		rLoc = 4531;
+		rLoc = 4783;
 		rType = 0;
 		vrLen = 874;
 		vrLoc = 4030;
@@ -2588,7 +2644,7 @@
 		isa = PBXTextBookmark;
 		name = isPlaying;
 		rLen = 0;
-		rLoc = 10783;
+		rLoc = 10835;
 		rType = 0;
 		vrLen = 975;
 		vrLoc = 10776;
@@ -2775,7 +2831,7 @@
 		isa = PBXTextBookmark;
 		name = "-(int)getNextIndex{\n";
 		rLen = 20;
-		rLoc = 9777;
+		rLoc = 9829;
 		rType = 0;
 		vrLen = 717;
 		vrLoc = 9743;
@@ -2785,7 +2841,7 @@
 		isa = PBXTextBookmark;
 		name = "-(int)getNextIndex{\n";
 		rLen = 20;
-		rLoc = 9777;
+		rLoc = 9829;
 		rType = 0;
 		vrLen = 717;
 		vrLoc = 9743;
@@ -3234,7 +3290,7 @@
 		isa = PBXTextBookmark;
 		name = "SetMovieTimeValue(tempMovie, newMovieTime * tempRecord.scale);";
 		rLen = 60;
-		rLoc = 4648;
+		rLoc = 4900;
 		rType = 0;
 		vrLen = 1024;
 		vrLoc = 3782;
@@ -3729,7 +3785,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceDocument.m: 340";
 		rLen = 0;
-		rLoc = 9720;
+		rLoc = 9772;
 		rType = 0;
 		vrLen = 649;
 		vrLoc = 9422;
@@ -3749,7 +3805,7 @@
 		isa = PBXTextBookmark;
 		name = pause;
 		rLen = 5;
-		rLoc = 9675;
+		rLoc = 9727;
 		rType = 0;
 		vrLen = 643;
 		vrLoc = 9422;
@@ -3819,7 +3875,7 @@
 		isa = PBXTextBookmark;
 		name = window;
 		rLen = 6;
-		rLoc = 10326;
+		rLoc = 10378;
 		rType = 0;
 		vrLen = 779;
 		vrLoc = 9912;
@@ -3829,7 +3885,7 @@
 		isa = PBXTextBookmark;
 		name = pause;
 		rLen = 5;
-		rLoc = 9675;
+		rLoc = 9727;
 		rType = 0;
 		vrLen = 643;
 		vrLoc = 9422;
@@ -3849,7 +3905,7 @@
 		isa = PBXTextBookmark;
 		name = window;
 		rLen = 6;
-		rLoc = 10326;
+		rLoc = 10378;
 		rType = 0;
 		vrLen = 779;
 		vrLoc = 9912;
@@ -4997,7 +5053,7 @@
 		isa = PBXTextBookmark;
 		name = currentMovieTime;
 		rLen = 16;
-		rLoc = 6037;
+		rLoc = 6074;
 		rType = 0;
 		vrLen = 792;
 		vrLoc = 5658;
@@ -5017,7 +5073,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 244";
 		rLen = 0;
-		rLoc = 4708;
+		rLoc = 4960;
 		rType = 0;
 		vrLen = 930;
 		vrLoc = 4645;
@@ -5037,7 +5093,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 244";
 		rLen = 0;
-		rLoc = 4708;
+		rLoc = 4960;
 		rType = 0;
 		vrLen = 930;
 		vrLoc = 4645;
@@ -5127,7 +5183,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 244";
 		rLen = 0;
-		rLoc = 4708;
+		rLoc = 4960;
 		rType = 0;
 		vrLen = 846;
 		vrLoc = 4033;
@@ -5147,7 +5203,7 @@
 		isa = PBXTextBookmark;
 		name = currentMovieTime;
 		rLen = 16;
-		rLoc = 6037;
+		rLoc = 6074;
 		rType = 0;
 		vrLen = 792;
 		vrLoc = 5658;
@@ -5217,7 +5273,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 244";
 		rLen = 0;
-		rLoc = 4708;
+		rLoc = 4960;
 		rType = 0;
 		vrLen = 846;
 		vrLoc = 4033;
@@ -5287,7 +5343,7 @@
 		isa = PBXTextBookmark;
 		name = "NPMovieView.m: setVolume:";
 		rLen = 0;
-		rLoc = 14683;
+		rLoc = 14720;
 		rType = 0;
 		vrLen = 671;
 		vrLoc = 14223;
@@ -5297,7 +5353,7 @@
 		isa = PBXTextBookmark;
 		name = "-(void)setCurrentMovieTimePrecise:(long)newMovieTime";
 		rLen = 52;
-		rLoc = 6123;
+		rLoc = 6375;
 		rType = 0;
 		vrLen = 1002;
 		vrLoc = 4812;
@@ -5337,7 +5393,7 @@
 		isa = PBXTextBookmark;
 		name = "NPMovieView.m: setVolume:";
 		rLen = 0;
-		rLoc = 14683;
+		rLoc = 14720;
 		rType = 0;
 		vrLen = 671;
 		vrLoc = 14223;
@@ -5397,7 +5453,7 @@
 		isa = PBXTextBookmark;
 		name = "NPMovieView.m: setVolume:";
 		rLen = 0;
-		rLoc = 14683;
+		rLoc = 14720;
 		rType = 0;
 		vrLen = 671;
 		vrLoc = 14223;
@@ -5407,7 +5463,7 @@
 		isa = PBXTextBookmark;
 		name = "-(long)currentMovieTimePrecise";
 		rLen = 30;
-		rLoc = 5999;
+		rLoc = 6251;
 		rType = 0;
 		vrLen = 996;
 		vrLoc = 4783;
@@ -5427,7 +5483,7 @@
 		isa = PBXTextBookmark;
 		name = "-(void)setCurrentMovieTimePrecise:(long)newMovieTime";
 		rLen = 52;
-		rLoc = 6123;
+		rLoc = 6375;
 		rType = 0;
 		vrLen = 1002;
 		vrLoc = 4812;
@@ -5437,7 +5493,7 @@
 		isa = PBXTextBookmark;
 		name = "\treturn (double)[self totalTimePrecise] / [self currentMovieFrameRate];\n";
 		rLen = 72;
-		rLoc = 4709;
+		rLoc = 4961;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -5447,7 +5503,7 @@
 		isa = PBXTextBookmark;
 		name = "    if(anIndex >= [thePlaylist count]){\n";
 		rLen = 40;
-		rLoc = 10129;
+		rLoc = 10181;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -5474,7 +5530,7 @@
 		isa = PBXTextBookmark;
 		name = "\treturn (double)[self totalTimePrecise] / [self currentMovieFrameRate];\n";
 		rLen = 72;
-		rLoc = 4709;
+		rLoc = 4961;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -5484,7 +5540,7 @@
 		isa = PBXTextBookmark;
 		name = "    if(anIndex >= [thePlaylist count]){\n";
 		rLen = 40;
-		rLoc = 10129;
+		rLoc = 10181;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -5622,7 +5678,7 @@
 		isa = PBXTextBookmark;
 		name = "\t[self rrDo:[[Preferences mainPrefs] rrSpeed]];\n";
 		rLen = 48;
-		rLoc = 4998;
+		rLoc = 5035;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -5742,7 +5798,7 @@
 		isa = PBXTextBookmark;
 		name = "-(double)currentMovieTime\n";
 		rLen = 26;
-		rLoc = 4784;
+		rLoc = 5036;
 		rType = 0;
 		vrLen = 502;
 		vrLoc = 4646;
@@ -5762,7 +5818,7 @@
 		isa = PBXTextBookmark;
 		name = "-(double)totalTime\n";
 		rLen = 19;
-		rLoc = 14675;
+		rLoc = 14712;
 		rType = 0;
 		vrLen = 325;
 		vrLoc = 14512;
@@ -5802,7 +5858,7 @@
 		isa = PBXTextBookmark;
 		name = "-(double)scrubLocation:(id)sender\n";
 		rLen = 34;
-		rLoc = 5970;
+		rLoc = 6007;
 		rType = 0;
 		vrLen = 436;
 		vrLoc = 5570;
@@ -5822,7 +5878,7 @@
 		isa = PBXTextBookmark;
 		name = "-(double)currentMovieTime\n";
 		rLen = 26;
-		rLoc = 4784;
+		rLoc = 5036;
 		rType = 0;
 		vrLen = 502;
 		vrLoc = 4646;
@@ -5852,7 +5908,7 @@
 		isa = PBXTextBookmark;
 		name = "-(double)totalTime\n";
 		rLen = 19;
-		rLoc = 14675;
+		rLoc = 14712;
 		rType = 0;
 		vrLen = 325;
 		vrLoc = 14512;
@@ -5872,7 +5928,7 @@
 		isa = PBXTextBookmark;
 		name = "\t[self rrDo:[[Preferences mainPrefs] rrSpeed]];\n";
 		rLen = 48;
-		rLoc = 4998;
+		rLoc = 5035;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -5882,7 +5938,7 @@
 		isa = PBXTextBookmark;
 		name = "\t[self rrDo:[[Preferences mainPrefs] rrSpeed]];\n";
 		rLen = 48;
-		rLoc = 4998;
+		rLoc = 5035;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -5952,7 +6008,7 @@
 		isa = PBXTextBookmark;
 		name = "\t[self rrDo:[[Preferences mainPrefs] rrSpeed]];\n";
 		rLen = 48;
-		rLoc = 4998;
+		rLoc = 5035;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -5979,7 +6035,7 @@
 		isa = PBXTextBookmark;
 		name = "\t[self rrDo:[[Preferences mainPrefs] rrSpeed]];\n";
 		rLen = 48;
-		rLoc = 4998;
+		rLoc = 5035;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -6349,7 +6405,7 @@
 		isa = PBXTextBookmark;
 		name = "-(long)currentMovieFrameRatePrecise";
 		rLen = 0;
-		rLoc = 5894;
+		rLoc = 6146;
 		rType = 0;
 		vrLen = 527;
 		vrLoc = 5021;
@@ -6379,7 +6435,7 @@
 		isa = PBXTextBookmark;
 		name = "-(long)currentMovieFrameRatePrecise";
 		rLen = 0;
-		rLoc = 5894;
+		rLoc = 6146;
 		rType = 0;
 		vrLen = 527;
 		vrLoc = 5021;
@@ -6408,7 +6464,7 @@
 		fRef = 3EEDF752065B3E8800E3545C;
 		isa = PBXTextBookmark;
 		rLen = 1;
-		rLoc = 289;
+		rLoc = 296;
 		rType = 1;
 	};
 	3EBF442A07D1A03D00B30DAB = {
@@ -6426,7 +6482,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5894;
+		rLoc = 6146;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -6446,7 +6502,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5894;
+		rLoc = 6146;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -6466,7 +6522,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5894;
+		rLoc = 6146;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -6496,7 +6552,7 @@
 		isa = PBXTextBookmark;
 		name = GetMovieNextInterestingTime;
 		rLen = 27;
-		rLoc = 4385;
+		rLoc = 4637;
 		rType = 0;
 		vrLen = 556;
 		vrLoc = 4052;
@@ -6546,7 +6602,7 @@
 		isa = PBXTextBookmark;
 		name = GetMovieNextInterestingTime;
 		rLen = 27;
-		rLoc = 4385;
+		rLoc = 4637;
 		rType = 0;
 		vrLen = 556;
 		vrLoc = 4052;
@@ -6576,7 +6632,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5213;
+		rLoc = 5465;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -6626,7 +6682,7 @@
 		isa = PBXTextBookmark;
 		name = "-(double)totalTime\n";
 		rLen = 19;
-		rLoc = 14678;
+		rLoc = 14715;
 		rType = 0;
 		vrLen = 293;
 		vrLoc = 14274;
@@ -6636,7 +6692,7 @@
 		isa = PBXTextBookmark;
 		name = "-(int)currentMovieFrameRate";
 		rLen = 51;
-		rLoc = 5156;
+		rLoc = 5408;
 		rType = 0;
 		vrLen = 544;
 		vrLoc = 4961;
@@ -6656,7 +6712,7 @@
 		isa = PBXTextBookmark;
 		name = GetMovieNextInterestingTime;
 		rLen = 27;
-		rLoc = 4385;
+		rLoc = 4637;
 		rType = 0;
 		vrLen = 556;
 		vrLoc = 4052;
@@ -6676,7 +6732,7 @@
 		isa = PBXTextBookmark;
 		name = "-(double)totalTime\n";
 		rLen = 19;
-		rLoc = 14678;
+		rLoc = 14715;
 		rType = 0;
 		vrLen = 293;
 		vrLoc = 14274;
@@ -6716,7 +6772,7 @@
 		isa = PBXTextBookmark;
 		name = "-(double)totalTime\n";
 		rLen = 19;
-		rLoc = 14678;
+		rLoc = 14715;
 		rType = 0;
 		vrLen = 293;
 		vrLoc = 14274;
@@ -6726,7 +6782,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 271";
 		rLen = 0;
-		rLoc = 5937;
+		rLoc = 6189;
 		rType = 0;
 		vrLen = 608;
 		vrLoc = 5172;
@@ -6736,7 +6792,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 266";
 		rLen = 0;
-		rLoc = 5213;
+		rLoc = 5465;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -6746,7 +6802,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 271";
 		rLen = 0;
-		rLoc = 5937;
+		rLoc = 6189;
 		rType = 0;
 		vrLen = 608;
 		vrLoc = 5172;
@@ -6756,7 +6812,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 266";
 		rLen = 0;
-		rLoc = 5213;
+		rLoc = 5465;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -6766,7 +6822,7 @@
 		isa = PBXTextBookmark;
 		name = GetMovieFrameRate;
 		rLen = 0;
-		rLoc = 5213;
+		rLoc = 5465;
 		rType = 0;
 		vrLen = 613;
 		vrLoc = 5172;
@@ -6776,7 +6832,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 266";
 		rLen = 0;
-		rLoc = 5213;
+		rLoc = 5465;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -6786,7 +6842,7 @@
 		isa = PBXTextBookmark;
 		name = GetMovieFrameRate;
 		rLen = 0;
-		rLoc = 5213;
+		rLoc = 5465;
 		rType = 0;
 		vrLen = 613;
 		vrLoc = 5172;
@@ -6796,7 +6852,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 266";
 		rLen = 0;
-		rLoc = 5213;
+		rLoc = 5465;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -6806,7 +6862,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 265";
 		rLen = 0;
-		rLoc = 5213;
+		rLoc = 5465;
 		rType = 0;
 		vrLen = 563;
 		vrLoc = 5055;
@@ -6816,7 +6872,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 266";
 		rLen = 0;
-		rLoc = 5213;
+		rLoc = 5465;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -6836,7 +6892,7 @@
 		isa = PBXTextBookmark;
 		name = GetTimeBaseEffectiveRate;
 		rLen = 0;
-		rLoc = 5213;
+		rLoc = 5465;
 		rType = 0;
 		vrLen = 572;
 		vrLoc = 5055;
@@ -6856,7 +6912,7 @@
 		isa = PBXTextBookmark;
 		name = GetTimeBaseEffectiveRate;
 		rLen = 0;
-		rLoc = 5213;
+		rLoc = 5465;
 		rType = 0;
 		vrLen = 518;
 		vrLoc = 5055;
@@ -6866,7 +6922,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 266";
 		rLen = 0;
-		rLoc = 5213;
+		rLoc = 5465;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -6899,7 +6955,7 @@
 		isa = PBXTextBookmark;
 		name = "-(double)totalTime\n";
 		rLen = 19;
-		rLoc = 14678;
+		rLoc = 14715;
 		rType = 0;
 		vrLen = 293;
 		vrLoc = 14274;
@@ -6929,7 +6985,7 @@
 		isa = PBXTextBookmark;
 		name = GetTimeBaseEffectiveRate;
 		rLen = 0;
-		rLoc = 5213;
+		rLoc = 5465;
 		rType = 0;
 		vrLen = 516;
 		vrLoc = 5053;
@@ -6939,7 +6995,7 @@
 		isa = PBXTextBookmark;
 		name = "-(double)totalTime\n";
 		rLen = 19;
-		rLoc = 14678;
+		rLoc = 14715;
 		rType = 0;
 		vrLen = 293;
 		vrLoc = 14274;
@@ -6969,7 +7025,7 @@
 		isa = PBXTextBookmark;
 		name = GetTimeBaseEffectiveRate;
 		rLen = 0;
-		rLoc = 5213;
+		rLoc = 5465;
 		rType = 0;
 		vrLen = 516;
 		vrLoc = 5053;
@@ -6979,7 +7035,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 266";
 		rLen = 0;
-		rLoc = 5213;
+		rLoc = 5465;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -6989,7 +7045,7 @@
 		isa = PBXTextBookmark;
 		name = GetTimeBaseEffectiveRate;
 		rLen = 0;
-		rLoc = 5213;
+		rLoc = 5465;
 		rType = 0;
 		vrLen = 516;
 		vrLoc = 5053;
@@ -6999,7 +7055,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 266";
 		rLen = 0;
-		rLoc = 5213;
+		rLoc = 5465;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -7009,7 +7065,7 @@
 		isa = PBXTextBookmark;
 		name = GetTimeBaseEffectiveRate;
 		rLen = 0;
-		rLoc = 5213;
+		rLoc = 5465;
 		rType = 0;
 		vrLen = 516;
 		vrLoc = 5053;
@@ -7019,7 +7075,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 266";
 		rLen = 0;
-		rLoc = 5213;
+		rLoc = 5465;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -7029,7 +7085,7 @@
 		isa = PBXTextBookmark;
 		name = GetTimeBaseEffectiveRate;
 		rLen = 0;
-		rLoc = 5213;
+		rLoc = 5465;
 		rType = 0;
 		vrLen = 516;
 		vrLoc = 5053;
@@ -7059,7 +7115,7 @@
 		isa = PBXTextBookmark;
 		name = GetTimeBaseEffectiveRate;
 		rLen = 0;
-		rLoc = 5213;
+		rLoc = 5465;
 		rType = 0;
 		vrLen = 516;
 		vrLoc = 5053;
@@ -7086,7 +7142,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 266";
 		rLen = 0;
-		rLoc = 5213;
+		rLoc = 5465;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -7106,7 +7162,7 @@
 		isa = PBXTextBookmark;
 		name = GetTimeBaseEffectiveRate;
 		rLen = 0;
-		rLoc = 5213;
+		rLoc = 5465;
 		rType = 0;
 		vrLen = 516;
 		vrLoc = 5053;
@@ -7126,7 +7182,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 266";
 		rLen = 0;
-		rLoc = 5213;
+		rLoc = 5465;
 		rType = 0;
 		vrLen = 488;
 		vrLoc = 5053;
@@ -7136,7 +7192,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 266";
 		rLen = 0;
-		rLoc = 5213;
+		rLoc = 5465;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -7146,7 +7202,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 266";
 		rLen = 0;
-		rLoc = 5855;
+		rLoc = 6107;
 		rType = 0;
 		vrLen = 488;
 		vrLoc = 5053;
@@ -7156,7 +7212,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 266";
 		rLen = 0;
-		rLoc = 5855;
+		rLoc = 6107;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -7166,7 +7222,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 266";
 		rLen = 0;
-		rLoc = 5855;
+		rLoc = 6107;
 		rType = 0;
 		vrLen = 488;
 		vrLoc = 5053;
@@ -7176,7 +7232,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 266";
 		rLen = 0;
-		rLoc = 5855;
+		rLoc = 6107;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -7186,7 +7242,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 266";
 		rLen = 0;
-		rLoc = 5213;
+		rLoc = 5465;
 		rType = 0;
 		vrLen = 524;
 		vrLoc = 4821;
@@ -7196,7 +7252,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 267";
 		rLen = 0;
-		rLoc = 5855;
+		rLoc = 6107;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -7206,7 +7262,7 @@
 		isa = PBXTextBookmark;
 		name = QTGetMovieProperty;
 		rLen = 0;
-		rLoc = 5213;
+		rLoc = 5465;
 		rType = 0;
 		vrLen = 537;
 		vrLoc = 4821;
@@ -7223,7 +7279,7 @@
 		isa = PBXTextBookmark;
 		name = QTGetMovieProperty;
 		rLen = 0;
-		rLoc = 5213;
+		rLoc = 5465;
 		rType = 0;
 		vrLen = 537;
 		vrLoc = 4821;
@@ -7243,7 +7299,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 267";
 		rLen = 0;
-		rLoc = 5855;
+		rLoc = 6107;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -7263,7 +7319,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 267";
 		rLen = 0;
-		rLoc = 5855;
+		rLoc = 6107;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -7303,7 +7359,7 @@
 		isa = PBXTextBookmark;
 		name = currentMovieTimeScale;
 		rLen = 21;
-		rLoc = 5323;
+		rLoc = 5575;
 		rType = 0;
 		vrLen = 1149;
 		vrLoc = 4901;
@@ -7333,7 +7389,7 @@
 		isa = PBXTextBookmark;
 		name = currentMovieTimeScale;
 		rLen = 21;
-		rLoc = 5323;
+		rLoc = 5575;
 		rType = 0;
 		vrLen = 1149;
 		vrLoc = 4901;
@@ -7353,7 +7409,7 @@
 		isa = PBXTextBookmark;
 		name = currentMovieTimeScale;
 		rLen = 21;
-		rLoc = 5372;
+		rLoc = 5624;
 		rType = 0;
 		vrLen = 1025;
 		vrLoc = 4896;
@@ -7362,7 +7418,7 @@
 		fRef = 3EEDF752065B3E8800E3545C;
 		isa = PBXTextBookmark;
 		rLen = 1;
-		rLoc = 250;
+		rLoc = 257;
 		rType = 1;
 	};
 	3EBF44A407D1AFBB00B30DAB = {
@@ -7370,7 +7426,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 251";
 		rLen = 0;
-		rLoc = 4891;
+		rLoc = 5143;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -7380,7 +7436,7 @@
 		isa = PBXTextBookmark;
 		name = currentMovieTimeScale;
 		rLen = 21;
-		rLoc = 5372;
+		rLoc = 5624;
 		rType = 0;
 		vrLen = 1025;
 		vrLoc = 4896;
@@ -7390,7 +7446,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 251";
 		rLen = 0;
-		rLoc = 4891;
+		rLoc = 5143;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -7400,7 +7456,7 @@
 		isa = PBXTextBookmark;
 		name = currentMovieTimeScale;
 		rLen = 21;
-		rLoc = 5372;
+		rLoc = 5624;
 		rType = 0;
 		vrLen = 1025;
 		vrLoc = 4896;
@@ -7410,7 +7466,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 251";
 		rLen = 0;
-		rLoc = 4891;
+		rLoc = 5143;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -7420,7 +7476,7 @@
 		isa = PBXTextBookmark;
 		name = currentMovieTimeScale;
 		rLen = 21;
-		rLoc = 5372;
+		rLoc = 5624;
 		rType = 0;
 		vrLen = 1025;
 		vrLoc = 4896;
@@ -7430,7 +7486,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 251";
 		rLen = 0;
-		rLoc = 4891;
+		rLoc = 5143;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -7440,7 +7496,7 @@
 		isa = PBXTextBookmark;
 		name = "        myFlags = nextTimeStep;\n";
 		rLen = 23;
-		rLoc = 5704;
+		rLoc = 5956;
 		rType = 0;
 		vrLen = 1025;
 		vrLoc = 4896;
@@ -7450,7 +7506,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 251";
 		rLen = 0;
-		rLoc = 4891;
+		rLoc = 5143;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -7470,7 +7526,7 @@
 		isa = PBXTextBookmark;
 		name = GetMovieNextInterestingTime;
 		rLen = 27;
-		rLoc = 5578;
+		rLoc = 5830;
 		rType = 0;
 		vrLen = 1030;
 		vrLoc = 4896;
@@ -7490,7 +7546,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 276";
 		rLen = 0;
-		rLoc = 5704;
+		rLoc = 5956;
 		rType = 0;
 		vrLen = 1031;
 		vrLoc = 4896;
@@ -7500,7 +7556,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 251";
 		rLen = 0;
-		rLoc = 4891;
+		rLoc = 5143;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -7510,7 +7566,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 276";
 		rLen = 0;
-		rLoc = 5711;
+		rLoc = 5963;
 		rType = 0;
 		vrLen = 1036;
 		vrLoc = 4896;
@@ -7520,7 +7576,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 251";
 		rLen = 0;
-		rLoc = 4891;
+		rLoc = 5143;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -7530,7 +7586,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 276";
 		rLen = 0;
-		rLoc = 5711;
+		rLoc = 5963;
 		rType = 0;
 		vrLen = 1036;
 		vrLoc = 4896;
@@ -7540,7 +7596,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 251";
 		rLen = 0;
-		rLoc = 4891;
+		rLoc = 5143;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -7550,7 +7606,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 273";
 		rLen = 0;
-		rLoc = 5545;
+		rLoc = 5797;
 		rType = 0;
 		vrLen = 1025;
 		vrLoc = 4896;
@@ -7560,7 +7616,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 251";
 		rLen = 0;
-		rLoc = 4891;
+		rLoc = 5143;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -7570,7 +7626,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 279";
 		rLen = 0;
-		rLoc = 5205;
+		rLoc = 5457;
 		rType = 0;
 		vrLen = 1067;
 		vrLoc = 4896;
@@ -7580,7 +7636,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 251";
 		rLen = 0;
-		rLoc = 4891;
+		rLoc = 5143;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -7590,7 +7646,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 272";
 		rLen = 0;
-		rLoc = 5521;
+		rLoc = 5773;
 		rType = 0;
 		vrLen = 1140;
 		vrLoc = 4812;
@@ -7600,7 +7656,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 251";
 		rLen = 0;
-		rLoc = 4891;
+		rLoc = 5143;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -7610,7 +7666,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 276";
 		rLen = 0;
-		rLoc = 5692;
+		rLoc = 5944;
 		rType = 0;
 		vrLen = 1101;
 		vrLoc = 4812;
@@ -7620,7 +7676,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 251";
 		rLen = 0;
-		rLoc = 4891;
+		rLoc = 5143;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -7630,7 +7686,7 @@
 		isa = PBXTextBookmark;
 		name = double;
 		rLen = 6;
-		rLoc = 5151;
+		rLoc = 5403;
 		rType = 0;
 		vrLen = 1104;
 		vrLoc = 4812;
@@ -7640,7 +7696,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 251";
 		rLen = 0;
-		rLoc = 4891;
+		rLoc = 5143;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -7650,7 +7706,7 @@
 		isa = PBXTextBookmark;
 		name = double;
 		rLen = 6;
-		rLoc = 5151;
+		rLoc = 5403;
 		rType = 0;
 		vrLen = 1104;
 		vrLoc = 4812;
@@ -7660,7 +7716,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 251";
 		rLen = 0;
-		rLoc = 4891;
+		rLoc = 5143;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -7670,7 +7726,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 283";
 		rLen = 0;
-		rLoc = 5808;
+		rLoc = 6060;
 		rType = 0;
 		vrLen = 1119;
 		vrLoc = 4812;
@@ -7680,7 +7736,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 251";
 		rLen = 0;
-		rLoc = 4891;
+		rLoc = 5143;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -7690,7 +7746,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 273";
 		rLen = 0;
-		rLoc = 5507;
+		rLoc = 5759;
 		rType = 0;
 		vrLen = 1130;
 		vrLoc = 4812;
@@ -7700,7 +7756,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 251";
 		rLen = 0;
-		rLoc = 4891;
+		rLoc = 5143;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -7710,7 +7766,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 283";
 		rLen = 0;
-		rLoc = 5789;
+		rLoc = 6041;
 		rType = 0;
 		vrLen = 1140;
 		vrLoc = 4812;
@@ -7720,7 +7776,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 251";
 		rLen = 0;
-		rLoc = 4891;
+		rLoc = 5143;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -7730,7 +7786,7 @@
 		isa = PBXTextBookmark;
 		name = double;
 		rLen = 6;
-		rLoc = 5151;
+		rLoc = 5403;
 		rType = 0;
 		vrLen = 1140;
 		vrLoc = 4812;
@@ -7780,7 +7836,7 @@
 		isa = PBXTextBookmark;
 		name = double;
 		rLen = 6;
-		rLoc = 5151;
+		rLoc = 5403;
 		rType = 0;
 		vrLen = 1140;
 		vrLoc = 4812;
@@ -7829,7 +7885,7 @@
 		fRef = 3EEDF752065B3E8800E3545C;
 		isa = PBXTextBookmark;
 		rLen = 1;
-		rLoc = 267;
+		rLoc = 274;
 		rType = 1;
 	};
 	3EBF44E507D1B3BE00B30DAB = {
@@ -7837,7 +7893,7 @@
 		isa = PBXTextBookmark;
 		name = "    TimeRecord tempRecord;\n";
 		rLen = 0;
-		rLoc = 5274;
+		rLoc = 5526;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -7927,7 +7983,7 @@
 		isa = PBXTextBookmark;
 		name = currentMovieFrameRate;
 		rLen = 21;
-		rLoc = 13917;
+		rLoc = 13954;
 		rType = 0;
 		vrLen = 728;
 		vrLoc = 13547;
@@ -8044,7 +8100,7 @@
 		isa = PBXTextBookmark;
 		name = currentMovieFrameRate;
 		rLen = 21;
-		rLoc = 13917;
+		rLoc = 13954;
 		rType = 0;
 		vrLen = 728;
 		vrLoc = 13547;
@@ -8064,7 +8120,7 @@
 		isa = PBXTextBookmark;
 		name = "    TimeRecord tempRecord;\n";
 		rLen = 0;
-		rLoc = 5274;
+		rLoc = 5526;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -8104,7 +8160,7 @@
 		isa = PBXTextBookmark;
 		name = "    TimeRecord tempRecord;\n";
 		rLen = 0;
-		rLoc = 5274;
+		rLoc = 5526;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -8134,7 +8190,7 @@
 		isa = PBXTextBookmark;
 		name = "    TimeRecord tempRecord;\n";
 		rLen = 0;
-		rLoc = 5274;
+		rLoc = 5526;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -8174,7 +8230,7 @@
 		isa = PBXTextBookmark;
 		name = currentMovieFrameRate;
 		rLen = 21;
-		rLoc = 13917;
+		rLoc = 14020;
 		rType = 0;
 		vrLen = 728;
 		vrLoc = 13547;
@@ -8193,7 +8249,7 @@
 		fRef = 3EEDF752065B3E8800E3545C;
 		isa = PBXTextBookmark;
 		rLen = 1;
-		rLoc = 263;
+		rLoc = 270;
 		rType = 1;
 	};
 	3EBF450E07D1B4B300B30DAB = {
@@ -8231,7 +8287,7 @@
 		isa = PBXTextBookmark;
 		name = currentMovieFrameRate;
 		rLen = 21;
-		rLoc = 13917;
+		rLoc = 14020;
 		rType = 0;
 		vrLen = 728;
 		vrLoc = 13547;
@@ -8251,7 +8307,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5274;
+		rLoc = 5526;
 		rType = 0;
 		vrLen = 1140;
 		vrLoc = 4783;
@@ -8261,7 +8317,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5274;
+		rLoc = 5526;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -8271,7 +8327,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5274;
+		rLoc = 5526;
 		rType = 0;
 		vrLen = 1140;
 		vrLoc = 4783;
@@ -8281,7 +8337,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5274;
+		rLoc = 5526;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -8291,7 +8347,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5274;
+		rLoc = 5526;
 		rType = 0;
 		vrLen = 1146;
 		vrLoc = 4812;
@@ -8301,7 +8357,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5274;
+		rLoc = 5526;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -8311,7 +8367,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 282";
 		rLen = 0;
-		rLoc = 5789;
+		rLoc = 6041;
 		rType = 0;
 		vrLen = 1154;
 		vrLoc = 4812;
@@ -8321,7 +8377,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5274;
+		rLoc = 5526;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -8331,7 +8387,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 282";
 		rLen = 0;
-		rLoc = 5798;
+		rLoc = 6050;
 		rType = 0;
 		vrLen = 1189;
 		vrLoc = 4812;
@@ -8341,7 +8397,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5274;
+		rLoc = 5526;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -8351,7 +8407,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 265";
 		rLen = 0;
-		rLoc = 5204;
+		rLoc = 5456;
 		rType = 0;
 		vrLen = 1189;
 		vrLoc = 4812;
@@ -8361,7 +8417,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5274;
+		rLoc = 5526;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -8371,7 +8427,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 271";
 		rLen = 0;
-		rLoc = 5415;
+		rLoc = 5667;
 		rType = 0;
 		vrLen = 1188;
 		vrLoc = 4812;
@@ -8381,7 +8437,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5273;
+		rLoc = 5525;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -8391,7 +8447,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: totalTimePrecise";
 		rLen = 0;
-		rLoc = 5172;
+		rLoc = 5424;
 		rType = 0;
 		vrLen = 1187;
 		vrLoc = 4812;
@@ -8401,7 +8457,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5268;
+		rLoc = 5520;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -8411,7 +8467,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: totalTimePrecise";
 		rLen = 0;
-		rLoc = 5172;
+		rLoc = 5424;
 		rType = 0;
 		vrLen = 1187;
 		vrLoc = 4812;
@@ -8421,7 +8477,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5268;
+		rLoc = 5520;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -8431,7 +8487,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: totalTimePrecise";
 		rLen = 0;
-		rLoc = 5172;
+		rLoc = 5424;
 		rType = 0;
 		vrLen = 1187;
 		vrLoc = 4812;
@@ -8441,7 +8497,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5268;
+		rLoc = 5520;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -8451,7 +8507,7 @@
 		isa = PBXTextBookmark;
 		name = currentMovieTimeScale;
 		rLen = 21;
-		rLoc = 5849;
+		rLoc = 6101;
 		rType = 0;
 		vrLen = 1073;
 		vrLoc = 4558;
@@ -8491,7 +8547,7 @@
 		isa = PBXTextBookmark;
 		name = currentMovieTimeScale;
 		rLen = 21;
-		rLoc = 5849;
+		rLoc = 6101;
 		rType = 0;
 		vrLen = 1073;
 		vrLoc = 4558;
@@ -8511,7 +8567,7 @@
 		isa = PBXTextBookmark;
 		name = currentMovieTimeScale;
 		rLen = 21;
-		rLoc = 5849;
+		rLoc = 6101;
 		rType = 0;
 		vrLen = 1073;
 		vrLoc = 4558;
@@ -8551,7 +8607,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5268;
+		rLoc = 5520;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -8581,7 +8637,7 @@
 		isa = PBXTextBookmark;
 		name = window;
 		rLen = 6;
-		rLoc = 10326;
+		rLoc = 10378;
 		rType = 0;
 		vrLen = 886;
 		vrLoc = 9863;
@@ -8641,7 +8697,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 251";
 		rLen = 0;
-		rLoc = 4865;
+		rLoc = 5117;
 		rType = 0;
 		vrLen = 1073;
 		vrLoc = 4558;
@@ -8661,7 +8717,7 @@
 		isa = PBXTextBookmark;
 		name = window;
 		rLen = 6;
-		rLoc = 10326;
+		rLoc = 10378;
 		rType = 0;
 		vrLen = 886;
 		vrLoc = 9863;
@@ -8731,7 +8787,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 251";
 		rLen = 0;
-		rLoc = 4862;
+		rLoc = 5114;
 		rType = 0;
 		vrLen = 1068;
 		vrLoc = 4558;
@@ -8741,7 +8797,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5275;
+		rLoc = 5527;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -8751,7 +8807,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 251";
 		rLen = 0;
-		rLoc = 4862;
+		rLoc = 5114;
 		rType = 0;
 		vrLen = 1068;
 		vrLoc = 4558;
@@ -8761,7 +8817,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5275;
+		rLoc = 5527;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -8771,7 +8827,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 251";
 		rLen = 0;
-		rLoc = 4862;
+		rLoc = 5114;
 		rType = 0;
 		vrLen = 1068;
 		vrLoc = 4558;
@@ -8781,7 +8837,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5275;
+		rLoc = 5527;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -8791,7 +8847,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 251";
 		rLen = 0;
-		rLoc = 4862;
+		rLoc = 5114;
 		rType = 0;
 		vrLen = 1068;
 		vrLoc = 4558;
@@ -8801,7 +8857,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5275;
+		rLoc = 5527;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -8811,7 +8867,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 251";
 		rLen = 0;
-		rLoc = 4862;
+		rLoc = 5114;
 		rType = 0;
 		vrLen = 1075;
 		vrLoc = 4558;
@@ -8821,7 +8877,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5275;
+		rLoc = 5527;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -8831,7 +8887,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 251";
 		rLen = 0;
-		rLoc = 4862;
+		rLoc = 5116;
 		rType = 0;
 		vrLen = 1075;
 		vrLoc = 4558;
@@ -8841,7 +8897,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5275;
+		rLoc = 5529;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -8851,7 +8907,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 251";
 		rLen = 0;
-		rLoc = 4862;
+		rLoc = 5116;
 		rType = 0;
 		vrLen = 1075;
 		vrLoc = 4558;
@@ -8878,7 +8934,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 251";
 		rLen = 0;
-		rLoc = 4862;
+		rLoc = 5116;
 		rType = 0;
 		vrLen = 1075;
 		vrLoc = 4558;
@@ -8908,7 +8964,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5275;
+		rLoc = 5529;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -8928,7 +8984,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5275;
+		rLoc = 5529;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -8948,7 +9004,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5275;
+		rLoc = 5529;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -8968,7 +9024,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5275;
+		rLoc = 5529;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -9038,7 +9094,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5275;
+		rLoc = 5529;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -9088,7 +9144,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5275;
+		rLoc = 5529;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -9108,7 +9164,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5275;
+		rLoc = 5529;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -9128,7 +9184,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5275;
+		rLoc = 5529;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -9148,7 +9204,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5275;
+		rLoc = 5529;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -9278,7 +9334,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5275;
+		rLoc = 5529;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -9298,7 +9354,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5275;
+		rLoc = 5529;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -9348,7 +9404,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5275;
+		rLoc = 5529;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -9368,7 +9424,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5275;
+		rLoc = 5529;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -9388,7 +9444,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5275;
+		rLoc = 5529;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -9408,7 +9464,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5275;
+		rLoc = 5529;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -9428,7 +9484,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5275;
+		rLoc = 5529;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -9528,7 +9584,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5275;
+		rLoc = 5529;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -9558,7 +9614,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5275;
+		rLoc = 5529;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -9578,7 +9634,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5275;
+		rLoc = 5529;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -9628,7 +9684,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5275;
+		rLoc = 5529;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -9678,7 +9734,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5275;
+		rLoc = 5529;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -9698,7 +9754,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5275;
+		rLoc = 5529;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -9775,7 +9831,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5275;
+		rLoc = 5529;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -9825,7 +9881,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5275;
+		rLoc = 5529;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -9845,7 +9901,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5275;
+		rLoc = 5529;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -9865,7 +9921,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5275;
+		rLoc = 5529;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -9935,7 +9991,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5275;
+		rLoc = 5529;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -10035,7 +10091,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5275;
+		rLoc = 5529;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -10065,7 +10121,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5275;
+		rLoc = 5529;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -10085,7 +10141,7 @@
 		isa = PBXTextBookmark;
 		name = currentMovieFrameRate;
 		rLen = 21;
-		rLoc = 13917;
+		rLoc = 14020;
 		rType = 0;
 		vrLen = 784;
 		vrLoc = 13493;
@@ -10115,7 +10171,7 @@
 		isa = PBXTextBookmark;
 		name = currentMovieFrameRate;
 		rLen = 21;
-		rLoc = 13917;
+		rLoc = 14020;
 		rType = 0;
 		vrLen = 784;
 		vrLoc = 13493;
@@ -10145,7 +10201,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5275;
+		rLoc = 5529;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -10165,7 +10221,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5275;
+		rLoc = 5529;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -10182,7 +10238,7 @@
 		isa = PBXTextBookmark;
 		name = "JTMovieView.m: 268";
 		rLen = 0;
-		rLoc = 5275;
+		rLoc = 5529;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -10817,6 +10873,560 @@
 		name = "@implementation NiceWindow (NiceWindowScripting)\n";
 		rLen = 49;
 		rLoc = 411;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	3EBF466B07D1C9D200B30DAB = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 224";
+		rLen = 0;
+		rLoc = 8909;
+		rType = 0;
+		vrLen = 1463;
+		vrLoc = 0;
+	};
+	3EBF466C07D1C9D200B30DAB = {
+		fRef = 25D2E84007BF3B44004BEF7D;
+		isa = PBXTextBookmark;
+		name = "@implementation NiceWindow (NiceWindowScripting)\n";
+		rLen = 49;
+		rLoc = 411;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	3EBF466E07D1C9D400B30DAB = {
+		fRef = 25D2E84007BF3B44004BEF7D;
+		isa = PBXTextBookmark;
+		name = "@implementation NiceWindow (NiceWindowScripting)\n";
+		rLen = 49;
+		rLoc = 411;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	3EBF466F07D1C9F200B30DAB = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 224";
+		rLen = 0;
+		rLoc = 8909;
+		rType = 0;
+		vrLen = 1463;
+		vrLoc = 0;
+	};
+	3EBF467007D1C9F200B30DAB = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 224";
+		rLen = 0;
+		rLoc = 8909;
+		rType = 0;
+		vrLen = 1463;
+		vrLoc = 0;
+	};
+	3EBF467107D1C9F200B30DAB = {
+		fRef = 25D2E84007BF3B44004BEF7D;
+		isa = PBXTextBookmark;
+		name = "@implementation NiceWindow (NiceWindowScripting)\n";
+		rLen = 49;
+		rLoc = 411;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	3EBF467307D1CA9000B30DAB = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 224";
+		rLen = 0;
+		rLoc = 8909;
+		rType = 0;
+		vrLen = 1463;
+		vrLoc = 0;
+	};
+	3EBF467407D1CA9000B30DAB = {
+		fRef = 25D2E84007BF3B44004BEF7D;
+		isa = PBXTextBookmark;
+		name = "@implementation NiceWindow (NiceWindowScripting)\n";
+		rLen = 49;
+		rLoc = 411;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	3EBF467607D1CDA000B30DAB = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 224";
+		rLen = 0;
+		rLoc = 8909;
+		rType = 0;
+		vrLen = 1463;
+		vrLoc = 0;
+	};
+	3EBF467707D1CDA000B30DAB = {
+		fRef = 25D2E84007BF3B44004BEF7D;
+		isa = PBXTextBookmark;
+		name = "@implementation NiceWindow (NiceWindowScripting)\n";
+		rLen = 49;
+		rLoc = 411;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	3EBF467907D24B6300B30DAB = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 224";
+		rLen = 0;
+		rLoc = 8909;
+		rType = 0;
+		vrLen = 1463;
+		vrLoc = 0;
+	};
+	3EBF467A07D24B6300B30DAB = {
+		fRef = 25D2E84007BF3B44004BEF7D;
+		isa = PBXTextBookmark;
+		name = "@implementation NiceWindow (NiceWindowScripting)\n";
+		rLen = 49;
+		rLoc = 411;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	3EBF467C07D24BAC00B30DAB = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 224";
+		rLen = 0;
+		rLoc = 8909;
+		rType = 0;
+		vrLen = 1463;
+		vrLoc = 0;
+	};
+	3EBF467D07D24BAD00B30DAB = {
+		fRef = 25D2E84007BF3B44004BEF7D;
+		isa = PBXTextBookmark;
+		name = "@implementation NiceWindow (NiceWindowScripting)\n";
+		rLen = 49;
+		rLoc = 411;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	3EBF467F07D24EA100B30DAB = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 224";
+		rLen = 0;
+		rLoc = 8909;
+		rType = 0;
+		vrLen = 1463;
+		vrLoc = 0;
+	};
+	3EBF468007D24EA100B30DAB = {
+		fRef = 25D2E84007BF3B44004BEF7D;
+		isa = PBXTextBookmark;
+		name = "@implementation NiceWindow (NiceWindowScripting)\n";
+		rLen = 49;
+		rLoc = 411;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	3EBF468207D250AF00B30DAB = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 224";
+		rLen = 0;
+		rLoc = 8909;
+		rType = 0;
+		vrLen = 1463;
+		vrLoc = 0;
+	};
+	3EBF468307D250AF00B30DAB = {
+		fRef = 25D2E84007BF3B44004BEF7D;
+		isa = PBXTextBookmark;
+		name = "@implementation NiceWindow (NiceWindowScripting)\n";
+		rLen = 49;
+		rLoc = 411;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	3EBF468507D2522200B30DAB = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 224";
+		rLen = 0;
+		rLoc = 8909;
+		rType = 0;
+		vrLen = 1463;
+		vrLoc = 0;
+	};
+	3EBF468607D2522200B30DAB = {
+		fRef = 25D2E84007BF3B44004BEF7D;
+		isa = PBXTextBookmark;
+		name = "@implementation NiceWindow (NiceWindowScripting)\n";
+		rLen = 49;
+		rLoc = 411;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	3EBF468807D2522600B30DAB = {
+		fRef = 25D2E84007BF3B44004BEF7D;
+		isa = PBXTextBookmark;
+		name = "@implementation NiceWindow (NiceWindowScripting)\n";
+		rLen = 49;
+		rLoc = 411;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	3EBF468A07D2532B00B30DAB = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 224";
+		rLen = 0;
+		rLoc = 8909;
+		rType = 0;
+		vrLen = 1463;
+		vrLoc = 0;
+	};
+	3EBF468B07D2532B00B30DAB = {
+		fRef = 257D61660753F92D00702BD0;
+		isa = PBXTextBookmark;
+		name = currentMovieTime;
+		rLen = 16;
+		rLoc = 1254;
+		rType = 0;
+		vrLen = 682;
+		vrLoc = 40;
+	};
+	3EBF468C07D2532B00B30DAB = {
+		fRef = 3EEDF752065B3E8800E3545C;
+		isa = PBXTextBookmark;
+		name = "@implementation JTMovieView\n";
+		rLen = 28;
+		rLoc = 178;
+		rType = 0;
+		vrLen = 498;
+		vrLoc = 1889;
+	};
+	3EBF468D07D2532B00B30DAB = {
+		fRef = 257D61670753F92D00702BD0;
+		isa = PBXTextBookmark;
+		name = JTMovieView;
+		rLen = 11;
+		rLoc = 910;
+		rType = 0;
+		vrLen = 1293;
+		vrLoc = 4;
+	};
+	3EBF468E07D2532B00B30DAB = {
+		fRef = 2513D30507BDACA700BB6055;
+		isa = PBXTextBookmark;
+		name = "NicePlayer.sdef: 224";
+		rLen = 0;
+		rLoc = 8909;
+		rType = 0;
+		vrLen = 1463;
+		vrLoc = 0;
+	};
+	3EBF468F07D2532B00B30DAB = {
+		fRef = 3EEDF752065B3E8800E3545C;
+		isa = PBXTextBookmark;
+		name = "@implementation JTMovieView\n";
+		rLen = 28;
+		rLoc = 178;
+		rType = 0;
+		vrLen = 498;
+		vrLoc = 1889;
+	};
+	3EBF469007D2532B00B30DAB = {
+		fRef = 257D61670753F92D00702BD0;
+		isa = PBXTextBookmark;
+		name = "NPMovieView.m: 40";
+		rLen = 0;
+		rLoc = 1140;
+		rType = 0;
+		vrLen = 1230;
+		vrLoc = 637;
+	};
+	3EBF469107D2532B00B30DAB = {
+		fRef = 25D2E84007BF3B44004BEF7D;
+		isa = PBXTextBookmark;
+		name = "@implementation NiceWindow (NiceWindowScripting)\n";
+		rLen = 49;
+		rLoc = 411;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	3EBF469207D2532B00B30DAB = {
+		fRef = 257D61670753F92D00702BD0;
+		isa = PBXTextBookmark;
+		rLen = 1;
+		rLoc = 167;
+		rType = 1;
+	};
+	3EBF469307D2532B00B30DAB = {
+		fRef = 25D2E84007BF3B44004BEF7D;
+		isa = PBXTextBookmark;
+		name = "@implementation NiceWindow (NiceWindowScripting)\n";
+		rLen = 49;
+		rLoc = 411;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	3EBF469407D2532B00B30DAB = {
+		fRef = 257D61670753F92D00702BD0;
+		isa = PBXTextBookmark;
+		name = "    [self ffDo:[[Preferences mainPrefs] ffSpeed]];\n";
+		rLen = 51;
+		rLoc = 4549;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	3EBF469707D253A600B30DAB = {
+		fRef = 252BD4FB076981DD006CF96B;
+		isa = PBXTextBookmark;
+		name = "NPPluginView.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 562;
+		vrLoc = 0;
+	};
+	3EBF469807D253A600B30DAB = {
+		fRef = 257D61670753F92D00702BD0;
+		isa = PBXTextBookmark;
+		name = "
+";
+		rLen = 1;
+		rLoc = 1180;
+		rType = 0;
+		vrLen = 1106;
+		vrLoc = 637;
+	};
+	3EBF469907D253A600B30DAB = {
+		fRef = 2A37F4ACFDCFA73011CA2CEA;
+		isa = PBXTextBookmark;
+		rLen = 1;
+		rLoc = 119;
+		rType = 1;
+	};
+	3EBF469A07D253A600B30DAB = {
+		fRef = 257D61670753F92D00702BD0;
+		isa = PBXTextBookmark;
+		name = "
+";
+		rLen = 1;
+		rLoc = 1180;
+		rType = 0;
+		vrLen = 1106;
+		vrLoc = 637;
+	};
+	3EBF469B07D253A600B30DAB = {
+		fRef = 252BD4FB076981DD006CF96B;
+		isa = PBXTextBookmark;
+		name = "NPPluginView.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 562;
+		vrLoc = 0;
+	};
+	3EBF469C07D253A600B30DAB = {
+		fRef = 257D61670753F92D00702BD0;
+		isa = PBXTextBookmark;
+		name = "
+";
+		rLen = 1;
+		rLoc = 1180;
+		rType = 0;
+		vrLen = 1106;
+		vrLoc = 637;
+	};
+	3EBF469D07D253A600B30DAB = {
+		fRef = 2A37F4ACFDCFA73011CA2CEA;
+		isa = PBXTextBookmark;
+		name = "NiceDocument.m: 125";
+		rLen = 0;
+		rLoc = 3456;
+		rType = 0;
+		vrLen = 1583;
+		vrLoc = 2917;
+	};
+	3EBF469E07D253A600B30DAB = {
+		fRef = 257D61670753F92D00702BD0;
+		isa = PBXTextBookmark;
+		name = "    [self ffDo:[[Preferences mainPrefs] ffSpeed]];\n";
+		rLen = 51;
+		rLoc = 4415;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	3EBF46A007D253B100B30DAB = {
+		fRef = 2A37F4ACFDCFA73011CA2CEA;
+		isa = PBXTextBookmark;
+		name = "NiceDocument.m: 125";
+		rLen = 0;
+		rLoc = 3470;
+		rType = 0;
+		vrLen = 1583;
+		vrLoc = 2917;
+	};
+	3EBF46A107D253B100B30DAB = {
+		fRef = 257D61670753F92D00702BD0;
+		isa = PBXTextBookmark;
+		name = "    [self ffDo:[[Preferences mainPrefs] ffSpeed]];\n";
+		rLen = 51;
+		rLoc = 4353;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	3EBF46A307D253E200B30DAB = {
+		fRef = 2A37F4ACFDCFA73011CA2CEA;
+		isa = PBXTextBookmark;
+		name = "NiceDocument.m: 117";
+		rLen = 0;
+		rLoc = 3220;
+		rType = 0;
+		vrLen = 1461;
+		vrLoc = 2901;
+	};
+	3EBF46A407D253E200B30DAB = {
+		fRef = 257D61670753F92D00702BD0;
+		isa = PBXTextBookmark;
+		name = "    [self ffDo:[[Preferences mainPrefs] ffSpeed]];\n";
+		rLen = 51;
+		rLoc = 4353;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	3EBF46A607D253F100B30DAB = {
+		fRef = 2A37F4ACFDCFA73011CA2CEA;
+		isa = PBXTextBookmark;
+		name = "NiceDocument.m: 117";
+		rLen = 0;
+		rLoc = 3220;
+		rType = 0;
+		vrLen = 1461;
+		vrLoc = 2901;
+	};
+	3EBF46A707D253F100B30DAB = {
+		fRef = 257D61670753F92D00702BD0;
+		isa = PBXTextBookmark;
+		name = "    [self ffDo:[[Preferences mainPrefs] ffSpeed]];\n";
+		rLen = 51;
+		rLoc = 4353;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	3EBF46A907D254DA00B30DAB = {
+		fRef = 2A37F4ACFDCFA73011CA2CEA;
+		isa = PBXTextBookmark;
+		name = "\tswitch(theRepeatMode){\n";
+		rLen = 24;
+		rLoc = 9040;
+		rType = 0;
+		vrLen = 1063;
+		vrLoc = 8642;
+	};
+	3EBF46AA07D254DA00B30DAB = {
+		fRef = 257D61670753F92D00702BD0;
+		isa = PBXTextBookmark;
+		name = JTMovieView;
+		rLen = 11;
+		rLoc = 897;
+		rType = 0;
+		vrLen = 1123;
+		vrLoc = 386;
+	};
+	3EBF46AB07D254DA00B30DAB = {
+		fRef = 3EEDF752065B3E8800E3545C;
+		isa = PBXTextBookmark;
+		rLen = 1;
+		rLoc = 11;
+		rType = 1;
+	};
+	3EBF46AC07D254DA00B30DAB = {
+		fRef = 257D61670753F92D00702BD0;
+		isa = PBXTextBookmark;
+		name = JTMovieView;
+		rLen = 11;
+		rLoc = 897;
+		rType = 0;
+		vrLen = 1123;
+		vrLoc = 386;
+	};
+	3EBF46AD07D254DA00B30DAB = {
+		fRef = 3EEDF752065B3E8800E3545C;
+		isa = PBXTextBookmark;
+		name = "-(void)stepBackward\n";
+		rLen = 20;
+		rLoc = 4229;
+		rType = 0;
+		vrLen = 1048;
+		vrLoc = 1107;
+	};
+	3EBF46AE07D254DA00B30DAB = {
+		fRef = 257D61670753F92D00702BD0;
+		isa = PBXTextBookmark;
+		name = "    [self ffDo:[[Preferences mainPrefs] ffSpeed]];\n";
+		rLen = 51;
+		rLoc = 4353;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	3EBF46B007D2559300B30DAB = {
+		fRef = 3EEDF752065B3E8800E3545C;
+		isa = PBXTextBookmark;
+		name = "JTMovieView.m: 127";
+		rLen = 0;
+		rLoc = 2776;
+		rType = 0;
+		vrLen = 736;
+		vrLoc = 2237;
+	};
+	3EBF46B107D2559300B30DAB = {
+		fRef = 257D61670753F92D00702BD0;
+		isa = PBXTextBookmark;
+		name = "    [self ffDo:[[Preferences mainPrefs] ffSpeed]];\n";
+		rLen = 51;
+		rLoc = 4353;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	3EBF46B307D255A200B30DAB = {
+		fRef = 3EEDF752065B3E8800E3545C;
+		isa = PBXTextBookmark;
+		name = "JTMovieView.m: 127";
+		rLen = 0;
+		rLoc = 2776;
+		rType = 0;
+		vrLen = 736;
+		vrLoc = 2237;
+	};
+	3EBF46B407D255A200B30DAB = {
+		fRef = 257D61670753F92D00702BD0;
+		isa = PBXTextBookmark;
+		name = "    [self ffDo:[[Preferences mainPrefs] ffSpeed]];\n";
+		rLen = 51;
+		rLoc = 4353;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -11910,9 +12520,9 @@
 	};
 	3EEDF752065B3E8800E3545C = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {894, 5207}}";
-			sepNavSelRange = "{5275, 0}";
-			sepNavVisRect = "{{0, 0}, {0, 0}}";
+			sepNavIntBoundsRect = "{{0, 0}, {914, 5333}}";
+			sepNavSelRange = "{2776, 0}";
+			sepNavVisRect = "{{0, 1384}, {914, 578}}";
 			sepNavWindowFrame = "{{682, 62}, {750, 502}}";
 		};
 	};
@@ -12065,7 +12675,7 @@
 		isa = PBXTextBookmark;
 		name = "NPMovieView.m: 58";
 		rLen = 0;
-		rLoc = 1716;
+		rLoc = 1753;
 		rType = 0;
 		vrLen = 1296;
 		vrLoc = 0;

@@ -37,6 +37,7 @@
 
 -(void)awakeFromNib
 {
+
 	[self registerForDraggedTypes:[(NiceWindow *)[self window] acceptableDragTypes]];
 	[trueMovieView registerForDraggedTypes:[(NiceWindow *)[self window] acceptableDragTypes]];
 }

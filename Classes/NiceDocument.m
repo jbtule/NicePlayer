@@ -121,6 +121,7 @@ id rowsToFileNames(id obj, void* playList){
 {   
 	/* Try to load the movie */
 	if(![theMovieView openURL:theCurrentURL]){
+            
 		hasRealMovie = NO;
 		/* Didn't load, so set a blank image thing. */
 		[theMovieView initWithFrame:NSMakeRect(0, 0, [theWindow frame].size.width, [theWindow frame].size.height)];

@@ -310,13 +310,14 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>78</integer>
-									<integer>66</integer>
+									<integer>28</integer>
+									<integer>25</integer>
+									<integer>2</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 765}, {375, 910}}</string>
+							<string>{{0, 0}, {375, 910}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -641,7 +642,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>NicePlayer.sdef</string>
+								<string>JTMovieView.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -649,9 +650,9 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>NicePlayer.sdef</string>
+										<string>JTMovieView.m</string>
 										<key>bookmark</key>
-										<string>3EBF466807D1C98100B30DAB</string>
+										<string>3EBF46B307D255A200B30DAB</string>
 										<key>history</key>
 										<array>
 											<string>3EB6437D07072092007BACF7</string>
@@ -748,7 +749,6 @@
 											<string>3EBF3BE707D1935200B30DAB</string>
 											<string>3EBF3C0F07D1988200B30DAB</string>
 											<string>3EBF43C007D1995200B30DAB</string>
-											<string>3EBF43D807D19C3900B30DAB</string>
 											<string>3EBF442107D1A03D00B30DAB</string>
 											<string>3EBF444407D1A2A300B30DAB</string>
 											<string>3EBF444507D1A2A300B30DAB</string>
@@ -762,25 +762,26 @@
 											<string>3EBF450907D1B4B300B30DAB</string>
 											<string>3EBF450C07D1B4B300B30DAB</string>
 											<string>3EBF454607D1B8B500B30DAB</string>
-											<string>3EBF454707D1B8B500B30DAB</string>
 											<string>3EBF454807D1B8B500B30DAB</string>
 											<string>3EBF454907D1B8B500B30DAB</string>
-											<string>3EBF454A07D1B8B500B30DAB</string>
 											<string>3EBF454B07D1B8B500B30DAB</string>
 											<string>3EBF454C07D1B8B500B30DAB</string>
-											<string>3EBF456807D1BA7500B30DAB</string>
 											<string>3EBF458307D1BC3B00B30DAB</string>
 											<string>3EBF459507D1BDC500B30DAB</string>
 											<string>3EBF459607D1BDC500B30DAB</string>
 											<string>3EBF459707D1BDC500B30DAB</string>
 											<string>3EBF45F707D1C47500B30DAB</string>
 											<string>3EBF45F907D1C47500B30DAB</string>
-											<string>3EBF460707D1C4D500B30DAB</string>
 											<string>3EBF461A07D1C58200B30DAB</string>
 											<string>3EBF462B07D1C5C700B30DAB</string>
 											<string>3EBF463A07D1C80100B30DAB</string>
 											<string>3EBF466207D1C94E00B30DAB</string>
-											<string>3EBF466307D1C94E00B30DAB</string>
+											<string>3EBF468A07D2532B00B30DAB</string>
+											<string>3EBF468B07D2532B00B30DAB</string>
+											<string>3EBF469707D253A600B30DAB</string>
+											<string>3EBF46A907D254DA00B30DAB</string>
+											<string>3EBF46AA07D254DA00B30DAB</string>
+											<string>3EBF46AB07D254DA00B30DAB</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -931,7 +932,6 @@
 											<string>3EBF444C07D1A2A300B30DAB</string>
 											<string>3EBF444D07D1A2A300B30DAB</string>
 											<string>3EBF444E07D1A2A300B30DAB</string>
-											<string>3EBF446B07D1A4FC00B30DAB</string>
 											<string>3EBF448207D1A77900B30DAB</string>
 											<string>3EBF449E07D1AFBB00B30DAB</string>
 											<string>3EBF449F07D1AFBB00B30DAB</string>
@@ -947,12 +947,10 @@
 											<string>3EBF44F807D1B43800B30DAB</string>
 											<string>3EBF44F907D1B43800B30DAB</string>
 											<string>3EBF44FA07D1B43800B30DAB</string>
-											<string>3EBF44FB07D1B43800B30DAB</string>
 											<string>3EBF450007D1B44900B30DAB</string>
 											<string>3EBF450E07D1B4B300B30DAB</string>
 											<string>3EBF450F07D1B4B300B30DAB</string>
 											<string>3EBF451007D1B4B300B30DAB</string>
-											<string>3EBF451107D1B4B300B30DAB</string>
 											<string>3EBF451207D1B4B300B30DAB</string>
 											<string>3EBF454E07D1B8B500B30DAB</string>
 											<string>3EBF454F07D1B8B500B30DAB</string>
@@ -977,7 +975,6 @@
 											<string>3EBF45FD07D1C47500B30DAB</string>
 											<string>3EBF45FE07D1C47500B30DAB</string>
 											<string>3EBF460907D1C4D500B30DAB</string>
-											<string>3EBF460A07D1C4D500B30DAB</string>
 											<string>3EBF460B07D1C4D500B30DAB</string>
 											<string>3EBF461F07D1C58200B30DAB</string>
 											<string>3EBF462107D1C58200B30DAB</string>
@@ -990,6 +987,9 @@
 											<string>3EBF463E07D1C80100B30DAB</string>
 											<string>3EBF464407D1C80A00B30DAB</string>
 											<string>3EBF466407D1C94E00B30DAB</string>
+											<string>3EBF468E07D2532B00B30DAB</string>
+											<string>3EBF469B07D253A600B30DAB</string>
+											<string>3EBF46AC07D254DA00B30DAB</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -1011,8 +1011,6 @@
 							<string>595pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -1066,7 +1064,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>131189121.17727806</real>
+	<real>131224994.34359445</real>
 	<key>ToolbarDisplayMode</key>
 	<integer>1</integer>
 	<key>ToolbarIsVisible</key>
@@ -1085,10 +1083,10 @@
 		<string>3EBF43FB07D19CC000B30DAB</string>
 		<string>3EBF442D07D1A03D00B30DAB</string>
 		<string>3EBF44A507D1AFBB00B30DAB</string>
-		<string>3EBF461507D1C4FE00B30DAB</string>
-		<string>3EBF43E707D19C3900B30DAB</string>
+		<string>3EBF469507D2532B00B30DAB</string>
 		<string>/Users/tuley/Documents/Projects/NicePlayer Project/NicePlayer/NicePlayer.xcode</string>
 		<string>1C0AD2B3069F1EA900FABCE6</string>
+		<string>3EBF43E707D19C3900B30DAB</string>
 	</array>
 	<key>WindowString</key>
 	<string>371 151 1359 970 0 0 1920 1178 </string>
@@ -1110,7 +1108,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>NiceWindowScripting.m</string>
+								<string>NPMovieView.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -1118,19 +1116,19 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CD052900623707200166675</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>NiceWindowScripting.m</string>
+										<string>NPMovieView.m</string>
 										<key>bookmark</key>
-										<string>3EBF466907D1C98100B30DAB</string>
+										<string>3EBF46B407D255A200B30DAB</string>
 										<key>history</key>
 										<array>
 											<string>3EBF3A9F07D1768B00B30DAB</string>
 											<string>3EBF3C0207D193BB00B30DAB</string>
 											<string>3EBF3C0307D193BB00B30DAB</string>
-											<string>3EBF43F207D19CC000B30DAB</string>
 											<string>3EBF43F307D19CC000B30DAB</string>
 											<string>3EBF442807D1A03D00B30DAB</string>
 											<string>3EBF461107D1C4FE00B30DAB</string>
-											<string>3EBF464D07D1C89B00B30DAB</string>
+											<string>3EBF469107D2532B00B30DAB</string>
+											<string>3EBF469207D2532B00B30DAB</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -1147,6 +1145,7 @@
 											<string>3EBF43F907D19CC000B30DAB</string>
 											<string>3EBF442A07D1A03D00B30DAB</string>
 											<string>3EBF461307D1C4FE00B30DAB</string>
+											<string>3EBF469307D2532B00B30DAB</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -1547,7 +1546,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {678, 489}}</string>
 								<key>RubberWindowFrame</key>
-								<string>933 316 678 532 0 0 1920 1178 </string>
+								<string>1173 209 678 532 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXRunSessionModule</string>
@@ -1577,7 +1576,7 @@
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.run</string>
 			<key>WindowString</key>
-			<string>933 316 678 532 0 0 1920 1178 </string>
+			<string>1173 209 678 532 0 0 1920 1178 </string>
 			<key>WindowToolGUID</key>
 			<string>1C0AD2B3069F1EA900FABCE6</string>
 			<key>WindowToolIsVisible</key>
