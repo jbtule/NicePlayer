@@ -154,9 +154,9 @@
 	};
 	257029C20734D14500967356 = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {864, 3821}}";
-			sepNavSelRange = "{2349, 0}";
-			sepNavVisRect = "{{0, 372}, {864, 636}}";
+			sepNavIntBoundsRect = "{{0, 0}, {705, 3919}}";
+			sepNavSelRange = "{2214, 0}";
+			sepNavVisRect = "{{0, 532}, {705, 443}}";
 			sepNavWindowFrame = "{{998, 224}, {750, 502}}";
 		};
 	};
@@ -2583,6 +2583,25 @@
 			3EBF512107D434F100B30DAB = 3EBF512107D434F100B30DAB;
 			3EBF512207D434F100B30DAB = 3EBF512207D434F100B30DAB;
 			3EBF512307D434F100B30DAB = 3EBF512307D434F100B30DAB;
+			3EBF512607D4369C00B30DAB = 3EBF512607D4369C00B30DAB;
+			3EBF512707D4369C00B30DAB = 3EBF512707D4369C00B30DAB;
+			3EBF512807D4369C00B30DAB = 3EBF512807D4369C00B30DAB;
+			3EBF512907D4369C00B30DAB = 3EBF512907D4369C00B30DAB;
+			3EBF512A07D4369C00B30DAB = 3EBF512A07D4369C00B30DAB;
+			3EBF512B07D4369C00B30DAB = 3EBF512B07D4369C00B30DAB;
+			3EBF512C07D4369C00B30DAB = 3EBF512C07D4369C00B30DAB;
+			3EBF512F07D436C300B30DAB = 3EBF512F07D436C300B30DAB;
+			3EBF513207D436D700B30DAB = 3EBF513207D436D700B30DAB;
+			3EBF513507D4370F00B30DAB = 3EBF513507D4370F00B30DAB;
+			3EBF513807D4371700B30DAB = 3EBF513807D4371700B30DAB;
+			3EBF513D07D4372400B30DAB = 3EBF513D07D4372400B30DAB;
+			3EBF514007D4381500B30DAB = 3EBF514007D4381500B30DAB;
+			3EBF515107D438FD00B30DAB = 3EBF515107D438FD00B30DAB;
+			3EBF515407D4390700B30DAB = 3EBF515407D4390700B30DAB;
+			3EBF515807D4394500B30DAB = 3EBF515807D4394500B30DAB;
+			3EBF515907D4394500B30DAB = 3EBF515907D4394500B30DAB;
+			3EBF515A07D4394500B30DAB = 3EBF515A07D4394500B30DAB;
+			3EBF515B07D4394500B30DAB = 3EBF515B07D4394500B30DAB;
 			3EC671060775276E00B50A61 = 3EC671060775276E00B50A61;
 			3EC671080775276E00B50A61 = 3EC671080775276E00B50A61;
 			3EC6710A0775276E00B50A61 = 3EC6710A0775276E00B50A61;
@@ -4253,7 +4272,7 @@
 		isa = PBXTextBookmark;
 		name = "-(void)enterFullScreen\n";
 		rLen = 183;
-		rLoc = 8138;
+		rLoc = 8096;
 		rType = 0;
 		vrLen = 769;
 		vrLoc = 7288;
@@ -4333,7 +4352,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceController.m: 280";
 		rLen = 0;
-		rLoc = 8323;
+		rLoc = 8281;
 		rType = 0;
 		vrLen = 700;
 		vrLoc = 7288;
@@ -4353,7 +4372,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceController.m: 280";
 		rLen = 0;
-		rLoc = 8323;
+		rLoc = 8281;
 		rType = 0;
 		vrLen = 700;
 		vrLoc = 7288;
@@ -4393,7 +4412,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceController.m: 288";
 		rLen = 0;
-		rLoc = 8202;
+		rLoc = 8160;
 		rType = 0;
 		vrLen = 782;
 		vrLoc = 7536;
@@ -4433,7 +4452,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceController.m: 275";
 		rLen = 0;
-		rLoc = 8136;
+		rLoc = 8094;
 		rType = 0;
 		vrLen = 801;
 		vrLoc = 7339;
@@ -4453,7 +4472,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceController.m: 287";
 		rLen = 0;
-		rLoc = 8375;
+		rLoc = 8333;
 		rType = 0;
 		vrLen = 803;
 		vrLoc = 7339;
@@ -4493,7 +4512,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceController.m: 279";
 		rLen = 0;
-		rLoc = 8205;
+		rLoc = 8163;
 		rType = 0;
 		vrLen = 813;
 		vrLoc = 7339;
@@ -4583,7 +4602,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceController.m: 279";
 		rLen = 0;
-		rLoc = 8205;
+		rLoc = 8163;
 		rType = 0;
 		vrLen = 813;
 		vrLoc = 7339;
@@ -5721,7 +5740,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceController.m: 279";
 		rLen = 0;
-		rLoc = 8205;
+		rLoc = 8163;
 		rType = 0;
 		vrLen = 813;
 		vrLoc = 7339;
@@ -5771,7 +5790,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceController.m: 279";
 		rLen = 0;
-		rLoc = 8205;
+		rLoc = 8163;
 		rType = 0;
 		vrLen = 813;
 		vrLoc = 7339;
@@ -6231,7 +6250,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceController.m: 279";
 		rLen = 0;
-		rLoc = 8205;
+		rLoc = 8163;
 		rType = 0;
 		vrLen = 813;
 		vrLoc = 7339;
@@ -6301,7 +6320,7 @@
 		isa = PBXTextBookmark;
 		name = "\tid tempWindow = [NSApp bestMovieWindow];\n";
 		rLen = 45;
-		rLoc = 8349;
+		rLoc = 8307;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -6338,7 +6357,7 @@
 		isa = PBXTextBookmark;
 		name = "\tid tempWindow = [NSApp bestMovieWindow];\n";
 		rLen = 45;
-		rLoc = 8349;
+		rLoc = 8307;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -6408,7 +6427,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceController.m: 279";
 		rLen = 0;
-		rLoc = 8205;
+		rLoc = 8163;
 		rType = 0;
 		vrLen = 773;
 		vrLoc = 7663;
@@ -6433,7 +6452,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceController.m: 279";
 		rLen = 0;
-		rLoc = 8205;
+		rLoc = 8163;
 		rType = 0;
 		vrLen = 773;
 		vrLoc = 7663;
@@ -6481,7 +6500,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceController.m: 279";
 		rLen = 0;
-		rLoc = 8205;
+		rLoc = 8163;
 		rType = 0;
 		vrLen = 394;
 		vrLoc = 7663;
@@ -6501,7 +6520,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceController.m: 279";
 		rLen = 0;
-		rLoc = 8205;
+		rLoc = 8163;
 		rType = 0;
 		vrLen = 394;
 		vrLoc = 7663;
@@ -6511,7 +6530,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceController.m: 279";
 		rLen = 0;
-		rLoc = 8205;
+		rLoc = 8163;
 		rType = 0;
 		vrLen = 394;
 		vrLoc = 7663;
@@ -6521,7 +6540,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceController.m: 279";
 		rLen = 0;
-		rLoc = 8205;
+		rLoc = 8163;
 		rType = 0;
 		vrLen = 394;
 		vrLoc = 7663;
@@ -6531,7 +6550,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceController.m: 279";
 		rLen = 0;
-		rLoc = 8205;
+		rLoc = 8163;
 		rType = 0;
 		vrLen = 394;
 		vrLoc = 7663;
@@ -6541,7 +6560,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceController.m: 279";
 		rLen = 0;
-		rLoc = 8205;
+		rLoc = 8163;
 		rType = 0;
 		vrLen = 394;
 		vrLoc = 7663;
@@ -6551,7 +6570,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceController.m: 279";
 		rLen = 0;
-		rLoc = 8205;
+		rLoc = 8163;
 		rType = 0;
 		vrLen = 394;
 		vrLoc = 7663;
@@ -6621,7 +6640,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceController.m: 279";
 		rLen = 0;
-		rLoc = 8205;
+		rLoc = 8163;
 		rType = 0;
 		vrLen = 394;
 		vrLoc = 7663;
@@ -10774,8 +10793,8 @@
 		fRef = 3EEDF76C065B5ACD00E3545C;
 		isa = PBXTextBookmark;
 		name = "-(void)changedWindow:(NSNotification *)notification\n";
-		rLen = 52;
-		rLoc = 4989;
+		rLen = 6;
+		rLoc = 4993;
 		rType = 0;
 		vrLen = 963;
 		vrLoc = 4009;
@@ -12229,8 +12248,8 @@
 		fRef = 3EEDF76C065B5ACD00E3545C;
 		isa = PBXTextBookmark;
 		name = "-(void)changedWindow:(NSNotification *)notification\n";
-		rLen = 52;
-		rLoc = 4989;
+		rLen = 6;
+		rLoc = 4993;
 		rType = 0;
 		vrLen = 962;
 		vrLoc = 4009;
@@ -12259,8 +12278,8 @@
 		fRef = 3EEDF76C065B5ACD00E3545C;
 		isa = PBXTextBookmark;
 		name = "-(void)changedWindow:(NSNotification *)notification\n";
-		rLen = 52;
-		rLoc = 4989;
+		rLen = 6;
+		rLoc = 4993;
 		rType = 0;
 		vrLen = 962;
 		vrLoc = 4009;
@@ -12279,8 +12298,8 @@
 		fRef = 3EEDF76C065B5ACD00E3545C;
 		isa = PBXTextBookmark;
 		name = "-(void)changedWindow:(NSNotification *)notification\n";
-		rLen = 52;
-		rLoc = 4989;
+		rLen = 6;
+		rLoc = 4993;
 		rType = 0;
 		vrLen = 1216;
 		vrLoc = 84;
@@ -12299,8 +12318,8 @@
 		fRef = 3EEDF76C065B5ACD00E3545C;
 		isa = PBXTextBookmark;
 		name = "-(void)changedWindow:(NSNotification *)notification\n";
-		rLen = 52;
-		rLoc = 4989;
+		rLen = 6;
+		rLoc = 4993;
 		rType = 0;
 		vrLen = 1216;
 		vrLoc = 84;
@@ -12319,8 +12338,8 @@
 		fRef = 3EEDF76C065B5ACD00E3545C;
 		isa = PBXTextBookmark;
 		name = "-(void)changedWindow:(NSNotification *)notification\n";
-		rLen = 52;
-		rLoc = 4989;
+		rLen = 6;
+		rLoc = 4993;
 		rType = 0;
 		vrLen = 1216;
 		vrLoc = 84;
@@ -12339,8 +12358,8 @@
 		fRef = 3EEDF76C065B5ACD00E3545C;
 		isa = PBXTextBookmark;
 		name = "-(void)changedWindow:(NSNotification *)notification\n";
-		rLen = 52;
-		rLoc = 4989;
+		rLen = 6;
+		rLoc = 4993;
 		rType = 0;
 		vrLen = 1216;
 		vrLoc = 84;
@@ -12359,8 +12378,8 @@
 		fRef = 3EEDF76C065B5ACD00E3545C;
 		isa = PBXTextBookmark;
 		name = "-(void)changedWindow:(NSNotification *)notification\n";
-		rLen = 52;
-		rLoc = 4989;
+		rLen = 6;
+		rLoc = 4993;
 		rType = 0;
 		vrLen = 1216;
 		vrLoc = 84;
@@ -12389,8 +12408,8 @@
 		fRef = 3EEDF76C065B5ACD00E3545C;
 		isa = PBXTextBookmark;
 		name = "-(void)changedWindow:(NSNotification *)notification\n";
-		rLen = 52;
-		rLoc = 4989;
+		rLen = 6;
+		rLoc = 4993;
 		rType = 0;
 		vrLen = 1344;
 		vrLoc = 746;
@@ -12399,8 +12418,8 @@
 		fRef = 3EEDF76C065B5ACD00E3545C;
 		isa = PBXTextBookmark;
 		name = "-(void)changedWindow:(NSNotification *)notification\n";
-		rLen = 52;
-		rLoc = 4989;
+		rLen = 6;
+		rLoc = 4993;
 		rType = 0;
 		vrLen = 1344;
 		vrLoc = 746;
@@ -17238,8 +17257,8 @@
 		fRef = 3EEDF76C065B5ACD00E3545C;
 		isa = PBXTextBookmark;
 		name = isPlaying;
-		rLen = 9;
-		rLoc = 4941;
+		rLen = 0;
+		rLoc = 4993;
 		rType = 0;
 		vrLen = 1327;
 		vrLoc = 3981;
@@ -17258,8 +17277,8 @@
 		fRef = 3EEDF76C065B5ACD00E3545C;
 		isa = PBXTextBookmark;
 		name = isPlaying;
-		rLen = 9;
-		rLoc = 4941;
+		rLen = 0;
+		rLoc = 4993;
 		rType = 0;
 		vrLen = 1406;
 		vrLoc = 0;
@@ -17288,8 +17307,8 @@
 		fRef = 3EEDF76C065B5ACD00E3545C;
 		isa = PBXTextBookmark;
 		name = isPlaying;
-		rLen = 9;
-		rLoc = 4941;
+		rLen = 0;
+		rLoc = 4993;
 		rType = 0;
 		vrLen = 1771;
 		vrLoc = 83;
@@ -17298,8 +17317,8 @@
 		fRef = 3EEDF76C065B5ACD00E3545C;
 		isa = PBXTextBookmark;
 		name = isPlaying;
-		rLen = 9;
-		rLoc = 4941;
+		rLen = 0;
+		rLoc = 4993;
 		rType = 0;
 		vrLen = 1771;
 		vrLoc = 83;
@@ -17328,8 +17347,8 @@
 		fRef = 3EEDF76C065B5ACD00E3545C;
 		isa = PBXTextBookmark;
 		name = isPlaying;
-		rLen = 9;
-		rLoc = 4941;
+		rLen = 0;
+		rLoc = 4993;
 		rType = 0;
 		vrLen = 1086;
 		vrLoc = 6044;
@@ -17338,8 +17357,8 @@
 		fRef = 3EEDF76C065B5ACD00E3545C;
 		isa = PBXTextBookmark;
 		name = isPlaying;
-		rLen = 9;
-		rLoc = 4941;
+		rLen = 0;
+		rLoc = 4993;
 		rType = 0;
 		vrLen = 1086;
 		vrLoc = 6044;
@@ -17359,7 +17378,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceController.m: 196";
 		rLen = 0;
-		rLoc = 6187;
+		rLoc = 6191;
 		rType = 0;
 		vrLen = 1214;
 		vrLoc = 5308;
@@ -17369,7 +17388,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceController.m: 196";
 		rLen = 0;
-		rLoc = 6187;
+		rLoc = 6191;
 		rType = 0;
 		vrLen = 1214;
 		vrLoc = 5308;
@@ -17389,7 +17408,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceController.m: 196";
 		rLen = 0;
-		rLoc = 6187;
+		rLoc = 6191;
 		rType = 0;
 		vrLen = 1695;
 		vrLoc = 973;
@@ -17399,7 +17418,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceController.m: 196";
 		rLen = 0;
-		rLoc = 6187;
+		rLoc = 6191;
 		rType = 0;
 		vrLen = 1795;
 		vrLoc = 318;
@@ -17409,7 +17428,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceController.m: 196";
 		rLen = 0;
-		rLoc = 6187;
+		rLoc = 6191;
 		rType = 0;
 		vrLen = 1795;
 		vrLoc = 318;
@@ -17419,7 +17438,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceController.m: 196";
 		rLen = 0;
-		rLoc = 6187;
+		rLoc = 6191;
 		rType = 0;
 		vrLen = 1795;
 		vrLoc = 318;
@@ -17719,7 +17738,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceController.m: 196";
 		rLen = 0;
-		rLoc = 6187;
+		rLoc = 6191;
 		rType = 0;
 		vrLen = 1795;
 		vrLoc = 318;
@@ -17769,7 +17788,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceController.m: 196";
 		rLen = 0;
-		rLoc = 6187;
+		rLoc = 6191;
 		rType = 0;
 		vrLen = 1795;
 		vrLoc = 318;
@@ -18106,7 +18125,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceController.m: 196";
 		rLen = 0;
-		rLoc = 6187;
+		rLoc = 6191;
 		rType = 0;
 		vrLen = 1795;
 		vrLoc = 318;
@@ -18146,7 +18165,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceController.m: 196";
 		rLen = 0;
-		rLoc = 6187;
+		rLoc = 6191;
 		rType = 0;
 		vrLen = 1795;
 		vrLoc = 318;
@@ -18512,7 +18531,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceController.m: 196";
 		rLen = 0;
-		rLoc = 6187;
+		rLoc = 6191;
 		rType = 0;
 		vrLen = 1795;
 		vrLoc = 318;
@@ -18586,7 +18605,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceController.m: 196";
 		rLen = 0;
-		rLoc = 6187;
+		rLoc = 6191;
 		rType = 0;
 		vrLen = 1795;
 		vrLoc = 318;
@@ -19399,7 +19418,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceController.m: 196";
 		rLen = 0;
-		rLoc = 6187;
+		rLoc = 6191;
 		rType = 0;
 		vrLen = 1795;
 		vrLoc = 318;
@@ -19539,7 +19558,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceController.m: 196";
 		rLen = 0;
-		rLoc = 6187;
+		rLoc = 6191;
 		rType = 0;
 		vrLen = 1795;
 		vrLoc = 318;
@@ -19816,6 +19835,206 @@
 		rType = 0;
 		vrLen = 934;
 		vrLoc = 11291;
+	};
+	3EBF512607D4369C00B30DAB = {
+		fRef = 2A37F4ACFDCFA73011CA2CEA;
+		isa = PBXTextBookmark;
+		name = "-(void)playAtIndex:(unsigned int)anIndex\n";
+		rLen = 41;
+		rLoc = 11705;
+		rType = 0;
+		vrLen = 934;
+		vrLoc = 11291;
+	};
+	3EBF512707D4369C00B30DAB = {
+		fRef = 2A37F4AEFDCFA73011CA2CEA;
+		isa = PBXTextBookmark;
+		name = play;
+		rLen = 4;
+		rLoc = 1571;
+		rType = 0;
+		vrLen = 1345;
+		vrLoc = 845;
+	};
+	3EBF512807D4369C00B30DAB = {
+		fRef = 25E3AEFE07C0A65000746EA4;
+		isa = PBXTextBookmark;
+		name = "NiceWinController.m: 26";
+		rLen = 0;
+		rLoc = 745;
+		rType = 0;
+		vrLen = 745;
+		vrLoc = 0;
+	};
+	3EBF512907D4369C00B30DAB = {
+		fRef = 2A37F4ACFDCFA73011CA2CEA;
+		isa = PBXTextBookmark;
+		name = "-(void)playAtIndex:(unsigned int)anIndex\n";
+		rLen = 41;
+		rLoc = 11705;
+		rType = 0;
+		vrLen = 934;
+		vrLoc = 11291;
+	};
+	3EBF512A07D4369C00B30DAB = {
+		fRef = 2A37F4AEFDCFA73011CA2CEA;
+		isa = PBXTextBookmark;
+		name = play;
+		rLen = 4;
+		rLoc = 1571;
+		rType = 0;
+		vrLen = 1345;
+		vrLoc = 845;
+	};
+	3EBF512B07D4369C00B30DAB = {
+		fRef = 25E3AEFE07C0A65000746EA4;
+		isa = PBXTextBookmark;
+		name = "NiceWinController.m: 26";
+		rLen = 0;
+		rLoc = 745;
+		rType = 0;
+		vrLen = 745;
+		vrLoc = 0;
+	};
+	3EBF512C07D4369C00B30DAB = {
+		fRef = 3EEDF76C065B5ACD00E3545C;
+		isa = PBXTextBookmark;
+		name = "-(void)preventSleep:(id)sender\n";
+		rLen = 31;
+		rLoc = 4744;
+		rType = 0;
+		vrLen = 1327;
+		vrLoc = 3981;
+	};
+	3EBF512F07D436C300B30DAB = {
+		fRef = 3EEDF76C065B5ACD00E3545C;
+		isa = PBXTextBookmark;
+		name = "NiceController.m: 140";
+		rLen = 0;
+		rLoc = 4715;
+		rType = 0;
+		vrLen = 1327;
+		vrLoc = 3981;
+	};
+	3EBF513207D436D700B30DAB = {
+		fRef = 3EEDF76C065B5ACD00E3545C;
+		isa = PBXTextBookmark;
+		name = "NiceController.m: 140";
+		rLen = 0;
+		rLoc = 4713;
+		rType = 0;
+		vrLen = 1327;
+		vrLoc = 3981;
+	};
+	3EBF513507D4370F00B30DAB = {
+		fRef = 3EEDF76C065B5ACD00E3545C;
+		isa = PBXTextBookmark;
+		name = "NiceController.m: 148";
+		rLen = 0;
+		rLoc = 4993;
+		rType = 0;
+		vrLen = 1350;
+		vrLoc = 3981;
+	};
+	3EBF513807D4371700B30DAB = {
+		fRef = 3EEDF76C065B5ACD00E3545C;
+		isa = PBXTextBookmark;
+		name = "NiceController.m: 148";
+		rLen = 0;
+		rLoc = 4993;
+		rType = 0;
+		vrLen = 1350;
+		vrLoc = 3981;
+	};
+	3EBF513D07D4372400B30DAB = {
+		fRef = 3EEDF76C065B5ACD00E3545C;
+		isa = PBXTextBookmark;
+		name = "NiceController.m: 148";
+		rLen = 0;
+		rLoc = 4993;
+		rType = 0;
+		vrLen = 1350;
+		vrLoc = 3981;
+	};
+	3EBF514007D4381500B30DAB = {
+		fRef = 3EEDF76C065B5ACD00E3545C;
+		isa = PBXTextBookmark;
+		name = UpdateSystemActivity;
+		rLen = 0;
+		rLoc = 4993;
+		rType = 0;
+		vrLen = 1350;
+		vrLoc = 3981;
+	};
+	3EBF515107D438FD00B30DAB = {
+		fRef = 3EEDF76C065B5ACD00E3545C;
+		isa = PBXTextBookmark;
+		name = "NiceController.m: 144";
+		rLen = 0;
+		rLoc = 4825;
+		rType = 0;
+		vrLen = 1285;
+		vrLoc = 4028;
+	};
+	3EBF515407D4390700B30DAB = {
+		fRef = 3EEDF76C065B5ACD00E3545C;
+		isa = PBXTextBookmark;
+		name = UpdateSystemActivity;
+		rLen = 20;
+		rLoc = 4959;
+		rType = 0;
+		vrLen = 1285;
+		vrLoc = 4028;
+	};
+	3EBF515707D4392700B30DAB = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = Power.h;
+		path = /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/OSServices.framework/Versions/A/Headers/Power.h;
+		refType = 0;
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {864, 22371}}";
+			sepNavSelRange = "{15528, 96}";
+			sepNavVisRect = "{{0, 4883}, {864, 636}}";
+		};
+	};
+	3EBF515807D4394500B30DAB = {
+		fRef = 3EEDF76C065B5ACD00E3545C;
+		isa = PBXTextBookmark;
+		name = OverallAct;
+		rLen = 10;
+		rLoc = 4980;
+		rType = 0;
+		vrLen = 1285;
+		vrLoc = 4028;
+	};
+	3EBF515907D4394500B30DAB = {
+		fRef = 3EBF515707D4392700B30DAB;
+		isa = PBXTextBookmark;
+		rLen = 1;
+		rLoc = 371;
+		rType = 1;
+	};
+	3EBF515A07D4394500B30DAB = {
+		fRef = 3EEDF76C065B5ACD00E3545C;
+		isa = PBXTextBookmark;
+		name = OverallAct;
+		rLen = 10;
+		rLoc = 4980;
+		rType = 0;
+		vrLen = 1285;
+		vrLoc = 4028;
+	};
+	3EBF515B07D4394500B30DAB = {
+		fRef = 3EBF515707D4392700B30DAB;
+		isa = PBXTextBookmark;
+		name = "  OverallAct                    = 0,    /* Delays idle sleep by small amount                 */\n";
+		rLen = 96;
+		rLoc = 15528;
+		rType = 0;
+		vrLen = 2753;
+		vrLoc = 13956;
 	};
 	3EC671060775276E00B50A61 = {
 		fRef = 3EC671070775276E00B50A61;
@@ -20309,7 +20528,7 @@
 		fileReference = 3EEDF76C065B5ACD00E3545C;
 		functionName = "-forwardInvocation:";
 		isa = PBXFileBreakpoint;
-		lineNumber = 326;
+		lineNumber = 325;
 		state = 1;
 	};
 	3EEB775D0767F27A0090E740 = {
@@ -20355,7 +20574,7 @@
 		isa = PBXTextBookmark;
 		name = "NiceController.m: 320";
 		rLen = 0;
-		rLoc = 9561;
+		rLoc = 9519;
 		rType = 0;
 		vrLen = 1321;
 		vrLoc = 7117;
@@ -20933,9 +21152,9 @@
 	};
 	3EEDF76C065B5ACD00E3545C = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {705, 4997}}";
-			sepNavSelRange = "{4028, 0}";
-			sepNavVisRect = "{{0, 4554}, {705, 443}}";
+			sepNavIntBoundsRect = "{{0, 0}, {864, 4997}}";
+			sepNavSelRange = "{4980, 10}";
+			sepNavVisRect = "{{0, 1677}, {864, 636}}";
 			sepNavWindowFrame = "{{475, 251}, {750, 502}}";
 		};
 	};

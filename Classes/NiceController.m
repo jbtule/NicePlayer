@@ -140,14 +140,14 @@ id controller;
 /* As per Technical Q&A QA1160: http://developer.apple.com/qa/qa2004/qa1160.html */
 -(void)preventSleep:(id)sender
 {
-    NSArray *docList = [NSApp orderedDocuments];
-    id e = [docList objectEnumerator];
-    id anObject;
-    while(anObject = [e nextObject]){
-        if([anObject isPlaying]){
-            return;
-        }
+
+    BOOL detectIsPlaying(id each, void* context){
+        return [each isPlaying];
     }
+
+    if([[NSApp orderedDocuments] detectUsingFunction:detectIsPlaying context:nil])
+        UpdateSystemActivity(OverallAct);
+
 }
 
 -(id)mainDocument
