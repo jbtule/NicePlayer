@@ -22,6 +22,19 @@
             SUPERCLASS = NSObject; 
         }, 
         {
+            ACTIONS = {
+                donateToNicePlayer = id; 
+                featureRequest = id; 
+                onlineSupportWikiFAQ = id; 
+                submitBug = id; 
+                visitNicePlayerWebSite = id; 
+                visitProjectRoadmap = id; 
+            }; 
+            CLASS = NPApplication; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSApplication; 
+        }, 
+        {
             ACTIONS = {checkForUpdates = id; checkForUpdates2 = id; emailAuthor = id; }; 
             CLASS = NSApplication; 
             LANGUAGE = ObjC; 
@@ -29,12 +42,9 @@
         }, 
         {
             ACTIONS = {
-                ALLdoubleSize = id; 
-                ALLfillScreenSize = id; 
-                ALLfillWidthSize = id; 
-                ALLhalfSize = id; 
-                ALLnormalSize = id; 
-                emailAuthor = id; 
+                checkMouseLocation = id; 
+                newDocument = id; 
+                openDocument = id; 
                 playAll = id; 
                 presentMultiple = id; 
                 showPreferences = id; 

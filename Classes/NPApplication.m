@@ -168,4 +168,43 @@
     [[NiceController controller] openFiles:filenames];
 }
 
+#pragma mark -
+#pragma mark Application Web Links
+
+-(IBAction)visitNicePlayerWebSite:(id)sender
+{
+	[[NSWorkspace sharedWorkspace] openURL:
+		[NSURL URLWithString:@"http://niceplayer.indyjt.com/"]];
+}
+
+-(IBAction)visitProjectRoadmap:(id)sender
+{
+	[[NSWorkspace sharedWorkspace] openURL:
+		[NSURL URLWithString:@"http://charon.laya.com/niceplayer/trac.cgi/roadmap"]];
+}
+
+-(IBAction)donateToNicePlayer:(id)sender
+{
+	[[NSWorkspace sharedWorkspace] openURL:
+		[NSURL URLWithString:@"http://niceplayer.indyjt.com/donate.php"]];
+}
+
+-(IBAction)onlineSupportWikiFAQ:(id)sender
+{
+	[[NSWorkspace sharedWorkspace] openURL:
+		[NSURL URLWithString:@"http://charon.laya.com/niceplayer/trac.cgi/wiki/ListOfQuestions"]];
+}
+
+-(IBAction)submitBug:(id)sender
+{
+	[[NSWorkspace sharedWorkspace] openURL:
+		[NSURL URLWithString:@"http://charon.laya.com/niceplayer/trac.cgi/newticket"]];
+}
+
+-(IBAction)featureRequest:(id)sender
+{
+	[[NSWorkspace sharedWorkspace] openURL:
+		[NSURL URLWithString:@"http://charon.laya.com/niceplayer/trac.cgi/wiki/FeatureRequests"]];
+}
+
 @end

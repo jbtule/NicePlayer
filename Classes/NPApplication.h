@@ -14,4 +14,11 @@
 	NSPoint lastPoint;
 }
 
+-(IBAction)visitNicePlayerWebSite:(id)sender;
+-(IBAction)visitProjectRoadmap:(id)sender;
+-(IBAction)donateToNicePlayer:(id)sender;
+-(IBAction)onlineSupportWikiFAQ:(id)sender;
+-(IBAction)submitBug:(id)sender;
+-(IBAction)featureRequest:(id)sender;
+
 @end
