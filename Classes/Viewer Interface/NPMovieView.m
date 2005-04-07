@@ -134,7 +134,7 @@
 
 -(NSView *)hitTest:(NSPoint)aPoint
 {
-    if([super hitTest:aPoint] == trueMovieView)
+    if(NSMouseInRect(aPoint, [self frame], NO))
         return self;
     return nil;
 }
