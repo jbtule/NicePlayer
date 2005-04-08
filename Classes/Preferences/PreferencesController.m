@@ -74,8 +74,6 @@
 	[bundlePriorityTable setDataSource:self];
 	[bundlePriorityTable setDelegate:self];
 	[bundlePriorityTable registerForDraggedTypes:[NSArray arrayWithObjects:@"draggingData", nil]];
-	
-	cellCache = [[NSMutableDictionary dictionary] retain];
 }
 
 -(IBAction)doubleClickMoviePref:(id)sender
@@ -189,8 +187,8 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	return [[[[NPPluginReader pluginReader] cachedPluginOrder] objectAtIndex:rowIndex] objectForKey:@"Name"];
     if([[aTableColumn identifier] isEqualToString:@"Use"]){
 	NSDictionary *anObject = [[[NPPluginReader pluginReader] cachedPluginOrder] objectAtIndex:rowIndex];
-	NSCell *aCell = [cellCache objectForKey:anObject];
-	[aCell setIntValue:[[anObject objectForKey:@"Chosen"] boolValue]];
+	NSCell *aCell = [aTableColumn dataCellForRow:rowIndex];
+	[aCell setState:([[anObject objectForKey:@"Chosen"] boolValue] ? NSOnState : NSOffState)];
 	return aCell;
     }
     
@@ -209,18 +207,18 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 {
 	if([[aTableColumn identifier] isEqualToString:@"Use"]){
 	    id anObject = [[[NPPluginReader pluginReader] cachedPluginOrder] objectAtIndex:rowIndex];
-	    [aCell setIntValue:[[anObject valueForKey:@"Chosen"] boolValue]];
+	    [aCell setState:([[anObject objectForKey:@"Chosen"] boolValue] ? NSOnState : NSOffState)];
 	    [aCell setTarget:self];
 	    [aCell setAction:@selector(updateChosen:)];
-	    [cellCache setObject:aCell forKey:[[[NPPluginReader pluginReader] cachedPluginOrder] objectAtIndex:rowIndex]];
 	}
 }
 
 -(void)updateChosen:(id)sender
 {
     id anObject = [[[NPPluginReader pluginReader] cachedPluginOrder] objectAtIndex:[sender selectedRow]];
-    [anObject setObject:[NSNumber numberWithBool:![[anObject objectForKey:@"Chosen"] boolValue]] forKey:@"Chosen"];
-    [sender setIntValue:[[anObject objectForKey:@"Chosen"] boolValue]];
+    id newValue = [NSNumber numberWithBool:![[anObject objectForKey:@"Chosen"] boolValue]];
+    [anObject setObject:newValue forKey:@"Chosen"];
+    [sender setIntValue:[newValue boolValue]];
     [[Preferences mainPrefs] setViewerPluginPrefs:[[NPPluginReader pluginReader] cachedPluginOrder]];
     [sender reloadData];
 }
@@ -259,8 +257,8 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 }
 
 -(BOOL)tableView:(NSTableView *)tableView
-	  acceptDrop:(id <NSDraggingInfo>)info
-			 row:(int)row 
+      acceptDrop:(id <NSDraggingInfo>)info
+	     row:(int)row 
    dropOperation:(NSTableViewDropOperation)operation
 {
 	NSArray* objects = [NSKeyedUnarchiver unarchiveObjectWithData:
@@ -271,7 +269,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	if([[[Preferences mainPrefs] viewerPluginPrefs] count] <= (unsigned)row)
 		row = [[[Preferences mainPrefs] viewerPluginPrefs] count] - 1;
 	[[[Preferences mainPrefs] viewerPluginPrefs] exchangeObjectAtIndex:[num unsignedIntValue]
-													 withObjectAtIndex:row];
+							 withObjectAtIndex:row];
 	while(num = [e nextObject]){
 		id pluggables = [[Preferences mainPrefs] viewerPluginPrefs];
 		id anObject = [pluggables objectAtIndex:[num unsignedIntValue]];
@@ -280,6 +278,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	}
 	
 	[bundlePriorityTable setNeedsDisplay:YES];
+	[[Preferences mainPrefs] setViewerPluginPrefs:[[NPPluginReader pluginReader] cachedPluginOrder]];
 	return YES;
 }
 

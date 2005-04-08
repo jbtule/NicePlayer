@@ -44,13 +44,31 @@ static NPPluginReader *pluginReader = nil;
 /* TODO: write integrate function. */
 -(id)integratePrefs:(NSArray *)anArray
 {
-	return pluggablesArray;
+    unsigned i, j;
+    NSMutableArray *finalOrder = [[NSMutableArray array] retain];
+    for(i = 0; i < [anArray count]; i++){
+	NSDictionary *storedDict = [anArray objectAtIndex:i];
+	for(j = 0; j < [orderedPlugins count]; j++){
+	    NSMutableDictionary *parsedDict = [orderedPlugins objectAtIndex:j];
+	    if([[storedDict objectForKey:@"Name"] isEqualToString:[parsedDict objectForKey:@"Name"]]){
+		[parsedDict setObject:[storedDict objectForKey:@"Chosen"] forKey:@"Chosen"];
+		[finalOrder addObject:parsedDict];
+	    }
+	}
+    }
+    NSMutableSet *remainingSet = [NSMutableSet setWithArray:orderedPlugins];
+    NSSet *firstSet = [NSSet setWithArray:finalOrder];
+    [remainingSet minusSet:firstSet];
+    [finalOrder addObjectsFromArray:[remainingSet allObjects]];
+    
+    [orderedPlugins release];
+    orderedPlugins = finalOrder;
+    return orderedPlugins;
 }
 
 -(void)generatePluginOrder
 {
     unsigned i;
-    
     orderedPlugins = [[NSMutableArray array] retain];
 
     for(i = 0; i < [pluggablesArray count]; i++){

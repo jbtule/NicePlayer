@@ -37,8 +37,6 @@
     
     id _draggingObjects;
     BOOL _tableLocked;
-    
-    NSMutableDictionary *cellCache;
 }
 
 -(IBAction)doubleClickMoviePref:(id)sender;

@@ -83,9 +83,13 @@
     NSRect subview = NSMakeRect(0, 0, [self frame].size.width, [self frame].size.height);
     id pluginOrder = [[NPPluginReader pluginReader] cachedPluginOrder];
     id pluginDict = [[NPPluginReader pluginReader] prefDictionary];
+    /* Try to choose the proper plugin by finding out first whether the plugin is enabled, and then if it handles the type. */
     for(i = 0; (i < [pluginOrder count]) && (didOpen == NO); i++){
+	NSDictionary *currentPlugin = [pluginOrder objectAtIndex:i];
+	if(![[currentPlugin objectForKey:@"Chosen"] boolValue])
+	    continue;
         [trueMovieView release];
-        id newViewClass = [[pluginDict objectForKey:[[pluginOrder objectAtIndex:i] objectForKey:@"Name"]] objectForKey:@"Class"];
+        id newViewClass = [[pluginDict objectForKey:[currentPlugin objectForKey:@"Name"]] objectForKey:@"Class"];
         trueMovieView = [[newViewClass alloc] retain];
         didOpen = [trueMovieView openURL:url];
     }
