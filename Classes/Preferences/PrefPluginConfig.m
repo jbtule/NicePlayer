@@ -17,10 +17,10 @@
 	currSubview = nil;
 }
 
--(void)selectRowIndexes:(NSIndexSet *)indexes byExtendingSelection:(BOOL)extend
+-(void)selectRowIndexes:(NSIndexSet *)indexes byExtendingSelection:(BOOL)aBool
 {
 	[self setDelegate:self];
-	[super selectRowIndexes:indexes byExtendingSelection:extend];
+	[super selectRowIndexes:indexes byExtendingSelection:aBool];
 }
 
 -(void)tableViewSelectionDidChange:(NSNotification *)aNotification

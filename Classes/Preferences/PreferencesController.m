@@ -9,7 +9,6 @@
 #import "PreferencesController.h"
 #import "../Viewer Interface/NPPluginReader.h"
 #import <IndyKit/JTPreferenceWindow.h>
-#import "../Viewer Interface/NPPluginDict.h"
 
 @implementation PreferencesController
 
@@ -75,6 +74,8 @@
 	[bundlePriorityTable setDataSource:self];
 	[bundlePriorityTable setDelegate:self];
 	[bundlePriorityTable registerForDraggedTypes:[NSArray arrayWithObjects:@"draggingData", nil]];
+	
+	cellCache = [[NSMutableDictionary dictionary] retain];
 }
 
 -(IBAction)doubleClickMoviePref:(id)sender
@@ -184,12 +185,16 @@
 objectValueForTableColumn:(NSTableColumn *)aTableColumn
 		   row:(int)rowIndex
 {
-    if([[aTableColumn identifier] isEqualToString:@"Viewer"]){
-		id anObject = [[[Preferences mainPrefs] viewerPluginPrefs] objectAtIndex:rowIndex];
-		return [[[[NPPluginReader pluginReader] prefDictionary] valueForKey:anObject] valueForKey:@"Name"];
-	}
-
-	return nil;
+    if([[aTableColumn identifier] isEqualToString:@"Viewer"])
+	return [[[[NPPluginReader pluginReader] cachedPluginOrder] objectAtIndex:rowIndex] valueForKey:@"Name"];
+    if([[aTableColumn identifier] isEqualToString:@"Use"]){
+	NSDictionary *anObject = [[[NPPluginReader pluginReader] cachedPluginOrder] objectAtIndex:rowIndex];
+	NSCell *aCell = [cellCache objectForKey:anObject];
+	[aCell setIntValue:[[anObject valueForKey:@"Chosen"] boolValue]];
+	return aCell;
+    }
+    
+    return nil;
 }
 
 -(int)numberOfRowsInTableView:(NSTableView *)aTableView
@@ -200,16 +205,26 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 -(void)tableView:(NSTableView *)aTableView
  willDisplayCell:(id)aCell
   forTableColumn:(NSTableColumn *)aTableColumn
-			 row:(int)rowIndex
+	     row:(int)rowIndex
 {
 	if([[aTableColumn identifier] isEqualToString:@"Use"]){
-		id anObject = [[[Preferences mainPrefs] viewerPluginPrefs] objectAtIndex:rowIndex];
-		[aCell setIntValue:
-			([[[[[NPPluginReader pluginReader] prefDictionary] valueForKey:anObject] valueForKey:@"Chosen"] boolValue])];
-		[aCell setTarget:anObject];
-		[aCell setAction:@selector(updateChosen:)];
+	    id anObject = [[[NPPluginReader pluginReader] cachedPluginOrder] objectAtIndex:rowIndex];
+	    [aCell setIntValue:[[anObject valueForKey:@"Chosen"] boolValue]];
+	    [aCell setTarget:self];
+	    [aCell setAction:@selector(updateChosen:)];
+	    [cellCache setObject:aCell forKey:[[[NPPluginReader pluginReader] cachedPluginOrder] objectAtIndex:rowIndex]];
 	}
 }
+
+-(void)updateChosen:(id)sender
+{
+    id anObject = [[[NPPluginReader pluginReader] cachedPluginOrder] objectAtIndex:[sender selectedRow]];
+    [anObject setObject:[NSNumber numberWithBool:![[anObject valueForKey:@"Chosen"] boolValue]] forKey:@"Chosen"];
+    [sender setIntValue:[[anObject valueForKey:@"Chosen"] boolValue]];
+    [[Preferences mainPrefs] setViewerPluginPrefs:[[NPPluginReader pluginReader] cachedPluginOrder]];
+    [sender reloadData];
+}
+
 
 -(BOOL)tableView:(NSTableView *)tableView
 	   writeRows:(NSArray *)rows 

@@ -11,32 +11,34 @@
     IBOutlet id paneMain;
     IBOutlet id paneActions;
     IBOutlet id paneView;
-
-	IBOutlet id bundlePriorityTable;
-	
+    
+    IBOutlet id bundlePriorityTable;
+    
     IBOutlet id doubleClickMoviePref;
     IBOutlet id rightClickMoviePref;
-	IBOutlet id scrollResizePin;
-	IBOutlet id defaultTimeDisplay;
-	IBOutlet id defaultRepeatMode;
-	IBOutlet id defaultOpenMode;
-
-	IBOutlet id rrSpeedSlider;
-	IBOutlet id ffSpeedSlider;
-
-	IBOutlet id autoplayOnFullScreen;
-	IBOutlet id autostopOnNormalScreen;
-
-	IBOutlet id showInitialOverlays;
-	IBOutlet id fadeOverlays;
-	
-	IBOutlet id movieOpenedPlay;
-	IBOutlet id movieOpenedFullScreen;
-	IBOutlet id windowAlwaysOnTop;
-	IBOutlet id windowLeaveFullScreen;
-
-	id _draggingObjects;
-	BOOL _tableLocked;
+    IBOutlet id scrollResizePin;
+    IBOutlet id defaultTimeDisplay;
+    IBOutlet id defaultRepeatMode;
+    IBOutlet id defaultOpenMode;
+    
+    IBOutlet id rrSpeedSlider;
+    IBOutlet id ffSpeedSlider;
+    
+    IBOutlet id autoplayOnFullScreen;
+    IBOutlet id autostopOnNormalScreen;
+    
+    IBOutlet id showInitialOverlays;
+    IBOutlet id fadeOverlays;
+    
+    IBOutlet id movieOpenedPlay;
+    IBOutlet id movieOpenedFullScreen;
+    IBOutlet id windowAlwaysOnTop;
+    IBOutlet id windowLeaveFullScreen;
+    
+    id _draggingObjects;
+    BOOL _tableLocked;
+    
+    NSMutableDictionary *cellCache;
 }
 
 -(IBAction)doubleClickMoviePref:(id)sender;

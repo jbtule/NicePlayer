@@ -9,6 +9,7 @@
 	NSMutableArray *pluggablesArray;
 	NSMutableArray *allowedExtensions;
 	NSMutableDictionary *pluggableDict;
+	NSMutableArray *orderedPlugins;
 }
 
 +(id)pluginReader;

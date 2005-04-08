@@ -7,7 +7,6 @@
 
 #import "NPPluginReader.h"
 #import "Pluggable Players/NPMovieProtocol.h"
-#import "NPPluginDict.h"
 
 @class JTMovieView;
 @class DVDPlayerView;
@@ -26,7 +25,8 @@ static NPPluginReader *pluginReader = nil;
 -(id)init
 {
 	if(self = [super init]){
-		[self generatePluggables];
+	    [self generatePluggables];
+	    [self generatePluginOrder];
 	}
 	return self;
 }
@@ -47,9 +47,24 @@ static NPPluginReader *pluginReader = nil;
 	return pluggablesArray;
 }
 
+-(void)generatePluginOrder
+{
+    unsigned i;
+    
+    orderedPlugins = [[NSMutableArray array] retain];
+
+    for(i = 0; i < [pluggablesArray count]; i++){
+	NSDictionary *newItem = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+	    [pluggablesArray objectAtIndex:i],	@"Name",
+	    [NSNumber numberWithBool:YES],	@"Chosen",
+	    nil];
+	[orderedPlugins addObject:newItem];
+    }
+}
+
 -(id)cachedPluginOrder
 {
-	return pluggablesArray;
+    return orderedPlugins;
 }
 
 /* Get the dictionary that is indexed by the proper plugin names. It contains all of the necessary

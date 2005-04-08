@@ -245,20 +245,6 @@
 			shellPath = /bin/sh;
 			shellScript = "/Developer/Tools/sdp -f st -o \"$BUILD_DIR/$FULL_PRODUCT_NAME/Contents/Resources\" \"$SOURCE_ROOT/Resources/NicePlayer.sdef\"";
 		};
-		251C7DAD07E54DCE009D5C9A = {
-			isa = PBXFileReference;
-			lastKnownFileType = wrapper.nib;
-			name = DVDPrefs.nib;
-			path = "Plugin Sources/DVDPlayer/Resources/English.lproj/DVDPrefs.nib";
-			refType = 4;
-			sourceTree = "<group>";
-		};
-		251C7DAE07E54DCE009D5C9A = {
-			fileRef = 251C7DAD07E54DCE009D5C9A;
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
 		251FBBDF07BC201900D147E5 = {
 			fileEncoding = 4;
 			isa = PBXFileReference;
@@ -835,8 +821,6 @@
 				257D61670753F92D00702BD0,
 				257030360756C73C00D1EE8C,
 				257030370756C73C00D1EE8C,
-				259DE3FC07610748000FE804,
-				259DE3FD07610748000FE804,
 				257D61220753F3C300702BD0,
 			);
 			isa = PBXGroup;
@@ -929,36 +913,6 @@
 			);
 			isa = PBXCopyFilesBuildPhase;
 			runOnlyForDeploymentPostprocessing = 0;
-		};
-		259DE3FC07610748000FE804 = {
-			fileEncoding = 4;
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.c.h;
-			name = NPPluginDict.h;
-			path = "Classes/Viewer Interface/NPPluginDict.h";
-			refType = 4;
-			sourceTree = "<group>";
-		};
-		259DE3FD07610748000FE804 = {
-			fileEncoding = 4;
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.c.objc;
-			name = NPPluginDict.m;
-			path = "Classes/Viewer Interface/NPPluginDict.m";
-			refType = 4;
-			sourceTree = "<group>";
-		};
-		259DE3FE07610748000FE804 = {
-			fileRef = 259DE3FC07610748000FE804;
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		259DE3FF07610748000FE804 = {
-			fileRef = 259DE3FD07610748000FE804;
-			isa = PBXBuildFile;
-			settings = {
-			};
 		};
 		25B912D707416725001B68D9 = {
 			children = (
@@ -1171,7 +1125,6 @@
 				2A37F4B8FDCFA73011CA2CEA,
 				2A37F4C3FDCFA73011CA2CEA,
 				19C28FB0FE9D524F11CA2CBB,
-				251C7DAD07E54DCE009D5C9A,
 			);
 			isa = PBXGroup;
 			name = NicePlayer;
@@ -2961,7 +2914,6 @@
 				257D61560753F7AD00702BD0,
 				257D61680753F92D00702BD0,
 				257030380756C73C00D1EE8C,
-				259DE3FE07610748000FE804,
 				252BD4FD076981DD006CF96B,
 				252BD9F607699E7C006CF96B,
 				252BDDD9076A4744006CF96B,
@@ -3043,7 +2995,6 @@
 				3EC66FD5077525AD00B50A61,
 				2513D30607BDACA700BB6055,
 				253C02E507C061E100172C2F,
-				251C7DAE07E54DCE009D5C9A,
 			);
 			isa = PBXResourcesBuildPhase;
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3091,7 +3042,6 @@
 				3E8C9A96074D78350048CB70,
 				257D61690753F92D00702BD0,
 				257030390756C73C00D1EE8C,
-				259DE3FF07610748000FE804,
 				252BD4FE076981DD006CF96B,
 				252BD9F707699E7C006CF96B,
 				252BDDDA076A4744006CF96B,
