@@ -186,11 +186,11 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 		   row:(int)rowIndex
 {
     if([[aTableColumn identifier] isEqualToString:@"Viewer"])
-	return [[[[NPPluginReader pluginReader] cachedPluginOrder] objectAtIndex:rowIndex] valueForKey:@"Name"];
+	return [[[[NPPluginReader pluginReader] cachedPluginOrder] objectAtIndex:rowIndex] objectForKey:@"Name"];
     if([[aTableColumn identifier] isEqualToString:@"Use"]){
 	NSDictionary *anObject = [[[NPPluginReader pluginReader] cachedPluginOrder] objectAtIndex:rowIndex];
 	NSCell *aCell = [cellCache objectForKey:anObject];
-	[aCell setIntValue:[[anObject valueForKey:@"Chosen"] boolValue]];
+	[aCell setIntValue:[[anObject objectForKey:@"Chosen"] boolValue]];
 	return aCell;
     }
     
@@ -219,8 +219,8 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 -(void)updateChosen:(id)sender
 {
     id anObject = [[[NPPluginReader pluginReader] cachedPluginOrder] objectAtIndex:[sender selectedRow]];
-    [anObject setObject:[NSNumber numberWithBool:![[anObject valueForKey:@"Chosen"] boolValue]] forKey:@"Chosen"];
-    [sender setIntValue:[[anObject valueForKey:@"Chosen"] boolValue]];
+    [anObject setObject:[NSNumber numberWithBool:![[anObject objectForKey:@"Chosen"] boolValue]] forKey:@"Chosen"];
+    [sender setIntValue:[[anObject objectForKey:@"Chosen"] boolValue]];
     [[Preferences mainPrefs] setViewerPluginPrefs:[[NPPluginReader pluginReader] cachedPluginOrder]];
     [sender reloadData];
 }

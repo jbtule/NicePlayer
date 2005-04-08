@@ -85,7 +85,7 @@
     id pluginDict = [[NPPluginReader pluginReader] prefDictionary];
     for(i = 0; (i < [pluginOrder count]) && (didOpen == NO); i++){
         [trueMovieView release];
-        id newViewClass = [[pluginDict objectForKey:[pluginOrder objectAtIndex:i]] objectForKey:@"Class"];
+        id newViewClass = [[pluginDict objectForKey:[[pluginOrder objectAtIndex:i] objectForKey:@"Name"]] objectForKey:@"Class"];
         trueMovieView = [[newViewClass alloc] retain];
         didOpen = [trueMovieView openURL:url];
     }

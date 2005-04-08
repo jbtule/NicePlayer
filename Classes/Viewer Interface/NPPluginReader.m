@@ -101,9 +101,9 @@ static NPPluginReader *pluginReader = nil;
 	id plugInfo = [NSMutableDictionary dictionaryWithDictionary:[anObject plugInfo]];
 	[plugInfo setObject:anObject forKey:@"Class"];
 	[plugInfo setObject:[NSNumber numberWithBool:YES] forKey:@"Chosen"];
-	[allowedExtensions addObjectsFromArray:[plugInfo valueForKey:@"FileExtensions"]];
-	[pluggableDict setObject:plugInfo forKey:[plugInfo valueForKey:@"Name"]];
-	[pluggablesArray addObject:[plugInfo valueForKey:@"Name"]];
+	[allowedExtensions addObjectsFromArray:[plugInfo objectForKey:@"FileExtensions"]];
+	[pluggableDict setObject:plugInfo forKey:[plugInfo objectForKey:@"Name"]];
+	[pluggablesArray addObject:[plugInfo objectForKey:@"Name"]];
     }
 }
 
