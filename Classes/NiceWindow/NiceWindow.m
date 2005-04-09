@@ -535,12 +535,14 @@
     presentScreen = YES;
     oldWindowLevel = [self level];
     [self setLevel:NSFloatingWindowLevel + 2];
+    [self setHasShadow:NO];
 }
 
 -(void)unPresentMultiple
 {
     presentScreen = NO;
     [self setLevel:oldWindowLevel];
+    [self setHasShadow:YES];
 }
 
 /**
@@ -829,9 +831,10 @@
             dropScreen = YES;
         }
         [self showOverLayTitle];
-        [self setFrameOrigin:NSMakePoint([self frame].origin.x+[anEvent deltaX],[self frame].origin.y-[anEvent deltaY]) ];
+        [self setFrameOrigin:NSMakePoint([self frame].origin.x+[anEvent deltaX],[self frame].origin.y-[anEvent deltaY])];
     }
 }
+
 
 /* Used to detect what controls the mouse is currently over. */
 - (void)mouseMoved:(NSEvent *)anEvent
