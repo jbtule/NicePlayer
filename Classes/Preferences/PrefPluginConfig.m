@@ -14,7 +14,8 @@
 
 -(void)awakeFromNib
 {
-	currSubview = nil;
+    currSubview = nil;
+    isShowingExpanded = NO;
 }
 
 -(void)selectRowIndexes:(NSIndexSet *)indexes byExtendingSelection:(BOOL)aBool
@@ -25,7 +26,7 @@
 
 -(void)tableViewSelectionDidChange:(NSNotification *)aNotification
 {
-	if(oldWindowFrame.origin.x == 0){
+	if(!isShowingExpanded){
 		oldWindowFrame = [[self window] frame];
 		oldViewFrame = [insertView frame];
 	}
@@ -34,10 +35,13 @@
 	if((itemClass = [self classForRow:[self selectedRow]]) == nil)
 		return;
 
-	if(![itemClass hasConfigurableNib])
-		[self hideWidgets];
-	else
-		[self showWidgets];
+	if(![itemClass hasConfigurableNib]){
+	    [self hideWidgets];
+	    isShowingExpanded = NO;
+	} else {
+	    [self showWidgets];
+	    isShowingExpanded = YES;
+	}
 }
 
 -(void)hideWidgets

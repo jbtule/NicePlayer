@@ -16,6 +16,8 @@
 	NSRect oldWindowFrame;
 	NSRect oldViewFrame;
 	NSView *currSubview;
+	
+	BOOL isShowingExpanded;
 }
 
 -(id)classForRow:(int)row;
