@@ -80,18 +80,22 @@ static id overlayControl = nil;
 	if ((mainVisibleFrame.origin.y + mainVisibleFrame.size.height) > (windowFrame.origin.y + windowFrame.size.height)){	
 		tempRect.origin = NSMakePoint(0, windowFrame.size.height - 24);
 	} else {
-		tempRect.origin = [aWindow convertScreenToBase:NSMakePoint(windowFrame.origin.x, mainVisibleFrame.origin.y
-																+ mainVisibleFrame.size.height - 24)];
+	    tempRect.origin = [aWindow convertScreenToBase:NSMakePoint(windowFrame.origin.x, mainVisibleFrame.origin.y
+								       + mainVisibleFrame.size.height - 24)];
 	}
 	return NSMouseInRect([aWindow convertScreenToBase:aScreenPoint], tempRect, NO);
 }
 
 -(BOOL)inResizeRegion:(NSPoint)aScreenPoint forWindow:(id)aWindow
 {
-    NSRect movieRect = [[[aWindow parentWindow] contentView] frame];
-    movieRect.origin = [[aWindow parentWindow] convertBaseToScreen:movieRect.origin];
-    NSLog(@"%@, %@ in R: %d", NSStringFromPoint(aScreenPoint), NSStringFromRect(movieRect), NSMouseInRect(aScreenPoint, movieRect, NO));
-    return NSMouseInRect(aScreenPoint, movieRect, NO);
+    NSRect movieRect = [[aWindow contentView] frame];
+    movieRect.origin = [aWindow convertBaseToScreen:movieRect.origin];
+    NSRect resizeRect;
+    resizeRect.size.height = 14;
+    resizeRect.size.width = 14;
+    resizeRect.origin.x = movieRect.origin.x + movieRect.size.width - resizeRect.size.width;
+    resizeRect.origin.y = movieRect.origin.y;
+    return NSMouseInRect(aScreenPoint, resizeRect, NO);
 }
 
 -(void)mouseMovedInScreenPoint:(NSPoint)aScreenPoint
@@ -132,6 +136,5 @@ static id overlayControl = nil;
     }
     return NO;
 }
-
 
 @end
