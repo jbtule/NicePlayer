@@ -21,7 +21,10 @@
                 defaultOpenMode = id; 
                 defaultRepeatMode = id; 
                 defaultTimeDisplay = id; 
+                displayNotificationTime = id; 
                 doubleClickMoviePref = id; 
+                fadeNotificationOverlays = id; 
+                fadeOverlayTime = id; 
                 fadeOverlays = id; 
                 ffSpeed = id; 
                 movieOpenedFullScreen = id; 
@@ -31,6 +34,7 @@
                 scrollResizePin = id; 
                 scrollWheelMoviePref = id; 
                 showInitialOverlays = id; 
+                showNotificationOverlays = id; 
                 windowAlwaysOnTop = id; 
                 windowLeaveFullScreen = id; 
             }; 
@@ -43,13 +47,17 @@
                 defaultOpenMode = id; 
                 defaultRepeatMode = id; 
                 defaultTimeDisplay = id; 
+                displayNotificationTime = id; 
                 doubleClickMoviePref = id; 
+                fadeNotificationOverlays = id; 
+                fadeOverlayTime = id; 
                 fadeOverlays = id; 
                 ffSpeedSlider = id; 
                 movieOpenedFullScreen = id; 
                 movieOpenedPlay = id; 
                 paneActions = id; 
                 paneMain = id; 
+                paneOverlays = id; 
                 paneView = id; 
                 prefWindow = id; 
                 rightClickMoviePref = id; 
@@ -57,6 +65,7 @@
                 scrollResizePin = id; 
                 scrollWheelMoviePref = id; 
                 showInitialOverlays = id; 
+                showNotificationOverlays = id; 
                 windowAlwaysOnTop = id; 
                 windowLeaveFullScreen = id; 
             }; 

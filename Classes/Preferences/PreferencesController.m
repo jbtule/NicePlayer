@@ -32,6 +32,12 @@
 			  withLabel:@"Actions"
 			withToolTip:@"Actions on Movies"
 		 allowingResize:NO];
+	[prefWindow addPane:paneOverlays
+		   withIcon:[[[NSImage alloc]initWithContentsOfFile:tActionPrefIcon] autorelease]
+	     withIdentifier:@"Overlays"
+		  withLabel:@"Overlays"
+		withToolTip:@"Various Information and Interaction Displays"
+	     allowingResize:YES];
 	[prefWindow addPane:paneView
 			   withIcon:[NSImage imageNamed:@"ViewerPrefIcon"]
 		 withIdentifier:@"Viewer"
@@ -60,10 +66,19 @@
 
 	[autoplayOnFullScreen setState:[[Preferences mainPrefs] autoplayOnFullScreen]];
 	[autostopOnNormalScreen setState:[[Preferences mainPrefs] autostopOnNormalScreen]];
-
+	
 	[showInitialOverlays setState:[[Preferences mainPrefs] showInitialOverlays]];
 	[fadeOverlays setState:[[Preferences mainPrefs] fadeOverlays]];
+	float fOT = [[Preferences mainPrefs] fadeOverlayTime];
+	fOT = (fOT <= 0.0) ? 5.0 : fOT;
+        [fadeOverlayTime setObjectValue:[NSNumber numberWithFloat:fOT]];
 	
+	[showNotificationOverlays setState:[[Preferences mainPrefs] showNotificationOverlays]];
+	[fadeNotificationOverlays setState:[[Preferences mainPrefs] fadeNotificationOverlays]];
+	float dNT = [[Preferences mainPrefs] displayNotificationTime];
+	dNT = (dNT <= 0.0) ? 0.25 : dNT;
+        [displayNotificationTime setObjectValue:[NSNumber numberWithFloat:dNT]];
+		
 	[movieOpenedPlay setState:[[Preferences mainPrefs] movieOpenedPlay]];
 	[movieOpenedFullScreen setState:[[Preferences mainPrefs] movieOpenedFullScreen]];
 	[windowAlwaysOnTop setState:[[Preferences mainPrefs] windowAlwaysOnTop]];
@@ -155,6 +170,32 @@
 -(IBAction)fadeOverlays:(id)sender
 {
 	[[Preferences mainPrefs] setFadeOverlays:[sender state]];
+}
+
+-(IBAction)fadeOverlayTime:(id)sender
+{
+    int fOT = [[Preferences mainPrefs] fadeOverlayTime];
+    fOT = (fOT <= 0) ? 5.0 : fOT;
+    [[Preferences mainPrefs] setFadeOverlayTime:fOT];
+}
+
+#pragma mark -
+
+-(IBAction)showNotificationOverlays:(id)sender
+{
+    	[[Preferences mainPrefs] setShowNotificationOverlays:[sender state]];
+}
+
+-(IBAction)fadeNotificationOverlays:(id)sender
+{
+    	[[Preferences mainPrefs] setFadeNotificationOverlays:[sender state]];
+}
+
+-(IBAction)displayNotificationTime:(id)sender
+{
+    int dNT = [[Preferences mainPrefs] fadeOverlayTime];
+    dNT = (dNT <= 0) ? 0.25 : dNT;
+    [[Preferences mainPrefs] setFadeOverlayTime:dNT];
 }
 
 #pragma mark -

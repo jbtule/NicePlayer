@@ -54,6 +54,15 @@
 
 		showInitialOverlays = ![[NSUserDefaults standardUserDefaults] boolForKey:@"noShowInitialOverlays"];
 		fadeOverlays = ![[NSUserDefaults standardUserDefaults] boolForKey:@"noFadeOverlays"];
+		fadeOverlayTime = ([[NSUserDefaults standardUserDefaults] floatForKey:@"fadeOverlayTime"] <= 0.0) 
+		    ? 5.0
+		    : [[NSUserDefaults standardUserDefaults] floatForKey:@"fadeOverlayTime"];
+		
+		showNotificationOverlays = ![[NSUserDefaults standardUserDefaults] boolForKey:@"noShowNotificationOverlays"];
+		fadeNotificationOverlays = ![[NSUserDefaults standardUserDefaults] boolForKey:@"noFadeNotificationOverlays"];
+		displayNotificationTime = ([[NSUserDefaults standardUserDefaults] floatForKey:@"displayNotificationTime"] <= 0.0) 
+		    ? 0.25
+		    : [[NSUserDefaults standardUserDefaults] floatForKey:@"displayNotificationTime"];
 		
 		movieOpenedPlay = [[NSUserDefaults standardUserDefaults] boolForKey:@"movieOpenedPlay"];
 		movieOpenedFullScreen = [[NSUserDefaults standardUserDefaults] boolForKey:@"movieOpenedFullScreen"];
@@ -212,6 +221,53 @@
 {
 	fadeOverlays = aBool;
 	[[NSUserDefaults standardUserDefaults] setBool:!aBool forKey:@"noFadeOverlays"];
+}
+
+
+-(float)fadeOverlayTime
+{
+    return fadeOverlayTime;
+}
+
+-(void)setFadeOverlayTime:(float)aFloat
+{
+    fadeOverlayTime = aFloat;
+    [[NSUserDefaults standardUserDefaults] setFloat:aFloat forKey:@"fadeOverlayTime"];
+}
+
+#pragma mark -
+
+-(BOOL)showNotificationOverlays
+{
+    return showNotificationOverlays;
+}
+
+-(void)setShowNotificationOverlays:(BOOL)aBool
+{
+    showNotificationOverlays = aBool;
+    [[NSUserDefaults standardUserDefaults] setBool:!aBool forKey:@"noShowNotificationOverlays"];
+}
+
+-(BOOL)fadeNotificationOverlays
+{
+    return fadeNotificationOverlays;
+}
+
+-(void)setFadeNotificationOverlays:(BOOL)aBool
+{
+    fadeNotificationOverlays = aBool;
+    [[NSUserDefaults standardUserDefaults] setBool:!aBool forKey:@"noFadeNotificationOverlays"];
+}
+
+-(float)displayNotificationTime
+{
+    return displayNotificationTime;
+}
+
+-(void)setDisplayNotificationTime:(float)aFloat
+{
+    displayNotificationTime = aFloat;
+    [[NSUserDefaults standardUserDefaults] setFloat:aFloat forKey:@"displayNotificationTime"];
 }
 
 #pragma mark -

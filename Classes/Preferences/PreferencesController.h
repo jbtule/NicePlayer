@@ -10,6 +10,7 @@
     IBOutlet id prefWindow;
     IBOutlet id paneMain;
     IBOutlet id paneActions;
+    IBOutlet id paneOverlays;
     IBOutlet id paneView;
     
     IBOutlet id bundlePriorityTable;
@@ -30,6 +31,11 @@
     
     IBOutlet id showInitialOverlays;
     IBOutlet id fadeOverlays;
+    IBOutlet id fadeOverlayTime;
+
+    IBOutlet id showNotificationOverlays;
+    IBOutlet id fadeNotificationOverlays;
+    IBOutlet id displayNotificationTime;
     
     IBOutlet id movieOpenedPlay;
     IBOutlet id movieOpenedFullScreen;
@@ -56,6 +62,11 @@
 
 -(IBAction)showInitialOverlays:(id)sender;
 -(IBAction)fadeOverlays:(id)sender;
+-(IBAction)fadeOverlayTime:(id)sender;
+
+-(IBAction)showNotificationOverlays:(id)sender;
+-(IBAction)fadeNotificationOverlays:(id)sender;
+-(IBAction)displayNotificationTime:(id)sender;
 
 -(IBAction)movieOpenedPlay:(id)sender;
 -(IBAction)movieOpenedFullScreen:(id)sender;

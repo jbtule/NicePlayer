@@ -10,7 +10,6 @@
 #import "Preferences.h"
 #import "NiceWindow.h"
 
-#define INITIAL_FADE_DURATION	5.0
 #define ALPHA_VALUE_DELTA		0.04
 #define TIMER_INTERVAL			0.01
 
@@ -37,13 +36,13 @@ static id fadeOutInstance = nil;
 -(id)initialFadeForDict:(id)aDictionary
 {
     return [self fadeForDict:aDictionary
-		   inSeconds:INITIAL_FADE_DURATION
+		   inSeconds:[[Preferences mainPrefs] fadeOverlayTime]
 	     actuallyDisplay:[[Preferences mainPrefs] showInitialOverlays]];
 }
 
 -(id)notifierFadeForDict:(id)aDictionary
 {
-    return [self fadeForDict:aDictionary inSeconds:0.25 actuallyDisplay:YES];
+    return [self fadeForDict:aDictionary inSeconds:[[Preferences mainPrefs] displayNotificationTime] actuallyDisplay:YES];
 }
 
 -(id)fadeForDict:(id)aDictionary inSeconds:(float)seconds actuallyDisplay:(BOOL)aBool
