@@ -364,6 +364,7 @@
     [self setShowsResizeIndicator:NO];
     windowOverlayIsShowing = NO;
 }
+
 -(void)showOverLayTitle
 {
     if((titleOverlayIsShowing) && !(isInitialDisplay))
@@ -386,6 +387,7 @@
 {
     NSRect frame = [self frame];
     NSRect visibleFrame = [[NSScreen mainScreen] visibleFrame];
+
     if(!fullScreen){
         if((visibleFrame.origin.y + visibleFrame.size.height)
            > frame.origin.y + frame.size.height)
@@ -496,13 +498,15 @@
  */
 -(void)makeFullScreen
 {
-    fullScreen = YES;
-    oldWindowLevel = [self level];
-    [self setLevel:NSFloatingWindowLevel +2];
-    [[[self windowController] document] closePlaylistDrawer:self];
-    [self makeKeyAndOrderFront:self];
-    beforeFullScreen = [self frame];
-    [self fillScreenSize:self];
+    if(!fullScreen){
+	fullScreen = YES;
+	oldWindowLevel = [self level];
+	[self setLevel:NSFloatingWindowLevel +2];
+	[[[self windowController] document] closePlaylistDrawer:self];
+	[self makeKeyAndOrderFront:self];
+	beforeFullScreen = [self frame];
+	[self fillScreenSize:self];
+    }
     [theMovieView drawMovieFrame];
     if([[Preferences mainPrefs] autoplayOnFullScreen]){
         [theMovieView start];
@@ -512,8 +516,8 @@
 
 -(void)makeNormalScreen
 {
-    [self setLevel:oldWindowLevel];
     if(fullScreen){
+	[self setLevel:oldWindowLevel];
         [self resetFillingFlags];
         [self setFrame:beforeFullScreen display:NO];
         fullScreen = NO;
@@ -830,8 +834,14 @@
                 SetSystemUIMode(kUIModeAllHidden, kUIOptionAutoShowMenuBar);
             dropScreen = YES;
         }
-        [self showOverLayTitle];
+	[self showOverLayTitle];
+	/* If we don't do a remove, the child window gets automatically placed when the parent window moves, even if we try
+	to set the location manually. */
+	if(fullScreen)
+	    [self removeChildWindow:theOverlayTitleBar];
         [self setFrameOrigin:NSMakePoint([self frame].origin.x+[anEvent deltaX],[self frame].origin.y-[anEvent deltaY])];
+	if(fullScreen)
+	    [self addChildWindow:theOverlayTitleBar ordered:NSWindowAbove];
     }
 }
 

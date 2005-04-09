@@ -146,7 +146,7 @@ static NPPluginReader *pluginReader = nil;
 	    [NSBundle pathsForResourcesOfType:@"nicebundle"
 				  inDirectory:
 		[@"~/Library/Application Support/NicePlayer/Plugins" stringByExpandingTildeInPath]]];
-    NSLog(@"%@", pluginPaths);
+
     NSEnumerator *e = [pluginPaths objectEnumerator];
     id anObject;
     

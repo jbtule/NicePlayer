@@ -9,7 +9,7 @@
 #import "OverlayWindow.h"
 
 @implementation OverlayWindow
-- (id)initWithContentRect:(NSRect)contentRect styleMask:(unsigned int)aStyle backing:(NSBackingStoreType)bufferingType defer:(BOOL)flag
+-(id)initWithContentRect:(NSRect)contentRect styleMask:(unsigned int)aStyle backing:(NSBackingStoreType)bufferingType defer:(BOOL)flag
 {
     
     NSWindow *result = [super initWithContentRect:contentRect
@@ -21,17 +21,17 @@
     return result;
 }
 
-- (BOOL)canBecomeMainWindow
+-(BOOL)canBecomeMainWindow
 {
     return NO;
 }
 
-- (BOOL)canBecomeKeyWindow
+-(BOOL)canBecomeKeyWindow
 {
     return NO;
 }
 
-- (void)mouseMoved:(NSEvent *)anEvent
+-(void)mouseMoved:(NSEvent *)anEvent
 {
     NSEvent *newEvent = [NSEvent mouseEventWithType:NSMouseMoved
 					   location:[((NiceWindow *)[self parentWindow]) convertScreenToBase:[NSEvent mouseLocation]]
@@ -44,5 +44,6 @@
 					   pressure:1.0];
     [((NiceWindow *)[self parentWindow]) mouseMoved:newEvent];
 }
+
 
 @end
