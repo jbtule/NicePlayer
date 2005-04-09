@@ -25,11 +25,9 @@
     [overlayResize orderFront:self];
 	[self setHasShadow:NO];
 	[overlayResize setLevel:[self level]];
+
 	holdsResizeTriangle = YES;
 }
-
-
-
 
 -(void)setAlphaValue:(float)windowAlpha
 {
