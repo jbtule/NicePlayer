@@ -19,6 +19,7 @@
     IBOutlet id theOverlayTitleBar;
     IBOutlet id theOverlayVolume;
     IBOutlet id theOverlaySubTitle;
+    IBOutlet id theOverlayNotifier;
     IBOutlet id theVolumeView;
     IBOutlet id theTitleField;
 
@@ -46,11 +47,12 @@
     BOOL theWindowIsFloating;
 	
     id timeUpdaterTimer;
-    id initialFadeObjects;
     int oldWindowLevel;
     int timeDisplayStyle;
     float miniVolume;
     NSRect beforeFullScreen;
+
+    id initialFadeObjects;
     id initialFadeTimer;
 	
     NSSize aspectRatio;
@@ -109,6 +111,7 @@
 -(NSRect)calcResizeSize:(NSSize)aSize;
 -(void)resize:(float)amount animate:(BOOL)animate;
 - (void)setTitle:(NSString *)aString;
+-(void)setNotificationText:(NSString *)aString;
 -(void)initialDefaultSize;
 -(IBAction)halfSize:(id)sender;
 -(IBAction)normalSize:(id)sender;

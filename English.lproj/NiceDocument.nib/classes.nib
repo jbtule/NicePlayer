@@ -72,8 +72,11 @@
             CLASS = NiceWindow; 
             LANGUAGE = ObjC; 
             OUTLETS = {
+                initialFadeObjects = id; 
+                initialFadeTimer = id; 
                 theFFButton = id; 
                 theMovieView = id; 
+                theOverlayNotifier = id; 
                 theOverlaySubTitle = id; 
                 theOverlayTitleBar = id; 
                 theOverlayVolume = id; 
@@ -97,6 +100,12 @@
             CLASS = OverlayControllerWindow; 
             LANGUAGE = ObjC; 
             OUTLETS = {ffButton = NSButton; overlayResize = NSWindow; rrButton = NSButton; }; 
+            SUPERCLASS = OverlayWindow; 
+        }, 
+        {
+            CLASS = OverlayNotifierWindow; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {theNotificationText = id; }; 
             SUPERCLASS = OverlayWindow; 
         }, 
         {CLASS = OverlayWindow; LANGUAGE = ObjC; SUPERCLASS = NSWindow; }, 

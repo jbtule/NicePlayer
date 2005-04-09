@@ -36,22 +36,34 @@ static id fadeOutInstance = nil;
 
 -(id)initialFadeForDict:(id)aDictionary
 {
-	if([[Preferences mainPrefs] showInitialOverlays]){
-		return [NSTimer scheduledTimerWithTimeInterval:INITIAL_FADE_DURATION
-										 target:self
-									   selector:@selector(doInitialFadeForDict:)
-									   userInfo:aDictionary
-										repeats:NO];
-	} else {
-		id anObject, e = [[aDictionary objectForKey:@"Fade"] objectEnumerator];
-		while(anObject = [e nextObject]){
-			[anObject setAlphaValue:0.0];
-		}
-		return nil;
-	}
+    return [self fadeForDict:aDictionary
+		   inSeconds:INITIAL_FADE_DURATION
+	     actuallyDisplay:[[Preferences mainPrefs] showInitialOverlays]];
 }
 
--(void)doInitialFadeForDict:(NSTimer *)aTimer
+-(id)notifierFadeForDict:(id)aDictionary
+{
+    return [self fadeForDict:aDictionary inSeconds:0.25 actuallyDisplay:YES];
+}
+
+-(id)fadeForDict:(id)aDictionary inSeconds:(float)seconds actuallyDisplay:(BOOL)aBool
+{
+    if(aBool){
+	return [NSTimer scheduledTimerWithTimeInterval:seconds
+						target:self
+					      selector:@selector(doFadeForDict:)
+					      userInfo:aDictionary
+					       repeats:NO];
+    } else {
+	id anObject, e = [[aDictionary objectForKey:@"Fade"] objectEnumerator];
+	while(anObject = [e nextObject]){
+	    [anObject setAlphaValue:0.0];
+	}
+	return nil;
+    }
+}
+
+-(void)doFadeForDict:(NSTimer *)aTimer
 {
 	if([[Preferences mainPrefs] fadeOverlays]){
 		[windowSet unionSet:[[aTimer userInfo] objectForKey:@"Fade"]];
@@ -62,7 +74,11 @@ static id fadeOutInstance = nil;
 			[anObject setAlphaValue:0.0];
 		}
 	}
-	[[[aTimer userInfo] objectForKey:@"Window"] initialFadeComplete];
+    
+    NSString *selString = [[aTimer userInfo] objectForKey:@"Selector"];
+    if(selString){
+	[[[aTimer userInfo] objectForKey:@"Window"] performSelector:NSSelectorFromString(selString)];
+    }
 }
 
 -(void)addWindow:(id)anObject

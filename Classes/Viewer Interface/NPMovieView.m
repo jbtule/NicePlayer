@@ -154,7 +154,8 @@
 -(void)start
 {
     wasPlaying = YES;
-	[trueMovieView start];
+    [trueMovieView start];
+    [((NiceWindow *)[self window]) setNotificationText:@"Play"];
     [[((NiceWindow *)[self window]) playButton] changeToProperButton:[trueMovieView isPlaying]];
 }
 

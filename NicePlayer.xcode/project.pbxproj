@@ -928,6 +928,36 @@
 			settings = {
 			};
 		};
+		25B0815A08084354006724D8 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = OverlayNotifierWindow.h;
+			path = "Classes/Overlay Widgets/OverlayNotifierWindow.h";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		25B0815B08084354006724D8 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = OverlayNotifierWindow.m;
+			path = "Classes/Overlay Widgets/OverlayNotifierWindow.m";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		25B0815C08084354006724D8 = {
+			fileRef = 25B0815A08084354006724D8;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		25B0815D08084354006724D8 = {
+			fileRef = 25B0815B08084354006724D8;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
 		25B912D707416725001B68D9 = {
 			children = (
 				253C064B07C0891300172C2F,
@@ -939,6 +969,8 @@
 				3EDA2681065C8E570000CCEE,
 				3E8CC447068A9D850034FCCC,
 				3E8CC448068A9D850034FCCC,
+				25B0815A08084354006724D8,
+				25B0815B08084354006724D8,
 				3EC8C229065DB22A00988449,
 				3EC8C22A065DB22A00988449,
 				2523738E074414690064B556,
@@ -2944,6 +2976,7 @@
 				3EF15F3907C8405700AE56D7,
 				3EF15FD407C8553B00AE56D7,
 				25B07BF208077776006724D8,
+				25B0815C08084354006724D8,
 			);
 			isa = PBXHeadersBuildPhase;
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3075,6 +3108,7 @@
 				3E49DCB207C96EFA009BA150,
 				3E49DCB307C96EFD009BA150,
 				3E49DCB407C96F01009BA150,
+				25B0815D08084354006724D8,
 			);
 			isa = PBXSourcesBuildPhase;
 			runOnlyForDeploymentPostprocessing = 0;

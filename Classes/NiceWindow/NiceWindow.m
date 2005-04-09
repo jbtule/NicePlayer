@@ -8,6 +8,7 @@
 #import "NiceWindow.h"
 #import "FadeOut.h"
 #import "OverlayControllerWindow.h"
+#import "OverlayNotifierWindow.h"
 #import "NPApplication.h"
 
 @implementation NiceWindow
@@ -246,26 +247,32 @@
              inFrame:NSMakeRect(currentFrame.origin.x,
                                 currentFrame.origin.y,
                                 currentFrame.size.width,
-                                32)
+                                [theOverlayWindow frame].size.height)
       withVisibility:YES];
     [theOverlayWindow createResizeTriangle];
     [self putOverlay:theOverlayTitleBar
              inFrame:NSMakeRect(currentFrame.origin.x,
-                                currentFrame.origin.y + currentFrame.size.height-24,
+                                currentFrame.origin.y + currentFrame.size.height-[theOverlayTitleBar frame].size.height,
                                 currentFrame.size.width,
-                                24)
+                                [theOverlayTitleBar frame].size.height)
       withVisibility:YES];
     [self putOverlay:theOverlayVolume
              inFrame:NSOffsetRect([theOverlayVolume frame],
                                   NSMidX(currentFrame) - NSMidX([theOverlayVolume frame]),
                                   NSMidY(currentFrame) - NSMidY([theOverlayVolume frame]))
       withVisibility:NO];
-    
+    [self putOverlay:theOverlayNotifier
+             inFrame:NSMakeRect(currentFrame.origin.x,
+                                currentFrame.origin.y + currentFrame.size.height
+				- [theOverlayTitleBar frame].size.height - [theOverlayNotifier frame].size.height,
+                                currentFrame.size.width,
+                                [theOverlayNotifier frame].size.height)
+      withVisibility:NO];
     initialFadeObjects = [[NSMutableSet setWithObjects:theOverlayWindow, theOverlayTitleBar, nil] retain];
     NSDictionary *fadeDict = [NSDictionary dictionaryWithObjects:
-        [NSArray arrayWithObjects:self,	initialFadeObjects,	nil]
+        [NSArray arrayWithObjects:self,	initialFadeObjects, @"initialFadeComplete",	nil]
                                                          forKeys:
-        [NSArray arrayWithObjects:@"Window", @"Fade", nil]];
+        [NSArray arrayWithObjects:@"Window", @"Fade", @"Selector", nil]];
     initialFadeTimer = [[FadeOut fadeOut] initialFadeForDict:fadeDict];
 }
 
@@ -652,6 +659,18 @@
 {
     [theTitleField setStringValue:aString];
     [super setTitle:aString];
+}
+
+-(void)setNotificationText:(NSString *)aString
+{
+    [theOverlayNotifier setText:aString];
+    [theOverlayNotifier setAlphaValue:1.0];
+    id notifierFade = [NSMutableSet setWithObjects:theOverlayNotifier, nil];
+    NSDictionary *fadeDict = [NSDictionary dictionaryWithObjects:
+        [NSArray arrayWithObjects:self,	notifierFade,	nil]
+                                                         forKeys:
+	[NSArray arrayWithObjects:@"Window", @"Fade", nil]];
+    [[FadeOut fadeOut] notifierFadeForDict:fadeDict];
 }
 
 -(IBAction)halfSize:(id)sender

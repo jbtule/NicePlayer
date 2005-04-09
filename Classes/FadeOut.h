@@ -17,7 +17,9 @@
 +(id)fadeOut;
 -(id)init;
 -(id)initialFadeForDict:(id)anArray;
--(void)doInitialFadeForDict:(id)aTimer;
+-(id)notifierFadeForDict:(id)aDictionary;
+-(id)fadeForDict:(id)aDictionary inSeconds:(float)seconds actuallyDisplay:(BOOL)aBool;
+-(void)doFadeForDict:(id)aTimer;
 -(void)addWindow:(id)anObject;
 -(void)removeWindow:(id)anObject;
 -(void)destroyAndCreateTimer;
