@@ -482,25 +482,39 @@
 
 -(void)scrollWheel:(NSEvent *)anEvent
 {
-	if([anEvent modifierFlags] & NSAlternateKeyMask){
-		SEL volAdj;
-		float i, max;
-		
-		[self showOverLayVolume];
-		
-		if([anEvent deltaY] > 0.0)
-			volAdj = @selector(incrementVolume);
-		else
-			volAdj = @selector(decrementVolume);
-		
-		max = abs([anEvent deltaY]);
-		for(i = 0.0; i < max; i += 3.0)
-			[self performSelector:volAdj];
-		
-		return;
-	}
-	
+    if([[Preferences mainPrefs] scrollWheelMoviePref] == SCROLL_WHEEL_ADJUSTS_VOLUME){
+	if([anEvent modifierFlags] & NSAlternateKeyMask)
+	    [self scrollWheelResize:anEvent];
+	else
+	    [self scrollWheelAdjustVolume:anEvent];
+    } else { // SCROLL_WHEEL_ADJUSTS_SIZE
+	if([anEvent modifierFlags] & NSAlternateKeyMask)
+	    [self scrollWheelAdjustVolume:anEvent];	
+	else
+	    [self scrollWheelResize:anEvent];
+    }
+}
+
+-(void)scrollWheelResize:(NSEvent *)anEvent
+{
     [((NiceWindow *)[self window]) resize:[anEvent deltaY]*5 animate:NO];
+}
+
+-(void)scrollWheelAdjustVolume:(NSEvent *)anEvent
+{
+    SEL volAdj;
+    float i, max;
+    
+    [self showOverLayVolume];
+    
+    if([anEvent deltaY] > 0.0)
+	volAdj = @selector(incrementVolume);
+    else
+	volAdj = @selector(decrementVolume);
+    
+    max = abs([anEvent deltaY]);
+    for(i = 0.0; i < max; i += 3.0)
+	[self performSelector:volAdj];
 }
 
 #pragma mark -

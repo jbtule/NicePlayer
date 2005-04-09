@@ -40,15 +40,13 @@
 		 allowingResize:YES];
 	
 	[doubleClickMoviePref selectItemAtIndex:[[Preferences mainPrefs] doubleClickMoviePref]];
-	[rightClickMoviePref selectItemAtIndex:[[Preferences mainPrefs] rightClickMoviePref]];	
+	[rightClickMoviePref selectItemAtIndex:[[Preferences mainPrefs] rightClickMoviePref]];
+	[scrollWheelMoviePref selectItemAtIndex:[[Preferences mainPrefs] scrollWheelMoviePref]];
 	[scrollResizePin selectItemAtIndex:[[Preferences mainPrefs] scrollResizePin]];
 	[defaultTimeDisplay selectItemAtIndex:[[Preferences mainPrefs] defaultTimeDisplay]];
 	[defaultRepeatMode selectItemAtIndex:[[Preferences mainPrefs] defaultRepeatMode]];
 	[defaultOpenMode selectItemAtIndex:[[Preferences mainPrefs] defaultOpenMode]];
 
-        
-        
-        
         id aDate = [NSDate dateWithTimeIntervalSinceReferenceDate:
             ([[Preferences mainPrefs] rrSpeed]- [[NSTimeZone localTimeZone] secondsFromGMTForDate:
                 [NSDate dateWithTimeIntervalSinceReferenceDate:0]])];
@@ -84,6 +82,11 @@
 -(IBAction)rightClickMoviePref:(id)sender
 {
 	[[Preferences mainPrefs] setRightClickMoviePref:[sender indexOfSelectedItem]];
+}
+
+-(IBAction)scrollWheelMoviePref:(id)sender
+{
+    [[Preferences mainPrefs] scrollWheelMoviePref:[sender indexOfSelectedItem]];
 }
 
 -(IBAction)scrollResizePin:(id)sender

@@ -35,6 +35,8 @@
 	if(self = [super init]){
 		doubleClickMoviePref = [[NSUserDefaults standardUserDefaults] integerForKey:@"doubleClickMoviePref"];
 		rightClickMoviePref = [[NSUserDefaults standardUserDefaults] integerForKey:@"rightClickMoviePref"];
+		scrollWheelMoviePref = [[NSUserDefaults standardUserDefaults] integerForKey:@"scrollWheelMoviePref"];
+
 		scrollResizePin = [[NSUserDefaults standardUserDefaults] integerForKey:@"scrollResizePin"];
 		defaultTimeDisplay = [[NSUserDefaults standardUserDefaults] integerForKey:@"defaultTimeDisplay"];
 		defaultRepeatMode = [[NSUserDefaults standardUserDefaults] integerForKey:@"defaultRepeatMode"];
@@ -83,6 +85,17 @@
 {
 	rightClickMoviePref = anInt;
 	[[NSUserDefaults standardUserDefaults] setInteger:anInt forKey:@"rightClickMoviePref"];
+}
+
+-(enum scrollWheelMoviePrefValues)scrollWheelMoviePref
+{
+    return scrollWheelMoviePref;
+}
+
+-(void)scrollWheelMoviePref:(enum scrollWheelMoviePrefValues)anInt
+{
+    scrollWheelMoviePref = anInt;
+    [[NSUserDefaults standardUserDefaults] setInteger:anInt forKey:@"scrollWheelMoviePref"];
 }
 
 -(enum scrollResizePinValues)scrollResizePin

@@ -16,6 +16,7 @@
     
     IBOutlet id doubleClickMoviePref;
     IBOutlet id rightClickMoviePref;
+    IBOutlet id scrollWheelMoviePref;
     IBOutlet id scrollResizePin;
     IBOutlet id defaultTimeDisplay;
     IBOutlet id defaultRepeatMode;
@@ -41,6 +42,7 @@
 
 -(IBAction)doubleClickMoviePref:(id)sender;
 -(IBAction)rightClickMoviePref:(id)sender;
+-(IBAction)scrollWheelMoviePref:(id)sender;
 -(IBAction)scrollResizePin:(id)sender;
 -(IBAction)defaultTimeDisplay:(id)sender;
 -(IBAction)defaultRepeatMode:(id)sender;

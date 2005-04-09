@@ -8,6 +8,7 @@
 
 enum doubleClickMoviePrefValues { MAKE_WINDOW_FULL_SCREEN, PLAY_PAUSE_MOVIE };
 enum rightClickMoviePrefValues { RIGHT_CLICK_DISPLAY_CONTEXT_MENU, RIGHT_CLICK_PLAY_PAUSE_MOVIE };
+enum scrollWheelMoviePrefValues { SCROLL_WHEEL_ADJUSTS_SIZE, SCROLL_WHEEL_ADJUSTS_VOLUME };
 enum scrollResizePinValues { PIN_LEFT_TOP, PIN_CENTER };
 enum defaultTimeDisplayValues { ELAPSED_TIME, TIME_REMAINING };
 enum defaultRepeatModeValues { REPEAT_NONE, REPEAT_LIST, REPEAT_ONE };
@@ -16,6 +17,7 @@ enum defaultOpenModeValues { OPEN_PLAYLIST, OPEN_WINDOWS };
 @interface Preferences : NSObject {
 	enum doubleClickMoviePrefValues doubleClickMoviePref;
 	enum rightClickMoviePrefValues rightClickMoviePref;
+	enum scrollWheelMoviePrefValues scrollWheelMoviePref;
 	enum scrollResizePinValues scrollResizePin;
 	enum defaultTimeDisplayValues defaultTimeDisplay;
 	enum defaultRepeatModeValues defaultRepeatMode;
@@ -46,6 +48,9 @@ enum defaultOpenModeValues { OPEN_PLAYLIST, OPEN_WINDOWS };
 -(void)setDoubleClickMoviePref:(enum doubleClickMoviePrefValues)anInt;
 -(enum rightClickMoviePrefValues)rightClickMoviePref;
 -(void)setRightClickMoviePref:(enum rightClickMoviePrefValues)anInt;
+-(enum scrollWheelMoviePrefValues)scrollWheelMoviePref;
+-(void)setScrollWheelMoviePref:(enum scrollWheelMoviePrefValues)anInt;
+
 -(enum scrollResizePinValues)scrollResizePin;
 -(void)setScrollResizePin:(enum scrollResizePinValues)anInt;
 -(enum defaultTimeDisplayValues)defaultTimeDisplay;

@@ -29,6 +29,7 @@
                 rightClickMoviePref = id; 
                 rrSpeed = id; 
                 scrollResizePin = id; 
+                scrollWheelMoviePref = id; 
                 showInitialOverlays = id; 
                 windowAlwaysOnTop = id; 
                 windowLeaveFullScreen = id; 
@@ -45,7 +46,6 @@
                 doubleClickMoviePref = id; 
                 fadeOverlays = id; 
                 ffSpeedSlider = id; 
-                ffSpeedText = id; 
                 movieOpenedFullScreen = id; 
                 movieOpenedPlay = id; 
                 paneActions = id; 
@@ -54,8 +54,8 @@
                 prefWindow = id; 
                 rightClickMoviePref = id; 
                 rrSpeedSlider = id; 
-                rrSpeedText = id; 
                 scrollResizePin = id; 
+                scrollWheelMoviePref = id; 
                 showInitialOverlays = id; 
                 windowAlwaysOnTop = id; 
                 windowLeaveFullScreen = id; 
