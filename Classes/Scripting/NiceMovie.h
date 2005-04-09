@@ -14,11 +14,9 @@
     id theParentPlaylist;
 }
 
-+(id)movieWithURL:(NSURL*)aURL;
-+(id)movieWithFile:(NSString*)aPath;
--(id)initWithURL:(NSURL*)aURL;
-
--(NSURL*)path;
++(id)movieWithURL:(NSURL*)aURL andPlaylist:(id)aPlaylist;
+-(id)initWithURL:(NSURL*)aURL andPlaylist:(id)aPlaylist;
+-(NSURL*)URL;
 
 -(NSString*)name;
 

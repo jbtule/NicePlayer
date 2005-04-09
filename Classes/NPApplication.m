@@ -139,7 +139,8 @@
     return [[super orderedWindows] selectUsingFunction:selectNiceWindow context:nil];
 }
 
--(id)bestMovieWindow{
+-(id)bestMovieWindow
+{
     id tempWindow = [NSApp mainWindow];
     if(tempWindow == nil)  {
         tempWindow = [[NSApp movieWindows] firstObject];

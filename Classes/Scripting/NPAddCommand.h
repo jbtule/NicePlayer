@@ -8,9 +8,13 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class NiceDocument;
 
 @interface NPAddCommand : NSScriptCommand {
 
 }
+
+-(NSURL*)getURLFromObject:(id)anObject;
+-(void)addURL:(NSURL*)aURL toPlaylist:(NiceDocument *)aPlaylist atIndex:(NSNumber*)anIndex;
 
 @end

@@ -92,7 +92,7 @@
     return scrollWheelMoviePref;
 }
 
--(void)scrollWheelMoviePref:(enum scrollWheelMoviePrefValues)anInt
+-(void)setScrollWheelMoviePref:(enum scrollWheelMoviePrefValues)anInt
 {
     scrollWheelMoviePref = anInt;
     [[NSUserDefaults standardUserDefaults] setInteger:anInt forKey:@"scrollWheelMoviePref"];

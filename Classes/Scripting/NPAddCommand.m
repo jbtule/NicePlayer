@@ -34,20 +34,22 @@
 }
 
 
--(id)performDefaultImplementation{
+-(id)performDefaultImplementation
+{
 
     id tDArg = [self evaluatedDirectParameters];
     NSDictionary *tEArgs = [self evaluatedArguments];
     id tPlaylist = [tEArgs objectForKey:@"to"];
     id tIndex = [tEArgs objectForKey:@"atIndex"];
-    int i;
+    unsigned i;
     for(i=0;i<[tDArg count];i++){
         [self addURL:[self getURLFromObject:[tDArg objectAtIndex:i]] toPlaylist:tPlaylist atIndex:tIndex];
     }
     return nil;
 }
 
--(void)addURL:(NSURL*)aURL toPlaylist:(NiceDocument*)aPlaylist atIndex:(NSNumber*)anIndex{
+-(void)addURL:(NSURL*)aURL toPlaylist:(NiceDocument*)aPlaylist atIndex:(NSNumber*)anIndex
+{
     if(anIndex != nil){
         [aPlaylist addURLToPlaylist:aURL atIndex:[anIndex intValue]];
     }else{

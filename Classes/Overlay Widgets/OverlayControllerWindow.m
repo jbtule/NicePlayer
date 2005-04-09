@@ -20,13 +20,13 @@
 
 -(void)createResizeTriangle
 {
-	[overlayResize setFrame:[[self parentWindow] frame] display:NO];
+    [overlayResize setFrame:[[self parentWindow] frame] display:NO];
     [self addChildWindow:overlayResize ordered:NSWindowAbove];    
     [overlayResize orderFront:self];
-	[self setHasShadow:NO];
-	[overlayResize setLevel:[self level]];
-
-	holdsResizeTriangle = YES;
+    [self setHasShadow:NO];
+    [overlayResize setLevel:[self level]];
+    
+    holdsResizeTriangle = YES;
 }
 
 -(void)setAlphaValue:(float)windowAlpha
@@ -43,9 +43,12 @@
 
 -(void)setFrame:(NSRect)frameRect display:(BOOL)flag
 {
-	[super setFrame:frameRect display:flag];
-	if(holdsResizeTriangle)
-		[overlayResize setFrame:[[self parentWindow] frame] display:flag];
+    [super setFrame:frameRect display:flag];
+    if(holdsResizeTriangle){
+	NSRect movieRect = [[[self parentWindow] contentView] frame];
+	movieRect.origin = [[self parentWindow] convertBaseToScreen:movieRect.origin];
+	[overlayResize setFrame:movieRect display:flag];
+    }
 }
 
 - (void)setLevel:(int)newLevel

@@ -86,7 +86,7 @@
 
 -(IBAction)scrollWheelMoviePref:(id)sender
 {
-    [[Preferences mainPrefs] scrollWheelMoviePref:[sender indexOfSelectedItem]];
+    [[Preferences mainPrefs] setScrollWheelMoviePref:[sender indexOfSelectedItem]];
 }
 
 -(IBAction)scrollResizePin:(id)sender

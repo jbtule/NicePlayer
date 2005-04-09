@@ -33,16 +33,16 @@
 
 - (void)mouseMoved:(NSEvent *)anEvent
 {
-	NSEvent *newEvent = [NSEvent mouseEventWithType:NSMouseMoved
-										   location:[((NiceWindow *)[self parentWindow]) convertScreenToBase:[NSEvent mouseLocation]]
-									  modifierFlags:0
-										  timestamp:0
-									   windowNumber:0
-											context:nil
-										eventNumber:0
-										 clickCount:0
-										   pressure:1.0];
-	[((NiceWindow *)[self parentWindow]) mouseMoved:newEvent];
+    NSEvent *newEvent = [NSEvent mouseEventWithType:NSMouseMoved
+					   location:[((NiceWindow *)[self parentWindow]) convertScreenToBase:[NSEvent mouseLocation]]
+				      modifierFlags:0
+					  timestamp:0
+				       windowNumber:0
+					    context:nil
+					eventNumber:0
+					 clickCount:0
+					   pressure:1.0];
+    [((NiceWindow *)[self parentWindow]) mouseMoved:newEvent];
 }
 
 @end

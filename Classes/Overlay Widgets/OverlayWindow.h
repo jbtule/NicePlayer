@@ -11,6 +11,4 @@
     
 }
 
--(void)setResizeOrigin:(NSPoint)aPoint;
-
 @end

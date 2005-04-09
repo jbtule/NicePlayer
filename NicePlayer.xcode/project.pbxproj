@@ -914,6 +914,20 @@
 			isa = PBXCopyFilesBuildPhase;
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		25B07BF108077776006724D8 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = NiceDocumentScripting.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		25B07BF208077776006724D8 = {
+			fileRef = 25B07BF108077776006724D8;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
 		25B912D707416725001B68D9 = {
 			children = (
 				253C064B07C0891300172C2F,
@@ -985,6 +999,7 @@
 				3EF158C807C7F9CA00AE56D7,
 				253C014E07C00DF200172C2F,
 				25D2ED0B07BF6066004BEF7D,
+				25B07BF108077776006724D8,
 				25D2E7C207BF3758004BEF7D,
 				25D2E84007BF3B44004BEF7D,
 				2513D30507BDACA700BB6055,
@@ -2928,6 +2943,7 @@
 				3EF158CB07C7F9CA00AE56D7,
 				3EF15F3907C8405700AE56D7,
 				3EF15FD407C8553B00AE56D7,
+				25B07BF208077776006724D8,
 			);
 			isa = PBXHeadersBuildPhase;
 			runOnlyForDeploymentPostprocessing = 0;

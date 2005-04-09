@@ -7,50 +7,61 @@
 //
 
 #import "NiceMovie.h"
+#import "NiceDocumentScripting.h"
 
 @implementation NiceMovie
 
-+(id)movieWithURL:(NSURL*)aURL andPlaylist:(id)aPlaylist{
++(id)movieWithURL:(NSURL*)aURL andPlaylist:(id)aPlaylist
+{
     return [[[self alloc]initWithURL:aURL andPlaylist:aPlaylist]autorelease];
 }
 
--(id)initWithURL:(NSURL*)aURL andPlaylist:(id)aPlaylist{
+-(id)initWithURL:(NSURL*)aURL andPlaylist:(id)aPlaylist
+{
     if (self = [super init]){
         theURL = [aURL retain];
         theParentPlaylist =aPlaylist;
     }return self;
 }
 
--(NSURL*)URL{
+-(NSURL*)URL
+{
     return theURL;
 }
 
--(NSString*)applescriptPath{
+-(NSString*)applescriptPath
+{
     return [(NSString *)CFURLCopyFileSystemPath((CFURLRef)theURL,kCFURLHFSPathStyle) autorelease];
 
 }
 
--(id)playlist{
+-(id)playlist
+{
     return theParentPlaylist;
 }
 
--(id)window{
+-(id)window
+{
     return [[self playlist] window];
 }
 
--(int)index{
-    return [[self playlist]  indexForMovie:self];
+-(int)index
+{
+    return [[self playlist] indexForMovie:self];
 }
 
--(NSString*)description{
+-(NSString*)description
+{
     return [self name];
 }
 
--(BOOL)isEqual:(id)aMovie{
+-(BOOL)isEqual:(id)aMovie
+{
     return [[self URL] isEqual:[aMovie URL]] && [[self playlist] isEqual:[aMovie playlist]];
 }
 
--(void)handlePlayCommand:(id)sender{
+-(void)handlePlayCommand:(id)sender
+{
     if([self playlist]  != nil){
         if(![[[self playlist] currentMovie] isEqualTo:self])
             [[self playlist]  playAtIndex:([self index] - 1) obeyingPreviousState:NO];
@@ -58,7 +69,8 @@
     }
 }
 
--(void)handlePauseCommand:(id)sender{
+-(void)handlePauseCommand:(id)sender
+{
     if([self playlist]  != nil){
         if(![[[self playlist] currentMovie] isEqualTo:self])
             [[self playlist]  playAtIndex:([self index] - 1) obeyingPreviousState:NO];
@@ -67,7 +79,8 @@
 }
 
 
--(NSString*)name{
+-(NSString*)name
+{
     return [[theURL path] lastPathComponent];
 }
 

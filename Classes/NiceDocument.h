@@ -60,8 +60,11 @@
 -(void)refreshRepeatModeGUI;
 -(void)play:(id)sender;
 -(void)playNext:(id)sender;
+-(void)pause:(id)sender;
+-(unsigned)getNextIndex;
 -(void)playNext;
 -(void)playPrev;
+-(unsigned)getPrevIndex;
 
 #pragma mark -
 #pragma mark Playlist

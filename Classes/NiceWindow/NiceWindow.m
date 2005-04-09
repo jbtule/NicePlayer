@@ -8,6 +8,7 @@
 #import "NiceWindow.h"
 #import "FadeOut.h"
 #import "OverlayControllerWindow.h"
+#import "NPApplication.h"
 
 @implementation NiceWindow
 
@@ -280,6 +281,8 @@
 
 -(void)hideOverlays
 {
+    if(windowOverlayIsShowing == NO)
+	return;
     [self hideOverLayWindow];
     [self hideOverLayTitle];
 }
@@ -461,6 +464,14 @@
 -(BOOL)windowIsFixedAspect
 {
     return fixedAspectRatio;
+}
+
+-(void)setWindowIsFloating:(BOOL)aBool
+{
+    if(aBool)
+	[self floatWindow];
+    else
+	[self unfloatWindow];
 }
 
 -(void)toggleFixedAspectRatio

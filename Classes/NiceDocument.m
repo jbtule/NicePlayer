@@ -302,7 +302,8 @@ stuff won't work properly! */
 
 #pragma mark Interface
 
--(IBAction)toggleRandomMode:(id)sender{
+-(IBAction)toggleRandomMode:(id)sender
+{
     if(isRandom)
         isRandom = NO;
     else
@@ -354,7 +355,8 @@ stuff won't work properly! */
 
 
 
--(int)getNextIndex{
+-(unsigned)getNextIndex
+{
     int anIndex = [thePlaylist indexOfObject:theCurrentURL];
     
     if([thePlaylist isEmpty])
@@ -393,7 +395,8 @@ stuff won't work properly! */
 * Chooses the proper playlist item and calls playAtIndex:
  */
 
--(int)getPrevIndex{
+-(unsigned)getPrevIndex
+{
     int anIndex = [thePlaylist indexOfObject:theCurrentURL];
     
     if(anIndex ==0){

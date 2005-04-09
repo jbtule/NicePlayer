@@ -15,7 +15,7 @@
 {
     NSMutableArray* tArray =[NSMutableArray array];
     id tPlaylist =[self orderedDocuments];
-    int i;
+    unsigned i;
     for(i=0;i<[tPlaylist count];i++){
         [tArray addObjectsFromArray:[[tPlaylist objectAtIndex:i] niceMovies]];
     }

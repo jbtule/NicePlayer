@@ -6,6 +6,7 @@
  */
 
 #import "OverlaysControl.h"
+#import "NiceWindow.h"
 
 static id overlayControl = nil;
 
@@ -39,7 +40,7 @@ static id overlayControl = nil;
 	return NSMouseInRect(aScreenPoint, [aWindow frame], NO);
 }
 
--(BOOL)inControlRegion:(NSPoint)aScreenPoint forWindow:(id)aWindow
+-(BOOL)inControlRegion:(NSPoint)aScreenPoint forWindow:(NiceWindow *)aWindow
 {
     if([aWindow isFullScreen]){
 		NSRect mainScreenFrame = [[NSScreen mainScreen] frame];
@@ -85,30 +86,51 @@ static id overlayControl = nil;
 	return NSMouseInRect([aWindow convertScreenToBase:aScreenPoint], tempRect, NO);
 }
 
+-(BOOL)inResizeRegion:(NSPoint)aScreenPoint forWindow:(id)aWindow
+{
+    NSRect movieRect = [[[aWindow parentWindow] contentView] frame];
+    movieRect.origin = [[aWindow parentWindow] convertBaseToScreen:movieRect.origin];
+    NSLog(@"%@, %@ in R: %d", NSStringFromPoint(aScreenPoint), NSStringFromRect(movieRect), NSMouseInRect(aScreenPoint, movieRect, NO));
+    return NSMouseInRect(aScreenPoint, movieRect, NO);
+}
+
 -(void)mouseMovedInScreenPoint:(NSPoint)aScreenPoint
 {
-	id someWindows = [NSApp orderedWindows];
-	id aWindow;
-	unsigned i;
-	BOOL hitTopMost = NO;
-
-	for(i = 0, aWindow = [someWindows objectAtIndex:i];
-		i < [someWindows count]; aWindow = [someWindows objectAtIndex:i++]){
-		if([aWindow isKindOfClass:[NiceWindow class]]){
-			if((hitTopMost == NO) && [self inControlRegion:aScreenPoint forWindow:aWindow]){
-				[aWindow showOverLayWindow];
-				hitTopMost = YES;
-			} else if((hitTopMost == NO) && [self inTitleRegion:aScreenPoint forWindow:aWindow]){
-				[aWindow showOverLayTitle];
-				hitTopMost = YES;
-			} else {
-				if([self isLocation:aScreenPoint inWindow:aWindow]){
-					hitTopMost = YES;
-				}
-				[aWindow hideOverlays];
-			}
+    id someWindows = [NSApp orderedWindows];
+    id aWindow;
+    unsigned i;
+    BOOL hitTopMost = NO;
+    
+    for(i = 0, aWindow = [someWindows objectAtIndex:i];
+	i < [someWindows count]; aWindow = [someWindows objectAtIndex:i++]){
+	
+	if([aWindow isKindOfClass:[NiceWindow class]]){
+	    if(!hitTopMost){
+		if([self showOverlayForWindow:aWindow atPoint:aScreenPoint]){
+		    hitTopMost = YES;
+		    continue;
+		} else if([self isLocation:aScreenPoint inWindow:aWindow]){
+		    hitTopMost = YES;
 		}
+	    }
+	    [aWindow hideOverlays];
 	}
+    }
+}
+
+-(BOOL)showOverlayForWindow:(NiceWindow *)aWindow atPoint:(NSPoint)aScreenPoint
+{
+    if([self inControlRegion:aScreenPoint forWindow:aWindow]){
+	[aWindow showOverLayWindow];
+	return YES;
+    } else if([self inTitleRegion:aScreenPoint forWindow:aWindow]){
+	[aWindow showOverLayTitle];
+	return YES;
+    } else if([self inResizeRegion:aScreenPoint forWindow:aWindow]){
+	[aWindow showOverLayWindow];
+	return YES;
+    }
+    return NO;
 }
 
 

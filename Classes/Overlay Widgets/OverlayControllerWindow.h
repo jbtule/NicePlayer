@@ -16,6 +16,7 @@
 	BOOL holdsResizeTriangle;
 }
 
+-(void)setResizeOrigin:(NSPoint)aPoint;
 -(void)createResizeTriangle;
 
 @end

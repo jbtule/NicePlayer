@@ -205,7 +205,7 @@
 
 -(void)rrDo
 {
-	[self rrDo:[[Preferences mainPrefs] rrSpeed]];
+    [self rrDo:[[Preferences mainPrefs] rrSpeed]];
 }
 
 -(void)rrDo:(int)aSeconds{
@@ -591,7 +591,8 @@
 	return [trueMovieView currentMovieTime];
 }
 
--(double)currentMovieFrameRate{
+-(double)currentMovieFrameRate
+{
     return [trueMovieView currentMovieFrameRate];
 }
 

@@ -8,6 +8,7 @@
 #import "NiceController.h"
 #import "Viewer Interface/NPPluginReader.h"
 #import "../Other Sources/NiceUtilities.h"
+#import "NPApplication.h"
 
 id controller;
 

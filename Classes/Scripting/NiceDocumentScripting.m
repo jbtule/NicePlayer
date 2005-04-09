@@ -8,26 +8,32 @@
 
 #import "NiceDocument.h"
 #import "NiceMovie.h"
+#import "NiceDocumentScripting.h"
 
 @implementation NiceDocument (NiceDocumentScripting)
 
--(double)currentMovieDuration{
+-(double)currentMovieDuration
+{
     return [theMovieView totalTime];
 }
 
--(double)currentMovieFrameRate{
+-(double)currentMovieFrameRate
+{
     return [theMovieView currentMovieFrameRate];
 }
 
--(double)currentMovieTime{
+-(double)currentMovieTime
+{
     return [theMovieView currentMovieTime];
 
 }
--(void)setCurrentMovieTime:(double)aTime{
+-(void)setCurrentMovieTime:(double)aTime
+{
     [theMovieView setCurrentMovieTime:aTime];
 }
 
--(NSArray *)niceMovies{
+-(NSArray *)niceMovies
+{
     id collectMovies(id each, void* context){
         return [NiceMovie movieWithURL:each andPlaylist:self];
     }
@@ -36,7 +42,7 @@
     
 }
 
--(NiceMovie*)currentMovie;
+-(NiceMovie*)currentMovie
 {
     if(theCurrentURL !=nil){
         return [NiceMovie movieWithURL:theCurrentURL andPlaylist:self];
@@ -45,9 +51,9 @@
     }
 }
 
--(NiceMovie*)prevMovie;
+-(NiceMovie*)prevMovie
 {
-    int anIndex =  [self getPrevIndex];
+    unsigned anIndex =  [self getPrevIndex];
     
     if((anIndex >= 0) && (anIndex < [thePlaylist count])){
         return [NiceMovie movieWithURL:[thePlaylist objectAtIndex:anIndex] andPlaylist:self];
@@ -56,9 +62,9 @@
     }
 }
 
--(NiceMovie*)nextMovie;
+-(NiceMovie*)nextMovie
 {
-    int anIndex =  [self getNextIndex];
+    unsigned anIndex =  [self getNextIndex];
     if(anIndex >= [thePlaylist count] && REPEAT_LIST == theRepeatMode)
         anIndex = 0;
     
@@ -69,7 +75,8 @@
     }
 }
 
--(int)indexForMovie:(NiceMovie*)aMovie{
+-(int)indexForMovie:(NiceMovie*)aMovie
+{
     
     return [thePlaylist indexOfObject:[aMovie URL]] + 1;
     
@@ -122,7 +129,8 @@
                                                   repeats:YES];
 }
 
--(void)handleSkipForwardCommand:(id)sender{
+-(void)handleSkipForwardCommand:(id)sender
+{
     NSDictionary *tEArgs = [sender evaluatedArguments];
     NSNumber *amount =[tEArgs objectForKey:@"by"];
     if(amount ==nil){
@@ -132,7 +140,8 @@
     }
 }
 
--(void)handleSkipBackwardCommand:(id)sender{
+-(void)handleSkipBackwardCommand:(id)sender
+{
     NSDictionary *tEArgs = [sender evaluatedArguments];
     NSNumber *amount =[tEArgs objectForKey:@"by"];
     if(amount ==nil){
@@ -218,6 +227,5 @@
 {
     [theMovieView setMuted:aBool];
 }
-
 
 @end

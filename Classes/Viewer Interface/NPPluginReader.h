@@ -18,6 +18,7 @@
 -(id)allowedExtensions;
 
 -(id)integratePrefs:(NSArray *)anArray;
+-(void)generatePluginOrder;
 -(id)cachedPluginOrder;
 -(void)generatePluggables;
 -(id)builtinPlayerClasses;

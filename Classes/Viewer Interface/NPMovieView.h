@@ -32,9 +32,11 @@
 -(void)stop;
 -(void)ffStart;
 -(void)ffDo;
+-(void)ffDo:(int)aSeconds;
 -(void)ffEnd;
 -(void)rrStart;
 -(void)rrDo;
+-(void)rrDo:(int)aSeconds;
 -(void)rrEnd;
 
 -(void)toggleMute;
@@ -59,6 +61,9 @@
 -(id)contextualMenu;
 -(void)rebuildMenu;
 
+-(void)scrollWheelResize:(NSEvent *)anEvent;
+-(void)scrollWheelAdjustVolume:(NSEvent *)anEvent;
+
 #pragma mark -
 #pragma mark Calculations
 
@@ -68,6 +73,8 @@
 -(BOOL)muted;
 -(void)setMuted:(BOOL)aBool;
 -(double)currentMovieTime;
+-(double)currentMovieFrameRate;
+-(void)setCurrentMovieTime:(double)aDouble;
 -(double)totalTime;
 -(void)drawMovieFrame;
 -(void)setLoopMode:(NSQTMovieLoopMode)flag;

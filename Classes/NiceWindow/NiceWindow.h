@@ -91,7 +91,7 @@
 -(void)unFullScreen;
 -(BOOL)windowIsFloating;
 -(BOOL)windowIsFixedAspect;
--(void)setWindowIsFloating:(BOOL)aBOOL;
+-(void)setWindowIsFloating:(BOOL)aBool;
 -(void)toggleFixedAspectRatio;
 -(void)toggleWindowFloat;
 
