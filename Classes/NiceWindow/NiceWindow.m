@@ -271,8 +271,8 @@
 
 -(void)putOverlay:(id)anOverlay inFrame:(NSRect)aFrame withVisibility:(BOOL)isVisible
 {
-    [anOverlay setFrame:aFrame display:NO];
     [self addChildWindow:anOverlay ordered:NSWindowAbove];
+    [anOverlay setFrame:aFrame display:NO];
     
     [anOverlay setAlphaValue:(isVisible ? 1.0 : 0.0)];
     [anOverlay setLevel:[self level]];
@@ -281,8 +281,6 @@
 
 -(void)hideOverlays
 {
-    if(windowOverlayIsShowing == NO)
-	return;
     [self hideOverLayWindow];
     [self hideOverLayTitle];
 }
@@ -320,8 +318,8 @@
     if(isInitialDisplay)
         [initialFadeObjects removeObject:theOverlayWindow];
     
-    [self setOverlayWindowLocation];
     [self updateByTime:self];
+    [self setOverlayWindowLocation];
     [[FadeOut fadeOut] removeWindow:theOverlayWindow];
     [theOverlayWindow setAlphaValue:1.0];
     windowOverlayIsShowing = YES;
@@ -342,7 +340,7 @@
                                                   frame.origin.y,
                                                   frame.size.width,
                                                   32) display:YES];
-        }	else{
+        } else {
             [theOverlayWindow setFrame:NSMakeRect(frame.origin.x,
                                                   [[NSScreen mainScreen] visibleFrame].origin.y,
                                                   frame.size.width,
@@ -588,6 +586,11 @@
  */
 -(void)resizeWithSize:(NSSize)aSize animate:(BOOL)animate
 {
+    [self setFrame:[self calcResizeSize:aSize] display:YES animate:animate];
+}
+
+-(NSRect)calcResizeSize:(NSSize)aSize
+{
     float newHeight = aSize.height;
     float newWidth = aSize.width;
     
@@ -598,16 +601,18 @@
     
     switch([[Preferences mainPrefs] scrollResizePin]){
         case PIN_LEFT_TOP:
-            [self setFrame:NSMakeRect([self frame].origin.x,
-                                      [self frame].origin.y + ([self frame].size.height - newHeight),
-                                      newWidth, newHeight) display:YES animate:animate];
+            return NSMakeRect([self frame].origin.x,
+			      [self frame].origin.y + ([self frame].size.height - newHeight),
+			      newWidth, newHeight);
             break;
         case PIN_CENTER:
-            [self setFrame:NSMakeRect([self frame].origin.x+(([self frame].size.width-newWidth)/2),
-                                      [self frame].origin.y+(([self frame].size.height-newHeight)/2),
-                                      newWidth, newHeight) display:YES animate:animate];
+            return NSMakeRect([self frame].origin.x+(([self frame].size.width-newWidth)/2),
+			      [self frame].origin.y+(([self frame].size.height-newHeight)/2),
+			      newWidth, newHeight);
             break;
     }
+    
+    return NSMakeRect(0, 0, 0, 0);
 }
 
 /**
@@ -629,7 +634,8 @@
     [self resizeWithSize:NSMakeSize(newWidth, newHeight) animate:animate];
 }
 
--(void)_JTRefitFills{
+-(void)_JTRefitFills
+{
     if(isFilling)
         [self fillScreenSize:nil];
     if(isWidthFilling)
@@ -678,7 +684,10 @@
     isFilling=YES;
     
     NSSize aSize = [self getResizeAspectRatioSize];
-    [self resizeWithSize:aSize animate:NO];
+    NSRect newRect = [self calcResizeSize:aSize];
+    newRect.origin.x = 0;
+    newRect = [self centerRect:newRect];
+    [self setFrame:newRect display:YES];
     [self center];
 }
 
@@ -710,12 +719,6 @@
 {
     [super setResizeIncrements:increments];
     fixedAspectRatio = NO;
-}
-
--(void)setFrameOrigin:(NSPoint)aPoint
-{
-    [super setFrameOrigin:aPoint];
-    [theOverlayWindow setResizeOrigin:aPoint];
 }
 
 - (NSSize)aspectRatio
@@ -779,21 +782,19 @@
 /* Center on the CURRENT screen */
 - (void)center
 {
-    [self setFrame:[self centeredLocation]
+    [self setFrame:[self centerRect:[self frame]]
            display:YES];
 }
 
--(NSRect)centeredLocation
+-(NSRect)centerRect:(NSRect)aRect
 {
-    NSRect myRect = [self frame];
     NSRect screenRect;
     if (!fullScreen)
         screenRect = [[self screen] visibleFrame];
     else
         screenRect = [[self screen] frame];
-    
-    return NSOffsetRect([self frame], NSMidX(screenRect)-NSMidX(myRect),
-                        NSMidY(screenRect)-NSMidY(myRect));
+    return NSOffsetRect(aRect, NSMidX(screenRect)-NSMidX(aRect),
+                        NSMidY(screenRect)-NSMidY(aRect));
 }
 
 #pragma mark -

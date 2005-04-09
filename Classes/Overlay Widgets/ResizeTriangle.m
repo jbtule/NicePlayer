@@ -13,26 +13,26 @@
 
 - (id)initWithContentRect:(NSRect)contentRect styleMask:(unsigned int)aStyle backing:(NSBackingStoreType)bufferingType defer:(BOOL)flag
 {
-	if(self = [super initWithContentRect:contentRect
-							   styleMask:NSBorderlessWindowMask
-								 backing:NSBackingStoreBuffered
-								   defer:YES]){
-		[self setBackgroundColor: [NSColor clearColor]];
-		[self setIgnoresMouseEvents:YES];
-		[self setOpaque:NO];
-	}
-	return self;
+    if(self = [super initWithContentRect:contentRect
+			       styleMask:NSBorderlessWindowMask
+				 backing:NSBackingStoreBuffered
+				   defer:YES]){
+	[self setBackgroundColor:[NSColor clearColor]];
+	[self setIgnoresMouseEvents:YES];
+	[self setOpaque:NO];
+    }
+    return self;
 }
 
 -(void)awakeFromNib
 {
-	[self setHasShadow:NO];
+    [self setHasShadow:NO];
 }
 
 -(void)setFrame:(NSRect)frameRect display:(BOOL)flag
 {
-	NSRect newRect = NSMakeRect(frameRect.origin.x + frameRect.size.width-14, frameRect.origin.y, 14, 14);
-	[super setFrame:newRect display:flag];
+    NSRect newRect = NSMakeRect(frameRect.origin.x + frameRect.size.width-14, frameRect.origin.y, 14, 14);
+    [super setFrame:newRect display:flag];
 }
 
 @end

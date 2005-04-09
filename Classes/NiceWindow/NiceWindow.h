@@ -106,6 +106,7 @@
 -(BOOL)isFullScreen;
 -(void)setLevel:(int)windowLevel;
 -(void)resizeWithSize:(NSSize)aSize animate:(BOOL)animate;
+-(NSRect)calcResizeSize:(NSSize)aSize;
 -(void)resize:(float)amount animate:(BOOL)animate;
 - (void)setTitle:(NSString *)aString;
 -(void)initialDefaultSize;
@@ -121,7 +122,7 @@
 -(void)resizeNormalByScaler:(float)aScaler;
 -(IBAction)center:(id)sender;
 -(void)center;
--(NSRect)centeredLocation;
+-(NSRect)centerRect:(NSRect)aRect;
 
 #pragma mark -
 #pragma mark Mouse Events

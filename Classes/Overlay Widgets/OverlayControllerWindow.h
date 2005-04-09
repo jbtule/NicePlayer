@@ -12,11 +12,8 @@
     IBOutlet NSButton* rrButton;
 	
     IBOutlet NSWindow* overlayResize;
-	
-	BOOL holdsResizeTriangle;
 }
 
--(void)setResizeOrigin:(NSPoint)aPoint;
 -(void)createResizeTriangle;
 
 @end

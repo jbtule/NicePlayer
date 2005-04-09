@@ -19,7 +19,8 @@
 
 +(id)configureNibView
 {
-	NSLog(@"Error");
+    NSLog(@"Error");
+    return nil;
 }
 
 /* Forward all drag events to the window itself. */

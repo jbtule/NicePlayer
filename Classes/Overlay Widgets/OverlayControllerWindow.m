@@ -11,51 +11,39 @@
 {
     [ffButton setContinuous:YES];
     [rrButton setContinuous:YES];
-	
+    
     [ffButton setPeriodicDelay:.5 interval:.2];
-	[rrButton setPeriodicDelay:.5 interval:.2];
-	
-	holdsResizeTriangle = NO;
+    [rrButton setPeriodicDelay:.5 interval:.2];
 }
 
 -(void)createResizeTriangle
 {
-    [overlayResize setFrame:[[self parentWindow] frame] display:NO];
     [self addChildWindow:overlayResize ordered:NSWindowAbove];    
-    [overlayResize orderFront:self];
     [self setHasShadow:NO];
-    [overlayResize setLevel:[self level]];
-    
-    holdsResizeTriangle = YES;
+    [overlayResize setFrame:[[self parentWindow] frame] display:NO];
+    [overlayResize orderFront:self];
 }
 
 -(void)setAlphaValue:(float)windowAlpha
 {
-	[super setAlphaValue:windowAlpha];
-	if(holdsResizeTriangle)
-		[overlayResize setAlphaValue:windowAlpha];
-}
-
--(void)setResizeOrigin:(NSPoint)aPoint
-{
-	[overlayResize setFrameOrigin:aPoint];
+    [overlayResize setAlphaValue:windowAlpha];
+    [super setAlphaValue:windowAlpha];
 }
 
 -(void)setFrame:(NSRect)frameRect display:(BOOL)flag
 {
     [super setFrame:frameRect display:flag];
-    if(holdsResizeTriangle){
-	NSRect movieRect = [[[self parentWindow] contentView] frame];
-	movieRect.origin = [[self parentWindow] convertBaseToScreen:movieRect.origin];
-	[overlayResize setFrame:movieRect display:flag];
-    }
+
+    NSRect movieRect = [[[self parentWindow] contentView] frame];
+    movieRect.origin = [[self parentWindow] convertBaseToScreen:movieRect.origin];
+    [overlayResize setFrame:movieRect display:flag];
+    
 }
 
-- (void)setLevel:(int)newLevel
+-(void)setLevel:(int)newLevel
 {
-	[super setLevel:newLevel];
-	if(holdsResizeTriangle)
-		[overlayResize setLevel:newLevel];
+    [overlayResize setLevel:newLevel];
+    [super setLevel:newLevel];
 }
 
 @end
