@@ -588,7 +588,11 @@
 /* Used to determine the proper size of the window at a given magnification factor. */
 -(NSSize)naturalSize
 {
-	return [trueMovieView naturalSize];
+    NSSize movieSize = [trueMovieView naturalSize];
+    if((movieSize.width == 0) && (movieSize.height == 0))
+	return NSMakeSize(320, 240);
+    else
+	return movieSize;
 }
 
 -(double)currentMovieTime
