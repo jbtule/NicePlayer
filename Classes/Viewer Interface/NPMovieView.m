@@ -90,7 +90,7 @@
 	    continue;
         [trueMovieView release];
         id newViewClass = [[pluginDict objectForKey:[currentPlugin objectForKey:@"Name"]] objectForKey:@"Class"];
-        trueMovieView = [[newViewClass alloc] retain];
+        trueMovieView = [newViewClass alloc];
         didOpen = [trueMovieView openURL:url];
     }
     if(didOpen){
