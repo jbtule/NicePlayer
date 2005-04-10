@@ -384,7 +384,8 @@
 		};
 		252BD45D07697C6A006CF96B = {
 			children = (
-				25E3AEFE07C0A65000746EA4,
+				3E28CCA20808E0F000F59FF5,
+				3E28CCA30808E0F000F59FF5,
 				2A37F4AEFDCFA73011CA2CEA,
 				2A37F4ACFDCFA73011CA2CEA,
 				251FBBDF07BC201900D147E5,
@@ -1114,21 +1115,6 @@
 			settings = {
 			};
 		};
-		25E3AEFE07C0A65000746EA4 = {
-			fileEncoding = 4;
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.c.objc;
-			name = NiceWinController.m;
-			path = Classes/NiceWinController.m;
-			refType = 4;
-			sourceTree = "<group>";
-		};
-		25E3AEFF07C0A65000746EA4 = {
-			fileRef = 25E3AEFE07C0A65000746EA4;
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
 //250
 //251
 //252
@@ -1457,6 +1443,36 @@
 		};
 		3E110B64069BD80100C5800B = {
 			fileRef = 3E110B62069BD80100C5800B;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3E28CCA20808E0F000F59FF5 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = NiceWindowController.h;
+			path = Classes/NiceWindow/NiceWindowController.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3E28CCA30808E0F000F59FF5 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = NiceWindowController.m;
+			path = Classes/NiceWindow/NiceWindowController.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3E28CCA40808E0F000F59FF5 = {
+			fileRef = 3E28CCA20808E0F000F59FF5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3E28CCA50808E0F000F59FF5 = {
+			fileRef = 3E28CCA30808E0F000F59FF5;
 			isa = PBXBuildFile;
 			settings = {
 			};
@@ -2977,6 +2993,7 @@
 				3EF15FD407C8553B00AE56D7,
 				25B07BF208077776006724D8,
 				25B0815C08084354006724D8,
+				3E28CCA40808E0F000F59FF5,
 			);
 			isa = PBXHeadersBuildPhase;
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3104,11 +3121,11 @@
 				25D2E84207BF3B44004BEF7D,
 				25D2ED0C07BF6066004BEF7D,
 				253C064E07C0891300172C2F,
-				25E3AEFF07C0A65000746EA4,
 				3E49DCB207C96EFA009BA150,
 				3E49DCB307C96EFD009BA150,
 				3E49DCB407C96F01009BA150,
 				25B0815D08084354006724D8,
+				3E28CCA50808E0F000F59FF5,
 			);
 			isa = PBXSourcesBuildPhase;
 			runOnlyForDeploymentPostprocessing = 0;

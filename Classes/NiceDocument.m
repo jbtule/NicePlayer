@@ -7,7 +7,7 @@
 
 #import "NiceDocument.h"
 #import "Other Sources/NiceUtilities.h"
-
+#import "NiceWindow/NiceWindowController.h"
 id rowsToFileNames(id obj, void* playList){
     return [[(id)playList objectAtIndex:[obj intValue]] path];
 }
@@ -205,12 +205,18 @@ id rowsToFileNames(id obj, void* playList){
     [self calculateAspectRatio];
 }
 
-- (NSString *)windowNibName
-{
-    // Override returning the nib file name of the document
-    // If you need to use a subclass of NSWindowController or if your document supports multiple NSWindowControllers, you should remove this method and override -makeWindowControllers instead.
-    return @"NiceDocument";
+- (void)makeWindowControllers{
+    [self addWindowController:[[[NiceWindowController alloc] initWithWindowNibName:@"NiceDocument" owner:self] autorelease]];
 }
+
+
+//
+//- (NSString *)windowNibName
+//{
+//    // Override returning the nib file name of the document
+//    // If you need to use a subclass of NSWindowController or if your document supports multiple NSWindowControllers, you should remove this method and override -makeWindowControllers instead.
+//    return @"NiceDocument";
+//}
 
 - (void)showWindows
 {
