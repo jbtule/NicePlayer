@@ -58,11 +58,11 @@
     NSSize aspectRatio;
 }
 
-- (BOOL)validateMenuItem:(NSMenuItem*)anItem;
+-(BOOL)validateMenuItem:(NSMenuItem*)anItem;
 -(IBAction)performClose:(id)sender;
 -(void)updateVolume;
 -(void)restoreVolume;
-- (void)performMiniaturize:(id)sender;
+-(void)performMiniaturize:(id)sender;
 -(BOOL)inResizeLocation:(NSEvent *)anEvent;
 -(void)rotateTimeDisplayStyle;
 -(IBAction)updateByTime:(id)sender;

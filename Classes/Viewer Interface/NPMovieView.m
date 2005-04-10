@@ -155,15 +155,14 @@
 {
     wasPlaying = YES;
     [trueMovieView start];
-    [((NiceWindow *)[self window]) setNotificationText:@"Play"];
     [[((NiceWindow *)[self window]) playButton] changeToProperButton:[trueMovieView isPlaying]];
 }
 
 -(void)stop
 {
     wasPlaying = NO;
-
- 	[(<NPMoviePlayer>)trueMovieView stop];
+    
+    [(<NPMoviePlayer>)trueMovieView stop];
     [[((NiceWindow *)[self window]) playButton] changeToProperButton:[trueMovieView isPlaying]];
 }
 
@@ -171,9 +170,9 @@
 -(void)ffStart
 {
     [[((NiceWindow *)[self window]) ffButton] highlight:YES];
-	[((NiceWindow *)[self window]) showOverLayWindow];
-	[trueMovieView ffStart:[[Preferences mainPrefs] ffSpeed]];
-	[((NiceWindow *)[self window]) updateByTime:nil];
+    [((NiceWindow *)[self window]) showOverLayWindow];
+    [trueMovieView ffStart:[[Preferences mainPrefs] ffSpeed]];
+    [((NiceWindow *)[self window]) updateByTime:nil];
 }
 
 -(void)ffDo
@@ -181,7 +180,8 @@
     [self ffDo:[[Preferences mainPrefs] ffSpeed]];
 }
 
--(void)ffDo:(int)aSeconds{
+-(void)ffDo:(int)aSeconds
+{
     [((NiceWindow *)[self window]) showOverLayWindow];
     [trueMovieView ffDo:aSeconds];
     [((NiceWindow *)[self window]) updateByTime:nil];
@@ -190,18 +190,17 @@
 -(void)ffEnd
 {
     [[((NiceWindow *)[self window]) ffButton] highlight:NO];
-	[trueMovieView ffEnd];
+    [trueMovieView ffEnd];
     [((NiceWindow *)[self window]) updateByTime:nil];
-
+    
 }
 
 -(void)rrStart
 {
     [[((NiceWindow *)[self window]) rrButton] highlight:YES];
-	[((NiceWindow *)[self window]) showOverLayWindow];
-	[trueMovieView rrStart:[[Preferences mainPrefs] rrSpeed]];
-	[((NiceWindow *)[self window]) updateByTime:nil];
-
+    [((NiceWindow *)[self window]) showOverLayWindow];
+    [trueMovieView rrStart:[[Preferences mainPrefs] rrSpeed]];
+    [((NiceWindow *)[self window]) updateByTime:nil];
 }
 
 -(void)rrDo
@@ -218,18 +217,19 @@
 -(void)rrEnd
 {
     [[((NiceWindow *)[self window]) rrButton] highlight:NO];
-	[trueMovieView rrEnd];
+    [trueMovieView rrEnd];
     [((NiceWindow *)[self window]) updateByTime:nil];
-
+    
 }
 
 -(void)toggleMute
 {
-	if([trueMovieView muted])
-		[trueMovieView setMuted:NO];
-	else
-		[trueMovieView setMuted:YES];
+    if([trueMovieView muted]){
+	[trueMovieView setMuted:NO];
+    } else {
+	[trueMovieView setMuted:YES];
 	[((NiceWindow *)[self window]) updateVolume];
+    }
 }
 
 -(void)incrementVolume
@@ -272,67 +272,71 @@
 
 -(void)keyDown:(NSEvent *)anEvent
 {
-	if(([anEvent modifierFlags] & NSShiftKeyMask)){
-		/* Pass down shift flagged keys to trueMovieView */
-		[trueMovieView keyDown:anEvent];
-		return;
-	}
-	
-	switch([[anEvent characters] characterAtIndex:0]){
-		case ' ':
-			if(![anEvent isARepeat]){
-				[[((NiceWindow *)[self window]) playButton] togglePlaying];
-				[((NiceWindow *)[self window]) showOverLayWindow];
-			}
-			break;
-		case NSRightArrowFunctionKey:
-			if([anEvent modifierFlags] & NSCommandKeyMask){
-				[[[self window] delegate] playNext];
-				break;
-			}
-			if([anEvent modifierFlags] & NSAlternateKeyMask){
-				[trueMovieView stepForward];
-				break;
-			}
-			if(![anEvent isARepeat])
-				[self ffStart];
-			else
-				[self ffDo];
-			break;
-		case NSLeftArrowFunctionKey:
-			if([anEvent modifierFlags] & NSCommandKeyMask){
-                            if([self currentMovieTime] > 2)
-                                [trueMovieView setCurrentMovieTime:0];
-                            else
-				[[[self window] delegate] playPrev];
-				break;
-			}
-			if([anEvent modifierFlags] & NSAlternateKeyMask){
-				[trueMovieView stepBackward];
-				break;
-			}
-			if(![anEvent isARepeat])
-				[self rrStart];
-			else
-				[self rrDo];
-			break;
-		case NSUpArrowFunctionKey:
-			[self incrementVolume];
-			[self showOverLayVolume];
-			break;
-		case NSDownArrowFunctionKey:
-			[self decrementVolume];
-			[self showOverLayVolume];
-			break;
-		case NSDeleteFunctionKey:
-			[self toggleMute];
-			[self showOverLayVolume];
-			break;
-		case 0x1B:
-			[((NiceWindow *)[self window]) unFullScreen];
-			break;
-		default:
-			[super keyDown:anEvent];
+    if(([anEvent modifierFlags] & NSShiftKeyMask)){
+	/* Pass down shift flagged keys to trueMovieView */
+	[trueMovieView keyDown:anEvent];
+	return;
+    }
+    
+    switch([[anEvent characters] characterAtIndex:0]){
+	case ' ':
+	    if(![anEvent isARepeat]){
+		[[((NiceWindow *)[self window]) playButton] togglePlaying];
+		[((NiceWindow *)[self window]) showOverLayWindow];
+	    }
+	    break;
+	case NSRightArrowFunctionKey:
+	    if([anEvent modifierFlags] & NSCommandKeyMask){
+		[((NiceWindow *)[self window]) setNotificationText:@"Next Movie"];
+		[[[self window] delegate] playNext];
+		break;
+	    }
+	    if([anEvent modifierFlags] & NSAlternateKeyMask){
+		[trueMovieView stepForward];
+		break;
+	    }
+	    if(![anEvent isARepeat])
+		[self ffStart];
+	    else
+		[self ffDo];
+	    break;
+	case NSLeftArrowFunctionKey:
+	    if([anEvent modifierFlags] & NSCommandKeyMask){
+		if([self currentMovieTime] > 2){
+		    [((NiceWindow *)[self window]) setNotificationText:@"Start of Movie"];
+		    [trueMovieView setCurrentMovieTime:0];
+		} else {
+		    [((NiceWindow *)[self window]) setNotificationText:@"Prev Movie"];
+		    [[[self window] delegate] playPrev];
+		}
+		break;
+	    }
+	    if([anEvent modifierFlags] & NSAlternateKeyMask){
+		[trueMovieView stepBackward];
+		break;
+	    }
+	    if(![anEvent isARepeat])
+		[self rrStart];
+	    else
+		[self rrDo];
+	    break;
+	case NSUpArrowFunctionKey:
+	    [self incrementVolume];
+	    [self showOverLayVolume];
+	    break;
+	case NSDownArrowFunctionKey:
+	    [self decrementVolume];
+	    [self showOverLayVolume];
+	    break;
+	case NSDeleteFunctionKey:
+	    [self toggleMute];
+	    [self showOverLayVolume];
+	    break;
+	case 0x1B:
+	    [((NiceWindow *)[self window]) unFullScreen];
+	    break;
+	default:
+	    [super keyDown:anEvent];
     }
 }
 

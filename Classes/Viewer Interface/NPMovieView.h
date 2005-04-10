@@ -10,6 +10,7 @@
 #import "NPPluginReader.h"
 
 @class ControlPlay;
+@class NiceWindow;
 
 @interface NPMovieView : NSView {
 	BOOL dragButton;
