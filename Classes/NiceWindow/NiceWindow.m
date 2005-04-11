@@ -794,6 +794,7 @@
  */
 -(void)resizeToAspectRatio
 {
+    [self setAspectRatio:[theMovieView naturalSize]];
     NSSize aSize = [self getResizeAspectRatioSize];
     [self resizeWithSize:aSize animate:YES];
     [self _JTRefitFills];

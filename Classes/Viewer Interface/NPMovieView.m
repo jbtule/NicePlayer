@@ -30,7 +30,6 @@
         trueMovieView = [[JTMovieView alloc] initWithFrame:subview];
         contextMenu = [[NSMenu alloc] initWithTitle:@"NicePlayer"];
         wasPlaying = NO;
-	isBlank = YES;
         [self addSubview:trueMovieView];
         [self setAutoresizesSubviews:YES];
     }
@@ -50,7 +49,6 @@
 	[self close];
 	[trueMovieView release];
 	trueMovieView = [[JTMovieView alloc] initWithFrame:subview];
-	[trueMovieView registerForDraggedTypes:[(NiceWindow *)[self window] acceptableDragTypes]];
 	[self addSubview:trueMovieView];
 	[self finalProxyViewLoad];
 }
@@ -66,16 +64,12 @@
 
 -(void)dealloc
 {
-	[trueMovieView autorelease];
+	[trueMovieView release];
 	[super dealloc];
 }
 
 -(BOOL)openURL:(NSURL *)url
 {
-    if((isBlank == NO) && [trueMovieView openURL:url]){
-        [self loadMovie];
-        return YES;
-    }
     [trueMovieView removeFromSuperview];
     
     BOOL didOpen = NO;
@@ -94,19 +88,13 @@
         didOpen = [trueMovieView openURL:url];
     }
     if(didOpen){
-        if([trueMovieView initWithFrame:subview] == nil){
-            [trueMovieView release];
+        if([trueMovieView initWithFrame:subview] == nil)
             return NO;
-        }
         [self addSubview:trueMovieView];
         [self loadMovie];
         [self finalProxyViewLoad];
     }
     
-    if(url == [NPMovieView blankImage])
-	isBlank = YES;
-    else
-	isBlank = !didOpen;
     return didOpen;
 }
 
