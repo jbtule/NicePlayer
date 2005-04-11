@@ -61,7 +61,7 @@
 		showNotificationOverlays = ![[NSUserDefaults standardUserDefaults] boolForKey:@"noShowNotificationOverlays"];
 		fadeNotificationOverlays = ![[NSUserDefaults standardUserDefaults] boolForKey:@"noFadeNotificationOverlays"];
 		displayNotificationTime = ([[NSUserDefaults standardUserDefaults] floatForKey:@"displayNotificationTime"] <= 0.0) 
-		    ? 0.25
+		    ? 2.0
 		    : [[NSUserDefaults standardUserDefaults] floatForKey:@"displayNotificationTime"];
 		
 		movieOpenedPlay = [[NSUserDefaults standardUserDefaults] boolForKey:@"movieOpenedPlay"];

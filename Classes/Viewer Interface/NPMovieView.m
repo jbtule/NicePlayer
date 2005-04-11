@@ -275,8 +275,8 @@
 	    break;
 	case NSRightArrowFunctionKey:
 	    if([anEvent modifierFlags] & NSCommandKeyMask){
-		[((NiceWindow *)[self window]) setNotificationText:@"Next Movie"];
 		[[[self window] delegate] playNext];
+		[((NiceWindow *)[self window]) setNotificationText:[[self window] title]];
 		break;
 	    }
 	    if([anEvent modifierFlags] & NSAlternateKeyMask){
@@ -291,11 +291,11 @@
 	case NSLeftArrowFunctionKey:
 	    if([anEvent modifierFlags] & NSCommandKeyMask){
 		if([self currentMovieTime] > 2){
-		    [((NiceWindow *)[self window]) setNotificationText:@"Start of Movie"];
 		    [trueMovieView setCurrentMovieTime:0];
+		    [((NiceWindow *)[self window]) setNotificationText:[[self window] title]];
 		} else {
-		    [((NiceWindow *)[self window]) setNotificationText:@"Prev Movie"];
 		    [[[self window] delegate] playPrev];
+		    [((NiceWindow *)[self window]) setNotificationText:[[self window] title]];
 		}
 		break;
 	    }

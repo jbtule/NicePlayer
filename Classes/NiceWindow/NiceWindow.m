@@ -203,7 +203,7 @@
     }
     
     
-    if([theMovieView hasEnded:self] && ![theScrubBar inUse]){
+    if([theMovieView hasEnded:self]){
         [[[self windowController] document] movieHasEnded];
     }
     
