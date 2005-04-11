@@ -32,6 +32,7 @@
         wasPlaying = NO;
         [self addSubview:trueMovieView];
         [self setAutoresizesSubviews:YES];
+	title = nil;
     }
     return self;
 }
@@ -71,7 +72,10 @@
 -(BOOL)openURL:(NSURL *)url
 {
     [trueMovieView removeFromSuperview];
-    
+    if(title){
+	[title release];
+	title = [[[url path] lastPathComponent] stringByDeletingPathExtension];
+    }
     BOOL didOpen = NO;
     unsigned i;
     NSRect subview = NSMakeRect(0, 0, [self frame].size.width, [self frame].size.height);

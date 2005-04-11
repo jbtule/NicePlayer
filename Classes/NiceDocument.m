@@ -468,6 +468,8 @@ stuff won't work properly! */
 
 -(IBAction)choosePlaylistItem:(id)sender
 {
+    if([sender selectedRow] == -1)
+	return;
     [self playAtIndex:[sender selectedRow] obeyingPreviousState:NO];
 }
 

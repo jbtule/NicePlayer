@@ -17,6 +17,7 @@
 	id trueMovieView;
 	id contextMenu;
 	BOOL wasPlaying;
+	id title;
 }
 
 +(id)blankImage;
