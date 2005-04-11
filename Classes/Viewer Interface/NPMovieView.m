@@ -65,17 +65,17 @@
 
 -(void)dealloc
 {
-	[trueMovieView release];
-	[super dealloc];
+    [title release];
+    [trueMovieView release];
+    [super dealloc];
 }
 
 -(BOOL)openURL:(NSURL *)url
 {
     [trueMovieView removeFromSuperview];
-    if(title){
+    if(title)
 	[title release];
-	title = [[[url path] lastPathComponent] stringByDeletingPathExtension];
-    }
+    title = [[[[url path] lastPathComponent] stringByDeletingPathExtension] retain];
     BOOL didOpen = NO;
     unsigned i;
     NSRect subview = NSMakeRect(0, 0, [self frame].size.width, [self frame].size.height);
@@ -280,7 +280,7 @@
 	case NSRightArrowFunctionKey:
 	    if([anEvent modifierFlags] & NSCommandKeyMask){
 		[[[self window] delegate] playNext];
-		[((NiceWindow *)[self window]) setNotificationText:[[self window] title]];
+		[((NiceWindow *)[self window]) setNotificationText:title];
 		break;
 	    }
 	    if([anEvent modifierFlags] & NSAlternateKeyMask){
@@ -296,10 +296,10 @@
 	    if([anEvent modifierFlags] & NSCommandKeyMask){
 		if([self currentMovieTime] > 2){
 		    [trueMovieView setCurrentMovieTime:0];
-		    [((NiceWindow *)[self window]) setNotificationText:[[self window] title]];
+		    [((NiceWindow *)[self window]) setNotificationText:title];
 		} else {
 		    [[[self window] delegate] playPrev];
-		    [((NiceWindow *)[self window]) setNotificationText:[[self window] title]];
+		    [((NiceWindow *)[self window]) setNotificationText:title];
 		}
 		break;
 	    }

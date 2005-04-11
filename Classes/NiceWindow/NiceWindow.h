@@ -56,6 +56,8 @@
     id initialFadeTimer;
 	
     NSSize aspectRatio;
+    
+    id notifierTimer;
 }
 
 -(BOOL)validateMenuItem:(NSMenuItem*)anItem;
@@ -112,6 +114,8 @@
 -(void)resize:(float)amount animate:(BOOL)animate;
 - (void)setTitle:(NSString *)aString;
 -(void)setNotificationText:(NSString *)aString;
+-(void)setNotifierLocation;
+-(void)hideNotifier;
 -(void)initialDefaultSize;
 -(IBAction)halfSize:(id)sender;
 -(IBAction)normalSize:(id)sender;

@@ -513,6 +513,7 @@
 	[self makeKeyAndOrderFront:self];
 	beforeFullScreen = [self frame];
 	[self fillScreenSize:self];
+	[self hideNotifier];
     }
     [theMovieView drawMovieFrame];
     if([[Preferences mainPrefs] autoplayOnFullScreen]){
@@ -529,6 +530,7 @@
         [self setFrame:beforeFullScreen display:NO];
         fullScreen = NO;
         [self resizeToAspectRatio];
+	[self hideNotifier];
     }
     [theMovieView drawMovieFrame];
     [theOverlayTitleBar orderFront:self];
@@ -664,13 +666,46 @@
 -(void)setNotificationText:(NSString *)aString
 {
     [theOverlayNotifier setText:aString];
+    [self setNotifierLocation];
     [theOverlayNotifier setAlphaValue:1.0];
     id notifierFade = [NSMutableSet setWithObjects:theOverlayNotifier, nil];
     NSDictionary *fadeDict = [NSDictionary dictionaryWithObjects:
-        [NSArray arrayWithObjects:self,	notifierFade,	nil]
+        [NSArray arrayWithObjects:self,	notifierFade, @"clearNotifierTimer",	nil]
                                                          forKeys:
-	[NSArray arrayWithObjects:@"Window", @"Fade", nil]];
-    [[FadeOut fadeOut] notifierFadeForDict:fadeDict];
+	[NSArray arrayWithObjects:@"Window", @"Fade", @"Selector",  nil]];
+    notifierTimer = [[FadeOut fadeOut] notifierFadeForDict:fadeDict];
+}
+
+-(void)setNotifierLocation
+{
+    NSRect currentFrame;
+    if(!fullScreen)
+	currentFrame = [self frame];
+    else {
+	currentFrame = [[NSScreen mainScreen] frame];
+	currentFrame.origin.y -= 48;
+    }
+    
+    [theOverlayNotifier setFrame:NSMakeRect(currentFrame.origin.x,
+                                currentFrame.origin.y + currentFrame.size.height
+				- [theOverlayTitleBar frame].size.height - [theOverlayNotifier frame].size.height,
+                                currentFrame.size.width,
+                                [theOverlayNotifier frame].size.height)
+      display:YES];
+}
+
+-(void)hideNotifier
+{
+    [theOverlayNotifier setAlphaValue:0.0];
+    if(notifierTimer)
+	[notifierTimer invalidate];
+    notifierTimer = nil;
+    [[FadeOut fadeOut] removeWindow:theOverlayNotifier];
+}
+
+-(void)clearNotifierTimer
+{
+    notifierTimer = nil;
 }
 
 -(IBAction)halfSize:(id)sender
