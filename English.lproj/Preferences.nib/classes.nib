@@ -29,6 +29,7 @@
                 ffSpeed = id; 
                 movieOpenedFullScreen = id; 
                 movieOpenedPlay = id; 
+                notificationColor = id; 
                 rightClickMoviePref = id; 
                 rrSpeed = id; 
                 scrollResizePin = id; 
@@ -55,6 +56,7 @@
                 ffSpeedSlider = id; 
                 movieOpenedFullScreen = id; 
                 movieOpenedPlay = id; 
+                notificationColor = id; 
                 paneActions = id; 
                 paneMain = id; 
                 paneOverlays = id; 

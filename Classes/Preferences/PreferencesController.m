@@ -78,6 +78,7 @@
 	float dNT = [[Preferences mainPrefs] displayNotificationTime];
 	dNT = (dNT <= 0.0) ? 0.25 : dNT;
         [displayNotificationTime setObjectValue:[NSNumber numberWithFloat:dNT]];
+        [notificationColor setColor:[[Preferences mainPrefs] notificationColor]];
 		
 	[movieOpenedPlay setState:[[Preferences mainPrefs] movieOpenedPlay]];
 	[movieOpenedFullScreen setState:[[Preferences mainPrefs] movieOpenedFullScreen]];
@@ -196,6 +197,11 @@
     int dNT = [[Preferences mainPrefs] fadeOverlayTime];
     dNT = (dNT <= 0) ? 0.25 : dNT;
     [[Preferences mainPrefs] setFadeOverlayTime:dNT];
+}
+
+-(IBAction)notificationColor:(id)sender
+{
+    [[Preferences mainPrefs] setNotificationColor:[sender color]];
 }
 
 #pragma mark -

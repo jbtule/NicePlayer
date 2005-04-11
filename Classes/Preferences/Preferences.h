@@ -36,6 +36,7 @@ enum defaultOpenModeValues { OPEN_PLAYLIST, OPEN_WINDOWS };
 	BOOL showNotificationOverlays;
 	BOOL fadeNotificationOverlays;
 	float displayNotificationTime;
+	id notificationColor;
 	
 	BOOL movieOpenedPlay;
 	BOOL movieOpenedFullScreen;
@@ -87,7 +88,9 @@ enum defaultOpenModeValues { OPEN_PLAYLIST, OPEN_WINDOWS };
 -(BOOL)fadeNotificationOverlays;
 -(void)setFadeNotificationOverlays:(BOOL)aBool;
 -(float)displayNotificationTime;
--(void)setDisplayNotificationTime:(float)anInt;
+-(void)setDisplayNotificationTime:(float)aFloat;
+-(id)notificationColor;
+-(void)setNotificationColor:(id)anObject;
 
 -(BOOL)movieOpenedPlay;
 -(void)setMovieOpenedPlay:(BOOL)aBool;

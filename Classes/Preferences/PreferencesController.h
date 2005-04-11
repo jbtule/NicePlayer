@@ -36,6 +36,7 @@
     IBOutlet id showNotificationOverlays;
     IBOutlet id fadeNotificationOverlays;
     IBOutlet id displayNotificationTime;
+    IBOutlet id notificationColor;
     
     IBOutlet id movieOpenedPlay;
     IBOutlet id movieOpenedFullScreen;
@@ -67,6 +68,7 @@
 -(IBAction)showNotificationOverlays:(id)sender;
 -(IBAction)fadeNotificationOverlays:(id)sender;
 -(IBAction)displayNotificationTime:(id)sender;
+-(IBAction)notificationColor:(id)sender;
 
 -(IBAction)movieOpenedPlay:(id)sender;
 -(IBAction)movieOpenedFullScreen:(id)sender;

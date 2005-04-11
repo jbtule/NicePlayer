@@ -22,7 +22,9 @@
 -(void)setText:(NSString *)aString
 {
     NSMutableAttributedString *newString = [[NSMutableAttributedString alloc] initWithString:aString];
-    [newString addAttribute:NSForegroundColorAttributeName value:[NSColor whiteColor] range:NSMakeRange(0, [newString length])];
+    [newString addAttribute:NSForegroundColorAttributeName
+		      value:[[Preferences mainPrefs] notificationColor]
+		      range:NSMakeRange(0, [newString length])];
     [theNotificationText setAttributedStringValue:newString];
     [newString autorelease];
     [self display];

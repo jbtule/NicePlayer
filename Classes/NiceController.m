@@ -219,7 +219,10 @@ id controller;
     if(prefWindow ==nil)
 	prefWindow = [[[NSWindowController alloc] initWithWindowNibName:@"Preferences"] retain];
     [prefWindow showWindow:self];
-    [[prefWindow window] setLevel:(NSFloatingWindowLevel + 3)];
+    if(fullScreenMode)
+	[self exitFullScreen];
+    [[prefWindow window] setLevel:NSFloatingWindowLevel];
+    [[prefWindow window] makeKeyAndOrderFront:self];
 }
 
 -(IBAction)toggleAlwaysOnTop:(id)sender

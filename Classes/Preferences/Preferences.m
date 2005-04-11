@@ -63,6 +63,11 @@
 		displayNotificationTime = ([[NSUserDefaults standardUserDefaults] floatForKey:@"displayNotificationTime"] <= 0.0) 
 		    ? 2.0
 		    : [[NSUserDefaults standardUserDefaults] floatForKey:@"displayNotificationTime"];
+		notificationColor = [[NSUserDefaults standardUserDefaults] objectForKey:@"notificationColor"];
+		if(notificationColor)
+		    notificationColor =	[NSUnarchiver unarchiveObjectWithData:notificationColor];
+		else
+		    notificationColor = [NSColor whiteColor];
 		
 		movieOpenedPlay = [[NSUserDefaults standardUserDefaults] boolForKey:@"movieOpenedPlay"];
 		movieOpenedFullScreen = [[NSUserDefaults standardUserDefaults] boolForKey:@"movieOpenedFullScreen"];
@@ -223,7 +228,6 @@
 	[[NSUserDefaults standardUserDefaults] setBool:!aBool forKey:@"noFadeOverlays"];
 }
 
-
 -(float)fadeOverlayTime
 {
     return fadeOverlayTime;
@@ -268,6 +272,17 @@
 {
     displayNotificationTime = aFloat;
     [[NSUserDefaults standardUserDefaults] setFloat:aFloat forKey:@"displayNotificationTime"];
+}
+
+-(id)notificationColor
+{
+    return notificationColor;
+}
+
+-(void)setNotificationColor:(id)anObject
+{
+    notificationColor = anObject;
+    [[NSUserDefaults standardUserDefaults] setObject:[NSArchiver archivedDataWithRootObject:anObject] forKey:@"notificationColor"];
 }
 
 #pragma mark -

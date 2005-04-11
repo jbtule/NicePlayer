@@ -142,7 +142,7 @@
 -(id)bestMovieWindow
 {
     id tempWindow = [NSApp mainWindow];
-    if(tempWindow == nil)  {
+    if((tempWindow == nil) || (![tempWindow isKindOfClass:[NiceWindow class]]))  {
         tempWindow = [[NSApp movieWindows] firstObject];
     }
     return tempWindow;
