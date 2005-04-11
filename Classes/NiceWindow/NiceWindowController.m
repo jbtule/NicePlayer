@@ -7,7 +7,7 @@
 //
 
 #import "NiceWindowController.h"
-
+#import "NPApplication.h"
 
 @implementation NiceWindowController
 
@@ -69,7 +69,7 @@
         }
 
     }else{
-        if(tScreenPref < [tScreens count]){
+        if(tScreenPref < (int)[tScreens count]){
             tScreenRect = [[tScreens objectAtIndex:tScreenPref] visibleFrame];
         }
     }  

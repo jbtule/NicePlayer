@@ -15,7 +15,7 @@
 }
 
 -(id)bestMovieWindow;
-
+-(NSArray *)movieWindows;
 -(IBAction)visitNicePlayerWebSite:(id)sender;
 -(IBAction)visitProjectRoadmap:(id)sender;
 -(IBAction)donateToNicePlayer:(id)sender;
