@@ -11,6 +11,7 @@
 id rowsToFileNames(id obj, void* playList){
     return [[(id)playList objectAtIndex:[obj intValue]] path];
 }
+#import "NPApplication.h"
 
 @implementation NiceDocument
 
@@ -203,6 +204,80 @@ id rowsToFileNames(id obj, void* playList){
     
     [self refreshRepeatModeGUI];
     [self calculateAspectRatio];
+    [self repositionAfterLoad];
+}
+
+
+- (void)repositionAfterLoad{
+    
+    int tScreenPref = -1;
+    
+    NSScreen* tScreen = [NSScreen mainScreen];
+    NSArray* tScreens = [NSScreen screens];
+    
+    if(tScreenPref > 0 && (tScreenPref < (int)[tScreens count])){
+        tScreen = [tScreens objectAtIndex:tScreenPref];
+    }  
+        
+    NSValue* tPoint = nil;
+    
+    BOOL rejectSelf(id each,void* context){
+        return [each isEqual:[self window]];
+    }
+    
+    NSArray* tMovieWindows = [[NSApp movieWindows] rejectUsingFunction:rejectSelf context:nil];
+    
+    NSRect tSubScreenRect;
+    
+    BOOL findOpenPoint(id eachwin, void* context){
+        NSRect tWinRect = [eachwin frame];
+        NSRect tNewRect = NSMakeRect([tPoint pointValue].x,[tPoint pointValue].y,[[self window] frame].size.width,[[self window] frame].size.height);
+        
+        return NSIntersectsRect(tWinRect,tNewRect) || !NSContainsRect(tSubScreenRect,tNewRect);
+    }
+    
+    void findSpace(id each, void* context, BOOL* endthis){
+        tSubScreenRect = [each visibleFrame];
+        for(float j = tSubScreenRect.origin.y + tSubScreenRect.size.height - [[self window] frame].size.height; j >= tSubScreenRect.origin.y; j -= [[self window] frame].size.height){
+            for(float i = tSubScreenRect.origin.x; i < tSubScreenRect.origin.x + tSubScreenRect.size.width; i+= [[self window] frame].size.width){
+                tPoint= [NSValue valueWithPoint:NSMakePoint(i,j)];
+                if(nil == [tMovieWindows detectUsingFunction:findOpenPoint context:nil]){
+                    STDoBreak(endthis);
+                }
+                tPoint = nil;
+            }
+        }
+    }
+    
+    int sortByMain(id v1, id v2, void* context){
+        if([v1 isEqualTo:v2])
+            return NSOrderedSame;
+        if([[NSScreen mainScreen] isEqualTo: v1]){
+            return NSOrderedAscending;
+        }
+        
+        return NSOrderedAscending;
+    }
+    
+    if(tScreenPref < 0){
+        id tArray =[[NSScreen screens] sortedArrayUsingFunction:sortByMain context:nil];
+        [tArray doUsingFunction:findSpace context:nil];
+    }else{
+        BOOL tDummy;
+        findSpace(tScreen,nil,&tDummy);
+    }
+    
+    if(tPoint == nil){
+        BOOL findWindowScreen(id each, void* context){
+            return [[each screen] isEqual:tScreen];
+        }
+        id tWindow = [[NSApp movieWindows] detectUsingFunction:findWindowScreen context:nil];
+        [[self window] cascadeTopLeftFromPoint:[tWindow frame].origin];
+    }else{
+        [[self window] setFrameOrigin:[tPoint pointValue]];
+    }
+    
+    
 }
 
 - (void)makeWindowControllers{

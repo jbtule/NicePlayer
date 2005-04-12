@@ -45,6 +45,7 @@
 -(void)windowDidDeminiaturize:(NSNotification *)aNotification;
 -(void)windowControllerDidLoadNib:(NSWindowController *) aController;
 -(void)updateAfterLoad;
+- (void)repositionAfterLoad;
 -(void)movieHasEnded;
 -(id)subTitle;
 -(NSMenu *)movieMenu;
