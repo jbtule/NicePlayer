@@ -131,6 +131,10 @@
     }
 }
 
+-(NSArray*)screens{
+    return [NSScreen screens];
+}
+
 -(NSArray *)movieWindows
 {
     BOOL selectNiceWindow(id each, void* context){
