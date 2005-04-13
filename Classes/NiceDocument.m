@@ -86,6 +86,7 @@ id rowsToFileNames(id obj, void* playList){
     return [self readFromURL:[NSURL fileURLWithPath:fileName] ofType:docType];
 }
 
+
 /**
 * Things to do for a new file passed in. This gets called by the document controller automatically when
  * files are dropped onto the app icon.
@@ -142,6 +143,9 @@ id rowsToFileNames(id obj, void* playList){
     }else{
         theSubtitle = nil;
     }
+    
+    [self setFileName:[[[[theCurrentURL path] lastPathComponent] stringByDeletingPathExtension] stringByAppendingPathExtension:@"nicelist"]];
+    [self setFileType:@"nicelist"];
     
     /* Initialize the window stuff for movie playback. */
     [[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:nil];
@@ -284,14 +288,6 @@ id rowsToFileNames(id obj, void* playList){
     [self addWindowController:[[[NiceWindowController alloc] initWithWindowNibName:@"NiceDocument" owner:self] autorelease]];
 }
 
-
-//
-//- (NSString *)windowNibName
-//{
-//    // Override returning the nib file name of the document
-//    // If you need to use a subclass of NSWindowController or if your document supports multiple NSWindowControllers, you should remove this method and override -makeWindowControllers instead.
-//    return @"NiceDocument";
-//}
 
 - (void)showWindows
 {
