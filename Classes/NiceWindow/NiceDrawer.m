@@ -15,9 +15,14 @@ and they ignore thier public  ones they inherited from their super.
 **************************/
 @interface NSDrawerWindow : NSWindow 
     -(NSWindow*)_parentWindow;
+    -(void)_setTexturedBackground:(bool)hasTexture;
 @end
 
 @implementation NiceDrawer
+
+-(void)awakeFromNib{
+    [(NSDrawerWindow*)[self window]_setTexturedBackground:YES];  
+}
 
 - (void)mouseMoved:(NSEvent *)anEvent
 {
