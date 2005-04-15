@@ -65,9 +65,9 @@
 		    : [[NSUserDefaults standardUserDefaults] floatForKey:@"displayNotificationTime"];
 		notificationColor = [[NSUserDefaults standardUserDefaults] objectForKey:@"notificationColor"];
 		if(notificationColor)
-		    notificationColor =	[NSUnarchiver unarchiveObjectWithData:notificationColor];
+		    notificationColor =	[[NSUnarchiver unarchiveObjectWithData:notificationColor] retain];
 		else
-		    notificationColor = [NSColor whiteColor];
+		    notificationColor = [[NSColor whiteColor] retain];
 		
 		movieOpenedPlay = [[NSUserDefaults standardUserDefaults] boolForKey:@"movieOpenedPlay"];
 		movieOpenedFullScreen = [[NSUserDefaults standardUserDefaults] boolForKey:@"movieOpenedFullScreen"];
