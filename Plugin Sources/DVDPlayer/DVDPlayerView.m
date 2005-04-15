@@ -74,11 +74,6 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
  */
 -(id)initWithFrame:(NSRect)frame
 {
-	DVDErrorCode err = DVDInitialize();
-
-	if((err == kDVDErrorPlaybackOpen) || (err == kDVDErrorInitializingLib))
-		return nil;
-
 	if(self = [super initWithFrame:frame]){
 		[self setAutoresizingMask:(NSViewWidthSizable | NSViewHeightSizable)];			
 		isAspectRatioChanging = NO;
@@ -186,8 +181,13 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 /**
  * Set up all of the proper DVD playback stuff.
  */
--(void)loadMovie
+-(BOOL)loadMovie
 {
+	DVDErrorCode err = DVDInitialize();
+	
+	if((err == kDVDErrorPlaybackOpen) || (err == kDVDErrorInitializingLib))
+		return NO;
+		
 	CGDirectDisplayID displays[MAX_DISPLAYS];
 	CGDisplayCount displayCount;
 	NSRect frame = [[NSScreen mainScreen] frame];
@@ -214,6 +214,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 													  selector:@selector(rebuildMenuTimer)
 													  userInfo:nil
 													   repeats:YES];
+	return YES;
 }
 
 /**

@@ -23,7 +23,7 @@
 +(id)blankImage;
 
 -(BOOL)openURL:(NSURL *)url;
--(void)loadMovie;
+-(BOOL)loadMovie;
 -(void)closeReopen;
 -(void)close;
 

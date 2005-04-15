@@ -31,7 +31,7 @@ enum direction { DIRECTION_BACKWARD = -1, DIRECTION_FORWARD = 1};
 -(BOOL)openURL:(NSURL *)url;
 -(void)precacheURL:(NSURL*)url;
 
--(void)loadMovie;
+-(BOOL)loadMovie;
 
 -(void)keyDown:(NSEvent *)anEvent;
 -(void)mouseDown:(NSEvent *)anEvent;

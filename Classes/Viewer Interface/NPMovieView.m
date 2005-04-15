@@ -74,31 +74,48 @@
 {
     [trueMovieView removeFromSuperview];
     if(title)
-	[title release];
+		[title release];
     title = [[[[url path] lastPathComponent] stringByDeletingPathExtension] retain];
     BOOL didOpen = NO;
     unsigned i;
     NSRect subview = NSMakeRect(0, 0, [self frame].size.width, [self frame].size.height);
     id pluginOrder = [[NPPluginReader pluginReader] cachedPluginOrder];
     id pluginDict = [[NPPluginReader pluginReader] prefDictionary];
+	NSException *noLoadException = [NSException exceptionWithName:@"NoLoadPlugin"
+														   reason:@"CouldntLoad" userInfo:nil];	
     /* Try to choose the proper plugin by finding out first whether the plugin is enabled, and then if it handles the type. */
-    for(i = 0; (i < [pluginOrder count]) && (didOpen == NO); i++){
-	NSDictionary *currentPlugin = [pluginOrder objectAtIndex:i];
-	if(![[currentPlugin objectForKey:@"Chosen"] boolValue])
-	    continue;
-        [trueMovieView release];
-        id newViewClass = [[pluginDict objectForKey:[currentPlugin objectForKey:@"Name"]] objectForKey:@"Class"];
-        trueMovieView = [newViewClass alloc];
-        didOpen = [trueMovieView openURL:url];
-    }
-    if(didOpen){
-        if([trueMovieView initWithFrame:subview] == nil)
-            return NO;
-        [self addSubview:trueMovieView];
-        [self loadMovie];
-        [self finalProxyViewLoad];
-    }
-    
+	@try {
+		for(i = 0; (i < [pluginOrder count]) && (didOpen == NO); i++){
+			NSDictionary *currentPlugin = [pluginOrder objectAtIndex:i];
+			if(![[currentPlugin objectForKey:@"Chosen"] boolValue])
+				continue;
+			[trueMovieView release];
+			trueMovieView = nil;
+			id newViewClass = [[pluginDict objectForKey:[currentPlugin objectForKey:@"Name"]] objectForKey:@"Class"];
+			trueMovieView = [newViewClass alloc];
+			if(!trueMovieView)
+				@throw noLoadException;
+			if([trueMovieView initWithFrame:subview] == nil)
+				return NO;
+			didOpen = [trueMovieView openURL:url];
+		}
+		if(didOpen){
+			[self addSubview:trueMovieView];
+			if(![self loadMovie])
+				@throw noLoadException;
+		} else {
+			[trueMovieView release];
+			@throw noLoadException;
+		}
+	}
+	@catch(NSException *exception) {
+		trueMovieView = [[JTMovieView alloc] initWithFrame:subview];
+		[self addSubview:trueMovieView];
+	}
+	@finally {
+		[self finalProxyViewLoad];
+	}
+	
     return didOpen;
 }
 
@@ -106,9 +123,9 @@
     [trueMovieView precacheURL:url];
 }
 
--(void)loadMovie
+-(BOOL)loadMovie
 {
-	[trueMovieView loadMovie];
+	return [trueMovieView loadMovie];
 }
 
 -(void)finalProxyViewLoad

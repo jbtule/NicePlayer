@@ -84,9 +84,10 @@
 {
 }
 
--(void)loadMovie
+-(BOOL)loadMovie
 {
     [self setMovie:[film autorelease]];
+	return YES;
 }
 
 -(void)keyDown:(NSEvent *)anEvent
