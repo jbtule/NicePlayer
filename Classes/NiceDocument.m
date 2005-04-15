@@ -193,6 +193,7 @@ id rowsToFileNames(id obj, void* playList){
     }
     
     [self updateAfterLoad];
+    [self repositionAfterLoad];
 }
 
 /**
@@ -208,7 +209,7 @@ id rowsToFileNames(id obj, void* playList){
     
     [self refreshRepeatModeGUI];
     [self calculateAspectRatio];
-    [self repositionAfterLoad];
+
 }
 
 
