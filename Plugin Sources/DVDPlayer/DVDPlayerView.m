@@ -183,15 +183,12 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
  */
 -(BOOL)loadMovie
 {
-	DVDErrorCode err = DVDInitialize();
+	DVDInitialize();
 	
-	if((err == kDVDErrorPlaybackOpen) || (err == kDVDErrorInitializingLib))
-		return NO;
-		
 	CGDirectDisplayID displays[MAX_DISPLAYS];
 	CGDisplayCount displayCount;
 	NSRect frame = [[NSScreen mainScreen] frame];
-	DVDSetVideoWindowID([[self window] windowNumber]);
+	DVDSetVideoWindowID([[self window] windowNumber]);	
 	
 	CGRect cgr = {{NSMinX(frame), NSMinY(frame)}, {NSWidth(frame), NSHeight(frame)}};
 	CGGetDisplaysWithRect(cgr, MAX_DISPLAYS, displays, &displayCount);
@@ -208,6 +205,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 		DVDOpenMediaFile(&fsref);
 	else
 		DVDOpenMediaVolume(&fsref);
+	
 	[self aspectRatioChanged];
 	updateChapterTimer = [NSTimer scheduledTimerWithTimeInterval:30
 														target:self
