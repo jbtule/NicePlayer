@@ -257,20 +257,26 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 				return;
 		}
 		DVDDoUserNavigation(inNavigation);
+		return;
 	}
 	
 	if(!onMenu && ([anEvent modifierFlags] & NSShiftKeyMask)){
 		switch (c) {
 			case NSLeftArrowFunctionKey:
+			case 0x3: case 0xD:
 				[self previousChapter];
-				break;
+				return;
 			case NSRightArrowFunctionKey:
 				[self nextChapter];
-				break;
+				return;
 			default:
 				break;
 		}
 	}
+}
+
+-(void)keyUp:(NSEvent *)anEvent
+{
 }
 
 -(void)mouseDown:(NSEvent *)anEvent
@@ -291,6 +297,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(void)drawMovieFrame
 {
+	DVDUpdateVideo();
 }
 
 /**
@@ -388,13 +395,19 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(void)previousChapter
 {
+	BOOL wasPlaying = [self isPlaying];
     DVDPreviousChapter();
+	if(wasPlaying)
+		DVDPlay();
+	else
+		[self drawMovieFrame];
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:self];
 }
 
 -(void)nextChapter
 {
     DVDNextChapter();
+	[self drawMovieFrame];
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:self];
 }
 

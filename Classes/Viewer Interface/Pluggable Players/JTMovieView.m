@@ -94,6 +94,10 @@
 {
 }
 
+-(void)keyUp:(NSEvent *)anEvent;
+{
+}
+
 -(void)mouseDown:(NSEvent *)anEvent
 {
 }
