@@ -243,7 +243,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/Developer/Tools/sdp -f st -o \"$BUILD_DIR/$FULL_PRODUCT_NAME/Contents/Resources\" \"$SOURCE_ROOT/Resources/NicePlayer.sdef\"";
+			shellScript = "/usr/bin/sdp -f st -o \"$BUILD_DIR/$FULL_PRODUCT_NAME/Contents/Resources\" \"$SOURCE_ROOT/Resources/NicePlayer.sdef\"";
 		};
 		251FBBDF07BC201900D147E5 = {
 			fileEncoding = 4;

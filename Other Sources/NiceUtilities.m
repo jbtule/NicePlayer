@@ -23,3 +23,14 @@ NSArray* NPSortUrls(NSArray* anArrayOfUrls){
     }
     return [anArrayOfUrls sortedArrayUsingFunction:urlSort context:nil];
 }
+
+@implementation NSString (niceStringComparisonAdditions)
+
+-(NSComparisonResult)caseInsensitiveNumericCompareSublist:(NSString *)aString
+{
+	return [self compare:aString
+				 options:(NSCaseInsensitiveSearch | NSLiteralSearch)
+				   range:NSMakeRange(0, [aString length])];
+}
+
+@end

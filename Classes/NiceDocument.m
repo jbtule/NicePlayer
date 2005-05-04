@@ -6,7 +6,7 @@
  */
 
 #import "NiceDocument.h"
-#import "Other Sources/NiceUtilities.h"
+#import "NiceUtilities.h"
 #import "NiceWindow/NiceWindowController.h"
 id rowsToFileNames(id obj, void* playList){
     return [[(id)playList objectAtIndex:[obj intValue]] path];

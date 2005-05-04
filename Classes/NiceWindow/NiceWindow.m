@@ -988,8 +988,9 @@
             unsigned i;
             NSString *filename;
             NSArray *files = [pboard propertyListForType:NSFilenamesPboardType];
-            for(i = 0; i < [files count]; i++){
-                filename = [files objectAtIndex:i];
+			NSArray *sortedArray = [files sortedArrayUsingSelector:@selector(caseInsensitiveNumericCompareSublist:)];
+            for(i = 0; i < [sortedArray count]; i++){
+                filename = [sortedArray objectAtIndex:i];
                 [[[self windowController] document] addURLToPlaylist:[NSURL fileURLWithPath:filename]];
             }
             [[[self windowController] document] openPlaylistDrawerConditional:self];
