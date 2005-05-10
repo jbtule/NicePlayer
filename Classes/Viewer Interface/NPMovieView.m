@@ -13,7 +13,6 @@
 #import "../Overlay Widgets/Control Buttons/ControlButton.h"
 #import "../Overlay Widgets/Control Buttons/ControlPlay.h"
 @class JTMovieView;
-@class DVDPlayerView;
 @class NPPluginReader;
 
 @implementation NPMovieView
@@ -92,11 +91,14 @@
 			[trueMovieView release];
 			trueMovieView = nil;
 			id newViewClass = [[pluginDict objectForKey:[currentPlugin objectForKey:@"Name"]] objectForKey:@"Class"];
+			/* We should change the line below to be more graceful if a plugin can't load. */
 			trueMovieView = [newViewClass alloc];
 			if(!trueMovieView)
 				@throw noLoadException;
-			if([trueMovieView initWithFrame:subview] == nil)
-				return NO;
+			if([trueMovieView initWithFrame:subview] == nil){   /* This is used by RCMovieView gestalt check for Tiger, fail-safe no-load. */
+			    [trueMovieView release];
+			    continue;
+			}
 			didOpen = [trueMovieView openURL:url];
 		}
 		if(didOpen){

@@ -8,6 +8,7 @@
 #import "NPPluginReader.h"
 #import "Pluggable Players/NPMovieProtocol.h"
 
+@class RCMovieView;
 @class JTMovieView;
 @class DVDPlayerView;
 
@@ -127,7 +128,7 @@ static NPPluginReader *pluginReader = nil;
 
 -(id)builtinPlayerClasses
 {
-	return [NSArray arrayWithObjects:[JTMovieView class], nil];
+	return [NSArray arrayWithObjects:[RCMovieView class], [JTMovieView class], nil];
 }
 
 /* Finds all package pluggables and gets their information. */

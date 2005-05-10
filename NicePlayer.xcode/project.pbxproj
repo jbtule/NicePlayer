@@ -35,6 +35,7 @@
 //104
 		1058C7A6FEA54F5311CA2CBB = {
 			children = (
+				25CC866D0831DDA800027929,
 				25702FEF07569E3300D1EE8C,
 				257D60130753DED700702BD0,
 				257D60000753DE7C00702BD0,
@@ -809,6 +810,8 @@
 				252BD4FC076981DD006CF96B,
 				3EEDF751065B3E8800E3545C,
 				3EEDF752065B3E8800E3545C,
+				25CC864E0831DA2A00027929,
+				25CC864F0831DA2A00027929,
 			);
 			isa = PBXGroup;
 			name = "Pluggable Players";
@@ -1021,6 +1024,44 @@
 			isa = PBXBuildFile;
 			settings = {
 			};
+		};
+		25CC864E0831DA2A00027929 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = RCMovieView.h;
+			path = "Classes/Viewer Interface/Pluggable Players/RCMovieView.h";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		25CC864F0831DA2A00027929 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			name = RCMovieView.m;
+			path = "Classes/Viewer Interface/Pluggable Players/RCMovieView.m";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		25CC86500831DA2A00027929 = {
+			fileRef = 25CC864E0831DA2A00027929;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		25CC86510831DA2A00027929 = {
+			fileRef = 25CC864F0831DA2A00027929;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		25CC866D0831DDA800027929 = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.framework;
+			name = QTKit.framework;
+			path = /System/Library/Frameworks/QTKit.framework;
+			refType = 0;
+			sourceTree = "<absolute>";
 		};
 		25D2E7B407BF36D5004BEF7D = {
 			children = (
@@ -2937,7 +2978,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = "-weak_framework QTKit";
 				PRODUCT_NAME = NicePlayer;
 				SECTORDER_FLAGS = "";
 				WARNING_CFLAGS = "-Wmost -Wno-four-char-constants -Wno-unknown-pragmas -Wno-protocol";
@@ -2995,6 +3036,7 @@
 				25B07BF208077776006724D8,
 				25B0815C08084354006724D8,
 				3E28CCA40808E0F000F59FF5,
+				25CC86500831DA2A00027929,
 			);
 			isa = PBXHeadersBuildPhase;
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3127,6 +3169,7 @@
 				3E49DCB407C96F01009BA150,
 				25B0815D08084354006724D8,
 				3E28CCA50808E0F000F59FF5,
+				25CC86510831DA2A00027929,
 			);
 			isa = PBXSourcesBuildPhase;
 			runOnlyForDeploymentPostprocessing = 0;
