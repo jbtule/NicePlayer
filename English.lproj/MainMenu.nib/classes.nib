@@ -45,6 +45,7 @@
                 checkMouseLocation = id; 
                 newDocument = id; 
                 openDocument = id; 
+                openWebURL = id; 
                 playAll = id; 
                 presentMultiple = id; 
                 showPreferences = id; 
@@ -59,6 +60,8 @@
                 antiSleepTimer = id; 
                 backgroundWindow = id; 
                 mainWindowProxy = id; 
+                openURLField = id; 
+                openURLWindow = id; 
                 prefWindow = id; 
                 presentWindow = id; 
                 toggleFixedAspectMenuItem = id; 

@@ -23,13 +23,16 @@
     IBOutlet id toggleOnTopMenuItem;
     id antiSleepTimer;
     IBOutlet id toggleFixedAspectMenuItem;
+	IBOutlet id openURLField;
+	IBOutlet id openURLWindow;
 }
 
-+(NiceController *)controller;
-+(void)setController:(NiceController *)aNiceController;
++(id)controller;
++(void)setController:(id)aNiceController;
 
 -(id)mainWindowProxy;
 -(void)openFiles:(NSArray *)files;
+-(void)openURLs:(NSArray *)files;
 -(void)checkMouseLocation:(id)sender;
 -(id)mainDocument;
 -(void)changedWindow:(NSNotification *)notification;
@@ -45,6 +48,8 @@
 -(IBAction)showPreferences:(id)sender;
 -(IBAction)toggleAlwaysOnTop:(id)sender;
 -(IBAction)toggleFixedAspectRatio:(id)sender;
+
+-(IBAction)openWebURL:(id)sender;
 
 #pragma mark -
 #pragma mark Presentation

@@ -64,13 +64,15 @@
         [self setEditable:NO];
         muted = [super isMuted];
         if(![self movie]){
-            id blank = [[NSBundle mainBundle] pathForResource:@"black" ofType:@"png"];
+            id blank = [[[NSBundle mainBundle] pathForResource:@"black" ofType:@"png"] retain];
             if(!blank)
                 return nil;
-            id blankURL = [NSURL fileURLWithPath:blank];
+            id blankURL = [[NSURL fileURLWithPath:blank] retain];
+			[blank autorelease];
             if(!blankURL)
                 return nil;
             id movie = [[NSMovie alloc] initWithURL:blankURL byReference:YES];
+			[blankURL autorelease];
             if(!movie)
                 return nil;
             [self setMovie:[movie autorelease]];

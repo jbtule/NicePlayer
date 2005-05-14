@@ -184,7 +184,7 @@ id rowsToFileNames(id obj, void* playList){
 - (void)windowControllerDidLoadNib:(NSWindowController *)aController
 {
     [super windowControllerDidLoadNib:aController];
-    
+
     // Add any code here that needs to be executed once the windowController has loaded the document's window.
     if(theCurrentURL != nil){
         [self finalOpenURLFirstTime:YES];
@@ -193,7 +193,7 @@ id rowsToFileNames(id obj, void* playList){
     }
     
     [self updateAfterLoad];
-    [self repositionAfterLoad];
+	[self repositionAfterLoad];
 }
 
 /**

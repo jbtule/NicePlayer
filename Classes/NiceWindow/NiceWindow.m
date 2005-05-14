@@ -278,11 +278,14 @@
 
 -(void)putOverlay:(id)anOverlay inFrame:(NSRect)aFrame withVisibility:(BOOL)isVisible
 {
-    [self addChildWindow:anOverlay ordered:NSWindowAbove];
     [anOverlay setFrame:aFrame display:NO];
     
     [anOverlay setAlphaValue:(isVisible ? 1.0 : 0.0)];
     [anOverlay setLevel:[self level]];
+	/* For some reason on Tiger, we have to add the child window after we set the alpha and level, otherwise
+		the child window is visible in locations as setFrame: is being called, very odd. Didn't bother to file
+		it in radar. */
+    [self addChildWindow:anOverlay ordered:NSWindowAbove];
     [anOverlay orderFront:self];	
 }
 

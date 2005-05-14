@@ -82,11 +82,16 @@ id controller;
  */
 -(void)openFiles:(NSArray *)files
 {
+    files =[files collectUsingFunction:NPConvertFileNamesToURLs context:nil];
+    files= NPSortUrls(files);
+	[self openURLs:files];
+}
+
+-(void)openURLs:(NSArray *)files
+{
     id tempDoc = nil;
     unsigned i;
     
-    files =[files collectUsingFunction:NPConvertFileNamesToURLs context:nil];
-    files= NPSortUrls(files);
     for (i = 0; i < [files count]; i++){
         id tempURL = [files objectAtIndex:i];
         if([[Preferences mainPrefs] defaultOpenMode]){
@@ -235,6 +240,13 @@ id controller;
 {
     [((NiceWindow *)[NSApp mainWindow]) toggleFixedAspectRatio];
     [toggleFixedAspectMenuItem setState:[((NiceWindow *)[NSApp mainWindow]) windowIsFixedAspect]];
+}
+
+-(IBAction)openWebURL:(id)sender
+{
+	NSURL *newURL = [NSURL URLWithString:[openURLField stringValue]];
+	[self openURLs:[NSArray arrayWithObjects:newURL, nil]];
+	[openURLWindow performClose:self];
 }
 
 #pragma mark -
