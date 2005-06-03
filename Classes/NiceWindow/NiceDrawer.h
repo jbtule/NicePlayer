@@ -10,6 +10,7 @@
 
 
 @interface NiceDrawer : NSView {
+	IBOutlet NSTableView *playlistTable;
 }
 
 @end

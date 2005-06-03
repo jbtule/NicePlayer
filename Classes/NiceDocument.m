@@ -593,6 +593,12 @@ stuff won't work properly! */
     [thePlaylist replaceObjectAtIndex:tempIndex withObject:@"URL Placeholder"];
 }
 
+-(void)removeURLFromPlaylistAtIndex:(int)anIndex
+{
+    [thePlaylist replaceObjectAtIndex:anIndex withObject:@"URL Placeholder"];
+	[self removeURLPlaceHolders];
+}
+
 -(void)removeURLPlaceHolders
 {
     [thePlaylist removeObject:@"URL Placeholder"];
@@ -624,7 +630,7 @@ stuff won't work properly! */
 											   errorDescription:&error];
 		
 	if (!(xmlData && [xmlData writeToURL:aURL atomically:NO])){
-		NSLog(@"Error Saving %@", xmlData);
+		NSLog(@"Error Saving %@", aURL);
 		[[self window] displayAlertString:[NSString stringWithFormat:@"Error Saving %@", [[aURL path] lastPathComponent]]
 													 withInformation:error];
 	} else

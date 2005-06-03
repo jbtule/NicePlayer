@@ -35,7 +35,9 @@
                 addToPlaylist = id; 
                 choosePlaylistItem = id; 
                 closePlaylistDrawer = id; 
+                openPlaylistDrawer = id; 
                 openPlaylistDrawerConditional = id; 
+                pause = id; 
                 play = id; 
                 playNext = id; 
                 togglePlaylistDrawer = id; 
@@ -45,8 +47,10 @@
             CLASS = NiceDocument; 
             LANGUAGE = ObjC; 
             OUTLETS = {
+                asffrrTimer = id; 
                 movieMenuItem = id; 
-                theMovieView = id; 
+                playlistFilename = id; 
+                theMovieView = NPMovieView; 
                 thePlaylistDrawer = id; 
                 thePlaylistTable = id; 
                 theRepeatButton = id; 
@@ -55,7 +59,12 @@
             }; 
             SUPERCLASS = NSDocument; 
         }, 
-        {CLASS = NiceDrawer; LANGUAGE = ObjC; SUPERCLASS = NSView; }, 
+        {
+            CLASS = NiceDrawer; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {playlistTable = NSTableView; }; 
+            SUPERCLASS = NSView; 
+        }, 
         {CLASS = NiceScrubber; LANGUAGE = ObjC; SUPERCLASS = NSView; }, 
         {
             ACTIONS = {

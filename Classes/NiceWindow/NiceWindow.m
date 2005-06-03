@@ -268,8 +268,10 @@
 -(void)savePanelDidEnd:(NSSavePanel *)sheet returnCode:(int)returnCode contextInfo:(void *)contextInfo
 {
 	/* if successful, save file under designated name */
-	if (returnCode == NSOKButton)
+	if (returnCode == NSOKButton){
+		[sheet close];
 		[[[self windowController] document] savePlaylistToURL:[sheet URL]];
+	}
 }
 
 -(void)displayAlertString:(NSString *)aString withInformation:(NSString *)anotherString

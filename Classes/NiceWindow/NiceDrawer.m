@@ -49,5 +49,14 @@ and they ignore thier public  ones they inherited from their super.
 	[theWindow mouseMoved:newEvent];
 }
 
+-(void)keyDown:(NSEvent *)anEvent
+{
+	if(([anEvent type] == NSKeyDown)
+	   && [[anEvent characters] characterAtIndex:0] == 127){
+		[[[[(NSDrawerWindow*)[self window] _parentWindow] windowController] document] removeURLFromPlaylistAtIndex:[playlistTable selectedRow]];
+		return;
+	}
+	[super keyDown:anEvent];
+}
 
 @end
