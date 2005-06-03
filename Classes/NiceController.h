@@ -40,6 +40,9 @@
 #pragma mark Interface
 
 -(IBAction)openDocument:(id)sender;
+-(IBAction)openPlaylist:(id)sender;
+-(IBAction)savePlaylist:(id)sender;
+-(IBAction)saveAsPlaylist:(id)sender;
 -(IBAction)newDocument:(id)sender;
 -(IBAction)presentMultiple:(id)sender;
 -(IBAction)playAll:(id)sender;

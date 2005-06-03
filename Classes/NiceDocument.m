@@ -27,6 +27,7 @@ id rowsToFileNames(id obj, void* playList){
         theRepeatMode = [[Preferences mainPrefs] defaultRepeatMode];
         movieMenuItem = nil;
         menuObjects = nil;
+		playlistFilename = nil;
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(rebuildMenu)
                                                      name:@"RebuildAllMenus"
@@ -606,6 +607,64 @@ stuff won't work properly! */
 -(BOOL)isPlaylistEmpty
 {
     return [thePlaylist isEmpty];
+}
+
+-(void)savePlaylistToURL:(NSURL *)aURL
+{
+	NSMutableArray *tmpArray = [NSMutableArray array];
+	NSData *xmlData;
+	NSString *error;
+	unsigned i;
+	
+	for(i = 0; i < [thePlaylist count]; i++)
+		[tmpArray addObject:[[thePlaylist objectAtIndex:i] absoluteString]];
+			
+	xmlData = [NSPropertyListSerialization dataFromPropertyList:tmpArray
+														 format:NSPropertyListXMLFormat_v1_0
+											   errorDescription:&error];
+		
+	if (!(xmlData && [xmlData writeToURL:aURL atomically:NO])){
+		NSLog(@"Error Saving %@", xmlData);
+		[[self window] displayAlertString:[NSString stringWithFormat:@"Error Saving %@", [[aURL path] lastPathComponent]]
+													 withInformation:error];
+	} else
+		playlistFilename = [aURL retain];
+}
+
+-(void)savePlaylist
+{
+	[self savePlaylistToURL:playlistFilename];
+}
+
+-(void)loadPlaylistFromURL:(NSURL *)aURL
+{
+	NSData *plistData;
+	NSString *error;
+	NSPropertyListFormat format;
+	id plist;
+	plistData = [NSData dataWithContentsOfURL:aURL];
+	plist = [NSPropertyListSerialization propertyListFromData:plistData
+											 mutabilityOption:NSPropertyListImmutable
+													   format:&format
+											 errorDescription:&error];
+	
+	if (plist){
+		int i;
+		playlistFilename = [aURL retain];
+		[thePlaylist removeAllObjects];
+		
+		for(i = 0; i < [plist count]; i++)
+			[self addURLToPlaylist:[NSURL URLWithString:[plist objectAtIndex:i]]];
+	} else {
+		NSLog(@"Error Loading %@", aURL);
+		[[self window] displayAlertString:[NSString stringWithFormat:@"Error Loading %@", [[aURL path] lastPathComponent]]
+						  withInformation:error];
+	}
+}
+
+-(BOOL)hasPlaylist
+{
+	return (playlistFilename != nil);
 }
 
 #pragma mark -

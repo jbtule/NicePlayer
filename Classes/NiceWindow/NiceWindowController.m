@@ -17,9 +17,6 @@
     
 }
 
-
-
-
 - (NSString *)windowTitleForDocumentDisplayName:(NSString *)displayName
 {
     if([displayName hasPrefix:@"Untitled"]){
@@ -32,6 +29,5 @@
     } else
         return displayName;
 }
-
 
 @end

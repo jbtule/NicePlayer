@@ -178,6 +178,34 @@ id controller;
     [self openFiles:tempFiles];
 }
 
+-(IBAction)openPlaylist:(id)sender
+{
+	NSSavePanel *op;
+	int runResult;
+	
+	/* create or get the shared instance of NSSavePanel */
+	op = [NSOpenPanel openPanel];
+	
+	/* display the NSOpenPanel */
+	runResult = [op runModalForTypes:[NSArray arrayWithObjects:@"npl", nil]];
+	
+	/* if successful, save file under designated name */
+	if (runResult == NSOKButton){
+		[self newDocument:self];
+		[((NiceWindow *)[NSApp mainWindow]) loadPlaylistFromURL:[op URL]];
+	}		
+}
+
+-(IBAction)savePlaylist:(id)sender
+{
+	[((NiceWindow *)[NSApp mainWindow]) savePlaylist];
+}
+
+-(IBAction)saveAsPlaylist:(id)sender
+{
+    [((NiceWindow *)[NSApp mainWindow]) savePlaylistToURL];
+}
+
 -(IBAction)newDocument:(id)sender
 {
     [super newDocument:sender];

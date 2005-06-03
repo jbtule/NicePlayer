@@ -233,6 +233,55 @@
     [theScrubBar setNeedsDisplay:YES];
 }
 
+-(void)loadPlaylistFromURL:(NSURL *)aURL
+{
+	[[[self windowController] document] loadPlaylistFromURL:aURL];
+}
+
+-(void)savePlaylist
+{
+	if([[[self windowController] document] hasPlaylist])
+		[[[self windowController] document] savePlaylist];
+	else
+		[self savePlaylistToURL];
+}
+
+-(void)savePlaylistToURL
+{
+	NSSavePanel *sp;
+	
+	/* create or get the shared instance of NSSavePanel */
+	sp = [NSSavePanel savePanel];
+	
+	/* set up new attributes */	
+	[sp setRequiredFileType:@"npl"];
+	
+	/* display the NSSavePanel */
+	[sp beginSheetForDirectory:nil
+						  file:nil
+				modalForWindow:self
+				 modalDelegate:self
+				didEndSelector:@selector(savePanelDidEnd:returnCode:contextInfo:)
+				   contextInfo:nil];
+}
+
+-(void)savePanelDidEnd:(NSSavePanel *)sheet returnCode:(int)returnCode contextInfo:(void *)contextInfo
+{
+	/* if successful, save file under designated name */
+	if (returnCode == NSOKButton)
+		[[[self windowController] document] savePlaylistToURL:[sheet URL]];
+}
+
+-(void)displayAlertString:(NSString *)aString withInformation:(NSString *)anotherString
+{
+	NSAlert *anAlert = [NSAlert alertWithMessageText:aString
+									   defaultButton:@"Okay"
+									 alternateButton:nil
+										 otherButton:nil
+						   informativeTextWithFormat:anotherString];
+	[anAlert beginSheetModalForWindow:self modalDelegate:nil didEndSelector:nil contextInfo:nil];
+}
+
 #pragma mark -
 #pragma mark Overlays
 

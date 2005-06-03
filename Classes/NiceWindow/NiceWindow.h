@@ -70,6 +70,13 @@
 -(IBAction)updateByTime:(id)sender;
 
 #pragma mark -
+#pragma mark Interface Items
+
+-(void)openPlaylistFromURL;
+-(void)savePlaylist;
+-(void)savePlaylistToURL;
+
+#pragma mark -
 #pragma mark Overlays
 
 -(void)setupOverlays;

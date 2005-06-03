@@ -45,9 +45,12 @@
                 checkMouseLocation = id; 
                 newDocument = id; 
                 openDocument = id; 
+                openPlaylist = id; 
                 openWebURL = id; 
                 playAll = id; 
                 presentMultiple = id; 
+                saveAsPlaylist = id; 
+                savePlaylist = id; 
                 showPreferences = id; 
                 stopAll = id; 
                 toggleAlwaysOnTop = id; 

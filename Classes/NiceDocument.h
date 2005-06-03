@@ -31,6 +31,7 @@
 	id movieMenuItem;
 	NSMutableArray *menuObjects;
 	id asffrrTimer;
+	id playlistFilename;
 }
 
 -(NSData *)dataRepresentationOfType:(NSString *)aType;
@@ -65,6 +66,9 @@
 -(void)playNext;
 -(void)playPrev;
 -(unsigned)getPrevIndex;
+-(void)savePlaylistToURL:(NSURL *)aURL;
+-(void)savePlaylist;
+-(void)loadPlaylistFromURL:(NSURL *)aURL;
 
 #pragma mark -
 #pragma mark Playlist
