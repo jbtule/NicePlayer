@@ -1,5 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE dictionary SYSTEM "file://localhost/System/Library/DTDs/sdef.dtd">
+<!-- BASICS -->
+<!-- DICTIONARY (ROOT ELEMENT) -->
+<!-- DOCUMENTATION ELEMENTS -->
+<!-- IMPLEMENTATION ELEMENTS -->
+<!-- SUITES -->
+<!-- SYNONYMS -->
+<!-- at least one of &quot;name&quot; and &quot;code&quot; is required. -->
+<!-- TYPES -->
+<!-- VERBS (COMMANDS OR EVENTS) -->
+<!-- CLASSES -->
+<!-- not quite accurate; there can be at most one contents element. -->
+<!-- contents -->
+<!-- element access -->
+<!-- properties -->
+<!-- supported verbs -->
+<!-- class extensions -->
+<!-- SIMPLE TYPES -->
+<!-- values -->
+<!-- records -->
+<!-- should be at least one property. -->
+<!-- enumerations -->
+<!-- should be at least one enumerator. -->
 <dictionary title="NicePlayer Dictionary">
 	<suite name="NicePlayer Suite" code="NIce" description="Applescript for the Nicest Media Player on the Mac">
 		<cocoa name="NicePlayerSuite"/>
@@ -48,10 +70,10 @@
 					</element>
 				</elements>
 				<properties>
-					<property name="muted" code="NPmd" description="If the sound is muted." type="boolean">
+					<property name="muted" code="NPmd" description="If the sound is muted." type="boolean" access="rw">
 						<cocoa method="muted"/>
 					</property>
-					<property name="volume" code="NPvm" description="The audio volume." type="number">
+					<property name="volume" code="NPvm" description="The audio volume." type="number" access="rw">
 						<cocoa method="volume"/>
 					</property>
 					<property name="window" code="cwin" description="The window that this playlist is attached to" type="window" access="r">
@@ -69,11 +91,14 @@
 					<property name="duration" code="npdn" description="Duration of the currently queued movie." type="real" access="r">
 						<cocoa method="currentMovieDuration"/>
 					</property>
-					<property name="elapsed time" code="npet" description="elapsed time of the currently queued movie" type="real">
+					<property name="elapsed time" code="npet" description="elapsed time of the currently queued movie" type="real" access="rw">
 						<cocoa method="currentMovieTime"/>
 					</property>
 					<property name="frame rate" code="npfr" description="frame rate of the currently queued movie" type="real" access="r">
 						<cocoa method="currentMovieFrameRate"/>
+					</property>
+					<property name="identifier" code="npid" description="unique identifier" type="string">
+						<cocoa method="identifier"/>
 					</property>
 				</properties>
 				<responds-to-commands>
@@ -109,13 +134,13 @@
 			<class name="window" code="cwin" description="The NicePlayer window." plural="windows" inherits="NSCoreSuite.NSWindow">
 				<cocoa class="NiceWindow"/>
 				<properties>
-					<property name="playlist is showing" code="plsh" description="If the playlist drawer is showing or not" type="boolean">
+					<property name="playlist is showing" code="plsh" description="If the playlist drawer is showing or not" type="boolean" access="rw">
 						<cocoa method="playlistShowing"/>
 					</property>
 					<property name="playlist" code="NPpl" description="The document whose contents are being displayed in the window." type="movie" access="r">
 						<cocoa method="documentMovie"/>
 					</property>
-					<property name="level" code="npht" description="is the window floating about all others" type="height levels">
+					<property name="level" code="npht" description="is the window floating about all others" type="height levels" access="rw">
 						<cocoa method="floating"/>
 					</property>
 				</properties>

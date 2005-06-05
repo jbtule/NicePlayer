@@ -31,8 +31,9 @@
 	NSMutableArray *menuObjects;
 	id asffrrTimer;
 	id playlistFilename;
+        NSString* theID;
 }
-
+-(NSString*)identifier;
 -(NSData *)dataRepresentationOfType:(NSString *)aType;
 -(BOOL)readFromFile:(NSString *)fileName ofType:(NSString *)docType;
 -(BOOL)readFromURL:(NSURL *)url ofType:(NSString *)docType;

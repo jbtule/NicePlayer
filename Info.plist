@@ -224,7 +224,11 @@
 			<key>CFBundleTypeIconFile</key>
 			<string>nicelist.icns</string>
 			<key>CFBundleTypeName</key>
-			<string>nicelist</string>
+			<string>Nice Playlist</string>
+			<key>CFBundleTypeOSTypes</key>
+			<array>
+				<string>****</string>
+			</array>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>LSTypeIsPackage</key>

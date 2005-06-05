@@ -108,7 +108,7 @@ static NPPluginReader *pluginReader = nil;
     NSArray *array = [[self packagePluggables] arrayByAddingObjectsFromArray:[self builtinPlayerClasses]];
     
     pluggablesArray = [[NSMutableArray array] retain];
-    allowedExtensions = [[NSMutableArray array] retain];
+    allowedExtensions = [[NSMutableArray arrayWithObject:@"nicelist"] retain];
     pluggableDict = [[NSMutableDictionary dictionary] retain];
     
     id anObject;

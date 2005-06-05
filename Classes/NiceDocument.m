@@ -27,6 +27,7 @@ id rowsToFileNames(id obj, void* playList){
         movieMenuItem = nil;
         menuObjects = nil;
         playlistFilename = nil;
+        theID = [[[NSProcessInfo processInfo] globallyUniqueString] retain];
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(rebuildMenu)
                                                      name:@"RebuildAllMenus"
@@ -51,7 +52,13 @@ id rowsToFileNames(id obj, void* playList){
     [theSubtitle release];
     [theCurrentURL release];
     [thePlaylist release];
+    [playlistFilename release];
+    [theID release];
     [super dealloc];
+}
+
+-(NSString*)identifier{
+    return theID;
 }
 
 - (id)initWithContentsOfFile:(NSString *)fileName ofType:(NSString *)docType
