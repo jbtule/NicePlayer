@@ -112,7 +112,7 @@ id controller;
             if(![[[[tempURL path] pathExtension] lowercaseString] isEqualTo:@"nicelist"])
                 [tempDoc loadURL:tempURL firstTime:YES];
             else if(![tempDoc isActive])
-                [tempDoc readFromURL:tempURL ofType:@"nicelist"];
+                [tempDoc loadPlaylistFromURL:tempURL];
             
             if([[self mainDocument] isActive]){
                 if([[Preferences mainPrefs] movieOpenedFullScreen])

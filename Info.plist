@@ -221,6 +221,8 @@
 			<array>
 				<string>nicelist</string>
 			</array>
+			<key>CFBundleTypeIconFile</key>
+			<string>nicelist.icns</string>
 			<key>CFBundleTypeName</key>
 			<string>nicelist</string>
 			<key>CFBundleTypeRole</key>
@@ -229,6 +231,8 @@
 			<false/>
 			<key>NSDocumentClass</key>
 			<string>NiceDocument</string>
+			<key>NSPersistentStoreTypeKey</key>
+			<string>XML</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>

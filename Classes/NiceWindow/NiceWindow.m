@@ -332,6 +332,10 @@
     initialFadeTimer = nil;
 }
 
+-(BOOL)scrubberInUse{
+    return [theScrubBar inUse];
+}
+
 -(void)showOverLayWindow
 {
     if((windowOverlayIsShowing) && !(isInitialDisplay))

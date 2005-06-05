@@ -33,7 +33,7 @@
 			withToolTip:@"Actions on Movies"
 		 allowingResize:NO];
 	[prefWindow addPane:paneOverlays
-		   withIcon:[[[NSImage alloc]initWithContentsOfFile:tActionPrefIcon] autorelease]
+		   withIcon:[NSImage imageNamed:@"OverPrefIcon"] 
 	     withIdentifier:@"Overlays"
 		  withLabel:@"Overlays"
 		withToolTip:@"Various Information and Interaction Displays"

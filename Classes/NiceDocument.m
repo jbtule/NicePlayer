@@ -334,7 +334,7 @@ id rowsToFileNames(id obj, void* playList){
     if( (theRepeatMode == REPEAT_LIST) || (theRepeatMode == REPEAT_NONE)){
         [[theWindow playButton] setImage:[NSImage imageNamed:@"play"]];
         [[theWindow playButton] setAlternateImage:[NSImage imageNamed:@"playClick"]];
-        if([theMovieView wasPlaying])
+        if([theMovieView wasPlaying] && ![(NiceWindow*)[self window] scrubberInUse])
             [self playNext];
     }
 }
@@ -656,7 +656,6 @@ stuff won't work properly! */
 													   format:&format
 											 errorDescription:&error];
 	if (plist !=nil){
-            NSLog(@"test");
             id tMajorVersion = [plist objectForKey:@"MajorVersion"];
             if(tMajorVersion != nil && [tMajorVersion intValue] == 0 ){
                 [playlistFilename release];
@@ -675,6 +674,8 @@ stuff won't work properly! */
                 [self loadURL:[thePlaylist firstObject] firstTime:YES];
                 [self refreshRepeatModeGUI];
                 [thePlaylistTable reloadData];
+                [theMovieView setVolume: [[[plist objectForKey:@"Contents"] objectForKey:@"Volume"] floatValue]];
+                [[self window] updateVolume];
 
                 return YES;
             }else{
