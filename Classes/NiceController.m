@@ -94,7 +94,7 @@ id controller;
     
     for (i = 0; i < [files count]; i++){
         id tempURL = [files objectAtIndex:i];
-        if([[Preferences mainPrefs] defaultOpenMode]){
+        if([[Preferences mainPrefs] defaultOpenMode] || (([[[[tempURL path] pathExtension] lowercaseString] isEqualTo:@"nicelist"]) && i !=0 )){
             [self openDocumentWithContentsOfURL:tempURL display:YES];
             continue;
         }
@@ -108,7 +108,11 @@ id controller;
                     tempDoc = [self openDocumentWithContentsOfURL:tempURL display:YES];
             } else
                 tempDoc = [self openDocumentWithContentsOfURL:tempURL display:YES];
-            [tempDoc loadURL:tempURL firstTime:YES];
+            
+            if(![[[[tempURL path] pathExtension] lowercaseString] isEqualTo:@"nicelist"])
+                [tempDoc loadURL:tempURL firstTime:YES];
+            else if(![tempDoc isActive])
+                [tempDoc readFromURL:tempURL ofType:@"nicelist"];
             
             if([[self mainDocument] isActive]){
                 if([[Preferences mainPrefs] movieOpenedFullScreen])
@@ -176,34 +180,6 @@ id controller;
     NSArray* tempFiles = [self fileNamesFromRunningOpenPanel];
 				
     [self openFiles:tempFiles];
-}
-
--(IBAction)openPlaylist:(id)sender
-{
-	NSSavePanel *op;
-	int runResult;
-	
-	/* create or get the shared instance of NSSavePanel */
-	op = [NSOpenPanel openPanel];
-	
-	/* display the NSOpenPanel */
-	runResult = [op runModalForTypes:[NSArray arrayWithObjects:@"npl", nil]];
-	
-	/* if successful, save file under designated name */
-	if (runResult == NSOKButton){
-		[self newDocument:self];
-		[((NiceWindow *)[NSApp mainWindow]) loadPlaylistFromURL:[op URL]];
-	}		
-}
-
--(IBAction)savePlaylist:(id)sender
-{
-	[((NiceWindow *)[NSApp mainWindow]) savePlaylist];
-}
-
--(IBAction)saveAsPlaylist:(id)sender
-{
-    [((NiceWindow *)[NSApp mainWindow]) savePlaylistToURL];
 }
 
 -(IBAction)newDocument:(id)sender

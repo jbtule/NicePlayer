@@ -23,11 +23,10 @@ id rowsToFileNames(id obj, void* playList){
         theSubtitle = nil;
         asffrrTimer = nil;
         thePlaylist = [[NSMutableArray alloc] init];
-        theRandomizePlayList = [[NSMutableArray alloc] init];
         theRepeatMode = [[Preferences mainPrefs] defaultRepeatMode];
         movieMenuItem = nil;
         menuObjects = nil;
-		playlistFilename = nil;
+        playlistFilename = nil;
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(rebuildMenu)
                                                      name:@"RebuildAllMenus"
@@ -51,7 +50,6 @@ id rowsToFileNames(id obj, void* playList){
     }
     [theSubtitle release];
     [theCurrentURL release];
-    [theRandomizePlayList release];
     [thePlaylist release];
     [super dealloc];
 }
@@ -76,7 +74,32 @@ id rowsToFileNames(id obj, void* playList){
 - (NSData *)dataRepresentationOfType:(NSString *)aType
 {
     // Insert code here to write your document from the given data.  You can also choose to override -fileWrapperRepresentationOfType: or -writeToFile:ofType: instead.
-    return nil;
+    
+    id collectURLToStrings(id each, void*context){
+        return [each absoluteString];
+    }
+    
+    id tDict = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:0],@"MajorVersion",
+                                                        [NSNumber numberWithInt:1],@"MinorVersion",
+                                                        [NSDictionary dictionaryWithObjectsAndKeys:[thePlaylist collectUsingFunction:collectURLToStrings context:nil],@"Playlist",
+                                                                                        [NSNumber numberWithFloat:[theMovieView volume]],@"Volume",
+                                                                        [NSNumber numberWithInt:theRepeatMode],@"Repeat",
+                                                                        [NSNumber numberWithBool:isRandom],@"Random",nil],@"Contents",nil];
+    NSString* tErrror = nil;
+    NSData* tData = [NSPropertyListSerialization dataFromPropertyList:tDict format:NSPropertyListXMLFormat_v1_0 errorDescription:&tErrror];
+    
+    if(tData == nil)
+        NSLog(tErrror);
+    
+    return  tData;
+
+}
+
+- (BOOL)writeToFile:(NSString*)aPath ofType:(NSString *)docType{
+        [playlistFilename release];
+    playlistFilename = [[NSURL fileURLWithPath:aPath] retain];
+      return  [super writeToFile:aPath ofType:docType];
+    
 }
 
 /**
@@ -95,6 +118,11 @@ id rowsToFileNames(id obj, void* playList){
 - (BOOL)readFromURL:(NSURL *)url ofType:(NSString *)docType
 {
     // Insert code here to read your document from the given data.  You can also choose to override -loadFileWrapperRepresentation:ofType: or -readFromFile:ofType: instead.
+    
+    if([[docType lowercaseString] isEqualTo:@"nicelist"]){
+        return [self loadPlaylistFromURL:url];
+    }
+    
     if(theCurrentURL)
         [theCurrentURL release];
     theCurrentURL = [url retain];
@@ -144,9 +172,10 @@ id rowsToFileNames(id obj, void* playList){
     }else{
         theSubtitle = nil;
     }
-    
-    [self setFileName:[[[[theCurrentURL path] lastPathComponent] stringByDeletingPathExtension] stringByAppendingPathExtension:@"nicelist"]];
-    [self setFileType:@"nicelist"];
+    if(![self hasPlaylist]){
+        [self setFileName:[[[[theCurrentURL path] lastPathComponent] stringByDeletingPathExtension] stringByAppendingPathExtension:@"nicelist"]];
+        [self setFileType:@"nicelist"];
+    }
     
     /* Initialize the window stuff for movie playback. */
     [[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:nil];
@@ -615,34 +644,7 @@ stuff won't work properly! */
     return [thePlaylist isEmpty];
 }
 
--(void)savePlaylistToURL:(NSURL *)aURL
-{
-	NSMutableArray *tmpArray = [NSMutableArray array];
-	NSData *xmlData;
-	NSString *error;
-	unsigned i;
-	
-	for(i = 0; i < [thePlaylist count]; i++)
-		[tmpArray addObject:[[thePlaylist objectAtIndex:i] absoluteString]];
-			
-	xmlData = [NSPropertyListSerialization dataFromPropertyList:tmpArray
-														 format:NSPropertyListXMLFormat_v1_0
-											   errorDescription:&error];
-		
-	if (!(xmlData && [xmlData writeToURL:aURL atomically:NO])){
-		NSLog(@"Error Saving %@", aURL);
-		[[self window] displayAlertString:[NSString stringWithFormat:@"Error Saving %@", [[aURL path] lastPathComponent]]
-													 withInformation:error];
-	} else
-		playlistFilename = [aURL retain];
-}
-
--(void)savePlaylist
-{
-	[self savePlaylistToURL:playlistFilename];
-}
-
--(void)loadPlaylistFromURL:(NSURL *)aURL
+-(BOOL)loadPlaylistFromURL:(NSURL *)aURL
 {
 	NSData *plistData;
 	NSString *error;
@@ -653,18 +655,35 @@ stuff won't work properly! */
 											 mutabilityOption:NSPropertyListImmutable
 													   format:&format
 											 errorDescription:&error];
-	
-	if (plist){
-		int i;
-		playlistFilename = [aURL retain];
-		[thePlaylist removeAllObjects];
-		
-		for(i = 0; i < [plist count]; i++)
-			[self addURLToPlaylist:[NSURL URLWithString:[plist objectAtIndex:i]]];
+	if (plist !=nil){
+            NSLog(@"test");
+            id tMajorVersion = [plist objectForKey:@"MajorVersion"];
+            if(tMajorVersion != nil && [tMajorVersion intValue] == 0 ){
+                [playlistFilename release];
+                playlistFilename = [aURL retain];
+                [self setFileURL:playlistFilename];
+                
+                id collectStringsToURLs(id each, void* context){
+                    return [NSURL URLWithString:each];
+                }
+                
+                
+                [thePlaylist release];
+                thePlaylist = [[[[plist objectForKey:@"Contents"] objectForKey:@"Playlist"] collectUsingFunction:collectStringsToURLs context:nil]  mutableCopy];
+                theRepeatMode = [[[plist objectForKey:@"Contents"] objectForKey:@"Repeat"] intValue];
+                isRandom  = [[[plist objectForKey:@"Contents"] objectForKey:@"Random"] intValue];
+                [self loadURL:[thePlaylist firstObject] firstTime:YES];
+                [self refreshRepeatModeGUI];
+                [thePlaylistTable reloadData];
+
+                return YES;
+            }else{
+                [[self window] displayAlertString:@"error opening playlist" withInformation:@"This file format needs a newer version of NicePlayer"];
+                return NO;
+            }
 	} else {
-		NSLog(@"Error Loading %@", aURL);
-		[[self window] displayAlertString:[NSString stringWithFormat:@"Error Loading %@", [[aURL path] lastPathComponent]]
-						  withInformation:error];
+		NSLog(@"Error Loading %@ %@", aURL,error);
+            return NO;
 	}
 }
 

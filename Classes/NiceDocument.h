@@ -24,7 +24,6 @@
     IBOutlet NiceWindow *theWindow;
     NSURL* theCurrentURL;
     NSMutableArray* thePlaylist;
-    NSMutableArray* theRandomizePlayList;
     enum defaultRepeatModeValues theRepeatMode;
 	BOOL hasRealMovie;
 	BOOL isRandom;
@@ -66,9 +65,7 @@
 -(void)playNext;
 -(void)playPrev;
 -(unsigned)getPrevIndex;
--(void)savePlaylistToURL:(NSURL *)aURL;
--(void)savePlaylist;
--(void)loadPlaylistFromURL:(NSURL *)aURL;
+-(BOOL)loadPlaylistFromURL:(NSURL *)aURL;
 
 #pragma mark -
 #pragma mark Playlist
@@ -86,5 +83,6 @@
 -(void)removeURLFromPlaylist:(NSURL*)aURL;
 -(void)removeURLPlaceHolders;
 -(BOOL)isPlaylistEmpty;
+-(BOOL)hasPlaylist;
 
 @end
