@@ -38,9 +38,20 @@
 
 -(void)awakeFromNib
 {
-
 	[self registerForDraggedTypes:[(NiceWindow *)[self window] acceptableDragTypes]];
 	[trueMovieView registerForDraggedTypes:[(NiceWindow *)[self window] acceptableDragTypes]];
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(start)
+												 name:@"PlayAllMovies"
+											   object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(stop)
+												 name:@"StopAllMovies"
+											   object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(rebuildMenu)
+												 name:@"RebuildMenu"
+											   object:nil];	
 }
 
 -(void)closeReopen
@@ -58,7 +69,7 @@
 	[trueMovieView close];
 	[trueMovieView removeFromSuperview];
 	[trueMovieView unregisterDraggedTypes];
-	[[NSNotificationCenter defaultCenter] removeObserver:trueMovieView];
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
 	[self unregisterDraggedTypes];
 }
 
@@ -133,18 +144,6 @@
 -(void)finalProxyViewLoad
 {
 	[trueMovieView registerForDraggedTypes:[(NiceWindow *)[self window] acceptableDragTypes]];
-	[[NSNotificationCenter defaultCenter] addObserver:trueMovieView
-											 selector:@selector(start)
-												 name:@"PlayAllMovies"
-											   object:nil];
-	[[NSNotificationCenter defaultCenter] addObserver:trueMovieView
-											 selector:@selector(stop)
-												 name:@"StopAllMovies"
-											   object:nil];
-	[[NSNotificationCenter defaultCenter] addObserver:self
-											 selector:@selector(rebuildMenu)
-												 name:@"RebuildMenu"
-											   object:trueMovieView];
 }
 
 -(NSView *)hitTest:(NSPoint)aPoint
