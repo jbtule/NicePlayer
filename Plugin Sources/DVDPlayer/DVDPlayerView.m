@@ -150,6 +150,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	BOOL unmountableFlag;
 	NSString *description;
 	NSString *fileSystemType;
+	
 	BOOL isMountPoint = [[NSWorkspace sharedWorkspace] getFileSystemInfoForPath:[url path] 
 																	isRemovable:&removableFlag
 																	 isWritable:&writableFlag
