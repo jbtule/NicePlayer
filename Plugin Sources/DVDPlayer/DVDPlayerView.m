@@ -35,6 +35,11 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 @implementation DVDPlayerView
 
++(void)initialize
+{
+	DVDInitialize();
+}
+
 /**
  * Each plugin must return a dictionary with the specified attributes. These are displayed in the preferences
  * for the user to see when choosing plugin order and which plugins are enabled.
@@ -121,7 +126,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 		DVDCloseMediaFile();
 	else
 		DVDCloseMediaVolume();
-	DVDDispose();
+//	DVDDispose();
 }
 
 -(void)dealloc
@@ -145,7 +150,6 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	BOOL unmountableFlag;
 	NSString *description;
 	NSString *fileSystemType;
-		
 	BOOL isMountPoint = [[NSWorkspace sharedWorkspace] getFileSystemInfoForPath:[url path] 
 																	isRemovable:&removableFlag
 																	 isWritable:&writableFlag
@@ -167,7 +171,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	FSRef fsref;
 	CFURLGetFSRef((CFURLRef)myURL, &fsref);
 
-	BOOL isValid;
+	Boolean isValid;
 	DVDIsValidMediaRef(&fsref, &isValid);
 	if(isValid){
 		[myURL retain];
@@ -183,8 +187,6 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
  */
 -(BOOL)loadMovie
 {
-	DVDInitialize();
-	
 	CGDirectDisplayID displays[MAX_DISPLAYS];
 	CGDisplayCount displayCount;
 	NSRect frame = [[NSScreen mainScreen] frame];
@@ -225,7 +227,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 {
 	NSString *s = [anEvent charactersIgnoringModifiers];
 	unichar c = [s characterAtIndex:0];
-	BOOL onMenu;
+	Boolean onMenu;
 	DVDMenu whichMenu;
 	DVDIsOnMenu(&onMenu, &whichMenu);
 	/* This handles keyboard nav for DVD Menu support and such */
@@ -330,7 +332,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(BOOL)muted
 {
-	BOOL isp;
+	Boolean isp;
 	DVDIsMuted(&isp);
 	return isp;
 }
@@ -364,7 +366,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(BOOL)isPlaying
 {
-	BOOL isp;
+	Boolean isp;
 	DVDIsPlaying(&isp);
 	if(isp){
 		DVDIsPaused(&isp);
@@ -376,7 +378,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(void)start
 {
-	BOOL isp;
+	Boolean isp;
 	DVDIsPaused(&isp);
 	if(isp)
 		DVDResume();
@@ -494,7 +496,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(void)setCurrentMovieTime:(double)newMovieTime
 {
-	BOOL isp;
+	Boolean isp;
 	DVDIsPaused(&isp);
 	DVDSetTime(kDVDTimeCodeElapsedSeconds, (long)newMovieTime, 0);
 	if(isp)
@@ -530,7 +532,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 {
 	id pluginMenu = [[NSMutableArray array] retain];
 	id newItem;
-	BOOL isp;
+	Boolean isp;
 	
 	newItem = [[[NSMenuItem alloc] initWithTitle:@"Main Menu"
 										  action:@selector(gotoMainMenu)
@@ -729,7 +731,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	unsigned short subs;
 	unsigned short current;
 	unsigned short i;
-	BOOL isp;
+	Boolean isp;
 	
 	DVDGetNumSubPictureStreams(&subs);
 	DVDGetSubPictureStream(&current);
@@ -792,7 +794,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(void)gotoMainMenu
 {
-	BOOL isOnMenu;
+	Boolean isOnMenu;
 	DVDMenu onThisMenu;
 
 	DVDIsOnMenu(&isOnMenu, &onThisMenu);
@@ -802,7 +804,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(void)gotoAudioMenu
 {
-	BOOL isOnMenu;
+	Boolean isOnMenu;
 	DVDMenu onThisMenu;
 	
 	DVDIsOnMenu(&isOnMenu, &onThisMenu);
@@ -817,7 +819,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(void)gotoTitle:(id)anObject
 {
-	BOOL isp;
+	Boolean isp;
 	DVDIsPaused(&isp);
 	DVDSetTitle([anObject tag]);
 	if(isp)
@@ -830,7 +832,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(void)gotoChapter:(id)anObject
 {
-	BOOL isp;
+	Boolean isp;
 	DVDIsPaused(&isp);
 	DVDSetChapter([anObject tag]);
 	if(isp)
@@ -843,7 +845,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(void)selectAudio:(id)anObject
 {
-	BOOL isp;
+	Boolean isp;
 	DVDIsPaused(&isp);
 	DVDSetAudioStream([anObject tag]);
 	if(isp)
@@ -856,7 +858,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(void)DVDSetAngle:(id)anObject
 {
-	BOOL isp;
+	Boolean isp;
 	DVDIsPaused(&isp);
 	DVDSetAngle([anObject tag]);
 	if(isp)
@@ -869,7 +871,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(void)selectSubPicture:(id)anObject
 {
-	BOOL isp;
+	Boolean isp;
 	DVDIsPaused(&isp);
 	DVDSetSubPictureStream([anObject tag]);
 	if(isp)
