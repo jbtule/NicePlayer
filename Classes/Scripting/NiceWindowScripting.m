@@ -73,7 +73,14 @@ enum{
 
 -(void)handleEnterFullScreenCommand:(id)sender
 {
-    [[NiceController controller] handleEnterFullScreen:self];
+    NSDictionary* tDict =[sender evaluatedArguments];
+    
+    NSScreen* value = [tDict objectForKey:@"on"];
+    
+    if(value ==nil)
+        value = [self screen];
+    
+    [[NiceController controller] handleEnterFullScreen:self onScreen:value];
 }
 
 -(void)handleExitFullScreenCommand:(id)sender

@@ -14,5 +14,5 @@
 -(void)handleEnterFullScreen:(id)tempWindow;
 -(void)handleExitFullScreen:(id)tempWindow;
 -(void)handleToggleFullScreen:(id)tempWindow;
-
+-(void)handleEnterFullScreen:(id)tempWindow onScreen:(NSScreen*)aScreen;
 @end

@@ -44,6 +44,50 @@
 <!-- should be at least one property. -->
 <!-- enumerations -->
 <!-- should be at least one enumerator. -->
+<!-- BASICS -->
+<!-- DICTIONARY (ROOT ELEMENT) -->
+<!-- DOCUMENTATION ELEMENTS -->
+<!-- IMPLEMENTATION ELEMENTS -->
+<!-- SUITES -->
+<!-- SYNONYMS -->
+<!-- at least one of &quot;name&quot; and &quot;code&quot; is required. -->
+<!-- TYPES -->
+<!-- VERBS (COMMANDS OR EVENTS) -->
+<!-- CLASSES -->
+<!-- not quite accurate; there can be at most one contents element. -->
+<!-- contents -->
+<!-- element access -->
+<!-- properties -->
+<!-- supported verbs -->
+<!-- class extensions -->
+<!-- SIMPLE TYPES -->
+<!-- values -->
+<!-- records -->
+<!-- should be at least one property. -->
+<!-- enumerations -->
+<!-- should be at least one enumerator. -->
+<!-- BASICS -->
+<!-- DICTIONARY (ROOT ELEMENT) -->
+<!-- DOCUMENTATION ELEMENTS -->
+<!-- IMPLEMENTATION ELEMENTS -->
+<!-- SUITES -->
+<!-- SYNONYMS -->
+<!-- at least one of &quot;name&quot; and &quot;code&quot; is required. -->
+<!-- TYPES -->
+<!-- VERBS (COMMANDS OR EVENTS) -->
+<!-- CLASSES -->
+<!-- not quite accurate; there can be at most one contents element. -->
+<!-- contents -->
+<!-- element access -->
+<!-- properties -->
+<!-- supported verbs -->
+<!-- class extensions -->
+<!-- SIMPLE TYPES -->
+<!-- values -->
+<!-- records -->
+<!-- should be at least one property. -->
+<!-- enumerations -->
+<!-- should be at least one enumerator. -->
 <dictionary title="NicePlayer Dictionary">
 	<suite name="NicePlayer Suite" code="NIce" description="Applescript for the Nicest Media Player on the Mac">
 		<cocoa name="NicePlayerSuite"/>
@@ -73,6 +117,10 @@
 					</element>
 					<element description="All the movies that exist in one playlist or another" type="movie" access="r">
 						<cocoa method="niceMovies"/>
+					</element>
+					<element type="screen">
+						<cocoa method="screens"/>
+						<accessor style="index"/>
 					</element>
 				</elements>
 				<responds-to-commands>
@@ -215,12 +263,25 @@
 					<responds-to name="add"/>
 				</responds-to-commands>
 			</class>
+			<class name="screen" code="NPsr" plural="screens" inherits="item">
+				<cocoa class="NSScreen"/>
+				<properties>
+					<property name="index" code="pidx" type="number" access="r">
+						<cocoa method="orderedIndex"/>
+					</property>
+					<property name="bounds" code="pbnd" type="rectangle" access="r">
+						<cocoa method="boundsAsQDRect"/>
+					</property>
+				</properties>
+			</class>
 		</classes>
 		<commands>
 			<command name="play" code="NIceplay" description="Starts a movie or current movie in a playlist (depending on if you reference the movie or the playlist)"/>
 			<command name="pause" code="NIcepaus" description="Pauses a movie or current movie in a playlist (depending on if you reference the movie or the playlist)"/>
 			<command name="playpause" code="NIceplps" description="toggles playing on the current movie in a referenced playlist"/>
-			<command name="enter full screen" code="NIceflsn" description="Enter full screen for a window or the main window of the application, (depending on if you reference the window or the application)"/>
+			<command name="enter full screen" code="NIceflsn" description="Enter full screen for a window or the main window of the application, (depending on if you reference the window or the application)">
+				<parameter name="on" code="NIos" type="screen" optional="optional"/>
+			</command>
 			<command name="exit full screen" code="NIcenlsn" description="Exit full screen mode."/>
 			<command name="add" code="NIceatpl" description="A file to the playlist.">
 				<cocoa name="NPAddCommand" class="NPAddCommand"/>

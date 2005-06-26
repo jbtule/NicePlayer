@@ -20,10 +20,15 @@
 
 -(void)handleEnterFullScreen:(id)tempWindow
 {
-	[NSApp activateIgnoringOtherApps:YES];
-	[tempWindow makeFullScreen];
-	[self presentScreen];
-	[backgroundWindow setPresentingWindow:tempWindow];
+    [self handleEnterFullScreen:tempWindow onScreen:[tempWindow screen]];
+}
+
+-(void)handleEnterFullScreen:(id)tempWindow onScreen:(NSScreen*)aScreen
+{
+    [NSApp activateIgnoringOtherApps:YES];
+    [tempWindow makeFullScreenOnScreen:aScreen];
+    [self presentScreenOnScreen:aScreen];
+    [backgroundWindow setPresentingWindow:tempWindow];
 }
 
 -(void)handleExitFullScreen:(id)tempWindow

@@ -524,6 +524,10 @@
  */
 -(void)makeFullScreen
 {
+    return [self makeFullScreenOnScreen:[self screen]];
+}
+-(void)makeFullScreenOnScreen:(NSScreen*) aScreen
+{
     if(!fullScreen){
 	fullScreen = YES;
 	oldWindowLevel = [self level];
@@ -531,7 +535,7 @@
 	[[[self windowController] document] closePlaylistDrawer:self];
 	[self makeKeyAndOrderFront:self];
 	beforeFullScreen = [self frame];
-	[self fillScreenSize:self];
+	[self fillScreenSizeOnScreen:aScreen];
 	[self hideNotifier];
     }
     [theMovieView drawMovieFrame];
@@ -759,28 +763,38 @@
 
 -(IBAction)fillScreenSize:(id)sender
 {
+    [self fillScreenSizeOnScreen:[self screen]];
+}
+
+-(void)fillScreenSizeOnScreen:(NSScreen*)aScreen{
     [self resetFillingFlags];
     isFilling=YES;
     
-    NSSize aSize = [self getResizeAspectRatioSize];
+    NSSize aSize = [self getResizeAspectRatioSizeOnScreen:aScreen];
     NSRect newRect = [self calcResizeSize:aSize];
     newRect.origin.x = 0;
-    newRect = [self centerRect:newRect];
+    newRect = [self centerRect:newRect onScreen:aScreen];
     [self setFrame:newRect display:YES];
-    [self center];
+    [self centerOnScreen:aScreen];
 }
+
 
 -(IBAction)fillWidthSize:(id)sender
 {
+    [self fillWidthSizeWithScreen:[self screen]];
+}
+
+-(void)fillWidthSizeWithScreen:(NSScreen*)aScreen
+{
     [self resetFillingFlags];
     isWidthFilling = YES;
-    NSRect tempRect  = [[self screen] frame];
+    NSRect tempRect  = [aScreen frame];
     float tempVertAmount = tempRect.size.width
         *([self aspectRatio].height/[self aspectRatio].width)
         -[self frame].size.height;
     
     [self resize:tempVertAmount animate:NO];
-    [self center];
+    [self centerOnScreen:aScreen];
 }
 
 /**
@@ -817,12 +831,18 @@
 
 -(NSSize)getResizeAspectRatioSize
 {
+
+    return [self getResizeAspectRatioSizeOnScreen:[self screen]];
+}
+
+-(NSSize)getResizeAspectRatioSizeOnScreen:(NSScreen*) aScreen
+{
     NSSize ratio = [self aspectRatio];
     float newWidth = (([self frame].size.height / ratio.height) * ratio.width);
     if(isFilling | isWidthFilling){
-        float width = [[self screen] frame].size.width;
+        float width = [aScreen frame].size.width;
         
-        float height = [[self screen] frame].size.height;
+        float height = [aScreen frame].size.height;
         float calcHeigth =(width / ratio.width) * ratio.height;
         if(calcHeigth >height){
             return NSMakeSize((height / ratio.height) * ratio.width, height);
@@ -862,17 +882,26 @@
 /* Center on the CURRENT screen */
 - (void)center
 {
-    [self setFrame:[self centerRect:[self frame]]
+    [self centerOnScreen:[self screen]];
+}
+
+- (void)centerOnScreen:(NSScreen*)aScreen{
+    [self setFrame:[self centerRect:[self frame] onScreen:aScreen]
            display:YES];
 }
 
 -(NSRect)centerRect:(NSRect)aRect
 {
+    return [self centerRect:aRect onScreen:[self screen]];
+}
+
+-(NSRect)centerRect:(NSRect)aRect onScreen:(NSScreen*)aScreen
+{
     NSRect screenRect;
     if (!fullScreen)
-        screenRect = [[self screen] visibleFrame];
+        screenRect = [aScreen visibleFrame];
     else
-        screenRect = [[self screen] frame];
+        screenRect = [aScreen frame];
     return NSOffsetRect(aRect, NSMidX(screenRect)-NSMidX(aRect),
                         NSMidY(screenRect)-NSMidY(aRect));
 }

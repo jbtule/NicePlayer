@@ -109,6 +109,7 @@
 #pragma mark Window Attributes
 
 -(void)makeFullScreen;
+-(void)makeFullScreenOnScreen:(NSScreen*) aScreen;
 -(void)makeNormalScreen;
 -(void)presentMultiple;
 -(void)unPresentMultiple;
@@ -129,14 +130,19 @@
 -(IBAction)doubleSize:(id)sender;
 -(void)resetFillingFlags;
 -(IBAction)fillScreenSize:(id)sender;
+-(void)fillScreenSizeOnScreen:(NSScreen*)aScreen;
 -(IBAction)fillWidthSize:(id)sender;
+-(void)fillWidthSizeWithScreen:(NSScreen*)aScreen;
 -(void)setAspectRatio:(NSSize)ratio;
 -(NSSize)getResizeAspectRatioSize;
+-(NSSize)getResizeAspectRatioSizeOnScreen:(NSScreen*) aScreen;
 -(void)resizeToAspectRatio;
 -(void)resizeNormalByScaler:(float)aScaler;
 -(IBAction)center:(id)sender;
+- (void)centerOnScreen:(NSScreen*)aScreen;
 -(void)center;
 -(NSRect)centerRect:(NSRect)aRect;
+-(NSRect)centerRect:(NSRect)aRect onScreen:(NSScreen*)aScreen;
 
 #pragma mark -
 #pragma mark Mouse Events

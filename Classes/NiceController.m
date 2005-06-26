@@ -258,13 +258,20 @@ id controller;
 
 -(void)presentScreen
 {
+    [self presentScreenOnScreen:[NSScreen mainScreen]];
+}
+
+-(void)presentScreenOnScreen:(NSScreen*)aScreen
+{
     fullScreenMode = YES;
-    if([[NSScreen mainScreen] isEqualTo:[[NSScreen screens] objectAtIndex:0]])
+    if([aScreen isEqualTo:[[NSScreen screens] objectAtIndex:0]])
         SetSystemUIMode(kUIModeAllHidden, kUIOptionAutoShowMenuBar);
     
-    [backgroundWindow setFrame:[[NSScreen mainScreen] frame] display:YES];
+    [backgroundWindow setFrame:[aScreen frame] display:YES];
     [backgroundWindow orderBack:nil];
 }
+
+
 
 -(void)presentAllScreeens
 {
@@ -310,6 +317,15 @@ id controller;
     [self presentScreen];
     [backgroundWindow setPresentingWindow:tempWindow];
 }
+
+-(void)enterFullScreenOnScreen:(NSScreen*)aScreen
+{
+    id tempWindow = [NSApp bestMovieWindow];
+    [tempWindow makeFullScreenOnScreen:aScreen];
+    [self presentScreenOnScreen:aScreen];
+    [backgroundWindow setPresentingWindow:tempWindow];
+}
+
 
 -(void)exitFullScreen
 {
