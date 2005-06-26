@@ -9,6 +9,34 @@
 		<dict>
 			<key>CFBundleTypeExtensions</key>
 			<array>
+				<string>wmv</string>
+				<string>asf</string>
+			</array>
+			<key>CFBundleTypeIconFile</key>
+			<string>wmv.icns</string>
+			<key>CFBundleTypeMIMETypes</key>
+			<array>
+				<string>video/x-ms-wmv</string>
+				<string>video/x-ms-asf</string>
+			</array>
+			<key>CFBundleTypeName</key>
+			<string>Windows video</string>
+			<key>CFBundleTypeOSTypes</key>
+			<array>
+				<string>ASF_</string>
+			</array>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>LSTypeIsPackage</key>
+			<false/>
+			<key>NSDocumentClass</key>
+			<string>NiceDocument</string>
+			<key>NSPersistentStoreTypeKey</key>
+			<string>Binary</string>
+		</dict>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
 				<string>avi</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>

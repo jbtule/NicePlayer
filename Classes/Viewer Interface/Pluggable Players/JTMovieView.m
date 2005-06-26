@@ -22,10 +22,10 @@
         /* File extensions */
         @"avi", @"mov", @"qt", @"mpg", @"mpeg", @"m15", @"m75", @"m2v", @"3gpp", @"mpg4", @"mp4", @"png",
         @"gif", @"bmp", @"tif", @"pic", @"pct", @"pict", @"jpg", @"jpeg", @"qtif", @"swf", @"fli",
-        @"flc", @"dv", 
+        @"flc", @"dv", @"wmv",@"asf",
         /* Finder types */
         @"VfW", @"MooV", @"MPEG", @"m2v ", @"mpg4", @"PNG ", @"GIF ", @"GiFf", @"BMP ", @"TIFF", @"PICT",
-        @"JPEG", @"qtif", @"SWFL", @"FLI ", @"dvc!",
+        @"JPEG", @"qtif", @"SWFL", @"FLI ", @"dvc!",@"ASF_",
         nil];
     return [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"Quicktime",	extensions,			nil]
                                        forKeys:[NSArray arrayWithObjects:@"Name",		@"FileExtensions",	nil]];	
