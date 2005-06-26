@@ -264,7 +264,7 @@
     [theOverlayWindow createResizeTriangle];
     [self putOverlay:theOverlayTitleBar
              inFrame:NSMakeRect(currentFrame.origin.x,
-                                currentFrame.origin.y + currentFrame.size.height-[theOverlayTitleBar frame].size.height,
+                                currentFrame.origin.y + currentFrame.size.height-[theOverlayTitleBar frame].size.height - 3,
                                 currentFrame.size.width,
                                 [theOverlayTitleBar frame].size.height)
       withVisibility:YES];
