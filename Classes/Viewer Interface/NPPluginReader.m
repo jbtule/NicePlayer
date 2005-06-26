@@ -128,7 +128,13 @@ static NPPluginReader *pluginReader = nil;
 
 -(id)builtinPlayerClasses
 {
-	return [NSArray arrayWithObjects:[RCMovieView class], [JTMovieView class], nil];
+    long vers;
+    Gestalt( gestaltSystemVersion, &vers);
+    if(vers < 0x00001040)
+	return [NSArray arrayWithObjects:[JTMovieView class], nil];
+    else
+        return [NSArray arrayWithObjects:[RCMovieView class], [JTMovieView class], nil];
+
 }
 
 /* Finds all package pluggables and gets their information. */
