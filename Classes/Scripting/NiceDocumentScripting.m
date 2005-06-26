@@ -228,4 +228,16 @@
     [theMovieView setMuted:aBool];
 }
 
+
+- (NSScriptObjectSpecifier *) objectSpecifier
+{
+    NSScriptObjectSpecifier *specifier = [[NSNameSpecifier alloc]
+      initWithContainerClassDescription:
+        (NSScriptClassDescription *)[NSApp classDescription]
+                     containerSpecifier: [NSApp objectSpecifier]
+                                    key: @"orderedDocuments"];
+    [specifier setName: [self identifier]];
+    return [specifier autorelease];
+}
+
 @end

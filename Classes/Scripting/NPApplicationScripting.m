@@ -23,6 +23,15 @@
 }
 
 
+-(id)valueInOrderedDocumentsWithName:(id)anIdentifier{
+    BOOL dectectIdentifier(id each, void* context){
+                return ([[each identifier] isEqualTo:anIdentifier]);            
+    }
+    
+    [[self orderedDocuments] detectUsingFunction:dectectIdentifier context:nil];
+}
+
+
 -(void)handleEnterFullScreenCommand:(id)sender
 {
     [[NiceController controller] enterFullScreen];

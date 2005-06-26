@@ -120,6 +120,9 @@
 		3E8CC458068AA1290034FCCC /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E8CC450068AA1290034FCCC /* close.png */; };
 		3E8CC459068AA1290034FCCC /* minimize-highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E8CC451068AA1290034FCCC /* minimize-highlight.png */; };
 		3E8CC45A068AA1290034FCCC /* minimize.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E8CC452068AA1290034FCCC /* minimize.png */; };
+		3E91842F086E288300F4ED34 /* playlist-highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E91842D086E288300F4ED34 /* playlist-highlight.png */; };
+		3E918430086E288300F4ED34 /* playlist.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E91842E086E288300F4ED34 /* playlist.png */; };
+		3E918436086E28BA00F4ED34 /* OverPrefIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E918435086E28BA00F4ED34 /* OverPrefIcon.png */; };
 		3E95D4A106613F05008755D1 /* BlackWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E95D49F06613F05008755D1 /* BlackWindow.h */; };
 		3E95D4A206613F05008755D1 /* BlackWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E95D4A006613F05008755D1 /* BlackWindow.m */; };
 		3E9996CC06A50F1800D1898D /* volume_muted.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9996CA06A50F1800D1898D /* volume_muted.png */; };
@@ -336,6 +339,9 @@
 		3E8CC450068AA1290034FCCC /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = close.png; path = Resources/close.png; sourceTree = "<group>"; };
 		3E8CC451068AA1290034FCCC /* minimize-highlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "minimize-highlight.png"; path = "Resources/minimize-highlight.png"; sourceTree = "<group>"; };
 		3E8CC452068AA1290034FCCC /* minimize.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = minimize.png; path = Resources/minimize.png; sourceTree = "<group>"; };
+		3E91842D086E288300F4ED34 /* playlist-highlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "playlist-highlight.png"; path = "Resources/playlist-highlight.png"; sourceTree = "<group>"; };
+		3E91842E086E288300F4ED34 /* playlist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = playlist.png; path = Resources/playlist.png; sourceTree = "<group>"; };
+		3E918435086E28BA00F4ED34 /* OverPrefIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = OverPrefIcon.png; path = Resources/OverPrefIcon.png; sourceTree = "<group>"; };
 		3E95D49F06613F05008755D1 /* BlackWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlackWindow.h; path = "Classes/Overlay Widgets/BlackWindow.h"; sourceTree = "<group>"; };
 		3E95D4A006613F05008755D1 /* BlackWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlackWindow.m; path = "Classes/Overlay Widgets/BlackWindow.m"; sourceTree = "<group>"; };
 		3E9996CA06A50F1800D1898D /* volume_muted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = volume_muted.png; path = Resources/volume_muted.png; sourceTree = "<group>"; };
@@ -458,6 +464,9 @@
 		2513D20407BDA31600BB6055 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3E918435086E28BA00F4ED34 /* OverPrefIcon.png */,
+				3E91842D086E288300F4ED34 /* playlist-highlight.png */,
+				3E91842E086E288300F4ED34 /* playlist.png */,
 				253C02E907C0632700172C2F /* resize.png */,
 				25294AD4076E944900D4B325 /* ff_over.png */,
 				25294AA6076E937E00D4B325 /* pause_over.png */,
@@ -1028,6 +1037,9 @@
 				3EC66FD5077525AD00B50A61 /* NicePlayer Help in Resources */,
 				2513D30607BDACA700BB6055 /* NicePlayer.sdef in Resources */,
 				253C02E507C061E100172C2F /* resize.png in Resources */,
+				3E91842F086E288300F4ED34 /* playlist-highlight.png in Resources */,
+				3E918430086E288300F4ED34 /* playlist.png in Resources */,
+				3E918436086E28BA00F4ED34 /* OverPrefIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1194,6 +1206,11 @@
 		251FEF700855184200D38B8E /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					"<Multiple",
+					"values>",
+					ppc,
+				);
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
 				DEPLOYMENT_POSTPROCESSING = YES;
@@ -1223,6 +1240,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				OPTIMIZATION_CFLAGS = "-O0";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = (
@@ -1245,6 +1263,11 @@
 		251FEF710855184200D38B8E /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					"<Multiple",
+					"values>",
+					ppc,
+				);
 				COPY_PHASE_STRIP = YES;
 				DEPLOYMENT_POSTPROCESSING = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1274,6 +1297,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = (
 					"-weak_framework",
@@ -1295,6 +1319,11 @@
 		251FEF720855184200D38B8E /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					"<Multiple",
+					"values>",
+					ppc,
+				);
 				DEPLOYMENT_POSTPROCESSING = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					.,
@@ -1322,6 +1351,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = (
 					"-weak_framework",
@@ -1456,7 +1486,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				LIBRARY_SEARCH_PATHS = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.2;
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 			};
 			name = Development;
 		};
@@ -1468,6 +1499,8 @@
 					i386,
 				);
 				LIBRARY_SEARCH_PATHS = "]";
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 			};
 			name = Deployment;
 		};
@@ -1479,6 +1512,8 @@
 					i386,
 				);
 				LIBRARY_SEARCH_PATHS = "]";
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 			};
 			name = Default;
 		};
