@@ -159,10 +159,7 @@ id rowsToFileNames(id obj, void* playList){
 {   
     /* Try to load the movie */
     if(![theMovieView openURL:theCurrentURL]){
-        
         hasRealMovie = NO;
-        /* Didn't load, so set a blank image thing. */
-        [theMovieView initWithFrame:NSMakeRect(0, 0, [theWindow frame].size.width, [theWindow frame].size.height)];
         return NO;
     } else
         hasRealMovie = YES;
@@ -223,10 +220,11 @@ id rowsToFileNames(id obj, void* playList){
     [super windowControllerDidLoadNib:aController];
 
     // Add any code here that needs to be executed once the windowController has loaded the document's window.
-    if(theCurrentURL != nil){
-        [self finalOpenURLFirstTime:YES];
-    } else {
+    if(theCurrentURL == nil){
         [NSApp addWindowsItem:theWindow title:@"NicePlayer" filename:NO];
+    } else {
+		// Why was this here? It's make NP crash.
+        //[self finalOpenURLFirstTime:YES];
     }
     
     [self updateAfterLoad];

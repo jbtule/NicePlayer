@@ -122,13 +122,14 @@
 		}
 	}
 	@catch(NSException *exception) {
+		NSLog(@"NLE");
+		didOpen = NO;
 		trueMovieView = [[JTMovieView alloc] initWithFrame:subview];
 		[self addSubview:trueMovieView];
 	}
 	@finally {
 		[self finalProxyViewLoad];
 	}
-	
     return didOpen;
 }
 
