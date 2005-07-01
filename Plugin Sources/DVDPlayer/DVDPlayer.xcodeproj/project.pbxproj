@@ -1,0 +1,552 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2513C5DF07BC5B1E00BB6055 /* DVDPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2513C5DA07BC5B1E00BB6055 /* DVDPlayerView.m */; };
+		2513C5E007BC5B1E00BB6055 /* DVDPlayerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2513C5DB07BC5B1E00BB6055 /* DVDPlayerView.h */; };
+		2513C5E107BC5B1E00BB6055 /* NPPluginView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2513C5DC07BC5B1E00BB6055 /* NPPluginView.h */; };
+		2513C5E207BC5B1E00BB6055 /* NPMovieProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 2513C5DD07BC5B1E00BB6055 /* NPMovieProtocol.h */; };
+		2513C5E307BC5B1E00BB6055 /* NPPluginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2513C5DE07BC5B1E00BB6055 /* NPPluginView.m */; };
+		2513C5E807BC5B8A00BB6055 /* NiceWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 2513C5E707BC5B8A00BB6055 /* NiceWindow.h */; };
+		251C7DB207E54E0E009D5C9A /* DVDPrefs.nib in Resources */ = {isa = PBXBuildFile; fileRef = 251C7DB107E54E0E009D5C9A /* DVDPrefs.nib */; };
+		251C7DC007E54E37009D5C9A /* DVDPrefController.h in Headers */ = {isa = PBXBuildFile; fileRef = 251C7DBE07E54E37009D5C9A /* DVDPrefController.h */; };
+		251C7DC107E54E37009D5C9A /* DVDPrefController.m in Sources */ = {isa = PBXBuildFile; fileRef = 251C7DBF07E54E37009D5C9A /* DVDPrefController.m */; };
+		253C025607C057B600172C2F /* DVDPlayback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 253C025507C057B600172C2F /* DVDPlayback.framework */; };
+		25F1F2A308750B3F002ECFA0 /* BookmarkEntry.nib in Resources */ = {isa = PBXBuildFile; fileRef = 25F1F2A108750B3F002ECFA0 /* BookmarkEntry.nib */; };
+		25F1F2CC08750C0B002ECFA0 /* NSBookmarkCreateButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 25F1F2CA08750C0B002ECFA0 /* NSBookmarkCreateButton.h */; };
+		25F1F2CD08750C0B002ECFA0 /* NSBookmarkCreateButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F1F2CB08750C0B002ECFA0 /* NSBookmarkCreateButton.m */; };
+		8D5B49AE048680CD000E48DA /* DVDPlayer_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 32DBCF630370AF2F00C91783 /* DVDPlayer_Prefix.pch */; };
+		8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
+		8D5B49B2048680CD000E48DA /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 08FB77B6FE84183AC02AAC07 /* main.c */; settings = {ATTRIBUTES = (); }; };
+		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildStyle section */
+		014CEA420018CDE011CA2923 /* Development */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OPTIMIZATION_CFLAGS = "-O0";
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		014CEA430018CDE011CA2923 /* Deployment */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		E9AD23F5056E4C1C00C89394 /* Test */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OPTIMIZATION_CFLAGS = "-O0";
+				TEST_AFTER_BUILD = YES;
+				ZERO_LINK = NO;
+			};
+			name = Test;
+		};
+/* End PBXBuildStyle section */
+
+/* Begin PBXFileReference section */
+		089C1672FE841209C02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		089C167EFE841241C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		08FB77B6FE84183AC02AAC07 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		2513C5DA07BC5B1E00BB6055 /* DVDPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = DVDPlayerView.m; sourceTree = "<group>"; };
+		2513C5DB07BC5B1E00BB6055 /* DVDPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = DVDPlayerView.h; sourceTree = "<group>"; };
+		2513C5DC07BC5B1E00BB6055 /* NPPluginView.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = NPPluginView.h; sourceTree = "<group>"; };
+		2513C5DD07BC5B1E00BB6055 /* NPMovieProtocol.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = NPMovieProtocol.h; sourceTree = "<group>"; };
+		2513C5DE07BC5B1E00BB6055 /* NPPluginView.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = NPPluginView.m; sourceTree = "<group>"; };
+		2513C5E707BC5B8A00BB6055 /* NiceWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NiceWindow.h; sourceTree = "<group>"; };
+		251C7DAF07E54DF6009D5C9A /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = Resources/English.lproj/DVDPrefs.nib; sourceTree = "<group>"; };
+		251C7DBE07E54E37009D5C9A /* DVDPrefController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVDPrefController.h; sourceTree = "<group>"; };
+		251C7DBF07E54E37009D5C9A /* DVDPrefController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVDPrefController.m; sourceTree = "<group>"; };
+		253C025507C057B600172C2F /* DVDPlayback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DVDPlayback.framework; path = /System/Library/Frameworks/DVDPlayback.framework; sourceTree = "<absolute>"; };
+		25F1F2A208750B3F002ECFA0 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = Resources/English.lproj/BookmarkEntry.nib; sourceTree = "<group>"; };
+		25F1F2CA08750C0B002ECFA0 /* NSBookmarkCreateButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSBookmarkCreateButton.h; sourceTree = "<group>"; };
+		25F1F2CB08750C0B002ECFA0 /* NSBookmarkCreateButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSBookmarkCreateButton.m; sourceTree = "<group>"; };
+		32DBCF630370AF2F00C91783 /* DVDPlayer_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVDPlayer_Prefix.pch; sourceTree = "<group>"; };
+		8D5B49B6048680CD000E48DA /* DVDPlayer.nicebundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DVDPlayer.nicebundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D5B49B3048680CD000E48DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */,
+				253C025607C057B600172C2F /* DVDPlayback.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		089C166AFE841209C02AAC07 /* DVDPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				08FB77AFFE84173DC02AAC07 /* Classes */,
+				32C88E010371C26100C91783 /* Other Sources */,
+				089C167CFE841241C02AAC07 /* Resources */,
+				089C1671FE841209C02AAC07 /* Frameworks and Libraries */,
+				19C28FB8FE9D52D311CA2CBB /* Products */,
+			);
+			name = DVDPlayer;
+			sourceTree = "<group>";
+		};
+		089C1671FE841209C02AAC07 /* Frameworks and Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */,
+				1058C7AEFEA557BF11CA2CBB /* Other Frameworks */,
+			);
+			name = "Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		089C167CFE841241C02AAC07 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				25F1F2A108750B3F002ECFA0 /* BookmarkEntry.nib */,
+				251C7DB107E54E0E009D5C9A /* DVDPrefs.nib */,
+				8D5B49B7048680CD000E48DA /* Info.plist */,
+				089C167DFE841241C02AAC07 /* InfoPlist.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		08FB77AFFE84173DC02AAC07 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				2513C5E707BC5B8A00BB6055 /* NiceWindow.h */,
+				2513C5DD07BC5B1E00BB6055 /* NPMovieProtocol.h */,
+				2513C5DC07BC5B1E00BB6055 /* NPPluginView.h */,
+				2513C5DE07BC5B1E00BB6055 /* NPPluginView.m */,
+				2513C5DB07BC5B1E00BB6055 /* DVDPlayerView.h */,
+				2513C5DA07BC5B1E00BB6055 /* DVDPlayerView.m */,
+				251C7DBE07E54E37009D5C9A /* DVDPrefController.h */,
+				251C7DBF07E54E37009D5C9A /* DVDPrefController.m */,
+				25F1F2CA08750C0B002ECFA0 /* NSBookmarkCreateButton.h */,
+				25F1F2CB08750C0B002ECFA0 /* NSBookmarkCreateButton.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				253C025507C057B600172C2F /* DVDPlayback.framework */,
+				1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7AEFEA557BF11CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				089C1672FE841209C02AAC07 /* Foundation.framework */,
+				089C167FFE841241C02AAC07 /* AppKit.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FB8FE9D52D311CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D5B49B6048680CD000E48DA /* DVDPlayer.nicebundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		32C88E010371C26100C91783 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32DBCF630370AF2F00C91783 /* DVDPlayer_Prefix.pch */,
+				08FB77B6FE84183AC02AAC07 /* main.c */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8D5B49AD048680CD000E48DA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D5B49AE048680CD000E48DA /* DVDPlayer_Prefix.pch in Headers */,
+				2513C5E007BC5B1E00BB6055 /* DVDPlayerView.h in Headers */,
+				2513C5E107BC5B1E00BB6055 /* NPPluginView.h in Headers */,
+				2513C5E207BC5B1E00BB6055 /* NPMovieProtocol.h in Headers */,
+				2513C5E807BC5B8A00BB6055 /* NiceWindow.h in Headers */,
+				251C7DC007E54E37009D5C9A /* DVDPrefController.h in Headers */,
+				25F1F2CC08750C0B002ECFA0 /* NSBookmarkCreateButton.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		8D5B49AC048680CD000E48DA /* DVDPlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 251FF0880856761B00D38B8E /* Build configuration list for PBXNativeTarget "DVDPlayer" */;
+			buildPhases = (
+				8D5B49AD048680CD000E48DA /* Headers */,
+				8D5B49AF048680CD000E48DA /* Resources */,
+				8D5B49B1048680CD000E48DA /* Sources */,
+				8D5B49B3048680CD000E48DA /* Frameworks */,
+				8D5B49B5048680CD000E48DA /* Rez */,
+				E9AD2414056E4C7A00C89394 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "\"$(HOME)/Library/Frameworks\"";
+				GCC_ENABLE_TRIGRAPHS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = DVDPlayer_Prefix.pch;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
+				GCC_WARN_UNKNOWN_PRAGMAS = NO;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_STYLE = Bundle;
+				OTHER_CFLAGS = "-fobjc-exceptions";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = DVDPlayer;
+				SECTORDER_FLAGS = "";
+				TEST_AFTER_BUILD = YES;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				WRAPPER_EXTENSION = nicebundle;
+			};
+			dependencies = (
+			);
+			name = DVDPlayer;
+			productInstallPath = "$(HOME)/Library/Bundles";
+			productName = DVDPlayer;
+			productReference = 8D5B49B6048680CD000E48DA /* DVDPlayer.nicebundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		089C1669FE841209C02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 251FF08D0856761B00D38B8E /* Build configuration list for PBXProject "DVDPlayer" */;
+			buildSettings = {
+			};
+			buildStyles = (
+				014CEA420018CDE011CA2923 /* Development */,
+				014CEA430018CDE011CA2923 /* Deployment */,
+				E9AD23F5056E4C1C00C89394 /* Test */,
+			);
+			hasScannedForEncodings = 1;
+			mainGroup = 089C166AFE841209C02AAC07 /* DVDPlayer */;
+			projectDirPath = "";
+			targets = (
+				8D5B49AC048680CD000E48DA /* DVDPlayer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D5B49AF048680CD000E48DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */,
+				251C7DB207E54E0E009D5C9A /* DVDPrefs.nib in Resources */,
+				25F1F2A308750B3F002ECFA0 /* BookmarkEntry.nib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXRezBuildPhase section */
+		8D5B49B5048680CD000E48DA /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXRezBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E9AD2414056E4C7A00C89394 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = /Developer/Tools/RunTargetUnitTests;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D5B49B1048680CD000E48DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D5B49B2048680CD000E48DA /* main.c in Sources */,
+				2513C5DF07BC5B1E00BB6055 /* DVDPlayerView.m in Sources */,
+				2513C5E307BC5B1E00BB6055 /* NPPluginView.m in Sources */,
+				251C7DC107E54E37009D5C9A /* DVDPrefController.m in Sources */,
+				25F1F2CD08750C0B002ECFA0 /* NSBookmarkCreateButton.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		089C167DFE841241C02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C167EFE841241C02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		251C7DB107E54E0E009D5C9A /* DVDPrefs.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				251C7DAF07E54DF6009D5C9A /* English */,
+			);
+			name = DVDPrefs.nib;
+			sourceTree = "<group>";
+		};
+		25F1F2A108750B3F002ECFA0 /* BookmarkEntry.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				25F1F2A208750B3F002ECFA0 /* English */,
+			);
+			name = BookmarkEntry.nib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		251FF0890856761B00D38B8E /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(HOME)/Library/Frameworks\"";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_ENABLE_TRIGRAPHS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = DVDPlayer_Prefix.pch;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
+				GCC_WARN_UNKNOWN_PRAGMAS = NO;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_STYLE = Bundle;
+				OPTIMIZATION_CFLAGS = "-O0";
+				OTHER_CFLAGS = "-fobjc-exceptions";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = DVDPlayer;
+				SECTORDER_FLAGS = "";
+				TEST_AFTER_BUILD = YES;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				WRAPPER_EXTENSION = nicebundle;
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		251FF08A0856761B00D38B8E /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(HOME)/Library/Frameworks\"";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_TRIGRAPHS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = DVDPlayer_Prefix.pch;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
+				GCC_WARN_UNKNOWN_PRAGMAS = NO;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_STYLE = Bundle;
+				OTHER_CFLAGS = "-fobjc-exceptions";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = DVDPlayer;
+				SECTORDER_FLAGS = "";
+				TEST_AFTER_BUILD = YES;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				WRAPPER_EXTENSION = nicebundle;
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		251FF08B0856761B00D38B8E /* Test */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(HOME)/Library/Frameworks\"";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_TRIGRAPHS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = DVDPlayer_Prefix.pch;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
+				GCC_WARN_UNKNOWN_PRAGMAS = NO;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_STYLE = Bundle;
+				OPTIMIZATION_CFLAGS = "-O0";
+				OTHER_CFLAGS = "-fobjc-exceptions";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = DVDPlayer;
+				SECTORDER_FLAGS = "";
+				TEST_AFTER_BUILD = YES;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				WRAPPER_EXTENSION = nicebundle;
+				ZERO_LINK = NO;
+			};
+			name = Test;
+		};
+		251FF08C0856761B00D38B8E /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "\"$(HOME)/Library/Frameworks\"";
+				GCC_ENABLE_TRIGRAPHS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = DVDPlayer_Prefix.pch;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
+				GCC_WARN_UNKNOWN_PRAGMAS = NO;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_STYLE = Bundle;
+				OTHER_CFLAGS = "-fobjc-exceptions";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = DVDPlayer;
+				SECTORDER_FLAGS = "";
+				TEST_AFTER_BUILD = YES;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				WRAPPER_EXTENSION = nicebundle;
+			};
+			name = Default;
+		};
+		251FF08E0856761B00D38B8E /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = ppc;
+			};
+			name = Development;
+		};
+		251FF08F0856761B00D38B8E /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Deployment;
+		};
+		251FF0900856761B00D38B8E /* Test */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Test;
+		};
+		251FF0910856761B00D38B8E /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Default;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		251FF0880856761B00D38B8E /* Build configuration list for PBXNativeTarget "DVDPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				251FF0890856761B00D38B8E /* Development */,
+				251FF08A0856761B00D38B8E /* Deployment */,
+				251FF08B0856761B00D38B8E /* Test */,
+				251FF08C0856761B00D38B8E /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		251FF08D0856761B00D38B8E /* Build configuration list for PBXProject "DVDPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				251FF08E0856761B00D38B8E /* Development */,
+				251FF08F0856761B00D38B8E /* Deployment */,
+				251FF0900856761B00D38B8E /* Test */,
+				251FF0910856761B00D38B8E /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 089C1669FE841209C02AAC07 /* Project object */;
+}

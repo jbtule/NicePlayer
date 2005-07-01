@@ -26,4 +26,7 @@
 -(id)subPictureMenu;
 
 -(void)gotoMainMenu;
+
+-(IBAction)setBookmarkForCurrentDiscWithNameField:(id)sender;
+
 @end

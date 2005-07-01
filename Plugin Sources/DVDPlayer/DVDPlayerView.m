@@ -11,6 +11,7 @@
 #import "DVDPlayerView.h"
 #import "NiceWindow.h"
 #import "NPPluginView.h"
+#import "DVDPrefController.h"
 
 #define MAX_DISPLAYS (16)
 
@@ -56,6 +57,15 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	return YES;
 }
 
++(id)dvdPrefController
+{
+	static id prefController = nil;
+	if(!prefController)
+		prefController = [[DVDPrefController alloc] init];
+	
+	return prefController;
+}
+
 +(id)configureNibView
 {
 	static id myNib = nil;
@@ -63,7 +73,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	
 	if(!myNib)
 		myNib = [[NSNib alloc] initWithNibNamed:@"DVDPrefs" bundle:[NSBundle bundleForClass:[self class]]];
-	[myNib instantiateNibWithOwner:nil topLevelObjects:&tmpArray];
+	[myNib instantiateNibWithOwner:[self dvdPrefController] topLevelObjects:&tmpArray];
 	id anObject, e;
 	e = [tmpArray objectEnumerator];
 	while(anObject = [e nextObject]){
@@ -165,6 +175,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 		if([[NSFileManager defaultManager] fileExistsAtPath:sub_videots isDirectory:&isDir] && isDir)
 			myURL = [NSURL fileURLWithPath:sub_videots];
 		else {
+			NSLog(@"NO");
 			return NO;
 		}
 	}
@@ -176,9 +187,11 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	DVDIsValidMediaRef(&fsref, &isValid);
 	if(isValid){
 		[myURL retain];
+		NSLog(@"YES");
 		return YES;
 	}
 	
+	NSLog(@"NO2");
 	myURL = nil;
 	return NO;
 }
@@ -204,6 +217,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	
 	FSRef fsref;
 	CFURLGetFSRef((CFURLRef)myURL, &fsref);
+	NSLog(@"%@", [myURL path]);
 	if([[[myURL path] lastPathComponent] isEqualToString:@"VIDEO_TS"])
 		DVDOpenMediaFile(&fsref);
 	else
@@ -586,7 +600,14 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	newItem = [[[NSMenuItem alloc] initWithTitle:@"Angle"
 										  action:nil
 								   keyEquivalent:@""] autorelease];
-	[newItem setSubmenu:[self angleMenu]];	
+	[newItem setSubmenu:[self angleMenu]];
+	
+	[pluginMenu addObject:[NSMenuItem separatorItem]];
+	
+	newItem = [[[NSMenuItem alloc] initWithTitle:@"Bookmarks"
+										  action:nil
+								   keyEquivalent:@""] autorelease];
+	[newItem setSubmenu:[self bookmarksMenu]];
 	[pluginMenu addObject:newItem];
 	
 	return [pluginMenu autorelease];
@@ -887,6 +908,69 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 {
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:self];
 }
+
+-(id)bookmarksMenu
+{
+	id bookmarksMenu = [[NSMenu alloc] initWithTitle:@"Bookmarks Menu"];
+	id newItem;
+	NSArray *bookmarks = [self bookmarksForCurrentDisc];
+	unsigned short i;
+	
+	for(i = 0; i < [bookmarks count]; i++){
+		newItem = [[[NSMenuItem alloc] initWithTitle:[bookmarks objectAtIndex:i]
+											  action:@selector(bookmarksForCurrentDiscAndName:)
+									   keyEquivalent:@""] autorelease];
+		[newItem setTarget:self];
+		[newItem setTag:i];
+		[bookmarksMenu addItem:newItem];
+	}
+	
+	return bookmarksMenu;
+}
+
+-(id)bookmarksForCurrentDisc
+{
+	DVDDiscID outDiscID;
+	DVDGetMediaUniqueID(&outDiscID);
+	return [[[self class] dvdPrefController] bookmarksForDisc:[NSData dataWithBytes:&outDiscID length:8]];
+}
+
+-(id)bookmarksForCurrentDiscAndName:(id)sender
+{
+	DVDDiscID outDiscID;
+	DVDGetMediaUniqueID(&outDiscID);
+	[[[self class] dvdPrefController] bookmarkDataFromName:[sender stringValue]
+												   forDisc:[NSData dataWithBytes:&outDiscID length:8]];
+
+}
+
+-(id)setBookmarkForCurrentDisc:(id)sender
+{
+	static id myNib = nil;
+	NSArray *tmpArray;
+	
+	if(!myNib)
+		myNib = [[NSNib alloc] initWithNibNamed:@"BookmarkEntry" bundle:[NSBundle bundleForClass:[self class]]];
+	[myNib instantiateNibWithOwner:self topLevelObjects:&tmpArray];	
+}
+
+-(IBAction)setBookmarkForCurrentDiscWithNameField:(id)sender
+{
+	NSLog(@"%@", [sender entryText]);
+	return;
+	DVDDiscID outDiscID;
+	DVDGetMediaUniqueID(&outDiscID);
+
+	void *data;
+	int length = 0;
+	
+	DVDGetBookmark(data, &length);
+		
+	[[[self class] dvdPrefController] setBookmark:[NSData dataWithBytes:data length:length]
+										 withName:[sender entryText]
+										  forDisc:[NSData dataWithBytes:&outDiscID length:8]];
+}
+
 @end
 
 void fatalError(DVDErrorCode inError, UInt32 inRefCon)

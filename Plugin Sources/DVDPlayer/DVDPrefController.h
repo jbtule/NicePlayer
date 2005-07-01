@@ -19,4 +19,8 @@
 -(IBAction)setLanguageSubtitles:(id)sender;
 -(IBAction)setLanguageMenus:(id)sender;
 
+-(NSArray *)bookmarksForDisc:(NSData *)discID;
+-(void)setBookmark:(NSData *)bookmarkData withName:(NSString *)aString forDisc:(NSData *)discID;
+-(NSData *)bookmarkDataFromName:(NSString *)aString forDisc:(NSData *)discID;
+
 @end
