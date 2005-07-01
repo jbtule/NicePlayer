@@ -175,23 +175,21 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 		if([[NSFileManager defaultManager] fileExistsAtPath:sub_videots isDirectory:&isDir] && isDir)
 			myURL = [NSURL fileURLWithPath:sub_videots];
 		else {
-			NSLog(@"NO");
 			return NO;
 		}
 	}
 	
 	FSRef fsref;
-	CFURLGetFSRef((CFURLRef)myURL, &fsref);
+	int i = CFURLGetFSRef((CFURLRef)myURL, &fsref);
 
 	Boolean isValid;
+	// This next call is broken.
 	DVDIsValidMediaRef(&fsref, &isValid);
-	if(isValid){
+	//if(isValid){
 		[myURL retain];
-		NSLog(@"YES");
 		return YES;
-	}
+	//}
 	
-	NSLog(@"NO2");
 	myURL = nil;
 	return NO;
 }
@@ -217,7 +215,6 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	
 	FSRef fsref;
 	CFURLGetFSRef((CFURLRef)myURL, &fsref);
-	NSLog(@"%@", [myURL path]);
 	if([[[myURL path] lastPathComponent] isEqualToString:@"VIDEO_TS"])
 		DVDOpenMediaFile(&fsref);
 	else
