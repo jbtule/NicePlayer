@@ -361,7 +361,7 @@ stuff won't work properly! */
     int i;
     id pluginMenu = [theMovieView pluginMenu];
     if(!pluginMenu)
-	pluginMenu = [NSMutableArray array];
+		pluginMenu = [NSMutableArray array];
 
     if(movieMenuItem != nil && ([[self movieMenu] indexOfItem:movieMenuItem] != -1)){
         [[self movieMenu] removeItem:movieMenuItem];
