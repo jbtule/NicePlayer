@@ -1,0 +1,25 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {setBookmarkForCurrentDiscWithNameField = id; }; 
+            CLASS = DVDPlayerView; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {updateChapterTimer = id; }; 
+            SUPERCLASS = NPPluginView; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {concludeDragOperation = id; }; 
+            CLASS = NPPluginView; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSView; 
+        }, 
+        {
+            CLASS = NSBookmarkCreateButton; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {entryText = id; }; 
+            SUPERCLASS = NSButton; 
+        }
+    ); 
+    IBVersion = 1; 
+}
