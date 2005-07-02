@@ -21,6 +21,8 @@
     [NSApp automaticCheckForUpdates:self];            
 }
 
+-(id)updateCheckPublicKey{return @"<30480241 00c3b3e5 eae022c2 fc065fe4 417c8edb fb2f6306 74e813ca a9860fe8 c677b735 87a7ad1f ef710ad0 eecabf9e 912487de d61de8d4 75d5dbd7 b42d985a 3810cd75 7f020301 0001>";}
+
 /**
 * This method tests to see if the mouse has moved to a different location. If so, inject the event into
  * our applications loop in order to determine of the mouse is in a place where the controls should appear
