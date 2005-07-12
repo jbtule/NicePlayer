@@ -34,12 +34,19 @@ Point convertNSPointToQDPoint(NSPoint inPoint, NSRect windowRect){
 void fatalError(DVDErrorCode inError, UInt32 inRefCon);
 void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEventValue2, UInt32 inRefCon);
 
+BOOL _NiceDVDFrameworkLoaded = NO;
+
+
+void NiceDVDInitialize(){
+    if(!_NiceDVDFrameworkLoaded){
+        _NiceDVDFrameworkLoaded= YES;
+        DVDInitialize();   
+    }   
+}
+
 @implementation DVDPlayerView
 
-+(void)initialize
-{
-	DVDInitialize();
-}
+
 
 /**
  * Each plugin must return a dictionary with the specified attributes. These are displayed in the preferences
@@ -88,7 +95,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
  * window or application).
  */
 -(id)initWithFrame:(NSRect)frame
-{
+{        
 	if(self = [super initWithFrame:frame]){
 		[self setAutoresizingMask:(NSViewWidthSizable | NSViewHeightSizable)];			
 		isAspectRatioChanging = NO;
@@ -100,7 +107,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
  * Update the bounds of the DVD. This generally happens on resize or window move.
  */
 -(void)updateBounds:(NSRect)frame
-{
+{       
 	CGRect cgr = {{NSMinX(frame), NSMinY(frame)}, {NSWidth(frame), NSHeight(frame)}};
 
 	Rect nr = convertCGRectToQDRect(cgr);
@@ -160,7 +167,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	BOOL unmountableFlag;
 	NSString *description;
 	NSString *fileSystemType;
-	
+
 	BOOL isMountPoint = [[NSWorkspace sharedWorkspace] getFileSystemInfoForPath:[url path] 
 																	isRemovable:&removableFlag
 																	 isWritable:&writableFlag
@@ -178,6 +185,8 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 			return NO;
 		}
 	}
+        
+        NiceDVDInitialize();
 	
 	FSRef fsref;
 	int i = CFURLGetFSRef((CFURLRef)myURL, &fsref);
@@ -199,6 +208,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
  */
 -(BOOL)loadMovie
 {
+            
 	CGDirectDisplayID displays[MAX_DISPLAYS];
 	CGDisplayCount displayCount;
 	NSRect frame = [[NSScreen mainScreen] frame];
@@ -344,6 +354,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(BOOL)muted
 {
+    
 	Boolean isp;
 	DVDIsMuted(&isp);
 	return isp;
@@ -351,11 +362,15 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(void)setMuted:(BOOL)aBOOL
 {
+    
+
 	DVDMute(aBOOL);
 }
 
 -(float)volume
 {
+    
+
 	UInt16 vol;
 	DVDGetAudioVolume(&vol);
 	return (((float)vol) / 255.0) * 2.0;
@@ -363,6 +378,8 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(void)setVolume:(float)aVolume
 {
+    
+
 	DVDSetAudioVolume((UInt16)((aVolume/2.0) * 255.0));
 }
 
@@ -377,7 +394,8 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 #pragma mark Controls
 
 -(BOOL)isPlaying
-{
+{        
+
 	Boolean isp;
 	DVDIsPlaying(&isp);
 	if(isp){
@@ -390,6 +408,8 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(void)start
 {
+    
+
 	Boolean isp;
 	DVDIsPaused(&isp);
 	if(isp)
@@ -402,11 +422,15 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(void)stop
 {
+    
+
 	DVDPause();
 }
 
 -(void)previousChapter
 {
+    
+
 	BOOL wasPlaying = [self isPlaying];
     DVDPreviousChapter();
 	if(wasPlaying)
@@ -418,6 +442,8 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(void)nextChapter
 {
+    
+
     DVDNextChapter();
 	[self drawMovieFrame];
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:self];
@@ -432,6 +458,8 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
  */
 -(void)ffStart:(int)seconds
 {
+    
+
 	[super ffStart:seconds];
 	DVDScan(seconds, kDVDScanDirectionForward);
 }
@@ -447,6 +475,8 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(void)rrStart:(int)seconds
 {
+    
+
 	[super ffStart:seconds];
 	DVDScan(seconds, kDVDScanDirectionBackward);
 }
@@ -467,6 +497,8 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(void)stepForward
 {
+    
+
 	DVDStepFrame(kDVDScanDirectionForward);
 }
 
@@ -480,6 +512,8 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 
 -(double)currentMovieFrameRate{
+    
+
     DVDFormat outFormat;
     DVDGetFormatStandard(&outFormat);
     if(outFormat == kDVDFormatPAL)
@@ -490,6 +524,8 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(double)totalTime
 {
+    
+
 	DVDTimePosition outTime;
 	UInt16 outFrames;
 	
@@ -499,6 +535,8 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(double)currentMovieTime
 {
+    
+
 	DVDTimePosition outTime;
 	UInt16 outFrames;
 	
@@ -508,6 +546,8 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(void)setCurrentMovieTime:(double)newMovieTime
 {
+    
+
 	Boolean isp;
 	DVDIsPaused(&isp);
 	DVDSetTime(kDVDTimeCodeElapsedSeconds, (long)newMovieTime, 0);
@@ -521,6 +561,8 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(void)hideSubPictures
 {
+    
+
 	DVDDisplaySubPicture(NO);
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:self];
 }
@@ -612,6 +654,8 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(id)titleMenu
 {
+    
+
 	id titleMenu = [[NSMenu alloc] initWithTitle:@"Title Menu"];
 	id newItem;
 	unsigned short i;
@@ -638,6 +682,8 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(id)chapterMenu
 {
+    
+
 	id chapterMenu = [[NSMenu alloc] initWithTitle:@"Chapter Menu"];
 	id newItem;
 	unsigned short titleNum;
@@ -665,6 +711,8 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 }
 -(id)audioMenu
 {
+    
+
 	id audioMenu = [[NSMenu alloc] initWithTitle:@"Audio Menu"];
 	id newItem;
 	unsigned short audios;
@@ -719,6 +767,8 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(id)angleMenu
 {
+    
+
 	id angleMenu = [[NSMenu alloc] initWithTitle:@"Angle Menu"];
 	id newItem;
 	unsigned short angles;
@@ -745,6 +795,8 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(id)subPictureMenu
 {
+    
+
 	id subPicturesMenu = [[NSMenu alloc] initWithTitle:@"Subtitles Menu"];
 	id newItem;
 	unsigned short subs;
@@ -813,6 +865,8 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(void)gotoMainMenu
 {
+    
+
 	Boolean isOnMenu;
 	DVDMenu onThisMenu;
 
@@ -823,6 +877,8 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(void)gotoAudioMenu
 {
+    
+
 	Boolean isOnMenu;
 	DVDMenu onThisMenu;
 	
@@ -833,11 +889,15 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(void)returnToTitle
 {
+    
+
 	DVDReturnToTitle();
 }
 
 -(void)gotoTitle:(id)anObject
 {
+    
+
 	Boolean isp;
 	DVDIsPaused(&isp);
 	DVDSetTitle([anObject tag]);
@@ -851,6 +911,8 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(void)gotoChapter:(id)anObject
 {
+    
+
 	Boolean isp;
 	DVDIsPaused(&isp);
 	DVDSetChapter([anObject tag]);
@@ -864,6 +926,8 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(void)selectAudio:(id)anObject
 {
+    
+
 	Boolean isp;
 	DVDIsPaused(&isp);
 	DVDSetAudioStream([anObject tag]);
@@ -877,6 +941,8 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(void)DVDSetAngle:(id)anObject
 {
+    
+
 	Boolean isp;
 	DVDIsPaused(&isp);
 	DVDSetAngle([anObject tag]);
@@ -890,6 +956,8 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(void)selectSubPicture:(id)anObject
 {
+    
+
 	Boolean isp;
 	DVDIsPaused(&isp);
 	DVDSetSubPictureStream([anObject tag]);
@@ -903,6 +971,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(void)rebuildMenuTimer
 {
+    
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:self];
 }
 
@@ -927,6 +996,8 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(id)bookmarksForCurrentDisc
 {
+    
+
 	DVDDiscID outDiscID;
 	DVDGetMediaUniqueID(&outDiscID);
 	return [[[self class] dvdPrefController] bookmarksForDisc:[NSData dataWithBytes:&outDiscID length:8]];
@@ -934,6 +1005,8 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(id)bookmarksForCurrentDiscAndName:(id)sender
 {
+    
+
 	DVDDiscID outDiscID;
 	DVDGetMediaUniqueID(&outDiscID);
 	[[[self class] dvdPrefController] bookmarkDataFromName:[sender stringValue]

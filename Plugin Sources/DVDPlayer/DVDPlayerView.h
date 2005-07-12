@@ -7,6 +7,8 @@
 #import "NPMovieProtocol.h"
 #import "NPPluginView.h"
 
+void NiceDVDInitialize();
+
 @interface DVDPlayerView : NPPluginView <NPMoviePlayer>
 {
 	NSURL *myURL;
