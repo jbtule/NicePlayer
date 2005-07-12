@@ -11,6 +11,16 @@
 
 @implementation DVDPrefController
 
++(id)preferences
+{
+	static id preferences;
+	if(!preferences){
+		preferences = [[NSUserDefaults alloc] init];
+	}
+	
+	return preferences;
+}
+
 -(id)init
 {
 	if(self = [super init]){
@@ -27,34 +37,34 @@
 
 -(DVDLanguageCode)languageAudio
 {
-	return [[NSUserDefaults standardUserDefaults] integerForKey:@"LanguageForAudio"];
+	return [[DVDPrefController preferences] integerForKey:@"LanguageForAudio"];
 }
 
 -(IBAction)setLanguageAudio:(id)sender
 {
-	[[NSUserDefaults standardUserDefaults] setInteger:[self languageCodeForString:[sender stringValue]]
+	[[DVDPrefController preferences] setInteger:[self languageCodeForString:[sender stringValue]]
 											   forKey:@"LanguageForAudio"];
 }
 
 -(DVDLanguageCode)languageSubtitles
 {
-	return [[NSUserDefaults standardUserDefaults] integerForKey:@"LanguageForSubtitles"];
+	return [[DVDPrefController preferences] integerForKey:@"LanguageForSubtitles"];
 }
 
 -(IBAction)setLanguageSubtitles:(id)sender
 {
-	[[NSUserDefaults standardUserDefaults] setInteger:[self languageCodeForString:[sender stringValue]]
+	[[DVDPrefController preferences] setInteger:[self languageCodeForString:[sender stringValue]]
 											   forKey:@"LanguageForSubtitles"];
 }
 
 -(DVDLanguageCode)languageMenus
 {
-	return [[NSUserDefaults standardUserDefaults] integerForKey:@"LanguageForMenus"];
+	return [[DVDPrefController preferences] integerForKey:@"LanguageForMenus"];
 }
 
 -(IBAction)setLanguageMenus:(id)sender
 {
-	[[NSUserDefaults standardUserDefaults] setInteger:[self languageCodeForString:[sender stringValue]]
+	[[DVDPrefController preferences] setInteger:[self languageCodeForString:[sender stringValue]]
 											   forKey:@"LanguageForMenus"];
 }
 
@@ -76,26 +86,28 @@
 
 -(NSArray *)bookmarksForDisc:(NSData *)discID
 {
-	NSDictionary *disc = [[NSUserDefaults standardUserDefaults] dictionaryForKey:discID];
+	NSDictionary *disc = [[DVDPrefController preferences] dictionaryForKey:discID];
 	if(disc == nil)
 		return nil;
 	return [disc allKeys];
 }
 
--(void)setBookmark:(NSData *)bookmarkData withName:(NSString *)aString forDisc:(NSData *)discID
+-(void)setBookmark:(NSData *)bookmarkData withName:(NSString *)aString forDisc:(NSString *)discID
 {
-	NSDictionary *disc = [[NSUserDefaults standardUserDefaults] dictionaryForKey:discID];
-	if(disc == nil){
-		disc = [NSDictionary dictionary];
-		[[NSUserDefaults standardUserDefaults] setObject:disc forKey:discID];
-	}
+	NSDictionary *disc = [[DVDPrefController preferences] dictionaryForKey:discID];
+	if(disc == nil)
+		disc = [NSMutableDictionary dictionary];
+	else
+		disc = [NSMutableDictionary dictionaryWithDictionary:disc];
 	
 	[disc setObject:bookmarkData forKey:aString];
+	[[DVDPrefController preferences] setObject:disc forKey:discID];
+	[[DVDPrefController preferences] synchronize];
 }
 
--(NSData *)bookmarkDataFromName:(NSString *)aString forDisc:(NSData *)discID
+-(NSData *)bookmarkDataFromName:(NSString *)aString forDisc:(NSString *)discID
 {
-	NSDictionary *disc = [[NSUserDefaults standardUserDefaults] dictionaryForKey:discID];
+	NSDictionary *disc = [[DVDPrefController preferences] dictionaryForKey:discID];
 	if(disc == nil)
 		return nil;
 

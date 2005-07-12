@@ -34,19 +34,12 @@ Point convertNSPointToQDPoint(NSPoint inPoint, NSRect windowRect){
 void fatalError(DVDErrorCode inError, UInt32 inRefCon);
 void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEventValue2, UInt32 inRefCon);
 
-BOOL _NiceDVDFrameworkLoaded = NO;
-
-
-void NiceDVDInitialize(){
-    if(!_NiceDVDFrameworkLoaded){
-        _NiceDVDFrameworkLoaded= YES;
-        DVDInitialize();   
-    }   
-}
-
 @implementation DVDPlayerView
 
-
++(void)initialize
+{
+	DVDInitialize();
+}
 
 /**
  * Each plugin must return a dictionary with the specified attributes. These are displayed in the preferences
@@ -95,7 +88,7 @@ void NiceDVDInitialize(){
  * window or application).
  */
 -(id)initWithFrame:(NSRect)frame
-{        
+{
 	if(self = [super initWithFrame:frame]){
 		[self setAutoresizingMask:(NSViewWidthSizable | NSViewHeightSizable)];			
 		isAspectRatioChanging = NO;
@@ -107,7 +100,7 @@ void NiceDVDInitialize(){
  * Update the bounds of the DVD. This generally happens on resize or window move.
  */
 -(void)updateBounds:(NSRect)frame
-{       
+{
 	CGRect cgr = {{NSMinX(frame), NSMinY(frame)}, {NSWidth(frame), NSHeight(frame)}};
 
 	Rect nr = convertCGRectToQDRect(cgr);
@@ -167,7 +160,7 @@ void NiceDVDInitialize(){
 	BOOL unmountableFlag;
 	NSString *description;
 	NSString *fileSystemType;
-
+	
 	BOOL isMountPoint = [[NSWorkspace sharedWorkspace] getFileSystemInfoForPath:[url path] 
 																	isRemovable:&removableFlag
 																	 isWritable:&writableFlag
@@ -185,8 +178,6 @@ void NiceDVDInitialize(){
 			return NO;
 		}
 	}
-        
-        NiceDVDInitialize();
 	
 	FSRef fsref;
 	int i = CFURLGetFSRef((CFURLRef)myURL, &fsref);
@@ -208,7 +199,6 @@ void NiceDVDInitialize(){
  */
 -(BOOL)loadMovie
 {
-            
 	CGDirectDisplayID displays[MAX_DISPLAYS];
 	CGDisplayCount displayCount;
 	NSRect frame = [[NSScreen mainScreen] frame];
@@ -354,7 +344,6 @@ void NiceDVDInitialize(){
 
 -(BOOL)muted
 {
-    
 	Boolean isp;
 	DVDIsMuted(&isp);
 	return isp;
@@ -362,15 +351,11 @@ void NiceDVDInitialize(){
 
 -(void)setMuted:(BOOL)aBOOL
 {
-    
-
 	DVDMute(aBOOL);
 }
 
 -(float)volume
 {
-    
-
 	UInt16 vol;
 	DVDGetAudioVolume(&vol);
 	return (((float)vol) / 255.0) * 2.0;
@@ -378,8 +363,6 @@ void NiceDVDInitialize(){
 
 -(void)setVolume:(float)aVolume
 {
-    
-
 	DVDSetAudioVolume((UInt16)((aVolume/2.0) * 255.0));
 }
 
@@ -394,8 +377,7 @@ void NiceDVDInitialize(){
 #pragma mark Controls
 
 -(BOOL)isPlaying
-{        
-
+{
 	Boolean isp;
 	DVDIsPlaying(&isp);
 	if(isp){
@@ -408,8 +390,6 @@ void NiceDVDInitialize(){
 
 -(void)start
 {
-    
-
 	Boolean isp;
 	DVDIsPaused(&isp);
 	if(isp)
@@ -422,15 +402,11 @@ void NiceDVDInitialize(){
 
 -(void)stop
 {
-    
-
 	DVDPause();
 }
 
 -(void)previousChapter
 {
-    
-
 	BOOL wasPlaying = [self isPlaying];
     DVDPreviousChapter();
 	if(wasPlaying)
@@ -442,8 +418,6 @@ void NiceDVDInitialize(){
 
 -(void)nextChapter
 {
-    
-
     DVDNextChapter();
 	[self drawMovieFrame];
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:self];
@@ -458,8 +432,6 @@ void NiceDVDInitialize(){
  */
 -(void)ffStart:(int)seconds
 {
-    
-
 	[super ffStart:seconds];
 	DVDScan(seconds, kDVDScanDirectionForward);
 }
@@ -475,8 +447,6 @@ void NiceDVDInitialize(){
 
 -(void)rrStart:(int)seconds
 {
-    
-
 	[super ffStart:seconds];
 	DVDScan(seconds, kDVDScanDirectionBackward);
 }
@@ -497,8 +467,6 @@ void NiceDVDInitialize(){
 
 -(void)stepForward
 {
-    
-
 	DVDStepFrame(kDVDScanDirectionForward);
 }
 
@@ -512,8 +480,6 @@ void NiceDVDInitialize(){
 
 
 -(double)currentMovieFrameRate{
-    
-
     DVDFormat outFormat;
     DVDGetFormatStandard(&outFormat);
     if(outFormat == kDVDFormatPAL)
@@ -524,8 +490,6 @@ void NiceDVDInitialize(){
 
 -(double)totalTime
 {
-    
-
 	DVDTimePosition outTime;
 	UInt16 outFrames;
 	
@@ -535,8 +499,6 @@ void NiceDVDInitialize(){
 
 -(double)currentMovieTime
 {
-    
-
 	DVDTimePosition outTime;
 	UInt16 outFrames;
 	
@@ -546,8 +508,6 @@ void NiceDVDInitialize(){
 
 -(void)setCurrentMovieTime:(double)newMovieTime
 {
-    
-
 	Boolean isp;
 	DVDIsPaused(&isp);
 	DVDSetTime(kDVDTimeCodeElapsedSeconds, (long)newMovieTime, 0);
@@ -561,8 +521,6 @@ void NiceDVDInitialize(){
 
 -(void)hideSubPictures
 {
-    
-
 	DVDDisplaySubPicture(NO);
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:self];
 }
@@ -643,10 +601,10 @@ void NiceDVDInitialize(){
 	
 	[pluginMenu addObject:[NSMenuItem separatorItem]];
 	
-	newItem = [[[NSMenuItem alloc] initWithTitle:@"Bookmarks"
+/*	newItem = [[[NSMenuItem alloc] initWithTitle:@"Bookmarks"
 										  action:nil
 								   keyEquivalent:@""] autorelease];
-	[newItem setSubmenu:[self bookmarksMenu]];
+	[newItem setSubmenu:[self bookmarksMenu]];*/
 	[pluginMenu addObject:newItem];
 	
 	return [pluginMenu autorelease];
@@ -654,8 +612,6 @@ void NiceDVDInitialize(){
 
 -(id)titleMenu
 {
-    
-
 	id titleMenu = [[NSMenu alloc] initWithTitle:@"Title Menu"];
 	id newItem;
 	unsigned short i;
@@ -682,8 +638,6 @@ void NiceDVDInitialize(){
 
 -(id)chapterMenu
 {
-    
-
 	id chapterMenu = [[NSMenu alloc] initWithTitle:@"Chapter Menu"];
 	id newItem;
 	unsigned short titleNum;
@@ -711,8 +665,6 @@ void NiceDVDInitialize(){
 }
 -(id)audioMenu
 {
-    
-
 	id audioMenu = [[NSMenu alloc] initWithTitle:@"Audio Menu"];
 	id newItem;
 	unsigned short audios;
@@ -767,8 +719,6 @@ void NiceDVDInitialize(){
 
 -(id)angleMenu
 {
-    
-
 	id angleMenu = [[NSMenu alloc] initWithTitle:@"Angle Menu"];
 	id newItem;
 	unsigned short angles;
@@ -795,8 +745,6 @@ void NiceDVDInitialize(){
 
 -(id)subPictureMenu
 {
-    
-
 	id subPicturesMenu = [[NSMenu alloc] initWithTitle:@"Subtitles Menu"];
 	id newItem;
 	unsigned short subs;
@@ -865,8 +813,6 @@ void NiceDVDInitialize(){
 
 -(void)gotoMainMenu
 {
-    
-
 	Boolean isOnMenu;
 	DVDMenu onThisMenu;
 
@@ -877,8 +823,6 @@ void NiceDVDInitialize(){
 
 -(void)gotoAudioMenu
 {
-    
-
 	Boolean isOnMenu;
 	DVDMenu onThisMenu;
 	
@@ -889,15 +833,11 @@ void NiceDVDInitialize(){
 
 -(void)returnToTitle
 {
-    
-
 	DVDReturnToTitle();
 }
 
 -(void)gotoTitle:(id)anObject
 {
-    
-
 	Boolean isp;
 	DVDIsPaused(&isp);
 	DVDSetTitle([anObject tag]);
@@ -911,8 +851,6 @@ void NiceDVDInitialize(){
 
 -(void)gotoChapter:(id)anObject
 {
-    
-
 	Boolean isp;
 	DVDIsPaused(&isp);
 	DVDSetChapter([anObject tag]);
@@ -926,8 +864,6 @@ void NiceDVDInitialize(){
 
 -(void)selectAudio:(id)anObject
 {
-    
-
 	Boolean isp;
 	DVDIsPaused(&isp);
 	DVDSetAudioStream([anObject tag]);
@@ -941,8 +877,6 @@ void NiceDVDInitialize(){
 
 -(void)DVDSetAngle:(id)anObject
 {
-    
-
 	Boolean isp;
 	DVDIsPaused(&isp);
 	DVDSetAngle([anObject tag]);
@@ -956,8 +890,6 @@ void NiceDVDInitialize(){
 
 -(void)selectSubPicture:(id)anObject
 {
-    
-
 	Boolean isp;
 	DVDIsPaused(&isp);
 	DVDSetSubPictureStream([anObject tag]);
@@ -971,9 +903,11 @@ void NiceDVDInitialize(){
 
 -(void)rebuildMenuTimer
 {
-    
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:self];
 }
+
+#pragma mark -
+#pragma mark Bookmarks
 
 -(id)bookmarksMenu
 {
@@ -982,6 +916,20 @@ void NiceDVDInitialize(){
 	NSArray *bookmarks = [self bookmarksForCurrentDisc];
 	unsigned short i;
 	
+	newItem = [[[NSMenuItem alloc] initWithTitle:@"Add Bookmark"
+										  action:@selector(setBookmarkForCurrentDisc:)
+								   keyEquivalent:@""] autorelease];
+	[newItem setTarget:self];
+	[newItem setTag:i];
+	[bookmarksMenu addItem:newItem];
+	newItem = [[[NSMenuItem alloc] initWithTitle:@"Remove Bookmark..."
+										  action:@selector(setBookmarkForCurrentDisc:)
+								   keyEquivalent:@""] autorelease];
+	[newItem setTarget:self];
+	[newItem setTag:i];
+	[bookmarksMenu addItem:newItem];
+	[bookmarksMenu addItem:[NSMenuItem separatorItem]];
+
 	for(i = 0; i < [bookmarks count]; i++){
 		newItem = [[[NSMenuItem alloc] initWithTitle:[bookmarks objectAtIndex:i]
 											  action:@selector(bookmarksForCurrentDiscAndName:)
@@ -996,21 +944,17 @@ void NiceDVDInitialize(){
 
 -(id)bookmarksForCurrentDisc
 {
-    
-
 	DVDDiscID outDiscID;
 	DVDGetMediaUniqueID(&outDiscID);
-	return [[[self class] dvdPrefController] bookmarksForDisc:[NSData dataWithBytes:&outDiscID length:8]];
+	return [[[self class] dvdPrefController] bookmarksForDisc:[NSString stringWithCharacters:&outDiscID length:8]];
 }
 
 -(id)bookmarksForCurrentDiscAndName:(id)sender
 {
-    
-
 	DVDDiscID outDiscID;
 	DVDGetMediaUniqueID(&outDiscID);
 	[[[self class] dvdPrefController] bookmarkDataFromName:[sender stringValue]
-												   forDisc:[NSData dataWithBytes:&outDiscID length:8]];
+												   forDisc:[NSString stringWithCharacters:&outDiscID length:8]];
 
 }
 
@@ -1018,16 +962,24 @@ void NiceDVDInitialize(){
 {
 	static id myNib = nil;
 	NSArray *tmpArray;
-	
+
 	if(!myNib)
 		myNib = [[NSNib alloc] initWithNibNamed:@"BookmarkEntry" bundle:[NSBundle bundleForClass:[self class]]];
-	[myNib instantiateNibWithOwner:self topLevelObjects:&tmpArray];	
+	[myNib instantiateNibWithOwner:self topLevelObjects:&tmpArray];
+	id anObject, e;
+	e = [tmpArray objectEnumerator];
+	while(anObject = [e nextObject]){
+		if([anObject isKindOfClass:[NSWindow class]]){
+			[anObject makeKeyAndOrderFront:self];
+			[anObject setLevel:NSFloatingWindowLevel + 5];
+		}
+	}
 }
 
 -(IBAction)setBookmarkForCurrentDiscWithNameField:(id)sender
 {
-	NSLog(@"%@", [sender entryText]);
-	return;
+	[[sender window] close];
+
 	DVDDiscID outDiscID;
 	DVDGetMediaUniqueID(&outDiscID);
 
@@ -1038,7 +990,8 @@ void NiceDVDInitialize(){
 		
 	[[[self class] dvdPrefController] setBookmark:[NSData dataWithBytes:data length:length]
 										 withName:[sender entryText]
-										  forDisc:[NSData dataWithBytes:&outDiscID length:8]];
+										  forDisc:[NSString stringWithCharacters:&outDiscID length:8]];
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:self];
 }
 
 @end
