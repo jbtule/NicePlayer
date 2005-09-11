@@ -36,11 +36,6 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 @implementation DVDPlayerView
 
-+(void)initialize
-{
-	DVDInitialize();
-}
-
 /**
  * Each plugin must return a dictionary with the specified attributes. These are displayed in the preferences
  * for the user to see when choosing plugin order and which plugins are enabled.
@@ -89,15 +84,20 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
  */
 -(id)initWithFrame:(NSRect)frame
 {
-	if(self = [super initWithFrame:frame]){
-		[self setAutoresizingMask:(NSViewWidthSizable | NSViewHeightSizable)];			
-		isAspectRatioChanging = NO;
-	}
-	return self;
+    static BOOL initialized = NO;
+    if(!initialized){
+	DVDInitialize();
+	initialized = YES;
+    }
+    if(self = [super initWithFrame:frame]){
+	[self setAutoresizingMask:(NSViewWidthSizable | NSViewHeightSizable)];			
+	isAspectRatioChanging = NO;
+    }
+    return self;
 }
 
 /**
- * Update the bounds of the DVD. This generally happens on resize or window move.
+* Update the bounds of the DVD. This generally happens on resize or window move.
  */
 -(void)updateBounds:(NSRect)frame
 {

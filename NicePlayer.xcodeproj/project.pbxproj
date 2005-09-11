@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2513D00307BC659800BB6055 /* DVDPlayer.nicebundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2513CDAD07BC658900BB6055 /* DVDPlayer.nicebundle */; };
 		2513D00407BC659800BB6055 /* Plugins.rtf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2513CDAE07BC658900BB6055 /* Plugins.rtf */; };
 		2513D2F507BDAC4200BB6055 /* FadeOut.h in Headers */ = {isa = PBXBuildFile; fileRef = 2513D2F307BDAC4200BB6055 /* FadeOut.h */; };
 		2513D2F607BDAC4200BB6055 /* FadeOut.m in Sources */ = {isa = PBXBuildFile; fileRef = 2513D2F407BDAC4200BB6055 /* FadeOut.m */; };
@@ -55,6 +54,7 @@
 		25B0815D08084354006724D8 /* OverlayNotifierWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B0815B08084354006724D8 /* OverlayNotifierWindow.m */; };
 		25B913250741736A001B68D9 /* OverlaysControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 25B913230741736A001B68D9 /* OverlaysControl.h */; };
 		25B913260741736A001B68D9 /* OverlaysControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B913240741736A001B68D9 /* OverlaysControl.m */; };
+		25C5C20808D4BAE900987A95 /* DVDPlayer.nicebundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = 25C5C1E908D4B81400987A95 /* DVDPlayer.nicebundle */; };
 		25CC86500831DA2A00027929 /* RCMovieView.h in Headers */ = {isa = PBXBuildFile; fileRef = 25CC864E0831DA2A00027929 /* RCMovieView.h */; };
 		25CC86510831DA2A00027929 /* RCMovieView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25CC864F0831DA2A00027929 /* RCMovieView.m */; };
 		25D2E7C407BF3758004BEF7D /* NiceDocumentScripting.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D2E7C207BF3758004BEF7D /* NiceDocumentScripting.m */; };
@@ -216,6 +216,23 @@
 		};
 /* End PBXBuildStyle section */
 
+/* Begin PBXContainerItemProxy section */
+		25C5C1E808D4B81400987A95 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 25C5C1E408D4B81400987A95 /* DVDPlayer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8D5B49B6048680CD000E48DA /* DVDPlayer.nicebundle */;
+			remoteInfo = DVDPlayer;
+		};
+		25C5C1F708D4B90E00987A95 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 25C5C1E408D4B81400987A95 /* DVDPlayer.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA /* DVDPlayer */;
+			remoteInfo = DVDPlayer;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		259DE26B0760F769000FE804 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -223,7 +240,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				2513D00307BC659800BB6055 /* DVDPlayer.nicebundle in CopyFiles */,
+				25C5C20808D4BAE900987A95 /* DVDPlayer.nicebundle in CopyFiles */,
 				2513D00407BC659800BB6055 /* Plugins.rtf in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -242,7 +259,6 @@
 
 /* Begin PBXFileReference section */
 		089C1660FE840EACC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		2513CDAD07BC658900BB6055 /* DVDPlayer.nicebundle */ = {isa = PBXFileReference; lastKnownFileType = wrapper.cfbundle; name = DVDPlayer.nicebundle; path = Plugins/DVDPlayer.nicebundle; sourceTree = "<group>"; };
 		2513CDAE07BC658900BB6055 /* Plugins.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = Plugins.rtf; path = Plugins/Plugins.rtf; sourceTree = "<group>"; };
 		2513D2F307BDAC4200BB6055 /* FadeOut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FadeOut.h; path = Classes/FadeOut.h; sourceTree = "<group>"; };
 		2513D2F407BDAC4200BB6055 /* FadeOut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FadeOut.m; path = Classes/FadeOut.m; sourceTree = "<group>"; };
@@ -292,6 +308,7 @@
 		25B0815B08084354006724D8 /* OverlayNotifierWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OverlayNotifierWindow.m; path = "Classes/Overlay Widgets/OverlayNotifierWindow.m"; sourceTree = "<group>"; };
 		25B913230741736A001B68D9 /* OverlaysControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OverlaysControl.h; path = "Classes/Overlay Widgets/OverlaysControl.h"; sourceTree = "<group>"; };
 		25B913240741736A001B68D9 /* OverlaysControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OverlaysControl.m; path = "Classes/Overlay Widgets/OverlaysControl.m"; sourceTree = "<group>"; };
+		25C5C1E408D4B81400987A95 /* DVDPlayer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DVDPlayer.xcodeproj; path = "Plugin Sources/DVDPlayer/DVDPlayer.xcodeproj"; sourceTree = "<group>"; };
 		25CC864E0831DA2A00027929 /* RCMovieView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCMovieView.h; path = "Classes/Viewer Interface/Pluggable Players/RCMovieView.h"; sourceTree = "<group>"; };
 		25CC864F0831DA2A00027929 /* RCMovieView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCMovieView.m; path = "Classes/Viewer Interface/Pluggable Players/RCMovieView.m"; sourceTree = "<group>"; };
 		25CC866D0831DDA800027929 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = /System/Library/Frameworks/QTKit.framework; sourceTree = "<absolute>"; };
@@ -456,15 +473,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2513CDB307BC658F00BB6055 /* Plugins */ = {
-			isa = PBXGroup;
-			children = (
-				2513CDAD07BC658900BB6055 /* DVDPlayer.nicebundle */,
-				2513CDAE07BC658900BB6055 /* Plugins.rtf */,
-			);
-			name = Plugins;
-			sourceTree = "<group>";
-		};
 		2513D20407BDA31600BB6055 /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -621,6 +629,22 @@
 			name = "Overlay Widgets";
 			sourceTree = "<group>";
 		};
+		25C5C1E208D4B7F300987A95 /* Other Projects */ = {
+			isa = PBXGroup;
+			children = (
+				25C5C1E408D4B81400987A95 /* DVDPlayer.xcodeproj */,
+			);
+			name = "Other Projects";
+			sourceTree = "<group>";
+		};
+		25C5C1E508D4B81400987A95 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				25C5C1E908D4B81400987A95 /* DVDPlayer.nicebundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		25D2E7B407BF36D5004BEF7D /* Scripting */ = {
 			isa = PBXGroup;
 			children = (
@@ -644,10 +668,10 @@
 		2A37F4AAFDCFA73011CA2CEA /* NicePlayer */ = {
 			isa = PBXGroup;
 			children = (
-				2513CDB307BC658F00BB6055 /* Plugins */,
 				2A37F4ABFDCFA73011CA2CEA /* Classes */,
 				25D2E7B407BF36D5004BEF7D /* Scripting */,
 				2A37F4AFFDCFA73011CA2CEA /* Other Sources */,
+				25C5C1E208D4B7F300987A95 /* Other Projects */,
 				2A37F4B8FDCFA73011CA2CEA /* Resources */,
 				2A37F4C3FDCFA73011CA2CEA /* Frameworks */,
 				19C28FB0FE9D524F11CA2CBB /* Products */,
@@ -685,6 +709,7 @@
 		2A37F4B8FDCFA73011CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2513CDAE07BC658900BB6055 /* Plugins.rtf */,
 				2513D20407BDA31600BB6055 /* Images */,
 				3EC66F12077525AD00B50A61 /* NicePlayer Help */,
 				3E8C96C1073EF4730048CB70 /* doc_icons */,
@@ -924,6 +949,7 @@
 				WRAPPER_EXTENSION = app;
 			};
 			dependencies = (
+				25C5C1F808D4B90E00987A95 /* PBXTargetDependency */,
 			);
 			name = NicePlayer;
 			productInstallPath = "$(HOME)/Applications";
@@ -954,12 +980,28 @@
 			);
 			mainGroup = 2A37F4AAFDCFA73011CA2CEA /* NicePlayer */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 25C5C1E508D4B81400987A95 /* Products */;
+					ProjectRef = 25C5C1E408D4B81400987A95 /* DVDPlayer.xcodeproj */;
+				},
+			);
 			targets = (
 				8D15AC270486D014006FF6A4 /* NicePlayer */,
 				3EB6F18506603EB90093424C /* Testing */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		25C5C1E908D4B81400987A95 /* DVDPlayer.nicebundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = DVDPlayer.nicebundle;
+			remoteRef = 25C5C1E808D4B81400987A95 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		3EB6F18106603EB90093424C /* Resources */ = {
@@ -1158,6 +1200,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		25C5C1F808D4B90E00987A95 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DVDPlayer;
+			targetProxy = 25C5C1F708D4B90E00987A95 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		089C165FFE840EACC02AAC07 /* InfoPlist.strings */ = {
