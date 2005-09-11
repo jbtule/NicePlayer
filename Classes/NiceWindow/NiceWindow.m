@@ -870,7 +870,9 @@
 {
     [self setAspectRatio:[theMovieView naturalSize]];
     NSSize aSize = [self getResizeAspectRatioSize];
-    [self resizeWithSize:aSize animate:YES];
+#warning Fix this when Apple fixes setFrame:display:animate:
+//    [self resizeWithSize:aSize animate:YES];
+    [self resizeWithSize:aSize animate:NO];
     [self _JTRefitFills];
 }
 

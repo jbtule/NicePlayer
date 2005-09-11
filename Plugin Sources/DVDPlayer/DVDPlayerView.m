@@ -180,7 +180,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	}
 	
 	FSRef fsref;
-	int i = CFURLGetFSRef((CFURLRef)myURL, &fsref);
+	CFURLGetFSRef((CFURLRef)myURL, &fsref);
 
 	Boolean isValid;
 	// This next call is broken.
