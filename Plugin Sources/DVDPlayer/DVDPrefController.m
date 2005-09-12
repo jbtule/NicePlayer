@@ -81,10 +81,11 @@
 	if([aString isEqualToString:NSLocalizedStringFromTable(@"French", nil, nil)])
 		return kDVDLanguageCodeFrench;
 	if([aString isEqualToString:NSLocalizedStringFromTable(@"German", nil, nil)])
-		return kDVDLanguageCodeGerman;	
+		return kDVDLanguageCodeGerman;
+	return kDVDLanguageCodeUninitialized;
 }
 
--(NSArray *)bookmarksForDisc:(NSData *)discID
+-(NSArray *)bookmarksForDisc:(NSString *)discID
 {
 	NSDictionary *disc = [[DVDPrefController preferences] dictionaryForKey:discID];
 	if(disc == nil)
@@ -94,7 +95,8 @@
 
 -(void)setBookmark:(NSData *)bookmarkData withName:(NSString *)aString forDisc:(NSString *)discID
 {
-	NSDictionary *disc = [[DVDPrefController preferences] dictionaryForKey:discID];
+    NSMutableDictionary *disc = [NSMutableDictionary dictionaryWithDictionary:
+	[[DVDPrefController preferences] dictionaryForKey:discID]];
 	if(disc == nil)
 		disc = [NSMutableDictionary dictionary];
 	else
@@ -102,11 +104,7 @@
 	
 	[disc setObject:bookmarkData forKey:aString];
 	[[DVDPrefController preferences] setObject:disc forKey:discID];
-	[self synchronize];
-}
-
--(void)synchronize
-{
+	[[DVDPrefController preferences] synchronize];
 }
 
 -(NSData *)bookmarkDataFromName:(NSString *)aString forDisc:(NSString *)discID

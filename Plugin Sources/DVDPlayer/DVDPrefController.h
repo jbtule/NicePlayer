@@ -24,9 +24,10 @@
 -(IBAction)setLanguageAudio:(id)sender;
 -(IBAction)setLanguageSubtitles:(id)sender;
 -(IBAction)setLanguageMenus:(id)sender;
+-(DVDLanguageCode)languageCodeForString:(id)aString;
 
--(NSArray *)bookmarksForDisc:(NSData *)discID;
--(void)setBookmark:(NSData *)bookmarkData withName:(NSString *)aString forDisc:(NSData *)discID;
--(NSData *)bookmarkDataFromName:(NSString *)aString forDisc:(NSData *)discID;
+-(NSArray *)bookmarksForDisc:(NSString *)discID;
+-(void)setBookmark:(NSData *)bookmarkData withName:(NSString *)aString forDisc:(NSString *)discID;
+-(NSData *)bookmarkDataFromName:(NSString *)aString forDisc:(NSString *)discID;
 
 @end

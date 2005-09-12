@@ -12,6 +12,7 @@
 #import "NiceWindow.h"
 #import "NPPluginView.h"
 #import "DVDPrefController.h"
+#import "NSBookmarkCreateButton.h"
 
 #define MAX_DISPLAYS (16)
 
@@ -917,7 +918,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	id bookmarksMenu = [[NSMenu alloc] initWithTitle:@"Bookmarks Menu"];
 	id newItem;
 	NSArray *bookmarks = [self bookmarksForCurrentDisc];
-	unsigned short i;
+	unsigned short i = 0;
 	
 	newItem = [[[NSMenuItem alloc] initWithTitle:@"Add Bookmark"
 										  action:@selector(setBookmarkForCurrentDisc:)
@@ -949,7 +950,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 {
 	DVDDiscID outDiscID;
 	DVDGetMediaUniqueID(outDiscID);
-	return [[[self class] dvdPrefController] bookmarksForDisc:[NSString stringWithCharacters:&outDiscID length:8]];
+	return [[[self class] dvdPrefController] bookmarksForDisc:[NSString stringWithCharacters:(unichar *)&outDiscID length:8]];
 }
 
 -(id)bookmarksForCurrentDiscAndName:(id)sender
@@ -957,11 +958,11 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	DVDDiscID outDiscID;
 	DVDGetMediaUniqueID(outDiscID);
 	[[[self class] dvdPrefController] bookmarkDataFromName:[sender stringValue]
-												   forDisc:[NSString stringWithCharacters:outDiscID length:8]];
-
+						       forDisc:[NSString stringWithCharacters:(unichar *)outDiscID length:8]];
+	return nil;
 }
 
--(id)setBookmarkForCurrentDisc:(id)sender
+-(void)setBookmarkForCurrentDisc:(id)sender
 {
 	static id myNib = nil;
 	NSArray *tmpArray;
@@ -979,21 +980,21 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	}
 }
 
--(IBAction)setBookmarkForCurrentDiscWithNameField:(id)sender
+-(IBAction)setBookmarkForCurrentDiscWithNameField:(NSBookmarkCreateButton *)sender
 {
 	[[sender window] close];
 
 	DVDDiscID outDiscID;
 	DVDGetMediaUniqueID(outDiscID);
 
-	void *data;
-	int length = 0;
+	void *data = nil;
+	UInt32 length;
 	
 	DVDGetBookmark(data, &length);
 		
 	[[[self class] dvdPrefController] setBookmark:[NSData dataWithBytes:data length:length]
-										 withName:[sender entryText]
-										  forDisc:[NSString stringWithCharacters:&outDiscID length:8]];
+					     withName:[sender entryText]
+					      forDisc:[NSString stringWithCharacters:(unichar *)outDiscID length:8]];
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:self];
 }
 

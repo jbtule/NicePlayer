@@ -7,7 +7,7 @@
 #import "NPMovieProtocol.h"
 #import "NPPluginView.h"
 
-void NiceDVDInitialize();
+@class NSBookmarkCreateButton;
 
 @interface DVDPlayerView : NPPluginView <NPMoviePlayer>
 {
@@ -28,7 +28,8 @@ void NiceDVDInitialize();
 -(id)subPictureMenu;
 
 -(void)gotoMainMenu;
+-(id)bookmarksForCurrentDisc;
 
--(IBAction)setBookmarkForCurrentDiscWithNameField:(id)sender;
+-(IBAction)setBookmarkForCurrentDiscWithNameField:(NSBookmarkCreateButton *)sender;
 
 @end
