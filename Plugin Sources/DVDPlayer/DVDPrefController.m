@@ -102,7 +102,11 @@
 	
 	[disc setObject:bookmarkData forKey:aString];
 	[[DVDPrefController preferences] setObject:disc forKey:discID];
-	[[DVDPrefController preferences] synchronize];
+	[self synchronize];
+}
+
+-(void)synchronize
+{
 }
 
 -(NSData *)bookmarkDataFromName:(NSString *)aString forDisc:(NSString *)discID

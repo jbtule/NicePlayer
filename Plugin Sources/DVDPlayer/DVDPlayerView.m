@@ -102,9 +102,16 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 -(void)updateBounds:(NSRect)frame
 {
 	CGRect cgr = {{NSMinX(frame), NSMinY(frame)}, {NSWidth(frame), NSHeight(frame)}};
-
 	Rect nr = convertCGRectToQDRect(cgr);
 	DVDSetVideoBounds(&nr);
+}
+
+-(void)resizeToAspect
+{
+    [[self window] setAspectRatio:[self naturalSize]];
+    NSSize windowSize = [(NiceWindow *)[self window] getResizeAspectRatioSize];
+    /* Make sure that bounds get resized first so we don't get white background showing through. */
+    [self updateBounds:NSMakeRect(0, 0, windowSize.width, windowSize.height)];
 }
 
 /**
@@ -115,17 +122,14 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
  */
 -(void)aspectRatioChanged
 {
-	[[self window] setAspectRatio:[self naturalSize]];
-	NSSize windowSize = [(NiceWindow *)[self window] getResizeAspectRatioSize];
-	/* Make sure that bounds get resized first so we don't get white background showing through. */
-	[self updateBounds:NSMakeRect(0, 0, windowSize.width, windowSize.height)];
-	isAspectRatioChanging = YES;
-	[(NiceWindow *)[self window] resizeToAspectRatio];
-	isAspectRatioChanging = NO;
+    [self resizeToAspect];
+    isAspectRatioChanging = YES;
+    [(NiceWindow *)[self window] resizeToAspectRatio];
+    isAspectRatioChanging = NO;
 }
 
 /**
- * Close the movie by deallocating and disposing the DVD framework.
+* Close the movie by deallocating and disposing the DVD framework.
  */
 -(void)close
 {
@@ -207,7 +211,6 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	CGRect cgr = {{NSMinX(frame), NSMinY(frame)}, {NSWidth(frame), NSHeight(frame)}};
 	CGGetDisplaysWithRect(cgr, MAX_DISPLAYS, displays, &displayCount);
 	DVDSetVideoDisplay(displays[0]);
-	[self updateBounds:[self frame]];
 
 	DVDSetFatalErrorCallBack(fatalError, (UInt32)self);
 	DVDEventCode inCode = kDVDEventDisplayMode;
@@ -219,8 +222,8 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 		DVDOpenMediaFile(&fsref);
 	else
 		DVDOpenMediaVolume(&fsref);
-	
 	[self aspectRatioChanged];
+	[self setNeedsDisplay:YES];
 	updateChapterTimer = [NSTimer scheduledTimerWithTimeInterval:30
 														target:self
 													  selector:@selector(rebuildMenuTimer)
@@ -368,9 +371,9 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(void)drawRect:(NSRect)aRect
 {
-	if(!isAspectRatioChanging)
-		[self updateBounds:[self frame]];
-	DVDUpdateVideo();
+    if(!isAspectRatioChanging)
+	[self resizeToAspect];
+    DVDUpdateVideo();
 }
 
 #pragma mark -
@@ -490,7 +493,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(double)totalTime
 {
-	DVDTimePosition outTime;
+    DVDTimePosition outTime;
 	UInt16 outFrames;
 	
 	DVDGetTime(kDVDTimeCodeTitleDurationSeconds, &outTime, &outFrames);
