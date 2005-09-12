@@ -15,6 +15,12 @@
 	IBOutlet id languageMenusPopUp;
 }
 
++(NSUserDefaults *)preferences;
+
+-(DVDLanguageCode)languageAudio;
+-(DVDLanguageCode)languageSubtitles;
+-(DVDLanguageCode)languageMenus;
+
 -(IBAction)setLanguageAudio:(id)sender;
 -(IBAction)setLanguageSubtitles:(id)sender;
 -(IBAction)setLanguageMenus:(id)sender;

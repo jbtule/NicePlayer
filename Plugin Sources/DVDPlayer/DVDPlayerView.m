@@ -948,16 +948,16 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 -(id)bookmarksForCurrentDisc
 {
 	DVDDiscID outDiscID;
-	DVDGetMediaUniqueID(&outDiscID);
+	DVDGetMediaUniqueID(outDiscID);
 	return [[[self class] dvdPrefController] bookmarksForDisc:[NSString stringWithCharacters:&outDiscID length:8]];
 }
 
 -(id)bookmarksForCurrentDiscAndName:(id)sender
 {
 	DVDDiscID outDiscID;
-	DVDGetMediaUniqueID(&outDiscID);
+	DVDGetMediaUniqueID(outDiscID);
 	[[[self class] dvdPrefController] bookmarkDataFromName:[sender stringValue]
-												   forDisc:[NSString stringWithCharacters:&outDiscID length:8]];
+												   forDisc:[NSString stringWithCharacters:outDiscID length:8]];
 
 }
 
@@ -984,7 +984,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	[[sender window] close];
 
 	DVDDiscID outDiscID;
-	DVDGetMediaUniqueID(&outDiscID);
+	DVDGetMediaUniqueID(outDiscID);
 
 	void *data;
 	int length = 0;

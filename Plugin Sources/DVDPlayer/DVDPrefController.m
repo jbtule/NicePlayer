@@ -11,7 +11,7 @@
 
 @implementation DVDPrefController
 
-+(id)preferences
++(NSUserDefaults *)preferences
 {
 	static id preferences;
 	if(!preferences){
