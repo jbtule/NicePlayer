@@ -18,10 +18,10 @@
                   backing:(NSBackingStoreType)bufferingType
                     defer:(BOOL)flag
 {
-    if(self = [super initWithContentRect:contentRect
+    if((self = [super initWithContentRect:contentRect
                                styleMask:NSBorderlessWindowMask
                                  backing:NSBackingStoreBuffered
-                                   defer:YES]){
+                                   defer:YES])){
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(presentMultiple)
                                                      name:@"PresentMultiple"
@@ -611,7 +611,7 @@
     id enumerator = [[self childWindows] objectEnumerator];
     id object;
     
-    while(object = [enumerator nextObject]){
+    while((object = [enumerator nextObject])){
         [object setLevel:windowLevel];   
     }
     
@@ -696,6 +696,8 @@
         [NSArray arrayWithObjects:self,	notifierFade, @"clearNotifierTimer",	nil]
                                                          forKeys:
 	[NSArray arrayWithObjects:@"Window", @"Fade", @"Selector",  nil]];
+    if(notifierTimer)
+	[notifierTimer invalidate];
     notifierTimer = [[FadeOut fadeOut] notifierFadeForDict:fadeDict];
 }
 

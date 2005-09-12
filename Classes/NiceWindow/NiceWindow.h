@@ -72,9 +72,7 @@
 #pragma mark -
 #pragma mark Interface Items
 
--(void)openPlaylistFromURL;
--(void)savePlaylist;
--(void)savePlaylistToURL;
+-(void)displayAlertString:(NSString *)aString withInformation:(NSString *)anotherString;
 
 #pragma mark -
 #pragma mark Overlays

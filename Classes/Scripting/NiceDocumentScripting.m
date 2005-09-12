@@ -229,9 +229,9 @@
 }
 
 
-- (NSScriptObjectSpecifier *) objectSpecifier
+- (NSNameSpecifier *) objectSpecifier
 {
-    NSScriptObjectSpecifier *specifier = [[NSNameSpecifier alloc]
+    NSNameSpecifier *specifier = [[NSNameSpecifier alloc]
       initWithContainerClassDescription:
         (NSScriptClassDescription *)[NSApp classDescription]
                      containerSpecifier: [NSApp objectSpecifier]

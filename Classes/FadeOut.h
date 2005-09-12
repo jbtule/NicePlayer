@@ -19,7 +19,7 @@
 -(id)initialFadeForDict:(id)anArray;
 -(id)notifierFadeForDict:(id)aDictionary;
 -(id)fadeForDict:(id)aDictionary inSeconds:(float)seconds actuallyDisplay:(BOOL)aBool;
--(void)doFadeForDict:(id)aTimer;
+-(void)doFadeForDict:(NSTimer *)aTimer;
 -(void)addWindow:(id)anObject;
 -(void)removeWindow:(id)anObject;
 -(void)destroyAndCreateTimer;

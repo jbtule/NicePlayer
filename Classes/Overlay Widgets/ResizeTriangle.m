@@ -13,10 +13,10 @@
 
 - (id)initWithContentRect:(NSRect)contentRect styleMask:(unsigned int)aStyle backing:(NSBackingStoreType)bufferingType defer:(BOOL)flag
 {
-    if(self = [super initWithContentRect:contentRect
+    if((self = [super initWithContentRect:contentRect
 			       styleMask:NSBorderlessWindowMask
 				 backing:NSBackingStoreBuffered
-				   defer:YES]){
+				   defer:YES])){
 	[self setBackgroundColor:[NSColor clearColor]];
 	[self setIgnoresMouseEvents:YES];
 	[self setOpaque:NO];

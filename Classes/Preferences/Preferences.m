@@ -32,7 +32,7 @@
 
 -(id)init
 {
-	if(self = [super init]){
+	if((self = [super init])){
 		doubleClickMoviePref = [[NSUserDefaults standardUserDefaults] integerForKey:@"doubleClickMoviePref"];
 		rightClickMoviePref = [[NSUserDefaults standardUserDefaults] integerForKey:@"rightClickMoviePref"];
 		scrollWheelMoviePref = [[NSUserDefaults standardUserDefaults] integerForKey:@"scrollWheelMoviePref"];

@@ -83,9 +83,9 @@
     
 }
 
-- (NSScriptObjectSpecifier *) objectSpecifier
+- (NSIndexSpecifier *) objectSpecifier
 {
-    NSScriptObjectSpecifier *specifier = [[NSIndexSpecifier alloc]
+    NSIndexSpecifier *specifier = [[NSIndexSpecifier alloc]
       initWithContainerClassDescription:
         (NSScriptClassDescription *)[NSApp classDescription]
                      containerSpecifier: [NSApp objectSpecifier]

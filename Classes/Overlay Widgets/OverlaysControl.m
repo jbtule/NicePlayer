@@ -29,7 +29,7 @@ static id overlayControl = nil;
 	if(overlayControl)
 		return overlayControl;
 	
-	if(self = [super init]){
+	if((self = [super init])){
 	}
 	
 	return self;

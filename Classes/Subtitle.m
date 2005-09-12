@@ -14,10 +14,11 @@
 -(void)dealloc{
     [theText release];
     free(timeVector);
+    [super dealloc];
 }
 
 -(id)initWithFile:(id)aPath forMovieSeconds:(float)aSeconds{
-    if (self =[super init]){
+    if ((self = [super init])){
             timeOffset = 0;
            intervals =30*aSeconds;
             lastCheck=0;

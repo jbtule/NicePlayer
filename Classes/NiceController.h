@@ -40,9 +40,6 @@
 #pragma mark Interface
 
 -(IBAction)openDocument:(id)sender;
--(IBAction)openPlaylist:(id)sender;
--(IBAction)savePlaylist:(id)sender;
--(IBAction)saveAsPlaylist:(id)sender;
 -(IBAction)newDocument:(id)sender;
 -(IBAction)presentMultiple:(id)sender;
 -(IBAction)playAll:(id)sender;
@@ -58,10 +55,12 @@
 #pragma mark Presentation
 
 -(void)presentScreen;
+-(void)presentScreenOnScreen:(NSScreen*)aScreen;
 -(void)presentAllScreeens;
 -(void)unpresentAllScreeens;
 -(void)unpresentScreen;
 -(void)enterFullScreen;
+-(void)enterFullScreenOnScreen:(NSScreen*)aScreen;
 -(void)exitFullScreen;
 
 #pragma mark -

@@ -24,7 +24,7 @@
 
 -(id)initWithFrame:(NSRect)aRect
 {
-    if (self = [super initWithFrame:aRect]) {
+    if ((self = [super initWithFrame:aRect])) {
         NSRect subview = NSMakeRect(0, 0, aRect.size.width, aRect.size.height);
         trueMovieView = [[JTMovieView alloc] initWithFrame:subview];
         contextMenu = [[NSMenu alloc] initWithTitle:@"NicePlayer"];

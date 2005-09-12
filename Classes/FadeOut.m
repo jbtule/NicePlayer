@@ -26,7 +26,7 @@ static id fadeOutInstance = nil;
 
 -(id)init
 {
-	if(self = [super init]){
+	if((self = [super init])){
 		windowSet = [[NSMutableSet set] retain];
 		faderTimer = nil;
 	}
@@ -55,7 +55,7 @@ static id fadeOutInstance = nil;
 					       repeats:NO];
     } else {
 	id anObject, e = [[aDictionary objectForKey:@"Fade"] objectEnumerator];
-	while(anObject = [e nextObject]){
+	while((anObject = [e nextObject])){
 	    [anObject setAlphaValue:0.0];
 	}
 	return nil;
@@ -69,7 +69,7 @@ static id fadeOutInstance = nil;
 		[self destroyAndCreateTimer];
 	} else {
 		id anObject, e = [[aTimer userInfo] objectEnumerator];
-		while(anObject = [e nextObject]){
+		while((anObject = [e nextObject])){
 			[anObject setAlphaValue:0.0];
 		}
 	}
@@ -112,7 +112,7 @@ static id fadeOutInstance = nil;
 -(void)updateAlphaValues
 {
 	id anObject, e = [windowSet objectEnumerator];
-	while(anObject = [e nextObject]){
+	while((anObject = [e nextObject])){
 		float newValue = [anObject alphaValue] - ALPHA_VALUE_DELTA;
 		newValue = (newValue < 0.0) ? 0.0 : newValue;
 		[anObject setAlphaValue:newValue];
@@ -125,7 +125,7 @@ static id fadeOutInstance = nil;
 {
 	id newSet = [[NSMutableSet set] retain];
 	id anObject, e = [windowSet objectEnumerator];
-	while(anObject = [e nextObject]){
+	while((anObject = [e nextObject])){
 		if([anObject alphaValue] > 0.0)
 			[newSet addObject:anObject];
 	}

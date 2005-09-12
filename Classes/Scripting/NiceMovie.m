@@ -18,7 +18,7 @@
 
 -(id)initWithURL:(NSURL*)aURL andPlaylist:(id)aPlaylist
 {
-    if (self = [super init]){
+    if ((self = [super init])){
         theURL = [aURL retain];
         theParentPlaylist =aPlaylist;
     }return self;

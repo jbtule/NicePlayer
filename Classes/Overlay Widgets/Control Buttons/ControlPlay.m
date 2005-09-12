@@ -11,7 +11,7 @@
 
 -(id)initWithFrame:(NSRect)rect
 {
-    if (self = [super initWithFrame:rect]) {
+    if ((self = [super initWithFrame:rect])) {
 		[self changeToProperButton:NO];
 	}
     return self;

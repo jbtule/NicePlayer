@@ -61,14 +61,14 @@
         if(([anEvent type] == NSRightMouseUp) || ([anEvent type] == NSMouseMoved)){
             // there seems to be no window assigned with this event at the moment;
             // but just in case ...
-            if (theWindow = [anEvent window]) {
+            if ((theWindow = [anEvent window])) {
                 theView = [[theWindow contentView] hitTest:[anEvent
                     locationInWindow]];
                 locationInWindow = [anEvent locationInWindow];
             } else {
                 // find window
                 NSEnumerator *enumerator = [[self orderedWindows] objectEnumerator];
-                while (theWindow = [enumerator nextObject]) {
+                while ((theWindow = [enumerator nextObject])) {
                     locationInWindow = [theWindow mouseLocationOutsideOfEventStream];
                     NSView *contentView = [theWindow contentView];
                     theView = [contentView hitTest:locationInWindow];

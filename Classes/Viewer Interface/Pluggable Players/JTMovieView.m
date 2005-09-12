@@ -56,7 +56,7 @@
 
 -(id)initWithFrame:(NSRect)frame
 {
-    if(self = [super initWithFrame:frame]){
+    if((self = [super initWithFrame:frame])){
         theFirstDraw =NO;
         oldPlayState = STATE_INACTIVE;
         [self setAutoresizingMask:(NSViewWidthSizable | NSViewHeightSizable)];

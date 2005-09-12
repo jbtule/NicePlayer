@@ -13,7 +13,7 @@
 
 -(id)initWithFrame:(NSRect)rect
 {
-    if (self = [super initWithFrame:rect]) {
+    if ((self = [super initWithFrame:rect])) {
 		start = NO;
 		activated = NO;
 		tRectTag = 0;

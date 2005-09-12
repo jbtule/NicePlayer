@@ -284,7 +284,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	NSEnumerator* rowsEnumerator = [rows objectEnumerator];
 	NSNumber *row;
 
-	while(row = [rowsEnumerator nextObject])
+	while((row = [rowsEnumerator nextObject]))
 		[_draggingObjects addObject:[NSNumber numberWithUnsignedInt:[row unsignedIntValue]]];
 	
 	NSData* data = [NSKeyedArchiver archivedDataWithRootObject:_draggingObjects];
@@ -320,7 +320,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 		row = [[[Preferences mainPrefs] viewerPluginPrefs] count] - 1;
 	[[[Preferences mainPrefs] viewerPluginPrefs] exchangeObjectAtIndex:[num unsignedIntValue]
 							 withObjectAtIndex:row];
-	while(num = [e nextObject]){
+	while((num = [e nextObject])){
 		id pluggables = [[Preferences mainPrefs] viewerPluginPrefs];
 		id anObject = [pluggables objectAtIndex:[num unsignedIntValue]];
 		[pluggables removeObjectAtIndex:[num unsignedIntValue]];

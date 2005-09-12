@@ -7,11 +7,12 @@
 //
 
 #import "NiceDrawer.h"
+#import "NiceDocument.h"
 
 /*************************
 Drawers are evil private children, and aren't like normal children thus
-they need there own private methods, 
-and they ignore thier public  ones they inherited from their super.
+they need their own private methods --
+they ignore their public ones they inherited from super.
 **************************/
 @interface NSDrawerWindow : NSWindow 
     -(NSWindow*)_parentWindow;
@@ -53,7 +54,7 @@ and they ignore thier public  ones they inherited from their super.
 {
 	if(([anEvent type] == NSKeyDown)
 	   && [[anEvent characters] characterAtIndex:0] == 127){
-		[[[[(NSDrawerWindow*)[self window] _parentWindow] windowController] document] removeURLFromPlaylistAtIndex:[playlistTable selectedRow]];
+		[(NiceDocument *)[[[(NSDrawerWindow*)[self window] _parentWindow] windowController] document] removeURLFromPlaylistAtIndex:[playlistTable selectedRow]];
 		return;
 	}
 	[super keyDown:anEvent];

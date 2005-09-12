@@ -17,7 +17,8 @@ id rowsToFileNames(id obj, void* playList){
 
 - (id)init
 {
-    if(self = [super init]){
+    self = [super init];
+    if(self){
         hasRealMovie = NO;
         isRandom = NO;
         theSubtitle = nil;
@@ -63,14 +64,14 @@ id rowsToFileNames(id obj, void* playList){
 
 - (id)initWithContentsOfFile:(NSString *)fileName ofType:(NSString *)docType
 {
-    if(self = [super initWithContentsOfFile:fileName ofType:docType]){
+    if((self = [super initWithContentsOfFile:fileName ofType:docType])){
     }
     return self;
 }
 
 - (id)initWithContentsOfURL:(NSURL *)aURL ofType:(NSString *)docType
 {
-    if(self = [super initWithContentsOfFile:[aURL absoluteString] ofType:docType]){
+    if((self = [super initWithContentsOfFile:[aURL absoluteString] ofType:docType])){
     }
     return self;
 }
@@ -591,7 +592,7 @@ stuff won't work properly! */
         NSURL* tempURL;
         
         
-        while(tempURL = [enumerator nextObject]){
+        while((tempURL = [enumerator nextObject])){
             [self addURLToPlaylist:tempURL];
         }
     }
@@ -707,14 +708,14 @@ stuff won't work properly! */
 }
 
 - (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(int)rowIndex
-{    
+{
     if([[aTableColumn identifier] isEqualTo:@"index"])
         return [NSNumber numberWithInt:rowIndex +1];
     else if ([[aTableColumn identifier] isEqualTo:@"name"])
         return [[[thePlaylist objectAtIndex:rowIndex]path] lastPathComponent];
     else if ([[aTableColumn identifier] isEqualTo:@"status"]){
         if ([[thePlaylist objectAtIndex:rowIndex] isEqualTo:theCurrentURL])
-            return @"¥";
+            return [NSString stringWithFormat:@"%C", 0x2022];
     else
     return @"";
     }else
@@ -735,7 +736,7 @@ stuff won't work properly! */
         NSEnumerator *enumerator = [urls reverseObjectEnumerator];
         id object;
         
-        while (object = [enumerator nextObject]) {
+        while ((object = [enumerator nextObject])) {
             [tableSource removeURLFromPlaylist:object];
             [self addURLToPlaylist:object atIndex:row];
         }

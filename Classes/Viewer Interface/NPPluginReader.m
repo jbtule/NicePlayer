@@ -25,7 +25,7 @@ static NPPluginReader *pluginReader = nil;
 
 -(id)init
 {
-	if(self = [super init]){
+	if((self = [super init])){
 	    [self generatePluggables];
 	    [self generatePluginOrder];
 	}
@@ -157,7 +157,7 @@ static NPPluginReader *pluginReader = nil;
     NSEnumerator *e = [pluginPaths objectEnumerator];
     id anObject;
     
-    while (anObject = [e nextObject]) {
+    while ((anObject = [e nextObject])) {
 	id aBundle = [NSBundle bundleWithPath:anObject];
 	if(![aBundle load])
 	    continue;

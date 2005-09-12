@@ -54,7 +54,7 @@
     if (floor(NSAppKitVersionNumber) <= NSAppKitVersionNumber10_3) /* QTKit won't load on anything less than 10.4 Tiger. */
 	return nil;
 
-    if(self = [super initWithFrame:frame]){
+    if((self = [super initWithFrame:frame])){
 	qtView = [[QTMovieView alloc] initWithFrame:frame];
 	[self addSubview:[qtView autorelease]];
         oldPlayState = STATE_INACTIVE;
