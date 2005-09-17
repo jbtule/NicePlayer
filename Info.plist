@@ -20,7 +20,7 @@
 				<string>video/x-ms-asf</string>
 			</array>
 			<key>CFBundleTypeName</key>
-			<string>Windows video</string>
+			<string>Windows Media Video</string>
 			<key>CFBundleTypeOSTypes</key>
 			<array>
 				<string>ASF_</string>

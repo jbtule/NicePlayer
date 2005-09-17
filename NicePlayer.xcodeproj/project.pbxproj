@@ -54,7 +54,6 @@
 		25B0815D08084354006724D8 /* OverlayNotifierWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B0815B08084354006724D8 /* OverlayNotifierWindow.m */; };
 		25B913250741736A001B68D9 /* OverlaysControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 25B913230741736A001B68D9 /* OverlaysControl.h */; };
 		25B913260741736A001B68D9 /* OverlaysControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B913240741736A001B68D9 /* OverlaysControl.m */; };
-		25C5C20808D4BAE900987A95 /* DVDPlayer.nicebundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = 25C5C1E908D4B81400987A95 /* DVDPlayer.nicebundle */; };
 		25CC86500831DA2A00027929 /* RCMovieView.h in Headers */ = {isa = PBXBuildFile; fileRef = 25CC864E0831DA2A00027929 /* RCMovieView.h */; };
 		25CC86510831DA2A00027929 /* RCMovieView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25CC864F0831DA2A00027929 /* RCMovieView.m */; };
 		25D2E7C407BF3758004BEF7D /* NiceDocumentScripting.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D2E7C207BF3758004BEF7D /* NiceDocumentScripting.m */; };
@@ -221,14 +220,14 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 25C5C1E408D4B81400987A95 /* DVDPlayer.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 8D5B49B6048680CD000E48DA /* DVDPlayer.nicebundle */;
+			remoteGlobalIDString = 8D5B49B6048680CD000E48DA;
 			remoteInfo = DVDPlayer;
 		};
 		25C5C1F708D4B90E00987A95 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 25C5C1E408D4B81400987A95 /* DVDPlayer.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 8D5B49AC048680CD000E48DA /* DVDPlayer */;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
 			remoteInfo = DVDPlayer;
 		};
 /* End PBXContainerItemProxy section */
@@ -240,7 +239,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				25C5C20808D4BAE900987A95 /* DVDPlayer.nicebundle in CopyFiles */,
 				2513D00407BC659800BB6055 /* Plugins.rtf in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

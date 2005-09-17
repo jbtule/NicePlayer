@@ -111,10 +111,45 @@
 {
     Rect aRect;
     GetMovieNaturalBoundsRect([film quickTimeMovie], &aRect);
-    return NSMakeSize((float)(aRect.right - aRect.left),
-                      (float)(aRect.bottom - aRect.top));
+    NSSize tSize = NSMakeSize((float)(aRect.right - aRect.left),
+                              (float)(aRect.bottom - aRect.top));
+    
+    @try{
+        NSArray* tArray = [film tracksOfMediaType:QTMediaTypeVideo];
+        QTTrack* tTrack = [tArray firstObject];
+        SampleDescriptionHandle anImageDesc = NULL;
+        
+        if(tTrack != nil ){
+            anImageDesc = (SampleDescriptionHandle)NewHandle(sizeof(SampleDescription));
+            GetMediaSampleDescription([[tTrack media] quickTimeMedia], 1, anImageDesc);    
+            
+            
+            NSString* tName = [NSString stringWithCString:p2cstr( (*(ImageDescriptionHandle)anImageDesc)->name)];
+            
+            if([tName hasPrefix:@"DV/DVCPRO"]){
+                PixelAspectRatioImageDescriptionExtension pixelAspectRatio;
+                OSStatus status;
+                
+                status = ICMImageDescriptionGetProperty((ImageDescriptionHandle)anImageDesc, // image description
+                                                        kQTPropertyClass_ImageDescription, // class
+                                                                                           // 'pasp' image description extention property
+                                                        kICMImageDescriptionPropertyID_PixelAspectRatio,
+                                                        sizeof(pixelAspectRatio), // size
+                                                        &pixelAspectRatio,        // returned value
+                                                        NULL);                    // byte count
+                float tRatio = ((float)(pixelAspectRatio.hSpacing)) / pixelAspectRatio.vSpacing;
+                    tSize = NSMakeSize(tRatio* tSize.width,tSize.height);
+            }
+        }
+    }@catch(NSException *exception) {}
+    @finally{
+        return tSize;
+    }
+    
 }
 
+//-(void)setLoopMode:
+//This looping code is probably not a good idea as niceplayer has code that loops exteriorly to this. But that's just me noticing it, I haven't seen any actually problems use wise yet. It probably should just be a variable.
 -(void)setLoopMode:(NSQTMovieLoopMode)flag
 {
     BOOL shouldLoop = !(flag == NSQTMovieNormalPlayback);
