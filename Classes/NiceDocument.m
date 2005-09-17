@@ -127,7 +127,7 @@ id rowsToFileNames(id obj, void* playList){
 {
     // Insert code here to read your document from the given data.  You can also choose to override -loadFileWrapperRepresentation:ofType: or -readFromFile:ofType: instead.
     
-    if([[docType lowercaseString] isEqualTo:@"nicelist"]){
+    if([[docType lowercaseString] isEqualTo:@"nicelist"] || [[docType lowercaseString] isEqualTo:[@"Nice Playlist" lowercaseString]]){
         return [self loadPlaylistFromURL:url];
     }
     

@@ -149,7 +149,7 @@
 }
 
 //-(void)setLoopMode:
-//This looping code is probably not a good idea as niceplayer has code that loops exteriorly to this. But that's just me noticing it, I haven't seen any actually problems use wise yet. It probably should just be a variable.
+//This looping code is probably not a good idea as niceplayer has code that loops exteriorly to this. But that's just me noticing it, I haven't seen any actually problems use wise yet. It probably should just be a variable. -Jay
 -(void)setLoopMode:(NSQTMovieLoopMode)flag
 {
     BOOL shouldLoop = !(flag == NSQTMovieNormalPlayback);
