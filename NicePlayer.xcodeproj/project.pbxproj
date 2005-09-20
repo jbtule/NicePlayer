@@ -30,7 +30,6 @@
 		252BDDFB076A4775006CF96B /* ControlRR.m in Sources */ = {isa = PBXBuildFile; fileRef = 252BDDF9076A4775006CF96B /* ControlRR.m */; };
 		252BDE00076A4780006CF96B /* ControlFF.h in Headers */ = {isa = PBXBuildFile; fileRef = 252BDDFE076A4780006CF96B /* ControlFF.h */; };
 		252BDE01076A4780006CF96B /* ControlFF.m in Sources */ = {isa = PBXBuildFile; fileRef = 252BDDFF076A4780006CF96B /* ControlFF.m */; };
-		253B507C08DCB0DA00756089 /* DVDPlayer.nicebundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = 25C5C1E908D4B81400987A95 /* DVDPlayer.nicebundle */; };
 		253B52BA08DCB41A00756089 /* NicePlayer_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 32DBCF750370BD2300C91783 /* NicePlayer_Prefix.pch */; };
 		253B52BB08DCB41A00756089 /* NiceDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A37F4AEFDCFA73011CA2CEA /* NiceDocument.h */; };
 		253B52BC08DCB41A00756089 /* JTMovieView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EEDF751065B3E8800E3545C /* JTMovieView.h */; };
@@ -168,12 +167,10 @@
 		253B534208DCB41A00756089 /* RCMovieView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25CC864F0831DA2A00027929 /* RCMovieView.m */; };
 		253B534408DCB41A00756089 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB7EC5F065F39AA0002A470 /* Carbon.framework */; };
 		253B534508DCB41A00756089 /* QuickTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB7ECF9065F39BC0002A470 /* QuickTime.framework */; };
-		253B534608DCB41A00756089 /* IndyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EEDE77807060596001A0F8B /* IndyKit.framework */; };
 		253B534708DCB41A00756089 /* AppKitScripting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 257D60000753DE7C00702BD0 /* AppKitScripting.framework */; };
 		253B534808DCB41A00756089 /* Scripting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 257D60130753DED700702BD0 /* Scripting.framework */; };
 		253B534908DCB41A00756089 /* DVDPlayback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25702FEF07569E3300D1EE8C /* DVDPlayback.framework */; };
 		253B534A08DCB41A00756089 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 251FEFB6085670D800D38B8E /* Cocoa.framework */; };
-		253B534C08DCB41A00756089 /* IndyKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3EEDE77807060596001A0F8B /* IndyKit.framework */; };
 		253B536A08DCB4C100756089 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25CC866D0831DDA800027929 /* QTKit.framework */; };
 		253C014F07C00DF200172C2F /* NiceControllerScripting.h in Headers */ = {isa = PBXBuildFile; fileRef = 253C014E07C00DF200172C2F /* NiceControllerScripting.h */; };
 		253C02E507C061E100172C2F /* resize.png in Resources */ = {isa = PBXBuildFile; fileRef = 253C02E407C061E100172C2F /* resize.png */; };
@@ -284,6 +281,14 @@
 		3E9E629D0661724600B788A8 /* scrubbar_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E62980661724600B788A8 /* scrubbar_right.png */; };
 		3E9E64820661B95900B788A8 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E64800661B95900B788A8 /* pause.png */; };
 		3E9E64830661B95900B788A8 /* pauseClick.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E64810661B95900B788A8 /* pauseClick.png */; };
+		3E9F5C0808DE931E00BD4B78 /* CocoaScriptMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E9F5C0608DE931E00BD4B78 /* CocoaScriptMenu.framework */; };
+		3E9F5C0908DE931E00BD4B78 /* IndyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E9F5C0708DE931E00BD4B78 /* IndyKit.framework */; };
+		3E9F5C0A08DE931E00BD4B78 /* CocoaScriptMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E9F5C0608DE931E00BD4B78 /* CocoaScriptMenu.framework */; };
+		3E9F5C0B08DE931E00BD4B78 /* IndyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E9F5C0708DE931E00BD4B78 /* IndyKit.framework */; };
+		3E9F5C3A08DE932800BD4B78 /* CocoaScriptMenu.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3E9F5C0608DE931E00BD4B78 /* CocoaScriptMenu.framework */; };
+		3E9F5C3B08DE932800BD4B78 /* IndyKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3E9F5C0708DE931E00BD4B78 /* IndyKit.framework */; };
+		3E9F5C3C08DE933C00BD4B78 /* CocoaScriptMenu.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3E9F5C0608DE931E00BD4B78 /* CocoaScriptMenu.framework */; };
+		3E9F5C3D08DE933C00BD4B78 /* IndyKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3E9F5C0708DE931E00BD4B78 /* IndyKit.framework */; };
 		3EB6F18B06603F1F0093424C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB6F18A06603F1F0093424C /* SenTestingKit.framework */; };
 		3EB7EC60065F39AA0002A470 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB7EC5F065F39AA0002A470 /* Carbon.framework */; };
 		3EB7ECFA065F39BC0002A470 /* QuickTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB7ECF9065F39BC0002A470 /* QuickTime.framework */; };
@@ -304,9 +309,6 @@
 		3EEB7DBC076B754F0090E740 /* NiceUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB7DB8076B754F0090E740 /* NiceUtilities.m */; };
 		3EEB7F39076BB1F60090E740 /* ViewerPrefIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EEB7F38076BB1F60090E740 /* ViewerPrefIcon.png */; };
 		3EEB7F3A076BB1F60090E740 /* ViewerPrefIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EEB7F38076BB1F60090E740 /* ViewerPrefIcon.png */; };
-		3EEDE77907060596001A0F8B /* IndyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EEDE77807060596001A0F8B /* IndyKit.framework */; };
-		3EEDE77A07060596001A0F8B /* IndyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EEDE77807060596001A0F8B /* IndyKit.framework */; };
-		3EEDE78A0706059F001A0F8B /* IndyKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3EEDE77807060596001A0F8B /* IndyKit.framework */; };
 		3EEDF753065B3E8800E3545C /* JTMovieView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EEDF751065B3E8800E3545C /* JTMovieView.h */; };
 		3EEDF754065B3E8800E3545C /* JTMovieView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EEDF752065B3E8800E3545C /* JTMovieView.m */; };
 		3EEDF762065B4CFF00E3545C /* black.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EEDF761065B4CFF00E3545C /* black.png */; };
@@ -384,7 +386,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				253B534C08DCB41A00756089 /* IndyKit.framework in CopyFiles */,
+				3E9F5C3C08DE933C00BD4B78 /* CocoaScriptMenu.framework in CopyFiles */,
+				3E9F5C3D08DE933C00BD4B78 /* IndyKit.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,7 +397,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				253B507C08DCB0DA00756089 /* DVDPlayer.nicebundle in CopyFiles */,
 				2513D00407BC659800BB6055 /* Plugins.rtf in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,7 +407,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				3EEDE78A0706059F001A0F8B /* IndyKit.framework in CopyFiles */,
+				3E9F5C3A08DE932800BD4B78 /* CocoaScriptMenu.framework in CopyFiles */,
+				3E9F5C3B08DE932800BD4B78 /* IndyKit.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,6 +536,8 @@
 		3E9E62980661724600B788A8 /* scrubbar_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = scrubbar_right.png; path = Resources/scrubbar_right.png; sourceTree = "<group>"; };
 		3E9E64800661B95900B788A8 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pause.png; path = Resources/pause.png; sourceTree = "<group>"; };
 		3E9E64810661B95900B788A8 /* pauseClick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pauseClick.png; path = Resources/pauseClick.png; sourceTree = "<group>"; };
+		3E9F5C0608DE931E00BD4B78 /* CocoaScriptMenu.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaScriptMenu.framework; path = Libraries/CocoaScriptMenu.framework; sourceTree = "<group>"; };
+		3E9F5C0708DE931E00BD4B78 /* IndyKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IndyKit.framework; path = Libraries/IndyKit.framework; sourceTree = "<group>"; };
 		3EB6F18A06603F1F0093424C /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = /Library/Frameworks/SenTestingKit.framework; sourceTree = "<absolute>"; };
 		3EB7EC5F065F39AA0002A470 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
 		3EB7ECF9065F39BC0002A470 /* QuickTime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickTime.framework; path = /System/Library/Frameworks/QuickTime.framework; sourceTree = "<absolute>"; };
@@ -549,7 +554,6 @@
 		3EEB7DB7076B754F0090E740 /* NiceUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NiceUtilities.h; path = "Other Sources/NiceUtilities.h"; sourceTree = "<group>"; };
 		3EEB7DB8076B754F0090E740 /* NiceUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NiceUtilities.m; path = "Other Sources/NiceUtilities.m"; sourceTree = "<group>"; };
 		3EEB7F38076BB1F60090E740 /* ViewerPrefIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ViewerPrefIcon.png; path = Resources/ViewerPrefIcon.png; sourceTree = "<group>"; };
-		3EEDE77807060596001A0F8B /* IndyKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IndyKit.framework; sourceTree = SOURCE_ROOT; };
 		3EEDF751065B3E8800E3545C /* JTMovieView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JTMovieView.h; path = "Classes/Viewer Interface/Pluggable Players/JTMovieView.h"; sourceTree = "<group>"; };
 		3EEDF752065B3E8800E3545C /* JTMovieView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JTMovieView.m; path = "Classes/Viewer Interface/Pluggable Players/JTMovieView.m"; sourceTree = "<group>"; };
 		3EEDF761065B4CFF00E3545C /* black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = black.png; path = Resources/black.png; sourceTree = "<group>"; };
@@ -577,11 +581,12 @@
 				253B536A08DCB4C100756089 /* QTKit.framework in Frameworks */,
 				253B534408DCB41A00756089 /* Carbon.framework in Frameworks */,
 				253B534508DCB41A00756089 /* QuickTime.framework in Frameworks */,
-				253B534608DCB41A00756089 /* IndyKit.framework in Frameworks */,
 				253B534708DCB41A00756089 /* AppKitScripting.framework in Frameworks */,
 				253B534808DCB41A00756089 /* Scripting.framework in Frameworks */,
 				253B534908DCB41A00756089 /* DVDPlayback.framework in Frameworks */,
 				253B534A08DCB41A00756089 /* Cocoa.framework in Frameworks */,
+				3E9F5C0A08DE931E00BD4B78 /* CocoaScriptMenu.framework in Frameworks */,
+				3E9F5C0B08DE931E00BD4B78 /* IndyKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -590,7 +595,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3EB6F18B06603F1F0093424C /* SenTestingKit.framework in Frameworks */,
-				3EEDE77A07060596001A0F8B /* IndyKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -600,11 +604,12 @@
 			files = (
 				3EB7EC60065F39AA0002A470 /* Carbon.framework in Frameworks */,
 				3EB7ECFA065F39BC0002A470 /* QuickTime.framework in Frameworks */,
-				3EEDE77907060596001A0F8B /* IndyKit.framework in Frameworks */,
 				257D60020753DE7C00702BD0 /* AppKitScripting.framework in Frameworks */,
 				257D60140753DED700702BD0 /* Scripting.framework in Frameworks */,
 				25702FF007569E3300D1EE8C /* DVDPlayback.framework in Frameworks */,
 				251FEFB7085670D800D38B8E /* Cocoa.framework in Frameworks */,
+				3E9F5C0808DE931E00BD4B78 /* CocoaScriptMenu.framework in Frameworks */,
+				3E9F5C0908DE931E00BD4B78 /* IndyKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -614,12 +619,13 @@
 		1058C7A6FEA54F5311CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3E9F5C0608DE931E00BD4B78 /* CocoaScriptMenu.framework */,
+				3E9F5C0708DE931E00BD4B78 /* IndyKit.framework */,
 				251FEFB6085670D800D38B8E /* Cocoa.framework */,
 				25CC866D0831DDA800027929 /* QTKit.framework */,
 				25702FEF07569E3300D1EE8C /* DVDPlayback.framework */,
 				257D60130753DED700702BD0 /* Scripting.framework */,
 				257D60000753DE7C00702BD0 /* AppKitScripting.framework */,
-				3EEDE77807060596001A0F8B /* IndyKit.framework */,
 				3EB6F18A06603F1F0093424C /* SenTestingKit.framework */,
 				3EB7EC5F065F39AA0002A470 /* Carbon.framework */,
 				3EB7ECF9065F39BC0002A470 /* QuickTime.framework */,
@@ -1681,167 +1687,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		25089EC208DFA82700DE3BBD /* Deployment + Symbols */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = (
-					"<Multiple",
-					"values>",
-					ppc,
-				);
-				COPY_PHASE_STRIP = YES;
-				DEPLOYMENT_POSTPROCESSING = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					.,
-					"$(SYSTEM_DEVELOPER_DIR)/SDKs/MacOSX10.4u.sdk/System/Library/Frameworks",
-				);
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_ENABLE_TRIGRAPHS = NO;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = NicePlayer_Prefix.pch;
-				GCC_PREPROCESSOR_DEFINITIONS = "";
-				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
-				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
-				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
-				GCC_WARN_MISSING_PARENTHESES = YES;
-				GCC_WARN_SHADOW = YES;
-				GCC_WARN_SIGN_COMPARE = YES;
-				GCC_WARN_UNKNOWN_PRAGMAS = NO;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_PARAMETER = NO;
-				GCC_WARN_UNUSED_VALUE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "$(HOME)/Applications";
-				LIBRARY_SEARCH_PATHS = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.4;
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = (
-					"-weak_framework",
-					QTKit,
-				);
-				PRODUCT_NAME = NicePlayer;
-				SECTORDER_FLAGS = "";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-protocol",
-				);
-				WRAPPER_EXTENSION = app;
-				ZERO_LINK = NO;
-			};
-			name = "Deployment + Symbols";
-		};
-		25089EC308DFA82700DE3BBD /* Deployment + Symbols */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				FRAMEWORK_SEARCH_PATHS = (
-					"/Users/tuley/Documents/Projects/IndyKit Project/IndyKit/build",
-					"/Users/tuley/Documents/Projects/IndyKit Project/IndyKit Project/IndyKit/build",
-					"/Users/tuley/Documents/Projects/iEatBrains Project/iEatBrainz/lib",
-				);
-				FRAMEWORK_VERSION = A;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
-				GCC_WARN_UNKNOWN_PRAGMAS = NO;
-				INFOPLIST_FILE = "Testing-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				OTHER_CFLAGS = "-fobjc-exceptions";
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					AppKit,
-					"-framework",
-					SenTestingKit,
-				);
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = Testing;
-				SECTORDER_FLAGS = "";
-				TEST_AFTER_BUILD = YES;
-				WARNING_CFLAGS = "-Wmost";
-				ZERO_LINK = NO;
-			};
-			name = "Deployment + Symbols";
-		};
-		25089EC408DFA82700DE3BBD /* Deployment + Symbols */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = (
-					"<Multiple",
-					"values>",
-					ppc,
-				);
-				COPY_PHASE_STRIP = YES;
-				DEPLOYMENT_POSTPROCESSING = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					.,
-					"$(SYSTEM_DEVELOPER_DIR)/SDKs/MacOSX10.4u.sdk/System/Library/Frameworks",
-				);
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_ENABLE_TRIGRAPHS = NO;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = NicePlayer_Prefix.pch;
-				GCC_PREPROCESSOR_DEFINITIONS = "";
-				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
-				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
-				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
-				GCC_WARN_MISSING_PARENTHESES = YES;
-				GCC_WARN_SHADOW = YES;
-				GCC_WARN_SIGN_COMPARE = YES;
-				GCC_WARN_UNKNOWN_PRAGMAS = NO;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_PARAMETER = NO;
-				GCC_WARN_UNUSED_VALUE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = "/Users/qin/Desktop/Projects/NicePlayer/trunk/Info copy.plist";
-				INSTALL_PATH = "$(HOME)/Applications";
-				LIBRARY_SEARCH_PATHS = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.4;
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = NicePlayer;
-				SECTORDER_FLAGS = "";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-protocol",
-				);
-				WRAPPER_EXTENSION = app;
-				ZERO_LINK = NO;
-			};
-			name = "Deployment + Symbols";
-		};
-		25089EC508DFA82700DE3BBD /* Deployment + Symbols */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
-				COPY_PHASE_STRIP = NO;
-				LIBRARY_SEARCH_PATHS = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.4;
-				PREBINDING = NO;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
-			};
-			name = "Deployment + Symbols";
-		};
 		251FEF700855184200D38B8E /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1853,7 +1698,10 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
 				DEPLOYMENT_POSTPROCESSING = YES;
-				FRAMEWORK_SEARCH_PATHS = .;
+				FRAMEWORK_SEARCH_PATHS = (
+					.,
+					"$(SRCROOT)/Libraries",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -1910,8 +1758,8 @@
 				COPY_PHASE_STRIP = YES;
 				DEPLOYMENT_POSTPROCESSING = YES;
 				FRAMEWORK_SEARCH_PATHS = (
-					.,
 					"$(SYSTEM_DEVELOPER_DIR)/SDKs/MacOSX10.4u.sdk/System/Library/Frameworks",
+					"$(SRCROOT)/Libraries",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
@@ -1954,6 +1802,60 @@
 				ZERO_LINK = NO;
 			};
 			name = Deployment;
+		};
+		251FEF720855184200D38B8E /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					"<Multiple",
+					"values>",
+					ppc,
+				);
+				DEPLOYMENT_POSTPROCESSING = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					.,
+					"$(SYSTEM_DEVELOPER_DIR)/SDKs/MacOSX10.4u.sdk/System/Library/Frameworks",
+					"$(SRCROOT)/Libraries",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_ENABLE_TRIGRAPHS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = NicePlayer_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
+				GCC_WARN_MISSING_PARENTHESES = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_UNKNOWN_PRAGMAS = NO;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				GCC_WARN_UNUSED_VALUE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-weak_framework",
+					QTKit,
+				);
+				PRODUCT_NAME = NicePlayer;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"-Wno-protocol",
+				);
+				WRAPPER_EXTENSION = app;
+			};
+			name = Default;
 		};
 		251FEF740855184200D38B8E /* Development */ = {
 			isa = XCBuildConfiguration;
@@ -2034,6 +1936,40 @@
 			};
 			name = Deployment;
 		};
+		251FEF760855184200D38B8E /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"/Users/tuley/Documents/Projects/IndyKit Project/IndyKit/build",
+					"/Users/tuley/Documents/Projects/IndyKit Project/IndyKit Project/IndyKit/build",
+					"/Users/tuley/Documents/Projects/iEatBrains Project/iEatBrainz/lib",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
+				GCC_WARN_UNKNOWN_PRAGMAS = NO;
+				INFOPLIST_FILE = "Testing-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				OTHER_CFLAGS = "-fobjc-exceptions";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-framework",
+					SenTestingKit,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Testing;
+				SECTORDER_FLAGS = "";
+				TEST_AFTER_BUILD = YES;
+				WARNING_CFLAGS = "-Wmost";
+			};
+			name = Default;
+		};
 		251FEF780855184200D38B8E /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2051,12 +1987,26 @@
 					ppc,
 					i386,
 				);
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = "]";
 				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				PREBINDING = NO;
 				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 			};
 			name = Deployment;
+		};
+		251FEF7A0855184200D38B8E /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				LIBRARY_SEARCH_PATHS = "]";
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Default;
 		};
 		253B535308DCB41A00756089 /* Development */ = {
 			isa = XCBuildConfiguration;
@@ -2069,7 +2019,10 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
 				DEPLOYMENT_POSTPROCESSING = YES;
-				FRAMEWORK_SEARCH_PATHS = .;
+				FRAMEWORK_SEARCH_PATHS = (
+					.,
+					"$(SRCROOT)/Libraries",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -2123,8 +2076,8 @@
 				COPY_PHASE_STRIP = YES;
 				DEPLOYMENT_POSTPROCESSING = YES;
 				FRAMEWORK_SEARCH_PATHS = (
-					.,
 					"$(SYSTEM_DEVELOPER_DIR)/SDKs/MacOSX10.4u.sdk/System/Library/Frameworks",
+					"$(SRCROOT)/Libraries",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
@@ -2165,6 +2118,60 @@
 			};
 			name = Deployment;
 		};
+		253B535508DCB41A00756089 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					"<Multiple",
+					"values>",
+					ppc,
+				);
+				DEPLOYMENT_POSTPROCESSING = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					.,
+					"$(SYSTEM_DEVELOPER_DIR)/SDKs/MacOSX10.4u.sdk/System/Library/Frameworks",
+					"$(SRCROOT)/Libraries",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_ENABLE_TRIGRAPHS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = NicePlayer_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
+				GCC_WARN_MISSING_PARENTHESES = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_UNKNOWN_PRAGMAS = NO;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				GCC_WARN_UNUSED_VALUE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "/Users/qin/Desktop/Projects/NicePlayer/trunk/Info copy.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-weak_framework",
+					QTKit,
+				);
+				PRODUCT_NAME = NicePlayer;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"-Wno-protocol",
+				);
+				WRAPPER_EXTENSION = app;
+			};
+			name = Default;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -2173,40 +2180,40 @@
 			buildConfigurations = (
 				251FEF700855184200D38B8E /* Development */,
 				251FEF710855184200D38B8E /* Deployment */,
-				25089EC208DFA82700DE3BBD /* Deployment + Symbols */,
+				251FEF720855184200D38B8E /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Development;
+			defaultConfigurationName = Default;
 		};
 		251FEF730855184200D38B8E /* Build configuration list for PBXNativeTarget "Testing" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				251FEF740855184200D38B8E /* Development */,
 				251FEF750855184200D38B8E /* Deployment */,
-				25089EC308DFA82700DE3BBD /* Deployment + Symbols */,
+				251FEF760855184200D38B8E /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Development;
+			defaultConfigurationName = Default;
 		};
 		251FEF770855184200D38B8E /* Build configuration list for PBXProject "NicePlayer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				251FEF780855184200D38B8E /* Development */,
 				251FEF790855184200D38B8E /* Deployment */,
-				25089EC508DFA82700DE3BBD /* Deployment + Symbols */,
+				251FEF7A0855184200D38B8E /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Development;
+			defaultConfigurationName = Default;
 		};
 		253B535208DCB41A00756089 /* Build configuration list for PBXNativeTarget "NicePlayer_link" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				253B535308DCB41A00756089 /* Development */,
 				253B535408DCB41A00756089 /* Deployment */,
-				25089EC408DFA82700DE3BBD /* Deployment + Symbols */,
+				253B535508DCB41A00756089 /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Development;
+			defaultConfigurationName = Default;
 		};
 /* End XCConfigurationList section */
 	};

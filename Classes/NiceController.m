@@ -92,7 +92,9 @@ id controller;
     unsigned i;
     for (i = 0; i < [files count]; i++){
         id tempURL = [files objectAtIndex:i];
-        if([[Preferences mainPrefs] defaultOpenMode] == OPEN_WINDOWS || ((([[[[tempURL path] pathExtension] lowercaseString] isEqualTo:@"nicelist"]) && i !=0 ))){
+        if(([[Preferences mainPrefs] defaultOpenMode] == OPEN_WINDOWS 
+           || ([[[[tempURL path] pathExtension] lowercaseString] isEqualTo:@"nicelist"]))
+           && i !=0 ){
             [self openDocumentWithContentsOfURL:tempURL display:YES];
             continue;
         }

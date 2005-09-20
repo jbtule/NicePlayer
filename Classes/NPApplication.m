@@ -8,6 +8,7 @@
  */
 
 #import "NPApplication.h"
+#import <CocoaScriptMenu/CocoaScriptMenu.h>
 
 @implementation NPApplication
 
@@ -17,6 +18,7 @@
     lastPoint = [NSEvent mouseLocation];
     inactiveTimer = nil;
     [self setDelegate:self];
+    [[CSMScriptMenu sharedMenuGenerator] updateScriptMenu];
     
     [NSApp automaticCheckForUpdates:self];            
 }

@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+
 #import "NiceController.h"
 
 @interface NPApplication : NSApplication {
