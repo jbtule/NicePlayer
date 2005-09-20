@@ -552,7 +552,8 @@
         [self resetFillingFlags];
         [self setFrame:beforeFullScreen display:NO];
         fullScreen = NO;
-        [self resizeToAspectRatio];
+	if([self windowIsFixedAspect])
+	    [self resizeToAspectRatio];
 	[self hideNotifier];
     }
     [theMovieView drawMovieFrame];
