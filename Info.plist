@@ -442,6 +442,10 @@
 	<string>niceplayer@indyjt.com</string>
 	<key>JTUpdateURL</key>
 	<string>http://indyjt.com/software/niceplayer/niceplayer2.indyUpdate</string>
+        <key>SmartCrashReports_CompanyName</key> 
+        <string>NicePlayer</string> 
+        <key>SmartCrashReports_URL</key> 
+        <string>http://indyjt.com/software/BugReceiver.php</string> 
 	<key>NSAppleScriptEnabled</key>
 	<string>YES</string>
 	<key>NSMainNibFile</key>
