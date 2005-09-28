@@ -113,19 +113,20 @@
     GetMovieNaturalBoundsRect([film quickTimeMovie], &aRect);
     NSSize tSize = NSMakeSize((float)(aRect.right - aRect.left),
                               (float)(aRect.bottom - aRect.top));
+    SampleDescriptionHandle anImageDesc = NULL;
     
     @try{
         NSArray* tArray = [film tracksOfMediaType:QTMediaTypeVideo];
-        QTTrack* tTrack = [tArray firstObject];
-        SampleDescriptionHandle anImageDesc = NULL;
+        QTTrack* tTrack = [tArray objectAtIndex:0];
         
         if(tTrack != nil ){
             anImageDesc = (SampleDescriptionHandle)NewHandle(sizeof(SampleDescription));
             GetMediaSampleDescription([[tTrack media] quickTimeMedia], 1, anImageDesc);    
             
             
-            NSString* tName = [NSString stringWithCString:p2cstr( (*(ImageDescriptionHandle)anImageDesc)->name)];
-            
+            NSString* tName = (NSString *)CFStringCreateWithPascalString(NULL,
+		(*(ImageDescriptionHandle)anImageDesc)->name, kCFStringEncodingMacRoman);
+
             if([tName hasPrefix:@"DV/DVCPRO"]){
                 PixelAspectRatioImageDescriptionExtension pixelAspectRatio;
                 OSStatus status;
@@ -143,6 +144,8 @@
         }
     }@catch(NSException *exception) {}
     @finally{
+	if(anImageDesc)
+	    DisposeHandle((Handle)anImageDesc);
         return tSize;
     }
     
