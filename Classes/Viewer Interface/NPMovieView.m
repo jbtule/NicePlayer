@@ -92,7 +92,8 @@
     id pluginOrder = [[NPPluginReader pluginReader] cachedPluginOrder];
     id pluginDict = [[NPPluginReader pluginReader] prefDictionary];
 	NSException *noLoadException = [NSException exceptionWithName:@"NoLoadPlugin"
-														   reason:@"CouldntLoad" userInfo:nil];	
+							       reason:@"CouldntLoad"
+							     userInfo:nil];	
     /* Try to choose the proper plugin by finding out first whether the plugin is enabled, and then if it handles the type. */
 	@try {
 		for(i = 0; (i < [pluginOrder count]) && (didOpen == NO); i++){
@@ -123,6 +124,8 @@
 	}
 	@catch(NSException *exception) {
 		didOpen = NO;
+		if(trueMovieView)
+		    [trueMovieView release];
 		trueMovieView = [[JTMovieView alloc] initWithFrame:subview];
 		[self addSubview:trueMovieView];
 	}
@@ -130,7 +133,58 @@
 		[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:nil];
 		[self finalProxyViewLoad];
 	}
+    if(didOpen)
+	openedURL = url;
+    else
+    openedURL = nil;
     return didOpen;
+}
+
+-(void)switchToPlugin:(id)sender
+{
+    BOOL didOpen = NO;
+    NSRect subview = NSMakeRect(0, 0, [self frame].size.width, [self frame].size.height);
+    id oldClass = [trueMovieView class];
+    double currentMovieTime = [self currentMovieTime];
+    BOOL playingBeforeSwitch = [self isPlaying];
+    NSException *noLoadException = [NSException exceptionWithName:@"NoLoadPlugin"
+							   reason:@"CouldntLoad"
+							 userInfo:nil];	    
+    @try {
+	[self close];
+	[trueMovieView release];
+	trueMovieView = nil;
+	id newViewClass = [sender representedObject];
+	/* We should change the line below to be more graceful if a plugin can't load. */
+	trueMovieView = [newViewClass alloc];
+	if(!trueMovieView)
+	    @throw noLoadException;
+	/* This is used by RCMovieView gestalt check for Tiger, fail-safe no-load. */
+	if([trueMovieView initWithFrame:subview] == nil){
+	    [trueMovieView release];
+	    @throw noLoadException;
+	}
+	if([trueMovieView openURL:openedURL])
+	    [self addSubview:trueMovieView];
+	else
+	    @throw noLoadException;
+	if(![self loadMovie])
+	    @throw noLoadException;
+    }
+    @catch(NSException *exception) {
+	didOpen = NO;
+	if(trueMovieView)
+	    [trueMovieView release];
+	trueMovieView = [[oldClass alloc] initWithFrame:subview];
+	[self addSubview:trueMovieView];
+    }
+    @finally {
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:nil];
+	[self finalProxyViewLoad];
+	[self setCurrentMovieTime:currentMovieTime];
+	if(playingBeforeSwitch)
+	    [self start];
+    }
 }
 
 -(void)precacheURL:(NSURL*)url{
@@ -548,11 +602,11 @@
 	id newItem;
 	
 	newItem = [[[NSMenuItem alloc] initWithTitle:@"Play/Pause"
-										 action:@selector(togglePlaying)
-								  keyEquivalent:@""] autorelease];
+					      action:@selector(togglePlaying)
+				       keyEquivalent:@""] autorelease];
 	[newItem setTarget:[((NiceWindow *)[self window]) playButton]];
-	
 	[myMenu addObject:newItem];
+	
 	return [myMenu autorelease];
 }
 
@@ -570,7 +624,42 @@
 
 -(id)pluginMenu
 {
-	return [trueMovieView pluginMenu];
+    NSMutableArray *menuArray = [trueMovieView pluginMenu];
+    if(!menuArray)
+	menuArray = [NSMutableArray array];
+    else
+	[menuArray addObject:[NSMenuItem separatorItem]];
+    
+    NSMenu *choiceMenu = [[[NSMenu alloc] init] autorelease];
+    id newItem;
+    
+    id pluginOrder = [[NPPluginReader pluginReader] cachedPluginOrder];
+    id pluginDict = [[NPPluginReader pluginReader] prefDictionary];
+    
+    unsigned i;
+    for(i = 0; i < [pluginOrder count]; i++){
+	NSDictionary *currentPlugin = [pluginOrder objectAtIndex:i];
+	if(![[currentPlugin objectForKey:@"Chosen"] boolValue])
+	    continue;
+	newItem = [[[NSMenuItem alloc] initWithTitle:[currentPlugin objectForKey:@"Name"]
+					      action:@selector(switchToPlugin:)
+				       keyEquivalent:@""] autorelease];
+	[newItem setTarget:self];
+	[newItem setRepresentedObject:
+	    [[pluginDict objectForKey:[currentPlugin objectForKey:@"Name"]] objectForKey:@"Class"]];
+	[choiceMenu addItem:newItem];
+    }
+    
+    /* Create head object. */
+    newItem = [[[NSMenuItem alloc] initWithTitle:@"Switch Plugin to..."
+					  action:nil
+				   keyEquivalent:@""] autorelease];
+    [newItem setSubmenu:choiceMenu];
+    
+    /* Add items to menu object array. */
+    [menuArray addObject:newItem];
+    
+    return menuArray;
 }
 
 -(id)contextualMenu

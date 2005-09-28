@@ -13,16 +13,18 @@
 @class NiceWindow;
 
 @interface NPMovieView : NSView {
-	BOOL dragButton;
-	id trueMovieView;
-	id contextMenu;
-	BOOL wasPlaying;
-	id title;
+    NSURL *openedURL;
+    BOOL dragButton;
+    id trueMovieView;
+    id contextMenu;
+    BOOL wasPlaying;
+    id title;
 }
 
 +(id)blankImage;
 
 -(BOOL)openURL:(NSURL *)url;
+-(void)switchToPlugin:(id)sender;
 -(BOOL)loadMovie;
 -(void)closeReopen;
 -(void)close;
