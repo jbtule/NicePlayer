@@ -681,7 +681,7 @@
 	   || (fileExtension && [typeArray containsObject:fileExtension])){
 	    [choiceMenu addItem:newItem];
 	}
-	[allChoiceMenu addItem:newItem];
+	[allChoiceMenu addItem:[newItem copy]];
     }
     
     /* Create head object. */
