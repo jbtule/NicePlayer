@@ -659,6 +659,7 @@
 	[menuArray addObject:[NSMenuItem separatorItem]];
     
     NSMenu *choiceMenu = [[[NSMenu alloc] init] autorelease];
+    NSMenu *allChoiceMenu = [[[NSMenu alloc] init] autorelease];
     id newItem;
     
     id pluginOrder = [[NPPluginReader pluginReader] cachedPluginOrder];
@@ -671,15 +672,16 @@
 	    continue;
 	id pluginClass = [[pluginDict objectForKey:[currentPlugin objectForKey:@"Name"]] objectForKey:@"Class"];
 	NSArray *typeArray = [[pluginClass plugInfo] objectForKey:@"FileExtensions"];
+	newItem = [[[NSMenuItem alloc] initWithTitle:[currentPlugin objectForKey:@"Name"]
+					      action:@selector(switchToPlugin:)
+				       keyEquivalent:@""] autorelease];
+	[newItem setTarget:self];
+	[newItem setRepresentedObject:pluginClass];
 	if((fileType && [typeArray containsObject:fileType])
 	   || (fileExtension && [typeArray containsObject:fileExtension])){
-	       newItem = [[[NSMenuItem alloc] initWithTitle:[currentPlugin objectForKey:@"Name"]
-						     action:@selector(switchToPlugin:)
-					      keyEquivalent:@""] autorelease];
-	       [newItem setTarget:self];
-	       [newItem setRepresentedObject:pluginClass];
-	       [choiceMenu addItem:newItem];
+	    [choiceMenu addItem:newItem];
 	}
+	[allChoiceMenu addItem:newItem];
     }
     
     /* Create head object. */
@@ -687,8 +689,14 @@
 					  action:nil
 				   keyEquivalent:@""] autorelease];
     [newItem setSubmenu:choiceMenu];
+    [menuArray addObject:newItem];
     
-    /* Add items to menu object array. */
+    newItem = [[[NSMenuItem alloc] initWithTitle:@"Switch Plugin to (all)..."
+					  action:nil
+				   keyEquivalent:@""] autorelease];
+    [newItem setSubmenu:allChoiceMenu];
+    [newItem setAlternate:YES];
+    [newItem setKeyEquivalentModifierMask:NSAlternateKeyMask];
     [menuArray addObject:newItem];
     
     return menuArray;
