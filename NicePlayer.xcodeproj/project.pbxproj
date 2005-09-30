@@ -201,6 +201,7 @@
 		25D2E7C407BF3758004BEF7D /* NiceDocumentScripting.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D2E7C207BF3758004BEF7D /* NiceDocumentScripting.m */; };
 		25D2E84207BF3B44004BEF7D /* NiceWindowScripting.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D2E84007BF3B44004BEF7D /* NiceWindowScripting.m */; };
 		25D2ED0C07BF6066004BEF7D /* NiceControllerScripting.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D2ED0B07BF6066004BEF7D /* NiceControllerScripting.m */; };
+		25D4FE8D08ED06CC00006815 /* DVDPlayer.nicebundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = 25C5C1E908D4B81400987A95 /* DVDPlayer.nicebundle */; };
 		25E10911076CF11100042500 /* PrefPluginConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 25E1090F076CF11100042500 /* PrefPluginConfig.h */; };
 		25E10912076CF11100042500 /* PrefPluginConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E10910076CF11100042500 /* PrefPluginConfig.m */; };
 		3E01F2EA065E9C1D00905F96 /* MainWindowProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E01F2E8065E9C1D00905F96 /* MainWindowProxy.h */; };
@@ -398,6 +399,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				2513D00407BC659800BB6055 /* Plugins.rtf in CopyFiles */,
+				25D4FE8D08ED06CC00006815 /* DVDPlayer.nicebundle in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

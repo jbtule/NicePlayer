@@ -19,6 +19,9 @@
     id contextMenu;
     BOOL wasPlaying;
     id title;
+    
+    NSString *fileType;
+    NSString *fileExtension;
 }
 
 +(id)blankImage;

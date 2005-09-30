@@ -32,6 +32,8 @@
         [self addSubview:trueMovieView];
         [self setAutoresizesSubviews:YES];
 	title = nil;
+	fileType = nil;
+	fileExtension = nil;
     }
     return self;
 }
@@ -86,6 +88,32 @@
     if(title)
 		[title release];
     title = [[[[url path] lastPathComponent] stringByDeletingPathExtension] retain];
+
+    if(fileType)
+	[fileType release];
+    fileType = nil;
+    if(fileExtension)
+	[fileExtension release];
+    fileExtension = nil;
+    
+    fileExtension = [[[url path] lastPathComponent] pathExtension];
+    fileType = NSHFSTypeOfFile([url path]);
+    BOOL isDir;
+    [[NSFileManager defaultManager] fileExistsAtPath:[url path] isDirectory:&isDir];
+    if(isDir){
+	fileExtension = [NSString stringWithString:@"public.folder"];
+	fileType = nil;
+    }
+    if((fileType) && ([fileType length] == 0))
+	fileType = nil;
+    else
+	[fileType retain];
+
+    if((fileExtension) && ([fileExtension length] == 0))
+	fileExtension = nil;
+    else
+	[fileExtension retain];
+    
     BOOL didOpen = NO;
     unsigned i;
     NSRect subview = NSMakeRect(0, 0, [self frame].size.width, [self frame].size.height);
@@ -641,13 +669,17 @@
 	NSDictionary *currentPlugin = [pluginOrder objectAtIndex:i];
 	if(![[currentPlugin objectForKey:@"Chosen"] boolValue])
 	    continue;
-	newItem = [[[NSMenuItem alloc] initWithTitle:[currentPlugin objectForKey:@"Name"]
-					      action:@selector(switchToPlugin:)
-				       keyEquivalent:@""] autorelease];
-	[newItem setTarget:self];
-	[newItem setRepresentedObject:
-	    [[pluginDict objectForKey:[currentPlugin objectForKey:@"Name"]] objectForKey:@"Class"]];
-	[choiceMenu addItem:newItem];
+	id pluginClass = [[pluginDict objectForKey:[currentPlugin objectForKey:@"Name"]] objectForKey:@"Class"];
+	NSArray *typeArray = [[pluginClass plugInfo] objectForKey:@"FileExtensions"];
+	if((fileType && [typeArray containsObject:fileType])
+	   || (fileExtension && [typeArray containsObject:fileExtension])){
+	       newItem = [[[NSMenuItem alloc] initWithTitle:[currentPlugin objectForKey:@"Name"]
+						     action:@selector(switchToPlugin:)
+					      keyEquivalent:@""] autorelease];
+	       [newItem setTarget:self];
+	       [newItem setRepresentedObject:pluginClass];
+	       [choiceMenu addItem:newItem];
+	}
     }
     
     /* Create head object. */
