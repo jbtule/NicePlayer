@@ -805,6 +805,10 @@
  */
 - (void)setAspectRatio:(NSSize)ratio
 {   
+    if((ratio.width == 0) || (ratio.height == 0)){
+	ratio.width = 1;
+	ratio.height = 1;
+    }
     [super setAspectRatio:ratio];
     aspectRatio = ratio;
     [self setMinSize:NSMakeSize(([self aspectRatio].width/[self aspectRatio].height) *[self minSize].height,[self minSize].height)];
