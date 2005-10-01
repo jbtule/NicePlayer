@@ -677,6 +677,9 @@
 				       keyEquivalent:@""] autorelease];
 	[newItem setTarget:self];
 	[newItem setRepresentedObject:pluginClass];
+	if([pluginClass isEqualTo:[trueMovieView class]])
+	    [newItem setState:NSOnState];
+	
 	if((fileType && [typeArray containsObject:fileType])
 	   || (fileExtension && [typeArray containsObject:fileExtension])){
 	    [choiceMenu addItem:newItem];
