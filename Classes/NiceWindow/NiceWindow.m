@@ -825,8 +825,11 @@
 {
     if(fixedAspectRatio)
 	return [super aspectRatio];
-    else
-	return NSMakeSize([self frame].size.width, [self frame].size.height);
+    else{
+        return NSMakeSize( ([self frame].size.width / [self frame].size.height) * aspectRatio.height, aspectRatio.height);
+    }
+
+	//return NSMakeSize([self frame].size.width, [self frame].size.height);
 }
 
 /**
