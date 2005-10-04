@@ -169,7 +169,7 @@ id controller;
 {
     if([[NSApp mainWindow] isKindOfClass:[NiceWindow class]]){
         [toggleOnTopMenuItem setState:[((NiceWindow *)[NSApp mainWindow]) windowIsFloating]];
-        [toggleFixedAspectMenuItem setState:[((NiceWindow *)[NSApp mainWindow]) windowIsFixedAspect]];
+        [toggleFixedAspectMenuItem setState:[((NiceWindow *)[NSApp mainWindow]) fixedAspect]];
     }
 }
 
@@ -243,7 +243,7 @@ id controller;
 -(IBAction)toggleFixedAspectRatio:(id)sender
 {
     [((NiceWindow *)[NSApp mainWindow]) toggleFixedAspectRatio];
-    [toggleFixedAspectMenuItem setState:[((NiceWindow *)[NSApp mainWindow]) windowIsFixedAspect]];
+    [toggleFixedAspectMenuItem setState:[((NiceWindow *)[NSApp mainWindow]) fixedAspect]];
 }
 
 -(IBAction)openWebURL:(id)sender

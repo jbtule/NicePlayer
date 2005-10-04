@@ -170,6 +170,12 @@
 
 -(void)switchToPlugin:(id)sender
 {
+    [self switchToPluginClass:[sender representedObject]];
+}
+
+
+-(void)switchToPluginClass:(Class)aClass
+{
     BOOL didOpen = NO;
     NSRect subview = NSMakeRect(0, 0, [self frame].size.width, [self frame].size.height);
     id oldClass = [trueMovieView class];
@@ -182,7 +188,7 @@
 	[self close];
 	[trueMovieView release];
 	trueMovieView = nil;
-	id newViewClass = [sender representedObject];
+	id newViewClass = aClass;
 	/* We should change the line below to be more graceful if a plugin can't load. */
 	trueMovieView = [newViewClass alloc];
 	if(!trueMovieView)
@@ -648,6 +654,10 @@
 		[string appendString:@")"];
 	}
 	return string;
+}
+
+-(Class)currentPluginClass{
+    return [trueMovieView class];
 }
 
 -(id)pluginMenu

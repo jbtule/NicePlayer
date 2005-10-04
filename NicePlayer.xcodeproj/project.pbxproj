@@ -222,6 +222,10 @@
 		3E49DCB307C96EFD009BA150 /* NPApplicationScripting.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF15F3607C8405700AE56D7 /* NPApplicationScripting.m */; };
 		3E49DCB407C96F01009BA150 /* NiceMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF158C807C7F9CA00AE56D7 /* NiceMovie.m */; };
 		3E4DF83706630D50001B9AC5 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 3E4DF83506630D50001B9AC5 /* Credits.html */; };
+		3E64FA4308F2314C0010E3DA /* NicePlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E64FA4108F2314C0010E3DA /* NicePlugin.h */; };
+		3E64FA4408F2314C0010E3DA /* NicePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E64FA4208F2314C0010E3DA /* NicePlugin.m */; };
+		3E64FA4508F2314C0010E3DA /* NicePlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E64FA4108F2314C0010E3DA /* NicePlugin.h */; };
+		3E64FA4608F2314C0010E3DA /* NicePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E64FA4208F2314C0010E3DA /* NicePlugin.m */; };
 		3E6E26A7067FC53600854100 /* repeat_list.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E26A4067FC53600854100 /* repeat_list.png */; };
 		3E6E26A8067FC53600854100 /* repeat_none.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E26A5067FC53600854100 /* repeat_none.png */; };
 		3E6E26A9067FC53600854100 /* repeat_one.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E26A6067FC53600854100 /* repeat_one.png */; };
@@ -500,6 +504,8 @@
 		3E44F89C065F06A300E48395 /* TimelineControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimelineControl.m; path = "Classes/Overlay Widgets/TimelineControl.m"; sourceTree = "<group>"; };
 		3E452FF00664719D00BC91B0 /* NiceIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = NiceIcon.icns; path = Resources/NiceIcon.icns; sourceTree = "<group>"; };
 		3E4DF83606630D50001B9AC5 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = English; path = English.lproj/Credits.html; sourceTree = "<group>"; };
+		3E64FA4108F2314C0010E3DA /* NicePlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NicePlugin.h; sourceTree = "<group>"; };
+		3E64FA4208F2314C0010E3DA /* NicePlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NicePlugin.m; sourceTree = "<group>"; };
 		3E6E26A4067FC53600854100 /* repeat_list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = repeat_list.png; path = Resources/repeat_list.png; sourceTree = "<group>"; };
 		3E6E26A5067FC53600854100 /* repeat_none.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = repeat_none.png; path = Resources/repeat_none.png; sourceTree = "<group>"; };
 		3E6E26A6067FC53600854100 /* repeat_one.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = repeat_one.png; path = Resources/repeat_one.png; sourceTree = "<group>"; };
@@ -841,6 +847,8 @@
 				25D2E7C207BF3758004BEF7D /* NiceDocumentScripting.m */,
 				25D2E84007BF3B44004BEF7D /* NiceWindowScripting.m */,
 				2513D30507BDACA700BB6055 /* NicePlayer.sdef */,
+				3E64FA4108F2314C0010E3DA /* NicePlugin.h */,
+				3E64FA4208F2314C0010E3DA /* NicePlugin.m */,
 			);
 			name = Scripting;
 			path = Classes/Scripting;
@@ -983,6 +991,7 @@
 				253B52E008DCB41A00756089 /* OverlayNotifierWindow.h in Headers */,
 				253B52E108DCB41A00756089 /* NiceWindowController.h in Headers */,
 				253B52E208DCB41A00756089 /* RCMovieView.h in Headers */,
+				3E64FA4308F2314C0010E3DA /* NicePlugin.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1044,6 +1053,7 @@
 				25B0815C08084354006724D8 /* OverlayNotifierWindow.h in Headers */,
 				3E28CCA40808E0F000F59FF5 /* NiceWindowController.h in Headers */,
 				25CC86500831DA2A00027929 /* RCMovieView.h in Headers */,
+				3E64FA4508F2314C0010E3DA /* NicePlugin.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1563,6 +1573,7 @@
 				253B534008DCB41A00756089 /* OverlayNotifierWindow.m in Sources */,
 				253B534108DCB41A00756089 /* NiceWindowController.m in Sources */,
 				253B534208DCB41A00756089 /* RCMovieView.m in Sources */,
+				3E64FA4408F2314C0010E3DA /* NicePlugin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1624,6 +1635,7 @@
 				25B0815D08084354006724D8 /* OverlayNotifierWindow.m in Sources */,
 				3E28CCA50808E0F000F59FF5 /* NiceWindowController.m in Sources */,
 				25CC86510831DA2A00027929 /* RCMovieView.m in Sources */,
+				3E64FA4608F2314C0010E3DA /* NicePlugin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

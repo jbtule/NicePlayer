@@ -88,6 +88,28 @@
 <!-- should be at least one property. -->
 <!-- enumerations -->
 <!-- should be at least one enumerator. -->
+<!-- BASICS -->
+<!-- DICTIONARY (ROOT ELEMENT) -->
+<!-- DOCUMENTATION ELEMENTS -->
+<!-- IMPLEMENTATION ELEMENTS -->
+<!-- SUITES -->
+<!-- SYNONYMS -->
+<!-- at least one of &quot;name&quot; and &quot;code&quot; is required. -->
+<!-- TYPES -->
+<!-- VERBS (COMMANDS OR EVENTS) -->
+<!-- CLASSES -->
+<!-- not quite accurate; there can be at most one contents element. -->
+<!-- contents -->
+<!-- element access -->
+<!-- properties -->
+<!-- supported verbs -->
+<!-- class extensions -->
+<!-- SIMPLE TYPES -->
+<!-- values -->
+<!-- records -->
+<!-- should be at least one property. -->
+<!-- enumerations -->
+<!-- should be at least one enumerator. -->
 <dictionary title="NicePlayer Dictionary">
 	<suite name="NicePlayer Suite" code="NIce" description="Applescript for the Nicest Media Player on the Mac">
 		<cocoa name="NicePlayerSuite"/>
@@ -118,9 +140,12 @@
 					<element description="All the movies that exist in one playlist or another" type="movie" access="r">
 						<cocoa method="niceMovies"/>
 					</element>
-					<element type="screen">
+					<element description="monitor screens on your computer" type="screen" access="rw">
 						<cocoa method="screens"/>
 						<accessor style="index"/>
+					</element>
+					<element description="loaded plugins" type="plugin" access="r">
+						<cocoa method="nicePlugins"/>
 					</element>
 				</elements>
 				<responds-to-commands>
@@ -170,6 +195,9 @@
 					<property name="identifier" code="npid" description="unique identifier" type="string" access="rw">
 						<cocoa method="identifier"/>
 					</property>
+					<property name="current plugin" code="NpCg" description="Current plugin to view playlist" type="plugin">
+						<cocoa method="currentPlugin"/>
+					</property>
 				</properties>
 				<responds-to-commands>
 					<responds-to name="play">
@@ -213,6 +241,9 @@
 					<property name="level" code="npht" description="is the window floating about all others" type="height levels" access="rw">
 						<cocoa method="floating"/>
 					</property>
+					<property name="fixed aspect ratio" code="NPfa" description="restict the window to the movies aspect ratio" type="boolean">
+						<cocoa method="fixedAspect"/>
+					</property>
 				</properties>
 				<responds-to-commands>
 					<responds-to name="enter full screen">
@@ -231,6 +262,11 @@
 			</class>
 			<class name="movie" code="NPmv" plural="movies" inherits="item">
 				<cocoa class="NiceMovie"/>
+				<elements>
+					<element description="Plugins availble for this movie" type="plugin" access="r">
+						<cocoa method="suitablePlugins"/>
+					</element>
+				</elements>
 				<properties>
 					<property name="name" code="pnam" description="The movie name" type="string" access="r">
 						<cocoa method="name"/>
@@ -246,6 +282,12 @@
 					</property>
 					<property name="index" code="pidx" description="the index of this movie in it&apos;" type="number" access="r">
 						<cocoa method="index"/>
+					</property>
+					<property name="file extension" code="NPet" description="The file extension" type="string" access="r">
+						<cocoa method="fileExtension"/>
+					</property>
+					<property name="file type" code="NPfy" description="The file type (type code)" type="string" access="r">
+						<cocoa method="fileType"/>
 					</property>
 				</properties>
 				<responds-to-commands>
@@ -271,6 +313,20 @@
 					</property>
 					<property name="bounds" code="pbnd" type="rectangle" access="r">
 						<cocoa method="boundsAsQDRect"/>
+					</property>
+				</properties>
+			</class>
+			<class name="plugin" code="NcPg" plural="plugins" inherits="item">
+				<cocoa class="NicePlugin"/>
+				<properties>
+					<property name="name" code="pnam" description="Unique name for plugin" type="string" access="r">
+						<cocoa method="name"/>
+					</property>
+					<property name="human name" code="NpHn" description="Human descriptive name" type="string" access="r">
+						<cocoa method="humanName"/>
+					</property>
+					<property name="file types" code="NfLt" description="Supported file types of plugin" type="list" access="r">
+						<cocoa method="fileTypes"/>
 					</property>
 				</properties>
 			</class>

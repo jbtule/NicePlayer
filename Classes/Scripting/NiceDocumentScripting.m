@@ -9,6 +9,7 @@
 #import "NiceDocument.h"
 #import "NiceMovie.h"
 #import "NiceDocumentScripting.h"
+#import "NicePlugin.h"
 
 @implementation NiceDocument (NiceDocumentScripting)
 
@@ -40,6 +41,14 @@
     
     return [thePlaylist collectUsingFunction:collectMovies context:nil];
     
+}
+
+-(NicePlugin*)currentPlugin{
+    return [NicePlugin pluginForClass:[theMovieView currentPluginClass]];
+}
+
+-(void)setCurrentPlugin:(NicePlugin*)aPlugin{
+    [theMovieView switchToPluginClass:[aPlugin classRep]];
 }
 
 -(NiceMovie*)currentMovie

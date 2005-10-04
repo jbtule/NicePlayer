@@ -18,6 +18,11 @@
 -(id)initWithURL:(NSURL*)aURL andPlaylist:(id)aPlaylist;
 -(NSURL*)URL;
 
+-(NSString*)fileType;
+-(NSString*)fileExtension;
+
 -(NSString*)name;
+
+-(NSArray*)suitablePlugins;
 
 @end

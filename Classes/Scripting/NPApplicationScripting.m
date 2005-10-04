@@ -7,7 +7,7 @@
 //
 
 #import "NPApplicationScripting.h"
-
+#import "NicePlugin.h"
 
 @implementation NPApplication(Scripting)
 
@@ -19,6 +19,25 @@
     for(i=0;i<[tPlaylist count];i++){
         [tArray addObjectsFromArray:[[tPlaylist objectAtIndex:i] niceMovies]];
     }
+    return tArray;
+}
+
+
+-(NSArray*)nicePlugins{
+    NSMutableArray* tArray = [NSMutableArray array];
+    id pluginOrder = [[NPPluginReader pluginReader] cachedPluginOrder];
+    id pluginDict = [[NPPluginReader pluginReader] prefDictionary];
+    
+    unsigned i;
+    for(i = 0; i < [pluginOrder count]; i++){
+	NSDictionary *currentPlugin = [pluginOrder objectAtIndex:i];
+	if(![[currentPlugin objectForKey:@"Chosen"] boolValue])
+	    continue;
+	id pluginClass = [[pluginDict objectForKey:[currentPlugin objectForKey:@"Name"]] objectForKey:@"Class"];
+        
+        [tArray addObject:[NicePlugin pluginForClass:pluginClass]];
+    }
+    
     return tArray;
 }
 

@@ -487,10 +487,7 @@
     return theWindowIsFloating;
 }
 
--(BOOL)windowIsFixedAspect
-{
-    return fixedAspectRatio;
-}
+
 
 -(void)setWindowIsFloating:(BOOL)aBool
 {
@@ -502,11 +499,24 @@
 
 -(void)toggleFixedAspectRatio
 {
-    if(fixedAspectRatio)
-	[self setResizeIncrements:NSMakeSize(1.0,1.0)];
-    else
-	[self setAspectRatio:aspectRatio];
+    [self setFixedAspect: ![self fixedAspect]];
 }
+
+-(void)setFixedAspect:(BOOL)aBool{
+    if(!aBool){
+	[self setResizeIncrements:NSMakeSize(1.0,1.0)];
+    } else{
+	[self setAspectRatio:aspectRatio];
+        [self resizeToAspectRatio];
+    }
+}
+
+-(BOOL)fixedAspect
+{
+    return fixedAspectRatio;
+}
+
+
 
 -(void)toggleWindowFloat
 {
@@ -552,7 +562,7 @@
         [self resetFillingFlags];
         [self setFrame:beforeFullScreen display:NO];
         fullScreen = NO;
-	if([self windowIsFixedAspect])
+	if([self fixedAspect])
 	    [self resizeToAspectRatio];
 	[self hideNotifier];
     }
@@ -829,7 +839,6 @@
         return NSMakeSize( ([self frame].size.width / [self frame].size.height) * aspectRatio.height, aspectRatio.height);
     }
 
-	//return NSMakeSize([self frame].size.width, [self frame].size.height);
 }
 
 /**

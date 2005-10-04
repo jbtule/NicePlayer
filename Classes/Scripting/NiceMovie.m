@@ -29,6 +29,14 @@
     return theURL;
 }
 
+-(NSString*)fileType{
+    return NSHFSTypeOfFile([[self URL] path]);
+
+}
+-(NSString*)fileExtension{
+    return [[[self URL] path] pathExtension];
+}
+
 -(NSString*)applescriptPath
 {
     return [(NSString *)CFURLCopyFileSystemPath((CFURLRef)theURL,kCFURLHFSPathStyle) autorelease];
@@ -82,6 +90,28 @@
 -(NSString*)name
 {
     return [[theURL path] lastPathComponent];
+}
+
+
+-(NSArray*)suitablePlugins{
+    NSMutableArray* tArray = [NSMutableArray array];
+    id pluginOrder = [[NPPluginReader pluginReader] cachedPluginOrder];
+    id pluginDict = [[NPPluginReader pluginReader] prefDictionary];
+    
+    unsigned i;
+    for(i = 0; i < [pluginOrder count]; i++){
+	NSDictionary *currentPlugin = [pluginOrder objectAtIndex:i];
+	if(![[currentPlugin objectForKey:@"Chosen"] boolValue])
+	    continue;
+	id pluginClass = [[pluginDict objectForKey:[currentPlugin objectForKey:@"Name"]] objectForKey:@"Class"];
+        NicePlugin* tPlug =[NicePlugin pluginForClass:pluginClass];
+        if(([[tPlug fileTypes] containsObject:[self fileType]])
+                   || ([[tPlug fileTypes] containsObject:[self fileExtension]])){
+            [tArray addObject:[NicePlugin pluginForClass:pluginClass]];
+        }
+    }
+    
+    return tArray;
 }
 
 

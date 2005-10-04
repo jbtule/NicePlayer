@@ -99,7 +99,8 @@
 -(BOOL)toggleWindowFullScreen;
 -(void)unFullScreen;
 -(BOOL)windowIsFloating;
--(BOOL)windowIsFixedAspect;
+-(BOOL)fixedAspect;
+-(void)setFixedAspect:(BOOL)aBool;
 -(void)setWindowIsFloating:(BOOL)aBool;
 -(void)toggleFixedAspectRatio;
 -(void)toggleWindowFloat;
