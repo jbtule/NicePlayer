@@ -23,5 +23,4 @@
 -(IBAction)onlineSupportWikiFAQ:(id)sender;
 -(IBAction)submitBug:(id)sender;
 -(IBAction)featureRequest:(id)sender;
-
 @end

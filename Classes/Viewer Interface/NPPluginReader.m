@@ -134,12 +134,10 @@ static NPPluginReader *pluginReader = nil;
 
 -(id)builtinPlayerClasses
 {
-    long vers;
-    Gestalt( gestaltSystemVersion, &vers);
-    if(vers < 0x00001040)
-	return [NSArray arrayWithObjects:[JTMovieView class], nil];
-    else
+    if(NPIs10_4OrGreater())
         return [NSArray arrayWithObjects:[RCMovieView class], [JTMovieView class], nil];
+    else
+	return [NSArray arrayWithObjects:[JTMovieView class], nil];
 
 }
 

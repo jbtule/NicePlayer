@@ -9,7 +9,7 @@
 
 #import "NPApplication.h"
 #import <CocoaScriptMenu/CocoaScriptMenu.h>
-
+#import "NiceUtilities.h"
 @implementation NPApplication
 
 - (void)finishLaunching
@@ -18,7 +18,9 @@
     lastPoint = [NSEvent mouseLocation];
     inactiveTimer = nil;
     [self setDelegate:self];
-    [[CSMScriptMenu sharedMenuGenerator] updateScriptMenu];
+    if(NPIs10_4OrGreater()){
+        [[CSMScriptMenu sharedMenuGenerator] updateScriptMenu];
+    }
     
     [NSApp automaticCheckForUpdates:self];            
 }

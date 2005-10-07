@@ -14,6 +14,14 @@ id NPConvertFileNamesToURLs(id obj, void* context){
     return [NSURL fileURLWithPath:obj];
 }
 
+BOOL NPIs10_4OrGreater(){
+
+    long vers;
+    Gestalt( gestaltSystemVersion, &vers);
+    return !(vers < 0x00001040);
+}
+
+
 NSArray* NPSortUrls(NSArray* anArrayOfUrls){
     int urlSort(id url1, id url2, void *context){
         

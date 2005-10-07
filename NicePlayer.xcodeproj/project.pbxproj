@@ -208,8 +208,6 @@
 		3E01F2EB065E9C1D00905F96 /* MainWindowProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E01F2E9065E9C1D00905F96 /* MainWindowProxy.m */; };
 		3E0457B8073C7CE4009D4E33 /* shuffle_ordered.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E0457B6073C7CE4009D4E33 /* shuffle_ordered.png */; };
 		3E0457B9073C7CE4009D4E33 /* shuffle_random.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E0457B7073C7CE4009D4E33 /* shuffle_random.png */; };
-		3E0457BA073C7CE4009D4E33 /* shuffle_ordered.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E0457B6073C7CE4009D4E33 /* shuffle_ordered.png */; };
-		3E0457BB073C7CE4009D4E33 /* shuffle_random.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E0457B7073C7CE4009D4E33 /* shuffle_random.png */; };
 		3E085CBC065C79EE005286A3 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E085CBB065C79EE005286A3 /* play.png */; };
 		3E110B63069BD80100C5800B /* ClickableTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E110B61069BD80100C5800B /* ClickableTextField.h */; };
 		3E110B64069BD80100C5800B /* ClickableTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E110B62069BD80100C5800B /* ClickableTextField.m */; };
@@ -229,9 +227,6 @@
 		3E6E26A7067FC53600854100 /* repeat_list.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E26A4067FC53600854100 /* repeat_list.png */; };
 		3E6E26A8067FC53600854100 /* repeat_none.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E26A5067FC53600854100 /* repeat_none.png */; };
 		3E6E26A9067FC53600854100 /* repeat_one.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E26A6067FC53600854100 /* repeat_one.png */; };
-		3E6E26AA067FC53600854100 /* repeat_list.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E26A4067FC53600854100 /* repeat_list.png */; };
-		3E6E26AB067FC53600854100 /* repeat_none.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E26A5067FC53600854100 /* repeat_none.png */; };
-		3E6E26AC067FC53600854100 /* repeat_one.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E26A6067FC53600854100 /* repeat_one.png */; };
 		3E8C96CB073EF4730048CB70 /* 3gpp.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3E8C96C2073EF4730048CB70 /* 3gpp.icns */; };
 		3E8C96CC073EF4730048CB70 /* avi.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3E8C96C3073EF4730048CB70 /* avi.icns */; };
 		3E8C96CD073EF4730048CB70 /* dv.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3E8C96C4073EF4730048CB70 /* dv.icns */; };
@@ -241,31 +236,14 @@
 		3E8C96D1073EF4730048CB70 /* mp4.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3E8C96C8073EF4730048CB70 /* mp4.icns */; };
 		3E8C96D2073EF4730048CB70 /* mpg.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3E8C96C9073EF4730048CB70 /* mpg.icns */; };
 		3E8C96D3073EF4730048CB70 /* swf.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3E8C96CA073EF4730048CB70 /* swf.icns */; };
-		3E8C96D4073EF4730048CB70 /* 3gpp.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3E8C96C2073EF4730048CB70 /* 3gpp.icns */; };
-		3E8C96D5073EF4730048CB70 /* avi.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3E8C96C3073EF4730048CB70 /* avi.icns */; };
-		3E8C96D6073EF4730048CB70 /* dv.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3E8C96C4073EF4730048CB70 /* dv.icns */; };
-		3E8C96D7073EF4730048CB70 /* fli.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3E8C96C5073EF4730048CB70 /* fli.icns */; };
-		3E8C96D8073EF4730048CB70 /* m2v.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3E8C96C6073EF4730048CB70 /* m2v.icns */; };
-		3E8C96D9073EF4730048CB70 /* mov.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3E8C96C7073EF4730048CB70 /* mov.icns */; };
-		3E8C96DA073EF4730048CB70 /* mp4.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3E8C96C8073EF4730048CB70 /* mp4.icns */; };
-		3E8C96DB073EF4730048CB70 /* mpg.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3E8C96C9073EF4730048CB70 /* mpg.icns */; };
-		3E8C96DC073EF4730048CB70 /* swf.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3E8C96CA073EF4730048CB70 /* swf.icns */; };
 		3E8C9A95074D78350048CB70 /* Subtitle.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E8C9A93074D78350048CB70 /* Subtitle.h */; };
 		3E8C9A96074D78350048CB70 /* Subtitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8C9A94074D78350048CB70 /* Subtitle.m */; };
-		3E8C9A97074D78350048CB70 /* Subtitle.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E8C9A93074D78350048CB70 /* Subtitle.h */; };
-		3E8C9A98074D78350048CB70 /* Subtitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8C9A94074D78350048CB70 /* Subtitle.m */; };
 		3E8CC449068A9D850034FCCC /* OverlayControllerWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E8CC447068A9D850034FCCC /* OverlayControllerWindow.h */; };
 		3E8CC44A068A9D850034FCCC /* OverlayControllerWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8CC448068A9D850034FCCC /* OverlayControllerWindow.m */; };
-		3E8CC44B068A9D850034FCCC /* OverlayControllerWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E8CC447068A9D850034FCCC /* OverlayControllerWindow.h */; };
-		3E8CC44C068A9D850034FCCC /* OverlayControllerWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8CC448068A9D850034FCCC /* OverlayControllerWindow.m */; };
 		3E8CC453068AA1290034FCCC /* close-highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E8CC44F068AA1290034FCCC /* close-highlight.png */; };
 		3E8CC454068AA1290034FCCC /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E8CC450068AA1290034FCCC /* close.png */; };
 		3E8CC455068AA1290034FCCC /* minimize-highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E8CC451068AA1290034FCCC /* minimize-highlight.png */; };
 		3E8CC456068AA1290034FCCC /* minimize.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E8CC452068AA1290034FCCC /* minimize.png */; };
-		3E8CC457068AA1290034FCCC /* close-highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E8CC44F068AA1290034FCCC /* close-highlight.png */; };
-		3E8CC458068AA1290034FCCC /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E8CC450068AA1290034FCCC /* close.png */; };
-		3E8CC459068AA1290034FCCC /* minimize-highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E8CC451068AA1290034FCCC /* minimize-highlight.png */; };
-		3E8CC45A068AA1290034FCCC /* minimize.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E8CC452068AA1290034FCCC /* minimize.png */; };
 		3E91842F086E288300F4ED34 /* playlist-highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E91842D086E288300F4ED34 /* playlist-highlight.png */; };
 		3E918430086E288300F4ED34 /* playlist.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E91842E086E288300F4ED34 /* playlist.png */; };
 		3E918436086E28BA00F4ED34 /* OverPrefIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E918435086E28BA00F4ED34 /* OverPrefIcon.png */; };
@@ -273,8 +251,6 @@
 		3E95D4A206613F05008755D1 /* BlackWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E95D4A006613F05008755D1 /* BlackWindow.m */; };
 		3E9996CC06A50F1800D1898D /* volume_muted.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9996CA06A50F1800D1898D /* volume_muted.png */; };
 		3E9996CD06A50F1800D1898D /* volume_with_sound.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9996CB06A50F1800D1898D /* volume_with_sound.png */; };
-		3E9996CE06A50F1800D1898D /* volume_muted.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9996CA06A50F1800D1898D /* volume_muted.png */; };
-		3E9996CF06A50F1800D1898D /* volume_with_sound.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9996CB06A50F1800D1898D /* volume_with_sound.png */; };
 		3E9996D206A5101500D1898D /* VolumeView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E9996D006A5101500D1898D /* VolumeView.h */; };
 		3E9996D306A5101500D1898D /* VolumeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9996D106A5101500D1898D /* VolumeView.m */; };
 		3E9E62900661708200B788A8 /* NiceScrubber.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E9E628E0661708200B788A8 /* NiceScrubber.h */; };
@@ -286,7 +262,6 @@
 		3E9E629D0661724600B788A8 /* scrubbar_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E62980661724600B788A8 /* scrubbar_right.png */; };
 		3E9E64820661B95900B788A8 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E64800661B95900B788A8 /* pause.png */; };
 		3E9E64830661B95900B788A8 /* pauseClick.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E64810661B95900B788A8 /* pauseClick.png */; };
-		3E9F5C0808DE931E00BD4B78 /* CocoaScriptMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E9F5C0608DE931E00BD4B78 /* CocoaScriptMenu.framework */; };
 		3E9F5C0908DE931E00BD4B78 /* IndyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E9F5C0708DE931E00BD4B78 /* IndyKit.framework */; };
 		3E9F5C0A08DE931E00BD4B78 /* CocoaScriptMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E9F5C0608DE931E00BD4B78 /* CocoaScriptMenu.framework */; };
 		3E9F5C0B08DE931E00BD4B78 /* IndyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E9F5C0708DE931E00BD4B78 /* IndyKit.framework */; };
@@ -294,10 +269,8 @@
 		3E9F5C3B08DE932800BD4B78 /* IndyKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3E9F5C0708DE931E00BD4B78 /* IndyKit.framework */; };
 		3E9F5C3C08DE933C00BD4B78 /* CocoaScriptMenu.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3E9F5C0608DE931E00BD4B78 /* CocoaScriptMenu.framework */; };
 		3E9F5C3D08DE933C00BD4B78 /* IndyKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3E9F5C0708DE931E00BD4B78 /* IndyKit.framework */; };
-		3EB6F18B06603F1F0093424C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB6F18A06603F1F0093424C /* SenTestingKit.framework */; };
 		3EB7EC60065F39AA0002A470 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB7EC5F065F39AA0002A470 /* Carbon.framework */; };
 		3EB7ECFA065F39BC0002A470 /* QuickTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB7ECF9065F39BC0002A470 /* QuickTime.framework */; };
-		3EC66FD4077525AD00B50A61 /* NicePlayer Help in Resources */ = {isa = PBXBuildFile; fileRef = 3EC66F12077525AD00B50A61 /* NicePlayer Help */; };
 		3EC66FD5077525AD00B50A61 /* NicePlayer Help in Resources */ = {isa = PBXBuildFile; fileRef = 3EC66F12077525AD00B50A61 /* NicePlayer Help */; };
 		3EC8C22B065DB22A00988449 /* RoundRect.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EC8C229065DB22A00988449 /* RoundRect.h */; };
 		3EC8C22C065DB22A00988449 /* RoundRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC8C22A065DB22A00988449 /* RoundRect.m */; };
@@ -308,11 +281,8 @@
 		3EDA267F065C8D620000CCEE /* rr.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EDA267D065C8D620000CCEE /* rr.png */; };
 		3EDA2682065C8E570000CCEE /* OverlayWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EDA2680065C8E570000CCEE /* OverlayWindow.h */; };
 		3EDA2683065C8E570000CCEE /* OverlayWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDA2681065C8E570000CCEE /* OverlayWindow.m */; };
-		3EEB7DB9076B754F0090E740 /* NiceUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EEB7DB7076B754F0090E740 /* NiceUtilities.h */; };
-		3EEB7DBA076B754F0090E740 /* NiceUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB7DB8076B754F0090E740 /* NiceUtilities.m */; };
 		3EEB7DBB076B754F0090E740 /* NiceUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EEB7DB7076B754F0090E740 /* NiceUtilities.h */; };
 		3EEB7DBC076B754F0090E740 /* NiceUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB7DB8076B754F0090E740 /* NiceUtilities.m */; };
-		3EEB7F39076BB1F60090E740 /* ViewerPrefIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EEB7F38076BB1F60090E740 /* ViewerPrefIcon.png */; };
 		3EEB7F3A076BB1F60090E740 /* ViewerPrefIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EEB7F38076BB1F60090E740 /* ViewerPrefIcon.png */; };
 		3EEDF753065B3E8800E3545C /* JTMovieView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EEDF751065B3E8800E3545C /* JTMovieView.h */; };
 		3EEDF754065B3E8800E3545C /* JTMovieView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EEDF752065B3E8800E3545C /* JTMovieView.m */; };
@@ -321,14 +291,8 @@
 		3EEDF766065B507B00E3545C /* NiceWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EEDF764065B507B00E3545C /* NiceWindow.m */; };
 		3EEDF76D065B5ACD00E3545C /* NiceController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EEDF76B065B5ACD00E3545C /* NiceController.h */; };
 		3EEDF76E065B5ACD00E3545C /* NiceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EEDF76C065B5ACD00E3545C /* NiceController.m */; };
-		3EF158C907C7F9CA00AE56D7 /* NiceMovie.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EF158C707C7F9CA00AE56D7 /* NiceMovie.h */; };
-		3EF158CA07C7F9CA00AE56D7 /* NiceMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF158C807C7F9CA00AE56D7 /* NiceMovie.m */; };
 		3EF158CB07C7F9CA00AE56D7 /* NiceMovie.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EF158C707C7F9CA00AE56D7 /* NiceMovie.h */; };
-		3EF15F3707C8405700AE56D7 /* NPApplicationScripting.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EF15F3507C8405700AE56D7 /* NPApplicationScripting.h */; };
-		3EF15F3807C8405700AE56D7 /* NPApplicationScripting.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF15F3607C8405700AE56D7 /* NPApplicationScripting.m */; };
 		3EF15F3907C8405700AE56D7 /* NPApplicationScripting.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EF15F3507C8405700AE56D7 /* NPApplicationScripting.h */; };
-		3EF15FD207C8553B00AE56D7 /* NPAddCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EF15FD007C8553B00AE56D7 /* NPAddCommand.h */; };
-		3EF15FD307C8553B00AE56D7 /* NPAddCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF15FD107C8553B00AE56D7 /* NPAddCommand.m */; };
 		3EF15FD407C8553B00AE56D7 /* NPAddCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EF15FD007C8553B00AE56D7 /* NPAddCommand.h */; };
 		3EFEF998086E6E50003E05C3 /* nicelist.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3EFEF995086E6E50003E05C3 /* nicelist.icns */; };
 		3EFEF999086E6E50003E05C3 /* wmv.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3EFEF996086E6E50003E05C3 /* wmv.icns */; };
@@ -431,7 +395,6 @@
 		251FEFB6085670D800D38B8E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		2523738E074414690064B556 /* TimeDisplayField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimeDisplayField.h; path = "Classes/Overlay Widgets/TimeDisplayField.h"; sourceTree = "<group>"; };
 		2523738F074414690064B556 /* TimeDisplayField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimeDisplayField.m; path = "Classes/Overlay Widgets/TimeDisplayField.m"; sourceTree = "<group>"; };
-		25294976076E80B300D4B325 /* Testing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Testing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		25294AA6076E937E00D4B325 /* pause_over.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pause_over.png; path = Resources/pause_over.png; sourceTree = "<group>"; };
 		25294AA7076E937E00D4B325 /* play_over.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = play_over.png; path = Resources/play_over.png; sourceTree = "<group>"; };
 		25294AA8076E937E00D4B325 /* rr_over.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rr_over.png; path = Resources/rr_over.png; sourceTree = "<group>"; };
@@ -446,7 +409,6 @@
 		252BDDF9076A4775006CF96B /* ControlRR.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ControlRR.m; path = "Classes/Overlay Widgets/Control Buttons/ControlRR.m"; sourceTree = "<group>"; };
 		252BDDFE076A4780006CF96B /* ControlFF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ControlFF.h; path = "Classes/Overlay Widgets/Control Buttons/ControlFF.h"; sourceTree = "<group>"; };
 		252BDDFF076A4780006CF96B /* ControlFF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ControlFF.m; path = "Classes/Overlay Widgets/Control Buttons/ControlFF.m"; sourceTree = "<group>"; };
-		253B50A408DCB1BE00756089 /* NicePlayer_link-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "NicePlayer_link-Info.plist"; sourceTree = "<group>"; };
 		253B535608DCB41A00756089 /* NicePlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NicePlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		253C014E07C00DF200172C2F /* NiceControllerScripting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NiceControllerScripting.h; sourceTree = "<group>"; };
 		253C02E407C061E100172C2F /* resize.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = resize.png; path = Resources/resize.png; sourceTree = "<group>"; };
@@ -597,14 +559,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3EB6F18306603EB90093424C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3EB6F18B06603F1F0093424C /* SenTestingKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8D15AC330486D014006FF6A4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -615,7 +569,6 @@
 				257D60140753DED700702BD0 /* Scripting.framework in Frameworks */,
 				25702FF007569E3300D1EE8C /* DVDPlayback.framework in Frameworks */,
 				251FEFB7085670D800D38B8E /* Cocoa.framework in Frameworks */,
-				3E9F5C0808DE931E00BD4B78 /* CocoaScriptMenu.framework in Frameworks */,
 				3E9F5C0908DE931E00BD4B78 /* IndyKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -653,7 +606,6 @@
 			isa = PBXGroup;
 			children = (
 				8D15AC370486D014006FF6A4 /* NicePlayer.app */,
-				25294976076E80B300D4B325 /* Testing.framework */,
 				253B535608DCB41A00756089 /* NicePlayer.app */,
 			);
 			name = Products;
@@ -863,7 +815,6 @@
 				2A37F4B8FDCFA73011CA2CEA /* Resources */,
 				2A37F4C3FDCFA73011CA2CEA /* Frameworks */,
 				19C28FB0FE9D524F11CA2CBB /* Products */,
-				253B50A408DCB1BE00756089 /* NicePlayer_link-Info.plist */,
 			);
 			name = NicePlayer;
 			sourceTree = "<group>";
@@ -993,19 +944,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3EB6F18006603EB90093424C /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3E8CC44B068A9D850034FCCC /* OverlayControllerWindow.h in Headers */,
-				3E8C9A97074D78350048CB70 /* Subtitle.h in Headers */,
-				3EEB7DB9076B754F0090E740 /* NiceUtilities.h in Headers */,
-				3EF158C907C7F9CA00AE56D7 /* NiceMovie.h in Headers */,
-				3EF15F3707C8405700AE56D7 /* NPApplicationScripting.h in Headers */,
-				3EF15FD207C8553B00AE56D7 /* NPAddCommand.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8D15AC280486D014006FF6A4 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -1120,80 +1058,6 @@
 			productReference = 253B535608DCB41A00756089 /* NicePlayer.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3EB6F18506603EB90093424C /* Testing */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 251FEF730855184200D38B8E /* Build configuration list for PBXNativeTarget "Testing" */;
-			buildPhases = (
-				3EB6F18006603EB90093424C /* Headers */,
-				3EB6F18106603EB90093424C /* Resources */,
-				3EB6F18206603EB90093424C /* Sources */,
-				3EB6F18306603EB90093424C /* Frameworks */,
-				3EB6F18406603EB90093424C /* ShellScript */,
-			);
-			buildRules = (
-			);
-			buildSettings = {
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				FRAMEWORK_SEARCH_PATHS = (
-					"/Users/tuley/Documents/Projects/IndyKit Project/IndyKit/build",
-					"/Users/tuley/Documents/Projects/IndyKit Project/IndyKit Project/IndyKit/build",
-					"/Users/tuley/Documents/Projects/iEatBrains Project/iEatBrainz/lib",
-				);
-				FRAMEWORK_VERSION = A;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
-				GCC_WARN_UNKNOWN_PRAGMAS = NO;
-				INFOPLIST_FILE = "Testing-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				OTHER_CFLAGS = "-fobjc-exceptions";
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					AppKit,
-					"-framework",
-					SenTestingKit,
-				);
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = Testing;
-				SECTORDER_FLAGS = "";
-				TEST_AFTER_BUILD = YES;
-				WARNING_CFLAGS = "-Wmost";
-			};
-			dependencies = (
-			);
-			name = Testing;
-			productName = Testing;
-			productReference = 25294976076E80B300D4B325 /* Testing.framework */;
-			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
-<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
-<plist version=\"1.0\">
-<dict>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>English</string>
-	<key>CFBundleExecutable</key>
-	<string>Testing</string>
-	<key>CFBundleGetInfoString</key>
-	<string></string>
-	<key>CFBundleIdentifier</key>
-	<string>com.MySoftwareCompany.Testing</string>
-	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
-	<key>CFBundlePackageType</key>
-	<string>FMWK</string>
-	<key>CFBundleShortVersionString</key>
-	<string></string>
-	<key>CFBundleSignature</key>
-	<string>????</string>
-	<key>CFBundleVersion</key>
-	<string>1.0.0d1</string>
-</dict>
-</plist>
-";
-			productType = "com.apple.product-type.framework";
-		};
 		8D15AC270486D014006FF6A4 /* NicePlayer */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 251FEF6F0855184200D38B8E /* Build configuration list for PBXNativeTarget "NicePlayer" */;
@@ -1289,7 +1153,6 @@
 			);
 			targets = (
 				8D15AC270486D014006FF6A4 /* NicePlayer */,
-				3EB6F18506603EB90093424C /* Testing */,
 				253B52B608DCB41A00756089 /* NicePlayer_link */,
 			);
 		};
@@ -1363,35 +1226,6 @@
 				253B531608DCB41A00756089 /* OverPrefIcon.png in Resources */,
 				253B531708DCB41A00756089 /* nicelist.icns in Resources */,
 				253B531808DCB41A00756089 /* wmv.icns in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3EB6F18106603EB90093424C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3E6E26AA067FC53600854100 /* repeat_list.png in Resources */,
-				3E6E26AB067FC53600854100 /* repeat_none.png in Resources */,
-				3E6E26AC067FC53600854100 /* repeat_one.png in Resources */,
-				3E8CC457068AA1290034FCCC /* close-highlight.png in Resources */,
-				3E8CC458068AA1290034FCCC /* close.png in Resources */,
-				3E8CC459068AA1290034FCCC /* minimize-highlight.png in Resources */,
-				3E8CC45A068AA1290034FCCC /* minimize.png in Resources */,
-				3E9996CE06A50F1800D1898D /* volume_muted.png in Resources */,
-				3E9996CF06A50F1800D1898D /* volume_with_sound.png in Resources */,
-				3E0457BA073C7CE4009D4E33 /* shuffle_ordered.png in Resources */,
-				3E0457BB073C7CE4009D4E33 /* shuffle_random.png in Resources */,
-				3E8C96D4073EF4730048CB70 /* 3gpp.icns in Resources */,
-				3E8C96D5073EF4730048CB70 /* avi.icns in Resources */,
-				3E8C96D6073EF4730048CB70 /* dv.icns in Resources */,
-				3E8C96D7073EF4730048CB70 /* fli.icns in Resources */,
-				3E8C96D8073EF4730048CB70 /* m2v.icns in Resources */,
-				3E8C96D9073EF4730048CB70 /* mov.icns in Resources */,
-				3E8C96DA073EF4730048CB70 /* mp4.icns in Resources */,
-				3E8C96DB073EF4730048CB70 /* mpg.icns in Resources */,
-				3E8C96DC073EF4730048CB70 /* swf.icns in Resources */,
-				3EEB7F39076BB1F60090E740 /* ViewerPrefIcon.png in Resources */,
-				3EC66FD4077525AD00B50A61 /* NicePlayer Help in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1510,19 +1344,6 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/bin/sdp -f st -o \"$TARGET_BUILD_DIR/NicePlayer.app/Contents/Resources\" \"$SOURCE_ROOT/Resources/NicePlayer.sdef\"";
 		};
-		3EB6F18406603EB90093424C /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = /Developer/Tools/RunTargetUnitTests;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1572,19 +1393,6 @@
 				253B534108DCB41A00756089 /* NiceWindowController.m in Sources */,
 				253B534208DCB41A00756089 /* RCMovieView.m in Sources */,
 				3E64FA4408F2314C0010E3DA /* NicePlugin.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3EB6F18206603EB90093424C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3E8CC44C068A9D850034FCCC /* OverlayControllerWindow.m in Sources */,
-				3E8C9A98074D78350048CB70 /* Subtitle.m in Sources */,
-				3EEB7DBA076B754F0090E740 /* NiceUtilities.m in Sources */,
-				3EF158CA07C7F9CA00AE56D7 /* NiceMovie.m in Sources */,
-				3EF15F3807C8405700AE56D7 /* NPApplicationScripting.m in Sources */,
-				3EF15FD307C8553B00AE56D7 /* NPAddCommand.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1742,6 +1550,7 @@
 				OTHER_LDFLAGS = (
 					"-weak_framework",
 					QTKit,
+					CocoaScriptMenu,
 				);
 				PRODUCT_NAME = NicePlayer;
 				SECTORDER_FLAGS = "";
@@ -1798,6 +1607,8 @@
 				OTHER_LDFLAGS = (
 					"-weak_framework",
 					QTKit,
+					"-weak_framework",
+					CocoaScriptMenu,
 				);
 				PRODUCT_NAME = NicePlayer;
 				SECTORDER_FLAGS = "";
@@ -1863,119 +1674,6 @@
 					"-Wno-protocol",
 				);
 				WRAPPER_EXTENSION = app;
-			};
-			name = Default;
-		};
-		251FEF740855184200D38B8E /* Development */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-				DEBUGGING_SYMBOLS = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				FRAMEWORK_SEARCH_PATHS = (
-					"/Users/tuley/Documents/Projects/IndyKit Project/IndyKit/build",
-					"/Users/tuley/Documents/Projects/IndyKit Project/IndyKit Project/IndyKit/build",
-					"/Users/tuley/Documents/Projects/iEatBrains Project/iEatBrainz/lib",
-				);
-				FRAMEWORK_VERSION = A;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
-				GCC_WARN_UNKNOWN_PRAGMAS = NO;
-				INFOPLIST_FILE = "Testing-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				OPTIMIZATION_CFLAGS = "-O0";
-				OTHER_CFLAGS = "-fobjc-exceptions";
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					AppKit,
-					"-framework",
-					SenTestingKit,
-				);
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = Testing;
-				SECTORDER_FLAGS = "";
-				TEST_AFTER_BUILD = YES;
-				WARNING_CFLAGS = "-Wmost";
-				ZERO_LINK = NO;
-			};
-			name = Development;
-		};
-		251FEF750855184200D38B8E /* Deployment */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				FRAMEWORK_SEARCH_PATHS = (
-					"/Users/tuley/Documents/Projects/IndyKit Project/IndyKit/build",
-					"/Users/tuley/Documents/Projects/IndyKit Project/IndyKit Project/IndyKit/build",
-					"/Users/tuley/Documents/Projects/iEatBrains Project/iEatBrainz/lib",
-				);
-				FRAMEWORK_VERSION = A;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
-				GCC_WARN_UNKNOWN_PRAGMAS = NO;
-				INFOPLIST_FILE = "Testing-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				OTHER_CFLAGS = "-fobjc-exceptions";
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					AppKit,
-					"-framework",
-					SenTestingKit,
-				);
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = Testing;
-				SECTORDER_FLAGS = "";
-				TEST_AFTER_BUILD = YES;
-				WARNING_CFLAGS = "-Wmost";
-				ZERO_LINK = NO;
-			};
-			name = Deployment;
-		};
-		251FEF760855184200D38B8E /* Default */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				FRAMEWORK_SEARCH_PATHS = (
-					"/Users/tuley/Documents/Projects/IndyKit Project/IndyKit/build",
-					"/Users/tuley/Documents/Projects/IndyKit Project/IndyKit Project/IndyKit/build",
-					"/Users/tuley/Documents/Projects/iEatBrains Project/iEatBrainz/lib",
-				);
-				FRAMEWORK_VERSION = A;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
-				GCC_WARN_UNKNOWN_PRAGMAS = NO;
-				INFOPLIST_FILE = "Testing-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				OTHER_CFLAGS = "-fobjc-exceptions";
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					AppKit,
-					"-framework",
-					SenTestingKit,
-				);
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = Testing;
-				SECTORDER_FLAGS = "";
-				TEST_AFTER_BUILD = YES;
-				WARNING_CFLAGS = "-Wmost";
 			};
 			name = Default;
 		};
@@ -2054,7 +1752,7 @@
 				GCC_WARN_UNUSED_VALUE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = "/Users/qin/Desktop/Projects/NicePlayer/trunk/Info copy.plist";
+				INFOPLIST_FILE = info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.4;
@@ -2108,7 +1806,7 @@
 				GCC_WARN_UNUSED_VALUE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = "/Users/qin/Desktop/Projects/NicePlayer/trunk/Info copy.plist";
+				INFOPLIST_FILE = info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.4;
@@ -2190,16 +1888,6 @@
 				251FEF700855184200D38B8E /* Development */,
 				251FEF710855184200D38B8E /* Deployment */,
 				251FEF720855184200D38B8E /* Default */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Default;
-		};
-		251FEF730855184200D38B8E /* Build configuration list for PBXNativeTarget "Testing" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				251FEF740855184200D38B8E /* Development */,
-				251FEF750855184200D38B8E /* Deployment */,
-				251FEF760855184200D38B8E /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Default;
