@@ -8,6 +8,7 @@
 
 #import "NiceMovie.h"
 #import "NiceDocumentScripting.h"
+#import "NPPluginReader.h"
 
 @implementation NiceMovie
 

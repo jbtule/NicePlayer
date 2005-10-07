@@ -8,7 +8,8 @@
  */
 
 #import "NiceUtilities.h"
-
+#import "NPPluginReader.h"
+#import <IndyKit/IndyKit.h>
 id NPConvertFileNamesToURLs(id obj, void* context){
     return [NSURL fileURLWithPath:obj];
 }
@@ -22,6 +23,35 @@ NSArray* NPSortUrls(NSArray* anArrayOfUrls){
         
     }
     return [anArrayOfUrls sortedArrayUsingFunction:urlSort context:nil];
+}
+
+
+id NPInjectNestedDirectories(id each, id injected, void* verifyBool){
+    if([[each pathExtension] isEqualToString:@""]){
+        BOOL tBool = NO;
+        if([[NSFileManager defaultManager] fileExistsAtPath:each isDirectory:&tBool] && tBool){
+            NSArray* tSubPaths =[[NSFileManager defaultManager] directoryContentsAtPath:each];
+            if([[each lastPathComponent] isEqualToString:@"VIDEO_TS"]){
+                [injected addObject:[each stringByDeletingLastPathComponent]];
+            } else if([tSubPaths containsObject:@"VIDEO_TS"]){
+                [injected addObject:each];
+            }else{
+                id appendToEach(id aLastPath,void* aPrefix){
+                   return [each stringByAppendingPathComponent:aLastPath];
+                }
+                
+                tSubPaths = [tSubPaths collectUsingFunction:appendToEach context:NULL];
+                BOOL tVerifyType = YES;
+                injected =[tSubPaths injectUsingFunction:NPInjectNestedDirectories into:injected context:&tVerifyType];
+            }
+
+        }else if(! *(BOOL*)verifyBool || [[[NPPluginReader pluginReader] allowedExtensions] containsObject: NSHFSTypeOfFile(each)] ){
+            [injected addObject:each];
+        }
+    } else if(!*(BOOL*)verifyBool || [[[NPPluginReader pluginReader] allowedExtensions] containsObject: [each pathExtension]] ){
+            [injected addObject:each];
+    }
+    return injected;
 }
 
 @implementation NSString (niceStringComparisonAdditions)

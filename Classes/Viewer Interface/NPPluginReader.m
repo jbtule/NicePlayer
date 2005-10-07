@@ -7,7 +7,7 @@
 
 #import "NPPluginReader.h"
 #import "Pluggable Players/NPMovieProtocol.h"
-
+#import "IndyKit/IndyKit.h"
 @class RCMovieView;
 @class JTMovieView;
 @class DVDPlayerView;
@@ -35,7 +35,6 @@ static NPPluginReader *pluginReader = nil;
 -(void)dealloc
 {
 	[pluggablesArray release];
-	[allowedExtensions release];
 	[pluggableDict release];
 	[super dealloc];
 }
@@ -97,7 +96,16 @@ static NPPluginReader *pluginReader = nil;
    loaded. */
 -(id)allowedExtensions
 {
-	return allowedExtensions;
+    NSMutableSet* tAllowExt = [NSMutableSet setWithObject:@"nicelist"];
+    
+    id injectAllowedTypesOfEnabledPlugins(id each, id allowedExt,void* context){
+        if([[each objectForKey:@"Chosen"] boolValue]){
+            [allowedExt addObjectsFromArray:[[[self prefDictionary] objectForKey:[each objectForKey:@"Name"]] objectForKey:@"FileExtensions"]];
+        }
+        return allowedExt;
+    }
+    [[self cachedPluginOrder] injectUsingFunction:injectAllowedTypesOfEnabledPlugins into:tAllowExt context:NULL];
+    return [tAllowExt allObjects];
 }
 
 #pragma mark -
@@ -108,7 +116,6 @@ static NPPluginReader *pluginReader = nil;
     NSArray *array = [[self packagePluggables] arrayByAddingObjectsFromArray:[self builtinPlayerClasses]];
     
     pluggablesArray = [[NSMutableArray array] retain];
-    allowedExtensions = [[NSMutableArray arrayWithObject:@"nicelist"] retain];
     pluggableDict = [[NSMutableDictionary dictionary] retain];
     
     id anObject;
@@ -120,7 +127,6 @@ static NPPluginReader *pluginReader = nil;
 	id plugInfo = [NSMutableDictionary dictionaryWithDictionary:[anObject plugInfo]];
 	[plugInfo setObject:anObject forKey:@"Class"];
 	[plugInfo setObject:[NSNumber numberWithBool:YES] forKey:@"Chosen"];
-	[allowedExtensions addObjectsFromArray:[plugInfo objectForKey:@"FileExtensions"]];
 	[pluggableDict setObject:plugInfo forKey:[plugInfo objectForKey:@"Name"]];
 	[pluggablesArray addObject:[plugInfo objectForKey:@"Name"]];
     }

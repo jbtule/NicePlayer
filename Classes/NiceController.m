@@ -81,9 +81,14 @@ id controller;
  */
 -(void)openFiles:(NSArray *)files
 {
-    files =[files collectUsingFunction:NPConvertFileNamesToURLs context:nil];
-    files= NPSortUrls(files);
-	[self openURLs:files];
+    NSMutableArray* tArray = [NSMutableArray array];
+    
+    BOOL tVerifyType = NO;
+    tArray =[files injectUsingFunction:NPInjectNestedDirectories into:tArray context:&tVerifyType];
+  //  NSLog(@"%@",tArray);
+    
+    tArray =[tArray collectUsingFunction:NPConvertFileNamesToURLs context:nil];
+    [self openURLs:NPSortUrls(tArray)];
 }
 
 -(void)openURLs:(NSArray *)files

@@ -72,7 +72,9 @@
     return [NSScreen screens];
 }
 
-
+-(NSString*)resourcesPath{
+    return [[NSBundle mainBundle] resourcePath];
+}
 
 @end
 @implementation NSScreen(Scripting)

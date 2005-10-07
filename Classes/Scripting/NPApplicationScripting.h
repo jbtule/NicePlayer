@@ -9,5 +9,5 @@
 #import <Cocoa/Cocoa.h>
 #import "NPApplication.h"
 @interface NPApplication(Scripting)
-
+-(NSString*)resourcesPath;
 @end

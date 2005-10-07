@@ -14,12 +14,13 @@
 {
     NSArray *extensions = [NSArray arrayWithObjects:
         /* File extensions */
-        @"avi", @"mov", @"qt", @"mpg", @"mpeg", @"m15", @"m75", @"m2v", @"3gpp", @"mpg4", @"mp4", @"png",
-        @"gif", @"bmp", @"tif", @"pic", @"pct", @"pict", @"jpg", @"jpeg", @"qtif", @"swf", @"fli",
-        @"flc", @"dv",  @"wmv",@"asf",
+        @"avi", @"mov", @"qt", @"mpg", @"mpeg", @"m15", @"m75", @"m2v", @"3gpp", @"mpg4", @"mp4",
+        //Commenting out image types as this view isn't design well for them,even though it will display them
+        // @"png", @"gif", @"bmp", @"tif", @"pic", @"pct", @"pict", @"jpg", @"jpeg", @"qtif",
+        @"swf", @"fli", @"flc", @"dv", @"wmv",@"asf",
         /* Finder types */
-        @"VfW", @"MooV", @"MPEG", @"m2v ", @"mpg4", @"PNG ", @"GIF ", @"GiFf", @"BMP ", @"TIFF", @"PICT",
-        @"JPEG", @"qtif", @"SWFL", @"FLI ", @"dvc!",@"ASF_",
+        @"VfW", @"MooV", @"MPEG", @"m2v ", @"mpg4", @"SWFL", @"FLI ", @"dvc!",@"ASF_", 
+        //@"PNG ", @"GIF ", @"GiFf", @"BMP ", @"TIFF", @"PICT",@"JPEG", @"qtif",
         nil];
     return [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"CoreVideo",	extensions,			nil]
                                        forKeys:[NSArray arrayWithObjects:@"Name",		@"FileExtensions",	nil]];	

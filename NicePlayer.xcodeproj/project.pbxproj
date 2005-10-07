@@ -448,7 +448,6 @@
 		252BDDFF076A4780006CF96B /* ControlFF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ControlFF.m; path = "Classes/Overlay Widgets/Control Buttons/ControlFF.m"; sourceTree = "<group>"; };
 		253B50A408DCB1BE00756089 /* NicePlayer_link-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "NicePlayer_link-Info.plist"; sourceTree = "<group>"; };
 		253B535608DCB41A00756089 /* NicePlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NicePlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		253B535808DCB41A00756089 /* Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "Info copy.plist"; path = "/Users/qin/Desktop/Projects/NicePlayer/trunk/Info copy.plist"; sourceTree = "<absolute>"; };
 		253C014E07C00DF200172C2F /* NiceControllerScripting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NiceControllerScripting.h; sourceTree = "<group>"; };
 		253C02E407C061E100172C2F /* resize.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = resize.png; path = Resources/resize.png; sourceTree = "<group>"; };
 		253C02E907C0632700172C2F /* resize.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = resize.png; path = Resources/resize.png; sourceTree = "<group>"; };
@@ -910,7 +909,6 @@
 				8D15AC360486D014006FF6A4 /* Info.plist */,
 				089C165FFE840EACC02AAC07 /* InfoPlist.strings */,
 				257029A40732D1B300967356 /* Preferences.nib */,
-				253B535808DCB41A00756089 /* Info copy.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";

@@ -10,6 +10,7 @@
 
 extern id NPConvertFileNamesToURLs(id obj, void* context);
 extern NSArray* NPSortUrls(NSArray* anArrayOfUrls);
+extern id NPInjectNestedDirectories(id each, id injected, void* context);
 
 @interface NSString (niceSortingAdditions)
 -(NSComparisonResult)niceStringComparisonAdditions:(NSString *)aString;

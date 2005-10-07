@@ -110,6 +110,28 @@
 <!-- should be at least one property. -->
 <!-- enumerations -->
 <!-- should be at least one enumerator. -->
+<!-- BASICS -->
+<!-- DICTIONARY (ROOT ELEMENT) -->
+<!-- DOCUMENTATION ELEMENTS -->
+<!-- IMPLEMENTATION ELEMENTS -->
+<!-- SUITES -->
+<!-- SYNONYMS -->
+<!-- at least one of &quot;name&quot; and &quot;code&quot; is required. -->
+<!-- TYPES -->
+<!-- VERBS (COMMANDS OR EVENTS) -->
+<!-- CLASSES -->
+<!-- not quite accurate; there can be at most one contents element. -->
+<!-- contents -->
+<!-- element access -->
+<!-- properties -->
+<!-- supported verbs -->
+<!-- class extensions -->
+<!-- SIMPLE TYPES -->
+<!-- values -->
+<!-- records -->
+<!-- should be at least one property. -->
+<!-- enumerations -->
+<!-- should be at least one enumerator. -->
 <dictionary title="NicePlayer Dictionary">
 	<suite name="NicePlayer Suite" code="NIce" description="Applescript for the Nicest Media Player on the Mac">
 		<cocoa name="NicePlayerSuite"/>
@@ -148,6 +170,11 @@
 						<cocoa method="nicePlugins"/>
 					</element>
 				</elements>
+				<properties>
+					<property name="resources posix path" code="NpRp" description="Posix path to bundle resources folder of application" type="string" access="r">
+						<cocoa method="resourcesPath"/>
+					</property>
+				</properties>
 				<responds-to-commands>
 					<responds-to name="enter full screen">
 						<cocoa method="handleEnterFullScreenCommand:"/>
@@ -195,7 +222,7 @@
 					<property name="identifier" code="npid" description="unique identifier" type="string" access="rw">
 						<cocoa method="identifier"/>
 					</property>
-					<property name="current plugin" code="NpCg" description="Current plugin to view playlist" type="plugin">
+					<property name="current plugin" code="NpCg" description="Current plugin to view playlist" type="plugin" access="rw">
 						<cocoa method="currentPlugin"/>
 					</property>
 				</properties>
@@ -241,7 +268,7 @@
 					<property name="level" code="npht" description="is the window floating about all others" type="height levels" access="rw">
 						<cocoa method="floating"/>
 					</property>
-					<property name="fixed aspect ratio" code="NPfa" description="restict the window to the movies aspect ratio" type="boolean">
+					<property name="fixed aspect ratio" code="NPfa" description="restict the window to the movies aspect ratio" type="boolean" access="rw">
 						<cocoa method="fixedAspect"/>
 					</property>
 				</properties>
