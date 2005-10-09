@@ -102,6 +102,17 @@ enum{
     [newURL release];
 }
 
+-(NSData*)currentAspectRatio
+{
+    NSSize tSize;
+    if([self fixedAspect]){
+        tSize = [self aspectRatio];
+    }else{
+        tSize = aspectRatio;
+    }
+    return [NSArray arrayWithObjects:[NSNumber numberWithShort:tSize.width],[NSNumber numberWithShort:tSize.height],nil];
+}
+
 -(BOOL)playlistShowing
 {
 	return [[[self windowController] document] playlistShowing];

@@ -8,6 +8,7 @@
 #import "NPPluginReader.h"
 #import "Pluggable Players/NPMovieProtocol.h"
 #import "IndyKit/IndyKit.h"
+
 @class RCMovieView;
 @class JTMovieView;
 @class DVDPlayerView;

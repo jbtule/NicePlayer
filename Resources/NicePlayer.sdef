@@ -132,6 +132,28 @@
 <!-- should be at least one property. -->
 <!-- enumerations -->
 <!-- should be at least one enumerator. -->
+<!-- BASICS -->
+<!-- DICTIONARY (ROOT ELEMENT) -->
+<!-- DOCUMENTATION ELEMENTS -->
+<!-- IMPLEMENTATION ELEMENTS -->
+<!-- SUITES -->
+<!-- SYNONYMS -->
+<!-- at least one of &quot;name&quot; and &quot;code&quot; is required. -->
+<!-- TYPES -->
+<!-- VERBS (COMMANDS OR EVENTS) -->
+<!-- CLASSES -->
+<!-- not quite accurate; there can be at most one contents element. -->
+<!-- contents -->
+<!-- element access -->
+<!-- properties -->
+<!-- supported verbs -->
+<!-- class extensions -->
+<!-- SIMPLE TYPES -->
+<!-- values -->
+<!-- records -->
+<!-- should be at least one property. -->
+<!-- enumerations -->
+<!-- should be at least one enumerator. -->
 <dictionary title="NicePlayer Dictionary">
 	<suite name="NicePlayer Suite" code="NIce" description="Applescript for the Nicest Media Player on the Mac">
 		<cocoa name="NicePlayerSuite"/>
@@ -270,6 +292,9 @@
 					</property>
 					<property name="fixed aspect ratio" code="NPfa" description="restict the window to the movies aspect ratio" type="boolean" access="rw">
 						<cocoa method="fixedAspect"/>
+					</property>
+					<property name="unscaled aspect ratio" code="NPua" description="Returns height and width of current window at normal scale" type="any" access="r">
+						<cocoa method="currentAspectRatio"/>
 					</property>
 				</properties>
 				<responds-to-commands>

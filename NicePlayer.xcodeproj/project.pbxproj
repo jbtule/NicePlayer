@@ -269,6 +269,10 @@
 		3E9F5C3B08DE932800BD4B78 /* IndyKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3E9F5C0708DE931E00BD4B78 /* IndyKit.framework */; };
 		3E9F5C3C08DE933C00BD4B78 /* CocoaScriptMenu.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3E9F5C0608DE931E00BD4B78 /* CocoaScriptMenu.framework */; };
 		3E9F5C3D08DE933C00BD4B78 /* IndyKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3E9F5C0708DE931E00BD4B78 /* IndyKit.framework */; };
+		3EB4F72D08F62C37004692D3 /* Useful Scripts in Resources */ = {isa = PBXBuildFile; fileRef = 3EB4F72A08F62C37004692D3 /* Useful Scripts */; };
+		3EB4F72E08F62C37004692D3 /* Useful Scripts in Resources */ = {isa = PBXBuildFile; fileRef = 3EB4F72A08F62C37004692D3 /* Useful Scripts */; };
+		3EB4F74108F62C4C004692D3 /* Default Scripts in Resources */ = {isa = PBXBuildFile; fileRef = 3EB4F72F08F62C4C004692D3 /* Default Scripts */; };
+		3EB4F74208F62C4C004692D3 /* Default Scripts in Resources */ = {isa = PBXBuildFile; fileRef = 3EB4F72F08F62C4C004692D3 /* Default Scripts */; };
 		3EB7EC60065F39AA0002A470 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB7EC5F065F39AA0002A470 /* Carbon.framework */; };
 		3EB7ECFA065F39BC0002A470 /* QuickTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB7ECF9065F39BC0002A470 /* QuickTime.framework */; };
 		3EC66FD5077525AD00B50A61 /* NicePlayer Help in Resources */ = {isa = PBXBuildFile; fileRef = 3EC66F12077525AD00B50A61 /* NicePlayer Help */; };
@@ -507,6 +511,8 @@
 		3E9E64810661B95900B788A8 /* pauseClick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pauseClick.png; path = Resources/pauseClick.png; sourceTree = "<group>"; };
 		3E9F5C0608DE931E00BD4B78 /* CocoaScriptMenu.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaScriptMenu.framework; path = Libraries/CocoaScriptMenu.framework; sourceTree = "<group>"; };
 		3E9F5C0708DE931E00BD4B78 /* IndyKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IndyKit.framework; path = Libraries/IndyKit.framework; sourceTree = "<group>"; };
+		3EB4F72A08F62C37004692D3 /* Useful Scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Useful Scripts"; path = "Resources/Useful Scripts"; sourceTree = "<group>"; };
+		3EB4F72F08F62C4C004692D3 /* Default Scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Default Scripts"; path = "Resources/Default Scripts"; sourceTree = "<group>"; };
 		3EB6F18A06603F1F0093424C /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = /Library/Frameworks/SenTestingKit.framework; sourceTree = "<absolute>"; };
 		3EB7EC5F065F39AA0002A470 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
 		3EB7ECF9065F39BC0002A470 /* QuickTime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickTime.framework; path = /System/Library/Frameworks/QuickTime.framework; sourceTree = "<absolute>"; };
@@ -849,6 +855,8 @@
 		2A37F4B8FDCFA73011CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3EB4F72F08F62C4C004692D3 /* Default Scripts */,
+				3EB4F72A08F62C37004692D3 /* Useful Scripts */,
 				2513CDAE07BC658900BB6055 /* Plugins.rtf */,
 				2513D20407BDA31600BB6055 /* Images */,
 				3EC66F12077525AD00B50A61 /* NicePlayer Help */,
@@ -1226,6 +1234,8 @@
 				253B531608DCB41A00756089 /* OverPrefIcon.png in Resources */,
 				253B531708DCB41A00756089 /* nicelist.icns in Resources */,
 				253B531808DCB41A00756089 /* wmv.icns in Resources */,
+				3EB4F72D08F62C37004692D3 /* Useful Scripts in Resources */,
+				3EB4F74108F62C4C004692D3 /* Default Scripts in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1286,6 +1296,8 @@
 				3E918436086E28BA00F4ED34 /* OverPrefIcon.png in Resources */,
 				3EFEF998086E6E50003E05C3 /* nicelist.icns in Resources */,
 				3EFEF999086E6E50003E05C3 /* wmv.icns in Resources */,
+				3EB4F72E08F62C37004692D3 /* Useful Scripts in Resources */,
+				3EB4F74208F62C4C004692D3 /* Default Scripts in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
