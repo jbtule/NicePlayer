@@ -14,7 +14,7 @@
 	NSTimer *inactiveTimer;
 	NSPoint lastPoint;
 }
-
+-(void)copyDefaultScriptsToApplicationSupport;
 -(id)bestMovieWindow;
 -(NSArray *)movieWindows;
 -(IBAction)visitNicePlayerWebSite:(id)sender;

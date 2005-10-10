@@ -10,6 +10,7 @@
 #import "NPApplication.h"
 #import <CocoaScriptMenu/CocoaScriptMenu.h>
 #import "NiceUtilities.h"
+#import <IndyKit/IndyKit.h>
 @implementation NPApplication
 
 - (void)finishLaunching
@@ -19,13 +20,44 @@
     inactiveTimer = nil;
     [self setDelegate:self];
     if(NPIs10_4OrGreater()){
+        if([[CSMScriptMenu sharedMenuGenerator] countOfScripts] == 0){
+            [self copyDefaultScriptsToApplicationSupport];
+        }
         [[CSMScriptMenu sharedMenuGenerator] updateScriptMenu];
+
     }
     
     [NSApp automaticCheckForUpdates:self];            
 }
 
 -(id)updateCheckPublicKey{return @"<30480241 00c3b3e5 eae022c2 fc065fe4 417c8edb fb2f6306 74e813ca a9860fe8 c677b735 87a7ad1f ef710ad0 eecabf9e 912487de d61de8d4 75d5dbd7 b42d985a 3810cd75 7f020301 0001>";}
+
+
+-(NSString*)movieOldDefaultScriptsToApplicationSupport{
+  /*   NSString* tPath =[[[NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory,NSUserDomainMask,YES) firstObject] stringByAppendingPathComponent:@"NicePlayer"] stringByAppendingPathComponent:@"Scripts"];
+    
+    NSDictionary tDict = [NSDictionary dictionaryWithContentsOfFile:[tPath stringByAppendingPathComponent:@".info.plist"]];
+    
+    while*/
+    return nil;
+}
+
+
+-(void)copyDefaultScriptsToApplicationSupport{
+    
+    NSString* tPath =[[[NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory,NSUserDomainMask,YES) firstObject] stringByAppendingPathComponent:@"NicePlayer"] stringByAppendingPathComponent:@"Scripts"];
+    
+    if([[NSFileManager defaultManager] fileExistsAtPath:tPath]){
+        [[NSFileManager defaultManager] removeFileAtPath:tPath handler:nil];
+    }
+    
+    [[NSFileManager defaultManager] copyPath:[[NSBundle mainBundle] pathForResource:@"Default Scripts" ofType:@""] toPath:tPath   handler:nil];
+    [[NSDictionary dictionaryWithObjectsAndKeys:[[[NSBundle mainBundle] infoDictionary] objectForKey:
+             @"CFBundleVersion"],@"BuildNumber",[[[NSBundle mainBundle] infoDictionary] objectForKey:
+                 @"CFBundleShortVersionString"],@"VersionNumber",nil] writeToFile:[tPath stringByAppendingPathComponent:@".info.plist"] atomically:NO];
+ 
+}
+
 
 /**
 * This method tests to see if the mouse has moved to a different location. If so, inject the event into

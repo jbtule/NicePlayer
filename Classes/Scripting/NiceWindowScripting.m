@@ -102,14 +102,10 @@ enum{
     [newURL release];
 }
 
--(NSData*)currentAspectRatio
+-(NSArray*)currentAspectRatio
 {
-    NSSize tSize;
-    if([self fixedAspect]){
-        tSize = [self aspectRatio];
-    }else{
-        tSize = aspectRatio;
-    }
+    NSSize tSize = [self aspectRatio];
+    
     return [NSArray arrayWithObjects:[NSNumber numberWithShort:tSize.width],[NSNumber numberWithShort:tSize.height],nil];
 }
 
