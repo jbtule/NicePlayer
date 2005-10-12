@@ -224,6 +224,7 @@
 		3E64FA4408F2314C0010E3DA /* NicePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E64FA4208F2314C0010E3DA /* NicePlugin.m */; };
 		3E64FA4508F2314C0010E3DA /* NicePlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E64FA4108F2314C0010E3DA /* NicePlugin.h */; };
 		3E64FA4608F2314C0010E3DA /* NicePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E64FA4208F2314C0010E3DA /* NicePlugin.m */; };
+		3E666C8808FCA98B0093E877 /* CocoaScriptMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E9F5C0608DE931E00BD4B78 /* CocoaScriptMenu.framework */; };
 		3E6E26A7067FC53600854100 /* repeat_list.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E26A4067FC53600854100 /* repeat_list.png */; };
 		3E6E26A8067FC53600854100 /* repeat_none.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E26A5067FC53600854100 /* repeat_none.png */; };
 		3E6E26A9067FC53600854100 /* repeat_one.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E26A6067FC53600854100 /* repeat_one.png */; };
@@ -569,6 +570,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E666C8808FCA98B0093E877 /* CocoaScriptMenu.framework in Frameworks */,
 				3EB7EC60065F39AA0002A470 /* Carbon.framework in Frameworks */,
 				3EB7ECFA065F39BC0002A470 /* QuickTime.framework in Frameworks */,
 				257D60020753DE7C00702BD0 /* AppKitScripting.framework in Frameworks */,
@@ -1614,13 +1616,11 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = (
 					"-weak_framework",
 					QTKit,
-					"-weak_framework",
-					CocoaScriptMenu,
 				);
 				PRODUCT_NAME = NicePlayer;
 				SECTORDER_FLAGS = "";

@@ -15,7 +15,6 @@ id NPConvertFileNamesToURLs(id obj, void* context){
 }
 
 BOOL NPIs10_4OrGreater(){
-
     long vers;
     Gestalt( gestaltSystemVersion, &vers);
     return !(vers < 0x00001040);

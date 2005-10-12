@@ -19,13 +19,13 @@
     lastPoint = [NSEvent mouseLocation];
     inactiveTimer = nil;
     [self setDelegate:self];
-    if(NPIs10_4OrGreater()){
+   // if(NPIs10_4OrGreater()){
         if([[CSMScriptMenu sharedMenuGenerator] countOfScripts] == 0){
             [self copyDefaultScriptsToApplicationSupport];
         }
         [[CSMScriptMenu sharedMenuGenerator] updateScriptMenu];
 
-    }
+  //  }
     
     [NSApp automaticCheckForUpdates:self];            
 }
@@ -45,7 +45,7 @@
 
 -(void)copyDefaultScriptsToApplicationSupport{
     
-    NSString* tPath =[[[NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory,NSUserDomainMask,YES) firstObject] stringByAppendingPathComponent:@"NicePlayer"] stringByAppendingPathComponent:@"Scripts"];
+    NSString* tPath =[[[TTCSearchPathForDirectoriesInDomains(TTCApplicationSupportDirectory,NSUserDomainMask,YES) firstObject] stringByAppendingPathComponent:@"NicePlayer"] stringByAppendingPathComponent:@"Scripts"];
     
     if([[NSFileManager defaultManager] fileExistsAtPath:tPath]){
         [[NSFileManager defaultManager] removeFileAtPath:tPath handler:nil];
