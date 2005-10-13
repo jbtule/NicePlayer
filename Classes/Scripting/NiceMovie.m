@@ -7,6 +7,7 @@
 //
 
 #import "NiceMovie.h"
+#import "NicePlugin.h"
 #import "NiceDocumentScripting.h"
 #import "NPPluginReader.h"
 
