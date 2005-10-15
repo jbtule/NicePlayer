@@ -51,6 +51,7 @@ enum{
     [[NiceController controller] changedWindow:nil];
 }
 
+
 -(void)handleResizeCommand:(id)sender{
     NSDictionary* tDict =[sender evaluatedArguments];
 

@@ -189,7 +189,9 @@
 			<element description="loaded plugins" type="plugin" access="r">
 				<cocoa key="nicePlugins"/>
 			</element>
-			<property name="resources posix path" code="NpRp" description="Posix path to bundle resources folder of application" type="text" access="r"/>
+			<property name="resources posix path" code="NpRp" description="Posix path to bundle resources folder of application" type="text" access="r">
+				<cocoa key="resourcesPath"/>
+			</property>
 			<responds-to name="enter full screen">
 				<cocoa method="handleEnterFullScreenCommand:"/>
 			</responds-to>
@@ -202,17 +204,39 @@
 			<element description="All the movies in this playlist listed in order" type="movie" access="r">
 				<cocoa key="niceMovies"/>
 			</element>
-			<property name="muted" code="NPmd" description="If the sound is muted." type="boolean" access="rw"/>
-			<property name="volume" code="NPvm" description="The audio volume." type="number" access="rw"/>
-			<property name="window" code="cwin" description="The window that this playlist is attached to" type="window" access="r"/>
-			<property name="next movie" code="NPne" description="The next movie in playlist after the current movie" type="movie" access="r"/>
-			<property name="current movie" code="NPCu" description="The current movie that the playlist is queued to" type="movie" access="r"/>
-			<property name="previous movie" code="NPpr" description="Previous movie in playlis before the current movie" type="movie" access="r"/>
-			<property name="duration" code="npdn" description="Duration of the currently queued movie." type="real" access="r"/>
-			<property name="elapsed time" code="npet" description="elapsed time of the currently queued movie" type="real" access="rw"/>
-			<property name="frame rate" code="npfr" description="frame rate of the currently queued movie" type="real" access="r"/>
-			<property name="identifier" code="npid" description="unique identifier" type="text" access="rw"/>
-			<property name="current plugin" code="NpCg" description="Current plugin to view playlist" type="plugin" access="rw"/>
+			<property name="muted" code="NPmd" description="If the sound is muted." type="boolean" access="rw">
+				<cocoa key="muted"/>
+			</property>
+			<property name="volume" code="NPvm" description="The audio volume." type="number" access="rw">
+				<cocoa key="volume"/>
+			</property>
+			<property name="window" code="cwin" description="The window that this playlist is attached to" type="window" access="r">
+				<cocoa key="window"/>
+			</property>
+			<property name="next movie" code="NPne" description="The next movie in playlist after the current movie" type="movie" access="r">
+				<cocoa key="nextMovie"/>
+			</property>
+			<property name="current movie" code="NPCu" description="The current movie that the playlist is queued to" type="movie" access="r">
+				<cocoa key="currentMovie"/>
+			</property>
+			<property name="previous movie" code="NPpr" description="Previous movie in playlis before the current movie" type="movie" access="r">
+				<cocoa key="prevMovie"/>
+			</property>
+			<property name="duration" code="npdn" description="Duration of the currently queued movie." type="real" access="r">
+				<cocoa key="currentMovieDuration"/>
+			</property>
+			<property name="elapsed time" code="npet" description="elapsed time of the currently queued movie" type="real" access="rw">
+				<cocoa key="currentMovieTime"/>
+			</property>
+			<property name="frame rate" code="npfr" description="frame rate of the currently queued movie" type="real" access="r">
+				<cocoa key="currentMovieFrameRate"/>
+			</property>
+			<property name="identifier" code="npid" description="unique identifier" type="text" access="rw">
+				<cocoa key="identifier"/>
+			</property>
+			<property name="current plugin" code="NpCg" description="Current plugin to view playlist" type="plugin" access="rw">
+				<cocoa key="currentPlugin"/>
+			</property>
 			<responds-to name="play">
 				<cocoa method="play:"/>
 			</responds-to>
@@ -243,13 +267,21 @@
 		</class>
 		<class name="window" code="cwin" description="The NicePlayer window." plural="windows" inherits="NSCoreSuite.NSWindow">
 			<cocoa class="NiceWindow"/>
-			<property name="playlist is showing" code="plsh" description="If the playlist drawer is showing or not" type="boolean" access="rw"/>
-			<property name="playlist" code="NPpl" description="The document whose contents are being displayed in the window." type="movie" access="r"/>
+			<property name="playlist is showing" code="plsh" description="If the playlist drawer is showing or not" type="boolean" access="rw">
+				<cocoa key="playlistShowing"/>
+			</property>
+			<property name="playlist" code="NPpl" description="The document whose contents are being displayed in the window." type="movie" access="r">
+				<cocoa key="document"/>
+			</property>
 			<property name="level" code="npht" description="is the window floating about all others" type="height levels" access="rw">
 				<cocoa key="floating"/>
 			</property>
-			<property name="fixed aspect ratio" code="NPfa" description="restict the window to the movies aspect ratio" type="boolean" access="rw"/>
-			<property name="unscaled aspect ratio" code="NPua" description="Returns height and width of current window at normal scale" type="any" access="r"/>
+			<property name="fixed aspect ratio" code="NPfa" description="restict the window to the movies aspect ratio" type="boolean" access="rw">
+				<cocoa key="fixedAspect"/>
+			</property>
+			<property name="unscaled aspect ratio" code="NPua" description="Returns height and width of current window at normal scale" type="any" access="r">
+				<cocoa key="currentAspectRatio"/>
+			</property>
 			<responds-to name="enter full screen">
 				<cocoa method="handleEnterFullScreenCommand:"/>
 			</responds-to>
@@ -268,13 +300,27 @@
 			<element description="Plugins availble for this movie" type="plugin" access="r">
 				<cocoa key="suitablePlugins"/>
 			</element>
-			<property name="name" code="pnam" description="The movie name" type="text" access="r"/>
-			<property name="path" code="ppth" description="the files applscript path (May change in future)" type="text" access="r"/>
-			<property name="window" code="cwin" description="The window that this movie will be played in." type="window" access="r"/>
-			<property name="playlist" code="NPpl" description="The playlist this movie instance exists in." type="playlist" access="r"/>
-			<property name="index" code="pidx" description="the index of this movie in it&apos;" type="number" access="r"/>
-			<property name="file extension" code="NPet" description="The file extension" type="text" access="r"/>
-			<property name="file type" code="NPfy" description="The file type (type code)" type="text" access="r"/>
+			<property name="name" code="pnam" description="The movie name" type="text" access="r">
+				<cocoa key="name"/>
+			</property>
+			<property name="path" code="ppth" description="the files applscript path (May change in future)" type="text" access="r">
+				<cocoa key="applescriptPath"/>
+			</property>
+			<property name="window" code="cwin" description="The window that this movie will be played in." type="window" access="r">
+				<cocoa key="window"/>
+			</property>
+			<property name="playlist" code="NPpl" description="The playlist this movie instance exists in." type="playlist" access="r">
+				<cocoa key="playlist"/>
+			</property>
+			<property name="index" code="pidx" description="the index of this movie in it&apos;" type="number" access="r">
+				<cocoa key="index"/>
+			</property>
+			<property name="file extension" code="NPet" description="The file extension" type="text" access="r">
+				<cocoa key="fileExtension"/>
+			</property>
+			<property name="file type" code="NPfy" description="The file type (type code)" type="text" access="r">
+				<cocoa key="fileType"/>
+			</property>
 			<responds-to name="play">
 				<cocoa method="handlePlayCommand:"/>
 			</responds-to>
@@ -288,48 +334,79 @@
 		</class>
 		<class name="screen" code="NPsr" plural="screens" inherits="item">
 			<cocoa class="NSScreen"/>
-			<property name="index" code="pidx" type="number" access="r"/>
-			<property name="bounds" code="pbnd" type="rectangle" access="r"/>
+			<property name="index" code="pidx" type="number" access="r">
+				<cocoa key="orderedIndex"/>
+			</property>
+			<property name="bounds" code="pbnd" type="rectangle" access="r">
+				<cocoa key="boundsAsQDRect"/>
+			</property>
 		</class>
 		<class name="plugin" code="NcPg" plural="plugins" inherits="item">
 			<cocoa class="NicePlugin"/>
-			<property name="name" code="pnam" description="Unique name for plugin" type="text" access="r"/>
-			<property name="human name" code="NpHn" description="Human descriptive name" type="text" access="r"/>
+			<property name="name" code="pnam" description="Unique name for plugin" type="text" access="r">
+				<cocoa key="name"/>
+			</property>
+			<property name="human name" code="NpHn" description="Human descriptive name" type="text" access="r">
+				<cocoa key="humanName"/>
+			</property>
 			<property name="file types" code="NfLt" description="Supported file types of plugin" access="r">
+				<cocoa key="fileTypes"/>
 				<type type="text" list="yes"/>
 			</property>
 		</class>
-		<command name="play" code="NIceplay" description="Starts a movie or current movie in a playlist (depending on if you reference the movie or the playlist)"/>
-		<command name="pause" code="NIcepaus" description="Pauses a movie or current movie in a playlist (depending on if you reference the movie or the playlist)"/>
-		<command name="playpause" code="NIceplps" description="toggles playing on the current movie in a referenced playlist"/>
-		<command name="enter full screen" code="NIceflsn" description="Enter full screen for a window or the main window of the application, (depending on if you reference the window or the application)">
-			<parameter name="on" code="NIos" type="screen" optional="yes"/>
+		<command name="play" code="NIceplay" description="Starts a movie or current movie in a playlist (depending on if you reference the movie or the playlist)">
+			<cocoa name="handlePlayCommand"/>
 		</command>
-		<command name="exit full screen" code="NIcenlsn" description="Exit full screen mode."/>
+		<command name="pause" code="NIcepaus" description="Pauses a movie or current movie in a playlist (depending on if you reference the movie or the playlist)">
+			<cocoa name="handlePauseCommand"/>
+		</command>
+		<command name="playpause" code="NIceplps" description="toggles playing on the current movie in a referenced playlist">
+			<cocoa name="handlePlayPauseCommand"/>
+		</command>
+		<command name="enter full screen" code="NIceflsn" description="Enter full screen for a window or the main window of the application, (depending on if you reference the window or the application)">
+			<cocoa name="handleEnterFullScreenCommand"/>
+			<parameter name="on" code="NIos" type="screen" optional="yes">
+				<cocoa key="on"/>
+			</parameter>
+		</command>
+		<command name="exit full screen" code="NIcenlsn" description="Exit full screen mode.">
+			<cocoa name="handleExitFullScreenCommand"/>
+		</command>
 		<command name="add" code="NIceatpl" description="A file to the playlist.">
 			<cocoa name="NPAddCommand" class="NPAddCommand"/>
 			<direct-parameter description="a file" type="any"/>
-			<parameter name="at index" code="NIat" description="The index to add the file at in the playlist." type="integer" optional="yes"/>
-			<parameter name="to" code="NIto" description="The playlist to add to" type="playlist"/>
+			<parameter name="at index" code="NIat" description="The index to add the file at in the playlist." type="integer" optional="yes">
+				<cocoa key="atIndex"/>
+			</parameter>
+			<parameter name="to" code="NIto" description="The playlist to add to" type="playlist">
+				<cocoa key="to"/>
+			</parameter>
 		</command>
-		<command name="toggle mute" code="NIcetgmt" description="Toggle whether sound is muted (with gui feedback)"/>
+		<command name="toggle mute" code="NIcetgmt" description="Toggle whether sound is muted (with gui feedback)">
+			<cocoa name="handleToggleMuteCommand"/>
+		</command>
 		<command name="decrease volume" code="NIcevlde" description="Decrease volume with gui feedback">
+			<cocoa name="handleDecrementVolumeCommand"/>
 			<direct-parameter type="playlist"/>
 		</command>
 		<command name="increase volume" code="NIcevlin" description="Increase volume with gui feedback">
+			<cocoa name="handleIncrementVolumeCommand"/>
 			<direct-parameter type="playlist"/>
 		</command>
 		<command name="skip forward" code="NPskipff" description="Skips forwards default amount of time">
+			<cocoa name="handleSkipForwardCommand"/>
 			<parameter name="by" code="npby" description="Number of seconds to skip forward in the movie" type="number" optional="yes">
 				<cocoa key="by"/>
 			</parameter>
 		</command>
 		<command name="skip backward" code="NPskipbw" description="Skips backward default amount of time">
+			<cocoa name="handleSkipBackwardCommand"/>
 			<parameter name="by" code="npby" description="Number of seconds to skip backward in the movie" type="number" optional="yes">
 				<cocoa key="by"/>
 			</parameter>
 		</command>
 		<command name="rescale" code="NIceresl" description="Rescale a window">
+			<cocoa name="handleResizeCommand"/>
 			<parameter name="to" code="npto" description="Various preset ratios" type="scales">
 				<cocoa key="to"/>
 			</parameter>
