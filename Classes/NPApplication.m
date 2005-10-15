@@ -16,6 +16,7 @@
 - (void)finishLaunching
 {
     [super finishLaunching];
+    NSLog(@"CoreGraphics %d",kCGDesktopIconWindowLevel);
     lastPoint = [NSEvent mouseLocation];
     inactiveTimer = nil;
     [self setDelegate:self];

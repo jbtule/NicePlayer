@@ -19,7 +19,8 @@ enum{
 
 enum{
     NPAVERAGE ='npav',
-    NPFLOATING ='npft',
+    NPFLOATING ='npzf',
+    NPDESKTOP = 'npzd'
 };
 
 @implementation NiceWindow (NiceWindowScripting)
@@ -30,7 +31,9 @@ enum{
 }
 
 -(int)floating{
-    if([self windowIsFloating])
+    if(kCGDesktopIconWindowLevel-1 == [self level]){
+        return NPDESKTOP;
+    }else if([self windowIsFloating])
         return NPFLOATING;
     else
         return NPAVERAGE;
@@ -40,8 +43,11 @@ enum{
 {
     if(NPAVERAGE ==aHeight)
         [self unfloatWindow];
+    else if (NPDESKTOP ==aHeight)
+        [self setLevel:kCGDesktopIconWindowLevel-1];
     else
         [self floatWindow];
+
     [[NiceController controller] changedWindow:nil];
 }
 
