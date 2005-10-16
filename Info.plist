@@ -433,7 +433,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.92</string>
+	<string>0.93</string>
 	<key>CFBundleSignature</key>
 	<string>nIcE</string>
 	<key>CFBundleVersion</key>
@@ -452,5 +452,28 @@
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NPApplication</string>
+        <key>UTExportedTypeDeclarations</key>
+  <array>             
+    <dict>                 
+      <key>UTTypeIdentifier</key>                 
+      <string>indy.jt.nicelist</string>                 
+
+      <key>UTTypeDescription</key>                 
+      <string>Niceplayers xml playlist format</string>          
+              
+      <key>UTTypeConformsTo</key>                 
+      <array>                     
+        <string>public.xml</string>                     
+      </array>
+
+      <key>UTTypeTagSpecification</key>                 
+      <dict>
+        <key>public.filename-extension</key>                 
+        <array>
+          <string>nicelist</string>                     
+        </array>
+      </dict>
+    </dict>
+  </array>
 </dict>
 </plist>

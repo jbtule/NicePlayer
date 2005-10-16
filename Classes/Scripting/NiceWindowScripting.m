@@ -23,6 +23,11 @@ enum{
     NPDESKTOP = 'npzd'
 };
 
+
+@interface NSWindow(ApplesAppleScriptMethdod)
+    -(void)setBoundsAsQDRect:(NSData*)aData;   
+@end
+
 @implementation NiceWindow (NiceWindowScripting)
 
 +(BOOL)accessInstanceVariablesDirectly
@@ -145,6 +150,19 @@ enum{
 		[self unFullScreen];
 	[self close];
 	return nil;
+}
+
+-(void)setBoundsAsQDRect:(id)aBounds{
+    if([aBounds length] == 88){
+        Rect aRect;
+        [aBounds getBytes:&(aRect.left) range:NSMakeRange(50,2)];
+        [aBounds getBytes:&(aRect.top) range:NSMakeRange(62,2)];
+        [aBounds getBytes:&(aRect.right) range:NSMakeRange(74,2)];
+        [aBounds getBytes:&(aRect.bottom) range:NSMakeRange(86,2)];
+        [super setBoundsAsQDRect:[NSData dataWithBytes:&aRect length:sizeof(Rect)]];
+    }else{
+        [super setBoundsAsQDRect:aBounds];
+    }
 }
 
 @end
