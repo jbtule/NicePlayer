@@ -643,9 +643,10 @@
     float newHeight = aSize.height;
     float newWidth = aSize.width;
     
-    if(newHeight <= [self minSize].height) {
+    if(newHeight <= [self minSize].height || newWidth <= [self minSize].width) {
         newHeight = [self frame].size.height;
         newWidth = [self frame].size.width;
+
     }
     
     switch([[Preferences mainPrefs] scrollResizePin]){
