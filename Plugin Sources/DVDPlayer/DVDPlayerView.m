@@ -131,6 +131,11 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
     isAspectRatioChanging = NO;
 }
 
+-(BOOL)canAnimateResize
+{
+    return NO;
+}
+
 /**
 * Close the movie by deallocating and disposing the DVD framework.
  */

@@ -592,6 +592,13 @@
         [((NiceWindow *)[self window]) mouseDragged:anEvent];
 }
 
+-(BOOL)canAnimateResize
+{
+    if([trueMovieView respondsToSelector:@selector(canAnimateResize)])
+	return [trueMovieView canAnimateResize];
+    return YES;
+}
+
 -(void)scrollWheel:(NSEvent *)anEvent
 {
     if([[Preferences mainPrefs] scrollWheelMoviePref] == SCROLL_WHEEL_ADJUSTS_VOLUME){

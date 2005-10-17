@@ -69,6 +69,7 @@
 -(id)contextualMenu;
 -(void)rebuildMenu;
 
+-(BOOL)canAnimateResize;
 -(void)scrollWheelResize:(NSEvent *)anEvent;
 -(void)scrollWheelAdjustVolume:(NSEvent *)anEvent;
 

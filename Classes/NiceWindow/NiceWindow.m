@@ -635,7 +635,8 @@
  */
 -(void)resizeWithSize:(NSSize)aSize animate:(BOOL)animate
 {
-    [self setFrame:[self calcResizeSize:aSize] display:YES animate:animate];
+#warning Fix this when Apple fixes setFrame:display:animate:
+    [self setFrame:[self calcResizeSize:aSize] display:YES animate:(animate ? [theMovieView canAnimateResize] : NO)];
 }
 
 -(NSRect)calcResizeSize:(NSSize)aSize
@@ -821,8 +822,6 @@
 	ratio.height = 1;
     }
     aspectRatio = ratio;
-    ratio.width /= ratio.height;
-    ratio.height = 1.0;
     [super setAspectRatio:ratio];
     [self setMinSize:NSMakeSize(([self aspectRatio].width/[self aspectRatio].height) *[self minSize].height,[self minSize].height)];
     fixedAspectRatio = YES;
@@ -881,7 +880,7 @@
  */
 -(void)initialDefaultSize
 {
-    [self resizeWithSize: NSMakeSize([self aspectRatio].width,[self aspectRatio].height) animate:YES];
+    [self resizeWithSize:NSMakeSize([self aspectRatio].width,[self aspectRatio].height) animate:YES];
     if (fullScreen)
         [self center];	
 }
@@ -893,9 +892,7 @@
 {
     [self setAspectRatio:[theMovieView naturalSize]];
     NSSize aSize = [self getResizeAspectRatioSize];
-#warning Fix this when Apple fixes setFrame:display:animate:
-//    [self resizeWithSize:aSize animate:YES];
-    [self resizeWithSize:aSize animate:NO];
+    [self resizeWithSize:aSize animate:YES];
     [self _JTRefitFills];
 }
 
