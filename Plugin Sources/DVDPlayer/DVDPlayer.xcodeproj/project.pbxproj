@@ -71,7 +71,7 @@
 		089C167EFE841241C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
-		2513C5DA07BC5B1E00BB6055 /* DVDPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = DVDPlayerView.m; sourceTree = "<group>"; };
+		2513C5DA07BC5B1E00BB6055 /* DVDPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVDPlayerView.m; sourceTree = "<group>"; };
 		2513C5DB07BC5B1E00BB6055 /* DVDPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = DVDPlayerView.h; sourceTree = "<group>"; };
 		2513C5DC07BC5B1E00BB6055 /* NPPluginView.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = NPPluginView.h; sourceTree = "<group>"; };
 		2513C5DD07BC5B1E00BB6055 /* NPMovieProtocol.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = NPMovieProtocol.h; sourceTree = "<group>"; };

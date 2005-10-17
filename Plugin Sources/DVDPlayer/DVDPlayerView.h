@@ -13,6 +13,7 @@
 {
 	NSURL *myURL;
 	BOOL isAspectRatioChanging;
+	BOOL needsUpdate;
 	id updateChapterTimer;
 	
 	UInt32 cid;

@@ -32,6 +32,7 @@ Point convertNSPointToQDPoint(NSPoint inPoint, NSRect windowRect){
 	return outPoint;
 }
 
+NSString *stringForLanguageCode(DVDLanguageCode language);
 void fatalError(DVDErrorCode inError, UInt32 inRefCon);
 void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEventValue2, UInt32 inRefCon);
 
@@ -112,6 +113,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
     [[self window] setAspectRatio:[self naturalSize]];
     NSSize windowSize = [(NiceWindow *)[self window] getResizeAspectRatioSize];
     /* Make sure that bounds get resized first so we don't get white background showing through. */
+    NSLog(@"Size: %@", NSStringFromSize(windowSize));
     [self updateBounds:NSMakeRect(0, 0, windowSize.width, windowSize.height)];
 }
 
@@ -372,8 +374,10 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(void)drawRect:(NSRect)aRect
 {
-    if(!isAspectRatioChanging)
+    if(!isAspectRatioChanging || needsUpdate){
+	needsUpdate = NO;
 	[self resizeToAspect];
+    }
     DVDUpdateVideo();
 }
 
@@ -402,6 +406,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 		DVDPlay();
 		[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:self];
 	}
+	needsUpdate = YES;
 	[self aspectRatioChanged];
 	[self setNeedsDisplay:YES];
 }
@@ -684,29 +689,14 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 		DVDLanguageCode lCode;
 		DVDSubpictureExtensionCode eCode;
 		DVDGetAudioLanguageCodeByStream(i, &lCode, &eCode);
-		switch(lCode){
-			case kDVDLanguageCodeJapanese:
-				label = @"Japanese";
-				break;
-			case kDVDLanguageCodeEnglish:
-				label = @"English";
-				break;
-			case kDVDLanguageCodeFrench:
-				label = @"French";
-				break;
-			case kDVDLanguageCodeGerman:
-				label = @"German";
-				break;
-			case kDVDLanguageCodeRussian:
-				label = @"Russian";
-				break;
-			default:
-				label = [[NSNumber numberWithUnsignedInt:i] stringValue];
-		}
+		label = stringForLanguageCode(lCode);
 		switch(eCode){
 			case kDVDAudioExtensionCodeDirectorsComment1:
+			    label = [label stringByAppendingString:@" / Director's Commentary"];
+			    break;
 			case kDVDAudioExtensionCodeDirectorsComment2:
-				label = [label stringByAppendingString:@" / Director's Commentary"];
+			    label = [label stringByAppendingString:@" / Director's Second Commentary"];
+			    break;
 		}
 		newItem = [[[NSMenuItem alloc] initWithTitle:label
 											  action:@selector(selectAudio:)
@@ -778,26 +768,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 		DVDLanguageCode lCode;
 		DVDSubpictureExtensionCode eCode;
 		DVDGetSubPictureLanguageCodeByStream(i, &lCode, &eCode);
-		switch(lCode){
-			case kDVDLanguageCodeJapanese:
-				label = @"Japanese";
-				break;
-			case kDVDLanguageCodeEnglish:
-				label = @"English";
-				break;
-			case kDVDLanguageCodeFrench:
-				label = @"French";
-				break;
-			case kDVDLanguageCodeGerman:
-				label = @"German";
-				break;
-			case kDVDLanguageCodeRussian:
-				label = @"Russian";
-				break;
-			default:
-				label = [[NSNumber numberWithUnsignedInt:i] stringValue];
-		}
-		
+		label = stringForLanguageCode(lCode);
 		newItem = [[[NSMenuItem alloc] initWithTitle:label
 											  action:@selector(selectSubPicture:)
 									   keyEquivalent:@""] autorelease];
@@ -898,6 +869,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 {
 	Boolean isp;
 	DVDIsPaused(&isp);
+	DVDDisplaySubPicture(YES);
 	DVDSetSubPictureStream([anObject tag]);
 	if(isp)
 		DVDPause();
@@ -1012,4 +984,286 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	objc_msgSend((id)inRefCon, @selector(aspectRatioChanged));
 	[pool release];
+}
+
+NSString *stringForLanguageCode(DVDLanguageCode language)
+{
+    switch(language){
+	case kDVDLanguageCodeNone:
+	    return [NSString stringWithUTF8String:"None"];
+	case kDVDLanguageCodeAfar:
+	    return [NSString stringWithUTF8String:"Afar"];
+	case kDVDLanguageCodeAbkhazian:
+	    return [NSString stringWithUTF8String:"Абхазо"];
+	case kDVDLanguageCodeAfrikaans:
+	    return [NSString stringWithUTF8String:"Afrikaans"];
+	case kDVDLanguageCodeAmharic:
+	    return [NSString stringWithUTF8String:"አማርኛ"];
+	case kDVDLanguageCodeArabic:
+	    return [NSString stringWithUTF8String:"العربية"];
+	case kDVDLanguageCodeAssamese:
+	    return [NSString stringWithUTF8String:"অসিময়া"];
+	case kDVDLanguageCodeAymara:
+	    return [NSString stringWithUTF8String:"Aymará"];
+	case kDVDLanguageCodeAzerbaijani:
+	    return [NSString stringWithUTF8String:"Azərbaycani"];
+	case kDVDLanguageCodeBashkir:
+	    return [NSString stringWithUTF8String:"башҡортса"];
+	case kDVDLanguageCodeByelorussian:
+	    return [NSString stringWithUTF8String:"Беларуски"];
+	case kDVDLanguageCodeBulgarian:
+	    return [NSString stringWithUTF8String:"Български"];
+	case kDVDLanguageCodeBihari:
+	    return [NSString stringWithUTF8String:"Bihari"];
+	case kDVDLanguageCodeBislama:
+	    return [NSString stringWithUTF8String:"Bislama"];
+	case kDVDLanguageCodeBengali:
+	    return [NSString stringWithUTF8String:"বাংলা"];
+	case kDVDLanguageCodeTibetan:
+	    return [NSString stringWithUTF8String:"བོད་སྐད་"];
+	case kDVDLanguageCodeBreton:
+	    return [NSString stringWithUTF8String:"Brezhoneg"];
+	case kDVDLanguageCodeCatalan:
+	    return [NSString stringWithUTF8String:"Català"];
+	case kDVDLanguageCodeCorsican:
+	    return [NSString stringWithUTF8String:"Corsu"];
+	case kDVDLanguageCodeCzech:
+	    return [NSString stringWithUTF8String:"Čeština"];
+	case kDVDLanguageCodeWelsh:
+	    return [NSString stringWithUTF8String:"Cymraeg"];
+	case kDVDLanguageCodeDanish:
+	    return [NSString stringWithUTF8String:"Dansk"];
+	case kDVDLanguageCodeGerman:
+	    return [NSString stringWithUTF8String:"Deutsch"];
+	case kDVDLanguageCodeBhutani:
+	    return [NSString stringWithUTF8String:"Bhutani"];
+	case kDVDLanguageCodeGreek:
+	    return [NSString stringWithUTF8String:"Ελληνικά"];
+	case kDVDLanguageCodeEnglish:
+	    return [NSString stringWithUTF8String:"English"];
+	case kDVDLanguageCodeEsperanto:
+	    return [NSString stringWithUTF8String:"Esperanto"];
+	case kDVDLanguageCodeSpanish:
+	    return [NSString stringWithUTF8String:"Español"];
+	case kDVDLanguageCodeEstonian:
+	    return [NSString stringWithUTF8String:"Eesti"];
+	case kDVDLanguageCodeBasque:
+	    return [NSString stringWithUTF8String:"Euskara"];
+	case kDVDLanguageCodePersian:
+	    return [NSString stringWithUTF8String:"دری"];
+	case kDVDLanguageCodeFinnish:
+	    return [NSString stringWithUTF8String:"Suomi"];
+	case kDVDLanguageCodeFiji:
+	    return [NSString stringWithUTF8String:"Vakaviti"];
+	case kDVDLanguageCodeFaeroese:
+	    return [NSString stringWithUTF8String:"Føroyskt"];
+	case kDVDLanguageCodeFrench:
+	    return [NSString stringWithUTF8String:"Français"];
+	case kDVDLanguageCodeFrisian:
+	    return [NSString stringWithUTF8String:"Frysk"];
+	case kDVDLanguageCodeIrish:
+	    return [NSString stringWithUTF8String:"Gaeilge"];
+	case kDVDLanguageCodeScotsGaelic:
+	    return [NSString stringWithUTF8String:"Gàidhlig"];
+	case kDVDLanguageCodeGalician:
+	    return [NSString stringWithUTF8String:"Galego"];
+	case kDVDLanguageCodeGuarani:
+	    return [NSString stringWithUTF8String:"Ava ñe'ê"];
+	case kDVDLanguageCodeGujarati:
+	    return [NSString stringWithUTF8String:"ગુજરાતી"];
+	case kDVDLanguageCodeHausa:
+	    return [NSString stringWithUTF8String:"هَوُسَ"];
+	case kDVDLanguageCodeHindi:
+	    return [NSString stringWithUTF8String:"हिनदी"];
+	case kDVDLanguageCodeCroatian:
+	    return [NSString stringWithUTF8String:"Hrvatski"];
+	case kDVDLanguageCodeHungarian:
+	    return [NSString stringWithUTF8String:"Magyar"];
+	case kDVDLanguageCodeArmenian:
+	    return [NSString stringWithUTF8String:"Հայերէն"];
+	case kDVDLanguageCodeInterlingua:
+	    return [NSString stringWithUTF8String:"Interlingua"];
+	case kDVDLanguageCodeInterlingue:
+	    return [NSString stringWithUTF8String:"Interlingue"];
+	case kDVDLanguageCodeInupiak:
+	    return [NSString stringWithUTF8String:"Ieupiatun"];
+	case kDVDLanguageCodeIndonesian:
+	    return [NSString stringWithUTF8String:"Bahasa Indonesia"];
+	case kDVDLanguageCodeIcelandic:
+	    return [NSString stringWithUTF8String:"Íslenska"];
+	case kDVDLanguageCodeItalian:
+	    return [NSString stringWithUTF8String:"Italiano"];
+	case kDVDLanguageCodeHebrew:
+	    return [NSString stringWithUTF8String:"עברית"];
+	case kDVDLanguageCodeJapanese:
+	    return [NSString stringWithUTF8String:"日本語"];
+	case kDVDLanguageCodeYiddish:
+	    return [NSString stringWithUTF8String:"ייִדיש"];
+	case kDVDLanguageCodeJavanese:
+	    return [NSString stringWithUTF8String:"Javanese"];
+	case kDVDLanguageCodeGeorgian:
+	    return [NSString stringWithUTF8String:"ქართული"];
+	case kDVDLanguageCodeKazakh:
+	    return [NSString stringWithUTF8String:"Қазақ"];
+	case kDVDLanguageCodeGreenlandic:
+	    return [NSString stringWithUTF8String:"Greenlandic"];
+	case kDVDLanguageCodeCambodian:
+	    return [NSString stringWithUTF8String:"Cambodian"];
+	case kDVDLanguageCodeKannada:
+	    return [NSString stringWithUTF8String:"�^�ನ�^�ಡ"];
+	case kDVDLanguageCodeKorean:
+	    return [NSString stringWithUTF8String:"한국어"];
+	case kDVDLanguageCodeKashmiri:
+	    return [NSString stringWithUTF8String:"कश्मीरी"];
+	case kDVDLanguageCodeKurdish:
+	    return [NSString stringWithUTF8String:"kurmancî"];
+	case kDVDLanguageCodeKirghiz:
+	    return [NSString stringWithUTF8String:"Кыргыз"];
+	case kDVDLanguageCodeLatin:
+	    return [NSString stringWithUTF8String:"Lingua Latina"];
+	case kDVDLanguageCodeLingala:
+	    return [NSString stringWithUTF8String:"Lingala"];
+	case kDVDLanguageCodeLaothian:
+	    return [NSString stringWithUTF8String:"ລາວ"];
+	case kDVDLanguageCodeLithuanian:
+	    return [NSString stringWithUTF8String:"Lietuviškai"];
+	case kDVDLanguageCodeLatvian:
+	    return [NSString stringWithUTF8String:"Latviešu"];
+	case kDVDLanguageCodeMalagasy:
+	    return [NSString stringWithUTF8String:"Malagasy"];
+	case kDVDLanguageCodeMaori:
+	    return [NSString stringWithUTF8String:"te reo Māori"];
+	case kDVDLanguageCodeMacedonian:
+	    return [NSString stringWithUTF8String:"Македонски"];
+	case kDVDLanguageCodeMalayalam:
+	    return [NSString stringWithUTF8String:"മലയാളം"];
+	case kDVDLanguageCodeMongolian:
+	    return [NSString stringWithUTF8String:"ᠮᠣᠨᠬᠣᠣᠷ"];
+	case kDVDLanguageCodeMoldavian:
+	    return [NSString stringWithUTF8String:"Moldoveneşte"];
+	case kDVDLanguageCodeMarathi:
+	    return [NSString stringWithUTF8String:"मराठी"];
+	case kDVDLanguageCodeMalay:
+	    return [NSString stringWithUTF8String:"Bahasa Melayu"];
+	case kDVDLanguageCodeMaltese:
+	    return [NSString stringWithUTF8String:"bil-Malti"];
+	case kDVDLanguageCodeBurmese:
+	    return [NSString stringWithUTF8String:"မ္ရန္မာ"];
+	case kDVDLanguageCodeNauru:
+	    return [NSString stringWithUTF8String:"Nauru"];
+	case kDVDLanguageCodeNepali:
+	    return [NSString stringWithUTF8String:"नेपाली"];
+	case kDVDLanguageCodeDutch:
+	    return [NSString stringWithUTF8String:"Nederlands"];
+	case kDVDLanguageCodeNorwegian:
+	    return [NSString stringWithUTF8String:"Nynorsk"];
+	case kDVDLanguageCodeOccitan:
+	    return [NSString stringWithUTF8String:"Occitan"];
+	case kDVDLanguageCodeOromo:
+	    return [NSString stringWithUTF8String:"Oromoo"];
+	case kDVDLanguageCodeOriya:
+	    return [NSString stringWithUTF8String:"ଓଡ଼ିଆ"];
+	case kDVDLanguageCodePunjabi:
+	    return [NSString stringWithUTF8String:"ਪੰਜਾਬੀ"];
+	case kDVDLanguageCodePolish:
+	    return [NSString stringWithUTF8String:"Polski"];
+	case kDVDLanguageCodePashto:
+	    return [NSString stringWithUTF8String:"پښتو"];
+	case kDVDLanguageCodePortugese:
+	    return [NSString stringWithUTF8String:"Português"];
+	case kDVDLanguageCodeQuechua:
+	    return [NSString stringWithUTF8String:"Quechua"];
+	case kDVDLanguageCodeRhaetoRomance:
+	    return [NSString stringWithUTF8String:"Rumantsch"];
+	case kDVDLanguageCodeKirundi:
+	    return [NSString stringWithUTF8String:"kiRundi"];
+	case kDVDLanguageCodeRomanian:
+	    return [NSString stringWithUTF8String:"Româneşte"];
+	case kDVDLanguageCodeRussian:
+	    return [NSString stringWithUTF8String:"Русский"];
+	case kDVDLanguageCodeKinyarwanda:
+	    return [NSString stringWithUTF8String:"kinyaRwanda"];
+	case kDVDLanguageCodeSanskrit:
+	    return [NSString stringWithUTF8String:"संस्कृत"];
+	case kDVDLanguageCodeSindhi:
+	    return [NSString stringWithUTF8String:"سنڗي"];
+	case kDVDLanguageCodeSangro:
+	    return [NSString stringWithUTF8String:"Sangro"];
+	case kDVDLanguageCodeSerboCroatian:
+	    return [NSString stringWithUTF8String:"Hrvatski"];
+	case kDVDLanguageCodeSinghalese:
+	    return [NSString stringWithUTF8String:"ම඿඲ඹල"];
+	case kDVDLanguageCodeSlovak:
+	    return [NSString stringWithUTF8String:"Slovenčina"];
+	case kDVDLanguageCodeSlovenian:
+	    return [NSString stringWithUTF8String:"Slovenščina"];
+	case kDVDLanguageCodeSamoan:
+	    return [NSString stringWithUTF8String:"le gagana Samoa"];
+	case kDVDLanguageCodeShona:
+	    return [NSString stringWithUTF8String:"chiShona"];
+	case kDVDLanguageCodeSomali:
+	    return [NSString stringWithUTF8String:"Soomaali"];
+	case kDVDLanguageCodeAlbanian:
+	    return [NSString stringWithUTF8String:"Shqipe"];
+	case kDVDLanguageCodeSerbian:
+	    return [NSString stringWithUTF8String:"Српски"];
+	case kDVDLanguageCodeSiswati:
+	    return [NSString stringWithUTF8String:"siSwati"];
+	case kDVDLanguageCodeSesotho:
+	    return [NSString stringWithUTF8String:"seSotho"];
+	case kDVDLanguageCodeSudanese:
+	    return [NSString stringWithUTF8String:"Sudanese"];
+	case kDVDLanguageCodeSwedish:
+	    return [NSString stringWithUTF8String:"Svenska"];
+	case kDVDLanguageCodeSwahili:
+	    return [NSString stringWithUTF8String:"kiSwahili"];
+	case kDVDLanguageCodeTamil:
+	    return [NSString stringWithUTF8String:"தமிழ்"];
+	case kDVDLanguageCodeTelugu:
+	    return [NSString stringWithUTF8String:"తెలుగు"];
+	case kDVDLanguageCodeTajik:
+	    return [NSString stringWithUTF8String:"Таҷикй"];
+	case kDVDLanguageCodeThai:
+	    return [NSString stringWithUTF8String:"ไทย"];
+	case kDVDLanguageCodeTigrinya:
+	    return [NSString stringWithUTF8String:"ትግርኛ"];
+	case kDVDLanguageCodeTurkmen:
+	    return [NSString stringWithUTF8String:"türkmençe"];
+	case kDVDLanguageCodeTagalog:
+	    return [NSString stringWithUTF8String:"Tagalog"];
+	case kDVDLanguageCodeSetswana:
+	    return [NSString stringWithUTF8String:"seTswana"];
+	case kDVDLanguageCodeTonga:
+	    return [NSString stringWithUTF8String:"chiTonga"];
+	case kDVDLanguageCodeTurkish:
+	    return [NSString stringWithUTF8String:"Türkçe"];
+	case kDVDLanguageCodeTsonga:
+	    return [NSString stringWithUTF8String:"xiTsonga"];
+	case kDVDLanguageCodeTatar:
+	    return [NSString stringWithUTF8String:"татарча"];
+	case kDVDLanguageCodeTwi:
+	    return [NSString stringWithUTF8String:"Twi"];
+	case kDVDLanguageCodeUkranian:
+	    return [NSString stringWithUTF8String:"Українська"];
+	case kDVDLanguageCodeUrdu:
+	    return [NSString stringWithUTF8String:"اُردو"];
+	case kDVDLanguageCodeUzbek:
+	    return [NSString stringWithUTF8String:"Ўзбек"];
+	case kDVDLanguageCodeVietnamese:
+	    return [NSString stringWithUTF8String:"Tiếng Việt"];
+	case kDVDLanguageCodeVolapuk:
+	    return [NSString stringWithUTF8String:"Volapük"];
+	case kDVDLanguageCodeWolof:
+	    return [NSString stringWithUTF8String:"Wollof"];
+	case kDVDLanguageCodeXhosa:
+	    return [NSString stringWithUTF8String:"isiXhosa"];
+	case kDVDLanguageCodeYoruba:
+	    return [NSString stringWithUTF8String:"Yorùbá"];
+	case kDVDLanguageCodeChinese:
+	    return [NSString stringWithUTF8String:"中文"];
+	case kDVDLanguageCodeZulu:
+	    return [NSString stringWithUTF8String:"isiZulu"];
+	default:
+	    return [[NSNumber numberWithUnsignedInt:language] stringValue];
+    }
 }
