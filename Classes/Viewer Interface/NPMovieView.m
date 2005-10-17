@@ -128,7 +128,8 @@
 			NSDictionary *currentPlugin = [pluginOrder objectAtIndex:i];
 			if(![[currentPlugin objectForKey:@"Chosen"] boolValue])
 				continue;
-			[trueMovieView release];
+			if(trueMovieView)
+			    [trueMovieView release];
 			trueMovieView = nil;
 			id newViewClass = [[pluginDict objectForKey:[currentPlugin objectForKey:@"Name"]] objectForKey:@"Class"];
 			/* We should change the line below to be more graceful if a plugin can't load. */
@@ -137,6 +138,7 @@
 				@throw noLoadException;
 			if([trueMovieView initWithFrame:subview] == nil){   /* This is used by RCMovieView gestalt check for Tiger, fail-safe no-load. */
 			    [trueMovieView release];
+			    trueMovieView = nil;
 			    continue;
 			}
 			didOpen = [trueMovieView openURL:url];

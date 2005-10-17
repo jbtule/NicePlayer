@@ -88,7 +88,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 {
     static BOOL initialized = NO;
     if(!initialized){
-	if(DVDInitialize() == kDVDErrorPlaybackOpen)
+	if(DVDInitialize() < 0)
 	    return nil;
 	initialized = YES;
     }
