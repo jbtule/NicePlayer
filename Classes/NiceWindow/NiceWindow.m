@@ -820,8 +820,10 @@
 	ratio.width = 1;
 	ratio.height = 1;
     }
-    [super setAspectRatio:ratio];
     aspectRatio = ratio;
+    ratio.width /= ratio.height;
+    ratio.height = 1.0;
+    [super setAspectRatio:ratio];
     [self setMinSize:NSMakeSize(([self aspectRatio].width/[self aspectRatio].height) *[self minSize].height,[self minSize].height)];
     fixedAspectRatio = YES;
 }
@@ -870,6 +872,7 @@
             return NSMakeSize(width, (width / ratio.width) * ratio.height);
         }
     }
+
     return NSMakeSize(newWidth, [self frame].size.height);
 }
 

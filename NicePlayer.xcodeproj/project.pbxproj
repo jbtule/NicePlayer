@@ -1101,6 +1101,7 @@
 					"values>",
 					ppc,
 				);
+				BUILD_VARIANTS = normal;
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
 				DEPLOYMENT_POSTPROCESSING = YES;

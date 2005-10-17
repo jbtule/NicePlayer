@@ -335,7 +335,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 			anAspectRatio = NSMakeSize(720, 9.0/16.0*720);
 			break;
 		case kDVDAspectRatioUninitialized:
-			anAspectRatio = NSMakeSize(1, 1);
+			anAspectRatio = NSMakeSize(640, 480);
 			break;
 	}
 	
