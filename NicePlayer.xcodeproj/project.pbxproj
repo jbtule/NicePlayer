@@ -30,148 +30,6 @@
 		252BDDFB076A4775006CF96B /* ControlRR.m in Sources */ = {isa = PBXBuildFile; fileRef = 252BDDF9076A4775006CF96B /* ControlRR.m */; };
 		252BDE00076A4780006CF96B /* ControlFF.h in Headers */ = {isa = PBXBuildFile; fileRef = 252BDDFE076A4780006CF96B /* ControlFF.h */; };
 		252BDE01076A4780006CF96B /* ControlFF.m in Sources */ = {isa = PBXBuildFile; fileRef = 252BDDFF076A4780006CF96B /* ControlFF.m */; };
-		253B52BA08DCB41A00756089 /* NicePlayer_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 32DBCF750370BD2300C91783 /* NicePlayer_Prefix.pch */; };
-		253B52BB08DCB41A00756089 /* NiceDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A37F4AEFDCFA73011CA2CEA /* NiceDocument.h */; };
-		253B52BC08DCB41A00756089 /* JTMovieView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EEDF751065B3E8800E3545C /* JTMovieView.h */; };
-		253B52BD08DCB41A00756089 /* NiceWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EEDF763065B507B00E3545C /* NiceWindow.h */; };
-		253B52BE08DCB41A00756089 /* NiceController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EEDF76B065B5ACD00E3545C /* NiceController.h */; };
-		253B52BF08DCB41A00756089 /* OverlayWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EDA2680065C8E570000CCEE /* OverlayWindow.h */; };
-		253B52C008DCB41A00756089 /* RoundRect.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EC8C229065DB22A00988449 /* RoundRect.h */; };
-		253B52C108DCB41A00756089 /* MainWindowProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E01F2E8065E9C1D00905F96 /* MainWindowProxy.h */; };
-		253B52C208DCB41A00756089 /* TimelineControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E44F89B065F06A300E48395 /* TimelineControl.h */; };
-		253B52C308DCB41A00756089 /* BlackWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E95D49F06613F05008755D1 /* BlackWindow.h */; };
-		253B52C408DCB41A00756089 /* NiceScrubber.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E9E628E0661708200B788A8 /* NiceScrubber.h */; };
-		253B52C508DCB41A00756089 /* OverlayControllerWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E8CC447068A9D850034FCCC /* OverlayControllerWindow.h */; };
-		253B52C608DCB41A00756089 /* ClickableTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E110B61069BD80100C5800B /* ClickableTextField.h */; };
-		253B52C708DCB41A00756089 /* VolumeView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E9996D006A5101500D1898D /* VolumeView.h */; };
-		253B52C808DCB41A00756089 /* Preferences.h in Headers */ = {isa = PBXBuildFile; fileRef = 257029AC0734CE4E00967356 /* Preferences.h */; };
-		253B52C908DCB41A00756089 /* PreferencesController.h in Headers */ = {isa = PBXBuildFile; fileRef = 257029C10734D14500967356 /* PreferencesController.h */; };
-		253B52CA08DCB41A00756089 /* NPApplication.h in Headers */ = {isa = PBXBuildFile; fileRef = 259CC53707374066001ED5FA /* NPApplication.h */; };
-		253B52CB08DCB41A00756089 /* OverlaysControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 25B913230741736A001B68D9 /* OverlaysControl.h */; };
-		253B52CC08DCB41A00756089 /* TimeDisplayField.h in Headers */ = {isa = PBXBuildFile; fileRef = 2523738E074414690064B556 /* TimeDisplayField.h */; };
-		253B52CD08DCB41A00756089 /* Subtitle.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E8C9A93074D78350048CB70 /* Subtitle.h */; };
-		253B52CE08DCB41A00756089 /* NPMovieProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 257D61540753F7AD00702BD0 /* NPMovieProtocol.h */; };
-		253B52CF08DCB41A00756089 /* NPMovieView.h in Headers */ = {isa = PBXBuildFile; fileRef = 257D61660753F92D00702BD0 /* NPMovieView.h */; };
-		253B52D008DCB41A00756089 /* NPPluginReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 257030360756C73C00D1EE8C /* NPPluginReader.h */; };
-		253B52D108DCB41A00756089 /* NPPluginView.h in Headers */ = {isa = PBXBuildFile; fileRef = 252BD4FB076981DD006CF96B /* NPPluginView.h */; };
-		253B52D208DCB41A00756089 /* ControlButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 252BD9F407699E7C006CF96B /* ControlButton.h */; };
-		253B52D308DCB41A00756089 /* ControlPlay.h in Headers */ = {isa = PBXBuildFile; fileRef = 252BDDD7076A4744006CF96B /* ControlPlay.h */; };
-		253B52D408DCB41A00756089 /* ControlRR.h in Headers */ = {isa = PBXBuildFile; fileRef = 252BDDF8076A4775006CF96B /* ControlRR.h */; };
-		253B52D508DCB41A00756089 /* ControlFF.h in Headers */ = {isa = PBXBuildFile; fileRef = 252BDDFE076A4780006CF96B /* ControlFF.h */; };
-		253B52D608DCB41A00756089 /* NiceUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EEB7DB7076B754F0090E740 /* NiceUtilities.h */; };
-		253B52D708DCB41A00756089 /* PrefPluginConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 25E1090F076CF11100042500 /* PrefPluginConfig.h */; };
-		253B52D808DCB41A00756089 /* NiceDrawer.h in Headers */ = {isa = PBXBuildFile; fileRef = 251FBBDF07BC201900D147E5 /* NiceDrawer.h */; };
-		253B52D908DCB41A00756089 /* FadeOut.h in Headers */ = {isa = PBXBuildFile; fileRef = 2513D2F307BDAC4200BB6055 /* FadeOut.h */; };
-		253B52DA08DCB41A00756089 /* NiceControllerScripting.h in Headers */ = {isa = PBXBuildFile; fileRef = 253C014E07C00DF200172C2F /* NiceControllerScripting.h */; };
-		253B52DB08DCB41A00756089 /* ResizeTriangle.h in Headers */ = {isa = PBXBuildFile; fileRef = 253C064B07C0891300172C2F /* ResizeTriangle.h */; };
-		253B52DC08DCB41A00756089 /* NiceMovie.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EF158C707C7F9CA00AE56D7 /* NiceMovie.h */; };
-		253B52DD08DCB41A00756089 /* NPApplicationScripting.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EF15F3507C8405700AE56D7 /* NPApplicationScripting.h */; };
-		253B52DE08DCB41A00756089 /* NPAddCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EF15FD007C8553B00AE56D7 /* NPAddCommand.h */; };
-		253B52DF08DCB41A00756089 /* NiceDocumentScripting.h in Headers */ = {isa = PBXBuildFile; fileRef = 25B07BF108077776006724D8 /* NiceDocumentScripting.h */; };
-		253B52E008DCB41A00756089 /* OverlayNotifierWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 25B0815A08084354006724D8 /* OverlayNotifierWindow.h */; };
-		253B52E108DCB41A00756089 /* NiceWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E28CCA20808E0F000F59FF5 /* NiceWindowController.h */; };
-		253B52E208DCB41A00756089 /* RCMovieView.h in Headers */ = {isa = PBXBuildFile; fileRef = 25CC864E0831DA2A00027929 /* RCMovieView.h */; };
-		253B52E408DCB41A00756089 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 2A37F4B6FDCFA73011CA2CEA /* MainMenu.nib */; };
-		253B52E508DCB41A00756089 /* NiceDocument.nib in Resources */ = {isa = PBXBuildFile; fileRef = 2A37F4B4FDCFA73011CA2CEA /* NiceDocument.nib */; };
-		253B52E608DCB41A00756089 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165FFE840EACC02AAC07 /* InfoPlist.strings */; };
-		253B52E708DCB41A00756089 /* black.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EEDF761065B4CFF00E3545C /* black.png */; };
-		253B52E808DCB41A00756089 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E085CBB065C79EE005286A3 /* play.png */; };
-		253B52E908DCB41A00756089 /* ff.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EDA267C065C8D620000CCEE /* ff.png */; };
-		253B52EA08DCB41A00756089 /* rr.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EDA267D065C8D620000CCEE /* rr.png */; };
-		253B52EB08DCB41A00756089 /* ffClick.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EC8C5FD065DD31F00988449 /* ffClick.png */; };
-		253B52EC08DCB41A00756089 /* playClick.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EC8C5FE065DD31F00988449 /* playClick.png */; };
-		253B52ED08DCB41A00756089 /* rrClick.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EC8C5FF065DD31F00988449 /* rrClick.png */; };
-		253B52EE08DCB41A00756089 /* scrubber.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E62940661724600B788A8 /* scrubber.png */; };
-		253B52EF08DCB41A00756089 /* scrubberClick.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E62950661724600B788A8 /* scrubberClick.png */; };
-		253B52F008DCB41A00756089 /* scrubbar_center.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E62960661724600B788A8 /* scrubbar_center.png */; };
-		253B52F108DCB41A00756089 /* scrubbar_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E62970661724600B788A8 /* scrubbar_left.png */; };
-		253B52F208DCB41A00756089 /* scrubbar_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E62980661724600B788A8 /* scrubbar_right.png */; };
-		253B52F308DCB41A00756089 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E64800661B95900B788A8 /* pause.png */; };
-		253B52F408DCB41A00756089 /* pauseClick.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E64810661B95900B788A8 /* pauseClick.png */; };
-		253B52F508DCB41A00756089 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 3E4DF83506630D50001B9AC5 /* Credits.html */; };
-		253B52F608DCB41A00756089 /* NiceIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3E452FF00664719D00BC91B0 /* NiceIcon.icns */; };
-		253B52F708DCB41A00756089 /* repeat_list.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E26A4067FC53600854100 /* repeat_list.png */; };
-		253B52F808DCB41A00756089 /* repeat_none.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E26A5067FC53600854100 /* repeat_none.png */; };
-		253B52F908DCB41A00756089 /* repeat_one.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E26A6067FC53600854100 /* repeat_one.png */; };
-		253B52FA08DCB41A00756089 /* close-highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E8CC44F068AA1290034FCCC /* close-highlight.png */; };
-		253B52FB08DCB41A00756089 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E8CC450068AA1290034FCCC /* close.png */; };
-		253B52FC08DCB41A00756089 /* minimize-highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E8CC451068AA1290034FCCC /* minimize-highlight.png */; };
-		253B52FD08DCB41A00756089 /* minimize.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E8CC452068AA1290034FCCC /* minimize.png */; };
-		253B52FE08DCB41A00756089 /* volume_muted.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9996CA06A50F1800D1898D /* volume_muted.png */; };
-		253B52FF08DCB41A00756089 /* volume_with_sound.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9996CB06A50F1800D1898D /* volume_with_sound.png */; };
-		253B530008DCB41A00756089 /* Preferences.nib in Resources */ = {isa = PBXBuildFile; fileRef = 257029A40732D1B300967356 /* Preferences.nib */; };
-		253B530108DCB41A00756089 /* shuffle_ordered.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E0457B6073C7CE4009D4E33 /* shuffle_ordered.png */; };
-		253B530208DCB41A00756089 /* shuffle_random.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E0457B7073C7CE4009D4E33 /* shuffle_random.png */; };
-		253B530308DCB41A00756089 /* 3gpp.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3E8C96C2073EF4730048CB70 /* 3gpp.icns */; };
-		253B530408DCB41A00756089 /* avi.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3E8C96C3073EF4730048CB70 /* avi.icns */; };
-		253B530508DCB41A00756089 /* dv.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3E8C96C4073EF4730048CB70 /* dv.icns */; };
-		253B530608DCB41A00756089 /* fli.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3E8C96C5073EF4730048CB70 /* fli.icns */; };
-		253B530708DCB41A00756089 /* m2v.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3E8C96C6073EF4730048CB70 /* m2v.icns */; };
-		253B530808DCB41A00756089 /* mov.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3E8C96C7073EF4730048CB70 /* mov.icns */; };
-		253B530908DCB41A00756089 /* mp4.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3E8C96C8073EF4730048CB70 /* mp4.icns */; };
-		253B530A08DCB41A00756089 /* mpg.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3E8C96C9073EF4730048CB70 /* mpg.icns */; };
-		253B530B08DCB41A00756089 /* swf.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3E8C96CA073EF4730048CB70 /* swf.icns */; };
-		253B530C08DCB41A00756089 /* ViewerPrefIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EEB7F38076BB1F60090E740 /* ViewerPrefIcon.png */; };
-		253B530D08DCB41A00756089 /* pause_over.png in Resources */ = {isa = PBXBuildFile; fileRef = 25294AA6076E937E00D4B325 /* pause_over.png */; };
-		253B530E08DCB41A00756089 /* play_over.png in Resources */ = {isa = PBXBuildFile; fileRef = 25294AA7076E937E00D4B325 /* play_over.png */; };
-		253B530F08DCB41A00756089 /* rr_over.png in Resources */ = {isa = PBXBuildFile; fileRef = 25294AA8076E937E00D4B325 /* rr_over.png */; };
-		253B531008DCB41A00756089 /* ff_over.png in Resources */ = {isa = PBXBuildFile; fileRef = 25294AD4076E944900D4B325 /* ff_over.png */; };
-		253B531108DCB41A00756089 /* NicePlayer Help in Resources */ = {isa = PBXBuildFile; fileRef = 3EC66F12077525AD00B50A61 /* NicePlayer Help */; };
-		253B531208DCB41A00756089 /* NicePlayer.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 2513D30507BDACA700BB6055 /* NicePlayer.sdef */; };
-		253B531308DCB41A00756089 /* resize.png in Resources */ = {isa = PBXBuildFile; fileRef = 253C02E407C061E100172C2F /* resize.png */; };
-		253B531408DCB41A00756089 /* playlist-highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E91842D086E288300F4ED34 /* playlist-highlight.png */; };
-		253B531508DCB41A00756089 /* playlist.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E91842E086E288300F4ED34 /* playlist.png */; };
-		253B531608DCB41A00756089 /* OverPrefIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E918435086E28BA00F4ED34 /* OverPrefIcon.png */; };
-		253B531708DCB41A00756089 /* nicelist.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3EFEF995086E6E50003E05C3 /* nicelist.icns */; };
-		253B531808DCB41A00756089 /* wmv.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3EFEF996086E6E50003E05C3 /* wmv.icns */; };
-		253B531A08DCB41A00756089 /* NiceDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4ACFDCFA73011CA2CEA /* NiceDocument.m */; settings = {ATTRIBUTES = (); }; };
-		253B531B08DCB41A00756089 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4B0FDCFA73011CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
-		253B531C08DCB41A00756089 /* JTMovieView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EEDF752065B3E8800E3545C /* JTMovieView.m */; };
-		253B531D08DCB41A00756089 /* NiceWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EEDF764065B507B00E3545C /* NiceWindow.m */; };
-		253B531E08DCB41A00756089 /* NiceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EEDF76C065B5ACD00E3545C /* NiceController.m */; };
-		253B531F08DCB41A00756089 /* OverlayWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDA2681065C8E570000CCEE /* OverlayWindow.m */; };
-		253B532008DCB41A00756089 /* RoundRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC8C22A065DB22A00988449 /* RoundRect.m */; };
-		253B532108DCB41A00756089 /* MainWindowProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E01F2E9065E9C1D00905F96 /* MainWindowProxy.m */; };
-		253B532208DCB41A00756089 /* TimelineControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E44F89C065F06A300E48395 /* TimelineControl.m */; };
-		253B532308DCB41A00756089 /* BlackWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E95D4A006613F05008755D1 /* BlackWindow.m */; };
-		253B532408DCB41A00756089 /* NiceScrubber.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9E628F0661708200B788A8 /* NiceScrubber.m */; };
-		253B532508DCB41A00756089 /* OverlayControllerWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8CC448068A9D850034FCCC /* OverlayControllerWindow.m */; };
-		253B532608DCB41A00756089 /* ClickableTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E110B62069BD80100C5800B /* ClickableTextField.m */; };
-		253B532708DCB41A00756089 /* VolumeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9996D106A5101500D1898D /* VolumeView.m */; };
-		253B532808DCB41A00756089 /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 257029AD0734CE4E00967356 /* Preferences.m */; };
-		253B532908DCB41A00756089 /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 257029C20734D14500967356 /* PreferencesController.m */; };
-		253B532A08DCB41A00756089 /* NPApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 259CC53807374066001ED5FA /* NPApplication.m */; };
-		253B532B08DCB41A00756089 /* OverlaysControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B913240741736A001B68D9 /* OverlaysControl.m */; };
-		253B532C08DCB41A00756089 /* TimeDisplayField.m in Sources */ = {isa = PBXBuildFile; fileRef = 2523738F074414690064B556 /* TimeDisplayField.m */; };
-		253B532D08DCB41A00756089 /* Subtitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8C9A94074D78350048CB70 /* Subtitle.m */; };
-		253B532E08DCB41A00756089 /* NPMovieView.m in Sources */ = {isa = PBXBuildFile; fileRef = 257D61670753F92D00702BD0 /* NPMovieView.m */; };
-		253B532F08DCB41A00756089 /* NPPluginReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 257030370756C73C00D1EE8C /* NPPluginReader.m */; };
-		253B533008DCB41A00756089 /* NPPluginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 252BD4FC076981DD006CF96B /* NPPluginView.m */; };
-		253B533108DCB41A00756089 /* ControlButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 252BD9F507699E7C006CF96B /* ControlButton.m */; };
-		253B533208DCB41A00756089 /* ControlPlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 252BDDD8076A4744006CF96B /* ControlPlay.m */; };
-		253B533308DCB41A00756089 /* ControlRR.m in Sources */ = {isa = PBXBuildFile; fileRef = 252BDDF9076A4775006CF96B /* ControlRR.m */; };
-		253B533408DCB41A00756089 /* ControlFF.m in Sources */ = {isa = PBXBuildFile; fileRef = 252BDDFF076A4780006CF96B /* ControlFF.m */; };
-		253B533508DCB41A00756089 /* NiceUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB7DB8076B754F0090E740 /* NiceUtilities.m */; };
-		253B533608DCB41A00756089 /* PrefPluginConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E10910076CF11100042500 /* PrefPluginConfig.m */; };
-		253B533708DCB41A00756089 /* NiceDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = 251FBBE007BC201900D147E5 /* NiceDrawer.m */; };
-		253B533808DCB41A00756089 /* FadeOut.m in Sources */ = {isa = PBXBuildFile; fileRef = 2513D2F407BDAC4200BB6055 /* FadeOut.m */; };
-		253B533908DCB41A00756089 /* NiceDocumentScripting.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D2E7C207BF3758004BEF7D /* NiceDocumentScripting.m */; };
-		253B533A08DCB41A00756089 /* NiceWindowScripting.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D2E84007BF3B44004BEF7D /* NiceWindowScripting.m */; };
-		253B533B08DCB41A00756089 /* NiceControllerScripting.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D2ED0B07BF6066004BEF7D /* NiceControllerScripting.m */; };
-		253B533C08DCB41A00756089 /* ResizeTriangle.m in Sources */ = {isa = PBXBuildFile; fileRef = 253C064C07C0891300172C2F /* ResizeTriangle.m */; };
-		253B533D08DCB41A00756089 /* NPAddCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF15FD107C8553B00AE56D7 /* NPAddCommand.m */; };
-		253B533E08DCB41A00756089 /* NPApplicationScripting.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF15F3607C8405700AE56D7 /* NPApplicationScripting.m */; };
-		253B533F08DCB41A00756089 /* NiceMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF158C807C7F9CA00AE56D7 /* NiceMovie.m */; };
-		253B534008DCB41A00756089 /* OverlayNotifierWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B0815B08084354006724D8 /* OverlayNotifierWindow.m */; };
-		253B534108DCB41A00756089 /* NiceWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E28CCA30808E0F000F59FF5 /* NiceWindowController.m */; };
-		253B534208DCB41A00756089 /* RCMovieView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25CC864F0831DA2A00027929 /* RCMovieView.m */; };
-		253B534408DCB41A00756089 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB7EC5F065F39AA0002A470 /* Carbon.framework */; };
-		253B534508DCB41A00756089 /* QuickTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB7ECF9065F39BC0002A470 /* QuickTime.framework */; };
-		253B534708DCB41A00756089 /* AppKitScripting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 257D60000753DE7C00702BD0 /* AppKitScripting.framework */; };
-		253B534808DCB41A00756089 /* Scripting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 257D60130753DED700702BD0 /* Scripting.framework */; };
-		253B534908DCB41A00756089 /* DVDPlayback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25702FEF07569E3300D1EE8C /* DVDPlayback.framework */; };
-		253B534A08DCB41A00756089 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 251FEFB6085670D800D38B8E /* Cocoa.framework */; };
-		253B536A08DCB4C100756089 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25CC866D0831DDA800027929 /* QTKit.framework */; };
 		253C014F07C00DF200172C2F /* NiceControllerScripting.h in Headers */ = {isa = PBXBuildFile; fileRef = 253C014E07C00DF200172C2F /* NiceControllerScripting.h */; };
 		253C02E507C061E100172C2F /* resize.png in Resources */ = {isa = PBXBuildFile; fileRef = 253C02E407C061E100172C2F /* resize.png */; };
 		253C064D07C0891300172C2F /* ResizeTriangle.h in Headers */ = {isa = PBXBuildFile; fileRef = 253C064B07C0891300172C2F /* ResizeTriangle.h */; };
@@ -220,8 +78,6 @@
 		3E49DCB307C96EFD009BA150 /* NPApplicationScripting.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF15F3607C8405700AE56D7 /* NPApplicationScripting.m */; };
 		3E49DCB407C96F01009BA150 /* NiceMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF158C807C7F9CA00AE56D7 /* NiceMovie.m */; };
 		3E4DF83706630D50001B9AC5 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 3E4DF83506630D50001B9AC5 /* Credits.html */; };
-		3E64FA4308F2314C0010E3DA /* NicePlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E64FA4108F2314C0010E3DA /* NicePlugin.h */; };
-		3E64FA4408F2314C0010E3DA /* NicePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E64FA4208F2314C0010E3DA /* NicePlugin.m */; };
 		3E64FA4508F2314C0010E3DA /* NicePlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E64FA4108F2314C0010E3DA /* NicePlugin.h */; };
 		3E64FA4608F2314C0010E3DA /* NicePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E64FA4208F2314C0010E3DA /* NicePlugin.m */; };
 		3E666C8808FCA98B0093E877 /* CocoaScriptMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E9F5C0608DE931E00BD4B78 /* CocoaScriptMenu.framework */; };
@@ -264,15 +120,9 @@
 		3E9E64820661B95900B788A8 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E64800661B95900B788A8 /* pause.png */; };
 		3E9E64830661B95900B788A8 /* pauseClick.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E64810661B95900B788A8 /* pauseClick.png */; };
 		3E9F5C0908DE931E00BD4B78 /* IndyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E9F5C0708DE931E00BD4B78 /* IndyKit.framework */; };
-		3E9F5C0A08DE931E00BD4B78 /* CocoaScriptMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E9F5C0608DE931E00BD4B78 /* CocoaScriptMenu.framework */; };
-		3E9F5C0B08DE931E00BD4B78 /* IndyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E9F5C0708DE931E00BD4B78 /* IndyKit.framework */; };
 		3E9F5C3A08DE932800BD4B78 /* CocoaScriptMenu.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3E9F5C0608DE931E00BD4B78 /* CocoaScriptMenu.framework */; };
 		3E9F5C3B08DE932800BD4B78 /* IndyKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3E9F5C0708DE931E00BD4B78 /* IndyKit.framework */; };
-		3E9F5C3C08DE933C00BD4B78 /* CocoaScriptMenu.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3E9F5C0608DE931E00BD4B78 /* CocoaScriptMenu.framework */; };
-		3E9F5C3D08DE933C00BD4B78 /* IndyKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3E9F5C0708DE931E00BD4B78 /* IndyKit.framework */; };
-		3EB4F72D08F62C37004692D3 /* Useful Scripts in Resources */ = {isa = PBXBuildFile; fileRef = 3EB4F72A08F62C37004692D3 /* Useful Scripts */; };
 		3EB4F72E08F62C37004692D3 /* Useful Scripts in Resources */ = {isa = PBXBuildFile; fileRef = 3EB4F72A08F62C37004692D3 /* Useful Scripts */; };
-		3EB4F74108F62C4C004692D3 /* Default Scripts in Resources */ = {isa = PBXBuildFile; fileRef = 3EB4F72F08F62C4C004692D3 /* Default Scripts */; };
 		3EB4F74208F62C4C004692D3 /* Default Scripts in Resources */ = {isa = PBXBuildFile; fileRef = 3EB4F72F08F62C4C004692D3 /* Default Scripts */; };
 		3EB7EC60065F39AA0002A470 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB7EC5F065F39AA0002A470 /* Carbon.framework */; };
 		3EB7ECFA065F39BC0002A470 /* QuickTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB7ECF9065F39BC0002A470 /* QuickTime.framework */; };
@@ -354,17 +204,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		253B534B08DCB41A00756089 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				3E9F5C3C08DE933C00BD4B78 /* CocoaScriptMenu.framework in CopyFiles */,
-				3E9F5C3D08DE933C00BD4B78 /* IndyKit.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		259DE26B0760F769000FE804 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -414,7 +253,6 @@
 		252BDDF9076A4775006CF96B /* ControlRR.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ControlRR.m; path = "Classes/Overlay Widgets/Control Buttons/ControlRR.m"; sourceTree = "<group>"; };
 		252BDDFE076A4780006CF96B /* ControlFF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ControlFF.h; path = "Classes/Overlay Widgets/Control Buttons/ControlFF.h"; sourceTree = "<group>"; };
 		252BDDFF076A4780006CF96B /* ControlFF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ControlFF.m; path = "Classes/Overlay Widgets/Control Buttons/ControlFF.m"; sourceTree = "<group>"; };
-		253B535608DCB41A00756089 /* NicePlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NicePlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		253C014E07C00DF200172C2F /* NiceControllerScripting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NiceControllerScripting.h; sourceTree = "<group>"; };
 		253C02E407C061E100172C2F /* resize.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = resize.png; path = Resources/resize.png; sourceTree = "<group>"; };
 		253C02E907C0632700172C2F /* resize.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = resize.png; path = Resources/resize.png; sourceTree = "<group>"; };
@@ -550,22 +388,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		253B534308DCB41A00756089 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				253B536A08DCB4C100756089 /* QTKit.framework in Frameworks */,
-				253B534408DCB41A00756089 /* Carbon.framework in Frameworks */,
-				253B534508DCB41A00756089 /* QuickTime.framework in Frameworks */,
-				253B534708DCB41A00756089 /* AppKitScripting.framework in Frameworks */,
-				253B534808DCB41A00756089 /* Scripting.framework in Frameworks */,
-				253B534908DCB41A00756089 /* DVDPlayback.framework in Frameworks */,
-				253B534A08DCB41A00756089 /* Cocoa.framework in Frameworks */,
-				3E9F5C0A08DE931E00BD4B78 /* CocoaScriptMenu.framework in Frameworks */,
-				3E9F5C0B08DE931E00BD4B78 /* IndyKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8D15AC330486D014006FF6A4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -614,7 +436,6 @@
 			isa = PBXGroup;
 			children = (
 				8D15AC370486D014006FF6A4 /* NicePlayer.app */,
-				253B535608DCB41A00756089 /* NicePlayer.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -905,55 +726,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		253B52B908DCB41A00756089 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				253B52BA08DCB41A00756089 /* NicePlayer_Prefix.pch in Headers */,
-				253B52BB08DCB41A00756089 /* NiceDocument.h in Headers */,
-				253B52BC08DCB41A00756089 /* JTMovieView.h in Headers */,
-				253B52BD08DCB41A00756089 /* NiceWindow.h in Headers */,
-				253B52BE08DCB41A00756089 /* NiceController.h in Headers */,
-				253B52BF08DCB41A00756089 /* OverlayWindow.h in Headers */,
-				253B52C008DCB41A00756089 /* RoundRect.h in Headers */,
-				253B52C108DCB41A00756089 /* MainWindowProxy.h in Headers */,
-				253B52C208DCB41A00756089 /* TimelineControl.h in Headers */,
-				253B52C308DCB41A00756089 /* BlackWindow.h in Headers */,
-				253B52C408DCB41A00756089 /* NiceScrubber.h in Headers */,
-				253B52C508DCB41A00756089 /* OverlayControllerWindow.h in Headers */,
-				253B52C608DCB41A00756089 /* ClickableTextField.h in Headers */,
-				253B52C708DCB41A00756089 /* VolumeView.h in Headers */,
-				253B52C808DCB41A00756089 /* Preferences.h in Headers */,
-				253B52C908DCB41A00756089 /* PreferencesController.h in Headers */,
-				253B52CA08DCB41A00756089 /* NPApplication.h in Headers */,
-				253B52CB08DCB41A00756089 /* OverlaysControl.h in Headers */,
-				253B52CC08DCB41A00756089 /* TimeDisplayField.h in Headers */,
-				253B52CD08DCB41A00756089 /* Subtitle.h in Headers */,
-				253B52CE08DCB41A00756089 /* NPMovieProtocol.h in Headers */,
-				253B52CF08DCB41A00756089 /* NPMovieView.h in Headers */,
-				253B52D008DCB41A00756089 /* NPPluginReader.h in Headers */,
-				253B52D108DCB41A00756089 /* NPPluginView.h in Headers */,
-				253B52D208DCB41A00756089 /* ControlButton.h in Headers */,
-				253B52D308DCB41A00756089 /* ControlPlay.h in Headers */,
-				253B52D408DCB41A00756089 /* ControlRR.h in Headers */,
-				253B52D508DCB41A00756089 /* ControlFF.h in Headers */,
-				253B52D608DCB41A00756089 /* NiceUtilities.h in Headers */,
-				253B52D708DCB41A00756089 /* PrefPluginConfig.h in Headers */,
-				253B52D808DCB41A00756089 /* NiceDrawer.h in Headers */,
-				253B52D908DCB41A00756089 /* FadeOut.h in Headers */,
-				253B52DA08DCB41A00756089 /* NiceControllerScripting.h in Headers */,
-				253B52DB08DCB41A00756089 /* ResizeTriangle.h in Headers */,
-				253B52DC08DCB41A00756089 /* NiceMovie.h in Headers */,
-				253B52DD08DCB41A00756089 /* NPApplicationScripting.h in Headers */,
-				253B52DE08DCB41A00756089 /* NPAddCommand.h in Headers */,
-				253B52DF08DCB41A00756089 /* NiceDocumentScripting.h in Headers */,
-				253B52E008DCB41A00756089 /* OverlayNotifierWindow.h in Headers */,
-				253B52E108DCB41A00756089 /* NiceWindowController.h in Headers */,
-				253B52E208DCB41A00756089 /* RCMovieView.h in Headers */,
-				3E64FA4308F2314C0010E3DA /* NicePlugin.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8D15AC280486D014006FF6A4 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -1006,68 +778,6 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		253B52B608DCB41A00756089 /* NicePlayer_link */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 253B535208DCB41A00756089 /* Build configuration list for PBXNativeTarget "NicePlayer_link" */;
-			buildPhases = (
-				253B52B908DCB41A00756089 /* Headers */,
-				253B52E308DCB41A00756089 /* Resources */,
-				253B531908DCB41A00756089 /* Sources */,
-				253B534308DCB41A00756089 /* Frameworks */,
-				253B534B08DCB41A00756089 /* CopyFiles */,
-				253B535008DCB41A00756089 /* ShellScript */,
-				253B535108DCB41A00756089 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			buildSettings = {
-				DEPLOYMENT_POSTPROCESSING = YES;
-				FRAMEWORK_SEARCH_PATHS = .;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_ENABLE_TRIGRAPHS = NO;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = NicePlayer_Prefix.pch;
-				GCC_PREPROCESSOR_DEFINITIONS = "";
-				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
-				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
-				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
-				GCC_WARN_MISSING_PARENTHESES = YES;
-				GCC_WARN_SHADOW = YES;
-				GCC_WARN_SIGN_COMPARE = YES;
-				GCC_WARN_UNKNOWN_PRAGMAS = NO;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_PARAMETER = NO;
-				GCC_WARN_UNUSED_VALUE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "$(HOME)/Applications";
-				LIBRARY_SEARCH_PATHS = "";
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = (
-					"-weak_framework",
-					QTKit,
-				);
-				PRODUCT_NAME = NicePlayer;
-				SECTORDER_FLAGS = "";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-protocol",
-				);
-				WRAPPER_EXTENSION = app;
-			};
-			dependencies = (
-			);
-			name = NicePlayer_link;
-			productInstallPath = "$(HOME)/Applications";
-			productName = NicePlayer;
-			productReference = 253B535608DCB41A00756089 /* NicePlayer.app */;
-			productType = "com.apple.product-type.application";
-		};
 		8D15AC270486D014006FF6A4 /* NicePlayer */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 251FEF6F0855184200D38B8E /* Build configuration list for PBXNativeTarget "NicePlayer" */;
@@ -1163,7 +873,6 @@
 			);
 			targets = (
 				8D15AC270486D014006FF6A4 /* NicePlayer */,
-				253B52B608DCB41A00756089 /* NicePlayer_link */,
 			);
 		};
 /* End PBXProject section */
@@ -1179,68 +888,6 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
-		253B52E308DCB41A00756089 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				253B52E408DCB41A00756089 /* MainMenu.nib in Resources */,
-				253B52E508DCB41A00756089 /* NiceDocument.nib in Resources */,
-				253B52E608DCB41A00756089 /* InfoPlist.strings in Resources */,
-				253B52E708DCB41A00756089 /* black.png in Resources */,
-				253B52E808DCB41A00756089 /* play.png in Resources */,
-				253B52E908DCB41A00756089 /* ff.png in Resources */,
-				253B52EA08DCB41A00756089 /* rr.png in Resources */,
-				253B52EB08DCB41A00756089 /* ffClick.png in Resources */,
-				253B52EC08DCB41A00756089 /* playClick.png in Resources */,
-				253B52ED08DCB41A00756089 /* rrClick.png in Resources */,
-				253B52EE08DCB41A00756089 /* scrubber.png in Resources */,
-				253B52EF08DCB41A00756089 /* scrubberClick.png in Resources */,
-				253B52F008DCB41A00756089 /* scrubbar_center.png in Resources */,
-				253B52F108DCB41A00756089 /* scrubbar_left.png in Resources */,
-				253B52F208DCB41A00756089 /* scrubbar_right.png in Resources */,
-				253B52F308DCB41A00756089 /* pause.png in Resources */,
-				253B52F408DCB41A00756089 /* pauseClick.png in Resources */,
-				253B52F508DCB41A00756089 /* Credits.html in Resources */,
-				253B52F608DCB41A00756089 /* NiceIcon.icns in Resources */,
-				253B52F708DCB41A00756089 /* repeat_list.png in Resources */,
-				253B52F808DCB41A00756089 /* repeat_none.png in Resources */,
-				253B52F908DCB41A00756089 /* repeat_one.png in Resources */,
-				253B52FA08DCB41A00756089 /* close-highlight.png in Resources */,
-				253B52FB08DCB41A00756089 /* close.png in Resources */,
-				253B52FC08DCB41A00756089 /* minimize-highlight.png in Resources */,
-				253B52FD08DCB41A00756089 /* minimize.png in Resources */,
-				253B52FE08DCB41A00756089 /* volume_muted.png in Resources */,
-				253B52FF08DCB41A00756089 /* volume_with_sound.png in Resources */,
-				253B530008DCB41A00756089 /* Preferences.nib in Resources */,
-				253B530108DCB41A00756089 /* shuffle_ordered.png in Resources */,
-				253B530208DCB41A00756089 /* shuffle_random.png in Resources */,
-				253B530308DCB41A00756089 /* 3gpp.icns in Resources */,
-				253B530408DCB41A00756089 /* avi.icns in Resources */,
-				253B530508DCB41A00756089 /* dv.icns in Resources */,
-				253B530608DCB41A00756089 /* fli.icns in Resources */,
-				253B530708DCB41A00756089 /* m2v.icns in Resources */,
-				253B530808DCB41A00756089 /* mov.icns in Resources */,
-				253B530908DCB41A00756089 /* mp4.icns in Resources */,
-				253B530A08DCB41A00756089 /* mpg.icns in Resources */,
-				253B530B08DCB41A00756089 /* swf.icns in Resources */,
-				253B530C08DCB41A00756089 /* ViewerPrefIcon.png in Resources */,
-				253B530D08DCB41A00756089 /* pause_over.png in Resources */,
-				253B530E08DCB41A00756089 /* play_over.png in Resources */,
-				253B530F08DCB41A00756089 /* rr_over.png in Resources */,
-				253B531008DCB41A00756089 /* ff_over.png in Resources */,
-				253B531108DCB41A00756089 /* NicePlayer Help in Resources */,
-				253B531208DCB41A00756089 /* NicePlayer.sdef in Resources */,
-				253B531308DCB41A00756089 /* resize.png in Resources */,
-				253B531408DCB41A00756089 /* playlist-highlight.png in Resources */,
-				253B531508DCB41A00756089 /* playlist.png in Resources */,
-				253B531608DCB41A00756089 /* OverPrefIcon.png in Resources */,
-				253B531708DCB41A00756089 /* nicelist.icns in Resources */,
-				253B531808DCB41A00756089 /* wmv.icns in Resources */,
-				3EB4F72D08F62C37004692D3 /* Useful Scripts in Resources */,
-				3EB4F74108F62C4C004692D3 /* Default Scripts in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8D15AC2B0486D014006FF6A4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1332,84 +979,9 @@
 			shellPath = /bin/sh;
 			shellScript = "\"$SOURCE_ROOT/Versioning/version.sh\"";
 		};
-		253B535008DCB41A00756089 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"$SOURCE_ROOT/Versioning/version.sh\"";
-		};
-		253B535108DCB41A00756089 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/bin/sdp -f st -o \"$TARGET_BUILD_DIR/NicePlayer.app/Contents/Resources\" \"$SOURCE_ROOT/Resources/NicePlayer.sdef\"";
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		253B531908DCB41A00756089 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				253B531A08DCB41A00756089 /* NiceDocument.m in Sources */,
-				253B531B08DCB41A00756089 /* main.m in Sources */,
-				253B531C08DCB41A00756089 /* JTMovieView.m in Sources */,
-				253B531D08DCB41A00756089 /* NiceWindow.m in Sources */,
-				253B531E08DCB41A00756089 /* NiceController.m in Sources */,
-				253B531F08DCB41A00756089 /* OverlayWindow.m in Sources */,
-				253B532008DCB41A00756089 /* RoundRect.m in Sources */,
-				253B532108DCB41A00756089 /* MainWindowProxy.m in Sources */,
-				253B532208DCB41A00756089 /* TimelineControl.m in Sources */,
-				253B532308DCB41A00756089 /* BlackWindow.m in Sources */,
-				253B532408DCB41A00756089 /* NiceScrubber.m in Sources */,
-				253B532508DCB41A00756089 /* OverlayControllerWindow.m in Sources */,
-				253B532608DCB41A00756089 /* ClickableTextField.m in Sources */,
-				253B532708DCB41A00756089 /* VolumeView.m in Sources */,
-				253B532808DCB41A00756089 /* Preferences.m in Sources */,
-				253B532908DCB41A00756089 /* PreferencesController.m in Sources */,
-				253B532A08DCB41A00756089 /* NPApplication.m in Sources */,
-				253B532B08DCB41A00756089 /* OverlaysControl.m in Sources */,
-				253B532C08DCB41A00756089 /* TimeDisplayField.m in Sources */,
-				253B532D08DCB41A00756089 /* Subtitle.m in Sources */,
-				253B532E08DCB41A00756089 /* NPMovieView.m in Sources */,
-				253B532F08DCB41A00756089 /* NPPluginReader.m in Sources */,
-				253B533008DCB41A00756089 /* NPPluginView.m in Sources */,
-				253B533108DCB41A00756089 /* ControlButton.m in Sources */,
-				253B533208DCB41A00756089 /* ControlPlay.m in Sources */,
-				253B533308DCB41A00756089 /* ControlRR.m in Sources */,
-				253B533408DCB41A00756089 /* ControlFF.m in Sources */,
-				253B533508DCB41A00756089 /* NiceUtilities.m in Sources */,
-				253B533608DCB41A00756089 /* PrefPluginConfig.m in Sources */,
-				253B533708DCB41A00756089 /* NiceDrawer.m in Sources */,
-				253B533808DCB41A00756089 /* FadeOut.m in Sources */,
-				253B533908DCB41A00756089 /* NiceDocumentScripting.m in Sources */,
-				253B533A08DCB41A00756089 /* NiceWindowScripting.m in Sources */,
-				253B533B08DCB41A00756089 /* NiceControllerScripting.m in Sources */,
-				253B533C08DCB41A00756089 /* ResizeTriangle.m in Sources */,
-				253B533D08DCB41A00756089 /* NPAddCommand.m in Sources */,
-				253B533E08DCB41A00756089 /* NPApplicationScripting.m in Sources */,
-				253B533F08DCB41A00756089 /* NiceMovie.m in Sources */,
-				253B534008DCB41A00756089 /* OverlayNotifierWindow.m in Sources */,
-				253B534108DCB41A00756089 /* NiceWindowController.m in Sources */,
-				253B534208DCB41A00756089 /* RCMovieView.m in Sources */,
-				3E64FA4408F2314C0010E3DA /* NicePlugin.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8D15AC300486D014006FF6A4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1564,6 +1136,7 @@
 				OTHER_LDFLAGS = (
 					"-weak_framework",
 					QTKit,
+					"-weak_framework",
 					CocoaScriptMenu,
 				);
 				PRODUCT_NAME = NicePlayer;
@@ -1575,7 +1148,7 @@
 					"-Wno-protocol",
 				);
 				WRAPPER_EXTENSION = app;
-				ZERO_LINK = YES;
+				ZERO_LINK = NO;
 			};
 			name = Development;
 		};
@@ -1659,117 +1232,6 @@
 			};
 			name = Deployment;
 		};
-		253B535308DCB41A00756089 /* Development */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = (
-					"<Multiple",
-					"values>",
-					ppc,
-				);
-				BUILD_VARIANTS = normal;
-				COPY_PHASE_STRIP = NO;
-				DEBUGGING_SYMBOLS = YES;
-				DEPLOYMENT_POSTPROCESSING = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					.,
-					"$(SRCROOT)/Libraries",
-				);
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_ENABLE_TRIGRAPHS = NO;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = NicePlayer_Prefix.pch;
-				GCC_PREPROCESSOR_DEFINITIONS = "";
-				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
-				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
-				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
-				GCC_WARN_MISSING_PARENTHESES = YES;
-				GCC_WARN_SHADOW = YES;
-				GCC_WARN_SIGN_COMPARE = YES;
-				GCC_WARN_UNKNOWN_PRAGMAS = NO;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_PARAMETER = NO;
-				GCC_WARN_UNUSED_VALUE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = info.plist;
-				INSTALL_PATH = "$(HOME)/Applications";
-				LIBRARY_SEARCH_PATHS = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.4;
-				OPTIMIZATION_CFLAGS = "-O0";
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = NicePlayer;
-				SECTORDER_FLAGS = "";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-protocol",
-				);
-				WRAPPER_EXTENSION = app;
-				ZERO_LINK = NO;
-			};
-			name = Development;
-		};
-		253B535408DCB41A00756089 /* Deployment */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = (
-					"<Multiple",
-					"values>",
-					ppc,
-				);
-				COPY_PHASE_STRIP = YES;
-				DEPLOYMENT_POSTPROCESSING = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SYSTEM_DEVELOPER_DIR)/SDKs/MacOSX10.4u.sdk/System/Library/Frameworks",
-					"$(SRCROOT)/Libraries",
-				);
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_ENABLE_TRIGRAPHS = NO;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = NicePlayer_Prefix.pch;
-				GCC_PREPROCESSOR_DEFINITIONS = "";
-				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
-				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
-				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
-				GCC_WARN_MISSING_PARENTHESES = YES;
-				GCC_WARN_SHADOW = YES;
-				GCC_WARN_SIGN_COMPARE = YES;
-				GCC_WARN_UNKNOWN_PRAGMAS = NO;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_PARAMETER = NO;
-				GCC_WARN_UNUSED_VALUE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = info.plist;
-				INSTALL_PATH = "$(HOME)/Applications";
-				LIBRARY_SEARCH_PATHS = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.4;
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = NicePlayer;
-				SECTORDER_FLAGS = "";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-protocol",
-				);
-				WRAPPER_EXTENSION = app;
-				ZERO_LINK = NO;
-			};
-			name = Deployment;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1787,15 +1249,6 @@
 			buildConfigurations = (
 				251FEF780855184200D38B8E /* Development */,
 				251FEF790855184200D38B8E /* Deployment */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Development;
-		};
-		253B535208DCB41A00756089 /* Build configuration list for PBXNativeTarget "NicePlayer_link" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				253B535308DCB41A00756089 /* Development */,
-				253B535408DCB41A00756089 /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Development;

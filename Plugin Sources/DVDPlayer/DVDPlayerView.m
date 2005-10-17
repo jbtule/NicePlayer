@@ -402,6 +402,8 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 		DVDPlay();
 		[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:self];
 	}
+	[self aspectRatioChanged];
+	[self setNeedsDisplay:YES];
 }
 
 -(void)stop
