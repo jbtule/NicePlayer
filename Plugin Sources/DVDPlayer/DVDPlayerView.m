@@ -88,7 +88,10 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 {
     static BOOL initialized = NO;
     if(!initialized){
-	DVDInitialize();
+	if(DVDInitialize() == kDVDErrorPlaybackOpen){
+	    [self release];
+	    return nil;
+	}
 	initialized = YES;
     }
     if(self = [super initWithFrame:frame]){
@@ -113,7 +116,6 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
     [[self window] setAspectRatio:[self naturalSize]];
     NSSize windowSize = [(NiceWindow *)[self window] getResizeAspectRatioSize];
     /* Make sure that bounds get resized first so we don't get white background showing through. */
-    NSLog(@"Size: %@", NSStringFromSize(windowSize));
     [self updateBounds:NSMakeRect(0, 0, windowSize.width, windowSize.height)];
 }
 
@@ -374,10 +376,8 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(void)drawRect:(NSRect)aRect
 {
-    if(!isAspectRatioChanging || needsUpdate){
-	needsUpdate = NO;
+    if(!isAspectRatioChanging)
 	[self resizeToAspect];
-    }
     DVDUpdateVideo();
 }
 
@@ -406,9 +406,9 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 		DVDPlay();
 		[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:self];
 	}
-	needsUpdate = YES;
 	[self aspectRatioChanged];
 	[self setNeedsDisplay:YES];
+	[self performSelector:@selector(display) withObject:nil afterDelay:5.0];
 }
 
 -(void)stop
@@ -982,7 +982,9 @@ void fatalError(DVDErrorCode inError, UInt32 inRefCon)
 void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEventValue2, UInt32 inRefCon)
 {
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-	objc_msgSend((id)inRefCon, @selector(aspectRatioChanged));
+	[(id)inRefCon performSelectorOnMainThread:@selector(aspectRatioChanged)
+				       withObject:nil
+				    waitUntilDone:NO];
 	[pool release];
 }
 
