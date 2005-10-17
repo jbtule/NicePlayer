@@ -88,10 +88,8 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 {
     static BOOL initialized = NO;
     if(!initialized){
-	if(DVDInitialize() == kDVDErrorPlaybackOpen){
-	    [self release];
+	if(DVDInitialize() == kDVDErrorPlaybackOpen)
 	    return nil;
-	}
 	initialized = YES;
     }
     if(self = [super initWithFrame:frame]){
@@ -408,7 +406,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	}
 	[self aspectRatioChanged];
 	[self setNeedsDisplay:YES];
-	[self performSelector:@selector(display) withObject:nil afterDelay:5.0];
+	[self performSelector:@selector(display) withObject:nil afterDelay:1.0];
 }
 
 -(void)stop
