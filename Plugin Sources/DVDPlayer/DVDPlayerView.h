@@ -15,7 +15,7 @@
 	BOOL isAspectRatioChanging;
 	id updateChapterTimer;
 	
-	UInt32 cid1, cid2;
+	UInt32 cid;
 }
 
 -(void)previousChapter;

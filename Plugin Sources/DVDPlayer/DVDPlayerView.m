@@ -35,7 +35,6 @@ Point convertNSPointToQDPoint(NSPoint inPoint, NSRect windowRect){
 NSString *stringForLanguageCode(DVDLanguageCode language);
 void fatalError(DVDErrorCode inError, UInt32 inRefCon);
 void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEventValue2, UInt32 inRefCon);
-void playbackStateChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEventValue2, UInt32 inRefCon);
 
 @implementation DVDPlayerView
 
@@ -144,8 +143,7 @@ void playbackStateChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 
 -(void)close
 {
 	[updateChapterTimer invalidate];
-	DVDUnregisterEventCallBack(cid1);
-	DVDUnregisterEventCallBack(cid2);
+	DVDUnregisterEventCallBack(cid);
 	DVDStop();
 	if([[[myURL path] lastPathComponent] isEqualToString:@"VIDEO_TS"])
 		DVDCloseMediaFile();
@@ -225,9 +223,7 @@ void playbackStateChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 
 
 	DVDSetFatalErrorCallBack(fatalError, (UInt32)self);
 	DVDEventCode inCode = kDVDEventDisplayMode;
-	DVDRegisterEventCallBack(aspectChange, &inCode, 1, (UInt32)self, &cid1);
-	inCode = kDVDEventPlayback;
-	DVDRegisterEventCallBack(playbackStateChange, &inCode, 1, (UInt32)self, &cid2);
+	DVDRegisterEventCallBack(aspectChange, &inCode, 1, (UInt32)self, &cid);
 	
 	FSRef fsref;
 	CFURLGetFSRef((CFURLRef)myURL, &fsref);
@@ -1312,12 +1308,6 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
     [(id)inRefCon performSelectorOnMainThread:@selector(aspectRatioChanged)
 				   withObject:nil
 				waitUntilDone:YES];
-    [pool release];
-}
-
-void playbackStateChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEventValue2, UInt32 inRefCon)
-{
-    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     [(id)inRefCon performSelectorOnMainThread:@selector(resizeBounds)
 				   withObject:nil
 				waitUntilDone:NO];
