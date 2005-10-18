@@ -35,6 +35,7 @@ Point convertNSPointToQDPoint(NSPoint inPoint, NSRect windowRect){
 NSString *stringForLanguageCode(DVDLanguageCode language);
 void fatalError(DVDErrorCode inError, UInt32 inRefCon);
 void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEventValue2, UInt32 inRefCon);
+void playbackStateChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEventValue2, UInt32 inRefCon);
 
 @implementation DVDPlayerView
 
@@ -107,6 +108,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	CGRect cgr = {{NSMinX(frame), NSMinY(frame)}, {NSWidth(frame), NSHeight(frame)}};
 	Rect nr = convertCGRectToQDRect(cgr);
 	DVDSetVideoBounds(&nr);
+	[self setNeedsDisplay:YES];
 }
 
 -(void)resizeToAspect
@@ -142,7 +144,8 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 -(void)close
 {
 	[updateChapterTimer invalidate];
-	DVDUnregisterEventCallBack(cid);
+	DVDUnregisterEventCallBack(cid1);
+	DVDUnregisterEventCallBack(cid2);
 	DVDStop();
 	if([[[myURL path] lastPathComponent] isEqualToString:@"VIDEO_TS"])
 		DVDCloseMediaFile();
@@ -222,7 +225,9 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 	DVDSetFatalErrorCallBack(fatalError, (UInt32)self);
 	DVDEventCode inCode = kDVDEventDisplayMode;
-	DVDRegisterEventCallBack(aspectChange, &inCode, 1, (UInt32)self, &cid);
+	DVDRegisterEventCallBack(aspectChange, &inCode, 1, (UInt32)self, &cid1);
+	inCode = kDVDEventPlayback;
+	DVDRegisterEventCallBack(playbackStateChange, &inCode, 1, (UInt32)self, &cid2);
 	
 	FSRef fsref;
 	CFURLGetFSRef((CFURLRef)myURL, &fsref);
@@ -233,10 +238,10 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	[self aspectRatioChanged];
 	[self setNeedsDisplay:YES];
 	updateChapterTimer = [NSTimer scheduledTimerWithTimeInterval:30
-														target:self
-													  selector:@selector(rebuildMenuTimer)
-													  userInfo:nil
-													   repeats:YES];
+							      target:self
+							    selector:@selector(rebuildMenuTimer)
+							    userInfo:nil
+							     repeats:YES];
 	return YES;
 }
 
@@ -380,8 +385,19 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 -(void)drawRect:(NSRect)aRect
 {
     if(!isAspectRatioChanging)
-	[self resizeToAspect];
+	[self updateBounds:[self frame]];
     DVDUpdateVideo();
+}
+
+-(void)resizeBounds
+{
+    Rect nr;
+    DVDGetVideoBounds(&nr);
+    nr.right -= 1;
+    DVDSetVideoBounds(&nr);
+    [self performSelector:@selector(updateBounds:)
+	       withObject:[NSValue valueWithRect:[self frame]]
+	       afterDelay:1.0];
 }
 
 #pragma mark -
@@ -411,7 +427,9 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	}
 	[self aspectRatioChanged];
 	[self setNeedsDisplay:YES];
-	[self performSelector:@selector(display) withObject:nil afterDelay:1.0];
+	[self performSelector:@selector(setNeedsDisplay:)
+		   withObject:[NSNumber numberWithBool:YES]
+		   afterDelay:1.0];
 }
 
 -(void)stop
@@ -977,20 +995,6 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 @end
 
-void fatalError(DVDErrorCode inError, UInt32 inRefCon)
-{
-	NSLog(@"Fatal Error in DVD Framework");
-}
-
-void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEventValue2, UInt32 inRefCon)
-{
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-	[(id)inRefCon performSelectorOnMainThread:@selector(aspectRatioChanged)
-				       withObject:nil
-				    waitUntilDone:NO];
-	[pool release];
-}
-
 NSString *stringForLanguageCode(DVDLanguageCode language)
 {
     switch(language){
@@ -1271,4 +1275,27 @@ NSString *stringForLanguageCode(DVDLanguageCode language)
 	default:
 	    return [[NSNumber numberWithUnsignedInt:language] stringValue];
     }
+}
+
+void fatalError(DVDErrorCode inError, UInt32 inRefCon)
+{
+    NSLog(@"Fatal Error in DVD Framework");
+}
+
+void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEventValue2, UInt32 inRefCon)
+{
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    [(id)inRefCon performSelectorOnMainThread:@selector(aspectRatioChanged)
+				   withObject:nil
+				waitUntilDone:YES];
+    [pool release];
+}
+
+void playbackStateChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEventValue2, UInt32 inRefCon)
+{
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    [(id)inRefCon performSelectorOnMainThread:@selector(resizeBounds)
+				   withObject:nil
+				waitUntilDone:NO];
+    [pool release];
 }
