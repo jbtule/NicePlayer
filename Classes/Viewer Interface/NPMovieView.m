@@ -653,6 +653,13 @@
 	[newItem setTarget:[((NiceWindow *)[self window]) playButton]];
 	[myMenu addObject:newItem];
 	
+	newItem = [[[NSMenuItem alloc] initWithTitle:@"Floats on Top"
+					      action:@selector(toggleWindowFloat)
+				       keyEquivalent:@""] autorelease];
+	[newItem setTarget:[self window]];
+	[newItem setState:[((NiceWindow *)[self window]) windowIsFloating]];
+	[myMenu addObject:newItem];
+
 	return [myMenu autorelease];
 }
 
