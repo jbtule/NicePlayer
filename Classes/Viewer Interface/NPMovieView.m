@@ -148,8 +148,11 @@
 			if(![self loadMovie])
 				@throw noLoadException;
 		} else {
+		    if(trueMovieView){
 			[trueMovieView release];
-			@throw noLoadException;
+			trueMovieView = nil;
+		    }
+		    @throw noLoadException;
 		}
 	}
 	@catch(NSException *exception) {
