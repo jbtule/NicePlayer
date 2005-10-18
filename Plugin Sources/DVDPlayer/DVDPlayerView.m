@@ -1274,9 +1274,11 @@ NSString *stringForLanguageCodeTenThree(DVDLanguageCode language)
     }
 }
 
+FOUNDATION_EXPORT NSString * const NSLocaleLanguageCode __attribute__((weak_import)); 
+
 NSString *stringForLanguageCode(DVDLanguageCode language){
-    
-    if(NSClassFromString(@"NSLocale") == nil){
+    Class tClass =NSClassFromString(@"NSLocale");
+    if(tClass == nil){
         return stringForLanguageCodeTenThree(language);
     }
     
@@ -1289,7 +1291,7 @@ NSString *stringForLanguageCode(DVDLanguageCode language){
         default:
             tString =(NSString*) UTCreateStringForOSType(language);
             tString = [tString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-            tName = [[NSLocale currentLocale] displayNameForKey:NSLocaleLanguageCode value:tString];
+            tName = [[tClass currentLocale] displayNameForKey:NSLocaleLanguageCode value:tString];
            // NSLog(@"%@ ?= %@",tString,tName);
             return tName;
             
