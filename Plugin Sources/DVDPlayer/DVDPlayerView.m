@@ -995,7 +995,8 @@ void playbackStateChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 
 
 @end
 
-NSString *stringForLanguageCode(DVDLanguageCode language)
+
+NSString *stringForLanguageCodeTenThree(DVDLanguageCode language)
 {
     switch(language){
 	case kDVDLanguageCodeNone:
@@ -1276,6 +1277,29 @@ NSString *stringForLanguageCode(DVDLanguageCode language)
 	    return [[NSNumber numberWithUnsignedInt:language] stringValue];
     }
 }
+
+NSString *stringForLanguageCode(DVDLanguageCode language){
+    
+    if(NSClassFromString(@"NSLocale") == nil){
+        return stringForLanguageCodeTenThree(language);
+    }
+    
+    
+    NSString* tString;
+    NSString* tName;
+    switch(language){
+	case kDVDLanguageCodeNone:
+	    return [NSString stringWithUTF8String:"None"];
+        default:
+            tString =(NSString*) UTCreateStringForOSType(language);
+            tString = [tString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+            tName = [[NSLocale currentLocale] displayNameForKey:NSLocaleLanguageCode value:tString];
+           // NSLog(@"%@ ?= %@",tString,tName);
+            return tName;
+            
+    }
+}
+
 
 void fatalError(DVDErrorCode inError, UInt32 inRefCon)
 {
