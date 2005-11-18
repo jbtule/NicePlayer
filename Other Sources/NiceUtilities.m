@@ -20,18 +20,22 @@ BOOL NPIs10_4OrGreater(){
     return !(vers < 0x00001040);
 }
 
+int urlSort(id url1, id url2, void *context){
+    
+    NSString* v1 = [[url1 path] lastPathComponent];
+    NSString*  v2 = [[url2 path]lastPathComponent];
+    return [v1 caseInsensitiveCompare:v2];
+    
+}
 
 NSArray* NPSortUrls(NSArray* anArrayOfUrls){
-    int urlSort(id url1, id url2, void *context){
-        
-        NSString* v1 = [[url1 path] lastPathComponent];
-        NSString*  v2 = [[url2 path]lastPathComponent];
-        return [v1 caseInsensitiveCompare:v2];
-        
-    }
+ 
     return [anArrayOfUrls sortedArrayUsingFunction:urlSort context:nil];
 }
 
+id appendToEach(id aLastPath,void* aPrefix){
+    return [(NSString*)aPrefix stringByAppendingPathComponent:aLastPath];
+}
 
 id NPInjectNestedDirectories(id each, id injected, void* verifyBool){
     if([[each pathExtension] isEqualToString:@""]){
@@ -43,11 +47,9 @@ id NPInjectNestedDirectories(id each, id injected, void* verifyBool){
             } else if([tSubPaths containsObject:@"VIDEO_TS"]){
                 [injected addObject:each];
             }else{
-                id appendToEach(id aLastPath,void* aPrefix){
-                   return [each stringByAppendingPathComponent:aLastPath];
-                }
-                
-                tSubPaths = [tSubPaths collectUsingFunction:appendToEach context:NULL];
+
+             
+                tSubPaths = [tSubPaths collectUsingFunction:appendToEach context:(void*)each];
                 BOOL tVerifyType = YES;
                 injected =[tSubPaths injectUsingFunction:NPInjectNestedDirectories into:injected context:&tVerifyType];
             }

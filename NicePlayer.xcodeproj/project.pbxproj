@@ -200,7 +200,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 25C5C1E408D4B81400987A95 /* DVDPlayer.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 8D5B49AC048680CD000E48DA /* DVDPlayer */;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
 			remoteInfo = DVDPlayer;
 		};
 /* End PBXContainerItemProxy section */

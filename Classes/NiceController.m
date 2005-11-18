@@ -12,6 +12,24 @@
 
 id controller;
 
+BOOL detectIsPlaying(id each, void* context){
+    return [each isPlaying];
+}
+
+id makeBackgrounds(id each, void* context){
+    id tBWindow = [[BlackWindow alloc] init];
+    [tBWindow setReleasedWhenClosed:YES];
+    [tBWindow setFrame:[each frame] display:YES];
+    [tBWindow orderBack:nil];
+    return tBWindow;
+}
+
+id swapForWindows(id each, void* context){
+    
+    return [each window];
+    
+}
+
 @implementation NiceController
 
 #pragma mark Class Methods
@@ -156,9 +174,7 @@ id controller;
 -(void)preventSleep:(id)sender
 {
 
-    BOOL detectIsPlaying(id each, void* context){
-        return [each isPlaying];
-    }
+
 
     if([[NSApp orderedDocuments] detectUsingFunction:detectIsPlaying context:nil])
         UpdateSystemActivity(OverallAct);
@@ -280,13 +296,7 @@ id controller;
 
 -(void)presentAllScreeens
 {
-    id makeBackgrounds(id each, void* context){
-        id tBWindow = [[BlackWindow alloc] init];
-        [tBWindow setReleasedWhenClosed:YES];
-        [tBWindow setFrame:[each frame] display:YES];
-        [tBWindow orderBack:nil];
-        return tBWindow;
-    }
+
     backgroundWindows = [[[NSScreen screens] collectUsingFunction:makeBackgrounds context:nil] retain];
     
     fullScreenMode = YES;
@@ -386,11 +396,7 @@ id controller;
         [anInvocation getArgument:&anArgumet atIndex:2];
         
         
-        id swapForWindows(id each, void* context){
-            
-            return [each window];
-            
-        }
+
         
         aString = [aString substringFromIndex:3];
         

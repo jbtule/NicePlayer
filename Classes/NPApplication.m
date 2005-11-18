@@ -11,6 +11,10 @@
 #import <CocoaScriptMenu/CocoaScriptMenu.h>
 #import "NiceUtilities.h"
 #import <IndyKit/IndyKit.h>
+BOOL selectNiceWindow(id each, void* context){
+    return [each isKindOfClass:[NiceWindow class]];
+}
+
 @implementation NPApplication
 
 - (void)finishLaunching
@@ -171,9 +175,7 @@
 
 -(NSArray *)movieWindows
 {
-    BOOL selectNiceWindow(id each, void* context){
-        return [each isKindOfClass:[NiceWindow class]];
-    }
+
     return [[super orderedWindows] selectUsingFunction:selectNiceWindow context:nil];
 }
 

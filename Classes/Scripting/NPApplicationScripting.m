@@ -9,6 +9,10 @@
 #import "NPApplicationScripting.h"
 #import "NicePlugin.h"
 
+BOOL dectectIdentifier(id each, void* context){
+    return ([[each identifier] isEqualTo:(id)context]);            
+}
+
 @implementation NPApplication(Scripting)
 
 -(NSArray *)niceMovies
@@ -43,11 +47,8 @@
 
 
 -(id)valueInOrderedDocumentsWithName:(id)anIdentifier{
-    BOOL dectectIdentifier(id each, void* context){
-                return ([[each identifier] isEqualTo:anIdentifier]);            
-    }
-    
-   return [[self orderedDocuments] detectUsingFunction:dectectIdentifier context:nil];
+
+   return [[self orderedDocuments] detectUsingFunction:dectectIdentifier context:(void*)anIdentifier];
 }
 
 
@@ -77,6 +78,15 @@
 }
 
 @end
+
+BOOL detectSelf(id each, void* context){
+    NSMutableDictionary* tContext = (NSMutableDictionary*) context;
+    int i =[[tContext objectForKey:@"i"]intValue];
+    i++;
+    [tContext setObject:[NSNumber numberWithInt:i] forKey:@"i"];
+        return [[tContext objectForKey:@"self"] isEqual:each];
+    }
+
 @implementation NSScreen(Scripting)
 
 -(NSData *)boundsAsQDRect{
@@ -93,14 +103,12 @@
 }
 
 -(int)orderedIndex{
-        int i =-1;
-    BOOL detectSelf(id each, void* context){
-        i++;
-        return [self isEqual:each];
-    }
-    [[NSScreen screens] detectUsingFunction:detectSelf context:nil];
+    NSMutableDictionary* tContext = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:-1],@"i",self,@"self",nil];
     
-    return i;
+
+    [[NSScreen screens] detectUsingFunction:detectSelf context:(void*)tContext];
+    
+    return [[tContext objectForKey:@"i"] intValue];
     
 }
 

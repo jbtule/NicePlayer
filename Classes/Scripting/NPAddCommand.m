@@ -9,6 +9,18 @@
 #import "NPAddCommand.h"
 #import "NiceMovie.h"
 #import "NiceDocument.h"
+
+id evaluatedSpecicfier(id each, void* context){
+    if ([each isKindOfClass: [NSScriptObjectSpecifier class]])
+    {
+        NSScriptObjectSpecifier *spec = (NSScriptObjectSpecifier *)each;
+        
+        return [spec objectsByEvaluatingWithContainers: NSApp];
+    }else{
+        return each;
+    }
+}    
+
 @implementation NPAddCommand
 
 - (id) evaluatedDirectParameters
@@ -19,17 +31,6 @@
         param = [NSArray arrayWithObject:param];
     }
     
-    id evaluatedSpecicfier(id each, void* context){
-        if ([each isKindOfClass: [NSScriptObjectSpecifier class]])
-        {
-            NSScriptObjectSpecifier *spec = (NSScriptObjectSpecifier *)each;
-            
-            return [spec objectsByEvaluatingWithContainers: NSApp];
-        }else{
-            return each;
-        }
-    }    
-
     return [param collectUsingFunction:evaluatedSpecicfier context:nil];
 }
 

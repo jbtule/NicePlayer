@@ -11,6 +11,66 @@
 id rowsToFileNames(id obj, void* playList){
     return [[(id)playList objectAtIndex:[obj intValue]] path];
 }
+
+id collectURLToStrings(id each, void*context){
+    return [each absoluteString];
+}
+
+
+BOOL rejectSelf(id each,void* context){
+    return [each isEqual:[(NiceDocument*)context window]];
+}
+
+int sortByMain(id v1, id v2, void* context){
+    if([v1 isEqualTo:v2])
+        return NSOrderedSame;
+    if([[NSScreen mainScreen] isEqualTo: v1]){
+        return NSOrderedAscending;
+    }
+    
+    return NSOrderedAscending;
+}
+
+BOOL findWindowScreen(id each, void* context){
+    return [[each screen] isEqual:(NSScreen*)context];
+}
+
+id collectStringsToURLs(id each, void* context){
+    return [NSURL URLWithString:each];
+}
+
+BOOL findOpenPoint(id eachwin, void* context){
+    
+    NSMutableDictionary* tContext =(NSMutableDictionary*) context;
+    
+    NSValue* tPoint =[tContext objectForKey:@"tPoint"];
+    NiceDocument* tSelf =[tContext objectForKey:@"self"];
+    NSRect tWinRect = [eachwin frame];
+    NSRect tNewRect = NSMakeRect([tPoint pointValue].x,[tPoint pointValue].y,[[tSelf window] frame].size.width,[[tSelf window] frame].size.height);
+    NSRect tSubScreenRect =[[tContext objectForKey:@"tSubScreenRect"] rectValue];
+    
+    return NSIntersectsRect(tWinRect,tNewRect) || !NSContainsRect(tSubScreenRect,tNewRect);
+}
+
+void findSpace(id each, void* context, BOOL* endthis){
+    NSMutableDictionary* tContext =(NSMutableDictionary*) context;
+    NSRect tSubScreenRect = [each visibleFrame];
+    [tContext setObject:[NSValue valueWithRect:tSubScreenRect] forKey:@"tSubScreenRect"];
+    NiceDocument* tSelf = [tContext objectForKey:@"self"];
+
+    
+    for(float j = tSubScreenRect.origin.y + tSubScreenRect.size.height - [[tSelf window] frame].size.height; j >= tSubScreenRect.origin.y; j -= [[tSelf window] frame].size.height){
+        for(float i = tSubScreenRect.origin.x; i < tSubScreenRect.origin.x + tSubScreenRect.size.width; i+= [[tSelf window] frame].size.width){
+            NSValue* tPoint= [NSValue valueWithPoint:NSMakePoint(i,j)];
+            [tContext setObject:tPoint forKey:@"tPoint"];
+            if(nil == [[tContext objectForKey:@"tMovieWindows"] detectUsingFunction:findOpenPoint context:(void*)tContext]){
+                STDoBreak(endthis);
+            }
+            tPoint = nil;
+        }
+    }
+}
+
 #import "NPApplication.h"
 
 @implementation NiceDocument
@@ -83,9 +143,7 @@ id rowsToFileNames(id obj, void* playList){
 {
     // Insert code here to write your document from the given data.  You can also choose to override -fileWrapperRepresentationOfType: or -writeToFile:ofType: instead.
     
-    id collectURLToStrings(id each, void*context){
-        return [each absoluteString];
-    }
+
     
     id tDict = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:0],@"MajorVersion",
                                                         [NSNumber numberWithInt:1],@"MinorVersion",
@@ -261,58 +319,27 @@ id rowsToFileNames(id obj, void* playList){
     }  
         
     NSValue* tPoint = nil;
+      
+    NSArray* tMovieWindows = [[NSApp movieWindows] rejectUsingFunction:rejectSelf context:(void*)self];
     
-    BOOL rejectSelf(id each,void* context){
-        return [each isEqual:[self window]];
-    }
     
-    NSArray* tMovieWindows = [[NSApp movieWindows] rejectUsingFunction:rejectSelf context:nil];
-    
-    NSRect tSubScreenRect;
-    
-    BOOL findOpenPoint(id eachwin, void* context){
-        NSRect tWinRect = [eachwin frame];
-        NSRect tNewRect = NSMakeRect([tPoint pointValue].x,[tPoint pointValue].y,[[self window] frame].size.width,[[self window] frame].size.height);
-        
-        return NSIntersectsRect(tWinRect,tNewRect) || !NSContainsRect(tSubScreenRect,tNewRect);
-    }
-    
-    void findSpace(id each, void* context, BOOL* endthis){
-        tSubScreenRect = [each visibleFrame];
-        for(float j = tSubScreenRect.origin.y + tSubScreenRect.size.height - [[self window] frame].size.height; j >= tSubScreenRect.origin.y; j -= [[self window] frame].size.height){
-            for(float i = tSubScreenRect.origin.x; i < tSubScreenRect.origin.x + tSubScreenRect.size.width; i+= [[self window] frame].size.width){
-                tPoint= [NSValue valueWithPoint:NSMakePoint(i,j)];
-                if(nil == [tMovieWindows detectUsingFunction:findOpenPoint context:nil]){
-                    STDoBreak(endthis);
-                }
-                tPoint = nil;
-            }
-        }
-    }
-    
-    int sortByMain(id v1, id v2, void* context){
-        if([v1 isEqualTo:v2])
-            return NSOrderedSame;
-        if([[NSScreen mainScreen] isEqualTo: v1]){
-            return NSOrderedAscending;
-        }
-        
-        return NSOrderedAscending;
-    }
+    NSMutableDictionary* tContext = [NSMutableDictionary dictionaryWithObjectsAndKeys:self,@"self",tMovieWindows,@"tMovieWindows", nil];
+
     
     if(tScreenPref < 0){
         id tArray =[[NSScreen screens] sortedArrayUsingFunction:sortByMain context:nil];
-        [tArray doUsingFunction:findSpace context:nil];
+        [tArray doUsingFunction:findSpace context:(void*)tContext];
     }else{
         BOOL tDummy;
-        findSpace(tScreen,nil,&tDummy);
+        findSpace(tScreen,(void*)tContext,&tDummy);
     }
     
+    tPoint = [tContext objectForKey:@"tPoint"];
+    
+    
     if(tPoint == nil){
-        BOOL findWindowScreen(id each, void* context){
-            return [[each screen] isEqual:tScreen];
-        }
-        id tWindow = [[NSApp movieWindows] detectUsingFunction:findWindowScreen context:nil];
+
+        id tWindow = [[NSApp movieWindows] detectUsingFunction:findWindowScreen context:(void*)tScreen];
         [[self window] cascadeTopLeftFromPoint:[tWindow frame].origin];
     }else{
         [[self window] setFrameOrigin:[tPoint pointValue]];
@@ -668,9 +695,7 @@ stuff won't work properly! */
                 playlistFilename = [aURL retain];
                 [self setFileURL:playlistFilename];
                 
-                id collectStringsToURLs(id each, void* context){
-                    return [NSURL URLWithString:each];
-                }
+
                 
                 
                 [thePlaylist release];

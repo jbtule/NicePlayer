@@ -11,6 +11,10 @@
 #import "NiceDocumentScripting.h"
 #import "NicePlugin.h"
 
+id collectMovies(id each, void* context){
+    return [NiceMovie movieWithURL:each andPlaylist:(NiceDocument*)context];
+}
+
 @implementation NiceDocument (NiceDocumentScripting)
 
 -(double)currentMovieDuration
@@ -35,11 +39,8 @@
 
 -(NSArray *)niceMovies
 {
-    id collectMovies(id each, void* context){
-        return [NiceMovie movieWithURL:each andPlaylist:self];
-    }
-    
-    return [thePlaylist collectUsingFunction:collectMovies context:nil];
+
+    return [thePlaylist collectUsingFunction:collectMovies context:(void*)self];
     
 }
 

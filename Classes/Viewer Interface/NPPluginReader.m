@@ -16,6 +16,13 @@
 
 static NPPluginReader *pluginReader = nil;
 
+id injectAllowedTypesOfEnabledPlugins(id each, id allowedExt,void* context){
+    if([[each objectForKey:@"Chosen"] boolValue]){
+        [allowedExt addObjectsFromArray:[[[(NPPluginReader*)context prefDictionary] objectForKey:[each objectForKey:@"Name"]] objectForKey:@"FileExtensions"]];
+    }
+    return allowedExt;
+}
+
 @implementation NPPluginReader
 
 +(id)pluginReader
@@ -100,13 +107,8 @@ static NPPluginReader *pluginReader = nil;
 {
     NSMutableSet* tAllowExt = [NSMutableSet setWithObject:@"nicelist"];
     
-    id injectAllowedTypesOfEnabledPlugins(id each, id allowedExt,void* context){
-        if([[each objectForKey:@"Chosen"] boolValue]){
-            [allowedExt addObjectsFromArray:[[[self prefDictionary] objectForKey:[each objectForKey:@"Name"]] objectForKey:@"FileExtensions"]];
-        }
-        return allowedExt;
-    }
-    [[self cachedPluginOrder] injectUsingFunction:injectAllowedTypesOfEnabledPlugins into:tAllowExt context:NULL];
+
+    [[self cachedPluginOrder] injectUsingFunction:injectAllowedTypesOfEnabledPlugins into:tAllowExt context:(void*)self];
     return [tAllowExt allObjects];
 }
 
