@@ -398,6 +398,7 @@
 		251FF08A0856761B00D38B8E /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = ppc;
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = "\"$(HOME)/Library/Frameworks\"";
 				GCC_ENABLE_CPP_EXCEPTIONS = YES;

@@ -126,6 +126,8 @@
 		3EB4F74208F62C4C004692D3 /* Default Scripts in Resources */ = {isa = PBXBuildFile; fileRef = 3EB4F72F08F62C4C004692D3 /* Default Scripts */; };
 		3EB7EC60065F39AA0002A470 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB7EC5F065F39AA0002A470 /* Carbon.framework */; };
 		3EB7ECFA065F39BC0002A470 /* QuickTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB7ECF9065F39BC0002A470 /* QuickTime.framework */; };
+		3EC3E280092DA886008CEE8D /* STEnum.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC3E27F092DA886008CEE8D /* STEnum.framework */; };
+		3EC3E28C092DA89C008CEE8D /* STEnum.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3EC3E27F092DA886008CEE8D /* STEnum.framework */; };
 		3EC66FD5077525AD00B50A61 /* NicePlayer Help in Resources */ = {isa = PBXBuildFile; fileRef = 3EC66F12077525AD00B50A61 /* NicePlayer Help */; };
 		3EC8C22B065DB22A00988449 /* RoundRect.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EC8C229065DB22A00988449 /* RoundRect.h */; };
 		3EC8C22C065DB22A00988449 /* RoundRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC8C22A065DB22A00988449 /* RoundRect.m */; };
@@ -194,11 +196,11 @@
 			remoteGlobalIDString = 8D5B49B6048680CD000E48DA;
 			remoteInfo = DVDPlayer;
 		};
-		25C5C1F708D4B90E00987A95 /* PBXContainerItemProxy */ = {
+		3EC3E295092DAB20008CEE8D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 25C5C1E408D4B81400987A95 /* DVDPlayer.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA /* DVDPlayer */;
 			remoteInfo = DVDPlayer;
 		};
 /* End PBXContainerItemProxy section */
@@ -221,6 +223,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				3EC3E28C092DA89C008CEE8D /* STEnum.framework in CopyFiles */,
 				3E9F5C3A08DE932800BD4B78 /* CocoaScriptMenu.framework in CopyFiles */,
 				3E9F5C3B08DE932800BD4B78 /* IndyKit.framework in CopyFiles */,
 			);
@@ -355,6 +358,7 @@
 		3EB6F18A06603F1F0093424C /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = /Library/Frameworks/SenTestingKit.framework; sourceTree = "<absolute>"; };
 		3EB7EC5F065F39AA0002A470 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
 		3EB7ECF9065F39BC0002A470 /* QuickTime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickTime.framework; path = /System/Library/Frameworks/QuickTime.framework; sourceTree = "<absolute>"; };
+		3EC3E27F092DA886008CEE8D /* STEnum.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = STEnum.framework; path = Libraries/STEnum.framework; sourceTree = "<group>"; };
 		3EC66F13077525AD00B50A61 /* English */ = {isa = PBXFileReference; lastKnownFileType = folder; name = English; path = "English.lproj/NicePlayer Help"; sourceTree = "<group>"; };
 		3EC8C229065DB22A00988449 /* RoundRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RoundRect.h; path = "Classes/Overlay Widgets/RoundRect.h"; sourceTree = "<group>"; };
 		3EC8C22A065DB22A00988449 /* RoundRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RoundRect.m; path = "Classes/Overlay Widgets/RoundRect.m"; sourceTree = "<group>"; };
@@ -400,6 +404,7 @@
 				25702FF007569E3300D1EE8C /* DVDPlayback.framework in Frameworks */,
 				251FEFB7085670D800D38B8E /* Cocoa.framework in Frameworks */,
 				3E9F5C0908DE931E00BD4B78 /* IndyKit.framework in Frameworks */,
+				3EC3E280092DA886008CEE8D /* STEnum.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +414,7 @@
 		1058C7A6FEA54F5311CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3EC3E27F092DA886008CEE8D /* STEnum.framework */,
 				3E9F5C0608DE931E00BD4B78 /* CocoaScriptMenu.framework */,
 				3E9F5C0708DE931E00BD4B78 /* IndyKit.framework */,
 				251FEFB6085670D800D38B8E /* Cocoa.framework */,
@@ -834,7 +840,7 @@
 				WRAPPER_EXTENSION = app;
 			};
 			dependencies = (
-				25C5C1F808D4B90E00987A95 /* PBXTargetDependency */,
+				3EC3E296092DAB20008CEE8D /* PBXTargetDependency */,
 			);
 			name = NicePlayer;
 			productInstallPath = "$(HOME)/Applications";
@@ -1034,10 +1040,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		25C5C1F808D4B90E00987A95 /* PBXTargetDependency */ = {
+		3EC3E296092DAB20008CEE8D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = DVDPlayer;
-			targetProxy = 25C5C1F708D4B90E00987A95 /* PBXContainerItemProxy */;
+			targetProxy = 3EC3E295092DAB20008CEE8D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
