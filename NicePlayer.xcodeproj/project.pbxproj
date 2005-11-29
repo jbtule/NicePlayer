@@ -69,6 +69,10 @@
 		3E085CBC065C79EE005286A3 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E085CBB065C79EE005286A3 /* play.png */; };
 		3E110B63069BD80100C5800B /* ClickableTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E110B61069BD80100C5800B /* ClickableTextField.h */; };
 		3E110B64069BD80100C5800B /* ClickableTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E110B62069BD80100C5800B /* ClickableTextField.m */; };
+		3E1D9A1D093C141F00ED6130 /* CocoaScriptMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E9F5C0608DE931E00BD4B78 /* CocoaScriptMenu.framework */; };
+		3E1D9A1E093C141F00ED6130 /* IndyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E9F5C0708DE931E00BD4B78 /* IndyKit.framework */; };
+		3E1D9AB3093C17E500ED6130 /* STEnum.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1D9AB2093C17DF00ED6130 /* STEnum.framework */; };
+		3E1D9AB4093C17EB00ED6130 /* STEnum.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3E1D9AB2093C17DF00ED6130 /* STEnum.framework */; };
 		3E28CCA40808E0F000F59FF5 /* NiceWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E28CCA20808E0F000F59FF5 /* NiceWindowController.h */; };
 		3E28CCA50808E0F000F59FF5 /* NiceWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E28CCA30808E0F000F59FF5 /* NiceWindowController.m */; };
 		3E44F89D065F06A300E48395 /* TimelineControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E44F89B065F06A300E48395 /* TimelineControl.h */; };
@@ -80,7 +84,6 @@
 		3E4DF83706630D50001B9AC5 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 3E4DF83506630D50001B9AC5 /* Credits.html */; };
 		3E64FA4508F2314C0010E3DA /* NicePlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E64FA4108F2314C0010E3DA /* NicePlugin.h */; };
 		3E64FA4608F2314C0010E3DA /* NicePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E64FA4208F2314C0010E3DA /* NicePlugin.m */; };
-		3E666C8808FCA98B0093E877 /* CocoaScriptMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E9F5C0608DE931E00BD4B78 /* CocoaScriptMenu.framework */; };
 		3E6E26A7067FC53600854100 /* repeat_list.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E26A4067FC53600854100 /* repeat_list.png */; };
 		3E6E26A8067FC53600854100 /* repeat_none.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E26A5067FC53600854100 /* repeat_none.png */; };
 		3E6E26A9067FC53600854100 /* repeat_one.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E26A6067FC53600854100 /* repeat_one.png */; };
@@ -119,15 +122,12 @@
 		3E9E629D0661724600B788A8 /* scrubbar_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E62980661724600B788A8 /* scrubbar_right.png */; };
 		3E9E64820661B95900B788A8 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E64800661B95900B788A8 /* pause.png */; };
 		3E9E64830661B95900B788A8 /* pauseClick.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E64810661B95900B788A8 /* pauseClick.png */; };
-		3E9F5C0908DE931E00BD4B78 /* IndyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E9F5C0708DE931E00BD4B78 /* IndyKit.framework */; };
 		3E9F5C3A08DE932800BD4B78 /* CocoaScriptMenu.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3E9F5C0608DE931E00BD4B78 /* CocoaScriptMenu.framework */; };
 		3E9F5C3B08DE932800BD4B78 /* IndyKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3E9F5C0708DE931E00BD4B78 /* IndyKit.framework */; };
 		3EB4F72E08F62C37004692D3 /* Useful Scripts in Resources */ = {isa = PBXBuildFile; fileRef = 3EB4F72A08F62C37004692D3 /* Useful Scripts */; };
 		3EB4F74208F62C4C004692D3 /* Default Scripts in Resources */ = {isa = PBXBuildFile; fileRef = 3EB4F72F08F62C4C004692D3 /* Default Scripts */; };
 		3EB7EC60065F39AA0002A470 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB7EC5F065F39AA0002A470 /* Carbon.framework */; };
 		3EB7ECFA065F39BC0002A470 /* QuickTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB7ECF9065F39BC0002A470 /* QuickTime.framework */; };
-		3EC3E280092DA886008CEE8D /* STEnum.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC3E27F092DA886008CEE8D /* STEnum.framework */; };
-		3EC3E28C092DA89C008CEE8D /* STEnum.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3EC3E27F092DA886008CEE8D /* STEnum.framework */; };
 		3EC66FD5077525AD00B50A61 /* NicePlayer Help in Resources */ = {isa = PBXBuildFile; fileRef = 3EC66F12077525AD00B50A61 /* NicePlayer Help */; };
 		3EC8C22B065DB22A00988449 /* RoundRect.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EC8C229065DB22A00988449 /* RoundRect.h */; };
 		3EC8C22C065DB22A00988449 /* RoundRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC8C22A065DB22A00988449 /* RoundRect.m */; };
@@ -196,6 +196,20 @@
 			remoteGlobalIDString = 8D5B49B6048680CD000E48DA;
 			remoteInfo = DVDPlayer;
 		};
+		3E1D9AB1093C17DF00ED6130 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3E1D9AAD093C17DF00ED6130 /* STEnum10.4.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3EBAD63908006A950040D4A3;
+			remoteInfo = "STEnum Embedable";
+		};
+		3E1D9AB9093C17FA00ED6130 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3E1D9AAD093C17DF00ED6130 /* STEnum10.4.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 3EBAD61C08006A950040D4A3;
+			remoteInfo = "STEnum Embedable";
+		};
 		3EC3E295092DAB20008CEE8D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 25C5C1E408D4B81400987A95 /* DVDPlayer.xcodeproj */;
@@ -223,7 +237,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				3EC3E28C092DA89C008CEE8D /* STEnum.framework in CopyFiles */,
+				3E1D9AB4093C17EB00ED6130 /* STEnum.framework in CopyFiles */,
 				3E9F5C3A08DE932800BD4B78 /* CocoaScriptMenu.framework in CopyFiles */,
 				3E9F5C3B08DE932800BD4B78 /* IndyKit.framework in CopyFiles */,
 			);
@@ -305,6 +319,7 @@
 		3E085CBB065C79EE005286A3 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = play.png; path = Resources/play.png; sourceTree = "<group>"; };
 		3E110B61069BD80100C5800B /* ClickableTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClickableTextField.h; path = "Classes/Overlay Widgets/ClickableTextField.h"; sourceTree = "<group>"; };
 		3E110B62069BD80100C5800B /* ClickableTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClickableTextField.m; path = "Classes/Overlay Widgets/ClickableTextField.m"; sourceTree = "<group>"; };
+		3E1D9AAD093C17DF00ED6130 /* STEnum10.4.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = STEnum10.4.xcodeproj; path = Libraries/stenum/STEnum10.4.xcodeproj; sourceTree = "<group>"; };
 		3E28CCA20808E0F000F59FF5 /* NiceWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NiceWindowController.h; path = Classes/NiceWindow/NiceWindowController.h; sourceTree = "<group>"; };
 		3E28CCA30808E0F000F59FF5 /* NiceWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NiceWindowController.m; path = Classes/NiceWindow/NiceWindowController.m; sourceTree = "<group>"; };
 		3E44F89B065F06A300E48395 /* TimelineControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimelineControl.h; path = "Classes/Overlay Widgets/TimelineControl.h"; sourceTree = "<group>"; };
@@ -358,7 +373,6 @@
 		3EB6F18A06603F1F0093424C /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = /Library/Frameworks/SenTestingKit.framework; sourceTree = "<absolute>"; };
 		3EB7EC5F065F39AA0002A470 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
 		3EB7ECF9065F39BC0002A470 /* QuickTime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickTime.framework; path = /System/Library/Frameworks/QuickTime.framework; sourceTree = "<absolute>"; };
-		3EC3E27F092DA886008CEE8D /* STEnum.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = STEnum.framework; path = Libraries/STEnum.framework; sourceTree = "<group>"; };
 		3EC66F13077525AD00B50A61 /* English */ = {isa = PBXFileReference; lastKnownFileType = folder; name = English; path = "English.lproj/NicePlayer Help"; sourceTree = "<group>"; };
 		3EC8C229065DB22A00988449 /* RoundRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RoundRect.h; path = "Classes/Overlay Widgets/RoundRect.h"; sourceTree = "<group>"; };
 		3EC8C22A065DB22A00988449 /* RoundRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RoundRect.m; path = "Classes/Overlay Widgets/RoundRect.m"; sourceTree = "<group>"; };
@@ -396,15 +410,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E666C8808FCA98B0093E877 /* CocoaScriptMenu.framework in Frameworks */,
+				3E1D9AB3093C17E500ED6130 /* STEnum.framework in Frameworks */,
+				3E1D9A1D093C141F00ED6130 /* CocoaScriptMenu.framework in Frameworks */,
+				3E1D9A1E093C141F00ED6130 /* IndyKit.framework in Frameworks */,
 				3EB7EC60065F39AA0002A470 /* Carbon.framework in Frameworks */,
 				3EB7ECFA065F39BC0002A470 /* QuickTime.framework in Frameworks */,
 				257D60020753DE7C00702BD0 /* AppKitScripting.framework in Frameworks */,
 				257D60140753DED700702BD0 /* Scripting.framework in Frameworks */,
 				25702FF007569E3300D1EE8C /* DVDPlayback.framework in Frameworks */,
 				251FEFB7085670D800D38B8E /* Cocoa.framework in Frameworks */,
-				3E9F5C0908DE931E00BD4B78 /* IndyKit.framework in Frameworks */,
-				3EC3E280092DA886008CEE8D /* STEnum.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,7 +428,6 @@
 		1058C7A6FEA54F5311CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3EC3E27F092DA886008CEE8D /* STEnum.framework */,
 				3E9F5C0608DE931E00BD4B78 /* CocoaScriptMenu.framework */,
 				3E9F5C0708DE931E00BD4B78 /* IndyKit.framework */,
 				251FEFB6085670D800D38B8E /* Cocoa.framework */,
@@ -605,6 +618,7 @@
 		25C5C1E208D4B7F300987A95 /* Other Projects */ = {
 			isa = PBXGroup;
 			children = (
+				3E1D9AAD093C17DF00ED6130 /* STEnum10.4.xcodeproj */,
 				25C5C1E408D4B81400987A95 /* DVDPlayer.xcodeproj */,
 			);
 			name = "Other Projects";
@@ -708,6 +722,14 @@
 				1058C7A8FEA54F5311CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3E1D9AAE093C17DF00ED6130 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3E1D9AB2093C17DF00ED6130 /* STEnum.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		3E8C96C1073EF4730048CB70 /* doc_icons */ = {
@@ -841,6 +863,7 @@
 			};
 			dependencies = (
 				3EC3E296092DAB20008CEE8D /* PBXTargetDependency */,
+				3E1D9ABA093C17FA00ED6130 /* PBXTargetDependency */,
 			);
 			name = NicePlayer;
 			productInstallPath = "$(HOME)/Applications";
@@ -876,6 +899,10 @@
 					ProductGroup = 25C5C1E508D4B81400987A95 /* Products */;
 					ProjectRef = 25C5C1E408D4B81400987A95 /* DVDPlayer.xcodeproj */;
 				},
+				{
+					ProductGroup = 3E1D9AAE093C17DF00ED6130 /* Products */;
+					ProjectRef = 3E1D9AAD093C17DF00ED6130 /* STEnum10.4.xcodeproj */;
+				},
 			);
 			targets = (
 				8D15AC270486D014006FF6A4 /* NicePlayer */,
@@ -889,6 +916,13 @@
 			fileType = wrapper.cfbundle;
 			path = DVDPlayer.nicebundle;
 			remoteRef = 25C5C1E808D4B81400987A95 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3E1D9AB2093C17DF00ED6130 /* STEnum.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = STEnum.framework;
+			remoteRef = 3E1D9AB1093C17DF00ED6130 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -1040,6 +1074,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		3E1D9ABA093C17FA00ED6130 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "STEnum Embedable";
+			targetProxy = 3E1D9AB9093C17FA00ED6130 /* PBXContainerItemProxy */;
+		};
 		3EC3E296092DAB20008CEE8D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = DVDPlayer;
@@ -1111,7 +1150,10 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
 				DEPLOYMENT_POSTPROCESSING = YES;
-				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/Libraries\"";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRC_ROOT)Libraries",
+					"$(SRCROOT)/Libraries/stenum/build/Embed/$(CONFIGURATION)",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -1170,8 +1212,8 @@
 				COPY_PHASE_STRIP = YES;
 				DEPLOYMENT_POSTPROCESSING = YES;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(SYSTEM_DEVELOPER_DIR)/SDKs/MacOSX10.4u.sdk/System/Library/Frameworks",
-					"$(SRCROOT)/Libraries",
+					"$(SRC_ROOT)Libraries",
+					"$(SRCROOT)/Libraries/stenum/build/Embed/$(CONFIGURATION)",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
