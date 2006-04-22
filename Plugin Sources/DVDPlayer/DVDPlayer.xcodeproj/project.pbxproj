@@ -214,7 +214,6 @@
 				8D5B49B1048680CD000E48DA /* Sources */,
 				8D5B49B3048680CD000E48DA /* Frameworks */,
 				8D5B49B5048680CD000E48DA /* Rez */,
-				E9AD2414056E4C7A00C89394 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -296,22 +295,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXRezBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		E9AD2414056E4C7A00C89394 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = /Developer/Tools/RunTargetUnitTests;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8D5B49B1048680CD000E48DA /* Sources */ = {
@@ -433,80 +416,6 @@
 			};
 			name = Deployment;
 		};
-		251FF08B0856761B00D38B8E /* Test */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-				DEBUGGING_SYMBOLS = YES;
-				FRAMEWORK_SEARCH_PATHS = "\"$(HOME)/Library/Frameworks\"";
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_CPP_EXCEPTIONS = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_ENABLE_OBJC_EXCEPTIONS = NO;
-				GCC_ENABLE_TRIGRAPHS = NO;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = DVDPlayer_Prefix.pch;
-				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
-				GCC_WARN_UNKNOWN_PRAGMAS = NO;
-				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "$(HOME)/Library/Bundles";
-				LIBRARY_SEARCH_PATHS = "";
-				LIBRARY_STYLE = Bundle;
-				OPTIMIZATION_CFLAGS = "-O0";
-				OTHER_CFLAGS = "-fobjc-exceptions";
-				OTHER_LDFLAGS = "";
-				OTHER_REZFLAGS = "";
-				PREBINDING = NO;
-				PRODUCT_NAME = DVDPlayer;
-				SECTORDER_FLAGS = "";
-				TEST_AFTER_BUILD = YES;
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-				);
-				WRAPPER_EXTENSION = nicebundle;
-				ZERO_LINK = NO;
-			};
-			name = Test;
-		};
-		251FF08C0856761B00D38B8E /* Default */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-				FRAMEWORK_SEARCH_PATHS = "\"$(HOME)/Library/Frameworks\"";
-				GCC_ENABLE_CPP_EXCEPTIONS = YES;
-				GCC_ENABLE_OBJC_EXCEPTIONS = NO;
-				GCC_ENABLE_TRIGRAPHS = NO;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = DVDPlayer_Prefix.pch;
-				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
-				GCC_WARN_UNKNOWN_PRAGMAS = NO;
-				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "$(HOME)/Library/Bundles";
-				LIBRARY_SEARCH_PATHS = "";
-				LIBRARY_STYLE = Bundle;
-				OTHER_CFLAGS = "-fobjc-exceptions";
-				OTHER_LDFLAGS = "";
-				OTHER_REZFLAGS = "";
-				PREBINDING = NO;
-				PRODUCT_NAME = DVDPlayer;
-				SECTORDER_FLAGS = "";
-				TEST_AFTER_BUILD = YES;
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-				);
-				WRAPPER_EXTENSION = nicebundle;
-			};
-			name = Default;
-		};
 		251FF08E0856761B00D38B8E /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -526,24 +435,6 @@
 			};
 			name = Deployment;
 		};
-		251FF0900856761B00D38B8E /* Test */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				GCC_ENABLE_CPP_EXCEPTIONS = NO;
-				GCC_ENABLE_OBJC_EXCEPTIONS = NO;
-				PREBINDING = NO;
-			};
-			name = Test;
-		};
-		251FF0910856761B00D38B8E /* Default */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				GCC_ENABLE_CPP_EXCEPTIONS = NO;
-				GCC_ENABLE_OBJC_EXCEPTIONS = NO;
-				PREBINDING = NO;
-			};
-			name = Default;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -552,22 +443,18 @@
 			buildConfigurations = (
 				251FF0890856761B00D38B8E /* Development */,
 				251FF08A0856761B00D38B8E /* Deployment */,
-				251FF08B0856761B00D38B8E /* Test */,
-				251FF08C0856761B00D38B8E /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Default;
+			defaultConfigurationName = Development;
 		};
 		251FF08D0856761B00D38B8E /* Build configuration list for PBXProject "DVDPlayer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				251FF08E0856761B00D38B8E /* Development */,
 				251FF08F0856761B00D38B8E /* Deployment */,
-				251FF0900856761B00D38B8E /* Test */,
-				251FF0910856761B00D38B8E /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Default;
+			defaultConfigurationName = Development;
 		};
 /* End XCConfigurationList section */
 	};
