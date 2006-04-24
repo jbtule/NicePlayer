@@ -10,7 +10,7 @@
 #import "NPApplication.h"
 #import <CocoaScriptMenu/CocoaScriptMenu.h>
 #import "NiceUtilities.h"
-#import <IndyKit/IndyKit.h>
+#import <HodgePodge/IndyKit.h>
 BOOL selectNiceWindow(id each, void* context){
     return [each isKindOfClass:[NiceWindow class]];
 }

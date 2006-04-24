@@ -9,7 +9,7 @@
 
 #import "NiceUtilities.h"
 #import "NPPluginReader.h"
-#import <IndyKit/IndyKit.h>
+#import <HodgePodge/IndyKit.h>
 id NPConvertFileNamesToURLs(id obj, void* context){
     return [NSURL fileURLWithPath:obj];
 }

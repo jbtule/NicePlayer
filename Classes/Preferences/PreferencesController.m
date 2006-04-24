@@ -8,7 +8,7 @@
 
 #import "PreferencesController.h"
 #import "../Viewer Interface/NPPluginReader.h"
-#import <IndyKit/JTPreferenceWindow.h>
+#import <HodgePodge/JTPreferenceWindow.h>
 
 @implementation PreferencesController
 

@@ -5,7 +5,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import <Carbon/Carbon.h>
-#import <IndyKit/IndyFoundation.h>
+#import <HodgePodge/IndyKit.h>
 #import "Viewer Interface/NPMovieView.h"
 #import "NiceWindow/NiceWindow.h"
 #import "Preferences/Preferences.h"

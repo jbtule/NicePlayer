@@ -7,7 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import <IndyKit/IndyKit.h>
+#import <HodgePodge/IndyKit.h>
 
 @interface NiceWindowController : NSWindowController {
 

@@ -7,7 +7,7 @@
 
 #import "NPPluginReader.h"
 #import "Pluggable Players/NPMovieProtocol.h"
-#import "IndyKit/IndyKit.h"
+#import <HodgePodge/IndyKit.h>
 #import "NiceUtilities.h"
 
 @class RCMovieView;

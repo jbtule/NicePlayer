@@ -338,7 +338,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		251FF0890856761B00D38B8E /* Development */ = {
+		251FF0890856761B00D38B8E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
@@ -376,9 +376,9 @@
 				WRAPPER_EXTENSION = nicebundle;
 				ZERO_LINK = YES;
 			};
-			name = Development;
+			name = Debug;
 		};
-		251FF08A0856761B00D38B8E /* Deployment */ = {
+		251FF08A0856761B00D38B8E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = ppc;
@@ -414,9 +414,9 @@
 				WRAPPER_EXTENSION = nicebundle;
 				ZERO_LINK = NO;
 			};
-			name = Deployment;
+			name = Release;
 		};
-		251FF08E0856761B00D38B8E /* Development */ = {
+		251FF08E0856761B00D38B8E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = ppc;
@@ -424,16 +424,16 @@
 				GCC_ENABLE_OBJC_EXCEPTIONS = NO;
 				PREBINDING = NO;
 			};
-			name = Development;
+			name = Debug;
 		};
-		251FF08F0856761B00D38B8E /* Deployment */ = {
+		251FF08F0856761B00D38B8E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = NO;
 				PREBINDING = NO;
 			};
-			name = Deployment;
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
@@ -441,20 +441,20 @@
 		251FF0880856761B00D38B8E /* Build configuration list for PBXNativeTarget "DVDPlayer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				251FF0890856761B00D38B8E /* Development */,
-				251FF08A0856761B00D38B8E /* Deployment */,
+				251FF0890856761B00D38B8E /* Debug */,
+				251FF08A0856761B00D38B8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Development;
+			defaultConfigurationName = Debug;
 		};
 		251FF08D0856761B00D38B8E /* Build configuration list for PBXProject "DVDPlayer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				251FF08E0856761B00D38B8E /* Development */,
-				251FF08F0856761B00D38B8E /* Deployment */,
+				251FF08E0856761B00D38B8E /* Debug */,
+				251FF08F0856761B00D38B8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Development;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

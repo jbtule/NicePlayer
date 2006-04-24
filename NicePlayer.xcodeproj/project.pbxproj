@@ -69,11 +69,6 @@
 		3E085CBC065C79EE005286A3 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E085CBB065C79EE005286A3 /* play.png */; };
 		3E110B63069BD80100C5800B /* ClickableTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E110B61069BD80100C5800B /* ClickableTextField.h */; };
 		3E110B64069BD80100C5800B /* ClickableTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E110B62069BD80100C5800B /* ClickableTextField.m */; };
-		3E1D9AB3093C17E500ED6130 /* STEnum.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1D9AB2093C17DF00ED6130 /* STEnum.framework */; };
-		3E1D9AB4093C17EB00ED6130 /* STEnum.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3E1D9AB2093C17DF00ED6130 /* STEnum.framework */; };
-		3E1D9B2F093C1DC900ED6130 /* CocoaScriptMenu.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3E1D9B13093C1D9100ED6130 /* CocoaScriptMenu.framework */; };
-		3E1D9B46093C1E9500ED6130 /* CocoaScriptMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1D9B13093C1D9100ED6130 /* CocoaScriptMenu.framework */; };
-		3E1D9B5C093C1EA400ED6130 /* IndyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E9F5C0708DE931E00BD4B78 /* IndyKit.framework */; };
 		3E28CCA40808E0F000F59FF5 /* NiceWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E28CCA20808E0F000F59FF5 /* NiceWindowController.h */; };
 		3E28CCA50808E0F000F59FF5 /* NiceWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E28CCA30808E0F000F59FF5 /* NiceWindowController.m */; };
 		3E44F89D065F06A300E48395 /* TimelineControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E44F89B065F06A300E48395 /* TimelineControl.h */; };
@@ -83,6 +78,8 @@
 		3E49DCB307C96EFD009BA150 /* NPApplicationScripting.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF15F3607C8405700AE56D7 /* NPApplicationScripting.m */; };
 		3E49DCB407C96F01009BA150 /* NiceMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF158C807C7F9CA00AE56D7 /* NiceMovie.m */; };
 		3E4DF83706630D50001B9AC5 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 3E4DF83506630D50001B9AC5 /* Credits.html */; };
+		3E5970EB09FC8DA9001ED4FA /* CocoaScriptMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E5970D209FC8D9A001ED4FA /* CocoaScriptMenu.framework */; };
+		3E5970EC09FC8DB2001ED4FA /* CocoaScriptMenu.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3E5970D209FC8D9A001ED4FA /* CocoaScriptMenu.framework */; };
 		3E64FA4508F2314C0010E3DA /* NicePlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E64FA4108F2314C0010E3DA /* NicePlugin.h */; };
 		3E64FA4608F2314C0010E3DA /* NicePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E64FA4208F2314C0010E3DA /* NicePlugin.m */; };
 		3E6E26A7067FC53600854100 /* repeat_list.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E26A4067FC53600854100 /* repeat_list.png */; };
@@ -123,7 +120,6 @@
 		3E9E629D0661724600B788A8 /* scrubbar_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E62980661724600B788A8 /* scrubbar_right.png */; };
 		3E9E64820661B95900B788A8 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E64800661B95900B788A8 /* pause.png */; };
 		3E9E64830661B95900B788A8 /* pauseClick.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E64810661B95900B788A8 /* pauseClick.png */; };
-		3E9F5C3B08DE932800BD4B78 /* IndyKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3E9F5C0708DE931E00BD4B78 /* IndyKit.framework */; };
 		3EB4F72E08F62C37004692D3 /* Useful Scripts in Resources */ = {isa = PBXBuildFile; fileRef = 3EB4F72A08F62C37004692D3 /* Useful Scripts */; };
 		3EB4F74208F62C4C004692D3 /* Default Scripts in Resources */ = {isa = PBXBuildFile; fileRef = 3EB4F72F08F62C4C004692D3 /* Default Scripts */; };
 		3EB7EC60065F39AA0002A470 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB7EC5F065F39AA0002A470 /* Carbon.framework */; };
@@ -138,6 +134,12 @@
 		3EDA267F065C8D620000CCEE /* rr.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EDA267D065C8D620000CCEE /* rr.png */; };
 		3EDA2682065C8E570000CCEE /* OverlayWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EDA2680065C8E570000CCEE /* OverlayWindow.h */; };
 		3EDA2683065C8E570000CCEE /* OverlayWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDA2681065C8E570000CCEE /* OverlayWindow.m */; };
+		3EEA731009FC851A00AABB1F /* HodgePodge.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3EEA72F809FC84A700AABB1F /* HodgePodge.framework */; };
+		3EEA731109FC853000AABB1F /* HodgePodge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EEA72F809FC84A700AABB1F /* HodgePodge.framework */; };
+		3EEA731D09FC854E00AABB1F /* EncryptOC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EEA731A09FC853F00AABB1F /* EncryptOC.framework */; };
+		3EEA731E09FC856100AABB1F /* EncryptOC.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3EEA731A09FC853F00AABB1F /* EncryptOC.framework */; };
+		3EEA737709FC881D00AABB1F /* STEnum.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EEA737609FC87FD00AABB1F /* STEnum.framework */; };
+		3EEA737809FC882500AABB1F /* STEnum.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3EEA737609FC87FD00AABB1F /* STEnum.framework */; };
 		3EEB7DBB076B754F0090E740 /* NiceUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EEB7DB7076B754F0090E740 /* NiceUtilities.h */; };
 		3EEB7DBC076B754F0090E740 /* NiceUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB7DB8076B754F0090E740 /* NiceUtilities.m */; };
 		3EEB7F3A076BB1F60090E740 /* ViewerPrefIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EEB7F38076BB1F60090E740 /* ViewerPrefIcon.png */; };
@@ -196,40 +198,33 @@
 			remoteGlobalIDString = 8D5B49B6048680CD000E48DA;
 			remoteInfo = DVDPlayer;
 		};
-		3E1D9AB1093C17DF00ED6130 /* PBXContainerItemProxy */ = {
+		3E5970D109FC8D9A001ED4FA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 3E1D9AAD093C17DF00ED6130 /* STEnum10.4.xcodeproj */;
+			containerPortal = 3E5970CB09FC8D9A001ED4FA /* CocoaScriptMenu.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 3EBAD63908006A950040D4A3;
-			remoteInfo = "STEnum Embedable";
-		};
-		3E1D9AB9093C17FA00ED6130 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3E1D9AAD093C17DF00ED6130 /* STEnum10.4.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 3EBAD61C08006A950040D4A3;
-			remoteInfo = "STEnum Embedable";
-		};
-		3E1D9B12093C1D9100ED6130 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3E1D9B0D093C1D9100ED6130 /* CocoaScriptMenu.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216 /* CocoaScriptMenu.framework */;
 			remoteInfo = CocoaScriptMenu;
 		};
-		3E1D9B14093C1D9100ED6130 /* PBXContainerItemProxy */ = {
+		3E5970D309FC8D9A001ED4FA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 3E1D9B0D093C1D9100ED6130 /* CocoaScriptMenu.xcodeproj */;
+			containerPortal = 3E5970CB09FC8D9A001ED4FA /* CocoaScriptMenu.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 3E87022C08DD32CF0015C10A;
+			remoteGlobalIDString = 3E87022C08DD32CF0015C10A /* UnitTests.octest */;
 			remoteInfo = UnitTests;
 		};
-		3E1D9B34093C1DEF00ED6130 /* PBXContainerItemProxy */ = {
+		3E5970EF09FC8DBB001ED4FA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 3E1D9B0D093C1D9100ED6130 /* CocoaScriptMenu.xcodeproj */;
+			containerPortal = 3E5970CB09FC8D9A001ED4FA /* CocoaScriptMenu.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216 /* CocoaScriptMenu */;
 			remoteInfo = CocoaScriptMenu;
+		};
+		3E5970F109FC8DC0001ED4FA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3EEA737109FC87FD00AABB1F /* STEnum10.4.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 3EBAD61C08006A950040D4A3 /* STEnum Embedable */;
+			remoteInfo = "STEnum Embedable";
 		};
 		3EC3E295092DAB20008CEE8D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -237,6 +232,48 @@
 			proxyType = 1;
 			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
 			remoteInfo = DVDPlayer;
+		};
+		3EEA72F709FC84A700AABB1F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3EEA72EE09FC84A700AABB1F /* HodgePodge.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
+			remoteInfo = HodgePodge;
+		};
+		3EEA730C09FC84D000AABB1F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3EEA72EE09FC84A700AABB1F /* HodgePodge.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
+			remoteInfo = HodgePodge;
+		};
+		3EEA731909FC853F00AABB1F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3EEA731409FC853F00AABB1F /* EncryptOC.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
+			remoteInfo = EncryptOC;
+		};
+		3EEA731B09FC853F00AABB1F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3EEA731409FC853F00AABB1F /* EncryptOC.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3E204881093D5C1E00305494;
+			remoteInfo = "EncryptOC Test";
+		};
+		3EEA732409FC859000AABB1F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3EEA731409FC853F00AABB1F /* EncryptOC.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
+			remoteInfo = EncryptOC;
+		};
+		3EEA737509FC87FD00AABB1F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3EEA737109FC87FD00AABB1F /* STEnum10.4.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3EBAD63908006A950040D4A3;
+			remoteInfo = "STEnum Embedable";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -258,9 +295,10 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				3E1D9B2F093C1DC900ED6130 /* CocoaScriptMenu.framework in CopyFiles */,
-				3E1D9AB4093C17EB00ED6130 /* STEnum.framework in CopyFiles */,
-				3E9F5C3B08DE932800BD4B78 /* IndyKit.framework in CopyFiles */,
+				3E5970EC09FC8DB2001ED4FA /* CocoaScriptMenu.framework in CopyFiles */,
+				3EEA737809FC882500AABB1F /* STEnum.framework in CopyFiles */,
+				3EEA731E09FC856100AABB1F /* EncryptOC.framework in CopyFiles */,
+				3EEA731009FC851A00AABB1F /* HodgePodge.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,14 +378,13 @@
 		3E085CBB065C79EE005286A3 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = play.png; path = Resources/play.png; sourceTree = "<group>"; };
 		3E110B61069BD80100C5800B /* ClickableTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClickableTextField.h; path = "Classes/Overlay Widgets/ClickableTextField.h"; sourceTree = "<group>"; };
 		3E110B62069BD80100C5800B /* ClickableTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClickableTextField.m; path = "Classes/Overlay Widgets/ClickableTextField.m"; sourceTree = "<group>"; };
-		3E1D9AAD093C17DF00ED6130 /* STEnum10.4.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = STEnum10.4.xcodeproj; path = Libraries/stenum/STEnum10.4.xcodeproj; sourceTree = "<group>"; };
-		3E1D9B0D093C1D9100ED6130 /* CocoaScriptMenu.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CocoaScriptMenu.xcodeproj; path = Libraries/cocoascriptmenu/CocoaScriptMenu.xcodeproj; sourceTree = "<group>"; };
 		3E28CCA20808E0F000F59FF5 /* NiceWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NiceWindowController.h; path = Classes/NiceWindow/NiceWindowController.h; sourceTree = "<group>"; };
 		3E28CCA30808E0F000F59FF5 /* NiceWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NiceWindowController.m; path = Classes/NiceWindow/NiceWindowController.m; sourceTree = "<group>"; };
 		3E44F89B065F06A300E48395 /* TimelineControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimelineControl.h; path = "Classes/Overlay Widgets/TimelineControl.h"; sourceTree = "<group>"; };
 		3E44F89C065F06A300E48395 /* TimelineControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimelineControl.m; path = "Classes/Overlay Widgets/TimelineControl.m"; sourceTree = "<group>"; };
 		3E452FF00664719D00BC91B0 /* NiceIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = NiceIcon.icns; path = Resources/NiceIcon.icns; sourceTree = "<group>"; };
 		3E4DF83606630D50001B9AC5 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = English; path = English.lproj/Credits.html; sourceTree = "<group>"; };
+		3E5970CB09FC8D9A001ED4FA /* CocoaScriptMenu.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CocoaScriptMenu.xcodeproj; path = Libraries/cocoascriptmenu/CocoaScriptMenu.xcodeproj; sourceTree = "<group>"; };
 		3E64FA4108F2314C0010E3DA /* NicePlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NicePlugin.h; sourceTree = "<group>"; };
 		3E64FA4208F2314C0010E3DA /* NicePlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NicePlugin.m; sourceTree = "<group>"; };
 		3E6E26A4067FC53600854100 /* repeat_list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = repeat_list.png; path = Resources/repeat_list.png; sourceTree = "<group>"; };
@@ -388,7 +425,6 @@
 		3E9E62980661724600B788A8 /* scrubbar_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = scrubbar_right.png; path = Resources/scrubbar_right.png; sourceTree = "<group>"; };
 		3E9E64800661B95900B788A8 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pause.png; path = Resources/pause.png; sourceTree = "<group>"; };
 		3E9E64810661B95900B788A8 /* pauseClick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pauseClick.png; path = Resources/pauseClick.png; sourceTree = "<group>"; };
-		3E9F5C0708DE931E00BD4B78 /* IndyKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IndyKit.framework; path = Libraries/IndyKit.framework; sourceTree = "<group>"; };
 		3EB4F72A08F62C37004692D3 /* Useful Scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Useful Scripts"; path = "Resources/Useful Scripts"; sourceTree = "<group>"; };
 		3EB4F72F08F62C4C004692D3 /* Default Scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Default Scripts"; path = "Resources/Default Scripts"; sourceTree = "<group>"; };
 		3EB6F18A06603F1F0093424C /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = /Library/Frameworks/SenTestingKit.framework; sourceTree = "<absolute>"; };
@@ -404,6 +440,9 @@
 		3EDA267D065C8D620000CCEE /* rr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rr.png; path = Resources/rr.png; sourceTree = "<group>"; };
 		3EDA2680065C8E570000CCEE /* OverlayWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OverlayWindow.h; path = "Classes/Overlay Widgets/OverlayWindow.h"; sourceTree = "<group>"; };
 		3EDA2681065C8E570000CCEE /* OverlayWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OverlayWindow.m; path = "Classes/Overlay Widgets/OverlayWindow.m"; sourceTree = "<group>"; };
+		3EEA72EE09FC84A700AABB1F /* HodgePodge.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = HodgePodge.xcodeproj; path = Libraries/hodgepodge/HodgePodge.xcodeproj; sourceTree = "<group>"; };
+		3EEA731409FC853F00AABB1F /* EncryptOC.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EncryptOC.xcodeproj; path = Libraries/hodgepodge/lib/encryptoc/EncryptOC.xcodeproj; sourceTree = "<group>"; };
+		3EEA737109FC87FD00AABB1F /* STEnum10.4.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = STEnum10.4.xcodeproj; path = Libraries/hodgepodge/lib/stenum/STEnum10.4.xcodeproj; sourceTree = "<group>"; };
 		3EEB7DB7076B754F0090E740 /* NiceUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NiceUtilities.h; path = "Other Sources/NiceUtilities.h"; sourceTree = "<group>"; };
 		3EEB7DB8076B754F0090E740 /* NiceUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NiceUtilities.m; path = "Other Sources/NiceUtilities.m"; sourceTree = "<group>"; };
 		3EEB7F38076BB1F60090E740 /* ViewerPrefIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ViewerPrefIcon.png; path = Resources/ViewerPrefIcon.png; sourceTree = "<group>"; };
@@ -431,9 +470,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E1D9B5C093C1EA400ED6130 /* IndyKit.framework in Frameworks */,
-				3E1D9B46093C1E9500ED6130 /* CocoaScriptMenu.framework in Frameworks */,
-				3E1D9AB3093C17E500ED6130 /* STEnum.framework in Frameworks */,
+				3E5970EB09FC8DA9001ED4FA /* CocoaScriptMenu.framework in Frameworks */,
+				3EEA737709FC881D00AABB1F /* STEnum.framework in Frameworks */,
+				3EEA731D09FC854E00AABB1F /* EncryptOC.framework in Frameworks */,
+				3EEA731109FC853000AABB1F /* HodgePodge.framework in Frameworks */,
 				3EB7EC60065F39AA0002A470 /* Carbon.framework in Frameworks */,
 				3EB7ECFA065F39BC0002A470 /* QuickTime.framework in Frameworks */,
 				257D60020753DE7C00702BD0 /* AppKitScripting.framework in Frameworks */,
@@ -449,7 +489,6 @@
 		1058C7A6FEA54F5311CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3E9F5C0708DE931E00BD4B78 /* IndyKit.framework */,
 				251FEFB6085670D800D38B8E /* Cocoa.framework */,
 				25CC866D0831DDA800027929 /* QTKit.framework */,
 				25702FEF07569E3300D1EE8C /* DVDPlayback.framework */,
@@ -638,8 +677,10 @@
 		25C5C1E208D4B7F300987A95 /* Other Projects */ = {
 			isa = PBXGroup;
 			children = (
-				3E1D9B0D093C1D9100ED6130 /* CocoaScriptMenu.xcodeproj */,
-				3E1D9AAD093C17DF00ED6130 /* STEnum10.4.xcodeproj */,
+				3E5970CB09FC8D9A001ED4FA /* CocoaScriptMenu.xcodeproj */,
+				3EEA737109FC87FD00AABB1F /* STEnum10.4.xcodeproj */,
+				3EEA731409FC853F00AABB1F /* EncryptOC.xcodeproj */,
+				3EEA72EE09FC84A700AABB1F /* HodgePodge.xcodeproj */,
 				25C5C1E408D4B81400987A95 /* DVDPlayer.xcodeproj */,
 			);
 			name = "Other Projects";
@@ -745,19 +786,11 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		3E1D9AAE093C17DF00ED6130 /* Products */ = {
+		3E5970CC09FC8D9A001ED4FA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3E1D9AB2093C17DF00ED6130 /* STEnum.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		3E1D9B0E093C1D9100ED6130 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				3E1D9B13093C1D9100ED6130 /* CocoaScriptMenu.framework */,
-				3E1D9B15093C1D9100ED6130 /* UnitTests.octest */,
+				3E5970D209FC8D9A001ED4FA /* CocoaScriptMenu.framework */,
+				3E5970D409FC8D9A001ED4FA /* UnitTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -779,6 +812,31 @@
 			);
 			name = doc_icons;
 			path = Resources/doc_icons;
+			sourceTree = "<group>";
+		};
+		3EEA72EF09FC84A700AABB1F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3EEA72F809FC84A700AABB1F /* HodgePodge.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3EEA731509FC853F00AABB1F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3EEA731A09FC853F00AABB1F /* EncryptOC.framework */,
+				3EEA731C09FC853F00AABB1F /* EncryptOC Test.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3EEA737209FC87FD00AABB1F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3EEA737609FC87FD00AABB1F /* STEnum.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -893,8 +951,10 @@
 			};
 			dependencies = (
 				3EC3E296092DAB20008CEE8D /* PBXTargetDependency */,
-				3E1D9ABA093C17FA00ED6130 /* PBXTargetDependency */,
-				3E1D9B35093C1DEF00ED6130 /* PBXTargetDependency */,
+				3E5970F209FC8DC0001ED4FA /* PBXTargetDependency */,
+				3EEA732509FC859000AABB1F /* PBXTargetDependency */,
+				3EEA730D09FC84D000AABB1F /* PBXTargetDependency */,
+				3E5970F009FC8DBB001ED4FA /* PBXTargetDependency */,
 			);
 			name = NicePlayer;
 			productInstallPath = "$(HOME)/Applications";
@@ -927,16 +987,24 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 3E1D9B0E093C1D9100ED6130 /* Products */;
-					ProjectRef = 3E1D9B0D093C1D9100ED6130 /* CocoaScriptMenu.xcodeproj */;
+					ProductGroup = 3E5970CC09FC8D9A001ED4FA /* Products */;
+					ProjectRef = 3E5970CB09FC8D9A001ED4FA /* CocoaScriptMenu.xcodeproj */;
 				},
 				{
 					ProductGroup = 25C5C1E508D4B81400987A95 /* Products */;
 					ProjectRef = 25C5C1E408D4B81400987A95 /* DVDPlayer.xcodeproj */;
 				},
 				{
-					ProductGroup = 3E1D9AAE093C17DF00ED6130 /* Products */;
-					ProjectRef = 3E1D9AAD093C17DF00ED6130 /* STEnum10.4.xcodeproj */;
+					ProductGroup = 3EEA731509FC853F00AABB1F /* Products */;
+					ProjectRef = 3EEA731409FC853F00AABB1F /* EncryptOC.xcodeproj */;
+				},
+				{
+					ProductGroup = 3EEA72EF09FC84A700AABB1F /* Products */;
+					ProjectRef = 3EEA72EE09FC84A700AABB1F /* HodgePodge.xcodeproj */;
+				},
+				{
+					ProductGroup = 3EEA737209FC87FD00AABB1F /* Products */;
+					ProjectRef = 3EEA737109FC87FD00AABB1F /* STEnum10.4.xcodeproj */;
 				},
 			);
 			targets = (
@@ -953,25 +1021,46 @@
 			remoteRef = 25C5C1E808D4B81400987A95 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		3E1D9AB2093C17DF00ED6130 /* STEnum.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = STEnum.framework;
-			remoteRef = 3E1D9AB1093C17DF00ED6130 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		3E1D9B13093C1D9100ED6130 /* CocoaScriptMenu.framework */ = {
+		3E5970D209FC8D9A001ED4FA /* CocoaScriptMenu.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = CocoaScriptMenu.framework;
-			remoteRef = 3E1D9B12093C1D9100ED6130 /* PBXContainerItemProxy */;
+			remoteRef = 3E5970D109FC8D9A001ED4FA /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		3E1D9B15093C1D9100ED6130 /* UnitTests.octest */ = {
+		3E5970D409FC8D9A001ED4FA /* UnitTests.octest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = UnitTests.octest;
-			remoteRef = 3E1D9B14093C1D9100ED6130 /* PBXContainerItemProxy */;
+			remoteRef = 3E5970D309FC8D9A001ED4FA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3EEA72F809FC84A700AABB1F /* HodgePodge.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = HodgePodge.framework;
+			remoteRef = 3EEA72F709FC84A700AABB1F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3EEA731A09FC853F00AABB1F /* EncryptOC.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = EncryptOC.framework;
+			remoteRef = 3EEA731909FC853F00AABB1F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3EEA731C09FC853F00AABB1F /* EncryptOC Test.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "EncryptOC Test.octest";
+			remoteRef = 3EEA731B09FC853F00AABB1F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3EEA737609FC87FD00AABB1F /* STEnum.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = STEnum.framework;
+			remoteRef = 3EEA737509FC87FD00AABB1F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -1123,20 +1212,30 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3E1D9ABA093C17FA00ED6130 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "STEnum Embedable";
-			targetProxy = 3E1D9AB9093C17FA00ED6130 /* PBXContainerItemProxy */;
-		};
-		3E1D9B35093C1DEF00ED6130 /* PBXTargetDependency */ = {
+		3E5970F009FC8DBB001ED4FA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = CocoaScriptMenu;
-			targetProxy = 3E1D9B34093C1DEF00ED6130 /* PBXContainerItemProxy */;
+			targetProxy = 3E5970EF09FC8DBB001ED4FA /* PBXContainerItemProxy */;
+		};
+		3E5970F209FC8DC0001ED4FA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "STEnum Embedable";
+			targetProxy = 3E5970F109FC8DC0001ED4FA /* PBXContainerItemProxy */;
 		};
 		3EC3E296092DAB20008CEE8D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = DVDPlayer;
 			targetProxy = 3EC3E295092DAB20008CEE8D /* PBXContainerItemProxy */;
+		};
+		3EEA730D09FC84D000AABB1F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = HodgePodge;
+			targetProxy = 3EEA730C09FC84D000AABB1F /* PBXContainerItemProxy */;
+		};
+		3EEA732509FC859000AABB1F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = EncryptOC;
+			targetProxy = 3EEA732409FC859000AABB1F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1192,7 +1291,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		251FEF700855184200D38B8E /* Development */ = {
+		251FEF700855184200D38B8E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = (
@@ -1253,9 +1352,9 @@
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
 			};
-			name = Development;
+			name = Debug;
 		};
-		251FEF710855184200D38B8E /* Deployment */ = {
+		251FEF710855184200D38B8E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = (
@@ -1309,9 +1408,9 @@
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
 			};
-			name = Deployment;
+			name = Release;
 		};
-		251FEF780855184200D38B8E /* Development */ = {
+		251FEF780855184200D38B8E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				LIBRARY_SEARCH_PATHS = "";
@@ -1319,9 +1418,9 @@
 				PREBINDING = NO;
 				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 			};
-			name = Development;
+			name = Debug;
 		};
-		251FEF790855184200D38B8E /* Deployment */ = {
+		251FEF790855184200D38B8E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = (
@@ -1333,7 +1432,7 @@
 				PREBINDING = NO;
 				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 			};
-			name = Deployment;
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
@@ -1341,20 +1440,20 @@
 		251FEF6F0855184200D38B8E /* Build configuration list for PBXNativeTarget "NicePlayer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				251FEF700855184200D38B8E /* Development */,
-				251FEF710855184200D38B8E /* Deployment */,
+				251FEF700855184200D38B8E /* Debug */,
+				251FEF710855184200D38B8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Development;
+			defaultConfigurationName = Debug;
 		};
 		251FEF770855184200D38B8E /* Build configuration list for PBXProject "NicePlayer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				251FEF780855184200D38B8E /* Development */,
-				251FEF790855184200D38B8E /* Deployment */,
+				251FEF780855184200D38B8E /* Debug */,
+				251FEF790855184200D38B8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Development;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
