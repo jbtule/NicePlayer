@@ -202,28 +202,28 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 3E5970CB09FC8D9A001ED4FA /* CocoaScriptMenu.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 8DC2EF5B0486A6940098B216 /* CocoaScriptMenu.framework */;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
 			remoteInfo = CocoaScriptMenu;
 		};
 		3E5970D309FC8D9A001ED4FA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3E5970CB09FC8D9A001ED4FA /* CocoaScriptMenu.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 3E87022C08DD32CF0015C10A /* UnitTests.octest */;
+			remoteGlobalIDString = 3E87022C08DD32CF0015C10A;
 			remoteInfo = UnitTests;
 		};
 		3E5970EF09FC8DBB001ED4FA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3E5970CB09FC8D9A001ED4FA /* CocoaScriptMenu.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 8DC2EF4F0486A6940098B216 /* CocoaScriptMenu */;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
 			remoteInfo = CocoaScriptMenu;
 		};
 		3E5970F109FC8DC0001ED4FA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3EEA737109FC87FD00AABB1F /* STEnum10.4.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 3EBAD61C08006A950040D4A3 /* STEnum Embedable */;
+			remoteGlobalIDString = 3EBAD61C08006A950040D4A3;
 			remoteInfo = "STEnum Embedable";
 		};
 		3EC3E295092DAB20008CEE8D /* PBXContainerItemProxy */ = {
@@ -1294,11 +1294,6 @@
 		251FEF700855184200D38B8E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					"<Multiple",
-					"values>",
-					ppc,
-				);
 				BUILD_VARIANTS = normal;
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
@@ -1328,10 +1323,8 @@
 				GCC_WARN_UNUSED_PARAMETER = NO;
 				GCC_WARN_UNUSED_VALUE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
-				LIBRARY_SEARCH_PATHS = " ";
 				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				OPTIMIZATION_CFLAGS = "-O0";
 				OTHER_CFLAGS = "";
@@ -1357,11 +1350,6 @@
 		251FEF710855184200D38B8E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					"<Multiple",
-					"values>",
-					ppc,
-				);
 				COPY_PHASE_STRIP = YES;
 				DEPLOYMENT_POSTPROCESSING = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1387,10 +1375,8 @@
 				GCC_WARN_UNUSED_PARAMETER = NO;
 				GCC_WARN_UNUSED_VALUE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
-				LIBRARY_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.3;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = (
@@ -1413,9 +1399,7 @@
 		251FEF780855184200D38B8E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				LIBRARY_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.4;
-				PREBINDING = NO;
 				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 			};
 			name = Debug;
@@ -1427,9 +1411,7 @@
 					ppc,
 					i386,
 				);
-				LIBRARY_SEARCH_PATHS = "]";
 				MACOSX_DEPLOYMENT_TARGET = 10.4;
-				PREBINDING = NO;
 				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 			};
 			name = Release;
