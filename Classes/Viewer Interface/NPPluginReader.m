@@ -167,8 +167,10 @@ id injectAllowedTypesOfEnabledPlugins(id each, id allowedExt,void* context){
     
     while ((anObject = [e nextObject])) {
 	id aBundle = [NSBundle bundleWithPath:anObject];
-	if(![aBundle load])
+		if(![aBundle load]){
+			NSLog(@"Couldn't load bundle %@ (maybe it's not a universal binary?).", anObject);
 	    continue;
+		}
 	[objectArray addObject:[aBundle principalClass]];
     }
     return objectArray;
