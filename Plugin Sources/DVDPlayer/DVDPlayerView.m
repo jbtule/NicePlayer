@@ -331,7 +331,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 {
 	DVDAspectRatio ratio;
 	DVDGetAspectRatio(&ratio);
-	NSSize anAspectRatio;
+	NSSize anAspectRatio = NSMakeSize(640, 480);
 	/* Choose among preset DVD aspect ratios */
 	switch(ratio){
 		case kDVDAspectRatio4x3: case kDVDAspectRatio4x3PanAndScan:

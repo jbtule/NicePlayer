@@ -953,8 +953,8 @@
 				3EC3E296092DAB20008CEE8D /* PBXTargetDependency */,
 				3E5970F209FC8DC0001ED4FA /* PBXTargetDependency */,
 				3EEA732509FC859000AABB1F /* PBXTargetDependency */,
-				3EEA730D09FC84D000AABB1F /* PBXTargetDependency */,
 				3E5970F009FC8DBB001ED4FA /* PBXTargetDependency */,
+				3EEA730D09FC84D000AABB1F /* PBXTargetDependency */,
 			);
 			name = NicePlayer;
 			productInstallPath = "$(HOME)/Applications";
@@ -1300,6 +1300,7 @@
 				DEPLOYMENT_POSTPROCESSING = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(FRAMEWORK_SEARCH_PATHS)",
+					"$(BUILD_PRODUCTS_DIR)",
 					"$(SRCROOT)/Libraries",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1354,6 +1355,7 @@
 				DEPLOYMENT_POSTPROCESSING = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(FRAMEWORK_SEARCH_PATHS)",
+					"$(BUILD_PRODUCTS_DIR)",
 					"$(SRCROOT)/Libraries",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
