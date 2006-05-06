@@ -387,13 +387,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(void)resizeBounds
 {
-    Rect nr;
-    DVDGetVideoBounds(&nr);
-    nr.right -= 1;
-    DVDSetVideoBounds(&nr);
-    [self performSelector:@selector(updateBounds:)
-	       withObject:[NSValue valueWithRect:[self frame]]
-	       afterDelay:1.0];
+    [self updateBounds:[self frame]];
 }
 
 #pragma mark -
