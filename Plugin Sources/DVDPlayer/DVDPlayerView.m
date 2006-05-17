@@ -94,7 +94,6 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
     }
     if(self = [super initWithFrame:frame]){
 	[self setAutoresizingMask:(NSViewWidthSizable | NSViewHeightSizable)];			
-	isAspectRatioChanging = NO;
     }
     return self;
 }
@@ -107,7 +106,6 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	CGRect cgr = {{NSMinX(frame), NSMinY(frame)}, {NSWidth(frame), NSHeight(frame)}};
 	Rect nr = convertCGRectToQDRect(cgr);
 	DVDSetVideoBounds(&nr);
-	[self setNeedsDisplay:YES];
 }
 
 -(void)resizeToAspect
@@ -127,9 +125,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 -(void)aspectRatioChanged
 {
     [self resizeToAspect];
-    isAspectRatioChanging = YES;
     [(NiceWindow *)[self window] resizeToAspectRatio];
-    isAspectRatioChanging = NO;
 }
 
 -(BOOL)canAnimateResize
@@ -224,15 +220,19 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	DVDSetFatalErrorCallBack(fatalError, (UInt32)self);
 	DVDEventCode inCode = kDVDEventDisplayMode;
 	DVDRegisterEventCallBack(aspectChange, &inCode, 1, (UInt32)self, &cid);
-	
+
+	inCode = kDVDEventTitle;
+	DVDRegisterEventCallBack(aspectChange, &inCode, 1, (UInt32)self, &cid);
+
+	inCode = kDVDEventVideoStandard;
+	DVDRegisterEventCallBack(aspectChange, &inCode, 1, (UInt32)self, &cid);
+
 	FSRef fsref;
 	CFURLGetFSRef((CFURLRef)myURL, &fsref);
 	if([[[myURL path] lastPathComponent] isEqualToString:@"VIDEO_TS"])
 		DVDOpenMediaFile(&fsref);
 	else
 		DVDOpenMediaVolume(&fsref);
-	[self aspectRatioChanged];
-	[self setNeedsDisplay:YES];
 	updateChapterTimer = [NSTimer scheduledTimerWithTimeInterval:30
 							      target:self
 							    selector:@selector(rebuildMenuTimer)
@@ -321,7 +321,6 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(void)drawMovieFrame
 {
-	DVDUpdateVideo();
 }
 
 /**
@@ -380,14 +379,19 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(void)drawRect:(NSRect)aRect
 {
-    if(!isAspectRatioChanging)
-	[self updateBounds:[self frame]];
-    DVDUpdateVideo();
 }
 
 -(void)resizeBounds
 {
-    [self updateBounds:[self frame]];
+}
+
+- (void)setFrame:(NSRect)frameRect
+{
+     [[self window] disableFlushWindow];
+    [super setFrame:frameRect];
+    [[self window] setContentSize:frameRect.size];
+    [self updateBounds:frameRect];
+    [[self window] enableFlushWindow];
 }
 
 #pragma mark -
@@ -415,11 +419,6 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 		DVDPlay();
 		[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:self];
 	}
-	[self aspectRatioChanged];
-	[self setNeedsDisplay:YES];
-	[self performSelector:@selector(setNeedsDisplay:)
-		   withObject:[NSNumber numberWithBool:YES]
-		   afterDelay:1.0];
 }
 
 -(void)stop
@@ -537,7 +536,6 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 		DVDPause();
 	else
 		DVDResume();
-	DVDUpdateVideo();
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:self];
 }
 
@@ -833,7 +831,6 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 		DVDPause();
 	else
 		DVDResume();
-	DVDUpdateVideo();
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:self];
 }
 
@@ -846,7 +843,6 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 		DVDPause();
 	else
 		DVDResume();
-	DVDUpdateVideo();
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:self];
 }
 
@@ -859,7 +855,6 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 		DVDPause();
 	else
 		DVDResume();
-	DVDUpdateVideo();
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:self];
 }
 
@@ -872,7 +867,6 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 		DVDPause();
 	else
 		DVDResume();
-	DVDUpdateVideo();
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:self];
 }
 
@@ -886,7 +880,6 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 		DVDPause();
 	else
 		DVDResume();
-	DVDUpdateVideo();
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:self];
 }
 
@@ -1304,8 +1297,6 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
     [(id)inRefCon performSelectorOnMainThread:@selector(aspectRatioChanged)
 				   withObject:nil
 				waitUntilDone:YES];
-    [(id)inRefCon performSelectorOnMainThread:@selector(resizeBounds)
-				   withObject:nil
-				waitUntilDone:NO];
+
     [pool release];
 }
