@@ -54,6 +54,17 @@
 											 selector:@selector(rebuildMenu)
 												 name:@"RebuildMenu"
 											   object:nil];	
+	[[NSNotificationCenter defaultCenter] addObserver:self
+						 selector:@selector(rebuildTrackingRects)
+						     name:NSViewFrameDidChangeNotification
+						   object:self];	
+	trackingRect = [self addTrackingRect:[self bounds] owner:self userData:nil assumeInside:NO];
+}
+
+-(void)rebuildTrackingRects
+{
+    [self removeTrackingRect:trackingRect];
+    trackingRect = [self addTrackingRect:[self bounds] owner:self userData:nil assumeInside:NO];
 }
 
 -(void)closeReopen
@@ -77,6 +88,8 @@
 
 -(void)dealloc
 {
+    if(mouseEntered)
+	[self mouseExited:nil];
     [title release];
     [trueMovieView release];
     [super dealloc];
@@ -868,6 +881,18 @@
     [self setAutoresizingMask:FINAL_SIZING];
     [((NiceWindow *)[self window]) setAspectRatio:[((NiceWindow *)[self window]) frame].size];
 	
+}
+
+- (void)mouseEntered:(NSEvent *)theEvent
+{
+    [NSApp mouseEntered:theEvent];
+    mouseEntered = YES;
+}
+
+- (void)mouseExited:(NSEvent *)theEvent
+{
+    [NSApp mouseExited:theEvent];
+    mouseEntered = NO;
 }
 
 @end

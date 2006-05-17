@@ -62,6 +62,19 @@ BOOL selectNiceWindow(id each, void* context){
  
 }
 
+- (void)mouseEntered:(NSEvent *)theEvent
+{
+    insideCounter++;
+    [self testCursorMovement];
+}
+
+- (void)mouseExited:(NSEvent *)theEvent
+{
+    insideCounter--;
+    if(insideCounter == 0){
+	[self testCursorMovement];
+    }
+}
 
 /**
 * This method tests to see if the mouse has moved to a different location. If so, inject the event into
@@ -102,22 +115,26 @@ BOOL selectNiceWindow(id each, void* context){
             // there seems to be no window assigned with this event at the moment;
             // but just in case ...
             if ((theWindow = [anEvent window])) {
-                theView = [[theWindow contentView] hitTest:[anEvent
-                    locationInWindow]];
                 locationInWindow = [anEvent locationInWindow];
+                theView = [[theWindow contentView] hitTest:locationInWindow];
             } else {
                 // find window
-                NSEnumerator *enumerator = [[self orderedWindows] objectEnumerator];
-                while ((theWindow = [enumerator nextObject])) {
-                    locationInWindow = [theWindow mouseLocationOutsideOfEventStream];
-                    NSView *contentView = [theWindow contentView];
-                    theView = [contentView hitTest:locationInWindow];
-                    if (theView) {
-                        // we found our view
-                        //NSLog(@"hit view of class: %@", NSStringFromClass([theView class]));
-                        break;
-                    }
-                }
+		NSPoint locationOnScreen = [NSEvent mouseLocation];
+		NSEnumerator *enumerator = [[self orderedWindows] objectEnumerator];
+		while ((theWindow = [enumerator nextObject])) {
+		    if(NSPointInRect(locationOnScreen, [theWindow frame])){
+			locationInWindow = [theWindow convertScreenToBase:locationOnScreen];
+			NSView *contentView = [theWindow contentView];
+			if(contentView){
+			    theView = [contentView hitTest:locationInWindow];
+			    if (theView) {
+				// we found our view
+				//NSLog(@"hit view of class: %@", NSStringFromClass([theView class]));
+				break;
+			    }
+			}
+		    }
+		}
             }
             if (theView) {
                 // create new event with useful window, location and event values
@@ -154,25 +171,6 @@ BOOL selectNiceWindow(id each, void* context){
     }
 }
 
--(void)deactivateTimer
-{
-    if(inactiveTimer){
-        [inactiveTimer invalidate];
-        inactiveTimer = nil;
-    }
-}
-
--(void)activateTimer
-{
-    if(!inactiveTimer){
-        inactiveTimer = [NSTimer scheduledTimerWithTimeInterval:0.01
-                                                         target:self
-                                                       selector:@selector(testCursorMovement)
-                                                       userInfo:nil
-                                                        repeats:YES];
-    }
-}
-
 -(NSArray *)movieWindows
 {
 
@@ -191,34 +189,6 @@ BOOL selectNiceWindow(id each, void* context){
 
 #pragma mark -
 #pragma mark Delegate Methods
-
--(void)applicationDidBecomeActive:(NSNotification *)aNotification
-{
-    [self deactivateTimer];
-}
-
--(void)applicationDidResignActive:(NSNotification *)aNotification
-{
-    if(![self isHidden])
-        [self activateTimer];
-}
-
--(void)applicationDidHide:(NSNotification *)aNotification
-{
-    [self deactivateTimer];
-}
-
--(void)applicationDidUnhide:(NSNotification *)aNotification
-{
-    if(![self isActive])
-        [self activateTimer];
-}
-
--(void)applicationDidFinishLaunching:(NSNotification *)aNotification
-{
-    if(![self isActive])
-        [self activateTimer];
-}
 
 -(void)application:(NSApplication *)sender openFiles:(NSArray *)filenames
 {

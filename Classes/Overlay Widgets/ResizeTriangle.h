@@ -7,9 +7,9 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "OverlayWindow.h"
 
-
-@interface ResizeTriangle : NSWindow {
+@interface ResizeTriangle : OverlayWindow {
 
 }
 

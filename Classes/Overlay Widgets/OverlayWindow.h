@@ -8,7 +8,8 @@
 
 @interface OverlayWindow : NSWindow
 {
-    
+    NSTrackingRectTag trackingRect;
+    BOOL mouseEntered;
 }
 
 @end

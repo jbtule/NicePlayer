@@ -21,6 +21,13 @@
     return result;
 }
 
+-(void)dealloc
+{
+    if(mouseEntered)
+	[self mouseExited:nil];
+    [super dealloc];
+}
+
 -(BOOL)canBecomeMainWindow
 {
     return NO;
@@ -29,6 +36,22 @@
 -(BOOL)canBecomeKeyWindow
 {
     return NO;
+}
+
+-(void)awakeFromNib
+{
+    [self setHasShadow:NO];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+					     selector:@selector(rebuildTrackingRects)
+						 name:NSViewFrameDidChangeNotification
+					       object:[self contentView]];	
+    trackingRect = [[self contentView] addTrackingRect:[[self contentView] bounds] owner:self userData:nil assumeInside:NO];
+}
+
+-(void)rebuildTrackingRects
+{
+    [[self contentView] removeTrackingRect:trackingRect];
+    trackingRect = [[self contentView] addTrackingRect:[[self contentView] bounds] owner:self userData:nil assumeInside:NO];
 }
 
 -(void)mouseMoved:(NSEvent *)anEvent
@@ -45,5 +68,16 @@
     [((NiceWindow *)[self parentWindow]) mouseMoved:newEvent];
 }
 
+- (void)mouseEntered:(NSEvent *)theEvent
+{
+    [NSApp mouseEntered:theEvent];
+    mouseEntered = YES;
+}
+
+- (void)mouseExited:(NSEvent *)theEvent
+{
+    [NSApp mouseExited:theEvent];
+    mouseEntered = NO;
+}
 
 @end

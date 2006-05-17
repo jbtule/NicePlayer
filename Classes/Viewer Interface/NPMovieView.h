@@ -14,14 +14,18 @@
 
 @interface NPMovieView : NSView {
     NSURL *openedURL;
-    BOOL dragButton;
     id trueMovieView;
     id contextMenu;
-    BOOL wasPlaying;
     id title;
+    
+    NSTrackingRectTag trackingRect;
     
     NSString *fileType;
     NSString *fileExtension;
+
+    BOOL dragButton;
+    BOOL wasPlaying;
+    BOOL mouseEntered;
 }
 
 +(id)blankImage;

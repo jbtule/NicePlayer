@@ -9,6 +9,7 @@
 
 -(void)awakeFromNib
 {
+    [super awakeFromNib];
     [ffButton setContinuous:YES];
     [rrButton setContinuous:YES];
     

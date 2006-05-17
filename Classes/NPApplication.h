@@ -13,10 +13,13 @@
 @interface NPApplication : NSApplication {
 	NSTimer *inactiveTimer;
 	NSPoint lastPoint;
+	int insideCounter;
 }
+
 -(void)copyDefaultScriptsToApplicationSupport;
 -(id)bestMovieWindow;
 -(NSArray *)movieWindows;
+-(void)testCursorMovement;
 -(IBAction)visitNicePlayerWebSite:(id)sender;
 -(IBAction)visitProjectRoadmap:(id)sender;
 -(IBAction)donateToNicePlayer:(id)sender;
