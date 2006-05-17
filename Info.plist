@@ -433,11 +433,11 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.93</string>
+	<string>0.93u</string>
 	<key>CFBundleSignature</key>
 	<string>nIcE</string>
 	<key>CFBundleVersion</key>
-	<string>206</string>
+	<string>413</string>
 	<key>JTAuthorEmail</key>
 	<string>niceplayer@indyjt.com</string>
 	<key>JTUpdateURL</key>

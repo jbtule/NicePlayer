@@ -37,7 +37,10 @@
 		rightClickMoviePref = [[NSUserDefaults standardUserDefaults] integerForKey:@"rightClickMoviePref"];
 		scrollWheelMoviePref = [[NSUserDefaults standardUserDefaults] integerForKey:@"scrollWheelMoviePref"];
 
-		scrollResizePin = [[NSUserDefaults standardUserDefaults] integerForKey:@"scrollResizePin"];
+		if([[NSUserDefaults standardUserDefaults] objectForKey:@"scrollResizePin"] == nil)
+		    scrollResizePin = PIN_SMART;
+		else
+		    scrollResizePin = [[NSUserDefaults standardUserDefaults] integerForKey:@"scrollResizePin"];
 		defaultTimeDisplay = [[NSUserDefaults standardUserDefaults] integerForKey:@"defaultTimeDisplay"];
 		defaultRepeatMode = [[NSUserDefaults standardUserDefaults] integerForKey:@"defaultRepeatMode"];
 		defaultOpenMode = [[NSUserDefaults standardUserDefaults] integerForKey:@"defaultOpenMode"];

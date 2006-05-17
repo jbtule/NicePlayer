@@ -661,9 +661,36 @@
 			      [self frame].origin.y+(([self frame].size.height-newHeight)/2),
 			      newWidth, newHeight);
             break;
+	case PIN_SMART:
+	{
+	    NSRect screenFrame = [[self screen] visibleFrame];
+	    NSRect centerRect = NSMakeRect([self frame].origin.x+(([self frame].size.width-newWidth)/2),
+					[self frame].origin.y+(([self frame].size.height-newHeight)/2),
+					newWidth, newHeight);
+	    NSRect newRect = centerRect;
+	    
+	    if(newRect.origin.x < screenFrame.origin.x)
+		newRect.origin.x = screenFrame.origin.x;
+		
+	    if(newRect.origin.y < screenFrame.origin.y)
+		newRect.origin.y = screenFrame.origin.y;
+		
+	    if((screenFrame.origin.x + screenFrame.size.width) < (newRect.origin.x + newRect.size.width))
+		newRect.origin.x -= (newRect.origin.x + newRect.size.width) - (screenFrame.origin.x + screenFrame.size.width);
+
+	    if((screenFrame.origin.y + screenFrame.size.height) < (newRect.origin.y + newRect.size.height))
+		newRect.origin.y -= (newRect.origin.y + newRect.size.height) - (screenFrame.origin.y + screenFrame.size.height);
+	    
+	    if(newRect.origin.x < screenFrame.origin.x)
+		newRect.origin.x = centerRect.origin.x;
+
+	    if(newRect.origin.y < screenFrame.origin.y)
+	       newRect.origin.y = centerRect.origin.y;
+	    return newRect;
+	}
     }
     
-    return NSMakeRect(0, 0, 0, 0);
+    return NSMakeRect(0, 0, 100, 100);
 }
 
 /**
