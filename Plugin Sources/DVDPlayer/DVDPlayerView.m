@@ -94,6 +94,15 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
     }
     if(self = [super initWithFrame:frame]){
 	[self setAutoresizingMask:(NSViewWidthSizable | NSViewHeightSizable)];			
+	[[NSNotificationCenter defaultCenter] addObserver:self 
+						 selector:@selector(windowDidMove:) 
+						     name:NSWindowDidMoveNotification 
+						   object:NULL];
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self 
+						 selector:@selector(frameDidChange:) 
+						     name:NSViewFrameDidChangeNotification 
+						   object:NULL];
     }
     return self;
 }
@@ -105,7 +114,8 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 {
 	CGRect cgr = {{NSMinX(frame), NSMinY(frame)}, {NSWidth(frame), NSHeight(frame)}};
 	Rect nr = convertCGRectToQDRect(cgr);
-	DVDSetVideoBounds(&nr);
+	OSStatus result = DVDSetVideoBounds (&nr);
+	NSAssert1 (!result, @"DVDSetVideoBounds returned %d", result);
 }
 
 -(void)resizeToAspect
@@ -113,7 +123,8 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
     [[self window] setAspectRatio:[self naturalSize]];
     NSSize windowSize = [(NiceWindow *)[self window] getResizeAspectRatioSize];
     /* Make sure that bounds get resized first so we don't get white background showing through. */
-    [self updateBounds:NSMakeRect(0, 0, windowSize.width, windowSize.height)];
+    [(NiceWindow *)[self window] resizeToAspectRatio];
+    //[self updateBounds:NSMakeRect(0, 0, windowSize.width, windowSize.height)];
 }
 
 /**
@@ -125,7 +136,6 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 -(void)aspectRatioChanged
 {
     [self resizeToAspect];
-    [(NiceWindow *)[self window] resizeToAspectRatio];
 }
 
 -(BOOL)canAnimateResize
@@ -140,6 +150,9 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 {
 	[updateChapterTimer invalidate];
 	DVDUnregisterEventCallBack(cid);
+	DVDUnregisterEventCallBack(cid1);
+	DVDUnregisterEventCallBack(cid2);
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
 	DVDStop();
 	if([[[myURL path] lastPathComponent] isEqualToString:@"VIDEO_TS"])
 		DVDCloseMediaFile();
@@ -208,24 +221,22 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
  */
 -(BOOL)loadMovie
 {
-	CGDirectDisplayID displays[MAX_DISPLAYS];
-	CGDisplayCount displayCount;
 	NSRect frame = [[NSScreen mainScreen] frame];
 	DVDSetVideoWindowID([[self window] windowNumber]);	
 	
 	CGRect cgr = {{NSMinX(frame), NSMinY(frame)}, {NSWidth(frame), NSHeight(frame)}};
-	CGGetDisplaysWithRect(cgr, MAX_DISPLAYS, displays, &displayCount);
-	DVDSetVideoDisplay(displays[0]);
+
+	[self setVideoDisplay];
 
 	DVDSetFatalErrorCallBack(fatalError, (UInt32)self);
 	DVDEventCode inCode = kDVDEventDisplayMode;
 	DVDRegisterEventCallBack(aspectChange, &inCode, 1, (UInt32)self, &cid);
 
 	inCode = kDVDEventTitle;
-	DVDRegisterEventCallBack(aspectChange, &inCode, 1, (UInt32)self, &cid);
+	DVDRegisterEventCallBack(aspectChange, &inCode, 1, (UInt32)self, &cid1);
 
 	inCode = kDVDEventVideoStandard;
-	DVDRegisterEventCallBack(aspectChange, &inCode, 1, (UInt32)self, &cid);
+	DVDRegisterEventCallBack(aspectChange, &inCode, 1, (UInt32)self, &cid2);
 
 	FSRef fsref;
 	CFURLGetFSRef((CFURLRef)myURL, &fsref);
@@ -383,14 +394,8 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(void)resizeBounds
 {
-}
-
-- (void)setFrame:(NSRect)frameRect
-{
-     [[self window] disableFlushWindow];
-    [super setFrame:frameRect];
-    [[self window] setContentSize:frameRect.size];
-    [self updateBounds:frameRect];
+    [[self window] disableFlushWindow];
+    [[self window] setContentSize:[self frame].size];
     [[self window] enableFlushWindow];
 }
 
@@ -413,6 +418,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 {
 	Boolean isp;
 	DVDIsPaused(&isp);
+	[self updateBounds:[self frame]];
 	if(isp)
 		DVDResume();
 	else {
@@ -974,6 +980,45 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 					     withName:[sender entryText]
 					      forDisc:[NSString stringWithCharacters:(unichar *)outDiscID length:8]];
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:self];
+}
+
+- (void) setVideoDisplay 
+{
+    static CGDirectDisplayID curDisplay = 0;
+    
+    /* get the ID of the display that contains the largest part of the window */
+    CGDirectDisplayID newDisplay = (CGDirectDisplayID) 
+	[[[[[self window] screen] deviceDescription] valueForKey:@"NSScreenNumber"] intValue];
+    
+    /* if the display has changed, set the new display */
+    if (newDisplay != curDisplay) {
+	Boolean isSupported = FALSE;
+	OSStatus result = DVDSwitchToDisplay (newDisplay, &isSupported);
+	NSAssert1 (!result, @"DVDSwitchToDisplay returned %d", result);
+	
+	if (isSupported) { 
+	    curDisplay = newDisplay;
+	}
+	else {
+	    NSLog(@"video display %d not supported", newDisplay);
+	}
+    }
+}
+
+#pragma mark NSWindow notifications
+
+- (void) frameDidChange:(NSNotification *)notification 
+{
+    if ([notification object] == [self superview]) {
+	[self resizeBounds];
+	[self updateBounds:[self bounds]];
+    }
+}
+
+- (void) windowDidMove:(NSNotification *)notification 
+{
+    if ([notification object] == [self window]) 
+	[self setVideoDisplay];
 }
 
 @end

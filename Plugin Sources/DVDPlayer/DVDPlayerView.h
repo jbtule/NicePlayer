@@ -14,7 +14,7 @@
 	NSURL *myURL;
 	id updateChapterTimer;
 	
-	UInt32 cid;
+	UInt32 cid, cid1, cid2, cid3;
 }
 
 -(void)previousChapter;
