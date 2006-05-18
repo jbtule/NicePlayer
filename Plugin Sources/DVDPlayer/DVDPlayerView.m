@@ -118,13 +118,14 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	NSAssert1 (!result, @"DVDSetVideoBounds returned %d", result);
 }
 
--(void)resizeToAspect
+-(NSSize)resizeToAspect
 {
     [[self window] setAspectRatio:[self naturalSize]];
     NSSize windowSize = [(NiceWindow *)[self window] getResizeAspectRatioSize];
     /* Make sure that bounds get resized first so we don't get white background showing through. */
     [(NiceWindow *)[self window] resizeToAspectRatio];
-    //[self updateBounds:NSMakeRect(0, 0, windowSize.width, windowSize.height)];
+    
+    return windowSize;
 }
 
 /**
@@ -150,8 +151,6 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 {
 	[updateChapterTimer invalidate];
 	DVDUnregisterEventCallBack(cid);
-	DVDUnregisterEventCallBack(cid1);
-	DVDUnregisterEventCallBack(cid2);
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
 	DVDStop();
 	if([[[myURL path] lastPathComponent] isEqualToString:@"VIDEO_TS"])
@@ -227,16 +226,11 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	CGRect cgr = {{NSMinX(frame), NSMinY(frame)}, {NSWidth(frame), NSHeight(frame)}};
 
 	[self setVideoDisplay];
-
+	[self updateBounds:[self frame]];
+	
 	DVDSetFatalErrorCallBack(fatalError, (UInt32)self);
-	DVDEventCode inCode = kDVDEventDisplayMode;
-	DVDRegisterEventCallBack(aspectChange, &inCode, 1, (UInt32)self, &cid);
-
-	inCode = kDVDEventTitle;
-	DVDRegisterEventCallBack(aspectChange, &inCode, 1, (UInt32)self, &cid1);
-
-	inCode = kDVDEventVideoStandard;
-	DVDRegisterEventCallBack(aspectChange, &inCode, 1, (UInt32)self, &cid2);
+	DVDEventCode eventCodes[] = { kDVDEventDisplayMode, kDVDEventTitle, kDVDEventVideoStandard };
+	DVDRegisterEventCallBack(aspectChange, eventCodes, sizeof(eventCodes)/sizeof(DVDEventCode), (UInt32)self, &cid);
 
 	FSRef fsref;
 	CFURLGetFSRef((CFURLRef)myURL, &fsref);
@@ -392,13 +386,6 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 {
 }
 
--(void)resizeBounds
-{
-    [[self window] disableFlushWindow];
-    [[self window] setContentSize:[self frame].size];
-    [[self window] enableFlushWindow];
-}
-
 #pragma mark -
 #pragma mark Controls
 
@@ -418,7 +405,6 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 {
 	Boolean isp;
 	DVDIsPaused(&isp);
-	[self updateBounds:[self frame]];
 	if(isp)
 		DVDResume();
 	else {
@@ -1010,8 +996,8 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 - (void) frameDidChange:(NSNotification *)notification 
 {
     if ([notification object] == [self superview]) {
-	[self resizeBounds];
-	[self updateBounds:[self bounds]];
+	NSSize windowSize = [self resizeToAspect];
+	[self updateBounds:NSMakeRect(0, 0, windowSize.width, windowSize.height)];
     }
 }
 
@@ -1148,7 +1134,7 @@ NSString *stringForLanguageCodeTenThree(DVDLanguageCode language)
 	case kDVDLanguageCodeCambodian:
 	    return [NSString stringWithUTF8String:"Cambodian"];
 	case kDVDLanguageCodeKannada:
-	    return [NSString stringWithUTF8String:"�^�ನ�^�ಡ"];
+	    return [NSString stringWithUTF8String:"^ನ^ಡ"];
 	case kDVDLanguageCodeKorean:
 	    return [NSString stringWithUTF8String:"한국어"];
 	case kDVDLanguageCodeKashmiri:
@@ -1342,6 +1328,5 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
     [(id)inRefCon performSelectorOnMainThread:@selector(aspectRatioChanged)
 				   withObject:nil
 				waitUntilDone:YES];
-
     [pool release];
 }

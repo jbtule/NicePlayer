@@ -14,8 +14,10 @@
 	NSURL *myURL;
 	id updateChapterTimer;
 	
-	UInt32 cid, cid1, cid2, cid3;
+	UInt32 cid;
 }
+
+-(NSSize)resizeToAspect;
 
 -(void)previousChapter;
 -(void)nextChapter;
