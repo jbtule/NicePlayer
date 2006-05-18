@@ -13,6 +13,7 @@
 #import "NPPluginView.h"
 #import "DVDPrefController.h"
 #import "NSBookmarkCreateButton.h"
+#import <unistd.h>
 
 #define MAX_DISPLAYS (16)
 
@@ -110,22 +111,29 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 /**
 * Update the bounds of the DVD. This generally happens on resize or window move.
  */
--(void)updateBounds:(NSRect)frame
+-(void)updateBounds
 {
-	CGRect cgr = {{NSMinX(frame), NSMinY(frame)}, {NSWidth(frame), NSHeight(frame)}};
-	Rect nr = convertCGRectToQDRect(cgr);
-	OSStatus result = DVDSetVideoBounds (&nr);
-	NSAssert1 (!result, @"DVDSetVideoBounds returned %d", result);
+    NSRect content = [[[self window] contentView] bounds];
+    NSRect frame = [[self window] frame];
+    
+    /* create an equivalent QuickDraw rectangle with window local coordinates */
+    Rect qdRect;
+    qdRect.left = 0;
+    qdRect.right = content.size.width;
+    qdRect.bottom = frame.size.height;
+    qdRect.top = frame.size.height - content.size.height;
+    
+    /* set the video area */
+    OSStatus result = DVDSetVideoBounds (&qdRect);
+    NSAssert1 (!result, @"DVDSetVideoBounds returned %d", result);
 }
 
--(NSSize)resizeToAspect
+-(void)resizeToAspect
 {
+    [[self window] disableFlushWindow];
     [[self window] setAspectRatio:[self naturalSize]];
-    NSSize windowSize = [(NiceWindow *)[self window] getResizeAspectRatioSize];
-    /* Make sure that bounds get resized first so we don't get white background showing through. */
     [(NiceWindow *)[self window] resizeToAspectRatio];
-    
-    return windowSize;
+    [[self window] enableFlushWindow];
 }
 
 /**
@@ -223,10 +231,8 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	NSRect frame = [[NSScreen mainScreen] frame];
 	DVDSetVideoWindowID([[self window] windowNumber]);	
 	
-	CGRect cgr = {{NSMinX(frame), NSMinY(frame)}, {NSWidth(frame), NSHeight(frame)}};
-
 	[self setVideoDisplay];
-	[self updateBounds:[self frame]];
+	[self updateBounds];
 	
 	DVDSetFatalErrorCallBack(fatalError, (UInt32)self);
 	DVDEventCode eventCodes[] = { kDVDEventDisplayMode, kDVDEventTitle, kDVDEventVideoStandard };
@@ -328,28 +334,45 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 {
 }
 
+- (float) titleAspectRatio
+{
+    const float kStandardRatio = 4.0 / 3.0;
+    const float kWideRatio = 16.0 / 9.0;
+    float ratio = kStandardRatio;
+    
+    DVDAspectRatio format = kDVDAspectRatioUninitialized;
+    DVDGetAspectRatio (&format);
+    
+    switch (format) {
+	case kDVDAspectRatio4x3:
+	case kDVDAspectRatio4x3PanAndScan:
+	case kDVDAspectRatioUninitialized:
+	    ratio = kStandardRatio;
+	    break;
+	case kDVDAspectRatio16x9:
+	case kDVDAspectRatioLetterBox:
+	    ratio = kWideRatio;
+	    break;
+    }
+    
+    return ratio;
+}
+
 /**
  * Returns the aspect ratio.
  */
 -(NSSize)naturalSize
 {
-	DVDAspectRatio ratio;
-	DVDGetAspectRatio(&ratio);
-	NSSize anAspectRatio = NSMakeSize(640, 480);
-	/* Choose among preset DVD aspect ratios */
-	switch(ratio){
-		case kDVDAspectRatio4x3: case kDVDAspectRatio4x3PanAndScan:
-			anAspectRatio = NSMakeSize(720, 3.0/4.0*720);
-			break;			
-		case kDVDAspectRatio16x9: case kDVDAspectRatioLetterBox:
-			anAspectRatio = NSMakeSize(720, 9.0/16.0*720);
-			break;
-		case kDVDAspectRatioUninitialized:
-			anAspectRatio = NSMakeSize(640, 480);
-			break;
-	}
-	
-	return anAspectRatio;
+    /* get the native height and width of the media */
+    UInt16 width = 720, height = 480;
+    DVDGetNativeVideoSize (&width, &height);
+    
+    NSSize size;
+    size.height = height;
+    /* adjust the width using the current aspect ratio */
+    size.width = size.height * [self titleAspectRatio];
+    
+    return size;
 }
 
 -(void)setLoopMode:(NSQTMovieLoopMode)flag
@@ -996,8 +1019,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 - (void) frameDidChange:(NSNotification *)notification 
 {
     if ([notification object] == [self superview]) {
-	NSSize windowSize = [self resizeToAspect];
-	[self updateBounds:NSMakeRect(0, 0, windowSize.width, windowSize.height)];
+	[self updateBounds];
     }
 }
 
@@ -1327,6 +1349,6 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     [(id)inRefCon performSelectorOnMainThread:@selector(aspectRatioChanged)
 				   withObject:nil
-				waitUntilDone:YES];
+				waitUntilDone:NO];
     [pool release];
 }

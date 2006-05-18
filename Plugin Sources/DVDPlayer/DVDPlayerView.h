@@ -17,7 +17,8 @@
 	UInt32 cid;
 }
 
--(NSSize)resizeToAspect;
+-(void)updateBounds;
+-(void)resizeToAspect;
 
 -(void)previousChapter;
 -(void)nextChapter;
