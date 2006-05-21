@@ -668,6 +668,13 @@
 					[self frame].origin.y+(([self frame].size.height-newHeight)/2),
 					newWidth, newHeight);
 	    NSRect newRect = centerRect;
+
+	    if(([self frame].origin.x < screenFrame.origin.x)
+	       || ([self frame].origin.y < screenFrame.origin.y)
+	       || (([self frame].origin.x + [self frame].size.width) > (screenFrame.origin.x + screenFrame.size.width))
+	       || (([self frame].origin.y + [self frame].size.height) > (screenFrame.origin.y + screenFrame.size.height))){
+		   return centerRect;
+	    }
 	    
 	    if(newRect.origin.x < screenFrame.origin.x)
 		newRect.origin.x = screenFrame.origin.x;
