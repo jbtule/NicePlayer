@@ -120,7 +120,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
     Rect qdRect;
     qdRect.left = 0;
     qdRect.right = content.size.width - 1;
-    qdRect.bottom = frame.size.height;
+    qdRect.bottom = frame.size.height - 1;
     qdRect.top = frame.size.height - content.size.height;
     
     /* set the video area */
