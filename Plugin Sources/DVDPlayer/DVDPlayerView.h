@@ -29,6 +29,7 @@
 -(id)angleMenu;
 -(id)subPictureMenu;
 
+-(float)titleAspectRatio;
 -(void)gotoMainMenu;
 -(id)bookmarksForCurrentDisc;
 

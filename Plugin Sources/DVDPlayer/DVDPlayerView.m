@@ -119,7 +119,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
     /* create an equivalent QuickDraw rectangle with window local coordinates */
     Rect qdRect;
     qdRect.left = 0;
-    qdRect.right = content.size.width;
+    qdRect.right = content.size.width - 1;
     qdRect.bottom = frame.size.height;
     qdRect.top = frame.size.height - content.size.height;
     
@@ -134,6 +134,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
     [[self window] setAspectRatio:[self naturalSize]];
     [(NiceWindow *)[self window] resizeToAspectRatio];
     [[self window] enableFlushWindow];
+
 }
 
 /**
@@ -145,6 +146,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 -(void)aspectRatioChanged
 {
     [self resizeToAspect];
+    [self drawMovieFrame];
 }
 
 -(BOOL)canAnimateResize
@@ -237,7 +239,6 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	DVDSetFatalErrorCallBack(fatalError, (UInt32)self);
 	DVDEventCode eventCodes[] = { kDVDEventDisplayMode, kDVDEventTitle, kDVDEventVideoStandard };
 	DVDRegisterEventCallBack(aspectChange, eventCodes, sizeof(eventCodes)/sizeof(DVDEventCode), (UInt32)self, &cid);
-
 	FSRef fsref;
 	CFURLGetFSRef((CFURLRef)myURL, &fsref);
 	if([[[myURL path] lastPathComponent] isEqualToString:@"VIDEO_TS"])
@@ -332,6 +333,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 
 -(void)drawMovieFrame
 {
+    DVDUpdateVideo();
 }
 
 - (float) titleAspectRatio
@@ -365,7 +367,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 {
     /* get the native height and width of the media */
     UInt16 width = 720, height = 480;
-    DVDGetNativeVideoSize (&width, &height);
+    DVDGetNativeVideoSize(&width, &height);
     
     NSSize size;
     size.height = height;
