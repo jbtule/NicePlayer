@@ -341,12 +341,8 @@
 
 -(void)toggleMute
 {
-    if([trueMovieView muted]){
-	[trueMovieView setMuted:NO];
-    } else {
-	[trueMovieView setMuted:YES];
-	[((NiceWindow *)[self window]) updateVolume];
-    }
+    [trueMovieView setMuted:![trueMovieView muted]];
+    [((NiceWindow *)[self window]) updateVolume];
 }
 
 -(void)incrementVolume
@@ -384,6 +380,22 @@
     return wasPlaying;
 }
 
+-(void)playPrevMovie
+{
+    if([self currentMovieTime] > 2){
+	[trueMovieView setCurrentMovieTime:0];
+	[((NiceWindow *)[self window]) setNotificationText:title];
+    } else {
+	[[[self window] delegate] playPrev];
+	[((NiceWindow *)[self window]) setNotificationText:title];
+    }
+}
+
+-(void)playNextMovie
+{
+    [[[self window] delegate] playNext];
+    [((NiceWindow *)[self window]) setNotificationText:title];
+}
 #pragma mark -
 #pragma mark Keyboard Events
 
@@ -404,8 +416,7 @@
 			break;
 		case NSRightArrowFunctionKey:
 			if([anEvent modifierFlags] & NSCommandKeyMask){
-				[[[self window] delegate] playNext];
-				[((NiceWindow *)[self window]) setNotificationText:title];
+			    [self playNextMovie];
 				break;
 			}
 			if([anEvent modifierFlags] & NSAlternateKeyMask){
@@ -419,13 +430,7 @@
 			break;
 		case NSLeftArrowFunctionKey:
 			if([anEvent modifierFlags] & NSCommandKeyMask){
-				if([self currentMovieTime] > 2){
-					[trueMovieView setCurrentMovieTime:0];
-					[((NiceWindow *)[self window]) setNotificationText:title];
-				} else {
-					[[[self window] delegate] playPrev];
-					[((NiceWindow *)[self window]) setNotificationText:title];
-				}
+			    [self playPrevMovie];
 				break;
 			}
 			if([anEvent modifierFlags] & NSAlternateKeyMask){
@@ -622,11 +627,13 @@
 	    [self scrollWheelResize:anEvent];
 	else
 	    [self scrollWheelAdjustVolume:anEvent];
-    } else { // SCROLL_WHEEL_ADJUSTS_SIZE
+    } else if([[Preferences mainPrefs] scrollWheelMoviePref] == SCROLL_WHEEL_ADJUSTS_SIZE){
 	if([anEvent modifierFlags] & NSAlternateKeyMask)
 	    [self scrollWheelAdjustVolume:anEvent];	
 	else
 	    [self scrollWheelResize:anEvent];
+    } else {
+	// SCROLL_WHEEL_ADJUSTS_NONE
     }
 }
 

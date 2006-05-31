@@ -8,6 +8,9 @@
 #import "NiceDocument.h"
 #import "NiceUtilities.h"
 #import "NiceWindow/NiceWindowController.h"
+#import "AppleRemote.h"
+#import "ControlPlay.h"
+
 id rowsToFileNames(id obj, void* playList){
     return [[(id)playList objectAtIndex:[obj intValue]] path];
 }
@@ -268,10 +271,17 @@ void findSpace(id each, void* context, BOOL* endthis){
     return [theMovieView isPlaying];
 }
 
+- (void)windowDidMiniaturize:(NSNotification *)aNotification
+{
+    wasPlayingBeforeMini = [(NPMovieView *)theMovieView isPlaying];
+    [(NPMovieView *)theMovieView stop];
+}
+
 - (void)windowDidDeminiaturize:(NSNotification *)aNotification
 {
     [theWindow restoreVolume];
-    [theMovieView start];
+    if(wasPlayingBeforeMini)
+	[theMovieView start];
 }
 
 - (void)windowControllerDidLoadNib:(NSWindowController *)aController
@@ -793,6 +803,106 @@ stuff won't work properly! */
 {
     [view setDropRow: row dropOperation: NSTableViewDropAbove];
     return NSDragOperationGeneric;
+}
+
+#pragma mark -
+#pragma mark Apple Remote Delegate Method
+
+-(void)appleRemoteButton:(AppleRemoteEventIdentifier)buttonIdentifier pressedDown:(BOOL)pressedDown 
+{
+#define REMOTE_FIRING_INTERVAL (0.2)
+    switch(buttonIdentifier) {
+	case kRemoteButtonVolume_Plus:
+	    if(pressedDown){
+		[theMovieView cancelPreviousPerformRequestsWithSelector:@"hideOverLayVolume"];
+		[theMovieView incrementVolume];
+		[[self window] showOverLayVolume];
+		remoteEventTimer = [NSTimer scheduledTimerWithTimeInterval:REMOTE_FIRING_INTERVAL
+								    target:theMovieView
+								  selector:@selector(incrementVolume)
+								  userInfo:nil
+								   repeats:YES];
+		    
+	    } else {
+		[remoteEventTimer invalidate];
+		[theMovieView timedHideOverlayWithSelector:@"hideOverLayVolume"];
+	    }
+	    break;
+	case kRemoteButtonVolume_Minus:
+	    if(pressedDown){
+		[theMovieView cancelPreviousPerformRequestsWithSelector:@"hideOverLayVolume"];
+		[theMovieView decrementVolume];
+		[[self window] showOverLayVolume];
+		remoteEventTimer = [NSTimer scheduledTimerWithTimeInterval:REMOTE_FIRING_INTERVAL
+								    target:theMovieView
+								  selector:@selector(decrementVolume)
+								  userInfo:nil
+								   repeats:YES];
+	    } else {
+		[remoteEventTimer invalidate];
+		[theMovieView timedHideOverlayWithSelector:@"hideOverLayVolume"];
+	    }
+	    break;			
+	case kRemoteButtonMenu:
+	    [[self window] toggleWindowFullScreen];
+	    break;			
+	case kRemoteButtonPlay:
+	    [[((NiceWindow *)[self window]) playButton] togglePlaying];
+	    [((NiceWindow *)[self window]) showOverLayWindow];
+	    [theMovieView smartHideMouseOverOverlays];
+	    break;			
+	case kRemoteButtonRight:
+	    [theMovieView playNextMovie];
+	    [theMovieView smartHideMouseOverOverlays];
+	    break;			
+	case kRemoteButtonLeft:
+	    [theMovieView playPrevMovie];
+	    [theMovieView smartHideMouseOverOverlays];
+	    break;			
+	case kRemoteButtonRight_Hold:
+	    if(pressedDown){
+		[theMovieView ffStart];
+		remoteEventTimer = [NSTimer scheduledTimerWithTimeInterval:REMOTE_FIRING_INTERVAL
+								    target:theMovieView
+								  selector:@selector(ffDo)
+								  userInfo:nil
+								   repeats:YES];
+	    } else {
+		[remoteEventTimer invalidate];
+		[theMovieView ffEnd];
+		[theMovieView smartHideMouseOverOverlays];
+	    }
+	    break;	
+	case kRemoteButtonLeft_Hold:
+	    if(pressedDown){
+		[theMovieView rrStart];
+		remoteEventTimer = [NSTimer scheduledTimerWithTimeInterval:REMOTE_FIRING_INTERVAL
+								    target:theMovieView
+								  selector:@selector(rrDo)
+								  userInfo:nil
+								   repeats:YES];
+	    } else {
+		[remoteEventTimer invalidate];
+		[theMovieView rrEnd];
+		[theMovieView smartHideMouseOverOverlays];
+	    }
+	    break;			
+	case kRemoteButtonPlay_Sleep:
+	    [theMovieView cancelPreviousPerformRequestsWithSelector:@"hideOverLayVolume"];
+	    [theMovieView toggleMute];
+	    [theMovieView showOverLayVolume];
+	    [theMovieView timedHideOverlayWithSelector:@"hideOverLayVolume"];
+	    break;			
+	case kRemoteButtonMenu_Hold:
+	    [[self window] unFullScreen];
+	    [[self window] performMiniaturize:self];
+	    break;
+	case kRemoteControl_Switched:
+	    break;
+	default:
+	    NSLog(@"Unmapped event for button %d", buttonIdentifier); 
+	    break;
+    }
 }
 
 @end

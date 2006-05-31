@@ -23,6 +23,7 @@
                 defaultTimeDisplay = id; 
                 displayNotificationTime = id; 
                 doubleClickMoviePref = id; 
+                enableAppleRemote = id; 
                 fadeNotificationOverlays = id; 
                 fadeOverlayTime = id; 
                 fadeOverlays = id; 
@@ -50,6 +51,7 @@
                 defaultTimeDisplay = id; 
                 displayNotificationTime = id; 
                 doubleClickMoviePref = id; 
+                enableAppleRemote = id; 
                 fadeNotificationOverlays = id; 
                 fadeOverlayTime = id; 
                 fadeOverlays = id; 

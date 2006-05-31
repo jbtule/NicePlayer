@@ -25,14 +25,18 @@
     NSURL* theCurrentURL;
     NSMutableArray* thePlaylist;
     enum defaultRepeatModeValues theRepeatMode;
-	BOOL hasRealMovie;
-	BOOL isRandom;
-	id movieMenuItem;
-	NSMutableArray *menuObjects;
-	id asffrrTimer;
-	id playlistFilename;
-	NSString* theID;
+    id movieMenuItem;
+    NSMutableArray *menuObjects;
+    id asffrrTimer;
+    id playlistFilename;
+    NSString* theID;
+    NSTimer *remoteEventTimer;
+    
+    BOOL hasRealMovie;
+    BOOL isRandom;
+    BOOL wasPlayingBeforeMini;	
 }
+
 -(NSString*)identifier;
 -(NSData *)dataRepresentationOfType:(NSString *)aType;
 -(BOOL)readFromFile:(NSString *)fileName ofType:(NSString *)docType;

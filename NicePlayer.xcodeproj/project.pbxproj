@@ -47,6 +47,9 @@
 		257D61560753F7AD00702BD0 /* NPMovieProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 257D61540753F7AD00702BD0 /* NPMovieProtocol.h */; };
 		257D61680753F92D00702BD0 /* NPMovieView.h in Headers */ = {isa = PBXBuildFile; fileRef = 257D61660753F92D00702BD0 /* NPMovieView.h */; };
 		257D61690753F92D00702BD0 /* NPMovieView.m in Sources */ = {isa = PBXBuildFile; fileRef = 257D61670753F92D00702BD0 /* NPMovieView.m */; };
+		258C2AE80A2D69C200AC22BB /* AppleRemote.h in Headers */ = {isa = PBXBuildFile; fileRef = 258C2AE60A2D69C200AC22BB /* AppleRemote.h */; };
+		258C2AE90A2D69C200AC22BB /* AppleRemote.m in Sources */ = {isa = PBXBuildFile; fileRef = 258C2AE70A2D69C200AC22BB /* AppleRemote.m */; };
+		258C2B710A2D713E00AC22BB /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 258C2B700A2D713E00AC22BB /* IOKit.framework */; };
 		259CC53907374066001ED5FA /* NPApplication.h in Headers */ = {isa = PBXBuildFile; fileRef = 259CC53707374066001ED5FA /* NPApplication.h */; };
 		259CC53A07374066001ED5FA /* NPApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 259CC53807374066001ED5FA /* NPApplication.m */; };
 		25B07BF208077776006724D8 /* NiceDocumentScripting.h in Headers */ = {isa = PBXBuildFile; fileRef = 25B07BF108077776006724D8 /* NiceDocumentScripting.h */; };
@@ -163,32 +166,6 @@
 		8D15AC310486D014006FF6A4 /* NiceDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4ACFDCFA73011CA2CEA /* NiceDocument.m */; settings = {ATTRIBUTES = (); }; };
 		8D15AC320486D014006FF6A4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4B0FDCFA73011CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 /* End PBXBuildFile section */
-
-/* Begin PBXBuildStyle section */
-		4A9504D0FFE6A4CB11CA0CBA /* Development */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-				DEBUGGING_SYMBOLS = YES;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				OPTIMIZATION_CFLAGS = "-O0";
-				ZERO_LINK = NO;
-			};
-			name = Development;
-		};
-		4A9504D1FFE6A4CB11CA0CBA /* Deployment */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				ZERO_LINK = NO;
-			};
-			name = Deployment;
-		};
-/* End PBXBuildStyle section */
 
 /* Begin PBXContainerItemProxy section */
 		25C5C1E808D4B81400987A95 /* PBXContainerItemProxy */ = {
@@ -347,6 +324,9 @@
 		257D61540753F7AD00702BD0 /* NPMovieProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NPMovieProtocol.h; path = "Classes/Viewer Interface/Pluggable Players/NPMovieProtocol.h"; sourceTree = "<group>"; };
 		257D61660753F92D00702BD0 /* NPMovieView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NPMovieView.h; path = "Classes/Viewer Interface/NPMovieView.h"; sourceTree = "<group>"; };
 		257D61670753F92D00702BD0 /* NPMovieView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NPMovieView.m; path = "Classes/Viewer Interface/NPMovieView.m"; sourceTree = "<group>"; };
+		258C2AE60A2D69C200AC22BB /* AppleRemote.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = AppleRemote.h; path = Classes/AppleRemote.h; sourceTree = "<group>"; };
+		258C2AE70A2D69C200AC22BB /* AppleRemote.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = AppleRemote.m; path = Classes/AppleRemote.m; sourceTree = "<group>"; };
+		258C2B700A2D713E00AC22BB /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
 		259CC53707374066001ED5FA /* NPApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NPApplication.h; path = Classes/NPApplication.h; sourceTree = "<group>"; };
 		259CC53807374066001ED5FA /* NPApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NPApplication.m; path = Classes/NPApplication.m; sourceTree = "<group>"; };
 		25B07BF108077776006724D8 /* NiceDocumentScripting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NiceDocumentScripting.h; sourceTree = "<group>"; };
@@ -480,6 +460,7 @@
 				257D60140753DED700702BD0 /* Scripting.framework in Frameworks */,
 				25702FF007569E3300D1EE8C /* DVDPlayback.framework in Frameworks */,
 				251FEFB7085670D800D38B8E /* Cocoa.framework in Frameworks */,
+				258C2B710A2D713E00AC22BB /* IOKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,6 +470,7 @@
 		1058C7A6FEA54F5311CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				258C2B700A2D713E00AC22BB /* IOKit.framework */,
 				251FEFB6085670D800D38B8E /* Cocoa.framework */,
 				25CC866D0831DDA800027929 /* QTKit.framework */,
 				25702FEF07569E3300D1EE8C /* DVDPlayback.framework */,
@@ -739,6 +721,8 @@
 				3E8C9A94074D78350048CB70 /* Subtitle.m */,
 				2513D2F307BDAC4200BB6055 /* FadeOut.h */,
 				2513D2F407BDAC4200BB6055 /* FadeOut.m */,
+				258C2AE60A2D69C200AC22BB /* AppleRemote.h */,
+				258C2AE70A2D69C200AC22BB /* AppleRemote.m */,
 				252BD45D07697C6A006CF96B /* Document/Window */,
 				257029C50734D15000967356 /* Preferences */,
 				25B912D707416725001B68D9 /* Overlay Widgets */,
@@ -888,6 +872,7 @@
 				3E28CCA40808E0F000F59FF5 /* NiceWindowController.h in Headers */,
 				25CC86500831DA2A00027929 /* RCMovieView.h in Headers */,
 				3E64FA4508F2314C0010E3DA /* NicePlugin.h in Headers */,
+				258C2AE80A2D69C200AC22BB /* AppleRemote.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -909,46 +894,6 @@
 			);
 			buildRules = (
 			);
-			buildSettings = {
-				DEPLOYMENT_POSTPROCESSING = YES;
-				FRAMEWORK_SEARCH_PATHS = .;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_ENABLE_TRIGRAPHS = NO;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = NicePlayer_Prefix.pch;
-				GCC_PREPROCESSOR_DEFINITIONS = "";
-				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
-				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
-				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
-				GCC_WARN_MISSING_PARENTHESES = YES;
-				GCC_WARN_SHADOW = YES;
-				GCC_WARN_SIGN_COMPARE = YES;
-				GCC_WARN_UNKNOWN_PRAGMAS = NO;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_PARAMETER = NO;
-				GCC_WARN_UNUSED_VALUE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "$(HOME)/Applications";
-				LIBRARY_SEARCH_PATHS = "";
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = (
-					"-weak_framework",
-					QTKit,
-				);
-				PRODUCT_NAME = NicePlayer;
-				SECTORDER_FLAGS = "";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"-Wno-protocol",
-				);
-				WRAPPER_EXTENSION = app;
-			};
 			dependencies = (
 				3EC3E296092DAB20008CEE8D /* PBXTargetDependency */,
 				3E5970F209FC8DC0001ED4FA /* PBXTargetDependency */,
@@ -968,12 +913,6 @@
 		2A37F4A9FDCFA73011CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			buildConfigurationList = 251FEF770855184200D38B8E /* Build configuration list for PBXProject "NicePlayer" */;
-			buildSettings = {
-			};
-			buildStyles = (
-				4A9504D0FFE6A4CB11CA0CBA /* Development */,
-				4A9504D1FFE6A4CB11CA0CBA /* Deployment */,
-			);
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				English,
@@ -1206,6 +1145,7 @@
 				3E28CCA50808E0F000F59FF5 /* NiceWindowController.m in Sources */,
 				25CC86510831DA2A00027929 /* RCMovieView.m in Sources */,
 				3E64FA4608F2314C0010E3DA /* NicePlugin.m in Sources */,
+				258C2AE90A2D69C200AC22BB /* AppleRemote.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1354,7 +1294,6 @@
 				COPY_PHASE_STRIP = YES;
 				DEPLOYMENT_POSTPROCESSING = YES;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(FRAMEWORK_SEARCH_PATHS)",
 					"$(BUILD_PRODUCTS_DIR)",
 					"$(SRCROOT)/Libraries",
 				);

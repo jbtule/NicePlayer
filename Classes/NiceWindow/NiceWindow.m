@@ -169,7 +169,6 @@
     if(!fullScreen && !presentScreen){
         //   miniVolume =[theMovieView volume];
         //NSLog(@"%f",miniVolume);
-        [(NPMovieView *)theMovieView stop];
         [self miniaturize:sender];
     }
 }

@@ -7,8 +7,7 @@
 
 #import "Preferences.h"
 #import "../Viewer Interface/NPPluginReader.h"
-
-
+#import "AppleRemote.h"
 
 @implementation Preferences
 
@@ -36,6 +35,8 @@
 		doubleClickMoviePref = [[NSUserDefaults standardUserDefaults] integerForKey:@"doubleClickMoviePref"];
 		rightClickMoviePref = [[NSUserDefaults standardUserDefaults] integerForKey:@"rightClickMoviePref"];
 		scrollWheelMoviePref = [[NSUserDefaults standardUserDefaults] integerForKey:@"scrollWheelMoviePref"];
+		
+		disableAppleRemote = [[NSUserDefaults standardUserDefaults] boolForKey:@"disableAppleRemote"];
 
 		if([[NSUserDefaults standardUserDefaults] objectForKey:@"scrollResizePin"] == nil)
 		    scrollResizePin = PIN_SMART;
@@ -157,6 +158,22 @@
 {
 	defaultOpenMode = anInt;
 	[[NSUserDefaults standardUserDefaults] setInteger:anInt forKey:@"defaultOpenMode"];
+}
+
+-(BOOL)disableAppleRemote
+{
+    return disableAppleRemote;
+}
+
+-(void)setDisableAppleRemote:(BOOL)aBool
+{
+    disableAppleRemote = aBool;
+    if(!disableAppleRemote)
+	[[AppleRemote sharedRemote] startListening:self];
+    else
+	[[AppleRemote sharedRemote] stopListening:self];
+
+    [[NSUserDefaults standardUserDefaults] setBool:aBool forKey:@"disableAppleRemote"];
 }
 
 #pragma mark -

@@ -58,6 +58,8 @@
 
 -(BOOL)isPlaying;
 -(BOOL)wasPlaying;
+-(void)playPrevMovie;
+-(void)playNextMovie;
 -(void)finalProxyViewLoad;
 
 -(void)showOverLayVolume;

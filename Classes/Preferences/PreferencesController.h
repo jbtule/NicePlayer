@@ -22,6 +22,7 @@
     IBOutlet id defaultTimeDisplay;
     IBOutlet id defaultRepeatMode;
     IBOutlet id defaultOpenMode;
+    IBOutlet id enableAppleRemote;
     
     IBOutlet id rrSpeedSlider;
     IBOutlet id ffSpeedSlider;
@@ -54,6 +55,7 @@
 -(IBAction)defaultTimeDisplay:(id)sender;
 -(IBAction)defaultRepeatMode:(id)sender;
 -(IBAction)defaultOpenMode:(id)sender;
+-(IBAction)enableAppleRemote:(id)sender;
 
 -(IBAction)rrSpeed:(id)sender;
 -(IBAction)ffSpeed:(id)sender;
