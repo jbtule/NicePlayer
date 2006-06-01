@@ -28,7 +28,7 @@ Rect convertCGRectToQDRect(CGRect inRect) {
 
 Point convertNSPointToQDPoint(NSPoint inPoint, NSRect windowRect){
 	Point outPoint;
-	outPoint.v = (short)inPoint.y;
+	outPoint.v = windowRect.size.height - (short)inPoint.y;
 	outPoint.h = (short)inPoint.x;
 	return outPoint;
 }
