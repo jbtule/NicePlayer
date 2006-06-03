@@ -234,4 +234,10 @@ BOOL selectNiceWindow(id each, void* context){
         [NSURL URLWithString:@"http://charon.laya.com/niceplayer/trac.cgi/wiki/FeatureRequests"]];
 }
 
+-(IBAction)visitAcknowlegementsPage:(id)sender
+{
+    [[NSWorkspace sharedWorkspace] openURL:
+        [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"acknowledgements" ofType:@"html"]]];
+}
+
 @end

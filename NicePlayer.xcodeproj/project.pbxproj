@@ -57,6 +57,7 @@
 		25B0815D08084354006724D8 /* OverlayNotifierWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B0815B08084354006724D8 /* OverlayNotifierWindow.m */; };
 		25B913250741736A001B68D9 /* OverlaysControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 25B913230741736A001B68D9 /* OverlaysControl.h */; };
 		25B913260741736A001B68D9 /* OverlaysControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B913240741736A001B68D9 /* OverlaysControl.m */; };
+		25CC00590A315A46002FB428 /* acknowledgements.html in Resources */ = {isa = PBXBuildFile; fileRef = 25CC00580A315A45002FB428 /* acknowledgements.html */; };
 		25CC86500831DA2A00027929 /* RCMovieView.h in Headers */ = {isa = PBXBuildFile; fileRef = 25CC864E0831DA2A00027929 /* RCMovieView.h */; };
 		25CC86510831DA2A00027929 /* RCMovieView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25CC864F0831DA2A00027929 /* RCMovieView.m */; };
 		25D2E7C407BF3758004BEF7D /* NiceDocumentScripting.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D2E7C207BF3758004BEF7D /* NiceDocumentScripting.m */; };
@@ -283,7 +284,7 @@
 
 /* Begin PBXFileReference section */
 		089C1660FE840EACC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		2513CDAE07BC658900BB6055 /* Plugins.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Plugins.rtf; sourceTree = "<group>"; };
+		2513CDAE07BC658900BB6055 /* Plugins.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = Plugins.rtf; path = Documents/Plugins.rtf; sourceTree = "<group>"; };
 		2513D2F307BDAC4200BB6055 /* FadeOut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FadeOut.h; path = Classes/FadeOut.h; sourceTree = "<group>"; };
 		2513D2F407BDAC4200BB6055 /* FadeOut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FadeOut.m; path = Classes/FadeOut.m; sourceTree = "<group>"; };
 		2513D30507BDACA700BB6055 /* NicePlayer.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = NicePlayer.sdef; path = Resources/NicePlayer.sdef; sourceTree = SOURCE_ROOT; };
@@ -335,6 +336,7 @@
 		25B913230741736A001B68D9 /* OverlaysControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OverlaysControl.h; path = "Classes/Overlay Widgets/OverlaysControl.h"; sourceTree = "<group>"; };
 		25B913240741736A001B68D9 /* OverlaysControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OverlaysControl.m; path = "Classes/Overlay Widgets/OverlaysControl.m"; sourceTree = "<group>"; };
 		25C5C1E408D4B81400987A95 /* DVDPlayer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DVDPlayer.xcodeproj; path = "Plugin Sources/DVDPlayer/DVDPlayer.xcodeproj"; sourceTree = "<group>"; };
+		25CC00580A315A45002FB428 /* acknowledgements.html */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.html; name = acknowledgements.html; path = Documents/acknowledgements.html; sourceTree = "<group>"; };
 		25CC864E0831DA2A00027929 /* RCMovieView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCMovieView.h; path = "Classes/Viewer Interface/Pluggable Players/RCMovieView.h"; sourceTree = "<group>"; };
 		25CC864F0831DA2A00027929 /* RCMovieView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCMovieView.m; path = "Classes/Viewer Interface/Pluggable Players/RCMovieView.m"; sourceTree = "<group>"; };
 		25CC866D0831DDA800027929 /* QTKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = QTKit.framework; path = /System/Library/Frameworks/QTKit.framework; sourceTree = "<absolute>"; };
@@ -744,6 +746,7 @@
 		2A37F4B8FDCFA73011CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				25CC00580A315A45002FB428 /* acknowledgements.html */,
 				3EB4F72F08F62C4C004692D3 /* Default Scripts */,
 				3EB4F72A08F62C37004692D3 /* Useful Scripts */,
 				2513CDAE07BC658900BB6055 /* Plugins.rtf */,
@@ -1009,6 +1012,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25CC00590A315A46002FB428 /* acknowledgements.html in Resources */,
 				8D15AC2D0486D014006FF6A4 /* MainMenu.nib in Resources */,
 				8D15AC2E0486D014006FF6A4 /* NiceDocument.nib in Resources */,
 				8D15AC2F0486D014006FF6A4 /* InfoPlist.strings in Resources */,

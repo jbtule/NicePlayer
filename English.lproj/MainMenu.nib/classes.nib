@@ -27,6 +27,7 @@
                 featureRequest = id; 
                 onlineSupportWikiFAQ = id; 
                 submitBug = id; 
+                visitAcknowlegementsPage = id; 
                 visitNicePlayerWebSite = id; 
                 visitProjectRoadmap = id; 
             }; 
@@ -42,21 +43,12 @@
         }, 
         {
             ACTIONS = {
-                ALLdoubleSize = id; 
-                ALLfillScreenSize = id; 
-                ALLfitWidthSize = id; 
-                ALLhalfSize = id; 
-                ALLnormalSize = id; 
                 checkMouseLocation = id; 
-                myAction = id; 
                 newDocument = id; 
                 openDocument = id; 
-                openPlaylist = id; 
                 openWebURL = id; 
                 playAll = id; 
                 presentMultiple = id; 
-                saveAsPlaylist = id; 
-                savePlaylist = id; 
                 showPreferences = id; 
                 stopAll = id; 
                 toggleAlwaysOnTop = id; 
