@@ -3,6 +3,8 @@
  * NicePlayer
  */
 
+//Sample code found everywhere
+
 #import "RoundRect.h"
 
 @implementation NSBezierPath(RoundRect)
