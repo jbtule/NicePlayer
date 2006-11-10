@@ -51,7 +51,6 @@
 @interface NPApplication : NSApplication {
 	NSTimer *inactiveTimer;
 	NSPoint lastPoint;
-	int insideCounter;
 }
 
 -(void)copyDefaultScriptsToApplicationSupport;

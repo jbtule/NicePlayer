@@ -103,16 +103,12 @@ BOOL selectNiceWindow(id each, void* context){
 
 - (void)mouseEntered:(NSEvent *)theEvent
 {
-    insideCounter++;
     [self testCursorMovement];
 }
 
 - (void)mouseExited:(NSEvent *)theEvent
 {
-    insideCounter--;
-    if(insideCounter == 0){
 	[self testCursorMovement];
-    }
 }
 
 /**
