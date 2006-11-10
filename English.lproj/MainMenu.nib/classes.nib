@@ -49,6 +49,7 @@
                 openWebURL = id; 
                 playAll = id; 
                 presentMultiple = id; 
+                setPartiallyTransparent = id; 
                 showPreferences = id; 
                 stopAll = id; 
                 toggleAlwaysOnTop = id; 
@@ -63,6 +64,7 @@
                 mainWindowProxy = id; 
                 openURLField = id; 
                 openURLWindow = id; 
+                partiallyTransparent = id; 
                 prefWindow = id; 
                 presentWindow = id; 
                 toggleFixedAspectMenuItem = id; 

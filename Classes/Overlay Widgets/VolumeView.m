@@ -54,6 +54,11 @@
     return self;
 }
 
+- (BOOL)acceptsFirstResponder
+{
+	return NO;
+}
+
 -(void)setVolume:(float)aVolume{
     volume = aVolume;
     [self setNeedsDisplay];
@@ -89,8 +94,6 @@
         
             NSRectFill(NSMakeRect(20,15,32*volume,8));
     }
-    
-    
 }
 
 @end

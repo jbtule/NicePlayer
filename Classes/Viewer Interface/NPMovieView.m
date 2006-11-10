@@ -72,9 +72,10 @@
         wasPlaying = NO;
         [self addSubview:trueMovieView];
         [self setAutoresizesSubviews:YES];
-	title = nil;
-	fileType = nil;
-	fileExtension = nil;
+		title = nil;
+		fileType = nil;
+		fileExtension = nil;
+		internalVolume = 1.0;
     }
     return self;
 }
@@ -111,6 +112,7 @@
 -(void)closeReopen
 {
 	NSRect subview = NSMakeRect(0, 0, [self frame].size.width, [self frame].size.height);
+	internalVolume = [self volume];
 	[self close];
 	[trueMovieView release];
 	trueMovieView = [[JTMovieView alloc] initWithFrame:subview];
@@ -286,7 +288,13 @@
 
 -(BOOL)loadMovie
 {
-	return [trueMovieView loadMovie];
+	BOOL didLoadMovie = [trueMovieView loadMovie];
+	
+	if(didLoadMovie){
+		[trueMovieView setVolume:internalVolume];
+	}
+	
+	return didLoadMovie;
 }
 
 -(void)finalProxyViewLoad
@@ -328,7 +336,7 @@
 -(void)ffStart
 {
     [[((NiceWindow *)[self window]) ffButton] highlight:YES];
-    [((NiceWindow *)[self window]) showOverLayWindow];
+    [((NiceWindow *)[self window]) automaticShowOverLayWindow];
     [trueMovieView ffStart:[[Preferences mainPrefs] ffSpeed]];
     [((NiceWindow *)[self window]) updateByTime:nil];
 }
@@ -340,7 +348,7 @@
 
 -(void)ffDo:(int)aSeconds
 {
-    [((NiceWindow *)[self window]) showOverLayWindow];
+    [((NiceWindow *)[self window]) automaticShowOverLayWindow];
     [trueMovieView ffDo:aSeconds];
     [((NiceWindow *)[self window]) updateByTime:nil];
 }
@@ -356,7 +364,7 @@
 -(void)rrStart
 {
     [[((NiceWindow *)[self window]) rrButton] highlight:YES];
-    [((NiceWindow *)[self window]) showOverLayWindow];
+    [((NiceWindow *)[self window]) automaticShowOverLayWindow];
     [trueMovieView rrStart:[[Preferences mainPrefs] rrSpeed]];
     [((NiceWindow *)[self window]) updateByTime:nil];
 }
@@ -367,7 +375,7 @@
 }
 
 -(void)rrDo:(int)aSeconds{
-    [((NiceWindow *)[self window]) showOverLayWindow];
+    [((NiceWindow *)[self window]) automaticShowOverLayWindow];
     [trueMovieView rrDo:aSeconds];
     [((NiceWindow *)[self window]) updateByTime:nil];
 }
@@ -452,7 +460,7 @@
 		case ' ':
 			if(![anEvent isARepeat]){
 				[[((NiceWindow *)[self window]) playButton] togglePlaying];
-				[((NiceWindow *)[self window]) showOverLayWindow];
+				[((NiceWindow *)[self window]) automaticShowOverLayWindow];
 			}
 			break;
 		case NSRightArrowFunctionKey:
@@ -534,7 +542,7 @@
 -(void)showOverLayVolume
 {
 	[self cancelPreviousPerformRequestsWithSelector:@"hideOverLayVolume"];
-	[((NiceWindow *)[self window])showOverLayVolume];
+	[((NiceWindow *)[self window])automaticShowOverLayVolume];
 	[self timedHideOverlayWithSelector:@"hideOverLayVolume"];
 }
 
@@ -663,39 +671,69 @@
 
 -(void)scrollWheel:(NSEvent *)anEvent
 {
-    if([[Preferences mainPrefs] scrollWheelMoviePref] == SCROLL_WHEEL_ADJUSTS_VOLUME){
-	if([anEvent modifierFlags] & NSAlternateKeyMask)
-	    [self scrollWheelResize:anEvent];
-	else
-	    [self scrollWheelAdjustVolume:anEvent];
-    } else if([[Preferences mainPrefs] scrollWheelMoviePref] == SCROLL_WHEEL_ADJUSTS_SIZE){
-	if([anEvent modifierFlags] & NSAlternateKeyMask)
-	    [self scrollWheelAdjustVolume:anEvent];	
-	else
-	    [self scrollWheelResize:anEvent];
-    } else {
-	// SCROLL_WHEEL_ADJUSTS_NONE
+	[self performScrollerForPref:[[Preferences mainPrefs] scrollWheelMoviePref]
+						   event:anEvent
+						   delta:[anEvent deltaY]];
+	[self performScrollerForPref:[[Preferences mainPrefs] scrollWheelHorizontalMoviePref]
+						   event:anEvent
+						   delta:-[anEvent deltaX]];
+}
+
+-(void)performScrollerForPref:(enum scrollWheelMoviePrefValues)pref event:(NSEvent *)anEvent delta:(float)delta
+{
+	if(delta == 0.0)
+		return;
+	
+	switch(pref){
+		case SCROLL_WHEEL_ADJUSTS_VOLUME:
+			if([anEvent modifierFlags] & NSAlternateKeyMask)
+				[self scrollWheelResize:delta];
+			else
+				[self scrollWheelAdjustVolume:delta];
+			break;
+		case SCROLL_WHEEL_ADJUSTS_SIZE:
+			if([anEvent modifierFlags] & NSAlternateKeyMask)
+				[self scrollWheelAdjustVolume:delta];	
+			else
+				[self scrollWheelResize:delta];
+			break;
+		case SCROLL_WHEEL_SCRUBS:
+		{
+			if(delta > 0){
+				[self ffStart];
+				[self ffDo:[[Preferences mainPrefs] ffSpeed] * fabsf(delta)];
+				[self ffEnd];
+			} else {
+				[self rrStart];
+				[self rrDo:[[Preferences mainPrefs] ffSpeed] * fabsf(delta)];
+				[self rrEnd];
+			}
+			break;
+		}
+		default:
+			// SCROLL_WHEEL_ADJUSTS_NONE
+			break;
     }
 }
 
--(void)scrollWheelResize:(NSEvent *)anEvent
+-(void)scrollWheelResize:(float)delta
 {
-    [((NiceWindow *)[self window]) resize:[anEvent deltaY]*5 animate:NO];
+    [((NiceWindow *)[self window]) resize:delta*5 animate:NO];
 }
 
--(void)scrollWheelAdjustVolume:(NSEvent *)anEvent
+-(void)scrollWheelAdjustVolume:(float)delta
 {
     SEL volAdj;
     float i, max;
     
     [self showOverLayVolume];
     
-    if([anEvent deltaY] > 0.0)
+    if(delta > 0.0)
 	volAdj = @selector(incrementVolume);
     else
 	volAdj = @selector(decrementVolume);
     
-    max = abs([anEvent deltaY]);
+    max = fabsf(delta);
     for(i = 0.0; i < max; i += 3.0)
 	[self performSelector:volAdj];
 }
@@ -882,8 +920,8 @@
 		aVolume = 0.0;
 	if(aVolume > 2.0)
 		aVolume = 2.0;
-	
-	[trueMovieView setVolume:aVolume];
+	internalVolume = aVolume;
+	[trueMovieView setVolume:internalVolume];
 
 	if([trueMovieView volume] <= 0.0)
 		[trueMovieView setMuted:YES];

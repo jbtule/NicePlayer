@@ -131,4 +131,6 @@
 -(BOOL)isPlaylistEmpty;
 -(BOOL)hasPlaylist;
 
+-(float)volume;
+
 @end

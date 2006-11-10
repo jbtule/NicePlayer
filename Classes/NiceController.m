@@ -311,6 +311,12 @@ id swapForWindows(id each, void* context){
     [toggleFixedAspectMenuItem setState:[((NiceWindow *)[NSApp mainWindow]) fixedAspect]];
 }
 
+-(IBAction)setPartiallyTransparent:(id)sender
+{
+    [((NiceWindow *)[NSApp mainWindow]) togglePartiallyTransparent];
+    [partiallyTransparent setState:[((NiceWindow *)[NSApp mainWindow]) partiallyTransparent]];
+}
+
 -(IBAction)openWebURL:(id)sender
 {
 	NSURL *newURL = [NSURL URLWithString:[openURLField stringValue]];
@@ -456,7 +462,7 @@ id swapForWindows(id each, void* context){
 -(void)appleRemoteButton:(AppleRemoteEventIdentifier)buttonIdentifier pressedDown:(BOOL)pressedDown 
 {
     if([[NSApp mainWindow] isKindOfClass:[NiceWindow class]])
-	[[[NSApp mainWindow] document] appleRemoteButton:buttonIdentifier pressedDown:pressedDown];
+	[[[[NSApp mainWindow] windowController] document] appleRemoteButton:buttonIdentifier pressedDown:pressedDown];
 }
 
 @end

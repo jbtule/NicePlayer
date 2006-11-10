@@ -80,7 +80,8 @@
     BOOL isWidthFilling;
     BOOL isInitialDisplay;    
     BOOL fixedAspectRatio;
-    
+    BOOL partiallyTransparent;
+	
     BOOL dropScreen;		/* Controls movie dropping onto other screens (not the primary display) */
     BOOL theWindowIsFloating;
 	
@@ -121,12 +122,14 @@
 -(void)hideInitialWindows;
 -(void)hideAllImmediately;
 -(void)initialFadeComplete;
+-(void)automaticShowOverLayWindow;
 -(void)showOverLayWindow;
 -(void)setOverlayWindowLocation;
 -(void)hideOverLayWindow;
 -(void)showOverLayTitle;
 -(void)setOverlayTitleLocation;
 -(void)hideOverLayTitle;
+-(void)automaticShowOverLayVolume;
 -(void)showOverLayVolume;
 -(void)setOverLayVolumeLocation;
 -(void)hideOverLayVolume;
@@ -141,6 +144,8 @@
 -(void)setFixedAspect:(BOOL)aBool;
 -(void)setWindowIsFloating:(BOOL)aBool;
 -(void)toggleFixedAspectRatio;
+-(void)togglePartiallyTransparent;
+-(BOOL)partiallyTransparent;
 -(void)toggleWindowFloat;
 
 #pragma mark Window Attributes
@@ -190,6 +195,7 @@
 -(void)mouseUp:(NSEvent *)anEvent;
 -(void)rightMouseUp:(NSEvent *)anEvent;
 -(void)mouseDoubleClick:(NSEvent *)anEvent;
+-(void)scrollWheel:(NSEvent *)anEvent;
 
 #pragma mark -
 #pragma mark Accessor Methods

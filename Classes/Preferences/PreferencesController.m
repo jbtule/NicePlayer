@@ -85,7 +85,8 @@
 	
 	[doubleClickMoviePref selectItemAtIndex:[[Preferences mainPrefs] doubleClickMoviePref]];
 	[rightClickMoviePref selectItemAtIndex:[[Preferences mainPrefs] rightClickMoviePref]];
-	[scrollWheelMoviePref selectItemAtIndex:[[Preferences mainPrefs] scrollWheelMoviePref]];
+	[scrollWheelMoviePref selectItemWithTag:[[Preferences mainPrefs] scrollWheelMoviePref]];
+	[scrollWheelHorizontalMoviePref selectItemWithTag:[[Preferences mainPrefs] scrollWheelHorizontalMoviePref]];
 	[scrollResizePin selectItemAtIndex:[[Preferences mainPrefs] scrollResizePin]];
 	[defaultTimeDisplay selectItemAtIndex:[[Preferences mainPrefs] defaultTimeDisplay]];
 	[defaultRepeatMode selectItemAtIndex:[[Preferences mainPrefs] defaultRepeatMode]];
@@ -123,6 +124,9 @@
 	[movieOpenedFullScreen setState:[[Preferences mainPrefs] movieOpenedFullScreen]];
 	[windowAlwaysOnTop setState:[[Preferences mainPrefs] windowAlwaysOnTop]];
 	[windowLeaveFullScreen setState:[[Preferences mainPrefs] windowLeaveFullScreen]];
+	[audioVolumeSimilarToLastWindow setState:[[Preferences mainPrefs] audioVolumeSimilarToLastWindow]];
+	[disableShowingOverlaysOnKeyPress setState:[[Preferences mainPrefs] disableShowingOverlaysOnKeyPress]];
+	[opacityWhenWindowIsTransparent setFloatValue:[[Preferences mainPrefs] opacityWhenWindowIsTransparent]];
 	
 	[bundlePriorityTable setDataSource:self];
 	[bundlePriorityTable setDelegate:self];
@@ -141,7 +145,12 @@
 
 -(IBAction)scrollWheelMoviePref:(id)sender
 {
-    [[Preferences mainPrefs] setScrollWheelMoviePref:[sender indexOfSelectedItem]];
+    [[Preferences mainPrefs] setScrollWheelMoviePref:[[sender selectedItem] tag]];
+}
+
+-(IBAction)scrollWheelHorizontalMoviePref:(id)sender
+{
+    [[Preferences mainPrefs] setScrollWheelHorizontalMoviePref:[[sender selectedItem] tag]];
 }
 
 -(IBAction)scrollResizePin:(id)sender
@@ -268,6 +277,21 @@
 -(IBAction)windowLeaveFullScreen:(id)sender
 {
 	[[Preferences mainPrefs] setWindowLeaveFullScreen:[sender state]];
+}
+
+-(IBAction)audioVolumeSimilarToLastWindow:(id)sender
+{
+	[[Preferences mainPrefs] setAudioVolumeSimilarToLastWindow:[sender state]];
+}
+
+-(IBAction)disableShowingOverlaysOnKeyPress:(id)sender
+{
+	[[Preferences mainPrefs] setDisableShowingOverlaysOnKeyPress:[sender state]];
+}
+
+-(IBAction)opacityWhenWindowIsTransparent:(id)sender
+{
+	[[Preferences mainPrefs] setOpacityWhenWindowIsTransparent:[sender floatValue]];
 }
 
 #pragma mark -

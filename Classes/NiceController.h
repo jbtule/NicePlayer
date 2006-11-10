@@ -63,6 +63,7 @@
     IBOutlet id toggleFixedAspectMenuItem;
 	IBOutlet id openURLField;
 	IBOutlet id openURLWindow;
+	IBOutlet id partiallyTransparent;
 }
 
 +(id)controller;
@@ -85,6 +86,7 @@
 -(IBAction)toggleFullScreen:(id)sender;
 -(IBAction)showPreferences:(id)sender;
 -(IBAction)toggleAlwaysOnTop:(id)sender;
+-(IBAction)setPartiallyTransparent:(id)sender;
 -(IBAction)toggleFixedAspectRatio:(id)sender;
 
 -(IBAction)openWebURL:(id)sender;

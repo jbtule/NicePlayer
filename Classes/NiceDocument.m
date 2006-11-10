@@ -133,7 +133,7 @@ void findSpace(id each, void* context, BOOL* endthis){
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(rebuildMenu)
                                                      name:@"RebuildAllMenus"
-                                                   object:nil];
+                                                   object:nil];		
     }
     
     return self;
@@ -151,6 +151,7 @@ void findSpace(id each, void* context, BOOL* endthis){
             [[self movieMenu] removeItem:[menuObjects objectAtIndex:i]];
         [menuObjects release];
     }
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
     [theSubtitle release];
     [theCurrentURL release];
     [thePlaylist release];
@@ -336,6 +337,17 @@ void findSpace(id each, void* context, BOOL* endthis){
     
     [self updateAfterLoad];
 	[self repositionAfterLoad];
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(windowWillClose:)
+												 name:NSWindowWillCloseNotification
+											   object:[self window]];		
+}
+
+-(void)windowWillClose:(NSNotification *)aNotification
+{
+	if([[Preferences mainPrefs] audioVolumeSimilarToLastWindow]){
+		[[Preferences mainPrefs] setDefaultAudioVolume:[theMovieView volume]];
+	}
 }
 
 /**
@@ -352,6 +364,15 @@ void findSpace(id each, void* context, BOOL* endthis){
     [self refreshRepeatModeGUI];
     [self calculateAspectRatio];
 
+	if([[Preferences mainPrefs] audioVolumeSimilarToLastWindow]){
+		NiceDocument *doc = [[NSDocumentController sharedDocumentController] currentDocument];
+		if(doc)
+			[theMovieView setVolume:[doc volume]];
+		else
+			[theMovieView setVolume:[[Preferences mainPrefs] defaultAudioVolume]];
+	}
+	
+	[[self window] updateVolume];
 }
 
 
@@ -772,6 +793,11 @@ stuff won't work properly! */
 	return (playlistFilename != nil);
 }
 
+-(float)volume
+{
+	return [theMovieView volume];
+}
+
 #pragma mark -
 #pragma mark Data Views
 
@@ -854,7 +880,7 @@ stuff won't work properly! */
 	    if(pressedDown){
 		[theMovieView cancelPreviousPerformRequestsWithSelector:@"hideOverLayVolume"];
 		[theMovieView incrementVolume];
-		[[self window] showOverLayVolume];
+		[[self window] automaticShowOverLayVolume];
 		remoteEventTimer = [NSTimer scheduledTimerWithTimeInterval:REMOTE_FIRING_INTERVAL
 								    target:theMovieView
 								  selector:@selector(incrementVolume)
@@ -870,7 +896,7 @@ stuff won't work properly! */
 	    if(pressedDown){
 		[theMovieView cancelPreviousPerformRequestsWithSelector:@"hideOverLayVolume"];
 		[theMovieView decrementVolume];
-		[[self window] showOverLayVolume];
+		[[self window] automaticShowOverLayVolume];
 		remoteEventTimer = [NSTimer scheduledTimerWithTimeInterval:REMOTE_FIRING_INTERVAL
 								    target:theMovieView
 								  selector:@selector(decrementVolume)
@@ -886,7 +912,7 @@ stuff won't work properly! */
 	    break;			
 	case kRemoteButtonPlay:
 	    [[((NiceWindow *)[self window]) playButton] togglePlaying];
-	    [((NiceWindow *)[self window]) showOverLayWindow];
+	    [((NiceWindow *)[self window]) automaticShowOverLayWindow];
 	    [theMovieView smartHideMouseOverOverlays];
 	    break;			
 	case kRemoteButtonRight:

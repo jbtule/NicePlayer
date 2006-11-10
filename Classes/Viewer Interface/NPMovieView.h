@@ -2,8 +2,6 @@
  * NPMovieView.h
  * NicePlayer
  */
-/**
-
 
 /* ***** BEGIN LICENSE BLOCK *****
 * Version: MPL 1.1/GPL 2.0/LGPL 2.1
@@ -59,6 +57,7 @@
     id trueMovieView;
     id contextMenu;
     id title;
+	float internalVolume;
     
     NSTrackingRectTag trackingRect;
     
@@ -118,8 +117,9 @@
 -(void)rebuildMenu;
 
 -(BOOL)canAnimateResize;
--(void)scrollWheelResize:(NSEvent *)anEvent;
--(void)scrollWheelAdjustVolume:(NSEvent *)anEvent;
+-(void)scrollWheelResize:(float)delta;
+-(void)scrollWheelAdjustVolume:(float)delta;
+-(void)performScrollerForPref:(enum scrollWheelMoviePrefValues)pref event:(NSEvent *)anEvent delta:(float)delta;
 
 #pragma mark -
 #pragma mark Calculations

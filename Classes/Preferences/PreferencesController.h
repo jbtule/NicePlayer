@@ -56,6 +56,7 @@
     IBOutlet id doubleClickMoviePref;
     IBOutlet id rightClickMoviePref;
     IBOutlet id scrollWheelMoviePref;
+	IBOutlet id scrollWheelHorizontalMoviePref;
     IBOutlet id scrollResizePin;
     IBOutlet id defaultTimeDisplay;
     IBOutlet id defaultRepeatMode;
@@ -81,6 +82,9 @@
     IBOutlet id movieOpenedFullScreen;
     IBOutlet id windowAlwaysOnTop;
     IBOutlet id windowLeaveFullScreen;
+	IBOutlet id audioVolumeSimilarToLastWindow;
+	IBOutlet id disableShowingOverlaysOnKeyPress;
+	IBOutlet id opacityWhenWindowIsTransparent;
     
     id _draggingObjects;
     BOOL _tableLocked;
@@ -89,6 +93,7 @@
 -(IBAction)doubleClickMoviePref:(id)sender;
 -(IBAction)rightClickMoviePref:(id)sender;
 -(IBAction)scrollWheelMoviePref:(id)sender;
+-(IBAction)scrollWheelHorizontalMoviePref:(id)sender;
 -(IBAction)scrollResizePin:(id)sender;
 -(IBAction)defaultTimeDisplay:(id)sender;
 -(IBAction)defaultRepeatMode:(id)sender;
@@ -114,5 +119,8 @@
 -(IBAction)movieOpenedFullScreen:(id)sender;
 -(IBAction)windowAlwaysOnTop:(id)sender;
 -(IBAction)windowLeaveFullScreen:(id)sender;
+-(IBAction)audioVolumeSimilarToLastWindow:(id)sender;
+-(IBAction)disableShowingOverlaysOnKeyPress:(id)sender;
+-(IBAction)opacityWhenWindowIsTransparent:(id)sender;
 
 @end

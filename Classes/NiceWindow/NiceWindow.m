@@ -48,6 +48,7 @@
 #import "OverlayControllerWindow.h"
 #import "OverlayNotifierWindow.h"
 #import "NPApplication.h"
+#import "DelegateAnimation.h"
 
 @implementation NiceWindow
 
@@ -86,10 +87,14 @@
         miniVolume = 1;
         windowOverlayIsShowing = NO;
         titleOverlayIsShowing = NO;
-	fixedAspectRatio = YES;
+		fixedAspectRatio = YES;
         initialFadeTimer = nil;
         isInitialDisplay = [[Preferences mainPrefs] showInitialOverlays];
         timeDisplayStyle = [[Preferences mainPrefs] defaultTimeDisplay];
+		[[Preferences mainPrefs] addObserver:self
+								  forKeyPath:@"opacityWhenWindowIsTransparent" 
+					 options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld)
+					 context:NULL];
     }
     return self;
 }
@@ -124,6 +129,7 @@
     if(initialFadeTimer)
         [initialFadeTimer invalidate];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+	[[Preferences mainPrefs] removeObserver:self forKeyPath:@"opacityWhenWindowIsTransparent"];
     [super close];
 }
 
@@ -373,6 +379,12 @@
     return [theScrubBar inUse];
 }
 
+-(void)automaticShowOverLayWindow
+{
+    if(![[Preferences mainPrefs] disableShowingOverlaysOnKeyPress])
+		[self showOverLayWindow];
+}
+
 -(void)showOverLayWindow
 {
     if((windowOverlayIsShowing) && !(isInitialDisplay))
@@ -484,6 +496,12 @@
     titleOverlayIsShowing = NO;
 }
 
+-(void)automaticShowOverLayVolume
+{
+	if(![[Preferences mainPrefs] disableShowingOverlaysOnKeyPress])
+		[self showOverLayVolume];
+}
+
 -(void)showOverLayVolume
 {
     [[FadeOut fadeOut] removeWindow:theOverlayVolume];
@@ -553,7 +571,36 @@
     return fixedAspectRatio;
 }
 
+-(void)togglePartiallyTransparent
+{
+	partiallyTransparent = !partiallyTransparent;
+	
+	NSAnimation *animation = [[DelegateAnimation alloc] initWithDuration:0.1 animationCurve:NSAnimationEaseInOut];
+	[animation setAnimationBlockingMode:NSAnimationNonblocking];
+	[animation setDelegate:self];
+	[animation startAnimation];
+}
 
+-(void)setCurrentAnimationValue:(float)value
+{
+	float opacity = [[Preferences mainPrefs] opacityWhenWindowIsTransparent];
+	if(partiallyTransparent){
+		[self setAlphaValue:(1.0 - value) + opacity * value];
+	} else {
+		[self setAlphaValue:value + opacity * (1.0 - value)];
+	}	
+}
+
+- (void)animationDidEnd:(NSAnimation*)animation
+{
+	[self setCurrentAnimationValue:[animation currentValue]];
+	[animation release];
+}
+
+-(BOOL)partiallyTransparent
+{
+	return partiallyTransparent;
+}
 
 -(void)toggleWindowFloat
 {
@@ -561,6 +608,16 @@
         [self unfloatWindow];
     else
         [self floatWindow];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+					  ofObject:(id)object 
+                        change:(NSDictionary *)change
+                       context:(void *)context
+{
+    if([keyPath isEqual:@"opacityWhenWindowIsTransparent"]){
+		[self setCurrentAnimationValue:1.0];
+    }
 }
 
 #pragma mark Window Attributes
@@ -1071,6 +1128,11 @@
 -(void)mouseDoubleClick:(NSEvent *)anEvent
 {
     [theMovieView mouseDoubleClick:anEvent];
+}
+
+-(void)scrollWheel:(NSEvent *)anEvent
+{
+	[theMovieView scrollWheel:anEvent];
 }
 
 #pragma mark -

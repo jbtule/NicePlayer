@@ -47,6 +47,7 @@
 #import "OverlayWindow.h"
 
 @implementation OverlayWindow
+
 -(id)initWithContentRect:(NSRect)contentRect styleMask:(unsigned int)aStyle backing:(NSBackingStoreType)bufferingType defer:(BOOL)flag
 {
     
@@ -64,6 +65,11 @@
     if(mouseEntered)
 	[self mouseExited:nil];
     [super dealloc];
+}
+
+- (BOOL)acceptsFirstResponder
+{
+	return YES;
 }
 
 -(BOOL)canBecomeMainWindow
@@ -84,6 +90,7 @@
 						 name:NSViewFrameDidChangeNotification
 					       object:[self contentView]];	
     trackingRect = [[self contentView] addTrackingRect:[[self contentView] bounds] owner:self userData:nil assumeInside:NO];
+	[self setNextResponder:[self parentWindow]];
 }
 
 -(void)rebuildTrackingRects
@@ -116,6 +123,14 @@
 {
     [NSApp mouseExited:theEvent];
     mouseEntered = NO;
+}
+
+- (void)sendEvent:(NSEvent *)theEvent
+{
+	if([theEvent type] == NSScrollWheel)
+		[((NiceWindow *)[self parentWindow]) scrollWheel:theEvent];
+	else
+		[super sendEvent:theEvent];
 }
 
 @end

@@ -16,11 +16,13 @@
         }, 
         {
             ACTIONS = {
+                audioVolumeSimilarToLastWindow = id; 
                 autoplayOnFullScreen = id; 
                 autostopOnNormalScreen = id; 
                 defaultOpenMode = id; 
                 defaultRepeatMode = id; 
                 defaultTimeDisplay = id; 
+                disableShowingOverlaysOnKeyPress = id; 
                 displayNotificationTime = id; 
                 doubleClickMoviePref = id; 
                 enableAppleRemote = id; 
@@ -31,9 +33,11 @@
                 movieOpenedFullScreen = id; 
                 movieOpenedPlay = id; 
                 notificationColor = id; 
+                opacityWhenWindowIsTransparent = id; 
                 rightClickMoviePref = id; 
                 rrSpeed = id; 
                 scrollResizePin = id; 
+                scrollWheelHorizontalMoviePref = id; 
                 scrollWheelMoviePref = id; 
                 showInitialOverlays = id; 
                 showNotificationOverlays = id; 
@@ -43,12 +47,14 @@
             CLASS = PreferencesController; 
             LANGUAGE = ObjC; 
             OUTLETS = {
+                audioVolumeSimilarToLastWindow = id; 
                 autoplayOnFullScreen = id; 
                 autostopOnNormalScreen = id; 
                 bundlePriorityTable = id; 
                 defaultOpenMode = id; 
                 defaultRepeatMode = id; 
                 defaultTimeDisplay = id; 
+                disableShowingOverlaysOnKeyPress = id; 
                 displayNotificationTime = id; 
                 doubleClickMoviePref = id; 
                 enableAppleRemote = id; 
@@ -59,6 +65,7 @@
                 movieOpenedFullScreen = id; 
                 movieOpenedPlay = id; 
                 notificationColor = id; 
+                opacityWhenWindowIsTransparent = id; 
                 paneActions = id; 
                 paneMain = id; 
                 paneOverlays = id; 
@@ -67,6 +74,7 @@
                 rightClickMoviePref = id; 
                 rrSpeedSlider = id; 
                 scrollResizePin = id; 
+                scrollWheelHorizontalMoviePref = id; 
                 scrollWheelMoviePref = id; 
                 showInitialOverlays = id; 
                 showNotificationOverlays = id; 
