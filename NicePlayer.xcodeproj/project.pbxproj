@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2510A23B0B04B53D00CA8110 /* DelegateAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 2510A2390B04B53D00CA8110 /* DelegateAnimation.h */; };
+		2510A23C0B04B53D00CA8110 /* DelegateAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2510A23A0B04B53D00CA8110 /* DelegateAnimation.m */; };
+		2510A5B80B06374400CA8110 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25CC866D0831DDA800027929 /* QTKit.framework */; };
+		2510A62F0B06392600CA8110 /* STEnum.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 255B5C520B02ECF000595952 /* STEnum.framework */; };
 		2513D00407BC659800BB6055 /* Plugins.rtf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2513CDAE07BC658900BB6055 /* Plugins.rtf */; };
 		2513D2F507BDAC4200BB6055 /* FadeOut.h in Headers */ = {isa = PBXBuildFile; fileRef = 2513D2F307BDAC4200BB6055 /* FadeOut.h */; };
 		2513D2F607BDAC4200BB6055 /* FadeOut.m in Sources */ = {isa = PBXBuildFile; fileRef = 2513D2F407BDAC4200BB6055 /* FadeOut.m */; };
@@ -142,8 +146,6 @@
 		3EEA731109FC853000AABB1F /* HodgePodge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EEA72F809FC84A700AABB1F /* HodgePodge.framework */; };
 		3EEA731D09FC854E00AABB1F /* EncryptOC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EEA731A09FC853F00AABB1F /* EncryptOC.framework */; };
 		3EEA731E09FC856100AABB1F /* EncryptOC.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3EEA731A09FC853F00AABB1F /* EncryptOC.framework */; };
-		3EEA737709FC881D00AABB1F /* STEnum.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EEA737609FC87FD00AABB1F /* STEnum.framework */; };
-		3EEA737809FC882500AABB1F /* STEnum.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3EEA737609FC87FD00AABB1F /* STEnum.framework */; };
 		3EEB7DBB076B754F0090E740 /* NiceUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EEB7DB7076B754F0090E740 /* NiceUtilities.h */; };
 		3EEB7DBC076B754F0090E740 /* NiceUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB7DB8076B754F0090E740 /* NiceUtilities.m */; };
 		3EEB7F3A076BB1F60090E740 /* ViewerPrefIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EEB7F38076BB1F60090E740 /* ViewerPrefIcon.png */; };
@@ -169,6 +171,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		255B5C510B02ECF000595952 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3EEA737109FC87FD00AABB1F /* STEnum10.4.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3EEF53BC0ABA35D4008E80DA;
+			remoteInfo = STEnum;
+		};
 		25C5C1E808D4B81400987A95 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 25C5C1E408D4B81400987A95 /* DVDPlayer.xcodeproj */;
@@ -246,13 +255,6 @@
 			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
 			remoteInfo = EncryptOC;
 		};
-		3EEA737509FC87FD00AABB1F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3EEA737109FC87FD00AABB1F /* STEnum10.4.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3EBAD63908006A950040D4A3;
-			remoteInfo = "STEnum Embedable";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -273,8 +275,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				2510A62F0B06392600CA8110 /* STEnum.framework in CopyFiles */,
 				3E5970EC09FC8DB2001ED4FA /* CocoaScriptMenu.framework in CopyFiles */,
-				3EEA737809FC882500AABB1F /* STEnum.framework in CopyFiles */,
 				3EEA731E09FC856100AABB1F /* EncryptOC.framework in CopyFiles */,
 				3EEA731009FC851A00AABB1F /* HodgePodge.framework in CopyFiles */,
 			);
@@ -284,6 +286,8 @@
 
 /* Begin PBXFileReference section */
 		089C1660FE840EACC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2510A2390B04B53D00CA8110 /* DelegateAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DelegateAnimation.h; path = Classes/DelegateAnimation.h; sourceTree = "<group>"; };
+		2510A23A0B04B53D00CA8110 /* DelegateAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DelegateAnimation.m; path = Classes/DelegateAnimation.m; sourceTree = "<group>"; };
 		2513CDAE07BC658900BB6055 /* Plugins.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = Plugins.rtf; path = Documents/Plugins.rtf; sourceTree = "<group>"; };
 		2513D2F307BDAC4200BB6055 /* FadeOut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FadeOut.h; path = Classes/FadeOut.h; sourceTree = "<group>"; };
 		2513D2F407BDAC4200BB6055 /* FadeOut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FadeOut.m; path = Classes/FadeOut.m; sourceTree = "<group>"; };
@@ -444,7 +448,7 @@
 		3EFEF995086E6E50003E05C3 /* nicelist.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = nicelist.icns; sourceTree = "<group>"; };
 		3EFEF996086E6E50003E05C3 /* wmv.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = wmv.icns; sourceTree = "<group>"; };
 		8D15AC360486D014006FF6A4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		8D15AC370486D014006FF6A4 /* NicePlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NicePlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D15AC370486D014006FF6A4 /* NicePlayer.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = NicePlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -452,8 +456,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2510A5B80B06374400CA8110 /* QTKit.framework in Frameworks */,
 				3E5970EB09FC8DA9001ED4FA /* CocoaScriptMenu.framework in Frameworks */,
-				3EEA737709FC881D00AABB1F /* STEnum.framework in Frameworks */,
 				3EEA731D09FC854E00AABB1F /* EncryptOC.framework in Frameworks */,
 				3EEA731109FC853000AABB1F /* HodgePodge.framework in Frameworks */,
 				3EB7EC60065F39AA0002A470 /* Carbon.framework in Frameworks */,
@@ -568,6 +572,8 @@
 				3EEDF764065B507B00E3545C /* NiceWindow.m */,
 				3E01F2E8065E9C1D00905F96 /* MainWindowProxy.h */,
 				3E01F2E9065E9C1D00905F96 /* MainWindowProxy.m */,
+				2510A2390B04B53D00CA8110 /* DelegateAnimation.h */,
+				2510A23A0B04B53D00CA8110 /* DelegateAnimation.m */,
 			);
 			name = Document/Window;
 			sourceTree = "<group>";
@@ -821,7 +827,7 @@
 		3EEA737209FC87FD00AABB1F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3EEA737609FC87FD00AABB1F /* STEnum.framework */,
+				255B5C520B02ECF000595952 /* STEnum.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -876,6 +882,7 @@
 				25CC86500831DA2A00027929 /* RCMovieView.h in Headers */,
 				3E64FA4508F2314C0010E3DA /* NicePlugin.h in Headers */,
 				258C2AE80A2D69C200AC22BB /* AppleRemote.h in Headers */,
+				2510A23B0B04B53D00CA8110 /* DelegateAnimation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -956,6 +963,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		255B5C520B02ECF000595952 /* STEnum.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = STEnum.framework;
+			remoteRef = 255B5C510B02ECF000595952 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		25C5C1E908D4B81400987A95 /* DVDPlayer.nicebundle */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
@@ -996,13 +1010,6 @@
 			fileType = wrapper.cfbundle;
 			path = "EncryptOC Test.octest";
 			remoteRef = 3EEA731B09FC853F00AABB1F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		3EEA737609FC87FD00AABB1F /* STEnum.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = STEnum.framework;
-			remoteRef = 3EEA737509FC87FD00AABB1F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -1150,6 +1157,7 @@
 				25CC86510831DA2A00027929 /* RCMovieView.m in Sources */,
 				3E64FA4608F2314C0010E3DA /* NicePlugin.m in Sources */,
 				258C2AE90A2D69C200AC22BB /* AppleRemote.m in Sources */,
+				2510A23C0B04B53D00CA8110 /* DelegateAnimation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1322,12 +1330,9 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
-				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = (
-					"-weak_framework",
-					QTKit,
-				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = NicePlayer;
 				SECTORDER_FLAGS = "";
 				WARNING_CFLAGS = (
