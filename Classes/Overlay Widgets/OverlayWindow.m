@@ -63,7 +63,7 @@
 -(void)dealloc
 {
     if(mouseEntered)
-	[self mouseExited:nil];
+		[self mouseExited:nil];
     [super dealloc];
 }
 

@@ -1351,6 +1351,7 @@
 			buildSettings = {
 				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				STRIP_INSTALLED_PRODUCT = NO;
 			};
 			name = Debug;
 		};

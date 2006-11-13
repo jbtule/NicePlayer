@@ -122,17 +122,17 @@
 
 -(void)close
 {
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
 	[trueMovieView close];
 	[trueMovieView removeFromSuperview];
 	[trueMovieView unregisterDraggedTypes];
-	[[NSNotificationCenter defaultCenter] removeObserver:self];
 	[self unregisterDraggedTypes];
 }
 
 -(void)dealloc
 {
     if(mouseEntered)
-	[self mouseExited:nil];
+		[self mouseExited:nil];
     [title release];
     [trueMovieView release];
     [super dealloc];

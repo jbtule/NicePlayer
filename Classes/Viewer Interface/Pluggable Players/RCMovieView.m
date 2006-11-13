@@ -112,6 +112,7 @@
 
 -(void)dealloc
 {
+	[qtView setMovie:nil];
     [qtView removeFromSuperview];
     [super dealloc];
 }
