@@ -55,6 +55,12 @@
     [rrButton setPeriodicDelay:.5 interval:.2];
 }
 
+-(void)close
+{
+	[self removeChildWindow:overlayResize];
+	[super close];
+}
+
 -(void)createResizeTriangle
 {
     [self addChildWindow:overlayResize ordered:NSWindowAbove];    

@@ -101,6 +101,7 @@
 
 -(void)awakeFromNib
 {
+	[theOverlayWindow retain];
     [theScrubBar setTarget:theMovieView];
     [self setContentView:theMovieView];
     [theScrubBar setAction:@selector(scrub:)];
@@ -124,17 +125,27 @@
 
 -(void)close
 {
-    [super close];
-	isClosing = YES;
 	[self hideNotifier];
-	[self hideAllImmediately];
+    [[FadeOut fadeOut] removeWindow:theOverlayWindow];
+    [[FadeOut fadeOut] removeWindow:theOverlayTitleBar];
+    [[FadeOut fadeOut] removeWindow:theOverlayVolume];
     [[FadeOut fadeOut] removeWindow:self];
-    [timeUpdaterTimer invalidate];
-    [theMovieView close];
     if(initialFadeTimer)
         [initialFadeTimer invalidate];
+    [timeUpdaterTimer invalidate];
+	[self removeChildWindow:theOverlayWindow];
+	[self removeChildWindow:theOverlayTitleBar];
+	[self removeChildWindow:theOverlayVolume];
+	[self removeChildWindow:theOverlayNotifier];
+	[theOverlayWindow orderOut:self];
+	[theOverlayTitleBar orderOut:self];
+	[theOverlayVolume orderOut:self];
+	[theOverlayNotifier orderOut:self];
+	isClosing = YES;
+    [theMovieView close];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 	[[Preferences mainPrefs] removeObserver:self forKeyPath:@"opacityWhenWindowIsTransparent"];
+    [super close];
 }
 
 #pragma mark Overriden Methods
@@ -324,8 +335,7 @@
                                 [theOverlayNotifier frame].size.height)
       withVisibility:NO];
 	if([[Preferences mainPrefs] showInitialOverlays]){
-		id initialFadeObjects = [NSMutableSet setWithObjects:[NSValue valueWithNonretainedObject:theOverlayWindow],
-			[NSValue valueWithNonretainedObject:theOverlayTitleBar], nil];
+		id initialFadeObjects = [NSMutableSet setWithObjects:theOverlayWindow, theOverlayTitleBar, nil];
 		NSDictionary *fadeDict = [NSDictionary dictionaryWithObjects:
 			[NSArray arrayWithObjects:self,	initialFadeObjects, @"initialFadeComplete",	nil]
 															 forKeys:

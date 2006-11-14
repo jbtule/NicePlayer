@@ -115,7 +115,7 @@ static id fadeOutInstance = nil;
 -(void)addWindow:(id)anObject
 {
 	if([[Preferences mainPrefs] fadeOverlays]){
-		[windowSet addObject:[NSValue valueWithNonretainedObject:anObject]];
+		[windowSet addObject:anObject];
 		[self destroyAndCreateTimer];
 	} else
 		[anObject setAlphaValue:0.0];
@@ -123,7 +123,7 @@ static id fadeOutInstance = nil;
 
 -(void)removeWindow:(id)anObject
 {
-	[windowSet removeObject:[NSValue valueWithNonretainedObject:anObject]];
+	[windowSet removeObject:anObject];
 }
 
 -(void)destroyAndCreateTimer
@@ -144,7 +144,7 @@ static id fadeOutInstance = nil;
 -(void)updateAlphaValues
 {
 	id anObject, e = [windowSet objectEnumerator];
-	while((anObject = [[e nextObject] nonretainedObjectValue])){
+	while((anObject = [e nextObject])){
 		float newValue = [anObject alphaValue] - ALPHA_VALUE_DELTA;
 		newValue = (newValue < 0.0) ? 0.0 : newValue;
 		[anObject setAlphaValue:newValue];
@@ -158,7 +158,7 @@ static id fadeOutInstance = nil;
 	id newSet = [[NSMutableSet set] retain];
 	id anObject, e = [windowSet objectEnumerator];
 	while((anObject = [e nextObject])){
-		if([[anObject nonretainedObjectValue] alphaValue] > 0.0)
+		if([anObject alphaValue] > 0.0)
 			[newSet addObject:anObject];
 	}
 	
