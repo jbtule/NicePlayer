@@ -112,8 +112,6 @@
 
 -(void)dealloc
 {
-	[qtView setMovie:nil];
-    [qtView removeFromSuperview];
     [super dealloc];
 }
 
@@ -183,6 +181,7 @@
                 float tRatio = ((float)(pixelAspectRatio.hSpacing)) / pixelAspectRatio.vSpacing;
                     tSize = NSMakeSize(tRatio* tSize.width,tSize.height);
             }
+			[tName release];
         }
     }@catch(NSException *exception) {}
     @finally{

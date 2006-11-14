@@ -40,6 +40,7 @@ const int REMOTE_SWITCH_COOKIE=19;
 
 - (void) dealloc {
 	[self stopListening:self];
+	[self setDelegate:nil];
 	[cookieToButtonMapping release];
 	[super dealloc];
 }

@@ -184,9 +184,7 @@ enum{
 
 -(id)handleCloseScriptCommand:(id)sender
 {
-	if([self isFullScreen])
-		[self unFullScreen];
-	[self close];
+	[self performClose:self];
 	return nil;
 }
 

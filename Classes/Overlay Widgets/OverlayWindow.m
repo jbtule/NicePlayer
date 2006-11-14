@@ -51,19 +51,21 @@
 -(id)initWithContentRect:(NSRect)contentRect styleMask:(unsigned int)aStyle backing:(NSBackingStoreType)bufferingType defer:(BOOL)flag
 {
     
-    NSWindow *result = [super initWithContentRect:contentRect
-                                        styleMask:NSBorderlessWindowMask
-                                          backing:NSBackingStoreBuffered
-                                            defer:YES];
-    [result setBackgroundColor: [NSColor clearColor]];
-    [self setOpaque:NO];
-    return result;
+    if((self = [super initWithContentRect:contentRect
+							   styleMask:NSBorderlessWindowMask
+								 backing:NSBackingStoreBuffered
+								   defer:YES])){
+		[self setBackgroundColor: [NSColor clearColor]];
+		[self setOpaque:NO];
+	}
+    return self;
 }
 
 -(void)dealloc
 {
     if(mouseEntered)
 		[self mouseExited:nil];
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
     [super dealloc];
 }
 

@@ -124,19 +124,17 @@
 
 -(void)close
 {
+    [super close];
+	isClosing = YES;
+	[self hideNotifier];
+	[self hideAllImmediately];
+    [[FadeOut fadeOut] removeWindow:self];
     [timeUpdaterTimer invalidate];
     [theMovieView close];
     if(initialFadeTimer)
         [initialFadeTimer invalidate];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 	[[Preferences mainPrefs] removeObserver:self forKeyPath:@"opacityWhenWindowIsTransparent"];
-    [super close];
-}
-
--(void)dealloc
-{
-    [initialFadeObjects release];
-    [super dealloc];
 }
 
 #pragma mark Overriden Methods
@@ -191,7 +189,7 @@
     [(NPMovieView *)theMovieView stop];
     if(fullScreen)
         [[NSDocumentController sharedDocumentController] toggleFullScreen:sender];
-    [self close];
+	[self close];
 }
 
 -(void)updateVolume
@@ -292,25 +290,27 @@
 #pragma mark Overlays
 
 /**
-* Setup the locations of all of the overlays given the initial setup of the window. There are three
+ * Setup the locations of all of the overlays given the initial setup of the window. There are three
  * primary overlay windows: the controller bar, the title bar and the volume window.
  */
 -(void)setupOverlays
 {
+	BOOL initialShow = [[Preferences mainPrefs] showInitialOverlays];
+	
     NSRect currentFrame = [self frame];
     [self putOverlay:theOverlayWindow
              inFrame:NSMakeRect(currentFrame.origin.x,
                                 currentFrame.origin.y,
                                 currentFrame.size.width,
                                 [theOverlayWindow frame].size.height)
-      withVisibility:YES];
+      withVisibility:initialShow];
     [theOverlayWindow createResizeTriangle];
     [self putOverlay:theOverlayTitleBar
              inFrame:NSMakeRect(currentFrame.origin.x,
                                 currentFrame.origin.y + currentFrame.size.height-[theOverlayTitleBar frame].size.height - 3,
                                 currentFrame.size.width,
                                 [theOverlayTitleBar frame].size.height)
-      withVisibility:YES];
+      withVisibility:initialShow];
     [self putOverlay:theOverlayVolume
              inFrame:NSOffsetRect([theOverlayVolume frame],
                                   NSMidX(currentFrame) - NSMidX([theOverlayVolume frame]),
@@ -323,12 +323,15 @@
                                 currentFrame.size.width,
                                 [theOverlayNotifier frame].size.height)
       withVisibility:NO];
-    initialFadeObjects = [[NSMutableSet setWithObjects:theOverlayWindow, theOverlayTitleBar, nil] retain];
-    NSDictionary *fadeDict = [NSDictionary dictionaryWithObjects:
-        [NSArray arrayWithObjects:self,	initialFadeObjects, @"initialFadeComplete",	nil]
-                                                         forKeys:
-        [NSArray arrayWithObjects:@"Window", @"Fade", @"Selector", nil]];
-    initialFadeTimer = [[FadeOut fadeOut] initialFadeForDict:fadeDict];
+	if([[Preferences mainPrefs] showInitialOverlays]){
+		id initialFadeObjects = [NSMutableSet setWithObjects:[NSValue valueWithNonretainedObject:theOverlayWindow],
+			[NSValue valueWithNonretainedObject:theOverlayTitleBar], nil];
+		NSDictionary *fadeDict = [NSDictionary dictionaryWithObjects:
+			[NSArray arrayWithObjects:self,	initialFadeObjects, @"initialFadeComplete",	nil]
+															 forKeys:
+			[NSArray arrayWithObjects:@"Window", @"Fade", @"Selector", nil]];
+		initialFadeTimer = [[FadeOut fadeOut] initialFadeForDict:fadeDict];
+    }	
 }
 
 -(void)putOverlay:(id)anOverlay inFrame:(NSRect)aFrame withVisibility:(BOOL)isVisible
@@ -390,9 +393,6 @@
     if((windowOverlayIsShowing) && !(isInitialDisplay))
         return;
     
-    if(isInitialDisplay)
-        [initialFadeObjects removeObject:theOverlayWindow];
-    
     [self updateByTime:self];
     [self setOverlayWindowLocation];
     [[FadeOut fadeOut] removeWindow:theOverlayWindow];
@@ -430,7 +430,7 @@
 
 -(void)hideOverLayWindow
 {
-    if(windowOverlayIsShowing == NO)
+  if(windowOverlayIsShowing == NO)
         return;
     if(isInitialDisplay)
         [self hideInitialWindows];
@@ -444,9 +444,6 @@
 {
     if((titleOverlayIsShowing) && !(isInitialDisplay))
         return;
-    
-    if(isInitialDisplay)
-        [initialFadeObjects removeObject:theOverlayTitleBar];
     
     [self setOverlayTitleLocation];
     [[FadeOut fadeOut] removeWindow:theOverlayTitleBar];
@@ -838,7 +835,7 @@
                                                          forKeys:
 	[NSArray arrayWithObjects:@"Window", @"Fade", @"Selector",  nil]];
     if(notifierTimer)
-	[notifierTimer invalidate];
+		[notifierTimer invalidate];
     notifierTimer = [[FadeOut fadeOut] notifierFadeForDict:fadeDict];
 }
 
@@ -1092,7 +1089,7 @@
 	to set the location manually. */
 	if(fullScreen)
 	    [self removeChildWindow:theOverlayTitleBar];
-        [self setFrameOrigin:NSMakePoint([self frame].origin.x+[anEvent deltaX],[self frame].origin.y-[anEvent deltaY])];
+	[self setFrameOrigin:NSMakePoint([self frame].origin.x+[anEvent deltaX],[self frame].origin.y-[anEvent deltaY])];
 	if(fullScreen)
 	    [self addChildWindow:theOverlayTitleBar ordered:NSWindowAbove];
     }
@@ -1151,11 +1148,6 @@
 -(id)ffButton
 {
     return theFFButton;
-}
-
--(id)movieView
-{
-    return theMovieView;
 }
 
 #pragma mark -

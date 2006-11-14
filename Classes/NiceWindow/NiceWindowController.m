@@ -46,7 +46,6 @@
 * ***** END LICENSE BLOCK ***** */
 
 
-
 #import "NiceWindowController.h"
 
 @implementation NiceWindowController
@@ -54,8 +53,8 @@
 - (id)initWithWindowNibName:(NSString *)windowNibName owner:(id)owner{
     if((self = [super initWithWindowNibName:windowNibName owner:owner])){
         [self setShouldCascadeWindows:NO];
-    }return self;
-    
+    }
+	return self;
 }
 
 - (NSString *)windowTitleForDocumentDisplayName:(NSString *)displayName

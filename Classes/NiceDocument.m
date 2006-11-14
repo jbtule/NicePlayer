@@ -413,14 +413,13 @@ void findSpace(id each, void* context, BOOL* endthis){
     }else{
         [[self window] setFrameOrigin:[tPoint pointValue]];
     }
-    
-    
 }
 
 - (void)makeWindowControllers{
-    [self addWindowController:[[[NiceWindowController alloc] initWithWindowNibName:@"NiceDocument" owner:self] autorelease]];
+	NiceWindowController *controller = [[NiceWindowController alloc] initWithWindowNibName:@"NiceDocument" owner:self];
+    [self addWindowController:controller];
+	[controller release];
 }
-
 
 - (void)showWindows
 {
@@ -443,7 +442,7 @@ void findSpace(id each, void* context, BOOL* endthis){
 
 -(id)subTitle
 {
-    return theSubtitle;
+    return [[theSubtitle retain] autorelease];
 }
 
 -(NSMenu *)movieMenu

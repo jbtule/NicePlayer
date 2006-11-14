@@ -120,7 +120,7 @@ BOOL selectNiceWindow(id each, void* context){
 {
     if(!NSEqualPoints(lastPoint, [NSEvent mouseLocation])){
         lastPoint = [NSEvent mouseLocation];
-        NSEvent *newEvent = [NSEvent mouseEventWithType:NSMouseMoved
+        NSEvent *newEvent = [[NSEvent mouseEventWithType:NSMouseMoved
                                                location:lastPoint
                                           modifierFlags:0
                                               timestamp:0
@@ -128,8 +128,9 @@ BOOL selectNiceWindow(id each, void* context){
                                                 context:nil
                                             eventNumber:0
                                              clickCount:0
-                                               pressure:1.0];
+                                               pressure:1.0] retain];
         [self sendEvent:newEvent];
+		[newEvent release];
     }
 }
 
@@ -208,7 +209,6 @@ BOOL selectNiceWindow(id each, void* context){
 
 -(NSArray *)movieWindows
 {
-
     return [[super orderedWindows] selectUsingFunction:selectNiceWindow context:nil];
 }
 

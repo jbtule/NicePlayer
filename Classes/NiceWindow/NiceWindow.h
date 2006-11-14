@@ -77,6 +77,7 @@
     BOOL fillScreen;
     BOOL fillWidthScreen;
     BOOL isFilling;
+	BOOL isClosing;
     BOOL isWidthFilling;
     BOOL isInitialDisplay;    
     BOOL fixedAspectRatio;
@@ -91,7 +92,6 @@
     float miniVolume;
     NSRect beforeFullScreen;
 
-    id initialFadeObjects;
     id initialFadeTimer;
 	
     NSSize aspectRatio;
@@ -203,7 +203,6 @@
 -(id)playButton;
 -(id)rrButton;
 -(id)ffButton;
--(id)movieView;
 
 -(NSArray *)acceptableDragTypes;
 

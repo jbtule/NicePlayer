@@ -49,7 +49,8 @@
 
 int main(int argc, const char *argv[])
 {
-#if 0 && __DEBUG__
+#if 1 && __DEBUG__
+	NSLog(@"*** NSZombie Enabled ***");
 	NSDebugEnabled=		YES;
 	NSZombieEnabled=	YES;
 #endif
