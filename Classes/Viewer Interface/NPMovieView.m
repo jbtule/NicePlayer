@@ -652,8 +652,16 @@
 
 -(void)rightMouseUp:(NSEvent *)anEvent
 {
-	if([[Preferences mainPrefs] rightClickMoviePref] == RIGHT_CLICK_PLAY_PAUSE_MOVIE)
-		[[((NiceWindow *)[self window]) playButton] togglePlaying];
+	switch([[Preferences mainPrefs] rightClickMoviePref]){
+		case RIGHT_CLICK_PLAY_PAUSE_MOVIE:
+			[[((NiceWindow *)[self window]) playButton] togglePlaying];
+			break;
+		case RIGHT_CLICK_MAKE_FULL_SCREEN:
+			[((NiceWindow *)[self window]) toggleWindowFullScreen];
+			break;
+		default:
+			break;
+	}
 }
 
 - (void)mouseDragged:(NSEvent *)anEvent

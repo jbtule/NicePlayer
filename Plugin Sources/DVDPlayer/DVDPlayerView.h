@@ -35,4 +35,6 @@
 
 -(IBAction)setBookmarkForCurrentDiscWithNameField:(NSBookmarkCreateButton *)sender;
 
+- (void) setVideoDisplay;
+
 @end

@@ -101,10 +101,20 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 						   object:NULL];
 	
 	[[NSNotificationCenter defaultCenter] addObserver:self 
-						 selector:@selector(frameDidChange:) 
-						     name:NSViewFrameDidChangeNotification 
-						   object:NULL];
-    }
+											 selector:@selector(frameDidChange:) 
+												 name:NSViewFrameDidChangeNotification 
+											   object:NULL];
+	
+	[[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self 
+														   selector:@selector(systemWillSleep:) 
+															   name:NSWorkspaceWillSleepNotification 
+															 object:nil];
+	
+	[[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self 
+														   selector:@selector(systemDidWakeUp:) 
+															   name:NSWorkspaceDidWakeNotification 
+															 object:nil];
+	}
     return self;
 }
 
@@ -173,6 +183,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 -(void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+	[[[NSWorkspace sharedWorkspace] notificationCenter] removeObserver:self];
 	if(myURL)
 		[myURL release];
 	[super dealloc];
@@ -231,7 +242,6 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
  */
 -(BOOL)loadMovie
 {
-	NSRect frame = [[NSScreen mainScreen] frame];
 	DVDSetVideoWindowID([[self window] windowNumber]);	
 	
 	[self setVideoDisplay];
@@ -1030,6 +1040,17 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 {
     if ([notification object] == [self window]) 
 	[self setVideoDisplay];
+}
+
+-(void)systemWillSleep:(NSNotification *)notification
+{
+	DVDPause();
+	DVDSleep();
+}
+
+-(void)systemDidWakeUp:(NSNotification *)notification
+{
+	DVDWakeUp();
 }
 
 @end

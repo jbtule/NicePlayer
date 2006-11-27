@@ -83,8 +83,8 @@
 			withToolTip:@"Viewer Order for Opening Movies"
 		 allowingResize:YES];
 	
-	[doubleClickMoviePref selectItemAtIndex:[[Preferences mainPrefs] doubleClickMoviePref]];
-	[rightClickMoviePref selectItemAtIndex:[[Preferences mainPrefs] rightClickMoviePref]];
+	[doubleClickMoviePref selectItemWithTag:[[Preferences mainPrefs] doubleClickMoviePref]];
+	[rightClickMoviePref selectItemWithTag:[[Preferences mainPrefs] rightClickMoviePref]];
 	[scrollWheelMoviePref selectItemWithTag:[[Preferences mainPrefs] scrollWheelMoviePref]];
 	[scrollWheelHorizontalMoviePref selectItemWithTag:[[Preferences mainPrefs] scrollWheelHorizontalMoviePref]];
 	[scrollResizePin selectItemAtIndex:[[Preferences mainPrefs] scrollResizePin]];
@@ -135,12 +135,12 @@
 
 -(IBAction)doubleClickMoviePref:(id)sender
 {
-	[[Preferences mainPrefs] setDoubleClickMoviePref:[sender indexOfSelectedItem]];
+	[[Preferences mainPrefs] setDoubleClickMoviePref:[[sender selectedItem] tag]];
 }
 
 -(IBAction)rightClickMoviePref:(id)sender
 {
-	[[Preferences mainPrefs] setRightClickMoviePref:[sender indexOfSelectedItem]];
+	[[Preferences mainPrefs] setRightClickMoviePref:[[sender selectedItem] tag]];
 }
 
 -(IBAction)scrollWheelMoviePref:(id)sender
