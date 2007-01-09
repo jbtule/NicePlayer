@@ -133,7 +133,6 @@
 
 -(void)mouseEntered:(NSEvent *)theEvent
 {
-	NSLog(@"%@ = Entered", [self class]);
 }
 
 -(void)mouseExited:(NSEvent *)theEvent
