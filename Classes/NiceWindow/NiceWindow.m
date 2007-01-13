@@ -234,6 +234,11 @@
     return ([anEvent locationInWindow].x > ([self frame].size.width-16) && [anEvent locationInWindow].y < (16));
 }
 
+-(void)setResizeDrag:(bool)aDrag{
+	resizeDrag = aDrag;
+}
+
+
 /**
 * Change the time style that is shown, either time elapsed or time remaining.
  */
@@ -261,7 +266,7 @@
     
     if((sender != self) && [theScrubBar isHidden])
         return;
-    
+    id tAttString;
     switch(timeDisplayStyle){
         NSDate *aDate;
         case ELAPSED_TIME:
@@ -269,7 +274,10 @@
                 ([theMovieView currentMovieTime]
                  - [[NSTimeZone localTimeZone] secondsFromGMTForDate:
                      [NSDate dateWithTimeIntervalSinceReferenceDate:0]])];
-            [theTimeField setStringValue:[aDate descriptionWithCalendarFormat:@"%H:%M:%S" timeZone:nil locale:nil]];
+					 
+			 tAttString = [[[NSAttributedString alloc] initWithString:[aDate descriptionWithCalendarFormat:@"%H:%M:%S" timeZone:nil locale:nil]
+												attributes:[NSDictionary dictionaryWithObjectsAndKeys:[NSFont boldSystemFontOfSize:[NSFont systemFontSizeForControlSize:NSSmallControlSize]],NSFontAttributeName,nil]] autorelease];
+			[theTimeField setAttributedStringValue:tAttString];
             break;
         case TIME_REMAINING:
             aDate = [NSDate dateWithTimeIntervalSinceReferenceDate:
@@ -277,7 +285,10 @@
                  - [theMovieView currentMovieTime]
                  - [[NSTimeZone localTimeZone] secondsFromGMTForDate:
                      [NSDate dateWithTimeIntervalSinceReferenceDate:0]])];
-            [theTimeField setStringValue:[aDate descriptionWithCalendarFormat:@"-%H:%M:%S" timeZone:nil locale:nil]];
+					 
+					 	 tAttString = [[[NSAttributedString alloc] initWithString:[aDate descriptionWithCalendarFormat:@"-%H:%M:%S" timeZone:nil locale:nil]
+												attributes:[NSDictionary dictionaryWithObjectsAndKeys:[NSFont boldSystemFontOfSize:[NSFont systemFontSizeForControlSize:NSSmallControlSize]],NSFontAttributeName,nil]]autorelease];
+			[theTimeField setAttributedStringValue:tAttString];
             break;
     }
     /* Update rest of UI */

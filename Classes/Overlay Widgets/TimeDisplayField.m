@@ -49,6 +49,8 @@
 
 @implementation TimeDisplayField
 
+
+
 - (void)mouseDown:(NSEvent *)theEvent
 {
 	if([theEvent type] == NSLeftMouseDown){
@@ -57,5 +59,8 @@
 		[[self window] mouseDown:theEvent];
 	}
 }
+
+
+
 
 @end

@@ -419,9 +419,27 @@
                                    keyEquivalent:@""] autorelease];
     [newItem setTarget:self];
     [pluginMenu addObject:newItem];
+	
+	
+	newItem = [[[NSMenuItem alloc] initWithTitle:@"Audio Tracks"
+                                          action:NULL
+                                   keyEquivalent:@""] autorelease];
+    [newItem setTarget:self];
+	
+	[newItem setSubmenu:[self audioTrackMenu]];
+	
+    [pluginMenu addObject:newItem];
+	
+	
     
     return [pluginMenu autorelease];
 }
+
+-(NSMenu*)audioTrackMenu{
+	//NSArray* tTracks =	[film tracksOfMediaType:<#(NSString *)type#>
+return [NSMenu new];
+}
+
 
 -(void)playMoviePreview
 {

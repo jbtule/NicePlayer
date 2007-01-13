@@ -99,6 +99,9 @@
     id notifierTimer;
 }
 
+-(void)setResizeDrag:(bool)aDrag;
+
+
 -(BOOL)validateMenuItem:(NSMenuItem*)anItem;
 -(IBAction)performClose:(id)sender;
 -(void)updateVolume;

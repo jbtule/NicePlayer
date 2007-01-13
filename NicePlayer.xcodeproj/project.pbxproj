@@ -161,6 +161,11 @@
 		3EF15FD407C8553B00AE56D7 /* NPAddCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EF15FD007C8553B00AE56D7 /* NPAddCommand.h */; };
 		3EFEF998086E6E50003E05C3 /* nicelist.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3EFEF995086E6E50003E05C3 /* nicelist.icns */; };
 		3EFEF999086E6E50003E05C3 /* wmv.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3EFEF996086E6E50003E05C3 /* wmv.icns */; };
+		697496120B55EA800030D4D2 /* OverlayTitleWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 697496100B55EA800030D4D2 /* OverlayTitleWindow.h */; };
+		697496130B55EA800030D4D2 /* OverlayTitleWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 697496110B55EA800030D4D2 /* OverlayTitleWindow.m */; };
+		697496200B55F7A90030D4D2 /* titlebg.png in Resources */ = {isa = PBXBuildFile; fileRef = 6974961F0B55F7A90030D4D2 /* titlebg.png */; };
+		6974971F0B56033F0030D4D2 /* TitleBackgroundView.h in Headers */ = {isa = PBXBuildFile; fileRef = 6974971D0B56033F0030D4D2 /* TitleBackgroundView.h */; };
+		697497200B56033F0030D4D2 /* TitleBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6974971E0B56033F0030D4D2 /* TitleBackgroundView.m */; };
 		8D15AC290486D014006FF6A4 /* NicePlayer_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 32DBCF750370BD2300C91783 /* NicePlayer_Prefix.pch */; };
 		8D15AC2A0486D014006FF6A4 /* NiceDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A37F4AEFDCFA73011CA2CEA /* NiceDocument.h */; };
 		8D15AC2D0486D014006FF6A4 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 2A37F4B6FDCFA73011CA2CEA /* MainMenu.nib */; };
@@ -447,8 +452,13 @@
 		3EF15FD107C8553B00AE56D7 /* NPAddCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NPAddCommand.m; path = Classes/Scripting/NPAddCommand.m; sourceTree = SOURCE_ROOT; };
 		3EFEF995086E6E50003E05C3 /* nicelist.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = nicelist.icns; sourceTree = "<group>"; };
 		3EFEF996086E6E50003E05C3 /* wmv.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = wmv.icns; sourceTree = "<group>"; };
+		697496100B55EA800030D4D2 /* OverlayTitleWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayTitleWindow.h; sourceTree = "<group>"; };
+		697496110B55EA800030D4D2 /* OverlayTitleWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayTitleWindow.m; sourceTree = "<group>"; };
+		6974961F0B55F7A90030D4D2 /* titlebg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = titlebg.png; path = Resources/titlebg.png; sourceTree = "<group>"; };
+		6974971D0B56033F0030D4D2 /* TitleBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleBackgroundView.h; sourceTree = "<group>"; };
+		6974971E0B56033F0030D4D2 /* TitleBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleBackgroundView.m; sourceTree = "<group>"; };
 		8D15AC360486D014006FF6A4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		8D15AC370486D014006FF6A4 /* NicePlayer.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = NicePlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D15AC370486D014006FF6A4 /* NicePlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NicePlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -509,6 +519,7 @@
 		2513D20407BDA31600BB6055 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				6974961F0B55F7A90030D4D2 /* titlebg.png */,
 				3E918435086E28BA00F4ED34 /* OverPrefIcon.png */,
 				3E91842D086E288300F4ED34 /* playlist-highlight.png */,
 				3E91842E086E288300F4ED34 /* playlist.png */,
@@ -660,6 +671,10 @@
 				3E110B62069BD80100C5800B /* ClickableTextField.m */,
 				3E9996D006A5101500D1898D /* VolumeView.h */,
 				3E9996D106A5101500D1898D /* VolumeView.m */,
+				697496100B55EA800030D4D2 /* OverlayTitleWindow.h */,
+				697496110B55EA800030D4D2 /* OverlayTitleWindow.m */,
+				6974971D0B56033F0030D4D2 /* TitleBackgroundView.h */,
+				6974971E0B56033F0030D4D2 /* TitleBackgroundView.m */,
 			);
 			name = "Overlay Widgets";
 			sourceTree = "<group>";
@@ -883,6 +898,8 @@
 				3E64FA4508F2314C0010E3DA /* NicePlugin.h in Headers */,
 				258C2AE80A2D69C200AC22BB /* AppleRemote.h in Headers */,
 				2510A23B0B04B53D00CA8110 /* DelegateAnimation.h in Headers */,
+				697496120B55EA800030D4D2 /* OverlayTitleWindow.h in Headers */,
+				6974971F0B56033F0030D4D2 /* TitleBackgroundView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1075,6 +1092,7 @@
 				3EFEF999086E6E50003E05C3 /* wmv.icns in Resources */,
 				3EB4F72E08F62C37004692D3 /* Useful Scripts in Resources */,
 				3EB4F74208F62C4C004692D3 /* Default Scripts in Resources */,
+				697496200B55F7A90030D4D2 /* titlebg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1158,6 +1176,8 @@
 				3E64FA4608F2314C0010E3DA /* NicePlugin.m in Sources */,
 				258C2AE90A2D69C200AC22BB /* AppleRemote.m in Sources */,
 				2510A23C0B04B53D00CA8110 /* DelegateAnimation.m in Sources */,
+				697496130B55EA800030D4D2 /* OverlayTitleWindow.m in Sources */,
+				697497200B56033F0030D4D2 /* TitleBackgroundView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

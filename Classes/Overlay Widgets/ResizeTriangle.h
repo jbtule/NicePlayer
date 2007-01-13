@@ -48,7 +48,7 @@
 #import "OverlayWindow.h"
 
 @interface ResizeTriangle : OverlayWindow {
-
+	id theNiceWindow;
 }
 
 @end

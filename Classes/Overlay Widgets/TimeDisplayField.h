@@ -45,7 +45,7 @@
 #import "../NiceWindow/NiceWindow.h"
 
 @interface TimeDisplayField : NSTextField {
-
+	id theShadow;
 }
 
 @end

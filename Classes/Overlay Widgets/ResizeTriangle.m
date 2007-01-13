@@ -56,7 +56,7 @@
 				 backing:NSBackingStoreBuffered
 				   defer:YES])){
 	[self setBackgroundColor:[NSColor clearColor]];
-	[self setIgnoresMouseEvents:YES];
+	//[self setIgnoresMouseEvents:YES];
 	[self setOpaque:NO];
     }
     return self;
@@ -66,6 +66,26 @@
 {
     [self setHasShadow:NO];
 }
+
+- (void)mouseDown:(NSEvent *)anEvent
+{	
+		[theNiceWindow setResizeDrag:YES];
+        [theNiceWindow mouseDown:anEvent];
+		
+}
+
+-(void)mouseUp:(NSEvent *)anEvent{
+		[theNiceWindow setResizeDrag:NO];
+        [theNiceWindow mouseUp:anEvent];
+
+}
+
+
+- (void)mouseDragged:(NSEvent *)anEvent
+{
+    [theNiceWindow mouseDragged:anEvent];
+}
+
 
 -(void)setFrame:(NSRect)frameRect display:(BOOL)flag
 {

@@ -117,8 +117,19 @@
             OUTLETS = {theNotificationText = id; }; 
             SUPERCLASS = OverlayWindow; 
         }, 
+        {
+            CLASS = OverlayTitleWindow; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {theNiceWindow = id; }; 
+            SUPERCLASS = OverlayWindow; 
+        }, 
         {CLASS = OverlayWindow; LANGUAGE = ObjC; SUPERCLASS = NSWindow; }, 
-        {CLASS = ResizeTriangle; LANGUAGE = ObjC; SUPERCLASS = NSWindow; }, 
+        {
+            CLASS = ResizeTriangle; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {theNiceWindow = id; }; 
+            SUPERCLASS = OverlayWindow; 
+        }, 
         {
             CLASS = ScriptingDelegate; 
             LANGUAGE = ObjC; 
@@ -126,6 +137,7 @@
             SUPERCLASS = NSObject; 
         }, 
         {CLASS = TimeDisplayField; LANGUAGE = ObjC; SUPERCLASS = NSTextField; }, 
+        {CLASS = TitleBackgroundView; LANGUAGE = ObjC; SUPERCLASS = NSView; }, 
         {CLASS = VolumeView; LANGUAGE = ObjC; SUPERCLASS = NSImageView; }
     ); 
     IBVersion = 1; 
