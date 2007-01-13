@@ -282,6 +282,9 @@
 			<property name="unscaled aspect ratio" code="NPua" description="Returns height and width of current window at normal scale" type="any" access="r">
 				<cocoa key="currentAspectRatio"/>
 			</property>
+			<property name="transparency" code="npal" description="transparency of the window" type="integer">
+				<cocoa key="transparency"/>
+			</property>
 			<responds-to name="enter full screen">
 				<cocoa method="handleEnterFullScreenCommand:"/>
 			</responds-to>

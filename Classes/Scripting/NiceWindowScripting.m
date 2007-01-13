@@ -73,6 +73,14 @@ enum{
 	return NO;
 }
 
+-(int)transparency{
+	return [self alphaValue] * 100;
+}
+
+-(void)setTransparency:(int)aPercent{
+	[self setAlphaValue:aPercent/100.0];
+}
+
 -(int)floating{
     if(kCGDesktopIconWindowLevel-1 == [self level]){
         return NPDESKTOP;
