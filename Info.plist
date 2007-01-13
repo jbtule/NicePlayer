@@ -9,6 +9,28 @@
 		<dict>
 			<key>CFBundleTypeExtensions</key>
 			<array>
+				<string>flv</string>
+			</array>
+			<key>CFBundleTypeIconFile</key>
+			<string>flv.icns</string>
+			<key>CFBundleTypeMIMETypes</key>
+			<array>
+				<string>video/x-flv</string>
+			</array>
+			<key>CFBundleTypeName</key>
+			<string>Flash Video</string>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>LSTypeIsPackage</key>
+			<false/>
+			<key>NSDocumentClass</key>
+			<string>NiceDocument</string>
+			<key>NSPersistentStoreTypeKey</key>
+			<string>Binary</string>
+		</dict>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
 				<string>wmv</string>
 				<string>asf</string>
 			</array>
@@ -253,10 +275,6 @@
 			<string>nicelist.icns</string>
 			<key>CFBundleTypeName</key>
 			<string>Nice Playlist</string>
-			<key>CFBundleTypeOSTypes</key>
-			<array>
-				<string>****</string>
-			</array>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>LSItemContentTypes</key>
@@ -282,30 +300,6 @@
 			<key>CFBundleTypeOSTypes</key>
 			<array>
 				<string>PICT</string>
-			</array>
-			<key>CFBundleTypeRole</key>
-			<string>Viewer</string>
-			<key>LSTypeIsPackage</key>
-			<false/>
-			<key>NSDocumentClass</key>
-			<string>NiceDocument</string>
-		</dict>
-		<dict>
-			<key>CFBundleTypeExtensions</key>
-			<array>
-				<string>jpg</string>
-				<string>jpeg</string>
-			</array>
-			<key>CFBundleTypeMIMETypes</key>
-			<array>
-				<string>image/jpeg</string>
-				<string>image/pjpeg</string>
-			</array>
-			<key>CFBundleTypeName</key>
-			<string>JPEG image</string>
-			<key>CFBundleTypeOSTypes</key>
-			<array>
-				<string>JPEG</string>
 			</array>
 			<key>CFBundleTypeRole</key>
 			<string>Viewer</string>
@@ -344,6 +338,52 @@
 			<key>CFBundleTypeOSTypes</key>
 			<array>
 				<string>SWFL</string>
+			</array>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>LSTypeIsPackage</key>
+			<false/>
+			<key>NSDocumentClass</key>
+			<string>NiceDocument</string>
+		</dict>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>mkv</string>
+			</array>
+			<key>CFBundleTypeIconFile</key>
+			<string>mkv.icns</string>
+			<key>CFBundleTypeMIMETypes</key>
+			<array>
+				<string>video/x-matroska</string>
+			</array>
+			<key>CFBundleTypeName</key>
+			<string>Matroska video</string>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>LSTypeIsPackage</key>
+			<false/>
+			<key>NSDocumentClass</key>
+			<string>NiceDocument</string>
+			<key>NSPersistentStoreTypeKey</key>
+			<string>Binary</string>
+		</dict>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>jpg</string>
+				<string>jpeg</string>
+			</array>
+			<key>CFBundleTypeMIMETypes</key>
+			<array>
+				<string>image/jpeg</string>
+				<string>image/pjpeg</string>
+			</array>
+			<key>CFBundleTypeName</key>
+			<string>JPEG image</string>
+			<key>CFBundleTypeOSTypes</key>
+			<array>
+				<string>JPEG</string>
 			</array>
 			<key>CFBundleTypeRole</key>
 			<string>Viewer</string>
@@ -442,38 +482,35 @@
 	<string>niceplayer@indyjt.com</string>
 	<key>JTUpdateURL</key>
 	<string>http://indyjt.com/software/niceplayer/niceplayer2.indyUpdate</string>
-        <key>SmartCrashReports_CompanyName</key> 
-        <string>NicePlayer</string> 
-        <key>SmartCrashReports_URL</key> 
-        <string>http://indyjt.com/software/BugReceiver.php</string> 
 	<key>NSAppleScriptEnabled</key>
 	<string>YES</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NPApplication</string>
-        <key>UTExportedTypeDeclarations</key>
-  <array>             
-    <dict>                 
-      <key>UTTypeIdentifier</key>                 
-      <string>indy.jt.nicelist</string>                 
-
-      <key>UTTypeDescription</key>                 
-      <string>Niceplayers xml playlist format</string>          
-              
-      <key>UTTypeConformsTo</key>                 
-      <array>                     
-        <string>public.xml</string>                     
-      </array>
-
-      <key>UTTypeTagSpecification</key>                 
-      <dict>
-        <key>public.filename-extension</key>                 
-        <array>
-          <string>nicelist</string>                     
-        </array>
-      </dict>
-    </dict>
-  </array>
+	<key>SmartCrashReports_CompanyName</key>
+	<string>NicePlayer</string>
+	<key>SmartCrashReports_URL</key>
+	<string>http://indyjt.com/software/BugReceiver.php</string>
+	<key>UTExportedTypeDeclarations</key>
+	<array>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.xml</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Niceplayers xml playlist format</string>
+			<key>UTTypeIdentifier</key>
+			<string>indy.jt.nicelist</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>nicelist</string>
+				</array>
+			</dict>
+		</dict>
+	</array>
 </dict>
 </plist>

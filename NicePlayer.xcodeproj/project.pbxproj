@@ -161,6 +161,7 @@
 		3EF15FD407C8553B00AE56D7 /* NPAddCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EF15FD007C8553B00AE56D7 /* NPAddCommand.h */; };
 		3EFEF998086E6E50003E05C3 /* nicelist.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3EFEF995086E6E50003E05C3 /* nicelist.icns */; };
 		3EFEF999086E6E50003E05C3 /* wmv.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3EFEF996086E6E50003E05C3 /* wmv.icns */; };
+		690B61170B5981A4008D13CE /* flv.icns in Resources */ = {isa = PBXBuildFile; fileRef = 690B61160B5981A4008D13CE /* flv.icns */; };
 		697496120B55EA800030D4D2 /* OverlayTitleWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 697496100B55EA800030D4D2 /* OverlayTitleWindow.h */; };
 		697496130B55EA800030D4D2 /* OverlayTitleWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 697496110B55EA800030D4D2 /* OverlayTitleWindow.m */; };
 		697496200B55F7A90030D4D2 /* titlebg.png in Resources */ = {isa = PBXBuildFile; fileRef = 6974961F0B55F7A90030D4D2 /* titlebg.png */; };
@@ -452,6 +453,7 @@
 		3EF15FD107C8553B00AE56D7 /* NPAddCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NPAddCommand.m; path = Classes/Scripting/NPAddCommand.m; sourceTree = SOURCE_ROOT; };
 		3EFEF995086E6E50003E05C3 /* nicelist.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = nicelist.icns; sourceTree = "<group>"; };
 		3EFEF996086E6E50003E05C3 /* wmv.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = wmv.icns; sourceTree = "<group>"; };
+		690B61160B5981A4008D13CE /* flv.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = flv.icns; sourceTree = "<group>"; };
 		697496100B55EA800030D4D2 /* OverlayTitleWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayTitleWindow.h; sourceTree = "<group>"; };
 		697496110B55EA800030D4D2 /* OverlayTitleWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayTitleWindow.m; sourceTree = "<group>"; };
 		6974961F0B55F7A90030D4D2 /* titlebg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = titlebg.png; path = Resources/titlebg.png; sourceTree = "<group>"; };
@@ -806,6 +808,7 @@
 		3E8C96C1073EF4730048CB70 /* doc_icons */ = {
 			isa = PBXGroup;
 			children = (
+				690B61160B5981A4008D13CE /* flv.icns */,
 				3EFEF995086E6E50003E05C3 /* nicelist.icns */,
 				3EFEF996086E6E50003E05C3 /* wmv.icns */,
 				3E8C96C2073EF4730048CB70 /* 3gpp.icns */,
@@ -1093,6 +1096,7 @@
 				3EB4F72E08F62C37004692D3 /* Useful Scripts in Resources */,
 				3EB4F74208F62C4C004692D3 /* Default Scripts in Resources */,
 				697496200B55F7A90030D4D2 /* titlebg.png in Resources */,
+				690B61170B5981A4008D13CE /* flv.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
