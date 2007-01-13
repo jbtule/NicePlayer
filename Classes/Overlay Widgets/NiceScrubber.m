@@ -45,6 +45,7 @@
 
 #import "NiceScrubber.h"
 
+#define OFFSET (10)
 
 @implementation NiceScrubber
 
@@ -94,8 +95,7 @@
                                  [left size].height) 
             operation:NSCompositeSourceOver
              fraction:1.0];
-    
-    
+    	
     [center drawInRect:NSMakeRect(5,0,
                                    [self frame].size.width-10,
                                    [self frame].size.height)
@@ -104,15 +104,27 @@
                                   [center size].height) 
              operation:NSCompositeSourceOver
               fraction:1.0];
-    
+
+	CGPoint points[2];
+	points[0] = CGPointMake(OFFSET + 1, floor([self frame].size.height / 2.0));
+	points[1] = CGPointMake([self frame].size.width - OFFSET - 1, floor([self frame].size.height / 2.0));
+	
+    CGContextRef cgRef = [[NSGraphicsContext currentContext] graphicsPort];
+	CGContextSetAllowsAntialiasing(cgRef, NO);
+	CGContextSetGrayStrokeColor(cgRef, 1.0, 1.0);
+	CGContextSetLineWidth(cgRef, 1);
+	CGContextSetLineCap(cgRef, kCGLineCapRound);
+	CGContextStrokeLineSegments(cgRef, points, 2);
+	CGContextSetAllowsAntialiasing(cgRef, YES);
+	
     [right drawAtPoint:NSMakePoint([self frame].size.width-5,0)
               fromRect:NSMakeRect(0,0,
                                   [right size].width,
                                   [right size].height) 
              operation:NSCompositeSourceOver
               fraction:1.0];
-    
-    [tempImage drawAtPoint:NSMakePoint(5+([self doubleValue]*([self frame].size.width-10))-[scrub size].width/2,[self frame].size.height/2 - [tempImage size].height/2 )
+    	
+    [tempImage drawAtPoint:NSMakePoint(OFFSET+([self doubleValue]*([self frame].size.width-(OFFSET * 2)))-[scrub size].width/2,[self frame].size.height/2 - [tempImage size].height/2 + 0.5)
                  fromRect:NSMakeRect(0,0,
                                      [tempImage size].width,
                                      [tempImage size].height) 
@@ -158,10 +170,10 @@
 {
     float loc =[self convertPoint:[anEvent locationInWindow]fromView:[[self window] contentView]].x;
     
-    if(loc <= 5)
+    if(loc <= OFFSET)
         [self setDoubleValue:0.0];
-    else if(loc >=5 && loc <= ([self frame].size.width-5.0)){
-        [self setDoubleValue: (loc-5.0)/([self frame].size.width-10.0)];
+    else if(loc >=OFFSET && loc <= ([self frame].size.width-OFFSET)){
+        [self setDoubleValue: (loc-OFFSET)/([self frame].size.width-(OFFSET * 2))];
         
     } else 
         [self setDoubleValue:1.0];
@@ -184,10 +196,10 @@
     dragging =YES;
     float loc =[self convertPoint:[anEvent locationInWindow]fromView:[[self window] contentView]].x;
 
-    if(loc <= 5)
+    if(loc <= OFFSET)
         [self setDoubleValue:0.0];
-    else if(loc >=5 && loc <= ([self frame].size.width-5.0)){
-        [self setDoubleValue: (loc-5.0)/([self frame].size.width-10.0)];
+    else if(loc >=OFFSET && loc <= ([self frame].size.width-OFFSET)){
+        [self setDoubleValue: (loc-OFFSET)/([self frame].size.width-(OFFSET * 2))];
 
     } else 
         [self setDoubleValue:1.0];
