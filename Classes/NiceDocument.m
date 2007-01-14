@@ -277,6 +277,12 @@ void findSpace(id each, void* context, BOOL* endthis){
     }else{
         theSubtitle = nil;
     }
+	
+	if(theSubtitle != nil){
+		[[theWindow subtitleView] setMaxText:[theSubtitle longestText]];
+	}
+	
+	
     if(![self hasPlaylist]){
         [self setFileName:[[[[theCurrentURL path] lastPathComponent] stringByDeletingPathExtension] stringByAppendingPathExtension:@"nicelist"]];
         [self setFileType:@"nicelist"];

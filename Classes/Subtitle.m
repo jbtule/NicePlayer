@@ -60,6 +60,8 @@
 
 -(id)initWithFile:(id)aPath forMovieSeconds:(float)aSeconds{
     if ((self = [super init])){
+			NSString* theLongestLine =@"";
+			double theLongestLength=0;
             timeOffset = 0;
            intervals =30*aSeconds;
             lastCheck=0;
@@ -145,7 +147,9 @@
         }
             
         //remove final carrage return before adding to array
-        [theText addObject:[item substringToIndex:[item length]-1]];
+		NSString* tFinalString =[item substringToIndex:[item length]-1];
+		[self _JTmeasureWidth:tFinalString];
+        [theText addObject:tFinalString];
         int i;
         for(i=start; i<=stop;i++)
             if(i<intervals)
@@ -200,6 +204,22 @@
     return [theText objectAtIndex:lastCheck];
 }
 
+
+-(NSString*)longestText{
+	return theLongestLine;
+}
+
+
+-(void)_JTmeasureWidth:(NSString*)aString{
+	NSAttributedString* tString = [[NSAttributedString alloc]initWithString:aString];
+	if(theLongestLength < [tString size].width){
+		theLongestLength = [tString size].width;
+		theLongestLine = aString;
+	}
+	[tString release];
+}
+
+
 -(uint)_uintArrayForTime:(int)aTime{// for peeking with fscript
     int tInt = aTime*30;
     return timeVector[tInt];
@@ -237,7 +257,10 @@
         item = [[item mutableCopy] autorelease];
         [item replaceOccurrencesOfString:@"|" withString:@"\n" options:NSLiteralSearch range: NSMakeRange(0, [item length])];
         //remove final carrage return before adding to array
-        [theText addObject:[item substringToIndex:[item length]-1]];
+		NSString* tFinalString =[item substringToIndex:[item length]-1];
+
+		[self _JTmeasureWidth:tFinalString];
+        [theText addObject:tFinalString];
         int i;
         for(i=start; i<=stop;i++)
             if(i<intervals)

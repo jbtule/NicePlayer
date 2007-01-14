@@ -56,6 +56,7 @@
     IBOutlet id theOverlayWindow;
     IBOutlet id theOverlayTitleBar;
     IBOutlet id theOverlayVolume;
+	IBOutlet id theOverlaySubTitleWindow;
     IBOutlet id theOverlaySubTitle;
     IBOutlet id theOverlayNotifier;
     IBOutlet id theVolumeView;
@@ -136,7 +137,7 @@
 -(void)showOverLayVolume;
 -(void)setOverLayVolumeLocation;
 -(void)hideOverLayVolume;
-
+-(id)subtitleView;
 #pragma mark -
 #pragma mark Window Toggles
 

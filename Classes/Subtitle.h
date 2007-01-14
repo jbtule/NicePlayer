@@ -56,8 +56,11 @@
     float timeOffset;
     uint lastCheck;
     NSMutableArray* theText;
+	NSString* theLongestLine;
+	double theLongestLength;
 }
-
+-(NSString*)longestText;
+-(void)_JTmeasureWidth:(NSString*)aString;
 -(id)initWithFile:(id)aPath forMovieSeconds:(float)aSeconds;
 -(NSString*)stringForTime:(float)aTime;
 -(void)_JTparseSubRipFile:(NSString*)aContents;

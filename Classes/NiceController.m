@@ -380,6 +380,7 @@ id swapForWindows(id each, void* context){
     id tempWindow = [NSApp bestMovieWindow];
     [tempWindow makeFullScreen];
     [self presentScreen];
+	[tempWindow setOverLaySubtitleLocation];
     [backgroundWindow setPresentingWindow:tempWindow];
 }
 
@@ -388,6 +389,8 @@ id swapForWindows(id each, void* context){
     id tempWindow = [NSApp bestMovieWindow];
     [tempWindow makeFullScreenOnScreen:aScreen];
     [self presentScreenOnScreen:aScreen];
+		[tempWindow setOverLaySubtitleLocation];
+
     [backgroundWindow setPresentingWindow:tempWindow];
 }
 

@@ -99,6 +99,10 @@
     return self;
 }
 
+-(id)subtitleView{
+	return theOverlaySubTitle;
+}
+
 -(void)awakeFromNib
 {
 	[theOverlayWindow retain];
@@ -108,6 +112,20 @@
     [self setReleasedWhenClosed:YES];
     [self registerForDraggedTypes:[self acceptableDragTypes]];
     
+	id tParagraph = [[[NSParagraphStyle defaultParagraphStyle] mutableCopy] autorelease];
+	[tParagraph setAlignment:NSCenterTextAlignment];
+	
+	id textShadow =[[[NSShadow alloc]init] autorelease];
+	NSSize      shadowSize = NSMakeSize(0.0f, -2.0f); 
+	[textShadow setShadowOffset:shadowSize]; 
+	[textShadow setShadowBlurRadius:5.0f]; 
+	[textShadow setShadowColor:[NSColor blackColor]]; 
+	
+	[theOverlaySubTitle setAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+	[NSColor whiteColor],NSForegroundColorAttributeName,
+	textShadow,NSShadowAttributeName,
+	tParagraph,NSParagraphStyleAttributeName, nil]];
+	
     if([[Preferences mainPrefs] windowAlwaysOnTop])
         [self floatWindow];
     [self makeFirstResponder:self]; 
@@ -133,10 +151,12 @@
     if(initialFadeTimer)
         [initialFadeTimer invalidate];
     [timeUpdaterTimer invalidate];
+	[self removeChildWindow:theOverlaySubTitleWindow];
 	[self removeChildWindow:theOverlayWindow];
 	[self removeChildWindow:theOverlayTitleBar];
 	[self removeChildWindow:theOverlayVolume];
 	[self removeChildWindow:theOverlayNotifier];
+	[theOverlaySubTitleWindow orderOut:self];
 	[theOverlayWindow orderOut:self];
 	[theOverlayTitleBar orderOut:self];
 	[theOverlayVolume orderOut:self];
@@ -163,6 +183,7 @@
     [self setOverlayWindowLocation];
     [self setOverlayTitleLocation];
     [self setOverLayVolumeLocation];
+	[self setOverLaySubtitleLocation];
 }
 
 -(BOOL)canBecomeMainWindow
@@ -326,10 +347,18 @@
                                 currentFrame.size.width,
                                 [theOverlayWindow frame].size.height)
       withVisibility:initialShow];
+	  
+	      [self putOverlay:theOverlaySubTitleWindow
+             inFrame:NSMakeRect(currentFrame.origin.x,
+                                currentFrame.origin.y+32,
+                                currentFrame.size.width,
+                                currentFrame.size.height - 24 - 32)
+      withVisibility:YES];
+	  
     [theOverlayWindow createResizeTriangle];
     [self putOverlay:theOverlayTitleBar
              inFrame:NSMakeRect(currentFrame.origin.x,
-                                currentFrame.origin.y + currentFrame.size.height-[theOverlayTitleBar frame].size.height - 3,
+                                currentFrame.origin.y + currentFrame.size.height-[theOverlayTitleBar frame].size.height,
                                 currentFrame.size.width,
                                 [theOverlayTitleBar frame].size.height)
       withVisibility:initialShow];
@@ -345,6 +374,8 @@
                                 currentFrame.size.width,
                                 [theOverlayNotifier frame].size.height)
       withVisibility:NO];
+	  
+	  
 	if([[Preferences mainPrefs] showInitialOverlays]){
 		id initialFadeObjects = [NSMutableSet setWithObjects:theOverlayWindow, theOverlayTitleBar, nil];
 		NSDictionary *fadeDict = [NSDictionary dictionaryWithObjects:
@@ -472,6 +503,34 @@
     titleOverlayIsShowing = YES;
 }
 
+-(void)setOverLaySubtitleLocation{
+
+ NSRect frame = [self frame];
+    NSRect visibleFrame = [[NSScreen mainScreen] visibleFrame];
+
+    if(!fullScreen){
+        /*if((visibleFrame.origin.y + visibleFrame.size.height)
+           > frame.origin.y + frame.size.height)*/
+            [theOverlaySubTitleWindow setFrame:NSMakeRect(frame.origin.x,
+                                                    frame.origin.y+32,
+                                                    frame.size.width,
+                                                     frame.size.height- 24 - 32) display:YES];
+       /* else
+                [theOverlaySubTitleWindow setFrame:NSMakeRect(visibleFrame.origin.x,
+                                                visibleFrame.origin.y+32,
+												visibleFrame.size.width,
+                                                visibleFrame.size.height- 24 - 32) display:YES];*/
+    } else
+        [theOverlaySubTitleWindow setFrame:NSMakeRect(visibleFrame.origin.x,
+                                                visibleFrame.origin.y+32,
+												visibleFrame.size.width,
+                                                visibleFrame.size.height- 24 - 32) display:YES];
+
+
+
+  
+}
+
 /**
 * All of this logic is to set the location of the title bar that appears upon mouseover -- its location is
  * dependant on the screen position of the window, the mode of the window, and the location of the window.
@@ -547,6 +606,7 @@
 -(BOOL)toggleWindowFullScreen
 {
     [[NiceController controller] toggleFullScreen:self];
+	[self setOverLaySubtitleLocation];
     return fullScreen;
 }
 
@@ -658,6 +718,7 @@
 	[self makeKeyAndOrderFront:self];
 	beforeFullScreen = [self frame];
 	[self fillScreenSizeOnScreen:aScreen];
+
 	[self hideNotifier];
     }
     [theMovieView drawMovieFrame];
@@ -665,6 +726,8 @@
         [theMovieView start];
     };
     [self hideAllImmediately];
+	[self setOverLaySubtitleLocation];
+
 }
 
 -(void)makeNormalScreen
@@ -682,6 +745,8 @@
     [theOverlayTitleBar orderFront:self];
     [theOverlayVolume orderFront:self];
     [theOverlayWindow orderFront:self];
+	[self setOverLaySubtitleLocation];
+	[theOverlaySubTitleWindow orderFront:self];
     [self hideOverLayWindow];
     if([[Preferences mainPrefs] autostopOnNormalScreen]){
         [(NPMovieView *)theMovieView stop];
@@ -1054,8 +1119,19 @@
 }
 
 - (void)centerOnScreen:(NSScreen*)aScreen{
+	if(fullScreen){
+	    [self removeChildWindow:theOverlayTitleBar];
+		[self removeChildWindow:theOverlaySubTitleWindow];
+		}
+
     [self setFrame:[self centerRect:[self frame] onScreen:aScreen]
            display:YES];
+		   	if(fullScreen){
+	    [self addChildWindow:theOverlayTitleBar ordered:NSWindowAbove];
+		[self addChildWindow:theOverlaySubTitleWindow ordered:NSWindowAbove];
+		}
+		
+    
 }
 
 -(NSRect)centerRect:(NSRect)aRect
@@ -1106,13 +1182,18 @@
             dropScreen = YES;
         }
 	[self showOverLayTitle];
+
 	/* If we don't do a remove, the child window gets automatically placed when the parent window moves, even if we try
 	to set the location manually. */
-	if(fullScreen)
+	if(fullScreen){
 	    [self removeChildWindow:theOverlayTitleBar];
+		[self removeChildWindow:theOverlaySubTitleWindow];
+		}
 	[self setFrameOrigin:NSMakePoint([self frame].origin.x+[anEvent deltaX],[self frame].origin.y-[anEvent deltaY])];
-	if(fullScreen)
+	if(fullScreen){
 	    [self addChildWindow:theOverlayTitleBar ordered:NSWindowAbove];
+		[self addChildWindow:theOverlaySubTitleWindow ordered:NSWindowAbove];
+		}
     }
 }
 

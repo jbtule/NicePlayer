@@ -163,6 +163,8 @@
 		3EFEF999086E6E50003E05C3 /* wmv.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3EFEF996086E6E50003E05C3 /* wmv.icns */; };
 		690B61170B5981A4008D13CE /* flv.icns in Resources */ = {isa = PBXBuildFile; fileRef = 690B61160B5981A4008D13CE /* flv.icns */; };
 		690B627A0B5992B7008D13CE /* mkv.icns in Resources */ = {isa = PBXBuildFile; fileRef = 690B62790B5992B7008D13CE /* mkv.icns */; };
+		690B63910B59EB27008D13CE /* JTTextFittingView.h in Headers */ = {isa = PBXBuildFile; fileRef = 690B638F0B59EB27008D13CE /* JTTextFittingView.h */; };
+		690B63920B59EB27008D13CE /* JTTextFittingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 690B63900B59EB27008D13CE /* JTTextFittingView.m */; };
 		697496120B55EA800030D4D2 /* OverlayTitleWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 697496100B55EA800030D4D2 /* OverlayTitleWindow.h */; };
 		697496130B55EA800030D4D2 /* OverlayTitleWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 697496110B55EA800030D4D2 /* OverlayTitleWindow.m */; };
 		697496200B55F7A90030D4D2 /* titlebg.png in Resources */ = {isa = PBXBuildFile; fileRef = 6974961F0B55F7A90030D4D2 /* titlebg.png */; };
@@ -456,6 +458,8 @@
 		3EFEF996086E6E50003E05C3 /* wmv.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = wmv.icns; sourceTree = "<group>"; };
 		690B61160B5981A4008D13CE /* flv.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = flv.icns; sourceTree = "<group>"; };
 		690B62790B5992B7008D13CE /* mkv.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = mkv.icns; sourceTree = "<group>"; };
+		690B638F0B59EB27008D13CE /* JTTextFittingView.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = JTTextFittingView.h; path = "Classes/Overlay Widgets/JTTextFittingView.h"; sourceTree = "<group>"; };
+		690B63900B59EB27008D13CE /* JTTextFittingView.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = JTTextFittingView.m; path = "Classes/Overlay Widgets/JTTextFittingView.m"; sourceTree = "<group>"; };
 		697496100B55EA800030D4D2 /* OverlayTitleWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayTitleWindow.h; sourceTree = "<group>"; };
 		697496110B55EA800030D4D2 /* OverlayTitleWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayTitleWindow.m; sourceTree = "<group>"; };
 		6974961F0B55F7A90030D4D2 /* titlebg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = titlebg.png; path = Resources/titlebg.png; sourceTree = "<group>"; };
@@ -650,6 +654,8 @@
 		25B912D707416725001B68D9 /* Overlay Widgets */ = {
 			isa = PBXGroup;
 			children = (
+				690B638F0B59EB27008D13CE /* JTTextFittingView.h */,
+				690B63900B59EB27008D13CE /* JTTextFittingView.m */,
 				253C064B07C0891300172C2F /* ResizeTriangle.h */,
 				253C064C07C0891300172C2F /* ResizeTriangle.m */,
 				25B913230741736A001B68D9 /* OverlaysControl.h */,
@@ -906,6 +912,7 @@
 				2510A23B0B04B53D00CA8110 /* DelegateAnimation.h in Headers */,
 				697496120B55EA800030D4D2 /* OverlayTitleWindow.h in Headers */,
 				6974971F0B56033F0030D4D2 /* TitleBackgroundView.h in Headers */,
+				690B63910B59EB27008D13CE /* JTTextFittingView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1186,6 +1193,7 @@
 				2510A23C0B04B53D00CA8110 /* DelegateAnimation.m in Sources */,
 				697496130B55EA800030D4D2 /* OverlayTitleWindow.m in Sources */,
 				697497200B56033F0030D4D2 /* TitleBackgroundView.m in Sources */,
+				690B63920B59EB27008D13CE /* JTTextFittingView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

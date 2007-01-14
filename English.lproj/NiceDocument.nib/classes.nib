@@ -24,6 +24,7 @@
             SUPERCLASS = NSMovieView; 
         }, 
         {CLASS = JTPreferenceWindow; LANGUAGE = ObjC; SUPERCLASS = NSWindow; }, 
+        {CLASS = JTTextFittingView; LANGUAGE = ObjC; SUPERCLASS = NSView; }, 
         {
             CLASS = NPMovieView; 
             LANGUAGE = ObjC; 
@@ -83,10 +84,12 @@
             OUTLETS = {
                 initialFadeObjects = id; 
                 initialFadeTimer = id; 
+                notifierTimer = id; 
                 theFFButton = id; 
                 theMovieView = id; 
                 theOverlayNotifier = id; 
                 theOverlaySubTitle = id; 
+                theOverlaySubTitleWindow = id; 
                 theOverlayTitleBar = id; 
                 theOverlayVolume = id; 
                 theOverlayWindow = id; 
