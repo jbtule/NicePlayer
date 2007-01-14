@@ -65,7 +65,6 @@
 {
     if(mouseEntered)
 		[self mouseExited:nil];
-	[[NSNotificationCenter defaultCenter] removeObserver:self];
     [super dealloc];
 }
 

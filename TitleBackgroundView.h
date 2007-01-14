@@ -10,7 +10,7 @@
 
 
 @interface TitleBackgroundView : NSView {
-
+    NSTrackingRectTag trackingRect;
 }
 
 @end

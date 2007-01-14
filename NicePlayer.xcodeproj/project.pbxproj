@@ -11,8 +11,6 @@
 		2510A23C0B04B53D00CA8110 /* DelegateAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2510A23A0B04B53D00CA8110 /* DelegateAnimation.m */; };
 		2510A5B80B06374400CA8110 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25CC866D0831DDA800027929 /* QTKit.framework */; };
 		2510A62F0B06392600CA8110 /* STEnum.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 255B5C520B02ECF000595952 /* STEnum.framework */; };
-		251148B40B5AEB6F00A4F849 /* OverlayTrackingContentView.h in Headers */ = {isa = PBXBuildFile; fileRef = 251148B20B5AEB6F00A4F849 /* OverlayTrackingContentView.h */; };
-		251148B50B5AEB6F00A4F849 /* OverlayTrackingContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 251148B30B5AEB6F00A4F849 /* OverlayTrackingContentView.m */; };
 		2513D00407BC659800BB6055 /* Plugins.rtf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2513CDAE07BC658900BB6055 /* Plugins.rtf */; };
 		2513D2F507BDAC4200BB6055 /* FadeOut.h in Headers */ = {isa = PBXBuildFile; fileRef = 2513D2F307BDAC4200BB6055 /* FadeOut.h */; };
 		2513D2F607BDAC4200BB6055 /* FadeOut.m in Sources */ = {isa = PBXBuildFile; fileRef = 2513D2F407BDAC4200BB6055 /* FadeOut.m */; };
@@ -299,8 +297,6 @@
 		089C1660FE840EACC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2510A2390B04B53D00CA8110 /* DelegateAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DelegateAnimation.h; path = Classes/DelegateAnimation.h; sourceTree = "<group>"; };
 		2510A23A0B04B53D00CA8110 /* DelegateAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DelegateAnimation.m; path = Classes/DelegateAnimation.m; sourceTree = "<group>"; };
-		251148B20B5AEB6F00A4F849 /* OverlayTrackingContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayTrackingContentView.h; sourceTree = "<group>"; };
-		251148B30B5AEB6F00A4F849 /* OverlayTrackingContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayTrackingContentView.m; sourceTree = "<group>"; };
 		2513CDAE07BC658900BB6055 /* Plugins.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = Plugins.rtf; path = Documents/Plugins.rtf; sourceTree = "<group>"; };
 		2513D2F307BDAC4200BB6055 /* FadeOut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FadeOut.h; path = Classes/FadeOut.h; sourceTree = "<group>"; };
 		2513D2F407BDAC4200BB6055 /* FadeOut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FadeOut.m; path = Classes/FadeOut.m; sourceTree = "<group>"; };
@@ -667,8 +663,6 @@
 				252BDA1E076A3BE7006CF96B /* Control Buttons */,
 				3EDA2680065C8E570000CCEE /* OverlayWindow.h */,
 				3EDA2681065C8E570000CCEE /* OverlayWindow.m */,
-				251148B20B5AEB6F00A4F849 /* OverlayTrackingContentView.h */,
-				251148B30B5AEB6F00A4F849 /* OverlayTrackingContentView.m */,
 				3E8CC447068A9D850034FCCC /* OverlayControllerWindow.h */,
 				3E8CC448068A9D850034FCCC /* OverlayControllerWindow.m */,
 				25B0815A08084354006724D8 /* OverlayNotifierWindow.h */,
@@ -919,7 +913,6 @@
 				697496120B55EA800030D4D2 /* OverlayTitleWindow.h in Headers */,
 				6974971F0B56033F0030D4D2 /* TitleBackgroundView.h in Headers */,
 				690B63910B59EB27008D13CE /* JTTextFittingView.h in Headers */,
-				251148B40B5AEB6F00A4F849 /* OverlayTrackingContentView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1201,7 +1194,6 @@
 				697496130B55EA800030D4D2 /* OverlayTitleWindow.m in Sources */,
 				697497200B56033F0030D4D2 /* TitleBackgroundView.m in Sources */,
 				690B63920B59EB27008D13CE /* JTTextFittingView.m in Sources */,
-				251148B50B5AEB6F00A4F849 /* OverlayTrackingContentView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

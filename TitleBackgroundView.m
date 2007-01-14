@@ -11,6 +11,18 @@
 
 @implementation TitleBackgroundView
 
+- (id)initWithFrame:(NSRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+		[[NSNotificationCenter defaultCenter] addObserver:self
+												 selector:@selector(rebuildTrackingRects)
+													 name:NSViewFrameDidChangeNotification
+												   object:nil];
+		trackingRect = [self addTrackingRect:[self bounds] owner:[self window] userData:nil assumeInside:NO];
+    }
+    return self;
+}
+
 -(void)drawRect:(NSRect)rect
 {
 [[NSImage imageNamed:@"titlebg"]drawInRect:[self frame] fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:0.82];
@@ -29,6 +41,25 @@
     [[self window] mouseDragged:theEvent];
 }
 
+
+-(void)dealloc
+{
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
+	[super dealloc];
+}
+
+-(void)rebuildTrackingRects
+{
+	[self viewWillMoveToWindow:[self window]];
+}
+
+-(void)viewWillMoveToWindow:(NSWindow *)window
+{
+	if([self window])
+		[self removeTrackingRect:trackingRect];
+	if(window)
+		trackingRect = [self addTrackingRect:[self bounds] owner:window userData:nil assumeInside:NO];
+}
 
 
 @end
