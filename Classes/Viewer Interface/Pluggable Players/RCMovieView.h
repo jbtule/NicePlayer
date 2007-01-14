@@ -68,4 +68,10 @@
 -(void)incrementMovieTime:(long)timeDifference inDirection:(enum direction)aDirection;
 -(void)stepFrameInDirection:(int)aDirection;
 
+-(NSMenu*)audioTrackMenu;
+
+-(NSMenu*)videoTrackMenu;
+
+-(NSMenu*)chapterTrackMenu;
+-(IBAction)goToChapter:(id)sender;
 @end

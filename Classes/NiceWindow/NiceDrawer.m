@@ -90,8 +90,12 @@ they ignore their public ones they inherited from super.
 
 -(void)keyDown:(NSEvent *)anEvent
 {
+	//NSLog(@"%d",[[anEvent characters] characterAtIndex:0]);
+
 	if(([anEvent type] == NSKeyDown)
-	   && [[anEvent characters] characterAtIndex:0] == 127){
+	   && 
+		([[anEvent characters] characterAtIndex:0] == 127
+		||[[anEvent characters] characterAtIndex:0] == 63272)){
 		[(NiceDocument *)[[[(NSDrawerWindow*)[self window] _parentWindow] windowController] document] removeURLFromPlaylistAtIndex:[playlistTable selectedRow]];
 		return;
 	}

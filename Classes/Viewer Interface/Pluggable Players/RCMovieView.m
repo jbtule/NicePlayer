@@ -48,6 +48,13 @@
 
 #import "RCMovieView.h"
 
+
+@interface QTMovie(ChapterAdditions)
+-(BOOL)hasChapters;
+-(NSArray*)chapterList;
+-(int)currentChapterIndex;
+@end
+
 @implementation RCMovieView
 
 +(NSDictionary *)plugInfo
@@ -407,8 +414,39 @@
 {
     id pluginMenu = [[NSMutableArray array] retain];
     id newItem;
+	
+	if([film hasChapters]){
+		newItem = [[[NSMenuItem alloc] initWithTitle:@"Chapter"
+											  action:NULL
+									   keyEquivalent:@""] autorelease];
+		[newItem setTarget:self];
+		
+		[newItem setSubmenu:[self chapterTrackMenu]];
+		
+		[pluginMenu addObject:newItem];
+	}
+	
+	
+		newItem = [[[NSMenuItem alloc] initWithTitle:@"Video Tracks"
+                                          action:NULL
+                                   keyEquivalent:@""] autorelease];
+    [newItem setTarget:self];
+	
+	[newItem setSubmenu:[self videoTrackMenu]];
+	
+    [pluginMenu addObject:newItem];
+	
+		newItem = [[[NSMenuItem alloc] initWithTitle:@"Audio Tracks"
+                                          action:NULL
+                                   keyEquivalent:@""] autorelease];
+    [newItem setTarget:self];
+	
+	[newItem setSubmenu:[self audioTrackMenu]];
+	
+    [pluginMenu addObject:newItem];
+	
     
-    newItem = [[[NSMenuItem alloc] initWithTitle:@"Play Movie Preview"
+   /* newItem = [[[NSMenuItem alloc] initWithTitle:@"Play Movie Preview"
                                           action:@selector(playMoviePreview)
                                    keyEquivalent:@""] autorelease];
     [newItem setTarget:self];
@@ -420,26 +458,85 @@
     [newItem setTarget:self];
     [pluginMenu addObject:newItem];
 	
-	
-	newItem = [[[NSMenuItem alloc] initWithTitle:@"Audio Tracks"
-                                          action:NULL
-                                   keyEquivalent:@""] autorelease];
-    [newItem setTarget:self];
-	
-	[newItem setSubmenu:[self audioTrackMenu]];
-	
-    [pluginMenu addObject:newItem];
-	
-	
+	*/
     
     return [pluginMenu autorelease];
 }
 
 -(NSMenu*)audioTrackMenu{
-	//NSArray* tTracks =	[film tracksOfMediaType:<#(NSString *)type#>
-return [NSMenu new];
+		NSMenu* tReturnMenu =[[[NSMenu alloc]init] autorelease];
+		NSArray* tArray = [film tracksOfMediaType:@"soun"];
+		for(unsigned int i=0;i<[tArray count];i++){
+			QTTrack* tTrack =[tArray objectAtIndex:i];
+			NSDictionary* tDict = [tTrack trackAttributes];
+			NSMenuItem* tItem =[[[NSMenuItem alloc] initWithTitle:[tDict objectForKey:@"QTTrackDisplayNameAttribute"]
+			action:@selector(toggleTrack:)
+			keyEquivalent:@""] autorelease];
+			[tItem setRepresentedObject:tTrack];
+			[tItem setTarget:self];
+			if([tTrack isEnabled]){
+				[tItem setState:NSOnState]; 
+			}
+			
+			[tReturnMenu addItem:tItem];
+		}
+
+return tReturnMenu;
 }
 
+-(NSMenu*)videoTrackMenu{
+		NSMenu* tReturnMenu =[[[NSMenu alloc]init] autorelease];
+		NSArray* tArray = [film tracksOfMediaType:@"vide"];
+		for(unsigned int i=0;i<[tArray count];i++){
+			QTTrack* tTrack =[tArray objectAtIndex:i];
+			NSDictionary* tDict = [tTrack trackAttributes];
+			NSMenuItem* tItem =[[[NSMenuItem alloc] initWithTitle:[tDict objectForKey:@"QTTrackDisplayNameAttribute"]
+			action:@selector(toggleTrack:)
+			keyEquivalent:@""] autorelease];
+			[tItem setRepresentedObject:tTrack];
+			[tItem setTarget:self];
+			if([tTrack isEnabled]){
+				[tItem setState:NSOnState]; 
+			}
+			
+			
+			[tReturnMenu addItem:tItem];
+		}
+
+return tReturnMenu;
+}
+
+-(IBAction)toggleTrack:(id)sender{
+	[[sender representedObject] setEnabled:![[sender representedObject] isEnabled]];
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:self];
+}
+
+-(IBAction)goToChapter:(id)sender{
+	[self setCurrentMovieTimePrecise:[[[sender representedObject] objectForKey:@"StartTime"] longValue
+	]];
+		[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:self];
+
+}
+
+-(NSMenu*)chapterTrackMenu{
+	NSMenu* tReturnMenu =[[[NSMenu alloc]init] autorelease];
+		NSArray* tArray = [film chapterList];
+		for(unsigned int i=0;i<[tArray count];i++){
+			NSDictionary* tDict = [tArray objectAtIndex:i];
+			NSMenuItem* tItem =[[[NSMenuItem alloc] initWithTitle:[tDict objectForKey:@"Name"]
+			action:@selector(goToChapter:)
+			keyEquivalent:@""] autorelease];
+			[tItem setRepresentedObject:tDict];
+			[tItem setTarget:self];
+			if(i+1 == (unsigned int)[film currentChapterIndex]){
+				[tItem setState:NSOnState]; 
+			}
+			
+			[tReturnMenu addItem:tItem];
+		}
+
+return tReturnMenu;
+}
 
 -(void)playMoviePreview
 {
