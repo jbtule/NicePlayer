@@ -74,10 +74,18 @@
             NSString* tContents = [NSString stringWithContentsOfFile:aPath];
 
             NSString* ext= [[aPath pathExtension] lowercaseString];
+			@try{
             if([ext isEqualTo:@"srt"])
                 [self _JTparseSubRipFile:tContents];
             else if ([ext isEqualTo:@"sub"])// prolly needs more as some subrips use .sub extension.
                 [self _JTMicroDVD:tContents];
+			else if ([ext isEqualTo:@"ssa"])
+                [self _JTparseSubStationAlpha:tContents];
+			}
+			@catch (id all){
+				[self autorelease];
+				return nil;
+				}
     } return self;
 }
 
@@ -265,6 +273,80 @@
         for(i=start; i<=stop;i++)
             if(i<intervals)
                 timeVector[i]=([theText count]-1);
+    }
+}
+
+	
+-(void)_JTparseSubStationAlpha:(NSString*)aContents{
+   NSString* lineEnding = [self lineEndingTypeForFileContents:aContents];
+   
+   
+    NSScanner* tScanner = [NSScanner scannerWithString:aContents];
+	[tScanner scanUpToString:@"[Events]" intoString:nil];
+	[tScanner scanUpToString:@"Format:" intoString:nil];
+	[tScanner scanString:@"Format:" intoString:nil];
+	NSString* tFormat= nil;
+	[tScanner scanUpToString:lineEnding intoString:&tFormat];
+	[tScanner scanString:lineEnding intoString:nil];
+
+	NSArray* tFormatArray = [tFormat componentsSeparatedByString:@", "];
+	
+	
+	unsigned tStartIndex = [tFormatArray indexOfObject:@"Start"];
+	unsigned tEndIndex = [tFormatArray indexOfObject:@"End"];
+	unsigned tTextIndex = [tFormatArray indexOfObject:@"Text"];
+//	NSLog(@"start %d end %d text %d",tStartIndex,tEndIndex,tTextIndex);
+
+
+    theText = [[NSMutableArray alloc]init];
+    [theText addObject:@""];
+    while(![tScanner isAtEnd]){
+		NSString* tDialog= nil;
+		[tScanner scanString:@"Dialogue:" intoString:nil];
+		[tScanner scanUpToString:lineEnding intoString:&tDialog];
+		[tScanner scanString:lineEnding intoString:nil];
+
+		NSArray* tDialogArray = [tDialog componentsSeparatedByString:@","];
+		
+	//	NSLog(@"dialog %d %@ %@",[tDialogArray count],tDialogArray,tDialog);
+
+		
+		NSString* tStartTime = [tDialogArray objectAtIndex:tStartIndex];
+		NSString* tEndTime = [tDialogArray objectAtIndex:tEndIndex];
+		NSString* tText = [tDialogArray objectAtIndex:tTextIndex];
+
+        float start=0;
+        float stop =0;
+		NSArray* tTimeArray =[tStartTime componentsSeparatedByString:@":"];
+        //scan Start Time
+       
+	 //  		NSLog(@"start %d %@",[tTimeArray count],tTimeArray);
+
+	   
+        start += [[tTimeArray objectAtIndex:0] intValue]*60*60*30;
+		start += [[tTimeArray objectAtIndex:1] intValue]*60*30;        
+		start += [[tTimeArray objectAtIndex:2] floatValue]*30;
+        
+        //scan stop Time
+        
+		tTimeArray =[tEndTime componentsSeparatedByString:@":"];
+	 //  		NSLog(@"end %d %@",[tTimeArray count],tTimeArray);
+
+        stop += [[tTimeArray objectAtIndex:0] intValue]*60*60*30;
+		stop += [[tTimeArray objectAtIndex:1] intValue]*60*30;
+		stop += [[tTimeArray objectAtIndex:2] floatValue]*30;
+           
+	
+		NSMutableString* tFinalString = [[tText mutableCopy] autorelease];
+		[tFinalString replaceOccurrencesOfString:@"\\n" withString:@"\n" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [tFinalString length])];		
+		
+		[self _JTmeasureWidth:tFinalString];
+        [theText addObject:tFinalString];
+        int i;
+        for(i=start; i<=stop;i++)
+            if(i<intervals)
+                timeVector[i]=([theText count]-1);
+        
     }
     
 }

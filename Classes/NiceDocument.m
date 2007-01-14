@@ -268,12 +268,15 @@ void findSpace(id each, void* context, BOOL* endthis){
     /* Try to load the subtitles */
     NSString* srtPath = [[[theCurrentURL path] stringByDeletingPathExtension] stringByAppendingPathExtension:@"srt"];
     NSString* subPath = [[[theCurrentURL path] stringByDeletingPathExtension] stringByAppendingPathExtension:@"sub"];
-    
+	NSString* ssaPath = [[[theCurrentURL path] stringByDeletingPathExtension] stringByAppendingPathExtension:@"ssa"];
+
     [theSubtitle autorelease];
     if([[NSFileManager defaultManager] fileExistsAtPath:srtPath]){
         theSubtitle = [[Subtitle alloc] initWithFile:srtPath forMovieSeconds:(float)[theMovieView totalTime]];
     }else if ([[NSFileManager defaultManager] fileExistsAtPath:subPath]){
         theSubtitle = [[Subtitle alloc] initWithFile:subPath forMovieSeconds:(float)[theMovieView totalTime]];
+    }else if ([[NSFileManager defaultManager] fileExistsAtPath:ssaPath]){
+        theSubtitle = [[Subtitle alloc] initWithFile:ssaPath forMovieSeconds:(float)[theMovieView totalTime]];
     }else{
         theSubtitle = nil;
     }
