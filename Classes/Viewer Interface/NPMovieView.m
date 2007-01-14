@@ -105,8 +105,15 @@
 
 -(void)rebuildTrackingRects
 {
-    [self removeTrackingRect:trackingRect];
-    trackingRect = [self addTrackingRect:[self bounds] owner:self userData:nil assumeInside:NO];
+	[self viewWillMoveToWindow:[self window]];
+}
+
+-(void)viewWillMoveToWindow:(NSWindow *)window
+{
+	if([self window])
+		[self removeTrackingRect:trackingRect];
+	if(window)
+		trackingRect = [self addTrackingRect:[self bounds] owner:window userData:nil assumeInside:NO];
 }
 
 -(void)closeReopen
@@ -132,7 +139,7 @@
 -(void)dealloc
 {
     if(mouseEntered)
-	[self mouseExited:nil];
+		[self mouseExited:nil];
     [title release];
     [trueMovieView release];
     [super dealloc];

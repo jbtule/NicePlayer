@@ -87,18 +87,7 @@
 -(void)awakeFromNib
 {
     [self setHasShadow:NO];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-					     selector:@selector(rebuildTrackingRects)
-						 name:NSViewFrameDidChangeNotification
-					       object:[self contentView]];	
-    trackingRect = [[self contentView] addTrackingRect:[[self contentView] bounds] owner:self userData:nil assumeInside:NO];
 	[self setNextResponder:[self parentWindow]];
-}
-
--(void)rebuildTrackingRects
-{
-    [[self contentView] removeTrackingRect:trackingRect];
-    trackingRect = [[self contentView] addTrackingRect:[[self contentView] bounds] owner:self userData:nil assumeInside:NO];
 }
 
 -(void)mouseMoved:(NSEvent *)anEvent
