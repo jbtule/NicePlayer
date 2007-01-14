@@ -138,6 +138,7 @@
 -(void)setOverLayVolumeLocation;
 -(void)hideOverLayVolume;
 -(id)subtitleView;
+-(void)setOverLaySubtitleLocation;
 #pragma mark -
 #pragma mark Window Toggles
 
