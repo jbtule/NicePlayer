@@ -54,14 +54,23 @@
 
 -(void)dealloc{
     [theText release];
+    [thePath release];
     free(timeVector);
     [super dealloc];
+}
+
+-(NSString*)path{
+    
+    return thePath;
+    
 }
 
 -(id)initWithFile:(id)aPath forMovieSeconds:(float)aSeconds{
     if ((self = [super init])){
 			NSString* theLongestLine =@"";
 			double theLongestLength=0;
+                        thePath = aPath;
+                        [thePath retain];
             timeOffset = 0;
            intervals =30*aSeconds;
             lastCheck=0;

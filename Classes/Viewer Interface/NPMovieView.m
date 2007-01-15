@@ -827,8 +827,25 @@
 	   || (fileExtension && [typeArray containsObject:fileExtension])){
 	    [choiceMenu addItem:newItem];
 	}
-	[allChoiceMenu addItem:[newItem copy]];
+	[allChoiceMenu addItem:[[newItem copy]autorelease]];
     }
+    
+    if([[[self window]document] subTitle] !=NULL){
+       /* NSString* aName =[[[[self window]document] subTitle] path];
+        aName = [aName lastPathComponent*/
+        
+        newItem = [[[NSMenuItem alloc] initWithTitle:@"External Subtitle"
+                                              action:@selector(toggleExternaSubtitle:)
+                                       keyEquivalent:@""] autorelease];
+        [newItem setTarget:self];
+        if([(NiceWindow*)[self window] isOverlaySubtitleShowing]){
+            [newItem setState:NSOnState];
+        }
+        [menuArray addObject:newItem];
+
+    }
+    
+    
     
     /* Create head object. */
     newItem = [[[NSMenuItem alloc] initWithTitle:@"Switch Plugin to..."
@@ -847,6 +864,18 @@
     
     return menuArray;
 }
+
+-(IBAction)toggleExternaSubtitle:(id)sender{
+    
+    if([(NiceWindow*)[self window] isOverlaySubtitleShowing]){
+        [(NiceWindow*)[self window] hideOverLaySubtitle];
+    }else{
+        [(NiceWindow*)[self window] showOverLaySubtitle];
+
+    }
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:nil];
+}
+
 
 -(id)contextualMenu
 {	

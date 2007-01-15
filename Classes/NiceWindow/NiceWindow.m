@@ -503,6 +503,23 @@
     titleOverlayIsShowing = YES;
 }
 
+-(void)showOverLaySubtitle{
+    
+    [theOverlaySubTitleWindow setAlphaValue:1.0];
+
+}
+
+-(BOOL)isOverlaySubtitleShowing{
+    
+   return [theOverlaySubTitleWindow alphaValue] > 0.1;
+    
+}
+
+-(void)hideOverLaySubtitle{
+    [theOverlaySubTitleWindow setAlphaValue:0.0];    
+}
+
+
 -(void)setOverLaySubtitleLocation{
 
  NSRect frame = [self frame];

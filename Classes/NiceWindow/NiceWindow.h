@@ -139,6 +139,9 @@
 -(void)hideOverLayVolume;
 -(id)subtitleView;
 -(void)setOverLaySubtitleLocation;
+-(void)showOverLaySubtitle;
+-(BOOL)isOverlaySubtitleShowing;
+-(void)hideOverLaySubtitle;
 #pragma mark -
 #pragma mark Window Toggles
 

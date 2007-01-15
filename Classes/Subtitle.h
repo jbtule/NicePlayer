@@ -58,6 +58,7 @@
     NSMutableArray* theText;
 	NSString* theLongestLine;
 	double theLongestLength;
+        NSString* thePath;
 }
 -(NSString*)longestText;
 -(void)_JTmeasureWidth:(NSString*)aString;
