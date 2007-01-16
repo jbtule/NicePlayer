@@ -155,7 +155,7 @@ static id fadeOutInstance = nil;
 
 -(void)testForRemoval
 {
-	id newSet = [[NSMutableSet set] retain];
+	id newSet = [NSMutableSet set];
 	id anObject, e = [windowSet objectEnumerator];
 	while((anObject = [e nextObject])){
 		if([anObject alphaValue] > 0.0)

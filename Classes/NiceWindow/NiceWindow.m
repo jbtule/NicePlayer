@@ -161,6 +161,7 @@
 	[theOverlayTitleBar orderOut:self];
 	[theOverlayVolume orderOut:self];
 	[theOverlayNotifier orderOut:self];
+	[theOverlayWindow release];
 	isClosing = YES;
     [theMovieView close];
     [[NSNotificationCenter defaultCenter] removeObserver:self];

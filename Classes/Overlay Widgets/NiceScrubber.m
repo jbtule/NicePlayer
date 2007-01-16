@@ -80,13 +80,15 @@
 
 - (void)drawRect:(NSRect)rect
 {
-    
-    id tempImage;
+    /* I think it looks better without the pressed state -- the entire area is draggable anyway, and you can
+	click at any point and continue dragging and the entire thing will drag at that point anyway. */
+    id tempImage = scrub;
+#if 0
     if (dragging)
         tempImage = scrubClick;
     else 
         tempImage = scrub;
-    
+#endif
     [self lockFocus];
     
     [left drawAtPoint:NSMakePoint(0,0) 
