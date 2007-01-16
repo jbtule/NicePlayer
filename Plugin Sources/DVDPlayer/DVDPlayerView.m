@@ -198,19 +198,9 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
  */
 -(BOOL)openURL:(NSURL *)url
 {
-	BOOL removableFlag;
-	BOOL writableFlag;
-	BOOL unmountableFlag;
-	NSString *description;
-	NSString *fileSystemType;
-	
-	BOOL isMountPoint = [[NSWorkspace sharedWorkspace] getFileSystemInfoForPath:[url path] 
-																	isRemovable:&removableFlag
-																	 isWritable:&writableFlag
-																  isUnmountable:&unmountableFlag
-																	description:&description
-																		   type:&fileSystemType];
-	if((isMountPoint & removableFlag) || ([[[url path] lastPathComponent] isEqualToString:@"VIDEO_TS"])){
+
+	if(([[[[url path] pathExtension] uppercaseString] isEqualToString:@"VOB"])
+	 || ([[[url path] lastPathComponent] isEqualToString:@"VIDEO_TS"])){
 		myURL = url;
 	} else {
 		NSString *sub_videots = [[url path] stringByAppendingPathComponent:@"VIDEO_TS"];
