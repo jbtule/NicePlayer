@@ -9,6 +9,28 @@
 		<dict>
 			<key>CFBundleTypeExtensions</key>
 			<array>
+				<string>divx</string>
+			</array>
+			<key>CFBundleTypeIconFile</key>
+			<string>divx.icns</string>
+			<key>CFBundleTypeMIMETypes</key>
+			<array>
+				<string>video/x-divx</string>
+			</array>
+			<key>CFBundleTypeName</key>
+			<string>DivX Video</string>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>LSTypeIsPackage</key>
+			<false/>
+			<key>NSDocumentClass</key>
+			<string>NiceDocument</string>
+			<key>NSPersistentStoreTypeKey</key>
+			<string>Binary</string>
+		</dict>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
 				<string>flv</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
@@ -277,10 +299,6 @@
 			<string>Nice Playlist</string>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
-			<key>LSItemContentTypes</key>
-			<array>
-				<string>indy.jt.nice.playlist.plist</string>
-			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
 			<key>NSDocumentClass</key>
