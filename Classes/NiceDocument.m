@@ -153,6 +153,7 @@ void findSpace(id each, void* context, BOOL* endthis){
     }
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
     [theSubtitle release];
+	theSubtitle = nil;
     [theCurrentURL release];
     [thePlaylist release];
     [playlistFilename release];
@@ -270,7 +271,7 @@ void findSpace(id each, void* context, BOOL* endthis){
     NSString* subPath = [[[theCurrentURL path] stringByDeletingPathExtension] stringByAppendingPathExtension:@"sub"];
 	NSString* ssaPath = [[[theCurrentURL path] stringByDeletingPathExtension] stringByAppendingPathExtension:@"ssa"];
 
-    [theSubtitle autorelease];
+    [theSubtitle release];
     if([[NSFileManager defaultManager] fileExistsAtPath:srtPath]){
         theSubtitle = [[Subtitle alloc] initWithFile:srtPath forMovieSeconds:(float)[theMovieView totalTime]];
     }else if ([[NSFileManager defaultManager] fileExistsAtPath:subPath]){
@@ -451,7 +452,7 @@ void findSpace(id each, void* context, BOOL* endthis){
 
 -(id)subTitle
 {
-    return [[theSubtitle retain] autorelease];
+    return theSubtitle;
 }
 
 -(NSMenu *)movieMenu

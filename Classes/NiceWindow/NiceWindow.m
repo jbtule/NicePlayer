@@ -105,7 +105,6 @@
 
 -(void)awakeFromNib
 {
-	[theOverlayWindow retain];
     [theScrubBar setTarget:theMovieView];
     [self setContentView:theMovieView];
     [theScrubBar setAction:@selector(scrub:)];
@@ -161,7 +160,6 @@
 	[theOverlayTitleBar orderOut:self];
 	[theOverlayVolume orderOut:self];
 	[theOverlayNotifier orderOut:self];
-	[theOverlayWindow release];
 	isClosing = YES;
     [theMovieView close];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
