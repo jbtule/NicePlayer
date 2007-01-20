@@ -124,7 +124,7 @@
 {
 	[film release];
 	film =nil;
-	[self setMovie:nil];
+	[qtView setMovie:nil];
 }
 
 -(BOOL)loadMovie
