@@ -181,16 +181,15 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
 	DVDStop();
 	if([[[myURL path] lastPathComponent] isEqualToString:@"VIDEO_TS"]){
-		NSLog(@"Close media file");
+		//NSLog(@"Close media file");
 		DVDCloseMediaFile();
 	}else{
-					NSLog(@"Close media volume");
+		//			NSLog(@"Close media volume");
 
 		DVDCloseMediaVolume();
 
 		}
-					NSLog(@"Closed");
-//DVDDispose();
+		//			NSLog(@"Closed");
 }
 
 -(void)dealloc

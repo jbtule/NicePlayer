@@ -76,10 +76,10 @@
             lastCheck=0;
             timeVector =(uint*) calloc(intervals,sizeof(uint));
             int i;
-            NSLog(@"initalize %d %d", intervals,sizeof(uint));
+         //   NSLog(@"initalize %d %d", intervals,sizeof(uint));
             for(i=0;i<intervals;i++)
                 timeVector[i] = 0;
-            NSLog(@"Array created");
+      //NSLog(@"Array created");
             NSString* tContents = [NSString stringWithContentsOfFile:aPath];
 
             NSString* ext= [[aPath pathExtension] lowercaseString];

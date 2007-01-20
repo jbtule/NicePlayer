@@ -129,7 +129,7 @@
 
 -(void)close
 {
-	NSLog(@"Close MovieView");
+	//NSLog(@"Close MovieView");
 	[trueMovieView close];
 	[trueMovieView removeFromSuperview];
 	[trueMovieView unregisterDraggedTypes];
