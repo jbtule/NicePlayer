@@ -20,6 +20,8 @@
 		25F1F2A308750B3F002ECFA0 /* BookmarkEntry.nib in Resources */ = {isa = PBXBuildFile; fileRef = 25F1F2A108750B3F002ECFA0 /* BookmarkEntry.nib */; };
 		25F1F2CC08750C0B002ECFA0 /* NSBookmarkCreateButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 25F1F2CA08750C0B002ECFA0 /* NSBookmarkCreateButton.h */; };
 		25F1F2CD08750C0B002ECFA0 /* NSBookmarkCreateButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F1F2CB08750C0B002ECFA0 /* NSBookmarkCreateButton.m */; };
+		6925B3900B619400004D2A83 /* DVDDispose.h in Headers */ = {isa = PBXBuildFile; fileRef = 6925B38E0B619400004D2A83 /* DVDDispose.h */; };
+		6925B3910B619400004D2A83 /* DVDDispose.m in Sources */ = {isa = PBXBuildFile; fileRef = 6925B38F0B619400004D2A83 /* DVDDispose.m */; };
 		8D5B49AE048680CD000E48DA /* DVDPlayer_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 32DBCF630370AF2F00C91783 /* DVDPlayer_Prefix.pch */; };
 		8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
 		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
@@ -44,6 +46,8 @@
 		25F1F2CA08750C0B002ECFA0 /* NSBookmarkCreateButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSBookmarkCreateButton.h; sourceTree = "<group>"; };
 		25F1F2CB08750C0B002ECFA0 /* NSBookmarkCreateButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSBookmarkCreateButton.m; sourceTree = "<group>"; };
 		32DBCF630370AF2F00C91783 /* DVDPlayer_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVDPlayer_Prefix.pch; sourceTree = "<group>"; };
+		6925B38E0B619400004D2A83 /* DVDDispose.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVDDispose.h; sourceTree = "<group>"; };
+		6925B38F0B619400004D2A83 /* DVDDispose.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVDDispose.m; sourceTree = "<group>"; };
 		8D5B49B6048680CD000E48DA /* DVDPlayer.nicebundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DVDPlayer.nicebundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,6 +110,8 @@
 				251C7DBF07E54E37009D5C9A /* DVDPrefController.m */,
 				25F1F2CA08750C0B002ECFA0 /* NSBookmarkCreateButton.h */,
 				25F1F2CB08750C0B002ECFA0 /* NSBookmarkCreateButton.m */,
+				6925B38E0B619400004D2A83 /* DVDDispose.h */,
+				6925B38F0B619400004D2A83 /* DVDDispose.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -158,6 +164,7 @@
 				2513C5E807BC5B8A00BB6055 /* NiceWindow.h in Headers */,
 				251C7DC007E54E37009D5C9A /* DVDPrefController.h in Headers */,
 				25F1F2CC08750C0B002ECFA0 /* NSBookmarkCreateButton.h in Headers */,
+				6925B3900B619400004D2A83 /* DVDDispose.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,6 +238,7 @@
 				2513C5E307BC5B1E00BB6055 /* NPPluginView.m in Sources */,
 				251C7DC107E54E37009D5C9A /* DVDPrefController.m in Sources */,
 				25F1F2CD08750C0B002ECFA0 /* NSBookmarkCreateButton.m in Sources */,
+				6925B3910B619400004D2A83 /* DVDDispose.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

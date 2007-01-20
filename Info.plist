@@ -9,6 +9,24 @@
 		<dict>
 			<key>CFBundleTypeExtensions</key>
 			<array>
+				<string>vdvd</string>
+			</array>
+			<key>CFBundleTypeIconFile</key>
+			<string>vdvd.icns</string>
+			<key>CFBundleTypeName</key>
+			<string>Virtual DVD</string>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>LSTypeIsPackage</key>
+			<true/>
+			<key>NSDocumentClass</key>
+			<string>NiceDocument</string>
+			<key>NSPersistentStoreTypeKey</key>
+			<string>Binary</string>
+		</dict>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
 				<string>divx</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>

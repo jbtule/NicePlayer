@@ -86,16 +86,12 @@
 -(BOOL)openURL:(NSURL *)url
 {
     myURL = url;
-    film = [[movieCache objectForKey:url] retain];
-    if(film == NULL)
-        film = [[QTMovie movieWithURL:url error:nil] retain];
+	[film autorelease];
+	film = [[QTMovie movieWithURL:url error:nil] retain];
     return (film) ? YES : NO;
 }
 
--(void)precacheURL:(NSURL*)url
-{
-    movieCache = [NSDictionary dictionaryWithObject: [[[QTMovie alloc] initWithURL:url byReference:YES]autorelease] forKey:url];
-}
+
 
 -(id)initWithFrame:(NSRect)frame
 {
@@ -119,16 +115,21 @@
 
 -(void)dealloc
 {
+	[film release];
+	film =nil;
     [super dealloc];
 }
 
 -(void)close
 {
+	[film release];
+	film =nil;
+	[self setMovie:nil];
 }
 
 -(BOOL)loadMovie
 {
-    [qtView setMovie:[film autorelease]];
+    [qtView setMovie:film];
     muted = [film muted];
     return YES;
 }

@@ -60,7 +60,6 @@
 	NSMovie *film;
 	BOOL muted;
         BOOL theFirstDraw;
-	NSDictionary* movieCache;
 }
 
 +(id)blankImage;

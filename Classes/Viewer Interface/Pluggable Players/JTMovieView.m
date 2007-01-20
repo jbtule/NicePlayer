@@ -86,15 +86,11 @@
 -(BOOL)openURL:(NSURL *)url
 {
     myURL = url;
-    film = [[movieCache objectForKey:url] retain];
-    if(film == NULL)
+	[film autorelease];
         film = [[NSMovie alloc] initWithURL:url byReference:YES];
     return (film) ? YES : NO;
 }
 
--(void)precacheURL:(NSURL*)url{
-    movieCache = [NSDictionary dictionaryWithObject: [[[NSMovie alloc] initWithURL:url byReference:YES]autorelease] forKey:url];
-}
 
 -(id)initWithFrame:(NSRect)frame
 {
@@ -124,13 +120,22 @@
     return self;
 }
 
+-(void)dealloc{
+	[film release];
+	film =nil;
+	[super dealloc];
+}
+
 -(void)close
 {
+	[film release];
+	film =nil;
+	[self setMovie:nil];
 }
 
 -(BOOL)loadMovie
 {
-    [self setMovie:[film autorelease]];
+    [self setMovie:film];
 	return YES;
 }
 

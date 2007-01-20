@@ -70,7 +70,6 @@ enum direction { DIRECTION_BACKWARD = -1, DIRECTION_FORWARD = 1};
 -(id)initWithFrame:(NSRect)frame;
 -(void)close;
 -(BOOL)openURL:(NSURL *)url;
--(void)precacheURL:(NSURL*)url;
 
 -(BOOL)loadMovie;
 

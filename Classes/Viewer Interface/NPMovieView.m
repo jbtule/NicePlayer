@@ -129,6 +129,7 @@
 
 -(void)close
 {
+	NSLog(@"Close MovieView");
 	[trueMovieView close];
 	[trueMovieView removeFromSuperview];
 	[trueMovieView unregisterDraggedTypes];
@@ -289,9 +290,6 @@
     }
 }
 
--(void)precacheURL:(NSURL*)url{
-    [trueMovieView precacheURL:url];
-}
 
 -(BOOL)loadMovie
 {

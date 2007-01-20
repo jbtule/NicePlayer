@@ -14,7 +14,7 @@
 #import "DVDPrefController.h"
 #import "NSBookmarkCreateButton.h"
 #import <unistd.h>
-
+#import "DVDDispose.h"
 #define MAX_DISPLAYS (16)
 
 Rect convertCGRectToQDRect(CGRect inRect) {
@@ -81,6 +81,8 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	return nil;
 }
 
+
+
 /**
  * Initialize the window, testing to see if the DVD framework is loadable (or has already been loaded by another
  * window or application).
@@ -88,11 +90,16 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 -(id)initWithFrame:(NSRect)frame
 {
     static BOOL initialized = NO;
+	static id dvdDisposer= nil;
     if(!initialized){
 	if(DVDInitialize() < 0)
 	    return nil;
 	initialized = YES;
-    }
+	dvdDisposer = [[DVDDisposer alloc]init];
+	[[NSNotificationCenter defaultCenter] addObserver:dvdDisposer selector:@selector(applicationWillTerminate:) name:NSApplicationWillTerminateNotification object:NSApp];
+   // NSLog(@"Add Observer");
+
+	}
     if(self = [super initWithFrame:frame]){
 	[self setAutoresizingMask:(NSViewWidthSizable | NSViewHeightSizable)];			
 	[[NSNotificationCenter defaultCenter] addObserver:self 
@@ -173,11 +180,17 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	DVDUnregisterEventCallBack(cid);
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
 	DVDStop();
-	if([[[myURL path] lastPathComponent] isEqualToString:@"VIDEO_TS"])
+	if([[[myURL path] lastPathComponent] isEqualToString:@"VIDEO_TS"]){
+		NSLog(@"Close media file");
 		DVDCloseMediaFile();
-	else
+	}else{
+					NSLog(@"Close media volume");
+
 		DVDCloseMediaVolume();
-//	DVDDispose();
+
+		}
+					NSLog(@"Closed");
+//DVDDispose();
 }
 
 -(void)dealloc

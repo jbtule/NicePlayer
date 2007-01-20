@@ -165,6 +165,7 @@
 		690B627A0B5992B7008D13CE /* mkv.icns in Resources */ = {isa = PBXBuildFile; fileRef = 690B62790B5992B7008D13CE /* mkv.icns */; };
 		690B63910B59EB27008D13CE /* JTTextFittingView.h in Headers */ = {isa = PBXBuildFile; fileRef = 690B638F0B59EB27008D13CE /* JTTextFittingView.h */; };
 		690B63920B59EB27008D13CE /* JTTextFittingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 690B63900B59EB27008D13CE /* JTTextFittingView.m */; };
+		6925B3CA0B61966E004D2A83 /* vdvd.icns in Resources */ = {isa = PBXBuildFile; fileRef = 6925B3C90B61966E004D2A83 /* vdvd.icns */; };
 		697496120B55EA800030D4D2 /* OverlayTitleWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 697496100B55EA800030D4D2 /* OverlayTitleWindow.h */; };
 		697496130B55EA800030D4D2 /* OverlayTitleWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 697496110B55EA800030D4D2 /* OverlayTitleWindow.m */; };
 		697496200B55F7A90030D4D2 /* titlebg.png in Resources */ = {isa = PBXBuildFile; fileRef = 6974961F0B55F7A90030D4D2 /* titlebg.png */; };
@@ -461,6 +462,7 @@
 		690B62790B5992B7008D13CE /* mkv.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = mkv.icns; sourceTree = "<group>"; };
 		690B638F0B59EB27008D13CE /* JTTextFittingView.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = JTTextFittingView.h; path = "Classes/Overlay Widgets/JTTextFittingView.h"; sourceTree = "<group>"; };
 		690B63900B59EB27008D13CE /* JTTextFittingView.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = JTTextFittingView.m; path = "Classes/Overlay Widgets/JTTextFittingView.m"; sourceTree = "<group>"; };
+		6925B3C90B61966E004D2A83 /* vdvd.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = vdvd.icns; sourceTree = "<group>"; };
 		697496100B55EA800030D4D2 /* OverlayTitleWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayTitleWindow.h; sourceTree = "<group>"; };
 		697496110B55EA800030D4D2 /* OverlayTitleWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayTitleWindow.m; sourceTree = "<group>"; };
 		6974961F0B55F7A90030D4D2 /* titlebg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = titlebg.png; path = Resources/titlebg.png; sourceTree = "<group>"; };
@@ -818,6 +820,7 @@
 		3E8C96C1073EF4730048CB70 /* doc_icons */ = {
 			isa = PBXGroup;
 			children = (
+				6925B3C90B61966E004D2A83 /* vdvd.icns */,
 				69EFD1BB0B5C8E3400359BF4 /* divx.icns */,
 				690B62790B5992B7008D13CE /* mkv.icns */,
 				690B61160B5981A4008D13CE /* flv.icns */,
@@ -1112,6 +1115,7 @@
 				690B61170B5981A4008D13CE /* flv.icns in Resources */,
 				690B627A0B5992B7008D13CE /* mkv.icns in Resources */,
 				69EFD1BC0B5C8E3400359BF4 /* divx.icns in Resources */,
+				6925B3CA0B61966E004D2A83 /* vdvd.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
