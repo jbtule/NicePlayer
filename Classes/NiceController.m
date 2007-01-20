@@ -366,6 +366,10 @@ id swapForWindows(id each, void* context){
     
 }
 
+-(BOOL)isFullScreen{
+	return fullScreenMode;
+}
+
 -(void)unpresentScreen
 {
     fullScreenMode = NO;

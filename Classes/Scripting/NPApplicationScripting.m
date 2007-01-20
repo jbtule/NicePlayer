@@ -89,6 +89,9 @@ BOOL dectectIdentifier(id each, void* context){
    return [[self orderedDocuments] detectUsingFunction:dectectIdentifier context:(void*)anIdentifier];
 }
 
+-(BOOL)isFullScreen{
+	return [[NiceController controller] isFullScreen];
+}
 
 -(void)handleEnterFullScreenCommand:(id)sender
 {

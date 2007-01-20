@@ -192,6 +192,9 @@
 			<property name="resources posix path" code="NpRp" description="Posix path to bundle resources folder of application" type="text" access="r">
 				<cocoa key="resourcesPath"/>
 			</property>
+			<property name="full screen mode" code="npIf" description="if niceplayer is in full screen mode" type="boolean" access="r">
+				<cocoa key="isFullScreen"/>
+			</property>
 			<responds-to name="enter full screen">
 				<cocoa method="handleEnterFullScreenCommand:"/>
 			</responds-to>
