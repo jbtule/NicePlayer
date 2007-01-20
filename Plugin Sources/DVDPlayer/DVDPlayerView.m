@@ -45,7 +45,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
  */
 +(NSDictionary *)plugInfo
 {
-	NSArray *extensions = [NSArray arrayWithObjects:@"public.folder", nil];
+	NSArray *extensions = [NSArray arrayWithObjects:@"public.folder",@"vdvd", nil];
 	return [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"DVD Player",	extensions,			nil]
 									   forKeys:[NSArray arrayWithObjects:@"Name",		@"FileExtensions",	nil]];	
 }

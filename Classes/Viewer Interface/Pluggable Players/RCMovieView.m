@@ -64,7 +64,7 @@
         @"avi", @"mov", @"qt", @"mpg", @"mpeg", @"m15", @"m75", @"m2v", @"3gpp", @"mpg4", @"mp4",@"mkv",@"flv",@"divx",
         //Commenting out image types as this view isn't design well for them,even though it will display them
         // @"png", @"gif", @"bmp", @"tif", @"pic", @"pct", @"pict", @"jpg", @"jpeg", @"qtif",
-        @"swf", @"fli", @"flc", @"dv", @"wmv",@"asf",
+        @"swf", @"fli", @"flc", @"dv", @"wmv",@"asf",@"ogg",
         /* Finder types */
         @"VfW", @"MooV", @"MPEG", @"m2v ", @"mpg4", @"SWFL", @"FLI ", @"dvc!",@"ASF_", 
         //@"PNG ", @"GIF ", @"GiFf", @"BMP ", @"TIFF", @"PICT",@"JPEG", @"qtif",

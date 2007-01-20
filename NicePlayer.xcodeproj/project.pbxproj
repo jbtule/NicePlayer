@@ -171,6 +171,7 @@
 		697496200B55F7A90030D4D2 /* titlebg.png in Resources */ = {isa = PBXBuildFile; fileRef = 6974961F0B55F7A90030D4D2 /* titlebg.png */; };
 		6974971F0B56033F0030D4D2 /* TitleBackgroundView.h in Headers */ = {isa = PBXBuildFile; fileRef = 6974971D0B56033F0030D4D2 /* TitleBackgroundView.h */; };
 		697497200B56033F0030D4D2 /* TitleBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6974971E0B56033F0030D4D2 /* TitleBackgroundView.m */; };
+		69BCF5510B62C4C20000ABEF /* ogg.icns in Resources */ = {isa = PBXBuildFile; fileRef = 69BCF5500B62C4C20000ABEF /* ogg.icns */; };
 		69EFD1BC0B5C8E3400359BF4 /* divx.icns in Resources */ = {isa = PBXBuildFile; fileRef = 69EFD1BB0B5C8E3400359BF4 /* divx.icns */; };
 		8D15AC290486D014006FF6A4 /* NicePlayer_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 32DBCF750370BD2300C91783 /* NicePlayer_Prefix.pch */; };
 		8D15AC2A0486D014006FF6A4 /* NiceDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A37F4AEFDCFA73011CA2CEA /* NiceDocument.h */; };
@@ -468,6 +469,7 @@
 		6974961F0B55F7A90030D4D2 /* titlebg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = titlebg.png; path = Resources/titlebg.png; sourceTree = "<group>"; };
 		6974971D0B56033F0030D4D2 /* TitleBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleBackgroundView.h; sourceTree = "<group>"; };
 		6974971E0B56033F0030D4D2 /* TitleBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleBackgroundView.m; sourceTree = "<group>"; };
+		69BCF5500B62C4C20000ABEF /* ogg.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = ogg.icns; sourceTree = "<group>"; };
 		69EFD1BB0B5C8E3400359BF4 /* divx.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = divx.icns; sourceTree = "<group>"; };
 		8D15AC360486D014006FF6A4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D15AC370486D014006FF6A4 /* NicePlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NicePlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -820,6 +822,7 @@
 		3E8C96C1073EF4730048CB70 /* doc_icons */ = {
 			isa = PBXGroup;
 			children = (
+				69BCF5500B62C4C20000ABEF /* ogg.icns */,
 				6925B3C90B61966E004D2A83 /* vdvd.icns */,
 				69EFD1BB0B5C8E3400359BF4 /* divx.icns */,
 				690B62790B5992B7008D13CE /* mkv.icns */,
@@ -1116,6 +1119,7 @@
 				690B627A0B5992B7008D13CE /* mkv.icns in Resources */,
 				69EFD1BC0B5C8E3400359BF4 /* divx.icns in Resources */,
 				6925B3CA0B61966E004D2A83 /* vdvd.icns in Resources */,
+				69BCF5510B62C4C20000ABEF /* ogg.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
