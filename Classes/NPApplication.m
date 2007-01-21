@@ -254,7 +254,7 @@ BOOL selectNiceWindow(id each, void* context){
 -(IBAction)onlineSupportWikiFAQ:(id)sender
 {
     [[NSWorkspace sharedWorkspace] openURL:
-        [NSURL URLWithString:@"http://charon.laya.com/niceplayer/trac.cgi/wiki/ListOfQuestions"]];
+        [NSURL URLWithString:@"http://charon.laya.com/niceplayer/trac.cgi/wiki/"]];
 }
 
 -(IBAction)submitBug:(id)sender
