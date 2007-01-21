@@ -248,7 +248,7 @@ BOOL selectNiceWindow(id each, void* context){
 -(IBAction)donateToNicePlayer:(id)sender
 {
     [[NSWorkspace sharedWorkspace] openURL:
-        [NSURL URLWithString:@"http://niceplayer.indyjt.com/donate.php"]];
+        [NSURL URLWithString:@"http://sourceforge.net/donate/index.php?group_id=170266"]];
 }
 
 -(IBAction)onlineSupportWikiFAQ:(id)sender
@@ -266,7 +266,7 @@ BOOL selectNiceWindow(id each, void* context){
 -(IBAction)featureRequest:(id)sender
 {
     [[NSWorkspace sharedWorkspace] openURL:
-        [NSURL URLWithString:@"http://charon.laya.com/niceplayer/trac.cgi/wiki/FeatureRequests"]];
+        [NSURL URLWithString:@"http://charon.laya.com/niceplayer/trac.cgi/newticket"]];
 }
 
 -(IBAction)visitAcknowlegementsPage:(id)sender
