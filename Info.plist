@@ -537,9 +537,9 @@
 	<key>CFBundleVersion</key>
 	<string>413</string>
 	<key>JTAuthorEmail</key>
-	<string>niceplayer@indyjt.com</string>
+	<string>NicePlayer@osiris.laya.com</string>
 	<key>JTUpdateURL</key>
-	<string>http://indyjt.com/software/niceplayer/niceplayer2.indyUpdate</string>
+	<string>http://niceplayer.sourceforge.net/update/niceplayer2.indyUpdate</string>
 	<key>NSAppleScriptEnabled</key>
 	<string>YES</string>
 	<key>NSMainNibFile</key>
