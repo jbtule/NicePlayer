@@ -23,6 +23,7 @@
         }, 
         {
             ACTIONS = {
+                disccusionGroup = id; 
                 donateToNicePlayer = id; 
                 featureRequest = id; 
                 onlineSupportWikiFAQ = id; 

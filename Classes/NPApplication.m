@@ -236,7 +236,7 @@ BOOL selectNiceWindow(id each, void* context){
 -(IBAction)visitNicePlayerWebSite:(id)sender
 {
     [[NSWorkspace sharedWorkspace] openURL:
-        [NSURL URLWithString:@"http://niceplayer.indyjt.com/"]];
+        [NSURL URLWithString:@"http://niceplayer.sourceforge.net/"]];
 }
 
 -(IBAction)visitProjectRoadmap:(id)sender
@@ -266,8 +266,15 @@ BOOL selectNiceWindow(id each, void* context){
 -(IBAction)featureRequest:(id)sender
 {
     [[NSWorkspace sharedWorkspace] openURL:
-        [NSURL URLWithString:@"http://charon.laya.com/niceplayer/trac.cgi/newticket"]];
+	[NSURL URLWithString:@"http://charon.laya.com/niceplayer/trac.cgi/newticket"]];
 }
+
+-(IBAction)disccusionGroup:(id)sender
+{
+    [[NSWorkspace sharedWorkspace] openURL:
+	[NSURL URLWithString:@"http://groups.google.com/group/niceplayer-discuss?hl=en"]];
+}
+
 
 -(IBAction)visitAcknowlegementsPage:(id)sender
 {

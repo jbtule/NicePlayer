@@ -64,4 +64,5 @@
 -(IBAction)submitBug:(id)sender;
 -(IBAction)featureRequest:(id)sender;
 -(IBAction)visitAcknowlegementsPage:(id)sender;
+-(IBAction)disccusionGroup:(id)sender;
 @end
