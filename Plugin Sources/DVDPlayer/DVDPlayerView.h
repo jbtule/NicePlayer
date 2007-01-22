@@ -15,6 +15,7 @@
 	id updateChapterTimer;
 	
 	UInt32 cid;
+	BOOL openedVolume;
 }
 
 -(void)updateBounds;

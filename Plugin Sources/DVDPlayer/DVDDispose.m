@@ -9,11 +9,10 @@
 #import "DVDDispose.h"
 #import <DVDPlayback/DVDPlayback.h>
 
-
 @implementation DVDDisposer
 
--(void)applicationWillTerminate:(id)sender{
-NSLog(@"DisposeDVD");
+-(void)applicationWillTerminate:(id)sender
+{
 	DVDDispose();
 }
 

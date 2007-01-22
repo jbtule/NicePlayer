@@ -92,13 +92,11 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
     static BOOL initialized = NO;
 	static id dvdDisposer= nil;
     if(!initialized){
-	if(DVDInitialize() < 0)
-	    return nil;
-	initialized = YES;
-	dvdDisposer = [[DVDDisposer alloc]init];
-	[[NSNotificationCenter defaultCenter] addObserver:dvdDisposer selector:@selector(applicationWillTerminate:) name:NSApplicationWillTerminateNotification object:NSApp];
-   // NSLog(@"Add Observer");
-
+		if(DVDInitialize() < 0)
+			return nil;
+		initialized = YES;
+		dvdDisposer = [[DVDDisposer alloc] init];
+		[[NSNotificationCenter defaultCenter] addObserver:dvdDisposer selector:@selector(applicationWillTerminate:) name:NSApplicationWillTerminateNotification object:NSApp];
 	}
     if(self = [super initWithFrame:frame]){
 	[self setAutoresizingMask:(NSViewWidthSizable | NSViewHeightSizable)];			
@@ -180,16 +178,12 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	DVDUnregisterEventCallBack(cid);
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
 	DVDStop();
-	if([[[myURL path] lastPathComponent] isEqualToString:@"VIDEO_TS"]){
-		//NSLog(@"Close media file");
-		DVDCloseMediaFile();
-	}else{
-		//			NSLog(@"Close media volume");
-
+	/* Now DVD player is broken so that we must call close volume, even on a file. */
+//	if(openedVolume){
 		DVDCloseMediaVolume();
-
-		}
-		//			NSLog(@"Closed");
+//	} else {
+//		DVDCloseMediaFile();
+//	}
 }
 
 -(void)dealloc
@@ -224,19 +218,8 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 		}
 	}
 	
-	FSRef fsref;
-	CFURLGetFSRef((CFURLRef)myURL, &fsref);
-
-	Boolean isValid;
-	// This next call is broken.
-	DVDIsValidMediaRef(&fsref, &isValid);
-	//if(isValid){
-		[myURL retain];
-		return YES;
-	//}
-	
-	myURL = nil;
-	return NO;
+	[myURL retain];
+	return YES;
 }
 
 /**
@@ -254,10 +237,18 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	DVDRegisterEventCallBack(aspectChange, eventCodes, sizeof(eventCodes)/sizeof(DVDEventCode), (UInt32)self, &cid);
 	FSRef fsref;
 	CFURLGetFSRef((CFURLRef)myURL, &fsref);
-	if([[[myURL path] lastPathComponent] isEqualToString:@"VIDEO_TS"])
-		DVDOpenMediaFile(&fsref);
-	else
+
+	Boolean isValid;
+	DVDIsValidMediaRef(&fsref, &isValid);
+
+	if(isValid){
 		DVDOpenMediaVolume(&fsref);
+		openedVolume = YES;
+	} else {
+		DVDOpenMediaFile(&fsref);
+		openedVolume = NO;
+	}
+	
 	updateChapterTimer = [NSTimer scheduledTimerWithTimeInterval:30
 							      target:self
 							    selector:@selector(rebuildMenuTimer)
