@@ -549,7 +549,7 @@
 	<key>SmartCrashReports_CompanyName</key>
 	<string>NicePlayer</string>
 	<key>SmartCrashReports_URL</key>
-	<string>http://indyjt.com/software/BugReceiver.php</string>
+	<string>http://niceplayer.sourceforge.net/bug/BugReceiver.php</string>
 	<key>UTExportedTypeDeclarations</key>
 	<array>
 		<dict>
