@@ -7,6 +7,7 @@
 //
 
 #import "DVDDispose.h"
+#import <DVDPlayback/DVDPlayback.h>
 
 
 @implementation DVDDisposer

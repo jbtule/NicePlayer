@@ -729,6 +729,7 @@
     if(!fullScreen){
 	fullScreen = YES;
 	oldWindowLevel = [self level];
+        
 	[self setLevel:NSFloatingWindowLevel +2];
 	[[[self windowController] document] closePlaylistDrawer:self];
 	[self makeKeyAndOrderFront:self];
@@ -792,13 +793,22 @@
 
 -(void)floatWindow
 {
-    [self setLevel:NSFloatingWindowLevel];
+    if(![self isFullScreen]){
+        [self setLevel:NSFloatingWindowLevel];
+    }else{
+        oldWindowLevel = NSFloatingWindowLevel;
+    }
     theWindowIsFloating = YES;
 }
 
 -(void)unfloatWindow
 {
-    [self setLevel:NSNormalWindowLevel];
+    
+    if(![self isFullScreen]){
+        [self setLevel:NSNormalWindowLevel];
+    }else{
+        oldWindowLevel = NSNormalWindowLevel;
+    }
     theWindowIsFloating = NO;
 }
 
