@@ -238,16 +238,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	FSRef fsref;
 	CFURLGetFSRef((CFURLRef)myURL, &fsref);
 
-	Boolean isValid;
-	DVDIsValidMediaRef(&fsref, &isValid);
-
-	if(isValid){
-		DVDOpenMediaVolume(&fsref);
-		openedVolume = YES;
-	} else {
-		DVDOpenMediaFile(&fsref);
-		openedVolume = NO;
-	}
+	DVDOpenMediaFile(&fsref);
 	
 	updateChapterTimer = [NSTimer scheduledTimerWithTimeInterval:30
 							      target:self
