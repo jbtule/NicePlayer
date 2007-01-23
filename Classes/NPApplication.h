@@ -20,7 +20,7 @@
 *
 * Contributor(s):
 *           Robert Chin <robert@osiris.laya.com> (NicePlayer Author)
-*           James Tuley <jbtule@mac.com> (NicePlayer Author)
+*           James Tuley <jay+nicesource@tuley.name> (NicePlayer Author)
 *
 * Alternatively, the contents of this file may be used under the terms of
 * either the GNU General Public License Version 2 or later (the "GPL"), or
