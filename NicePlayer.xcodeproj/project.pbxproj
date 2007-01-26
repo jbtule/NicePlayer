@@ -773,9 +773,9 @@
 			isa = PBXGroup;
 			children = (
 				3EEB7DB7076B754F0090E740 /* NiceUtilities.h */,
+				2A37F4B0FDCFA73011CA2CEA /* main.m */,
 				3EEB7DB8076B754F0090E740 /* NiceUtilities.m */,
 				32DBCF750370BD2300C91783 /* NicePlayer_Prefix.pch */,
-				2A37F4B0FDCFA73011CA2CEA /* main.m */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";

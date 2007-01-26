@@ -86,7 +86,7 @@
 -(BOOL)openURL:(NSURL *)url
 {
     myURL = url;
-	[film autorelease];
+	[film release];
         film = [[NSMovie alloc] initWithURL:url byReference:YES];
     return (film) ? YES : NO;
 }
@@ -121,8 +121,7 @@
 }
 
 -(void)dealloc{
-	[film release];
-	film =nil;
+	[self close];
 	[super dealloc];
 }
 

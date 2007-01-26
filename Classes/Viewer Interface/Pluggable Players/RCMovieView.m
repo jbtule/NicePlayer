@@ -86,7 +86,7 @@
 -(BOOL)openURL:(NSURL *)url
 {
     myURL = url;
-	[film autorelease];
+	[film release];
 	film = [[QTMovie movieWithURL:url error:nil] retain];
     return (film) ? YES : NO;
 }
@@ -100,7 +100,7 @@
 
     if((self = [super initWithFrame:frame])){
 	qtView = [[QTMovieView alloc] initWithFrame:frame];
-	[self addSubview:[qtView autorelease]];
+	[self addSubview:qtView];
         oldPlayState = STATE_INACTIVE;
         [self setAutoresizingMask:(NSViewWidthSizable | NSViewHeightSizable)];
 	[qtView setFillColor:[NSColor blackColor]];
@@ -115,8 +115,7 @@
 
 -(void)dealloc
 {
-	[film release];
-	film =nil;
+	[self close];
     [super dealloc];
 }
 
@@ -125,6 +124,9 @@
 	[film release];
 	film =nil;
 	[qtView setMovie:nil];
+	[qtView release];
+	[qtView removeFromSuperviewWithoutNeedingDisplay];
+	qtView = nil;
 }
 
 -(BOOL)loadMovie

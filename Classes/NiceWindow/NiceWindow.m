@@ -287,11 +287,21 @@
     if((sender != self) && [theScrubBar isHidden])
         return;
     id tAttString;
+	
+	double tLength =[theMovieView totalTime];
+		double tCurr =[theMovieView currentMovieTime];
+
+			if(theMovieView==nil){
+				tLength=0;
+				tCurr =0;
+				}
+				
     switch(timeDisplayStyle){
         NSDate *aDate;
         case ELAPSED_TIME:
+			
             aDate = [NSDate dateWithTimeIntervalSinceReferenceDate:
-                ([theMovieView currentMovieTime]
+                (tCurr
                  - [[NSTimeZone localTimeZone] secondsFromGMTForDate:
                      [NSDate dateWithTimeIntervalSinceReferenceDate:0]])];
 					 
@@ -301,8 +311,8 @@
             break;
         case TIME_REMAINING:
             aDate = [NSDate dateWithTimeIntervalSinceReferenceDate:
-                ([theMovieView totalTime]
-                 - [theMovieView currentMovieTime]
+                (tLength
+                 - tCurr
                  - [[NSTimeZone localTimeZone] secondsFromGMTForDate:
                      [NSDate dateWithTimeIntervalSinceReferenceDate:0]])];
 					 

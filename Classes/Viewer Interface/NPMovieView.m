@@ -120,35 +120,40 @@
 {
 	NSRect subview = NSMakeRect(0, 0, [self frame].size.width, [self frame].size.height);
 	internalVolume = [self volume];
-	[self close];
-	[trueMovieView release];
+	[self clearTrueMovieView];
 	trueMovieView = [[JTMovieView alloc] initWithFrame:subview];
 	[self addSubview:trueMovieView];
 	[self finalProxyViewLoad];
 }
 
+-(void)clearTrueMovieView{
+	[trueMovieView removeFromSuperviewWithoutNeedingDisplay];
+	[trueMovieView unregisterDraggedTypes];
+	[trueMovieView close];
+	[trueMovieView release];
+	trueMovieView =nil;
+}
+
 -(void)close
 {
 	//NSLog(@"Close MovieView");
-	[trueMovieView close];
-	[trueMovieView removeFromSuperview];
-	[trueMovieView unregisterDraggedTypes];
+	[self clearTrueMovieView];
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
 	[self unregisterDraggedTypes];
 }
 
 -(void)dealloc
 {
+	[self close];
     if(mouseEntered)
 		[self mouseExited:nil];
     [title release];
-    [trueMovieView release];
     [super dealloc];
 }
 
 -(BOOL)openURL:(NSURL *)url
 {
-    [trueMovieView removeFromSuperview];
+	[self clearTrueMovieView];
     if(title)
 		[title release];
     title = [[[[url path] lastPathComponent] stringByDeletingPathExtension] retain];
@@ -192,9 +197,7 @@
 			NSDictionary *currentPlugin = [pluginOrder objectAtIndex:i];
 			if(![[currentPlugin objectForKey:@"Chosen"] boolValue])
 				continue;
-			if(trueMovieView)
-			    [trueMovieView release];
-			trueMovieView = nil;
+
 			id newViewClass = [[pluginDict objectForKey:[currentPlugin objectForKey:@"Name"]] objectForKey:@"Class"];
 			/* We should change the line below to be more graceful if a plugin can't load. */
 			trueMovieView = [newViewClass alloc];
@@ -221,8 +224,7 @@
 	}
 	@catch(NSException *exception) {
 		didOpen = NO;
-		if(trueMovieView)
-		    [trueMovieView release];
+			[self clearTrueMovieView];
 		trueMovieView = [[JTMovieView alloc] initWithFrame:subview];
 		[self addSubview:trueMovieView];
 	}
@@ -254,9 +256,7 @@
 							   reason:@"CouldntLoad"
 							 userInfo:nil];	    
     @try {
-	[self close];
-	[trueMovieView release];
-	trueMovieView = nil;
+	[self clearTrueMovieView];
 	id newViewClass = aClass;
 	/* We should change the line below to be more graceful if a plugin can't load. */
 	trueMovieView = [newViewClass alloc];
