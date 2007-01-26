@@ -59,6 +59,8 @@
 
 -(void)setText:(NSString *)aString
 {
+	if(aString == nil)
+		aString = @"";
     NSMutableAttributedString *newString = [[NSMutableAttributedString alloc] initWithString:aString];
     [newString addAttribute:NSForegroundColorAttributeName
 		      value:[[Preferences mainPrefs] notificationColor]

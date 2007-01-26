@@ -472,7 +472,7 @@
 		69BCF5500B62C4C20000ABEF /* ogg.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = ogg.icns; sourceTree = "<group>"; };
 		69EFD1BB0B5C8E3400359BF4 /* divx.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = divx.icns; sourceTree = "<group>"; };
 		8D15AC360486D014006FF6A4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		8D15AC370486D014006FF6A4 /* NicePlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NicePlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D15AC370486D014006FF6A4 /* NicePlayer.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = NicePlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
