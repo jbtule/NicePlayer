@@ -167,7 +167,9 @@
     
     @try{
         NSArray* tArray = [film tracksOfMediaType:QTMediaTypeVideo];
-        QTTrack* tTrack = [tArray objectAtIndex:0];
+	QTTrack* tTrack = nil;
+	if([tArray count] > 0)
+	    tTrack = [tArray objectAtIndex:0];
         
         if(tTrack != nil ){
             anImageDesc = (SampleDescriptionHandle)NewHandle(sizeof(SampleDescription));
