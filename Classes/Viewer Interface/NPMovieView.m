@@ -948,13 +948,18 @@
 
 -(float)volume
 {
-	float volume = [trueMovieView volume];
+	float volume;
+	
+	if(trueMovieView)
+		volume = [trueMovieView volume];
+	else
+		volume = 1.0;
 	
 	if(volume < 0.0)
 		volume = 0.0;
 	if(volume > 2.0)
 		volume = 2.0;
-	
+
 	return volume;
 }
 
@@ -971,6 +976,10 @@
 		[trueMovieView setMuted:YES];
 	else
 		[trueMovieView setMuted:NO];
+	
+	if([[Preferences mainPrefs] audioVolumeSimilarToLastWindow]){
+		[[Preferences mainPrefs] setDefaultAudioVolume:[trueMovieView volume]];
+	}
 }
 
 -(double)totalTime

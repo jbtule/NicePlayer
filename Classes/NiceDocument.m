@@ -347,17 +347,6 @@ void findSpace(id each, void* context, BOOL* endthis){
     
     [self updateAfterLoad];
 	[self repositionAfterLoad];
-	[[NSNotificationCenter defaultCenter] addObserver:self
-											 selector:@selector(windowWillClose:)
-												 name:NSWindowWillCloseNotification
-											   object:[self window]];		
-}
-
--(void)windowWillClose:(NSNotification *)aNotification
-{
-	if([[Preferences mainPrefs] audioVolumeSimilarToLastWindow]){
-		[[Preferences mainPrefs] setDefaultAudioVolume:[theMovieView volume]];
-	}
 }
 
 /**
