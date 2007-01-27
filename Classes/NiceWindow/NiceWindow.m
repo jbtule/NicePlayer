@@ -105,6 +105,14 @@
 
 -(void)awakeFromNib
 {
+#ifdef __ppc__
+    /* This works around a crashing bug on ppc before 10.5 (not sure if it occurs in
+    leopard or not) */
+    SInt32 MacVersion;
+    if ((Gestalt(gestaltSystemVersion, &MacVersion) == noErr) && (MacVersion <= 0x1050)){
+	[theOverlayWindow retain];
+    }
+#endif
     [theScrubBar setTarget:theMovieView];
     [self setContentView:theMovieView];
     [theScrubBar setAction:@selector(scrub:)];
