@@ -105,14 +105,7 @@
 
 -(void)awakeFromNib
 {
-#ifdef __ppc__
-    /* This works around a crashing bug on ppc before 10.5 (not sure if it occurs in
-    leopard or not) */
-    SInt32 MacVersion;
-    if ((Gestalt(gestaltSystemVersion, &MacVersion) == noErr) && (MacVersion <= 0x1050)){
-	[theOverlayWindow retain];
-    }
-#endif
+
     [theScrubBar setTarget:theMovieView];
     [self setContentView:theMovieView];
     [theScrubBar setAction:@selector(scrub:)];
@@ -150,6 +143,7 @@
 
 -(void)close
 {
+	NSAutoreleasePool* tPool = [NSAutoreleasePool new];
 	[self hideNotifier];
     [[FadeOut fadeOut] removeWindow:theOverlayWindow];
     [[FadeOut fadeOut] removeWindow:theOverlayTitleBar];
@@ -158,21 +152,15 @@
     if(initialFadeTimer)
         [initialFadeTimer invalidate];
     [timeUpdaterTimer invalidate];
-	[self removeChildWindow:theOverlaySubTitleWindow];
-	[self removeChildWindow:theOverlayWindow];
-	[self removeChildWindow:theOverlayTitleBar];
-	[self removeChildWindow:theOverlayVolume];
-	[self removeChildWindow:theOverlayNotifier];
-	[theOverlaySubTitleWindow orderOut:self];
-	[theOverlayWindow orderOut:self];
-	[theOverlayTitleBar orderOut:self];
-	[theOverlayVolume orderOut:self];
-	[theOverlayNotifier orderOut:self];
+	
+
 	isClosing = YES;
     [theMovieView close];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 	[[Preferences mainPrefs] removeObserver:self forKeyPath:@"opacityWhenWindowIsTransparent"];
     [super close];
+	
+	[tPool release];
 }
 
 #pragma mark Overriden Methods
@@ -224,10 +212,22 @@
 }
 
 -(IBAction)performClose:(id)sender
-{
+{	
+	/* band-aid 	
+	this doesn't really fix the problem,
+	 but it stops the crashing with small memoryleak 
+	 of the the titlebar ocassionally
+	 */
+	if([sender tag]==666 && [[NSApp movieWindows]count] > 1 ){
+		[theOverlayTitleBar retain];
+	}
+	/*end band-aid*/
+	
     [(NPMovieView *)theMovieView stop];
+	[self orderOut:sender];//order out before stops double button click from causing crash
     if(fullScreen)
         [[NSDocumentController sharedDocumentController] toggleFullScreen:sender];
+	
 	[self close];
 }
 

@@ -86,7 +86,6 @@
 	
     BOOL dropScreen;		/* Controls movie dropping onto other screens (not the primary display) */
     BOOL theWindowIsFloating;
-	
     id timeUpdaterTimer;
     int oldWindowLevel;
     int timeDisplayStyle;

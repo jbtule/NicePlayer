@@ -35,6 +35,7 @@
             ACTIONS = {
                 addToPlaylist = id; 
                 choosePlaylistItem = id; 
+                close = id; 
                 closePlaylistDrawer = id; 
                 openPlaylistDrawer = id; 
                 openPlaylistDrawerConditional = id; 
