@@ -61,13 +61,6 @@
     return self;
 }
 
--(void)dealloc
-{
-    if(mouseEntered)
-		[self mouseExited:nil];
-    [super dealloc];
-}
-
 - (BOOL)acceptsFirstResponder
 {
 	return YES;

@@ -213,15 +213,7 @@
 
 -(IBAction)performClose:(id)sender
 {	
-	/* band-aid 	
-	this doesn't really fix the problem,
-	 but it stops the crashing with small memoryleak 
-	 of the the titlebar ocassionally
-	 */
-	if([sender tag]==666 && [[NSApp movieWindows]count] > 1 ){
-		[theOverlayTitleBar retain];
-	}
-	/*end band-aid*/
+
 	
     [(NPMovieView *)theMovieView stop];
 	[self orderOut:sender];//order out before stops double button click from causing crash
