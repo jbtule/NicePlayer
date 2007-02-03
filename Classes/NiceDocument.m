@@ -446,7 +446,7 @@ void findSpace(id each, void* context, BOOL* endthis){
 
 -(NSMenu *)movieMenu
 {
-    return [[[NSApp mainMenu] itemWithTitle:@"Movie"] submenu];
+    return [[[NSApp mainMenu] itemWithTitle:NSLocalizedString(@"Movie",@"Movie")] submenu];
 }
 
 /* Always call this method by raising the notification "RebuildAllMenus" otherwise
