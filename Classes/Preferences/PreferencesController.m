@@ -64,6 +64,18 @@
 			  withLabel:@"General"
 			withToolTip:@"The General Preference Settings"
 		 allowingResize:NO];
+	[prefWindow addPane:paneInput
+                   withIcon:[[[NSImage alloc]initWithContentsOfFile:tGeneralPrefIcon] autorelease]
+		 withIdentifier:@"Input"
+			  withLabel:@"Input"
+			withToolTip:@"The Input Preference Settings"
+		 allowingResize:NO];
+	[prefWindow addPane:paneWindowDefaults
+                   withIcon:[[[NSImage alloc]initWithContentsOfFile:tGeneralPrefIcon] autorelease]
+		 withIdentifier:@"Window Defaults"
+			  withLabel:@"Window Defaults"
+			withToolTip:@"The Window Default Preference Settings"
+		 allowingResize:NO];
 	[prefWindow addPane:paneActions
 			   withIcon:[[[NSImage alloc]initWithContentsOfFile:tActionPrefIcon] autorelease]
 		 withIdentifier:@"Actions"

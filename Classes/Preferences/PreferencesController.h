@@ -50,6 +50,10 @@
     IBOutlet id paneActions;
     IBOutlet id paneOverlays;
     IBOutlet id paneView;
+	IBOutlet id paneInput;
+	IBOutlet id paneWindowDefaults;
+
+
     
     IBOutlet id bundlePriorityTable;
     

@@ -67,9 +67,11 @@
                 notificationColor = id; 
                 opacityWhenWindowIsTransparent = id; 
                 paneActions = id; 
+                paneInput = id; 
                 paneMain = id; 
                 paneOverlays = id; 
                 paneView = id; 
+                paneWindowDefaults = id; 
                 prefWindow = id; 
                 rightClickMoviePref = id; 
                 rrSpeedSlider = id; 
