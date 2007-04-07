@@ -347,6 +347,7 @@ void findSpace(id each, void* context, BOOL* endthis){
     
     [self updateAfterLoad];
 	[self repositionAfterLoad];
+	[[self window] orderFront:aController];
 }
 
 /**

@@ -55,6 +55,11 @@
 -(int)currentChapterIndex;
 @end
 
+@interface QTMovie(IdlingAdditions)
+-(BOOL)idling;
+-(QTTime)maxTimeLoaded;
+@end
+
 @implementation RCMovieView
 
 +(NSDictionary *)plugInfo
