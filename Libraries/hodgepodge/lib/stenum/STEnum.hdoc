@@ -1,0 +1,5 @@
+/*!
+    @framework STEnum Framework
+    @discussion Framework that adds SmallTalk style enumerations to Cocoa collection classes, along with a few other simple and useful collection methods.
+    @copyright James Tuley
+*/

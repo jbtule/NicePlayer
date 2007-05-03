@@ -1,0 +1,490 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3E20483A093D5AE800305494 /* JTCryptKey.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E204838093D5AE800305494 /* JTCryptKey.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3E20483B093D5AE800305494 /* JTCryptKey.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3E204839093D5AE800305494 /* JTCryptKey.mm */; };
+		3E204875093D5BF900305494 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E204874093D5BF900305494 /* Security.framework */; };
+		3E204886093D5C3300305494 /* Test-JTCryptKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E204D49093D56E000A65713 /* Test-JTCryptKey.m */; };
+		3E2048A4093D5CB400305494 /* EncryptOC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* EncryptOC.framework */; };
+		3E204D4C093D56E000A65713 /* JTPrivateCryptKey.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E204D40093D56E000A65713 /* JTPrivateCryptKey.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3E204D4D093D56E000A65713 /* JTPrivateCryptKey.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3E204D41093D56E000A65713 /* JTPrivateCryptKey.mm */; };
+		3E204D4E093D56E000A65713 /* JTPublicCryptKey.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E204D42093D56E000A65713 /* JTPublicCryptKey.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3E204D4F093D56E000A65713 /* JTPublicCryptKey.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3E204D43093D56E000A65713 /* JTPublicCryptKey.mm */; };
+		3E204D52093D56E000A65713 /* libCdsaCrypt.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3E204D46093D56E000A65713 /* libCdsaCrypt.mm */; };
+		3E204D53093D56E000A65713 /* libCdsaCrypt.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E204D47093D56E000A65713 /* libCdsaCrypt.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3E204D68093D575A00A65713 /* EncryptOC.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E204D67093D575A00A65713 /* EncryptOC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
+		8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3E20488D093D5C5700305494 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
+			remoteInfo = EncryptOC;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0867D69BFE84028FC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		0867D6A5FE840307C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		089C1667FE841158C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		32DBCF5E0370ADEE00C91783 /* EncryptOC_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncryptOC_Prefix.pch; sourceTree = "<group>"; };
+		3E204838093D5AE800305494 /* JTCryptKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCryptKey.h; sourceTree = "<group>"; };
+		3E204839093D5AE800305494 /* JTCryptKey.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = JTCryptKey.mm; sourceTree = "<group>"; };
+		3E204874093D5BF900305494 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = /System/Library/Frameworks/Security.framework; sourceTree = "<absolute>"; };
+		3E204881093D5C1E00305494 /* EncryptOC Test.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EncryptOC Test.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E204882093D5C1E00305494 /* EncryptOC Test-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "EncryptOC Test-Info.plist"; sourceTree = "<group>"; };
+		3E204D40093D56E000A65713 /* JTPrivateCryptKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTPrivateCryptKey.h; sourceTree = "<group>"; };
+		3E204D41093D56E000A65713 /* JTPrivateCryptKey.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = JTPrivateCryptKey.mm; sourceTree = "<group>"; };
+		3E204D42093D56E000A65713 /* JTPublicCryptKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTPublicCryptKey.h; sourceTree = "<group>"; };
+		3E204D43093D56E000A65713 /* JTPublicCryptKey.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = JTPublicCryptKey.mm; sourceTree = "<group>"; };
+		3E204D44093D56E000A65713 /* JTSymmetricCryptKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSymmetricCryptKey.h; sourceTree = "<group>"; };
+		3E204D45093D56E000A65713 /* JTSymmetricCryptKey.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = JTSymmetricCryptKey.mm; sourceTree = "<group>"; };
+		3E204D46093D56E000A65713 /* libCdsaCrypt.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = libCdsaCrypt.mm; sourceTree = "<group>"; };
+		3E204D47093D56E000A65713 /* libCdsaCrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libCdsaCrypt.h; sourceTree = "<group>"; };
+		3E204D48093D56E000A65713 /* Test-JTCryptKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Test-JTCryptKey.h"; sourceTree = "<group>"; };
+		3E204D49093D56E000A65713 /* Test-JTCryptKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Test-JTCryptKey.m"; sourceTree = "<group>"; };
+		3E204D67093D575A00A65713 /* EncryptOC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncryptOC.h; sourceTree = "<group>"; };
+		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8DC2EF5B0486A6940098B216 /* EncryptOC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EncryptOC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2F7E79907B2D74100F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3E20487E093D5C1E00305494 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E2048A4093D5CB400305494 /* EncryptOC.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DC2EF560486A6940098B216 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */,
+				3E204875093D5BF900305494 /* Security.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		034768DFFF38A50411DB9C8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8DC2EF5B0486A6940098B216 /* EncryptOC.framework */,
+				3E204881093D5C1E00305494 /* EncryptOC Test.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0867D691FE84028FC02AAC07 /* EncryptOC */ = {
+			isa = PBXGroup;
+			children = (
+				3E204D57093D56EA00A65713 /* test */,
+				08FB77AEFE84172EC02AAC07 /* src */,
+				32C88DFF0371C24200C91783 /* Other Sources */,
+				089C1665FE841158C02AAC07 /* Resources */,
+				0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */,
+				034768DFFF38A50411DB9C8B /* Products */,
+				3E204882093D5C1E00305494 /* EncryptOC Test-Info.plist */,
+			);
+			name = EncryptOC;
+			sourceTree = "<group>";
+		};
+		0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7B0FEA5585E11CA2CBB /* Linked Frameworks */,
+				1058C7B2FEA5585E11CA2CBB /* Other Frameworks */,
+			);
+			name = "External Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		089C1665FE841158C02AAC07 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8DC2EF5A0486A6940098B216 /* Info.plist */,
+				089C1666FE841158C02AAC07 /* InfoPlist.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		08FB77AEFE84172EC02AAC07 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				3E204838093D5AE800305494 /* JTCryptKey.h */,
+				3E204839093D5AE800305494 /* JTCryptKey.mm */,
+				3E204D40093D56E000A65713 /* JTPrivateCryptKey.h */,
+				3E204D41093D56E000A65713 /* JTPrivateCryptKey.mm */,
+				3E204D42093D56E000A65713 /* JTPublicCryptKey.h */,
+				3E204D43093D56E000A65713 /* JTPublicCryptKey.mm */,
+				3E204D44093D56E000A65713 /* JTSymmetricCryptKey.h */,
+				3E204D45093D56E000A65713 /* JTSymmetricCryptKey.mm */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		1058C7B0FEA5585E11CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3E204874093D5BF900305494 /* Security.framework */,
+				1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7B2FEA5585E11CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0867D6A5FE840307C02AAC07 /* AppKit.framework */,
+				D2F7E79907B2D74100F64583 /* CoreData.framework */,
+				0867D69BFE84028FC02AAC07 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		32C88DFF0371C24200C91783 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				3E2048B2093D5E1800305494 /* libcdsacrypt */,
+				32DBCF5E0370ADEE00C91783 /* EncryptOC_Prefix.pch */,
+				3E204D67093D575A00A65713 /* EncryptOC.h */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		3E2048B2093D5E1800305494 /* libcdsacrypt */ = {
+			isa = PBXGroup;
+			children = (
+				3E204D46093D56E000A65713 /* libCdsaCrypt.mm */,
+				3E204D47093D56E000A65713 /* libCdsaCrypt.h */,
+			);
+			name = libcdsacrypt;
+			path = src/libcdsacrypt;
+			sourceTree = "<group>";
+		};
+		3E204D57093D56EA00A65713 /* test */ = {
+			isa = PBXGroup;
+			children = (
+				3E204D48093D56E000A65713 /* Test-JTCryptKey.h */,
+				3E204D49093D56E000A65713 /* Test-JTCryptKey.m */,
+			);
+			path = test;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8DC2EF500486A6940098B216 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E204D4C093D56E000A65713 /* JTPrivateCryptKey.h in Headers */,
+				3E204D4E093D56E000A65713 /* JTPublicCryptKey.h in Headers */,
+				3E204D53093D56E000A65713 /* libCdsaCrypt.h in Headers */,
+				3E204D68093D575A00A65713 /* EncryptOC.h in Headers */,
+				3E20483A093D5AE800305494 /* JTCryptKey.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		3E204880093D5C1E00305494 /* EncryptOC Test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3E204883093D5C1F00305494 /* Build configuration list for PBXNativeTarget "EncryptOC Test" */;
+			buildPhases = (
+				3E20487C093D5C1E00305494 /* Resources */,
+				3E20487D093D5C1E00305494 /* Sources */,
+				3E20487E093D5C1E00305494 /* Frameworks */,
+				3E20487F093D5C1E00305494 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3E20488E093D5C5700305494 /* PBXTargetDependency */,
+			);
+			name = "EncryptOC Test";
+			productName = "EncryptOC Test";
+			productReference = 3E204881093D5C1E00305494 /* EncryptOC Test.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+		8DC2EF4F0486A6940098B216 /* EncryptOC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB91AD08733DA50010E9CD /* Build configuration list for PBXNativeTarget "EncryptOC" */;
+			buildPhases = (
+				8DC2EF500486A6940098B216 /* Headers */,
+				8DC2EF520486A6940098B216 /* Resources */,
+				8DC2EF540486A6940098B216 /* Sources */,
+				8DC2EF560486A6940098B216 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EncryptOC;
+			productInstallPath = "$(HOME)/Library/Frameworks";
+			productName = EncryptOC;
+			productReference = 8DC2EF5B0486A6940098B216 /* EncryptOC.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0867D690FE84028FC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "EncryptOC" */;
+			hasScannedForEncodings = 1;
+			mainGroup = 0867D691FE84028FC02AAC07 /* EncryptOC */;
+			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
+			projectDirPath = "";
+			targets = (
+				8DC2EF4F0486A6940098B216 /* EncryptOC */,
+				3E204880093D5C1E00305494 /* EncryptOC Test */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3E20487C093D5C1E00305494 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DC2EF520486A6940098B216 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3E20487F093D5C1E00305494 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3E20487D093D5C1E00305494 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E204886093D5C3300305494 /* Test-JTCryptKey.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DC2EF540486A6940098B216 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E204D4D093D56E000A65713 /* JTPrivateCryptKey.mm in Sources */,
+				3E204D4F093D56E000A65713 /* JTPublicCryptKey.mm in Sources */,
+				3E204D52093D56E000A65713 /* libCdsaCrypt.mm in Sources */,
+				3E20483B093D5AE800305494 /* JTCryptKey.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3E20488E093D5C5700305494 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8DC2EF4F0486A6940098B216 /* EncryptOC */;
+			targetProxy = 3E20488D093D5C5700305494 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		089C1666FE841158C02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C1667FE841158C02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB91AE08733DA50010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = EncryptOC_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "@executable_path/../Frameworks/";
+				PRODUCT_NAME = EncryptOC;
+				SYMROOT = "$(SYMROOT)";
+				WRAPPER_EXTENSION = framework;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		1DEB91AF08733DA50010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = EncryptOC_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "@executable_path/../Frameworks/";
+				PRODUCT_NAME = EncryptOC;
+				SYMROOT = "$(SYMROOT)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		1DEB91B208733DA50010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Debug;
+		};
+		1DEB91B308733DA50010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Release;
+		};
+		3E204884093D5C1F00305494 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
+				INFOPLIST_FILE = "EncryptOC Test-Info.plist";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Cocoa,
+					"-framework",
+					SenTestingKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "EncryptOC Test";
+				WRAPPER_EXTENSION = octest;
+				ZERO_LINK = NO;
+			};
+			name = Debug;
+		};
+		3E204885093D5C1F00305494 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
+				INFOPLIST_FILE = "EncryptOC Test-Info.plist";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Cocoa,
+					"-framework",
+					SenTestingKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "EncryptOC Test";
+				WRAPPER_EXTENSION = octest;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB91AD08733DA50010E9CD /* Build configuration list for PBXNativeTarget "EncryptOC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB91AE08733DA50010E9CD /* Debug */,
+				1DEB91AF08733DA50010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "EncryptOC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB91B208733DA50010E9CD /* Debug */,
+				1DEB91B308733DA50010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3E204883093D5C1F00305494 /* Build configuration list for PBXNativeTarget "EncryptOC Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E204884093D5C1F00305494 /* Debug */,
+				3E204885093D5C1F00305494 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0867D690FE84028FC02AAC07 /* Project object */;
+}

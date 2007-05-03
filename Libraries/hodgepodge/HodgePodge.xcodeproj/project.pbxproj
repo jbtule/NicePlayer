@@ -1,0 +1,591 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3E54A84509FC035C008AEAFF /* NSApplication-JTAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E54A82009FC035C008AEAFF /* NSApplication-JTAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3E54A84609FC035C008AEAFF /* NSApplication-JTAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E54A82109FC035C008AEAFF /* NSApplication-JTAdditions.m */; };
+		3E54A84709FC035C008AEAFF /* NSData-JTAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E54A82209FC035C008AEAFF /* NSData-JTAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3E54A84809FC035C008AEAFF /* NSData-JTAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E54A82309FC035C008AEAFF /* NSData-JTAdditions.m */; };
+		3E54A84909FC035C008AEAFF /* NSFileManager-JTAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E54A82409FC035C008AEAFF /* NSFileManager-JTAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3E54A84A09FC035C008AEAFF /* NSFileManager-JTAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E54A82509FC035C008AEAFF /* NSFileManager-JTAdditions.m */; };
+		3E54A84B09FC035C008AEAFF /* NSImage-JTAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E54A82609FC035C008AEAFF /* NSImage-JTAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3E54A84C09FC035C008AEAFF /* NSImage-JTAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E54A82709FC035C008AEAFF /* NSImage-JTAdditions.m */; };
+		3E54A84D09FC035C008AEAFF /* NSImage-JTAdditionsPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E54A82809FC035C008AEAFF /* NSImage-JTAdditionsPrivate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3E54A84E09FC035C008AEAFF /* NSImage-JTAdditionsPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E54A82909FC035C008AEAFF /* NSImage-JTAdditionsPrivate.m */; };
+		3E54A84F09FC035C008AEAFF /* NSString-JTAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E54A82A09FC035C008AEAFF /* NSString-JTAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3E54A85009FC035C008AEAFF /* NSString-JTAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E54A82B09FC035C008AEAFF /* NSString-JTAdditions.m */; };
+		3E54A85109FC035C008AEAFF /* NSToolbar-JTAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E54A82C09FC035C008AEAFF /* NSToolbar-JTAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3E54A85209FC035C008AEAFF /* NSToolbar-JTAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E54A82D09FC035C008AEAFF /* NSToolbar-JTAdditions.m */; };
+		3E54A85309FC035C008AEAFF /* IndyAppKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E54A82E09FC035C008AEAFF /* IndyAppKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3E54A85409FC035C008AEAFF /* IndyFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E54A82F09FC035C008AEAFF /* IndyFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3E54A85509FC035C008AEAFF /* IndyKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E54A83009FC035C008AEAFF /* IndyKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3E54A85609FC035C008AEAFF /* JTiTunesLibrary-Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E54A83109FC035C008AEAFF /* JTiTunesLibrary-Private.h */; };
+		3E54A85709FC035C008AEAFF /* JTiTunesLibrary-Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E54A83209FC035C008AEAFF /* JTiTunesLibrary-Private.m */; };
+		3E54A85809FC035C008AEAFF /* JTiTunesLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E54A83309FC035C008AEAFF /* JTiTunesLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3E54A85909FC035C008AEAFF /* JTiTunesLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E54A83409FC035C008AEAFF /* JTiTunesLibrary.m */; };
+		3E54A85A09FC035C008AEAFF /* JTPreferenceWindow-Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E54A83509FC035C008AEAFF /* JTPreferenceWindow-Private.h */; };
+		3E54A85B09FC035C008AEAFF /* JTPreferenceWindow-Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E54A83609FC035C008AEAFF /* JTPreferenceWindow-Private.m */; };
+		3E54A85C09FC035C008AEAFF /* JTPreferenceWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E54A83709FC035C008AEAFF /* JTPreferenceWindow.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3E54A85D09FC035C008AEAFF /* JTPreferenceWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E54A83809FC035C008AEAFF /* JTPreferenceWindow.m */; };
+		3E54A85E09FC035C008AEAFF /* JTToolbarTabbedController-Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E54A83909FC035C008AEAFF /* JTToolbarTabbedController-Private.h */; settings = {ATTRIBUTES = (); }; };
+		3E54A85F09FC035C008AEAFF /* JTToolbarTabbedController-Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E54A83A09FC035C008AEAFF /* JTToolbarTabbedController-Private.m */; };
+		3E54A86009FC035C008AEAFF /* JTToolbarTabbedController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E54A83B09FC035C008AEAFF /* JTToolbarTabbedController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3E54A86109FC035C008AEAFF /* JTToolbarTabbedController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E54A83C09FC035C008AEAFF /* JTToolbarTabbedController.m */; };
+		3E54A86209FC035C008AEAFF /* JTToolbarTabbedWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E54A83D09FC035C008AEAFF /* JTToolbarTabbedWindow.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3E54A86309FC035C008AEAFF /* JTToolbarTabbedWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E54A83E09FC035C008AEAFF /* JTToolbarTabbedWindow.m */; };
+		3E54A86409FC035C008AEAFF /* JTUpdateAlertPanelController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E54A83F09FC035C008AEAFF /* JTUpdateAlertPanelController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3E54A86509FC035C008AEAFF /* JTUpdateAlertPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E54A84009FC035C008AEAFF /* JTUpdateAlertPanelController.m */; };
+		3E54A86609FC035C008AEAFF /* JTURLButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E54A84109FC035C008AEAFF /* JTURLButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3E54A86709FC035C008AEAFF /* JTURLButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E54A84209FC035C008AEAFF /* JTURLButton.m */; };
+		3E54A86809FC035C008AEAFF /* JTURLButtonCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E54A84309FC035C008AEAFF /* JTURLButtonCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3E54A86909FC035C008AEAFF /* JTURLButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E54A84409FC035C008AEAFF /* JTURLButtonCell.m */; };
+		3E59710E09FDD3C9001ED4FA /* ActionsPreferenceIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E59710B09FDD3C9001ED4FA /* ActionsPreferenceIcon.png */; };
+		3E59710F09FDD3C9001ED4FA /* GeneralPreferenceIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E59710C09FDD3C9001ED4FA /* GeneralPreferenceIcon.png */; };
+		3E59711009FDD3C9001ED4FA /* Image Mappings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E59710D09FDD3C9001ED4FA /* Image Mappings.plist */; };
+		3ECA50A60A392F3A00E101E1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3ECA50A20A392F3A00E101E1 /* Localizable.strings */; };
+		3ECA50A70A392F3A00E101E1 /* UpdateAlertPanel.nib in Resources */ = {isa = PBXBuildFile; fileRef = 3ECA50A40A392F3A00E101E1 /* UpdateAlertPanel.nib */; };
+		3EEA729C09FC825200AABB1F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EEA729B09FC825200AABB1F /* Security.framework */; };
+		3EEF547B0ABA36D0008E80DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
+		3EEF548B0ABA36E2008E80DA /* EncryptOC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EF7DC3309FC79EF008B87D0 /* EncryptOC.framework */; };
+		3EEF548C0ABA36EC008E80DA /* STEnum.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EEF542F0ABA3621008E80DA /* STEnum.framework */; };
+		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3EEA727D09FC819200AABB1F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3EF7DC3809FC7A02008B87D0 /* STEnum10.4.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 3EBAD61C08006A950040D4A3;
+			remoteInfo = "STEnum Embedable";
+		};
+		3EEA727F09FC819600AABB1F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3EF7DC2C09FC79EF008B87D0 /* EncryptOC.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
+			remoteInfo = EncryptOC;
+		};
+		3EEF542E0ABA3621008E80DA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3EF7DC3809FC7A02008B87D0 /* STEnum10.4.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3EEF53BC0ABA35D4008E80DA;
+			remoteInfo = STEnum;
+		};
+		3EF7DC3209FC79EF008B87D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3EF7DC2C09FC79EF008B87D0 /* EncryptOC.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
+			remoteInfo = EncryptOC;
+		};
+		3EF7DC3409FC79EF008B87D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3EF7DC2C09FC79EF008B87D0 /* EncryptOC.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3E204881093D5C1E00305494;
+			remoteInfo = "EncryptOC Test";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0867D69BFE84028FC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		0867D6A5FE840307C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		089C1667FE841158C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		32DBCF5E0370ADEE00C91783 /* HodgePodge_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HodgePodge_Prefix.pch; sourceTree = "<group>"; };
+		3E54A82009FC035C008AEAFF /* NSApplication-JTAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSApplication-JTAdditions.h"; sourceTree = "<group>"; };
+		3E54A82109FC035C008AEAFF /* NSApplication-JTAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSApplication-JTAdditions.m"; sourceTree = "<group>"; };
+		3E54A82209FC035C008AEAFF /* NSData-JTAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData-JTAdditions.h"; sourceTree = "<group>"; };
+		3E54A82309FC035C008AEAFF /* NSData-JTAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData-JTAdditions.m"; sourceTree = "<group>"; };
+		3E54A82409FC035C008AEAFF /* NSFileManager-JTAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager-JTAdditions.h"; sourceTree = "<group>"; };
+		3E54A82509FC035C008AEAFF /* NSFileManager-JTAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager-JTAdditions.m"; sourceTree = "<group>"; };
+		3E54A82609FC035C008AEAFF /* NSImage-JTAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage-JTAdditions.h"; sourceTree = "<group>"; };
+		3E54A82709FC035C008AEAFF /* NSImage-JTAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage-JTAdditions.m"; sourceTree = "<group>"; };
+		3E54A82809FC035C008AEAFF /* NSImage-JTAdditionsPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage-JTAdditionsPrivate.h"; sourceTree = "<group>"; };
+		3E54A82909FC035C008AEAFF /* NSImage-JTAdditionsPrivate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage-JTAdditionsPrivate.m"; sourceTree = "<group>"; };
+		3E54A82A09FC035C008AEAFF /* NSString-JTAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString-JTAdditions.h"; sourceTree = "<group>"; };
+		3E54A82B09FC035C008AEAFF /* NSString-JTAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString-JTAdditions.m"; sourceTree = "<group>"; };
+		3E54A82C09FC035C008AEAFF /* NSToolbar-JTAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSToolbar-JTAdditions.h"; sourceTree = "<group>"; };
+		3E54A82D09FC035C008AEAFF /* NSToolbar-JTAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSToolbar-JTAdditions.m"; sourceTree = "<group>"; };
+		3E54A82E09FC035C008AEAFF /* IndyAppKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndyAppKit.h; sourceTree = "<group>"; };
+		3E54A82F09FC035C008AEAFF /* IndyFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndyFoundation.h; sourceTree = "<group>"; };
+		3E54A83009FC035C008AEAFF /* IndyKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndyKit.h; sourceTree = "<group>"; };
+		3E54A83109FC035C008AEAFF /* JTiTunesLibrary-Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JTiTunesLibrary-Private.h"; sourceTree = "<group>"; };
+		3E54A83209FC035C008AEAFF /* JTiTunesLibrary-Private.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JTiTunesLibrary-Private.m"; sourceTree = "<group>"; };
+		3E54A83309FC035C008AEAFF /* JTiTunesLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTiTunesLibrary.h; sourceTree = "<group>"; };
+		3E54A83409FC035C008AEAFF /* JTiTunesLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTiTunesLibrary.m; sourceTree = "<group>"; };
+		3E54A83509FC035C008AEAFF /* JTPreferenceWindow-Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JTPreferenceWindow-Private.h"; sourceTree = "<group>"; };
+		3E54A83609FC035C008AEAFF /* JTPreferenceWindow-Private.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JTPreferenceWindow-Private.m"; sourceTree = "<group>"; };
+		3E54A83709FC035C008AEAFF /* JTPreferenceWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTPreferenceWindow.h; sourceTree = "<group>"; };
+		3E54A83809FC035C008AEAFF /* JTPreferenceWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTPreferenceWindow.m; sourceTree = "<group>"; };
+		3E54A83909FC035C008AEAFF /* JTToolbarTabbedController-Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JTToolbarTabbedController-Private.h"; sourceTree = "<group>"; };
+		3E54A83A09FC035C008AEAFF /* JTToolbarTabbedController-Private.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JTToolbarTabbedController-Private.m"; sourceTree = "<group>"; };
+		3E54A83B09FC035C008AEAFF /* JTToolbarTabbedController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTToolbarTabbedController.h; sourceTree = "<group>"; };
+		3E54A83C09FC035C008AEAFF /* JTToolbarTabbedController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTToolbarTabbedController.m; sourceTree = "<group>"; };
+		3E54A83D09FC035C008AEAFF /* JTToolbarTabbedWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTToolbarTabbedWindow.h; sourceTree = "<group>"; };
+		3E54A83E09FC035C008AEAFF /* JTToolbarTabbedWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTToolbarTabbedWindow.m; sourceTree = "<group>"; };
+		3E54A83F09FC035C008AEAFF /* JTUpdateAlertPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTUpdateAlertPanelController.h; sourceTree = "<group>"; };
+		3E54A84009FC035C008AEAFF /* JTUpdateAlertPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTUpdateAlertPanelController.m; sourceTree = "<group>"; };
+		3E54A84109FC035C008AEAFF /* JTURLButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTURLButton.h; sourceTree = "<group>"; };
+		3E54A84209FC035C008AEAFF /* JTURLButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTURLButton.m; sourceTree = "<group>"; };
+		3E54A84309FC035C008AEAFF /* JTURLButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTURLButtonCell.h; sourceTree = "<group>"; };
+		3E54A84409FC035C008AEAFF /* JTURLButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTURLButtonCell.m; sourceTree = "<group>"; };
+		3E59710B09FDD3C9001ED4FA /* ActionsPreferenceIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ActionsPreferenceIcon.png; sourceTree = "<group>"; };
+		3E59710C09FDD3C9001ED4FA /* GeneralPreferenceIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GeneralPreferenceIcon.png; sourceTree = "<group>"; };
+		3E59710D09FDD3C9001ED4FA /* Image Mappings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Image Mappings.plist"; sourceTree = "<group>"; };
+		3ECA50A30A392F3A00E101E1 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3ECA50A50A392F3A00E101E1 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/UpdateAlertPanel.nib; sourceTree = "<group>"; };
+		3EEA729B09FC825200AABB1F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = /System/Library/Frameworks/Security.framework; sourceTree = "<absolute>"; };
+		3EF7DC2C09FC79EF008B87D0 /* EncryptOC.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EncryptOC.xcodeproj; path = lib/encryptoc/EncryptOC.xcodeproj; sourceTree = "<group>"; };
+		3EF7DC3809FC7A02008B87D0 /* STEnum10.4.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = STEnum10.4.xcodeproj; path = lib/stenum/STEnum10.4.xcodeproj; sourceTree = "<group>"; };
+		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8DC2EF5B0486A6940098B216 /* HodgePodge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HodgePodge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2F7E79907B2D74100F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8DC2EF560486A6940098B216 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EEF548C0ABA36EC008E80DA /* STEnum.framework in Frameworks */,
+				3EEF548B0ABA36E2008E80DA /* EncryptOC.framework in Frameworks */,
+				3EEF547B0ABA36D0008E80DA /* Cocoa.framework in Frameworks */,
+				3EEA729C09FC825200AABB1F /* Security.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		034768DFFF38A50411DB9C8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8DC2EF5B0486A6940098B216 /* HodgePodge.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0867D691FE84028FC02AAC07 /* HodgePodge */ = {
+			isa = PBXGroup;
+			children = (
+				3EF7DC3809FC7A02008B87D0 /* STEnum10.4.xcodeproj */,
+				3EF7DC2C09FC79EF008B87D0 /* EncryptOC.xcodeproj */,
+				3E54A81E09FC035B008AEAFF /* src */,
+				32C88DFF0371C24200C91783 /* Other Sources */,
+				089C1665FE841158C02AAC07 /* resources */,
+				0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */,
+				034768DFFF38A50411DB9C8B /* Products */,
+			);
+			name = HodgePodge;
+			sourceTree = "<group>";
+		};
+		0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7B0FEA5585E11CA2CBB /* Linked Frameworks */,
+				1058C7B2FEA5585E11CA2CBB /* Other Frameworks */,
+			);
+			name = "External Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		089C1665FE841158C02AAC07 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				3ECA50A20A392F3A00E101E1 /* Localizable.strings */,
+				3ECA50A40A392F3A00E101E1 /* UpdateAlertPanel.nib */,
+				3E59710B09FDD3C9001ED4FA /* ActionsPreferenceIcon.png */,
+				3E59710C09FDD3C9001ED4FA /* GeneralPreferenceIcon.png */,
+				3E59710D09FDD3C9001ED4FA /* Image Mappings.plist */,
+				8DC2EF5A0486A6940098B216 /* Info.plist */,
+				089C1666FE841158C02AAC07 /* InfoPlist.strings */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		1058C7B0FEA5585E11CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3EEA729B09FC825200AABB1F /* Security.framework */,
+				1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7B2FEA5585E11CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0867D6A5FE840307C02AAC07 /* AppKit.framework */,
+				D2F7E79907B2D74100F64583 /* CoreData.framework */,
+				0867D69BFE84028FC02AAC07 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		32C88DFF0371C24200C91783 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32DBCF5E0370ADEE00C91783 /* HodgePodge_Prefix.pch */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		3E54A81E09FC035B008AEAFF /* src */ = {
+			isa = PBXGroup;
+			children = (
+				3E54A81F09FC035C008AEAFF /* Categories */,
+				3E54A82E09FC035C008AEAFF /* IndyAppKit.h */,
+				3E54A82F09FC035C008AEAFF /* IndyFoundation.h */,
+				3E54A83009FC035C008AEAFF /* IndyKit.h */,
+				3E54A83109FC035C008AEAFF /* JTiTunesLibrary-Private.h */,
+				3E54A83209FC035C008AEAFF /* JTiTunesLibrary-Private.m */,
+				3E54A83309FC035C008AEAFF /* JTiTunesLibrary.h */,
+				3E54A83409FC035C008AEAFF /* JTiTunesLibrary.m */,
+				3E54A83509FC035C008AEAFF /* JTPreferenceWindow-Private.h */,
+				3E54A83609FC035C008AEAFF /* JTPreferenceWindow-Private.m */,
+				3E54A83709FC035C008AEAFF /* JTPreferenceWindow.h */,
+				3E54A83809FC035C008AEAFF /* JTPreferenceWindow.m */,
+				3E54A83909FC035C008AEAFF /* JTToolbarTabbedController-Private.h */,
+				3E54A83A09FC035C008AEAFF /* JTToolbarTabbedController-Private.m */,
+				3E54A83B09FC035C008AEAFF /* JTToolbarTabbedController.h */,
+				3E54A83C09FC035C008AEAFF /* JTToolbarTabbedController.m */,
+				3E54A83D09FC035C008AEAFF /* JTToolbarTabbedWindow.h */,
+				3E54A83E09FC035C008AEAFF /* JTToolbarTabbedWindow.m */,
+				3E54A83F09FC035C008AEAFF /* JTUpdateAlertPanelController.h */,
+				3E54A84009FC035C008AEAFF /* JTUpdateAlertPanelController.m */,
+				3E54A84109FC035C008AEAFF /* JTURLButton.h */,
+				3E54A84209FC035C008AEAFF /* JTURLButton.m */,
+				3E54A84309FC035C008AEAFF /* JTURLButtonCell.h */,
+				3E54A84409FC035C008AEAFF /* JTURLButtonCell.m */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		3E54A81F09FC035C008AEAFF /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				3E54A82009FC035C008AEAFF /* NSApplication-JTAdditions.h */,
+				3E54A82109FC035C008AEAFF /* NSApplication-JTAdditions.m */,
+				3E54A82209FC035C008AEAFF /* NSData-JTAdditions.h */,
+				3E54A82309FC035C008AEAFF /* NSData-JTAdditions.m */,
+				3E54A82409FC035C008AEAFF /* NSFileManager-JTAdditions.h */,
+				3E54A82509FC035C008AEAFF /* NSFileManager-JTAdditions.m */,
+				3E54A82609FC035C008AEAFF /* NSImage-JTAdditions.h */,
+				3E54A82709FC035C008AEAFF /* NSImage-JTAdditions.m */,
+				3E54A82809FC035C008AEAFF /* NSImage-JTAdditionsPrivate.h */,
+				3E54A82909FC035C008AEAFF /* NSImage-JTAdditionsPrivate.m */,
+				3E54A82A09FC035C008AEAFF /* NSString-JTAdditions.h */,
+				3E54A82B09FC035C008AEAFF /* NSString-JTAdditions.m */,
+				3E54A82C09FC035C008AEAFF /* NSToolbar-JTAdditions.h */,
+				3E54A82D09FC035C008AEAFF /* NSToolbar-JTAdditions.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		3EF7DC2D09FC79EF008B87D0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3EF7DC3309FC79EF008B87D0 /* EncryptOC.framework */,
+				3EF7DC3509FC79EF008B87D0 /* EncryptOC Test.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3EF7DC3909FC7A02008B87D0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3EEF542F0ABA3621008E80DA /* STEnum.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8DC2EF500486A6940098B216 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E54A84509FC035C008AEAFF /* NSApplication-JTAdditions.h in Headers */,
+				3E54A84709FC035C008AEAFF /* NSData-JTAdditions.h in Headers */,
+				3E54A84909FC035C008AEAFF /* NSFileManager-JTAdditions.h in Headers */,
+				3E54A84B09FC035C008AEAFF /* NSImage-JTAdditions.h in Headers */,
+				3E54A84D09FC035C008AEAFF /* NSImage-JTAdditionsPrivate.h in Headers */,
+				3E54A84F09FC035C008AEAFF /* NSString-JTAdditions.h in Headers */,
+				3E54A85109FC035C008AEAFF /* NSToolbar-JTAdditions.h in Headers */,
+				3E54A85309FC035C008AEAFF /* IndyAppKit.h in Headers */,
+				3E54A85409FC035C008AEAFF /* IndyFoundation.h in Headers */,
+				3E54A85509FC035C008AEAFF /* IndyKit.h in Headers */,
+				3E54A85609FC035C008AEAFF /* JTiTunesLibrary-Private.h in Headers */,
+				3E54A85809FC035C008AEAFF /* JTiTunesLibrary.h in Headers */,
+				3E54A85A09FC035C008AEAFF /* JTPreferenceWindow-Private.h in Headers */,
+				3E54A85C09FC035C008AEAFF /* JTPreferenceWindow.h in Headers */,
+				3E54A85E09FC035C008AEAFF /* JTToolbarTabbedController-Private.h in Headers */,
+				3E54A86009FC035C008AEAFF /* JTToolbarTabbedController.h in Headers */,
+				3E54A86209FC035C008AEAFF /* JTToolbarTabbedWindow.h in Headers */,
+				3E54A86409FC035C008AEAFF /* JTUpdateAlertPanelController.h in Headers */,
+				3E54A86609FC035C008AEAFF /* JTURLButton.h in Headers */,
+				3E54A86809FC035C008AEAFF /* JTURLButtonCell.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		8DC2EF4F0486A6940098B216 /* HodgePodge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB91AD08733DA50010E9CD /* Build configuration list for PBXNativeTarget "HodgePodge" */;
+			buildPhases = (
+				8DC2EF500486A6940098B216 /* Headers */,
+				8DC2EF520486A6940098B216 /* Resources */,
+				8DC2EF540486A6940098B216 /* Sources */,
+				8DC2EF560486A6940098B216 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3EEA727E09FC819200AABB1F /* PBXTargetDependency */,
+				3EEA728009FC819600AABB1F /* PBXTargetDependency */,
+			);
+			name = HodgePodge;
+			productInstallPath = "$(HOME)/Library/Frameworks";
+			productName = HodgePodge;
+			productReference = 8DC2EF5B0486A6940098B216 /* HodgePodge.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0867D690FE84028FC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "HodgePodge" */;
+			hasScannedForEncodings = 1;
+			mainGroup = 0867D691FE84028FC02AAC07 /* HodgePodge */;
+			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 3EF7DC2D09FC79EF008B87D0 /* Products */;
+					ProjectRef = 3EF7DC2C09FC79EF008B87D0 /* EncryptOC.xcodeproj */;
+				},
+				{
+					ProductGroup = 3EF7DC3909FC7A02008B87D0 /* Products */;
+					ProjectRef = 3EF7DC3809FC7A02008B87D0 /* STEnum10.4.xcodeproj */;
+				},
+			);
+			targets = (
+				8DC2EF4F0486A6940098B216 /* HodgePodge */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		3EEF542F0ABA3621008E80DA /* STEnum.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = STEnum.framework;
+			remoteRef = 3EEF542E0ABA3621008E80DA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3EF7DC3309FC79EF008B87D0 /* EncryptOC.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = EncryptOC.framework;
+			remoteRef = 3EF7DC3209FC79EF008B87D0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3EF7DC3509FC79EF008B87D0 /* EncryptOC Test.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "EncryptOC Test.octest";
+			remoteRef = 3EF7DC3409FC79EF008B87D0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8DC2EF520486A6940098B216 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */,
+				3E59710E09FDD3C9001ED4FA /* ActionsPreferenceIcon.png in Resources */,
+				3E59710F09FDD3C9001ED4FA /* GeneralPreferenceIcon.png in Resources */,
+				3E59711009FDD3C9001ED4FA /* Image Mappings.plist in Resources */,
+				3ECA50A60A392F3A00E101E1 /* Localizable.strings in Resources */,
+				3ECA50A70A392F3A00E101E1 /* UpdateAlertPanel.nib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8DC2EF540486A6940098B216 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E54A84609FC035C008AEAFF /* NSApplication-JTAdditions.m in Sources */,
+				3E54A84809FC035C008AEAFF /* NSData-JTAdditions.m in Sources */,
+				3E54A84A09FC035C008AEAFF /* NSFileManager-JTAdditions.m in Sources */,
+				3E54A84C09FC035C008AEAFF /* NSImage-JTAdditions.m in Sources */,
+				3E54A84E09FC035C008AEAFF /* NSImage-JTAdditionsPrivate.m in Sources */,
+				3E54A85009FC035C008AEAFF /* NSString-JTAdditions.m in Sources */,
+				3E54A85209FC035C008AEAFF /* NSToolbar-JTAdditions.m in Sources */,
+				3E54A85709FC035C008AEAFF /* JTiTunesLibrary-Private.m in Sources */,
+				3E54A85909FC035C008AEAFF /* JTiTunesLibrary.m in Sources */,
+				3E54A85B09FC035C008AEAFF /* JTPreferenceWindow-Private.m in Sources */,
+				3E54A85D09FC035C008AEAFF /* JTPreferenceWindow.m in Sources */,
+				3E54A85F09FC035C008AEAFF /* JTToolbarTabbedController-Private.m in Sources */,
+				3E54A86109FC035C008AEAFF /* JTToolbarTabbedController.m in Sources */,
+				3E54A86309FC035C008AEAFF /* JTToolbarTabbedWindow.m in Sources */,
+				3E54A86509FC035C008AEAFF /* JTUpdateAlertPanelController.m in Sources */,
+				3E54A86709FC035C008AEAFF /* JTURLButton.m in Sources */,
+				3E54A86909FC035C008AEAFF /* JTURLButtonCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3EEA727E09FC819200AABB1F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "STEnum Embedable";
+			targetProxy = 3EEA727D09FC819200AABB1F /* PBXContainerItemProxy */;
+		};
+		3EEA728009FC819600AABB1F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = EncryptOC;
+			targetProxy = 3EEA727F09FC819600AABB1F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		089C1666FE841158C02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C1667FE841158C02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3ECA50A20A392F3A00E101E1 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3ECA50A30A392F3A00E101E1 /* English */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		3ECA50A40A392F3A00E101E1 /* UpdateAlertPanel.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3ECA50A50A392F3A00E101E1 /* English */,
+			);
+			name = UpdateAlertPanel.nib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB91AE08733DA50010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = HodgePodge_Prefix.pch;
+				INFOPLIST_FILE = resources/Info.plist;
+				INSTALL_PATH = "@executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = "";
+				PRODUCT_NAME = HodgePodge;
+				SYMROOT = "$(SYMROOT)";
+				WRAPPER_EXTENSION = framework;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		1DEB91AF08733DA50010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = HodgePodge_Prefix.pch;
+				INFOPLIST_FILE = resources/Info.plist;
+				INSTALL_PATH = "@executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = "";
+				PRODUCT_NAME = HodgePodge;
+				SYMROOT = "$(SYMROOT)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		1DEB91B208733DA50010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Debug;
+		};
+		1DEB91B308733DA50010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB91AD08733DA50010E9CD /* Build configuration list for PBXNativeTarget "HodgePodge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB91AE08733DA50010E9CD /* Debug */,
+				1DEB91AF08733DA50010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "HodgePodge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB91B208733DA50010E9CD /* Debug */,
+				1DEB91B308733DA50010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0867D690FE84028FC02AAC07 /* Project object */;
+}

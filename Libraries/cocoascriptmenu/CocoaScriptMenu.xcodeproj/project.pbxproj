@@ -1,0 +1,635 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3E04881409D51518002356DB /* CSMCommandCreator.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E04881209D51518002356DB /* CSMCommandCreator.h */; };
+		3E04881509D51518002356DB /* CSMCommandCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E04881309D51518002356DB /* CSMCommandCreator.m */; };
+		3E04881609D5152A002356DB /* CSMExecutableCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EC96ABF08DE274B002DE0DF /* CSMExecutableCommand.h */; };
+		3E04881709D5152B002356DB /* CSMFolderCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EC96AE308DE2767002DE0DF /* CSMFolderCommand.h */; };
+		3E04882A09D51661002356DB /* CSMBaseCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E04882809D51661002356DB /* CSMBaseCommand.h */; };
+		3E04882B09D51661002356DB /* CSMBaseCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E04882909D51661002356DB /* CSMBaseCommand.m */; };
+		3E05BDFB08DE28C100121A7B /* NSString-UTIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E05BDF908DE28C100121A7B /* NSString-UTIAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3E05BDFC08DE28C100121A7B /* NSString-UTIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E05BDFA08DE28C100121A7B /* NSString-UTIAdditions.m */; };
+		3E05BE2608DE2A3500121A7B /* CSMCommand-SubclassMustImplement.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E05BE2408DE2A3500121A7B /* CSMCommand-SubclassMustImplement.h */; };
+		3E05BE2708DE2A3500121A7B /* CSMCommand-SubclassMustImplement.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E05BE2508DE2A3500121A7B /* CSMCommand-SubclassMustImplement.m */; };
+		3E05BEED08DE36B100121A7B /* CSMExecutableCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC96AC008DE274B002DE0DF /* CSMExecutableCommand.m */; };
+		3E05BEF008DE36B400121A7B /* CSMFolderCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC96AE408DE2767002DE0DF /* CSMFolderCommand.m */; };
+		3E05BF0908DE384E00121A7B /* CSMPlainOpenCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E05BF0708DE384E00121A7B /* CSMPlainOpenCommand.h */; };
+		3E05BF0A08DE384E00121A7B /* CSMPlainOpenCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E05BF0808DE384E00121A7B /* CSMPlainOpenCommand.m */; };
+		3E05C08608DE49D700121A7B /* CSMScriptMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E05C08408DE49D700121A7B /* CSMScriptMenu.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3E05C08708DE49D700121A7B /* CSMScriptMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E05C08508DE49D700121A7B /* CSMScriptMenu.m */; };
+		3E0E09040B648B4F00D8F17F /* Contributors in Resources */ = {isa = PBXBuildFile; fileRef = 3E0E09030B648B4F00D8F17F /* Contributors */; };
+		3E87023808DD33260015C10A /* CSMCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E87023608DD33260015C10A /* CSMCommand.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3E87023908DD33260015C10A /* CSMCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E87023708DD33260015C10A /* CSMCommand.m */; };
+		3E87024D08DD363C0015C10A /* CSMAppleScriptCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E87024B08DD363C0015C10A /* CSMAppleScriptCommand.h */; };
+		3E87024E08DD363C0015C10A /* CSMAppleScriptCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E87024C08DD363C0015C10A /* CSMAppleScriptCommand.m */; };
+		3E87025508DD366C0015C10A /* CSMShellScriptCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E87025308DD366C0015C10A /* CSMShellScriptCommand.h */; };
+		3E87025608DD366C0015C10A /* CSMShellScriptCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E87025408DD366C0015C10A /* CSMShellScriptCommand.m */; };
+		3E87025B08DD36820015C10A /* CSMWorkflowCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E87025908DD36820015C10A /* CSMWorkflowCommand.h */; };
+		3E87025C08DD36820015C10A /* CSMWorkflowCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E87025A08DD36820015C10A /* CSMWorkflowCommand.m */; };
+		3E87029F08DD41450015C10A /* CocoaScriptMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* CocoaScriptMenu.framework */; };
+		3E8702B108DD418D0015C10A /* UTITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8702B008DD418D0015C10A /* UTITests.m */; };
+		3E8702B908DD42090015C10A /* CocoaScriptMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E8702B308DD41C90015C10A /* CocoaScriptMenu.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3E9F5C8108DF84F400BD4B78 /* FolderTest in Resources */ = {isa = PBXBuildFile; fileRef = 3E9F5C7F08DF84F400BD4B78 /* FolderTest */; };
+		3E9F5E9708DFB8DD00BD4B78 /* License.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3E9F5E9608DFB8DD00BD4B78 /* License.txt */; };
+		3E9F606708E0D96D00BD4B78 /* CSMFileSubscription.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E9F606508E0D96D00BD4B78 /* CSMFileSubscription.h */; };
+		3E9F606808E0D96D00BD4B78 /* CSMFileSubscription.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9F606608E0D96D00BD4B78 /* CSMFileSubscription.m */; };
+		3E9F612E08E0E5DB00BD4B78 /* test.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 3EB2C33D08DE112300F0C359 /* test.scpt */; };
+		3EA19BBB08DE12B200C1D575 /* scripticon.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 3EA19BBA08DE12B200C1D575 /* scripticon.tiff */; };
+		3EA19BBC08DE12B200C1D575 /* scripticon.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 3EA19BBA08DE12B200C1D575 /* scripticon.tiff */; };
+		3EC96A9F08DE22EB002DE0DF /* test.workflow in Resources */ = {isa = PBXBuildFile; fileRef = 3EC96A9A08DE22EA002DE0DF /* test.workflow */; };
+		3ED7014908FB6C50003EB257 /* TenThreeCompatibility.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E62272008FB641700639892 /* TenThreeCompatibility.m */; };
+		3ED7014A08FB6C51003EB257 /* TenThreeCompatibility.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E62271F08FB641700639892 /* TenThreeCompatibility.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3EDF534A08EF52F400FAAC2C /* CSMMenuNameParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EDF534808EF52F400FAAC2C /* CSMMenuNameParser.h */; };
+		3EDF534B08EF52F400FAAC2C /* CSMMenuNameParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDF534908EF52F400FAAC2C /* CSMMenuNameParser.m */; };
+		3EDF543208EF77B000FAAC2C /* MenuNameParserTest.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3EDF543008EF77B000FAAC2C /* MenuNameParserTest.h */; };
+		3EDF543308EF77B000FAAC2C /* MenuNameParserTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDF543108EF77B000FAAC2C /* MenuNameParserTest.m */; };
+		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
+		8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3E87023208DD32DD0015C10A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
+			remoteInfo = CocoaScriptMenu;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3E9F5CFC08DF8FAD00BD4B78 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				3EDF543208EF77B000FAAC2C /* MenuNameParserTest.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0867D69BFE84028FC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		0867D6A5FE840307C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		089C1667FE841158C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		32DBCF5E0370ADEE00C91783 /* CocoaScriptMenu_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaScriptMenu_Prefix.pch; sourceTree = "<group>"; };
+		3E04881209D51518002356DB /* CSMCommandCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMCommandCreator.h; sourceTree = "<group>"; };
+		3E04881309D51518002356DB /* CSMCommandCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMCommandCreator.m; sourceTree = "<group>"; };
+		3E04882809D51661002356DB /* CSMBaseCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMBaseCommand.h; sourceTree = "<group>"; };
+		3E04882909D51661002356DB /* CSMBaseCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMBaseCommand.m; sourceTree = "<group>"; };
+		3E05BDF908DE28C100121A7B /* NSString-UTIAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString-UTIAdditions.h"; sourceTree = "<group>"; };
+		3E05BDFA08DE28C100121A7B /* NSString-UTIAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString-UTIAdditions.m"; sourceTree = "<group>"; };
+		3E05BE2408DE2A3500121A7B /* CSMCommand-SubclassMustImplement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CSMCommand-SubclassMustImplement.h"; sourceTree = "<group>"; };
+		3E05BE2508DE2A3500121A7B /* CSMCommand-SubclassMustImplement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CSMCommand-SubclassMustImplement.m"; sourceTree = "<group>"; };
+		3E05BF0708DE384E00121A7B /* CSMPlainOpenCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMPlainOpenCommand.h; sourceTree = "<group>"; };
+		3E05BF0808DE384E00121A7B /* CSMPlainOpenCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMPlainOpenCommand.m; sourceTree = "<group>"; };
+		3E05C08408DE49D700121A7B /* CSMScriptMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMScriptMenu.h; sourceTree = "<group>"; };
+		3E05C08508DE49D700121A7B /* CSMScriptMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMScriptMenu.m; sourceTree = "<group>"; };
+		3E0E09030B648B4F00D8F17F /* Contributors */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Contributors; sourceTree = SOURCE_ROOT; };
+		3E62271F08FB641700639892 /* TenThreeCompatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TenThreeCompatibility.h; sourceTree = "<group>"; };
+		3E62272008FB641700639892 /* TenThreeCompatibility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TenThreeCompatibility.m; sourceTree = "<group>"; };
+		3E87022C08DD32CF0015C10A /* UnitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E87022D08DD32CF0015C10A /* UnitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "UnitTests-Info.plist"; sourceTree = "<group>"; };
+		3E87023608DD33260015C10A /* CSMCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMCommand.h; sourceTree = "<group>"; };
+		3E87023708DD33260015C10A /* CSMCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMCommand.m; sourceTree = "<group>"; };
+		3E87024B08DD363C0015C10A /* CSMAppleScriptCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMAppleScriptCommand.h; sourceTree = "<group>"; };
+		3E87024C08DD363C0015C10A /* CSMAppleScriptCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMAppleScriptCommand.m; sourceTree = "<group>"; };
+		3E87025308DD366C0015C10A /* CSMShellScriptCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMShellScriptCommand.h; sourceTree = "<group>"; };
+		3E87025408DD366C0015C10A /* CSMShellScriptCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMShellScriptCommand.m; sourceTree = "<group>"; };
+		3E87025908DD36820015C10A /* CSMWorkflowCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMWorkflowCommand.h; sourceTree = "<group>"; };
+		3E87025A08DD36820015C10A /* CSMWorkflowCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMWorkflowCommand.m; sourceTree = "<group>"; };
+		3E8702AF08DD418D0015C10A /* UTITests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UTITests.h; sourceTree = "<group>"; };
+		3E8702B008DD418D0015C10A /* UTITests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UTITests.m; sourceTree = "<group>"; };
+		3E8702B308DD41C90015C10A /* CocoaScriptMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaScriptMenu.h; sourceTree = "<group>"; };
+		3E9F5C7F08DF84F400BD4B78 /* FolderTest */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FolderTest; sourceTree = "<group>"; };
+		3E9F5E9608DFB8DD00BD4B78 /* License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = License.txt; sourceTree = SOURCE_ROOT; };
+		3E9F606508E0D96D00BD4B78 /* CSMFileSubscription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMFileSubscription.h; sourceTree = "<group>"; };
+		3E9F606608E0D96D00BD4B78 /* CSMFileSubscription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMFileSubscription.m; sourceTree = "<group>"; };
+		3EA19BBA08DE12B200C1D575 /* scripticon.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = scripticon.tiff; sourceTree = "<group>"; };
+		3EB2C33D08DE112300F0C359 /* test.scpt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.scpt; path = test.scpt; sourceTree = "<group>"; };
+		3EC96A9A08DE22EA002DE0DF /* test.workflow */ = {isa = PBXFileReference; lastKnownFileType = folder; path = test.workflow; sourceTree = "<group>"; };
+		3EC96ABF08DE274B002DE0DF /* CSMExecutableCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMExecutableCommand.h; sourceTree = "<group>"; };
+		3EC96AC008DE274B002DE0DF /* CSMExecutableCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMExecutableCommand.m; sourceTree = "<group>"; };
+		3EC96AE308DE2767002DE0DF /* CSMFolderCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMFolderCommand.h; sourceTree = "<group>"; };
+		3EC96AE408DE2767002DE0DF /* CSMFolderCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMFolderCommand.m; sourceTree = "<group>"; };
+		3EDF534808EF52F400FAAC2C /* CSMMenuNameParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMMenuNameParser.h; sourceTree = "<group>"; };
+		3EDF534908EF52F400FAAC2C /* CSMMenuNameParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSMMenuNameParser.m; sourceTree = "<group>"; };
+		3EDF543008EF77B000FAAC2C /* MenuNameParserTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuNameParserTest.h; sourceTree = "<group>"; };
+		3EDF543108EF77B000FAAC2C /* MenuNameParserTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuNameParserTest.m; sourceTree = "<group>"; };
+		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Info.plist; sourceTree = "<group>"; };
+		8DC2EF5B0486A6940098B216 /* CocoaScriptMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CocoaScriptMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3E87022908DD32CF0015C10A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E87029F08DD41450015C10A /* CocoaScriptMenu.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DC2EF560486A6940098B216 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		034768DFFF38A50411DB9C8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8DC2EF5B0486A6940098B216 /* CocoaScriptMenu.framework */,
+				3E87022C08DD32CF0015C10A /* UnitTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0867D691FE84028FC02AAC07 /* CocoaScriptMenu */ = {
+			isa = PBXGroup;
+			children = (
+				8DC2EF5A0486A6940098B216 /* Info.plist */,
+				3E87022D08DD32CF0015C10A /* UnitTests-Info.plist */,
+				3E8702AA08DD415E0015C10A /* test */,
+				08FB77AEFE84172EC02AAC07 /* src */,
+				32C88DFF0371C24200C91783 /* Other Sources */,
+				089C1665FE841158C02AAC07 /* resources */,
+				0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */,
+				034768DFFF38A50411DB9C8B /* Products */,
+			);
+			name = CocoaScriptMenu;
+			sourceTree = "<group>";
+		};
+		0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7B0FEA5585E11CA2CBB /* Linked Frameworks */,
+				1058C7B2FEA5585E11CA2CBB /* Other Frameworks */,
+			);
+			name = "External Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		089C1665FE841158C02AAC07 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				3E9F5E9608DFB8DD00BD4B78 /* License.txt */,
+				3EA19BBA08DE12B200C1D575 /* scripticon.tiff */,
+				089C1666FE841158C02AAC07 /* InfoPlist.strings */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		08FB77AEFE84172EC02AAC07 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				3E04881209D51518002356DB /* CSMCommandCreator.h */,
+				3E04881309D51518002356DB /* CSMCommandCreator.m */,
+				3E87023608DD33260015C10A /* CSMCommand.h */,
+				3E87023708DD33260015C10A /* CSMCommand.m */,
+				3E76119808DE875200FA5677 /* CSMCommand */,
+				3E05BDF908DE28C100121A7B /* NSString-UTIAdditions.h */,
+				3E05BDFA08DE28C100121A7B /* NSString-UTIAdditions.m */,
+				3E8702B308DD41C90015C10A /* CocoaScriptMenu.h */,
+				3E9F606508E0D96D00BD4B78 /* CSMFileSubscription.h */,
+				3E9F606608E0D96D00BD4B78 /* CSMFileSubscription.m */,
+				3E05C08408DE49D700121A7B /* CSMScriptMenu.h */,
+				3E05C08508DE49D700121A7B /* CSMScriptMenu.m */,
+				3EDF534808EF52F400FAAC2C /* CSMMenuNameParser.h */,
+				3EDF534908EF52F400FAAC2C /* CSMMenuNameParser.m */,
+				3E0E09030B648B4F00D8F17F /* Contributors */,
+				3E62271F08FB641700639892 /* TenThreeCompatibility.h */,
+				3E62272008FB641700639892 /* TenThreeCompatibility.m */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		1058C7B0FEA5585E11CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7B2FEA5585E11CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0867D6A5FE840307C02AAC07 /* AppKit.framework */,
+				0867D69BFE84028FC02AAC07 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		32C88DFF0371C24200C91783 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32DBCF5E0370ADEE00C91783 /* CocoaScriptMenu_Prefix.pch */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		3E76119808DE875200FA5677 /* CSMCommand */ = {
+			isa = PBXGroup;
+			children = (
+				3EC96ABF08DE274B002DE0DF /* CSMExecutableCommand.h */,
+				3EC96AC008DE274B002DE0DF /* CSMExecutableCommand.m */,
+				3E87025908DD36820015C10A /* CSMWorkflowCommand.h */,
+				3E87025A08DD36820015C10A /* CSMWorkflowCommand.m */,
+				3E87025308DD366C0015C10A /* CSMShellScriptCommand.h */,
+				3E87025408DD366C0015C10A /* CSMShellScriptCommand.m */,
+				3E87024B08DD363C0015C10A /* CSMAppleScriptCommand.h */,
+				3E87024C08DD363C0015C10A /* CSMAppleScriptCommand.m */,
+				3EC96AE308DE2767002DE0DF /* CSMFolderCommand.h */,
+				3EC96AE408DE2767002DE0DF /* CSMFolderCommand.m */,
+				3E05BF0708DE384E00121A7B /* CSMPlainOpenCommand.h */,
+				3E05BF0808DE384E00121A7B /* CSMPlainOpenCommand.m */,
+				3E05BE2408DE2A3500121A7B /* CSMCommand-SubclassMustImplement.h */,
+				3E05BE2508DE2A3500121A7B /* CSMCommand-SubclassMustImplement.m */,
+				3E04882809D51661002356DB /* CSMBaseCommand.h */,
+				3E04882909D51661002356DB /* CSMBaseCommand.m */,
+			);
+			path = CSMCommand;
+			sourceTree = "<group>";
+		};
+		3E8702AA08DD415E0015C10A /* test */ = {
+			isa = PBXGroup;
+			children = (
+				3E9F5C7F08DF84F400BD4B78 /* FolderTest */,
+				3EC96A9A08DE22EA002DE0DF /* test.workflow */,
+				3E8702AF08DD418D0015C10A /* UTITests.h */,
+				3E8702B008DD418D0015C10A /* UTITests.m */,
+				3EB2C33D08DE112300F0C359 /* test.scpt */,
+				3EDF543008EF77B000FAAC2C /* MenuNameParserTest.h */,
+				3EDF543108EF77B000FAAC2C /* MenuNameParserTest.m */,
+			);
+			path = test;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8DC2EF500486A6940098B216 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E87023808DD33260015C10A /* CSMCommand.h in Headers */,
+				3E87024D08DD363C0015C10A /* CSMAppleScriptCommand.h in Headers */,
+				3E87025508DD366C0015C10A /* CSMShellScriptCommand.h in Headers */,
+				3E87025B08DD36820015C10A /* CSMWorkflowCommand.h in Headers */,
+				3E8702B908DD42090015C10A /* CocoaScriptMenu.h in Headers */,
+				3E05BDFB08DE28C100121A7B /* NSString-UTIAdditions.h in Headers */,
+				3E05BE2608DE2A3500121A7B /* CSMCommand-SubclassMustImplement.h in Headers */,
+				3E05BF0908DE384E00121A7B /* CSMPlainOpenCommand.h in Headers */,
+				3E05C08608DE49D700121A7B /* CSMScriptMenu.h in Headers */,
+				3E9F606708E0D96D00BD4B78 /* CSMFileSubscription.h in Headers */,
+				3EDF534A08EF52F400FAAC2C /* CSMMenuNameParser.h in Headers */,
+				3ED7014A08FB6C51003EB257 /* TenThreeCompatibility.h in Headers */,
+				3E04881409D51518002356DB /* CSMCommandCreator.h in Headers */,
+				3E04881609D5152A002356DB /* CSMExecutableCommand.h in Headers */,
+				3E04881709D5152B002356DB /* CSMFolderCommand.h in Headers */,
+				3E04882A09D51661002356DB /* CSMBaseCommand.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		3E87022B08DD32CF0015C10A /* UnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3E87022E08DD32CF0015C10A /* Build configuration list for PBXNativeTarget "UnitTests" */;
+			buildPhases = (
+				3E87022708DD32CF0015C10A /* Resources */,
+				3E87022808DD32CF0015C10A /* Sources */,
+				3E87022908DD32CF0015C10A /* Frameworks */,
+				3E87022A08DD32CF0015C10A /* ShellScript */,
+				3E9F5CFC08DF8FAD00BD4B78 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3E87023308DD32DD0015C10A /* PBXTargetDependency */,
+			);
+			name = UnitTests;
+			productName = UnitTests;
+			productReference = 3E87022C08DD32CF0015C10A /* UnitTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+		8DC2EF4F0486A6940098B216 /* CocoaScriptMenu */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3E87021808DD325A0015C10A /* Build configuration list for PBXNativeTarget "CocoaScriptMenu" */;
+			buildPhases = (
+				8DC2EF500486A6940098B216 /* Headers */,
+				8DC2EF520486A6940098B216 /* Resources */,
+				8DC2EF540486A6940098B216 /* Sources */,
+				8DC2EF560486A6940098B216 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CocoaScriptMenu;
+			productInstallPath = "$(HOME)/Library/Frameworks";
+			productName = CocoaScriptMenu;
+			productReference = 8DC2EF5B0486A6940098B216 /* CocoaScriptMenu.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0867D690FE84028FC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 3E87021C08DD325A0015C10A /* Build configuration list for PBXProject "CocoaScriptMenu" */;
+			hasScannedForEncodings = 1;
+			mainGroup = 0867D691FE84028FC02AAC07 /* CocoaScriptMenu */;
+			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
+			projectDirPath = "";
+			targets = (
+				8DC2EF4F0486A6940098B216 /* CocoaScriptMenu */,
+				3E87022B08DD32CF0015C10A /* UnitTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3E87022708DD32CF0015C10A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E9F612E08E0E5DB00BD4B78 /* test.scpt in Resources */,
+				3EA19BBC08DE12B200C1D575 /* scripticon.tiff in Resources */,
+				3EC96A9F08DE22EB002DE0DF /* test.workflow in Resources */,
+				3E9F5C8108DF84F400BD4B78 /* FolderTest in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DC2EF520486A6940098B216 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */,
+				3EA19BBB08DE12B200C1D575 /* scripticon.tiff in Resources */,
+				3E9F5E9708DFB8DD00BD4B78 /* License.txt in Resources */,
+				3E0E09040B648B4F00D8F17F /* Contributors in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3E87022A08DD32CF0015C10A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3E87022808DD32CF0015C10A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E8702B108DD418D0015C10A /* UTITests.m in Sources */,
+				3EDF543308EF77B000FAAC2C /* MenuNameParserTest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DC2EF540486A6940098B216 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E87023908DD33260015C10A /* CSMCommand.m in Sources */,
+				3E87024E08DD363C0015C10A /* CSMAppleScriptCommand.m in Sources */,
+				3E87025608DD366C0015C10A /* CSMShellScriptCommand.m in Sources */,
+				3E87025C08DD36820015C10A /* CSMWorkflowCommand.m in Sources */,
+				3E05BEED08DE36B100121A7B /* CSMExecutableCommand.m in Sources */,
+				3E05BEF008DE36B400121A7B /* CSMFolderCommand.m in Sources */,
+				3E05BDFC08DE28C100121A7B /* NSString-UTIAdditions.m in Sources */,
+				3E05BE2708DE2A3500121A7B /* CSMCommand-SubclassMustImplement.m in Sources */,
+				3E05BF0A08DE384E00121A7B /* CSMPlainOpenCommand.m in Sources */,
+				3E05C08708DE49D700121A7B /* CSMScriptMenu.m in Sources */,
+				3E9F606808E0D96D00BD4B78 /* CSMFileSubscription.m in Sources */,
+				3EDF534B08EF52F400FAAC2C /* CSMMenuNameParser.m in Sources */,
+				3ED7014908FB6C50003EB257 /* TenThreeCompatibility.m in Sources */,
+				3E04881509D51518002356DB /* CSMCommandCreator.m in Sources */,
+				3E04882B09D51661002356DB /* CSMBaseCommand.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3E87023308DD32DD0015C10A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8DC2EF4F0486A6940098B216 /* CocoaScriptMenu */;
+			targetProxy = 3E87023208DD32DD0015C10A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		089C1666FE841158C02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C1667FE841158C02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3E87021908DD325A0015C10A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH)";
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = "";
+				FRAMEWORK_VERSION = A;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = CocoaScriptMenu_Prefix.pch;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "@executable_path/../Frameworks";
+				LIBRARY_STYLE = DYNAMIC;
+				MACH_O_TYPE = mh_dylib;
+				PREBINDING = NO;
+				PRODUCT_NAME = CocoaScriptMenu;
+				WRAPPER_EXTENSION = framework;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		3E87021A08DD325A0015C10A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = "";
+				FRAMEWORK_VERSION = A;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = CocoaScriptMenu_Prefix.pch;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "@executable_path/../Frameworks";
+				LIBRARY_STYLE = DYNAMIC;
+				MACH_O_TYPE = mh_dylib;
+				PREBINDING = NO;
+				PRODUCT_NAME = CocoaScriptMenu;
+				WRAPPER_EXTENSION = framework;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		3E87021D08DD325A0015C10A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Debug;
+		};
+		3E87021E08DD325A0015C10A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Release;
+		};
+		3E87022F08DD32CF0015C10A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
+				INFOPLIST_FILE = "UnitTests-Info.plist";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				LIBRARY_STYLE = BUNDLE;
+				OPTIMIZATION_CFLAGS = "-O0";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Cocoa,
+					"-framework",
+					SenTestingKit,
+				);
+				OTHER_REZFLAGS = "";
+				PREBINDING = NO;
+				PRODUCT_NAME = UnitTests;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		3E87023008DD32CF0015C10A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
+				INFOPLIST_FILE = "UnitTests-Info.plist";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				LIBRARY_STYLE = BUNDLE;
+				OPTIMIZATION_CFLAGS = "-O0";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Cocoa,
+					"-framework",
+					SenTestingKit,
+				);
+				OTHER_REZFLAGS = "";
+				PREBINDING = NO;
+				PRODUCT_NAME = UnitTests;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3E87021808DD325A0015C10A /* Build configuration list for PBXNativeTarget "CocoaScriptMenu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E87021908DD325A0015C10A /* Debug */,
+				3E87021A08DD325A0015C10A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		3E87021C08DD325A0015C10A /* Build configuration list for PBXProject "CocoaScriptMenu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E87021D08DD325A0015C10A /* Debug */,
+				3E87021E08DD325A0015C10A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		3E87022E08DD32CF0015C10A /* Build configuration list for PBXNativeTarget "UnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E87022F08DD32CF0015C10A /* Debug */,
+				3E87023008DD32CF0015C10A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0867D690FE84028FC02AAC07 /* Project object */;
+}
