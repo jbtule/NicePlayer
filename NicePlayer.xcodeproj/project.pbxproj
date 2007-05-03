@@ -176,6 +176,8 @@
 		69B2197C0BC72AA60054E10E /* TCallScript.h in Headers */ = {isa = PBXBuildFile; fileRef = 69B219780BC72AA60054E10E /* TCallScript.h */; };
 		69B2197D0BC72AA60054E10E /* TCallScript.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B219790BC72AA60054E10E /* TCallScript.m */; };
 		69BCF5510B62C4C20000ABEF /* ogg.icns in Resources */ = {isa = PBXBuildFile; fileRef = 69BCF5500B62C4C20000ABEF /* ogg.icns */; };
+		69DE19D50BE97317009D28B9 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69DE19D20BE972F1009D28B9 /* Sparkle.framework */; };
+		69DE19D60BE97321009D28B9 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 69DE19D20BE972F1009D28B9 /* Sparkle.framework */; };
 		69EFD1BC0B5C8E3400359BF4 /* divx.icns in Resources */ = {isa = PBXBuildFile; fileRef = 69EFD1BB0B5C8E3400359BF4 /* divx.icns */; };
 		8D15AC290486D014006FF6A4 /* NicePlayer_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 32DBCF750370BD2300C91783 /* NicePlayer_Prefix.pch */; };
 		8D15AC2A0486D014006FF6A4 /* NiceDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A37F4AEFDCFA73011CA2CEA /* NiceDocument.h */; };
@@ -271,6 +273,20 @@
 			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
 			remoteInfo = EncryptOC;
 		};
+		69DE19D10BE972F1009D28B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 69DE19C80BE972F1009D28B9 /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216 /* Sparkle.framework */;
+			remoteInfo = Sparkle;
+		};
+		69DE19D30BE972F1009D28B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 69DE19C80BE972F1009D28B9 /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 61B5F90209C4CEE200B25A18 /* Sparkle Test App.app */;
+			remoteInfo = "Sparkle Test App";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -291,6 +307,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				69DE19D60BE97321009D28B9 /* Sparkle.framework in CopyFiles */,
 				2510A62F0B06392600CA8110 /* STEnum.framework in CopyFiles */,
 				3E5970EC09FC8DB2001ED4FA /* CocoaScriptMenu.framework in CopyFiles */,
 				3EEA731E09FC856100AABB1F /* EncryptOC.framework in CopyFiles */,
@@ -478,6 +495,7 @@
 		69B219780BC72AA60054E10E /* TCallScript.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = TCallScript.h; sourceTree = "<group>"; };
 		69B219790BC72AA60054E10E /* TCallScript.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = TCallScript.m; sourceTree = "<group>"; };
 		69BCF5500B62C4C20000ABEF /* ogg.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = ogg.icns; sourceTree = "<group>"; };
+		69DE19C80BE972F1009D28B9 /* Sparkle.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Sparkle.xcodeproj; path = Libraries/sparkle/Sparkle.xcodeproj; sourceTree = "<group>"; };
 		69EFD1BB0B5C8E3400359BF4 /* divx.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = divx.icns; sourceTree = "<group>"; };
 		8D15AC360486D014006FF6A4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D15AC370486D014006FF6A4 /* NicePlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NicePlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -488,6 +506,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69DE19D50BE97317009D28B9 /* Sparkle.framework in Frameworks */,
 				2510A5B80B06374400CA8110 /* QTKit.framework in Frameworks */,
 				3E5970EB09FC8DA9001ED4FA /* CocoaScriptMenu.framework in Frameworks */,
 				3EEA731D09FC854E00AABB1F /* EncryptOC.framework in Frameworks */,
@@ -706,6 +725,7 @@
 		25C5C1E208D4B7F300987A95 /* Other Projects */ = {
 			isa = PBXGroup;
 			children = (
+				69DE19C80BE972F1009D28B9 /* Sparkle.xcodeproj */,
 				3E5970CB09FC8D9A001ED4FA /* CocoaScriptMenu.xcodeproj */,
 				3EEA737109FC87FD00AABB1F /* STEnum10.4.xcodeproj */,
 				3EEA731409FC853F00AABB1F /* EncryptOC.xcodeproj */,
@@ -888,6 +908,15 @@
 			path = AttachedScriptCode;
 			sourceTree = "<group>";
 		};
+		69DE19C90BE972F1009D28B9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				69DE19D20BE972F1009D28B9 /* Sparkle.framework */,
+				69DE19D40BE972F1009D28B9 /* Sparkle Test App.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -1013,6 +1042,10 @@
 					ProjectRef = 3EEA72EE09FC84A700AABB1F /* HodgePodge.xcodeproj */;
 				},
 				{
+					ProductGroup = 69DE19C90BE972F1009D28B9 /* Products */;
+					ProjectRef = 69DE19C80BE972F1009D28B9 /* Sparkle.xcodeproj */;
+				},
+				{
 					ProductGroup = 3EEA737209FC87FD00AABB1F /* Products */;
 					ProjectRef = 3EEA737109FC87FD00AABB1F /* STEnum10.4.xcodeproj */;
 				},
@@ -1071,6 +1104,20 @@
 			fileType = wrapper.cfbundle;
 			path = "EncryptOC Test.octest";
 			remoteRef = 3EEA731B09FC853F00AABB1F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		69DE19D20BE972F1009D28B9 /* Sparkle.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Sparkle.framework;
+			remoteRef = 69DE19D10BE972F1009D28B9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		69DE19D40BE972F1009D28B9 /* Sparkle Test App.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "Sparkle Test App.app";
+			remoteRef = 69DE19D30BE972F1009D28B9 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
