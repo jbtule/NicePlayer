@@ -55,8 +55,7 @@
 		[[NSNotificationCenter defaultCenter] addObserver:self
 												 selector:@selector(rebuildTrackingRects)
 													 name:NSViewFrameDidChangeNotification
-												   object:nil];
-		trackingRect = [self addTrackingRect:[self bounds] owner:[self window] userData:nil assumeInside:NO];
+		 												   object:nil];
     }
     return self;
 }
