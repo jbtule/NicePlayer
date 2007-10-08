@@ -370,9 +370,6 @@
     [self _JTshowPane:[[_toolbarDict objectForKey:anIdentifier] objectForKey:@"Item"]];
 }
 
-
-
-
 -(NSToolbarItem*)toolbar:(NSToolbar *)toolbar itemForItemIdentifier:(NSString *)itemIdentifier willBeInsertedIntoToolbar:(BOOL)flag{
     return [[_toolbarDict objectForKey:itemIdentifier] objectForKey:@"Item"];
 }

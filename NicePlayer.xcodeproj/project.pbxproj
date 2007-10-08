@@ -273,19 +273,26 @@
 			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
 			remoteInfo = EncryptOC;
 		};
+		69765B360BFBDE7600D9C23B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 69DE19C80BE972F1009D28B9 /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 61B5F90209C4CEE200B25A18;
+			remoteInfo = "Sparkle Test App";
+		};
 		69DE19D10BE972F1009D28B9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 69DE19C80BE972F1009D28B9 /* Sparkle.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 8DC2EF5B0486A6940098B216 /* Sparkle.framework */;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
 			remoteInfo = Sparkle;
 		};
-		69DE19D30BE972F1009D28B9 /* PBXContainerItemProxy */ = {
+		69DE1A3E0BE97CD9009D28B9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 69DE19C80BE972F1009D28B9 /* Sparkle.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 61B5F90209C4CEE200B25A18 /* Sparkle Test App.app */;
-			remoteInfo = "Sparkle Test App";
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
+			remoteInfo = Sparkle;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -912,7 +919,7 @@
 			isa = PBXGroup;
 			children = (
 				69DE19D20BE972F1009D28B9 /* Sparkle.framework */,
-				69DE19D40BE972F1009D28B9 /* Sparkle Test App.app */,
+				69765B370BFBDE7600D9C23B /* Sparkle Test App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -995,6 +1002,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				69DE1A3F0BE97CD9009D28B9 /* PBXTargetDependency */,
 				3EC3E296092DAB20008CEE8D /* PBXTargetDependency */,
 				3E5970F209FC8DC0001ED4FA /* PBXTargetDependency */,
 				3EEA732509FC859000AABB1F /* PBXTargetDependency */,
@@ -1106,18 +1114,18 @@
 			remoteRef = 3EEA731B09FC853F00AABB1F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		69765B370BFBDE7600D9C23B /* Sparkle Test App.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "Sparkle Test App.app";
+			remoteRef = 69765B360BFBDE7600D9C23B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		69DE19D20BE972F1009D28B9 /* Sparkle.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Sparkle.framework;
 			remoteRef = 69DE19D10BE972F1009D28B9 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		69DE19D40BE972F1009D28B9 /* Sparkle Test App.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = "Sparkle Test App.app";
-			remoteRef = 69DE19D30BE972F1009D28B9 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -1307,6 +1315,11 @@
 			isa = PBXTargetDependency;
 			name = EncryptOC;
 			targetProxy = 3EEA732409FC859000AABB1F /* PBXContainerItemProxy */;
+		};
+		69DE1A3F0BE97CD9009D28B9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Sparkle;
+			targetProxy = 69DE1A3E0BE97CD9009D28B9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

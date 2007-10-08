@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+  <channel>
+    <title>NicePlayer AppCast</title>
+    <link>http://niceplayer.sf.net</link>
+    <description>NicePlayer AppCast</description>
+    <generator>Feeder 1.4.4 http://reinventedsoftware.com/feeder/</generator>
+    <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+    <language>en</language>
+    <pubDate>Wed, 02 May 2007 21:32:47 -0500</pubDate>
+    <lastBuildDate>Wed, 02 May 2007 21:32:47 -0500</lastBuildDate>
+    <item>
+      <title>NicePlayer 0.95</title>
+      <description><![CDATA[<p>Version 0.95 (v514)
+<br />• 100% Open Source (MPL/LGPL/GPL)
+<br />• Added support for Chapters, and enabling extra Audio and Video tracks for the Core Video engine
+<br />• Added basic support for external subtitle files
+<br />	.ssa substation alpha, 
+<br />	.srt SubRip,
+<br />	.sub MicroDVD
+<br />• Added file type extension recognition for 
+<br />	.divx, 
+<br />	.vdvd (package around VIDEO_TS ala "VIrtual DVDs"), 
+<br />	.mkv (Matroska added in anticipation for future Perian support),
+<br />	 .ogg( for Theora/Ogg support provided by the xiph components), 
+<br />	.flv (for current perian support)
+<br />• New fresh look
+<br />• Added AppleScript-able Transparency, with a default script for applying it
+<br />• Added preference for volume memory on creation of new windows
+<br />• Added AppleScript vocabulary for determining full screen
+<br />• Fixed bug that caused niceplayer to hang on quit after watching a DVD on a Core2Duo Macbook
+<br />• Fixed bug involving not being able to unmute
+<br />• Fixed bug involving changing window level in fullscreen
+<br />• Fixed bug in auto dvd launching script
+<br />• Fixed bug that sometimes would cause movies to show up black when opened off a removable disk
+<br />• Fixed various crashes</p>]]></description>
+      <pubDate>Wed, 02 May 2007 21:32:47 -0500</pubDate>
+      <enclosure url="http://downloads.sourceforge.net/niceplayer/NicePlayer_0.95.dmg?use_mirror=easynews" length="916476" type="application/octet-stream" sparkle:version="0.95"/>
+      <guid isPermaLink="false">niceplayer-095</guid>
+    </item>
+  </channel>
+</rss>

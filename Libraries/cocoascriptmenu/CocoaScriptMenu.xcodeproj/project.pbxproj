@@ -54,11 +54,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3E87023208DD32DD0015C10A /* PBXContainerItemProxy */ = {
+		69BF8BEF0C08CA860057E59C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216 /* CocoaScriptMenu */;
 			remoteInfo = CocoaScriptMenu;
 		};
 /* End PBXContainerItemProxy section */
@@ -320,7 +320,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				3E87023308DD32DD0015C10A /* PBXTargetDependency */,
+				69BF8BF00C08CA860057E59C /* PBXTargetDependency */,
 			);
 			name = UnitTests;
 			productName = UnitTests;
@@ -439,10 +439,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3E87023308DD32DD0015C10A /* PBXTargetDependency */ = {
+		69BF8BF00C08CA860057E59C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8DC2EF4F0486A6940098B216 /* CocoaScriptMenu */;
-			targetProxy = 3E87023208DD32DD0015C10A /* PBXContainerItemProxy */;
+			targetProxy = 69BF8BEF0C08CA860057E59C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
