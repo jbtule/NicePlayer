@@ -1197,7 +1197,7 @@
     if([self inResizeLocation:theEvent])
         resizeDrag = YES;
 		
-	initialDrag = [theEvent locationInWindow];
+	initialDrag =[self convertScreenToBase:[NSEvent mouseLocation]];
 
 }
 

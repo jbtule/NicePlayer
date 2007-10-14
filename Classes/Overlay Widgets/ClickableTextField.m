@@ -45,12 +45,16 @@
 
 @implementation ClickableTextField
 
+
 - (void)mouseDown:(NSEvent *)theEvent
 {
-    if([theEvent clickCount]>1)
+		if([theEvent clickCount]>1)
         [theNiceWindow performMiniaturize:theEvent];
-   
+		else
+			[theNiceWindow mouseDown:theEvent];
 }
+
+
 
 - (void)mouseDragged:(NSEvent *)theEvent
 {
