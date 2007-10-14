@@ -469,17 +469,19 @@
 -(void)setOverlayWindowLocation
 {
     NSRect frame = [self frame];
-    NSRect mainFrame = [[NSScreen mainScreen] frame];
+    NSRect mainFrame = [[NSScreen mainScreen] visibleFrame];
+	NSRect intersect = NSIntersectionRect(frame,mainFrame);
+	
     if(!fullScreen){
-        if([[NSScreen mainScreen] visibleFrame].origin.y < frame.origin.y){
+        if(NSEqualRects(intersect, frame)){
             [theOverlayWindow setFrame:NSMakeRect(frame.origin.x,
                                                   frame.origin.y,
                                                   frame.size.width,
                                                   32) display:YES];
         } else {
-            [theOverlayWindow setFrame:NSMakeRect(frame.origin.x,
-                                                  [[NSScreen mainScreen] visibleFrame].origin.y,
-                                                  frame.size.width,
+            [theOverlayWindow setFrame:NSMakeRect(intersect.origin.x,
+                                                  intersect.origin.y,
+                                                  intersect.size.width,
                                                   32) display:YES];
         }
     } else
@@ -503,10 +505,11 @@
 
 -(void)showOverLayTitle
 {
+    [self setOverlayTitleLocation];
+	
     if((titleOverlayIsShowing) && !(isInitialDisplay))
         return;
     
-    [self setOverlayTitleLocation];
     [[FadeOut fadeOut] removeWindow:theOverlayTitleBar];
     [theOverlayTitleBar setAlphaValue:1.0];
     titleOverlayIsShowing = YES;
@@ -533,19 +536,19 @@
 	
 	NSRect frame = [self frame];
     NSRect visibleFrame = [[NSScreen mainScreen] visibleFrame];
+	NSRect intersect = NSIntersectionRect(frame,visibleFrame);
 	
     if(!fullScreen){
-        /*if((visibleFrame.origin.y + visibleFrame.size.height)
-		> frame.origin.y + frame.size.height)*/
-		[theOverlaySubTitleWindow setFrame:NSMakeRect(frame.origin.x,
-													  frame.origin.y+32,
-													  frame.size.width,
-													  frame.size.height- 24 - 32) display:YES];
-		/* else
-		[theOverlaySubTitleWindow setFrame:NSMakeRect(visibleFrame.origin.x,
-													  visibleFrame.origin.y+32,
-													  visibleFrame.size.width,
-													  visibleFrame.size.height- 24 - 32) display:YES];*/
+		if(NSEqualRects(intersect, frame))
+			[theOverlaySubTitleWindow setFrame:NSMakeRect(frame.origin.x,
+														  frame.origin.y+32,
+														  frame.size.width,
+														  frame.size.height- 24 - 32) display:YES];
+		else
+			[theOverlaySubTitleWindow setFrame:NSMakeRect(intersect.origin.x,
+														  intersect.origin.y+32,
+														  intersect.size.width,
+														  intersect.size.height- 24 - 32) display:YES];
     } else
         [theOverlaySubTitleWindow setFrame:NSMakeRect(visibleFrame.origin.x,
 													  visibleFrame.origin.y+32,
@@ -565,26 +568,26 @@
 {
     NSRect frame = [self frame];
     NSRect visibleFrame = [[NSScreen mainScreen] visibleFrame];
-	
+	NSRect intersect = NSIntersectionRect(frame,visibleFrame);
     if(!fullScreen){
-        if((visibleFrame.origin.y + visibleFrame.size.height)
-           > frame.origin.y + frame.size.height)
+        if(NSEqualRects(intersect, frame))
             [theOverlayTitleBar setFrame:NSMakeRect(frame.origin.x,
                                                     frame.origin.y + frame.size.height - 24,
                                                     frame.size.width,
                                                     24) display:YES];
         else
-            [theOverlayTitleBar setFrame:NSMakeRect(frame.origin.x,
-                                                    visibleFrame.origin.y
-                                                    + visibleFrame.size.height - 24,
-                                                    frame.size.width,
+            [theOverlayTitleBar setFrame:NSMakeRect(intersect.origin.x,
+                                                    intersect.origin.y
+                                                    + intersect.size.height - 24,
+                                                    intersect.size.width,
                                                     24) display:YES];
-    } else
+    } else{
         [theOverlayTitleBar setFrame:NSMakeRect(visibleFrame.origin.x,
                                                 visibleFrame.origin.y
                                                 + visibleFrame.size.height - 48,
                                                 visibleFrame.size.width,
                                                 24) display:YES];
+	}
 }
 
 -(void)hideOverLayTitle
@@ -607,15 +610,29 @@
 
 -(void)showOverLayVolume
 {
+	[self setOverLayVolumeLocation];
     [[FadeOut fadeOut] removeWindow:theOverlayVolume];
     [theOverlayVolume setAlphaValue:1.0];
 }
 
 -(void)setOverLayVolumeLocation
 {
-    [theOverlayVolume setFrame:NSOffsetRect([theOverlayVolume frame],
-                                            NSMidX([self frame]) - NSMidX([theOverlayVolume frame]),
-                                            NSMidY([self frame]) - NSMidY([theOverlayVolume frame]))		display:YES];
+	NSRect frame =[self frame];
+	NSRect visibleFrame = [[NSScreen mainScreen] visibleFrame];
+	NSRect intersect = NSIntersectionRect(frame,visibleFrame);
+	
+	if(NSEqualRects(intersect, frame))
+		
+		[theOverlayVolume setFrame:NSOffsetRect([theOverlayVolume frame],
+												NSMidX(frame) -  NSMidX([theOverlayVolume frame]),
+												NSMidY(frame) - NSMidY([theOverlayVolume frame]))		display:YES];
+	
+	else
+	    [theOverlayVolume setFrame:NSOffsetRect([theOverlayVolume frame],
+												NSMidX(intersect) - NSMidX([theOverlayVolume frame]),
+												NSMidY(intersect)- NSMidY([theOverlayVolume frame]))		display:YES];
+	
+	
 }
 
 -(void)hideOverLayVolume
@@ -1196,9 +1213,9 @@
 {
     if([self inResizeLocation:theEvent])
         resizeDrag = YES;
-		
+	
 	initialDrag =[self convertScreenToBase:[NSEvent mouseLocation]];
-
+	
 }
 
 -(void)mouseDragged:(NSEvent *)anEvent
@@ -1221,9 +1238,9 @@
             dropScreen = YES;
         }
 		[self showOverLayTitle];
-		
+		[self setOverLaySubtitleLocation];
 		/* If we don't do a remove, the child window gets automatically placed when the parent window moves, even if we try
-		to set the location manually. */
+			to set the location manually. */
 		if(fullScreen){
 			[self removeChildWindow:theOverlayTitleBar];
 			[self removeChildWindow:theOverlaySubTitleWindow];
@@ -1254,7 +1271,7 @@
     dropScreen = NO;
     
     [self hideOverLayTitle];
-     
+	
 }
 
 /* These two events always get passed down to the view. */
