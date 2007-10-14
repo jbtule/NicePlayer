@@ -95,6 +95,7 @@
     id initialFadeTimer;
 	
     NSSize aspectRatio;
+	NSPoint initialDrag;
     
     id notifierTimer;
 }

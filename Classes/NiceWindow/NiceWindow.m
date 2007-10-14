@@ -58,9 +58,9 @@
                     defer:(BOOL)flag
 {
     if((self = [super initWithContentRect:contentRect
-                               styleMask:NSBorderlessWindowMask
-                                 backing:NSBackingStoreBuffered
-                                   defer:YES])){
+								styleMask:NSBorderlessWindowMask
+								  backing:NSBackingStoreBuffered
+									defer:YES])){
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(presentMultiple)
                                                      name:@"PresentMultiple"
@@ -93,8 +93,8 @@
         timeDisplayStyle = [[Preferences mainPrefs] defaultTimeDisplay];
 		[[Preferences mainPrefs] addObserver:self
 								  forKeyPath:@"opacityWhenWindowIsTransparent" 
-					 options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld)
-					 context:NULL];
+									 options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld)
+									 context:NULL];
     }
     return self;
 }
@@ -105,7 +105,7 @@
 
 -(void)awakeFromNib
 {
-
+	
     [theScrubBar setTarget:theMovieView];
     [self setContentView:theMovieView];
     [theScrubBar setAction:@selector(scrub:)];
@@ -122,9 +122,9 @@
 	[textShadow setShadowColor:[NSColor blackColor]]; 
 	
 	[theOverlaySubTitle setAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
-	[NSColor whiteColor],NSForegroundColorAttributeName,
-	textShadow,NSShadowAttributeName,
-	tParagraph,NSParagraphStyleAttributeName, nil]];
+		[NSColor whiteColor],NSForegroundColorAttributeName,
+		textShadow,NSShadowAttributeName,
+		tParagraph,NSParagraphStyleAttributeName, nil]];
 	
     if([[Preferences mainPrefs] windowAlwaysOnTop])
         [self floatWindow];
@@ -153,7 +153,7 @@
         [initialFadeTimer invalidate];
     [timeUpdaterTimer invalidate];
 	
-
+	
 	isClosing = YES;
     [theMovieView close];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -213,14 +213,14 @@
 
 -(IBAction)performClose:(id)sender
 {	
-
+	
 	
     [(NPMovieView *)theMovieView stop];
 	[self orderOut:sender];//order out before stops double button click from causing crash
-    if(fullScreen)
-        [[NSDocumentController sharedDocumentController] toggleFullScreen:sender];
-	
-	[self close];
+		if(fullScreen)
+			[[NSDocumentController sharedDocumentController] toggleFullScreen:sender];
+		
+		[self close];
 }
 
 -(void)updateVolume
@@ -289,11 +289,11 @@
     id tAttString;
 	
 	double tLength =[theMovieView totalTime];
-		double tCurr =[theMovieView currentMovieTime];
-
-			if(theMovieView==nil){
-				tLength=0;
-				tCurr =0;
+	double tCurr =[theMovieView currentMovieTime];
+	
+	if(theMovieView==nil){
+		tLength=0;
+		tCurr =0;
 				}
 				
     switch(timeDisplayStyle){
@@ -304,9 +304,9 @@
                 (tCurr
                  - [[NSTimeZone localTimeZone] secondsFromGMTForDate:
                      [NSDate dateWithTimeIntervalSinceReferenceDate:0]])];
-					 
-			 tAttString = [[[NSAttributedString alloc] initWithString:[aDate descriptionWithCalendarFormat:@"%H:%M:%S" timeZone:nil locale:nil]
-												attributes:[NSDictionary dictionaryWithObjectsAndKeys:[NSFont boldSystemFontOfSize:[NSFont systemFontSizeForControlSize:NSSmallControlSize]],NSFontAttributeName,nil]] autorelease];
+			
+			tAttString = [[[NSAttributedString alloc] initWithString:[aDate descriptionWithCalendarFormat:@"%H:%M:%S" timeZone:nil locale:nil]
+														  attributes:[NSDictionary dictionaryWithObjectsAndKeys:[NSFont boldSystemFontOfSize:[NSFont systemFontSizeForControlSize:NSSmallControlSize]],NSFontAttributeName,nil]] autorelease];
 			[theTimeField setAttributedStringValue:tAttString];
             break;
         case TIME_REMAINING:
@@ -315,9 +315,9 @@
                  - tCurr
                  - [[NSTimeZone localTimeZone] secondsFromGMTForDate:
                      [NSDate dateWithTimeIntervalSinceReferenceDate:0]])];
-					 
-					 	 tAttString = [[[NSAttributedString alloc] initWithString:[aDate descriptionWithCalendarFormat:@"-%H:%M:%S" timeZone:nil locale:nil]
-												attributes:[NSDictionary dictionaryWithObjectsAndKeys:[NSFont boldSystemFontOfSize:[NSFont systemFontSizeForControlSize:NSSmallControlSize]],NSFontAttributeName,nil]]autorelease];
+			
+			tAttString = [[[NSAttributedString alloc] initWithString:[aDate descriptionWithCalendarFormat:@"-%H:%M:%S" timeZone:nil locale:nil]
+														  attributes:[NSDictionary dictionaryWithObjectsAndKeys:[NSFont boldSystemFontOfSize:[NSFont systemFontSizeForControlSize:NSSmallControlSize]],NSFontAttributeName,nil]]autorelease];
 			[theTimeField setAttributedStringValue:tAttString];
             break;
     }
@@ -342,7 +342,7 @@
 #pragma mark Overlays
 
 /**
- * Setup the locations of all of the overlays given the initial setup of the window. There are three
+* Setup the locations of all of the overlays given the initial setup of the window. There are three
  * primary overlay windows: the controller bar, the title bar and the volume window.
  */
 -(void)setupOverlays
@@ -356,14 +356,14 @@
                                 currentFrame.size.width,
                                 [theOverlayWindow frame].size.height)
       withVisibility:initialShow];
-	  
-	      [self putOverlay:theOverlaySubTitleWindow
+	
+	[self putOverlay:theOverlaySubTitleWindow
              inFrame:NSMakeRect(currentFrame.origin.x,
                                 currentFrame.origin.y+32,
                                 currentFrame.size.width,
                                 currentFrame.size.height - 24 - 32)
       withVisibility:YES];
-	  
+	
     [theOverlayWindow createResizeTriangle];
     [self putOverlay:theOverlayTitleBar
              inFrame:NSMakeRect(currentFrame.origin.x,
@@ -379,12 +379,12 @@
     [self putOverlay:theOverlayNotifier
              inFrame:NSMakeRect(currentFrame.origin.x,
                                 currentFrame.origin.y + currentFrame.size.height
-				- [theOverlayTitleBar frame].size.height - [theOverlayNotifier frame].size.height,
+								- [theOverlayTitleBar frame].size.height - [theOverlayNotifier frame].size.height,
                                 currentFrame.size.width,
                                 [theOverlayNotifier frame].size.height)
       withVisibility:NO];
-	  
-	  
+	
+	
 	if([[Preferences mainPrefs] showInitialOverlays]){
 		id initialFadeObjects = [NSMutableSet setWithObjects:theOverlayWindow, theOverlayTitleBar, nil];
 		NSDictionary *fadeDict = [NSDictionary dictionaryWithObjects:
@@ -491,7 +491,7 @@
 
 -(void)hideOverLayWindow
 {
-  if(windowOverlayIsShowing == NO)
+	if(windowOverlayIsShowing == NO)
         return;
     if(isInitialDisplay)
         [self hideInitialWindows];
@@ -515,12 +515,12 @@
 -(void)showOverLaySubtitle{
     
     [theOverlaySubTitleWindow setAlphaValue:1.0];
-
+	
 }
 
 -(BOOL)isOverlaySubtitleShowing{
     
-   return [theOverlaySubTitleWindow alphaValue] > 0.1;
+	return [theOverlaySubTitleWindow alphaValue] > 0.1;
     
 }
 
@@ -530,31 +530,31 @@
 
 
 -(void)setOverLaySubtitleLocation{
-
- NSRect frame = [self frame];
+	
+	NSRect frame = [self frame];
     NSRect visibleFrame = [[NSScreen mainScreen] visibleFrame];
-
+	
     if(!fullScreen){
         /*if((visibleFrame.origin.y + visibleFrame.size.height)
-           > frame.origin.y + frame.size.height)*/
-            [theOverlaySubTitleWindow setFrame:NSMakeRect(frame.origin.x,
-                                                    frame.origin.y+32,
-                                                    frame.size.width,
-                                                     frame.size.height- 24 - 32) display:YES];
-       /* else
-                [theOverlaySubTitleWindow setFrame:NSMakeRect(visibleFrame.origin.x,
-                                                visibleFrame.origin.y+32,
-												visibleFrame.size.width,
-                                                visibleFrame.size.height- 24 - 32) display:YES];*/
+		> frame.origin.y + frame.size.height)*/
+		[theOverlaySubTitleWindow setFrame:NSMakeRect(frame.origin.x,
+													  frame.origin.y+32,
+													  frame.size.width,
+													  frame.size.height- 24 - 32) display:YES];
+		/* else
+		[theOverlaySubTitleWindow setFrame:NSMakeRect(visibleFrame.origin.x,
+													  visibleFrame.origin.y+32,
+													  visibleFrame.size.width,
+													  visibleFrame.size.height- 24 - 32) display:YES];*/
     } else
         [theOverlaySubTitleWindow setFrame:NSMakeRect(visibleFrame.origin.x,
-                                                visibleFrame.origin.y+32,
-												visibleFrame.size.width,
-                                                visibleFrame.size.height- 24 - 32) display:YES];
-
-
-
-  
+													  visibleFrame.origin.y+32,
+													  visibleFrame.size.width,
+													  visibleFrame.size.height- 24 - 32) display:YES];
+	
+	
+	
+	
 }
 
 /**
@@ -565,7 +565,7 @@
 {
     NSRect frame = [self frame];
     NSRect visibleFrame = [[NSScreen mainScreen] visibleFrame];
-
+	
     if(!fullScreen){
         if((visibleFrame.origin.y + visibleFrame.size.height)
            > frame.origin.y + frame.size.height)
@@ -651,9 +651,9 @@
 -(void)setWindowIsFloating:(BOOL)aBool
 {
     if(aBool)
-	[self floatWindow];
+		[self floatWindow];
     else
-	[self unfloatWindow];
+		[self unfloatWindow];
 }
 
 -(void)toggleFixedAspectRatio
@@ -663,9 +663,9 @@
 
 -(void)setFixedAspect:(BOOL)aBool{
     if(!aBool){
-	[self setResizeIncrements:NSMakeSize(1.0,1.0)];
+		[self setResizeIncrements:NSMakeSize(1.0,1.0)];
     } else{
-	[self setAspectRatio:aspectRatio];
+		[self setAspectRatio:aspectRatio];
         [self resizeToAspectRatio];
     }
 }
@@ -737,16 +737,16 @@
 -(void)makeFullScreenOnScreen:(NSScreen*) aScreen
 {
     if(!fullScreen){
-	fullScreen = YES;
-	oldWindowLevel = [self level];
+		fullScreen = YES;
+		oldWindowLevel = [self level];
         
-	[self setLevel:NSFloatingWindowLevel +2];
-	[[[self windowController] document] closePlaylistDrawer:self];
-	[self makeKeyAndOrderFront:self];
-	beforeFullScreen = [self frame];
-	[self fillScreenSizeOnScreen:aScreen];
-
-	[self hideNotifier];
+		[self setLevel:NSFloatingWindowLevel +2];
+		[[[self windowController] document] closePlaylistDrawer:self];
+		[self makeKeyAndOrderFront:self];
+		beforeFullScreen = [self frame];
+		[self fillScreenSizeOnScreen:aScreen];
+		
+		[self hideNotifier];
     }
     [theMovieView drawMovieFrame];
     if([[Preferences mainPrefs] autoplayOnFullScreen]){
@@ -754,19 +754,19 @@
     };
     [self hideAllImmediately];
 	[self setOverLaySubtitleLocation];
-
+	
 }
 
 -(void)makeNormalScreen
 {
     if(fullScreen){
-	[self setLevel:oldWindowLevel];
+		[self setLevel:oldWindowLevel];
         [self resetFillingFlags];
         [self setFrame:beforeFullScreen display:NO];
         fullScreen = NO;
-	if([self fixedAspect])
-	    [self resizeToAspectRatio];
-	[self hideNotifier];
+		if([self fixedAspect])
+			[self resizeToAspectRatio];
+		[self hideNotifier];
     }
     [theMovieView drawMovieFrame];
     [theOverlayTitleBar orderFront:self];
@@ -860,58 +860,61 @@
     if(newHeight <= [self minSize].height || newWidth <= [self minSize].width) {
         newHeight = [self frame].size.height;
         newWidth = [self frame].size.width;
-
+		
     }
     
     switch([[Preferences mainPrefs] scrollResizePin]){
         case PIN_LEFT_TOP:
             return NSMakeRect([self frame].origin.x,
-			      [self frame].origin.y + ([self frame].size.height - newHeight),
-			      newWidth, newHeight);
+							  [self frame].origin.y + ([self frame].size.height - newHeight),
+							  newWidth, newHeight);
             break;
         case PIN_CENTER:
             return NSMakeRect([self frame].origin.x+(([self frame].size.width-newWidth)/2),
-			      [self frame].origin.y+(([self frame].size.height-newHeight)/2),
-			      newWidth, newHeight);
+							  [self frame].origin.y+(([self frame].size.height-newHeight)/2),
+							  newWidth, newHeight);
             break;
-	case PIN_SMART:
-	{
-	    NSRect screenFrame = [[self screen] visibleFrame];
-	    NSRect centerRect = NSMakeRect([self frame].origin.x+(([self frame].size.width-newWidth)/2),
-					[self frame].origin.y+(([self frame].size.height-newHeight)/2),
-					newWidth, newHeight);
-	    NSRect newRect = centerRect;
-
-	    if(([self frame].origin.x < screenFrame.origin.x)
-	       || ([self frame].origin.y < screenFrame.origin.y)
-	       || (([self frame].origin.x + [self frame].size.width) > (screenFrame.origin.x + screenFrame.size.width))
-	       || (([self frame].origin.y + [self frame].size.height) > (screenFrame.origin.y + screenFrame.size.height))){
-		   return centerRect;
-	    }
-	    
-	    if(newRect.origin.x < screenFrame.origin.x)
-		newRect.origin.x = screenFrame.origin.x;
-		
-	    if(newRect.origin.y < screenFrame.origin.y)
-		newRect.origin.y = screenFrame.origin.y;
-		
-	    if((screenFrame.origin.x + screenFrame.size.width) < (newRect.origin.x + newRect.size.width))
-		newRect.origin.x -= (newRect.origin.x + newRect.size.width) - (screenFrame.origin.x + screenFrame.size.width);
-
-	    if((screenFrame.origin.y + screenFrame.size.height) < (newRect.origin.y + newRect.size.height))
-		newRect.origin.y -= (newRect.origin.y + newRect.size.height) - (screenFrame.origin.y + screenFrame.size.height);
-	    
-	    if(newRect.origin.x < screenFrame.origin.x)
-		newRect.origin.x = centerRect.origin.x;
-
-	    if(newRect.origin.y < screenFrame.origin.y)
-	       newRect.origin.y = centerRect.origin.y;
-	    return newRect;
-	}
+		case PIN_SMART:
+		{
+			NSRect screenFrame = [[self screen] visibleFrame];
+			NSRect centerRect = NSMakeRect([self frame].origin.x+(([self frame].size.width-newWidth)/2),
+										   [self frame].origin.y+(([self frame].size.height-newHeight)/2),
+										   newWidth, newHeight);
+			NSRect newRect = centerRect;
+			
+			if(([self frame].origin.x < screenFrame.origin.x)
+			   || ([self frame].origin.y < screenFrame.origin.y)
+			   || (([self frame].origin.x + [self frame].size.width) > (screenFrame.origin.x + screenFrame.size.width))
+			   || (([self frame].origin.y + [self frame].size.height) > (screenFrame.origin.y + screenFrame.size.height))){
+				return centerRect;
+			}
+			
+			if(newRect.origin.x < screenFrame.origin.x)
+				newRect.origin.x = screenFrame.origin.x;
+			
+			if(newRect.origin.y < screenFrame.origin.y)
+				newRect.origin.y = screenFrame.origin.y;
+			
+			if((screenFrame.origin.x + screenFrame.size.width) < (newRect.origin.x + newRect.size.width))
+				newRect.origin.x -= (newRect.origin.x + newRect.size.width) - (screenFrame.origin.x + screenFrame.size.width);
+			
+			if((screenFrame.origin.y + screenFrame.size.height) < (newRect.origin.y + newRect.size.height))
+				newRect.origin.y -= (newRect.origin.y + newRect.size.height) - (screenFrame.origin.y + screenFrame.size.height);
+			
+			if(newRect.origin.x < screenFrame.origin.x)
+				newRect.origin.x = centerRect.origin.x;
+			
+			if(newRect.origin.y < screenFrame.origin.y)
+				newRect.origin.y = centerRect.origin.y;
+			return newRect;
+		}
     }
     
     return NSMakeRect(0, 0, 100, 100);
 }
+
+
+
 
 /**
 * Resize the window by a floating point percentage value, with 1.0 being no change.
@@ -955,7 +958,7 @@
     NSDictionary *fadeDict = [NSDictionary dictionaryWithObjects:
         [NSArray arrayWithObjects:self,	notifierFade, @"clearNotifierTimer",	nil]
                                                          forKeys:
-	[NSArray arrayWithObjects:@"Window", @"Fade", @"Selector",  nil]];
+		[NSArray arrayWithObjects:@"Window", @"Fade", @"Selector",  nil]];
     if(notifierTimer)
 		[notifierTimer invalidate];
     notifierTimer = [[FadeOut fadeOut] notifierFadeForDict:fadeDict];
@@ -965,25 +968,25 @@
 {
     NSRect currentFrame;
     if(!fullScreen)
-	currentFrame = [self frame];
+		currentFrame = [self frame];
     else {
-	currentFrame = [[NSScreen mainScreen] frame];
-	currentFrame.origin.y -= 48;
+		currentFrame = [[NSScreen mainScreen] frame];
+		currentFrame.origin.y -= 48;
     }
     
     [theOverlayNotifier setFrame:NSMakeRect(currentFrame.origin.x,
-                                currentFrame.origin.y + currentFrame.size.height
-				- [theOverlayTitleBar frame].size.height - [theOverlayNotifier frame].size.height,
-                                currentFrame.size.width,
-                                [theOverlayNotifier frame].size.height)
-      display:YES];
+											currentFrame.origin.y + currentFrame.size.height
+											- [theOverlayTitleBar frame].size.height - [theOverlayNotifier frame].size.height,
+											currentFrame.size.width,
+											[theOverlayNotifier frame].size.height)
+						 display:YES];
 }
 
 -(void)hideNotifier
 {
     [theOverlayNotifier setAlphaValue:0.0];
     if(notifierTimer)
-	[notifierTimer invalidate];
+		[notifierTimer invalidate];
     notifierTimer = nil;
     [[FadeOut fadeOut] removeWindow:theOverlayNotifier];
 }
@@ -1065,8 +1068,8 @@
 - (void)setAspectRatio:(NSSize)ratio
 {   
     if((ratio.width == 0) || (ratio.height == 0)){
-	ratio.width = 1;
-	ratio.height = 1;
+		ratio.width = 1;
+		ratio.height = 1;
     }
     aspectRatio = ratio;
     [super setAspectRatio:ratio];
@@ -1083,11 +1086,11 @@
 - (NSSize)aspectRatio
 {
     if(fixedAspectRatio)
-	return [super aspectRatio];
+		return [super aspectRatio];
     else{
         return NSMakeSize( ([self frame].size.width / [self frame].size.height) * aspectRatio.height, aspectRatio.height);
     }
-
+	
 }
 
 /**
@@ -1099,7 +1102,7 @@
 
 -(NSSize)getResizeAspectRatioSize
 {
-
+	
     return [self getResizeAspectRatioSizeOnScreen:[self screen]];
 }
 
@@ -1118,7 +1121,7 @@
             return NSMakeSize(width, (width / ratio.width) * ratio.height);
         }
     }
-
+	
     return NSMakeSize(newWidth, [self frame].size.height);
 }
 
@@ -1158,15 +1161,15 @@
 	if(fullScreen){
 	    [self removeChildWindow:theOverlayTitleBar];
 		[self removeChildWindow:theOverlaySubTitleWindow];
-		}
-
+	}
+	
     [self setFrame:[self centerRect:[self frame] onScreen:aScreen]
            display:YES];
-		   	if(fullScreen){
+	if(fullScreen){
 	    [self addChildWindow:theOverlayTitleBar ordered:NSWindowAbove];
 		[self addChildWindow:theOverlaySubTitleWindow ordered:NSWindowAbove];
-		}
-		
+	}
+	
     
 }
 
@@ -1193,22 +1196,22 @@
 {
     if([self inResizeLocation:theEvent])
         resizeDrag = YES;
-    
-    if([theEvent clickCount] == 2)
-        [self toggleWindowFloat];
+		
+	initialDrag = [theEvent locationInWindow];
+
 }
 
 -(void)mouseDragged:(NSEvent *)anEvent
 {
     if(resizeDrag){
         if(fixedAspectRatio)
-	    [self resize:[anEvent deltaY] animate:NO];
-	else {
-	    float newHeight = [self frame].size.height + [anEvent deltaY];
-	    float newWidth = [self frame].size.width + [anEvent deltaX];
-	    
-	    [self resizeWithSize:NSMakeSize(newWidth, newHeight) animate:NO];
-	}
+			[self resize:[anEvent deltaY] animate:NO];
+		else {
+			float newHeight = [self frame].size.height + [anEvent deltaY];
+			float newWidth = [self frame].size.width + [anEvent deltaX];
+			
+			[self resizeWithSize:NSMakeSize(newWidth, newHeight) animate:NO];
+		}
     } else {
         if(fullScreen && !NSEqualRects([[[NSDocumentController sharedDocumentController] backgroundWindow] frame],[[NSScreen mainScreen]frame])){
             [[[NSDocumentController sharedDocumentController] backgroundWindow] setFrame:[[NSScreen mainScreen]frame] 
@@ -1217,18 +1220,19 @@
                 SetSystemUIMode(kUIModeAllHidden, kUIOptionAutoShowMenuBar);
             dropScreen = YES;
         }
-	[self showOverLayTitle];
-
-	/* If we don't do a remove, the child window gets automatically placed when the parent window moves, even if we try
-	to set the location manually. */
-	if(fullScreen){
-	    [self removeChildWindow:theOverlayTitleBar];
-		[self removeChildWindow:theOverlaySubTitleWindow];
+		[self showOverLayTitle];
+		
+		/* If we don't do a remove, the child window gets automatically placed when the parent window moves, even if we try
+		to set the location manually. */
+		if(fullScreen){
+			[self removeChildWindow:theOverlayTitleBar];
+			[self removeChildWindow:theOverlaySubTitleWindow];
 		}
-	[self setFrameOrigin:NSMakePoint([self frame].origin.x+[anEvent deltaX],[self frame].origin.y-[anEvent deltaY])];
-	if(fullScreen){
-	    [self addChildWindow:theOverlayTitleBar ordered:NSWindowAbove];
-		[self addChildWindow:theOverlaySubTitleWindow ordered:NSWindowAbove];
+		
+		[self setFrameOrigin:NSMakePoint([NSEvent mouseLocation].x-initialDrag.x,[NSEvent mouseLocation].y-initialDrag.y)];
+		if(fullScreen){
+			[self addChildWindow:theOverlayTitleBar ordered:NSWindowAbove];
+			[self addChildWindow:theOverlaySubTitleWindow ordered:NSWindowAbove];
 		}
     }
 }
@@ -1250,7 +1254,7 @@
     dropScreen = NO;
     
     [self hideOverLayTitle];
-    
+     
 }
 
 /* These two events always get passed down to the view. */
