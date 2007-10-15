@@ -288,6 +288,9 @@
 			<property name="transparency" code="npal" description="transparency of the window" type="integer">
 				<cocoa key="transparency"/>
 			</property>
+			<property name="opacity" code="npao" description="opacity of the window" type="integer">
+				<cocoa key="opacity"/>
+			</property>
 			<responds-to name="enter full screen">
 				<cocoa method="handleEnterFullScreenCommand:"/>
 			</responds-to>

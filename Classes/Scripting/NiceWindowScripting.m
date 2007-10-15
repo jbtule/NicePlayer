@@ -74,11 +74,19 @@ enum{
 }
 
 -(int)transparency{
-	return [self alphaValue] * 100;
+	return (1-[self alphaValue]) * 100;
 }
 
 -(void)setTransparency:(int)aPercent{
-	[self setAlphaValue:aPercent/100.0];
+	[self setAlphaValue:1.0-(aPercent/100.00)];
+}
+
+-(int)opacity{
+	return [self alphaValue] * 100;
+}
+
+-(void)setOpacity:(int)aPercent{
+	[self setAlphaValue:(aPercent/100.00)];
 }
 
 -(int)floating{
