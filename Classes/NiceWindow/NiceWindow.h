@@ -42,17 +42,13 @@
 * ***** END LICENSE BLOCK ***** */
 
 #import <Cocoa/Cocoa.h>
-#import "../Viewer Interface/NPMovieView.h"
-#import "NiceDocument.h"
-#import "../Preferences/Preferences.h"
-#import "../Overlay Widgets/OverlaysControl.h"
-#import "../NiceController.h"
-#import "../Overlay Widgets/NiceScrubber.h"
-#import "../Overlay Widgets/Control Buttons/ControlButton.h"
+
+@class NPMovieView;
+@class NiceScrubber;
 
 @interface NiceWindow : NSWindow
 {
-    IBOutlet id theMovieView;
+    IBOutlet NPMovieView* theMovieView;
     IBOutlet id theOverlayWindow;
     IBOutlet id theOverlayTitleBar;
     IBOutlet id theOverlayVolume;
@@ -62,7 +58,7 @@
     IBOutlet id theVolumeView;
     IBOutlet id theTitleField;
 
-    IBOutlet id theScrubBar;
+    IBOutlet NiceScrubber* theScrubBar;
     IBOutlet id theTimeField;
     IBOutlet id thePlayButton;
     IBOutlet id theRRButton;

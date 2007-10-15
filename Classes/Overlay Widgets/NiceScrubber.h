@@ -51,11 +51,16 @@
     NSImage* scrubClick;
     NSImage* scrub;
     double value;
+	double loaded;
     id target;
     SEL action;
     bool dragging;
 }
 
 -(BOOL)inUse;
+-(double)loadedValue;
+-(void)setLoadedValue:(double)aValue;
+-(double)doubleValue;
+-(void)setDoubleValue:(double)aValue;
 
 @end

@@ -48,6 +48,8 @@
 #import "NiceWindow/NiceWindowController.h"
 #import "AppleRemote.h"
 #import "ControlPlay.h"
+#import "JTTextFittingView.h"
+
 
 id rowsToFileNames(id obj, void* playList){
     return [[(id)playList objectAtIndex:[obj intValue]] path];

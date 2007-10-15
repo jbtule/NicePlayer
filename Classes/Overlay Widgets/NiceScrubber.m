@@ -1,5 +1,5 @@
 /**
- * NiceScrubber.h
+* NiceScrubber.h
  * NicePlayer
  *
  * The implementation of the movie scrubber.
@@ -55,14 +55,15 @@
     if (self) {
         // Initialization code here.
         left = [[NSImage imageNamed:@"scrubbar_left"]retain];
-         right = [[NSImage imageNamed:@"scrubbar_right"]retain];
-         center = [[NSImage imageNamed:@"scrubbar_center"]retain];
-         scrubClick = [[NSImage imageNamed:@"scrubberClick"]retain];
-         scrub = [[NSImage imageNamed:@"scrubber"] retain];
-         value=0.0;
-         target = nil;
-         action = NULL;
-         dragging = NO;
+		right = [[NSImage imageNamed:@"scrubbar_right"]retain];
+		center = [[NSImage imageNamed:@"scrubbar_center"]retain];
+		scrubClick = [[NSImage imageNamed:@"scrubberClick"]retain];
+		scrub = [[NSImage imageNamed:@"scrubber"] retain];
+		value=0.0;
+		loaded=1.0;
+		target = nil;
+		action = NULL;
+		dragging = NO;
     }
     return self;
 }
@@ -89,52 +90,67 @@
     else 
         tempImage = scrub;
 #endif
-    [self lockFocus];
     
-    [left drawAtPoint:NSMakePoint(0,0) 
-             fromRect:NSMakeRect(0, 0,
-                                 [left size].width,
-                                 [left size].height) 
-            operation:NSCompositeSourceOver
-             fraction:1.0];
-    	
-    [center drawInRect:NSMakeRect(5,0,
-                                   [self frame].size.width-10,
-                                   [self frame].size.height)
-              fromRect:NSMakeRect(0,0,
-                                  [center size].width,
-                                  [center size].height) 
-             operation:NSCompositeSourceOver
-              fraction:1.0];
+	if([self loadedValue] >= 0){
+		    [self lockFocus];
 
-	CGPoint points[2];
-	points[0] = CGPointMake(OFFSET + 1, floor([self frame].size.height / 2.0));
-	points[1] = CGPointMake([self frame].size.width - OFFSET - 1, floor([self frame].size.height / 2.0));
-	
-    CGContextRef cgRef = [[NSGraphicsContext currentContext] graphicsPort];
-	CGContextSetAllowsAntialiasing(cgRef, NO);
-	CGContextSetGrayStrokeColor(cgRef, 1.0, 1.0);
-	CGContextSetLineWidth(cgRef, 1);
-	CGContextSetLineCap(cgRef, kCGLineCapRound);
-	CGContextStrokeLineSegments(cgRef, points, 2);
-	CGContextSetAllowsAntialiasing(cgRef, YES);
-	
-    [right drawAtPoint:NSMakePoint([self frame].size.width-5,0)
-              fromRect:NSMakeRect(0,0,
-                                  [right size].width,
-                                  [right size].height) 
-             operation:NSCompositeSourceOver
-              fraction:1.0];
+		[left drawAtPoint:NSMakePoint(0,0) 
+				 fromRect:NSMakeRect(0, 0,
+									 [left size].width,
+									 [left size].height) 
+				operation:NSCompositeSourceOver
+				 fraction:1.0];
     	
-    [tempImage drawAtPoint:NSMakePoint(OFFSET+([self doubleValue]*([self frame].size.width-(OFFSET * 2)))-[scrub size].width/2,[self frame].size.height/2 - [tempImage size].height/2 + 0.5)
-                 fromRect:NSMakeRect(0,0,
-                                     [tempImage size].width,
-                                     [tempImage size].height) 
-                operation:NSCompositeSourceOver
-                 fraction:1.0];
+		[center drawInRect:NSMakeRect(5,0,
+									  [self frame].size.width-10,
+									  [self frame].size.height)
+				  fromRect:NSMakeRect(0,0,
+									  [center size].width,
+									  [center size].height) 
+				 operation:NSCompositeSourceOver
+				  fraction:1.0];
+		
+		CGPoint points[2];
+		points[0] = CGPointMake(OFFSET + 1, floor([self frame].size.height / 2.0));
+		points[1] = CGPointMake([self frame].size.width - OFFSET - 1, floor([self frame].size.height / 2.0));
+		
+		points[1].x =(points[1].x - 	points[0].x) * [self loadedValue] + points[0].x;
+		
+		CGContextRef cgRef = [[NSGraphicsContext currentContext] graphicsPort];
+		CGContextSetAllowsAntialiasing(cgRef, NO);
+		CGContextSetGrayStrokeColor(cgRef, 1.0, 1.0);
+		CGContextSetLineWidth(cgRef, 1);
+		CGContextSetLineCap(cgRef, kCGLineCapRound);
+		CGContextStrokeLineSegments(cgRef, points, 2);
+		CGContextSetAllowsAntialiasing(cgRef, YES);
+		
+		[right drawAtPoint:NSMakePoint([self frame].size.width-5,0)
+				  fromRect:NSMakeRect(0,0,
+									  [right size].width,
+									  [right size].height) 
+				 operation:NSCompositeSourceOver
+				  fraction:1.0];
+    	
+		[tempImage drawAtPoint:NSMakePoint(OFFSET+([self doubleValue]*([self frame].size.width-(OFFSET * 2)))-[scrub size].width/2,[self frame].size.height/2 - [tempImage size].height/2 + 0.5)
+					  fromRect:NSMakeRect(0,0,
+										  [tempImage size].width,
+										  [tempImage size].height) 
+					 operation:NSCompositeSourceOver
+					  fraction:1.0];
+		
+		[self unlockFocus];
+	}
     
-    [self unlockFocus];
-    
+}
+
+-(void)setLoadedValue:(double)aValue
+{
+    loaded = aValue;
+}
+
+-(double)loadedValue
+{
+    return loaded;
 }
 
 -(void)setDoubleValue:(double)aValue
@@ -197,12 +213,12 @@
 {
     dragging =YES;
     float loc =[self convertPoint:[anEvent locationInWindow]fromView:[[self window] contentView]].x;
-
+	
     if(loc <= OFFSET)
         [self setDoubleValue:0.0];
     else if(loc >=OFFSET && loc <= ([self frame].size.width-OFFSET)){
         [self setDoubleValue: (loc-OFFSET)/([self frame].size.width-(OFFSET * 2))];
-
+		
     } else 
         [self setDoubleValue:1.0];
     [[self target] performSelector:[self action]withObject:self];

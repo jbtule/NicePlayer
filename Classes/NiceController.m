@@ -46,11 +46,12 @@
 
 
 #import "NiceController.h"
-#import "Viewer Interface/NPPluginReader.h"
-#import "../Other Sources/NiceUtilities.h"
+#import "NPPluginReader.h"
+#import "NiceUtilities.h"
 #import "NPApplication.h"
 #import "AppleRemote.h"
-
+#import "Preferences.h"
+#import "NiceDocument.h"
 id controller;
 
 BOOL detectIsPlaying(id each, void* context){

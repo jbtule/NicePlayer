@@ -166,6 +166,8 @@
 		690B63910B59EB27008D13CE /* JTTextFittingView.h in Headers */ = {isa = PBXBuildFile; fileRef = 690B638F0B59EB27008D13CE /* JTTextFittingView.h */; };
 		690B63920B59EB27008D13CE /* JTTextFittingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 690B63900B59EB27008D13CE /* JTTextFittingView.m */; };
 		6925B3CA0B61966E004D2A83 /* vdvd.icns in Resources */ = {isa = PBXBuildFile; fileRef = 6925B3C90B61966E004D2A83 /* vdvd.icns */; };
+		692CF88F0CC2F78000DF2159 /* BlankView.h in Headers */ = {isa = PBXBuildFile; fileRef = 692CF88D0CC2F78000DF2159 /* BlankView.h */; };
+		692CF8900CC2F78200DF2159 /* BlankView.m in Sources */ = {isa = PBXBuildFile; fileRef = 692CF88E0CC2F78000DF2159 /* BlankView.m */; };
 		697496120B55EA800030D4D2 /* OverlayTitleWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 697496100B55EA800030D4D2 /* OverlayTitleWindow.h */; };
 		697496130B55EA800030D4D2 /* OverlayTitleWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 697496110B55EA800030D4D2 /* OverlayTitleWindow.m */; };
 		697496200B55F7A90030D4D2 /* titlebg.png in Resources */ = {isa = PBXBuildFile; fileRef = 6974961F0B55F7A90030D4D2 /* titlebg.png */; };
@@ -492,6 +494,8 @@
 		690B638F0B59EB27008D13CE /* JTTextFittingView.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = JTTextFittingView.h; path = "Classes/Overlay Widgets/JTTextFittingView.h"; sourceTree = "<group>"; };
 		690B63900B59EB27008D13CE /* JTTextFittingView.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = JTTextFittingView.m; path = "Classes/Overlay Widgets/JTTextFittingView.m"; sourceTree = "<group>"; };
 		6925B3C90B61966E004D2A83 /* vdvd.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = vdvd.icns; sourceTree = "<group>"; };
+		692CF88D0CC2F78000DF2159 /* BlankView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlankView.h; path = "Classes/Viewer Interface/Pluggable Players/BlankView.h"; sourceTree = "<group>"; };
+		692CF88E0CC2F78000DF2159 /* BlankView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlankView.m; path = "Classes/Viewer Interface/Pluggable Players/BlankView.m"; sourceTree = "<group>"; };
 		697496100B55EA800030D4D2 /* OverlayTitleWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OverlayTitleWindow.h; path = "Classes/Overlay Widgets/OverlayTitleWindow.h"; sourceTree = "<group>"; };
 		697496110B55EA800030D4D2 /* OverlayTitleWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OverlayTitleWindow.m; path = "Classes/Overlay Widgets/OverlayTitleWindow.m"; sourceTree = "<group>"; };
 		6974961F0B55F7A90030D4D2 /* titlebg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = titlebg.png; path = Resources/titlebg.png; sourceTree = "<group>"; };
@@ -675,6 +679,8 @@
 				3EEDF752065B3E8800E3545C /* JTMovieView.m */,
 				25CC864E0831DA2A00027929 /* RCMovieView.h */,
 				25CC864F0831DA2A00027929 /* RCMovieView.m */,
+				692CF88D0CC2F78000DF2159 /* BlankView.h */,
+				692CF88E0CC2F78000DF2159 /* BlankView.m */,
 			);
 			name = "Pluggable Players";
 			sourceTree = "<group>";
@@ -980,6 +986,7 @@
 				690B63910B59EB27008D13CE /* JTTextFittingView.h in Headers */,
 				69B2197A0BC72AA60054E10E /* AEDescUtils.h in Headers */,
 				69B2197C0BC72AA60054E10E /* TCallScript.h in Headers */,
+				692CF88F0CC2F78000DF2159 /* BlankView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1285,6 +1292,7 @@
 				690B63920B59EB27008D13CE /* JTTextFittingView.m in Sources */,
 				69B2197B0BC72AA60054E10E /* AEDescUtils.m in Sources */,
 				69B2197D0BC72AA60054E10E /* TCallScript.m in Sources */,
+				692CF8900CC2F78200DF2159 /* BlankView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

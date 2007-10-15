@@ -44,10 +44,7 @@
 
 
 #import <Cocoa/Cocoa.h>
-#import "Pluggable Players/NPMovieProtocol.h"
-#import "NiceWindow.h"
-#import "ControlButton.h"
-#import "NPPluginReader.h"
+
 
 @class ControlPlay;
 @class NiceWindow;
@@ -133,6 +130,7 @@
 -(double)currentMovieFrameRate;
 -(void)setCurrentMovieTime:(double)aDouble;
 -(double)totalTime;
+-(double)perecntLoaded;
 -(void)drawMovieFrame;
 -(void)setLoopMode:(NSQTMovieLoopMode)flag;
 

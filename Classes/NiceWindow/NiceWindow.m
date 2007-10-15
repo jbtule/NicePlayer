@@ -43,6 +43,14 @@
 *
 * ***** END LICENSE BLOCK ***** */
 
+#import "NPMovieView.h"
+#import "NiceDocument.h"
+#import "Preferences.h"
+#import "OverlaysControl.h"
+#import "NiceController.h"
+#import "NiceScrubber.h"
+#import "ControlButton.h"
+
 #import "NiceWindow.h"
 #import "FadeOut.h"
 #import "OverlayControllerWindow.h"
@@ -323,6 +331,7 @@
     }
     /* Update rest of UI */
     [theScrubBar setDoubleValue:[theMovieView scrubLocation:sender]];
+	[theScrubBar setLoadedValue:[theMovieView perecntLoaded]];
     [theScrubBar setNeedsDisplay:YES];
 }
 

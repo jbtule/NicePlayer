@@ -45,7 +45,7 @@
 * ***** END LICENSE BLOCK ***** */
 
 #import "OverlayNotifierWindow.h"
-
+#import "Preferences.h"
 
 @implementation OverlayNotifierWindow
 

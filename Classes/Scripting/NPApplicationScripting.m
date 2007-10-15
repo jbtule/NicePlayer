@@ -46,7 +46,7 @@
 
 #import "NPApplicationScripting.h"
 #import "NicePlugin.h"
-
+#import "NPPluginReader.h"
 BOOL dectectIdentifier(id each, void* context){
     return ([[each identifier] isEqualTo:(id)context]);            
 }

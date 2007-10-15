@@ -361,6 +361,23 @@
     return GetMovieDuration(tempMovie);
 }
 
+
+//until re do the plugin interface
+//this is a quick hack to allow percent loading
+//for plugins
+-(NSNumber*)_percentLoaded{
+				
+			NSTimeInterval tMaxLoaded;
+			NSTimeInterval tDuration;
+			
+			QTGetTimeInterval([film duration], &tDuration);
+			QTGetTimeInterval([film maxTimeLoaded], &tMaxLoaded);
+			
+
+
+	return [NSNumber numberWithDouble: (double) tMaxLoaded/tDuration];
+}
+
 -(double)currentMovieFrameRate{
     int sampleSize =5;
     OSType myTypes[1];

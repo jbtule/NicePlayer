@@ -51,8 +51,15 @@
 
 
 #import "NPMovieView.h"
-#import "../Overlay Widgets/Control Buttons/ControlButton.h"
-#import "../Overlay Widgets/Control Buttons/ControlPlay.h"
+#import "ControlPlay.h"
+
+#import "NPMovieProtocol.h"
+#import "NiceWindow.h"
+#import "ControlButton.h"
+#import "NPPluginReader.h"
+#import "Preferences.h"
+#import "BlankView.h"
+
 @class JTMovieView;
 @class NPPluginReader;
 
@@ -67,7 +74,7 @@
 {
     if ((self = [super initWithFrame:aRect])) {
         NSRect subview = NSMakeRect(0, 0, aRect.size.width, aRect.size.height);
-        trueMovieView = [[JTMovieView alloc] initWithFrame:subview];
+        trueMovieView = [[BlankView alloc] initWithFrame:subview];
         contextMenu = [[NSMenu alloc] initWithTitle:@"NicePlayer"];
         wasPlaying = NO;
         [self addSubview:trueMovieView];
@@ -318,6 +325,8 @@
 {
 	return YES;
 }
+#pragma mark -
+#pragma mark Controls
 
 #pragma mark -
 #pragma mark Controls
@@ -924,6 +933,15 @@
 -(double)currentMovieFrameRate
 {
     return [trueMovieView currentMovieFrameRate];
+}
+
+-(double)perecntLoaded{
+	if([trueMovieView respondsToSelector:@selector(_percentLoaded)]){
+		return [((NSNumber*)[trueMovieView _percentLoaded]) doubleValue];
+	}else{
+		return 1.0;
+	}
+
 }
 
 -(void)setCurrentMovieTime:(double)aDouble
