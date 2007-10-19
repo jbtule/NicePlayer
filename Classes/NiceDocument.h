@@ -98,14 +98,26 @@
 -(void)rebuildMenu;
 -(id)window;
 -(NSSize)calculateAspectRatio;
+-(NSMenuItem*)playOrderMenu;
+-(NSArray*)FullPlaylistMenuItems;
+-(NSArray*)BasicPlaylistMenuItems;
+-(NSArray*)playlistMenuItems;
+-(NSMenuItem*)volumeMenu;
 
 #pragma mark Interface
 
 -(IBAction)toggleRandomMode:(id)sender;
 -(IBAction)toggleRepeatMode:(id)sender;
+-(IBAction)switchRepeatMode:(NSMenuItem*)sender;
+-(IBAction)switchVolume:(NSMenuItem*)sender;
+-(IBAction)mute:(id)sender;
+-(IBAction)increaseVolume:(id)sender;
+-(IBAction)decreaseVolume:(id)sender;
+-(IBAction)switchPlaylistItem:(NSMenuItem*)sender;
 -(void)refreshRepeatModeGUI;
 -(void)play:(id)sender;
 -(void)playNext:(id)sender;
+-(void)playPrev:(id)sender;
 -(void)pause:(id)sender;
 -(unsigned)getNextIndex;
 -(void)playNext;

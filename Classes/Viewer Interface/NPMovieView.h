@@ -93,6 +93,7 @@
 -(void)decrementVolume;
 -(void)setVolume:(float)aVolume;
 -(float)volume;
+-(float)volumeWithMute;
 
 -(BOOL)isPlaying;
 -(BOOL)wasPlaying;

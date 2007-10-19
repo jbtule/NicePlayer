@@ -50,6 +50,8 @@
 #import "ControlPlay.h"
 #import "JTTextFittingView.h"
 
+#define PLAYLIST_ITEM -42
+#define VOLUME_ITEM -43
 
 id rowsToFileNames(id obj, void* playList){
     return [[(id)playList objectAtIndex:[obj intValue]] path];
@@ -452,6 +454,196 @@ void findSpace(id each, void* context, BOOL* endthis){
     return [[[NSApp mainMenu] itemWithTitle:NSLocalizedString(@"Movie",@"Movie")] submenu];
 }
 
+-(NSArray*)playlistMenuItems{
+	NSMutableArray* tArray = [NSMutableArray array];
+	for(unsigned int i =0; i <  [thePlaylist count];i++){
+			id tObj = [thePlaylist objectAtIndex:i];
+			NSMenuItem* tItem = [[[NSMenuItem alloc ]init] autorelease];
+			[tItem setTitle:[[tObj path] lastPathComponent]];
+			[tItem setRepresentedObject:[NSNumber numberWithInt:i]];
+			[tItem setState:(int)[tObj isEqualTo:theCurrentURL]];
+			[tItem setTarget:self];
+			[tItem setTag:PLAYLIST_ITEM];
+			[tItem setAction:@selector(switchPlayItem:)];
+			[tArray addObject: tItem];
+		}
+	return tArray;
+}
+
+-(NSArray*)BasicPlaylistMenuItems{
+		NSMutableArray* tArray = [NSMutableArray array];
+
+	[tArray addObject:[self playOrderMenu]];
+
+	NSMenuItem* tItem = [[[NSMenuItem alloc] init] autorelease];
+	[tItem setTitle:NSLocalizedString(@"Previous",@"Previous menu item")];
+	[tItem setKeyEquivalent:@"["];
+	[tItem setTarget:self];
+	[tItem setAction:@selector(playPrev:)];
+	[tArray addObject:tItem];
+	
+	tItem = [[[NSMenuItem alloc] init] autorelease];
+	[tItem setTitle:NSLocalizedString(@"Next",@"Next menu item")];
+	[tItem setKeyEquivalent:@"]"];
+	[tItem setTarget:self];
+	[tItem setAction:@selector(playNext:)];
+	[tArray addObject:tItem];
+	
+	[tArray addObjectsFromArray:[self playlistMenuItems]];
+	
+	return tArray;
+}
+
+-(NSArray*)FullPlaylistMenuItems{
+		NSMutableArray* tArray = [NSMutableArray array];
+
+	[tArray addObject:[self playOrderMenu]];
+
+	NSMenuItem* tItem = [[[NSMenuItem alloc] init] autorelease];
+	[tItem setTitle:NSLocalizedString(@"Previous",@"Previous menu item")];
+	[tItem setKeyEquivalent:@"["];
+	[tItem setTarget:self];
+	[tItem setAction:@selector(playPrev:)];
+	[tArray addObject:tItem];
+	
+	 tItem = [[[NSMenuItem alloc] init] autorelease];
+	[tItem setTitle:NSLocalizedString(@"Next",@"Next menu item")];
+	[tItem setKeyEquivalent:@"]"];
+	[tItem setTarget:self];
+	[tItem setAction:@selector(playNext:)];
+	[tArray addObject:tItem];
+	
+	[tArray addObjectsFromArray:[self playlistMenuItems]];
+	
+	[tArray addObject:[NSMenuItem separatorItem]];
+	
+	[tArray addObject:[self volumeMenu]];
+	
+	return tArray;
+}
+
+-(NSMenuItem*)playOrderMenu{
+	NSMenuItem* tHeading = [[[NSMenuItem alloc] init] autorelease];
+	[tHeading setTitle:NSLocalizedString(@"Play Order",@"Play Order Menu item")];
+
+	NSMenu* tMenu = [[[NSMenu alloc] init] autorelease];
+	
+	
+	NSMenuItem* tItem = [[[NSMenuItem alloc] init] autorelease];
+	[tItem setTitle:NSLocalizedString(@"Randomized",@"Randomized menu item")];
+	[tItem setState:isRandom];
+	[tItem setTarget:self];
+	[tItem setAction:@selector(toggleRandomMode:)];
+	[tMenu addItem:tItem];
+	
+	[tMenu addItem:[NSMenuItem separatorItem]];
+
+	
+	tItem = [[[NSMenuItem alloc] init] autorelease];
+	[tItem setTitle:NSLocalizedString(@"No Repeat Volume",@"No Repeat Volume menu item")];
+	[tItem setState:theRepeatMode == REPEAT_NONE];
+	[tItem setTarget:self];
+	[tItem setRepresentedObject:[NSNumber numberWithInt:REPEAT_NONE]];
+	[tItem setAction:@selector(switchRepeatMode:)];
+	[tMenu addItem:tItem];
+	
+	tItem = [[[NSMenuItem alloc] init] autorelease];
+	[tItem setTitle:NSLocalizedString(@"Repeat One",@"Repeat One Volume menu item")];
+		[tItem setState:theRepeatMode == REPEAT_ONE];
+
+	[tItem setTarget:self];
+		[tItem setRepresentedObject:[NSNumber numberWithInt:REPEAT_ONE]];
+
+	[tItem setAction:@selector(switchRepeatMode:)];
+	[tMenu addItem:tItem];
+	
+		tItem = [[[NSMenuItem alloc] init] autorelease];
+	[tItem setTitle:NSLocalizedString(@"Repeat All",@"Repeat All Volume menu item")];
+	[tItem setTarget:self];
+			[tItem setRepresentedObject:[NSNumber numberWithInt:REPEAT_LIST]];
+					[tItem setState:theRepeatMode == REPEAT_LIST];
+
+
+	[tItem setAction:@selector(switchRepeatMode:)];
+	[tMenu addItem:tItem];
+	
+
+	[tHeading setSubmenu:tMenu];
+
+	return tHeading;
+}
+
+-(IBAction)switchVolume:(NSMenuItem*)sender{
+	[theMovieView setVolume:[[sender representedObject] intValue]/100.0];
+}
+-(IBAction)mute:(id)sender{
+	[theMovieView setMuted:![theMovieView muted]];
+}
+-(IBAction)increaseVolume:(id)sender{
+	[theMovieView incrementVolume];
+}
+-(IBAction)decreaseVolume:(id)sender{
+	[theMovieView decrementVolume];
+}
+
+-(NSMenuItem*)volumeMenu{
+	NSMenuItem* tHeading = [[[NSMenuItem alloc] init] autorelease];
+	[tHeading setTitle:NSLocalizedString(@"Volume",@"Volume Menu item")];
+
+	NSMenu* tMenu = [[[NSMenu alloc]init] autorelease];
+	
+	NSMenuItem* tItem = [[[NSMenuItem alloc] init] autorelease];
+	[tItem setTitle:NSLocalizedString(@"Mute",@"Mute menu item")];
+	[tItem setKeyEquivalent:@"del"];
+	[tItem setState: [theMovieView muted] ? NSOnState: NSOffState];
+	[tItem setTarget:self];
+	[tItem setAction:@selector(mute:)];
+	[tMenu addItem:tItem];
+	
+	tItem = [[[NSMenuItem alloc] init] autorelease];
+	[tItem setTitle:NSLocalizedString(@"Increase Volume",@"Increase Volume menu item")];
+	[tItem setKeyEquivalent:@"="];
+	[tItem setTarget:self];
+	[tItem setAction:@selector(increaseVolume:)];
+	[tMenu addItem:tItem];
+	
+	tItem = [[[NSMenuItem alloc] init] autorelease];
+	[tItem setTitle:NSLocalizedString(@"Decrease Volume",@"Increase Volume menu item")];
+	[tItem setKeyEquivalent:@"-"];
+	[tItem setTarget:self];
+	[tItem setAction:@selector(decreaseVolume:)];
+	[tMenu addItem:tItem];
+	
+	[tMenu addItem:[NSMenuItem separatorItem]];
+
+
+
+	for(int i= 200; i>=0;i-=20){
+			tItem = [[[NSMenuItem alloc] init] autorelease];
+			[tItem setTitle:[NSString stringWithFormat:@"%d%%",i]];
+			
+			int tInt =(int)(fabsf([theMovieView volumeWithMute]) * 10);
+			
+			if(tInt == i /10)
+				[tItem setState:NSOnState];
+			else if(tInt > i /10
+					&& tInt < (i /10) +2 )
+				[tItem setState:NSMixedState];
+			else
+				[tItem setState:NSOffState];
+
+			[tItem setTag:VOLUME_ITEM];
+			[tItem setRepresentedObject:[NSNumber numberWithInt:i]];
+			[tItem setTarget:self];
+			[tItem setAction:@selector(switchVolume:)];
+			[tMenu addItem:tItem];
+	}
+	
+	[tHeading setSubmenu:tMenu];
+	
+	return tHeading;
+}
+
 /* Always call this method by raising the notification "RebuildAllMenus" otherwise
 stuff won't work properly! */
 -(void)rebuildMenu
@@ -486,7 +678,7 @@ stuff won't work properly! */
             [menuObjects addObject:[pluginMenu objectAtIndex:i]];
         }
     } else {
-        [movieMenuItem setEnabled:YES];
+        /*[movieMenuItem setEnabled:YES];
         id mSubMenu = [[NSMenu alloc] initWithTitle:[theMovieView menuTitle]];
         [movieMenuItem setSubmenu:mSubMenu];
         [[self movieMenu] insertItem:movieMenuItem atIndex:[[self movieMenu] numberOfItems]];
@@ -494,7 +686,7 @@ stuff won't work properly! */
             [mSubMenu removeItemAtIndex:0];
         
         for(i = 0; i < (int)[pluginMenu count]; i++)
-            [mSubMenu addItem:[pluginMenu objectAtIndex:i]];
+            [mSubMenu addItem:[pluginMenu objectAtIndex:i]];*/
     }
 }
 
@@ -564,6 +756,10 @@ stuff won't work properly! */
     [self playNext];
 }
 
+-(void)playPrev:(id)sender
+{
+    [self playPrev];
+}
 
 
 -(unsigned)getNextIndex

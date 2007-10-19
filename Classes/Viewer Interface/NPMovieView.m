@@ -410,12 +410,14 @@
 
 -(void)incrementVolume
 {
+	[self setMuted:NO];
 	[self setVolume:[self volume]+.1];
 	[((NiceWindow *)[self window]) updateVolume];
 }
 
 -(void)decrementVolume
 {
+	[self setMuted:NO];
 	[self setVolume:[self volume]-.1];
 	[((NiceWindow *)[self window]) updateVolume];
 }
@@ -781,6 +783,23 @@
 	[newItem setState:[((NiceWindow *)[self window]) windowIsFloating]];
 	[myMenu addObject:newItem];
 
+	[myMenu addObject:[[[self window]document] volumeMenu]];
+
+	NSMenu* tMenu = [[[NSMenu alloc]init]autorelease];
+	
+	NSEnumerator *enumerator = [[[[self window] document] BasicPlaylistMenuItems] objectEnumerator];
+id object;
+ 
+while ((object = [enumerator nextObject])) {
+    [tMenu addItem:object];
+}
+	
+	newItem = [[[NSMenuItem alloc] init] autorelease];
+	[newItem setTitle:NSLocalizedString(@"Playlist", @"Playlist contextual menu")];
+	[newItem setSubmenu:tMenu];
+	[myMenu addObject:newItem];
+	
+	
 	return [myMenu autorelease];
 }
 
@@ -962,6 +981,23 @@
 -(void)setMuted:(BOOL)aBool
 {
 	[trueMovieView setMuted:aBool];
+}
+
+-(float)volumeWithMute
+{
+	float volume;
+	
+	if(trueMovieView)
+		volume = [trueMovieView volume];
+	else
+		volume = 1.0;
+	
+	if(volume < -2.0)
+		volume = -2.0;
+	if(volume > 2.0)
+		volume = 2.0;
+
+	return volume;
 }
 
 -(float)volume

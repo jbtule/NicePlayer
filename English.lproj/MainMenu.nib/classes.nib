@@ -16,6 +16,21 @@
             SUPERCLASS = NSObject; 
         }, 
         {
+            ACTIONS = {
+                decreaseVolume = id; 
+                increaseVolume = id; 
+                mute = id; 
+                nextPlaylist = id; 
+                previousPlaylist = id; 
+                switchRepeatMode = id; 
+                switchVolume = id; 
+                toggleRandomized = id; 
+            }; 
+            CLASS = MainDocumentProxy; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
             ACTIONS = {close = id; }; 
             CLASS = MainWindowProxy; 
             LANGUAGE = ObjC; 

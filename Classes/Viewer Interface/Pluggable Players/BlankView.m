@@ -75,10 +75,16 @@
 -(void)setLoopMode:(NSQTMovieLoopMode)flag{}
 
 -(BOOL)muted{
-	return NO;
+	return volume < 0;
 }
 -(void)setMuted:(BOOL)aBOOL{
-
+	if(aBOOL){
+		if(![self muted])
+			volume *= -1.0;
+	}else{
+		if([self muted])
+			volume *= -1.0;
+	}
 }
 -(float)volume{
 	return volume;
