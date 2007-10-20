@@ -65,13 +65,13 @@
 			withToolTip:@"The General Preference Settings"
 		 allowingResize:NO];
 	[prefWindow addPane:paneInput
-                   withIcon:[[[NSImage alloc]initWithContentsOfFile:tGeneralPrefIcon] autorelease]
+                   withIcon:[NSImage imageNamed:@"inputpref"] 
 		 withIdentifier:@"Input"
 			  withLabel:@"Input"
 			withToolTip:@"The Input Preference Settings"
 		 allowingResize:NO];
 	[prefWindow addPane:paneWindowDefaults
-                   withIcon:[[[NSImage alloc]initWithContentsOfFile:tGeneralPrefIcon] autorelease]
+                   withIcon:[NSImage imageNamed:@"windpref"] 
 		 withIdentifier:@"Window Defaults"
 			  withLabel:@"Window Defaults"
 			withToolTip:@"The Window Default Preference Settings"

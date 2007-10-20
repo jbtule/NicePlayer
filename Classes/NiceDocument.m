@@ -454,17 +454,39 @@ void findSpace(id each, void* context, BOOL* endthis){
     return [[[NSApp mainMenu] itemWithTitle:NSLocalizedString(@"Movie",@"Movie")] submenu];
 }
 
+-(NSMenu *)playlistMenu
+{
+    return [[[NSApp mainMenu] itemWithTitle:NSLocalizedString(@"Playlist",@"Playlist Menu Title")] submenu];
+}
+
+
+-(IBAction)switchPlaylistItem:(NSMenuItem*)sender{
+	[self playAtIndex:[[sender representedObject] unsignedIntValue] obeyingPreviousState:YES];
+}
+
+-(IBAction)switchRepeatMode:(NSMenuItem*)sender{
+	theRepeatMode =[[sender representedObject] intValue];
+	[self refreshRepeatModeGUI];
+	
+}
+
 -(NSArray*)playlistMenuItems{
 	NSMutableArray* tArray = [NSMutableArray array];
 	for(unsigned int i =0; i <  [thePlaylist count];i++){
 			id tObj = [thePlaylist objectAtIndex:i];
 			NSMenuItem* tItem = [[[NSMenuItem alloc ]init] autorelease];
-			[tItem setTitle:[[tObj path] lastPathComponent]];
+			NSString* tNumber =[NSString stringWithFormat:@"%d",i+1];
+			
+			while([tNumber length] < 4){
+				tNumber = [@" " stringByAppendingString:tNumber];
+			}
+			
+			[tItem setTitle: [NSString stringWithFormat:@"%@.  %@",tNumber,[[tObj path] lastPathComponent]]];
 			[tItem setRepresentedObject:[NSNumber numberWithInt:i]];
 			[tItem setState:(int)[tObj isEqualTo:theCurrentURL]];
 			[tItem setTarget:self];
 			[tItem setTag:PLAYLIST_ITEM];
-			[tItem setAction:@selector(switchPlayItem:)];
+			[tItem setAction:@selector(switchPlaylistItem:)];
 			[tArray addObject: tItem];
 		}
 	return tArray;
@@ -478,6 +500,7 @@ void findSpace(id each, void* context, BOOL* endthis){
 	NSMenuItem* tItem = [[[NSMenuItem alloc] init] autorelease];
 	[tItem setTitle:NSLocalizedString(@"Previous",@"Previous menu item")];
 	[tItem setKeyEquivalent:@"["];
+	[tItem setKeyEquivalentModifierMask:0];
 	[tItem setTarget:self];
 	[tItem setAction:@selector(playPrev:)];
 	[tArray addObject:tItem];
@@ -485,6 +508,8 @@ void findSpace(id each, void* context, BOOL* endthis){
 	tItem = [[[NSMenuItem alloc] init] autorelease];
 	[tItem setTitle:NSLocalizedString(@"Next",@"Next menu item")];
 	[tItem setKeyEquivalent:@"]"];
+		[tItem setKeyEquivalentModifierMask:0];
+
 	[tItem setTarget:self];
 	[tItem setAction:@selector(playNext:)];
 	[tArray addObject:tItem];
@@ -497,11 +522,18 @@ void findSpace(id each, void* context, BOOL* endthis){
 -(NSArray*)FullPlaylistMenuItems{
 		NSMutableArray* tArray = [NSMutableArray array];
 
+	[tArray addObject:[self volumeMenu]];
+	
+		[tArray addObject:[NSMenuItem separatorItem]];
+
+
 	[tArray addObject:[self playOrderMenu]];
 
 	NSMenuItem* tItem = [[[NSMenuItem alloc] init] autorelease];
 	[tItem setTitle:NSLocalizedString(@"Previous",@"Previous menu item")];
 	[tItem setKeyEquivalent:@"["];
+		[tItem setKeyEquivalentModifierMask:0];
+
 	[tItem setTarget:self];
 	[tItem setAction:@selector(playPrev:)];
 	[tArray addObject:tItem];
@@ -509,15 +541,15 @@ void findSpace(id each, void* context, BOOL* endthis){
 	 tItem = [[[NSMenuItem alloc] init] autorelease];
 	[tItem setTitle:NSLocalizedString(@"Next",@"Next menu item")];
 	[tItem setKeyEquivalent:@"]"];
+		[tItem setKeyEquivalentModifierMask:0];
+
 	[tItem setTarget:self];
 	[tItem setAction:@selector(playNext:)];
 	[tArray addObject:tItem];
 	
 	[tArray addObjectsFromArray:[self playlistMenuItems]];
 	
-	[tArray addObject:[NSMenuItem separatorItem]];
 	
-	[tArray addObject:[self volumeMenu]];
 	
 	return tArray;
 }
@@ -604,12 +636,16 @@ void findSpace(id each, void* context, BOOL* endthis){
 	[tItem setTitle:NSLocalizedString(@"Increase Volume",@"Increase Volume menu item")];
 	[tItem setKeyEquivalent:@"="];
 	[tItem setTarget:self];
+		[tItem setKeyEquivalentModifierMask:0];
+
 	[tItem setAction:@selector(increaseVolume:)];
 	[tMenu addItem:tItem];
 	
 	tItem = [[[NSMenuItem alloc] init] autorelease];
 	[tItem setTitle:NSLocalizedString(@"Decrease Volume",@"Increase Volume menu item")];
 	[tItem setKeyEquivalent:@"-"];
+		[tItem setKeyEquivalentModifierMask:0];
+
 	[tItem setTarget:self];
 	[tItem setAction:@selector(decreaseVolume:)];
 	[tMenu addItem:tItem];
@@ -644,10 +680,28 @@ void findSpace(id each, void* context, BOOL* endthis){
 	return tHeading;
 }
 
+-(void)rebuildPlaylistMenu{
+    if([[self window] isKeyWindow]){
+
+    NSMenu* playlistMenu = [self playlistMenu];
+	NSArray* tArray =[playlistMenu itemArray];
+	for(int i = [tArray count]-1; i > 2; i--){
+		[playlistMenu removeItem:[tArray objectAtIndex:i]];
+	}
+	tArray= [self FullPlaylistMenuItems];
+	for(int i=0; i < [tArray count]; i++){
+		[playlistMenu addItem:[tArray objectAtIndex:i]];
+	}
+	}
+	
+} 
+
+
 /* Always call this method by raising the notification "RebuildAllMenus" otherwise
 stuff won't work properly! */
 -(void)rebuildMenu
 {
+
     int i;
     id pluginMenu = [theMovieView pluginMenu];
     if(!pluginMenu)
@@ -687,7 +741,7 @@ stuff won't work properly! */
         
         for(i = 0; i < (int)[pluginMenu count]; i++)
             [mSubMenu addItem:[pluginMenu objectAtIndex:i]];*/
-    }
+    }[self rebuildPlaylistMenu];
 }
 
 -(id)window
@@ -711,6 +765,9 @@ stuff won't work properly! */
         isRandom = NO;
     else
         isRandom = YES;
+		
+			[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:nil];
+
 }
 
 -(IBAction)toggleRepeatMode:(id)sender
@@ -739,6 +796,8 @@ stuff won't work properly! */
             [theMovieView setLoopMode: NSQTMovieNormalPlayback];
             break;
     }
+			[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:nil];
+
 }
 
 -(void)play:(id)sender
@@ -833,7 +892,8 @@ stuff won't work properly! */
     [theMovieView closeReopen];
     [self loadURL:tempURL firstTime:NO];
     [thePlaylistTable reloadData];
-    
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:nil];
+
 	if(aBool){
 		if([theMovieView wasPlaying])
 			[theMovieView start];
@@ -912,6 +972,8 @@ stuff won't work properly! */
         [thePlaylist insertObject:aURL atIndex:anIndex];
         
         [thePlaylistTable reloadData];
+				[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:nil];
+
     }
 }
 
