@@ -371,7 +371,7 @@
                                 currentFrame.origin.y+32,
                                 currentFrame.size.width,
                                 currentFrame.size.height - 24 - 32)
-      withVisibility:YES];
+      withVisibility:NO];
 	
     [theOverlayWindow createResizeTriangle];
     [self putOverlay:theOverlayTitleBar

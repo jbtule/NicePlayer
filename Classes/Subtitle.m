@@ -317,6 +317,25 @@
 
 		NSArray* tDialogArray = [tDialog componentsSeparatedByString:@","];
 		
+		int tCount =[tDialogArray count] - [tFormatArray count];
+		if(tCount > 0){
+			NSString * tText =@"";
+			for(int i = tCount;  i > 0; i--){
+				tText = [tText stringByAppendingString:@","];		
+				tText =[tText stringByAppendingString:[tDialogArray objectAtIndex:[tDialogArray count] -i]];
+			}
+			
+			NSMutableArray* tMArray =[[tDialogArray mutableCopy]autorelease];
+			for(int j =0; j < tCount;j++){
+				[tMArray removeLastObject];
+			}
+			tText = [[tMArray lastObject] stringByAppendingString:tText];
+			[tMArray removeLastObject];
+
+			[tMArray addObject:tText];
+			tDialogArray =tMArray;
+		}
+		
 	//	NSLog(@"dialog %d %@ %@",[tDialogArray count],tDialogArray,tDialog);
 
 		

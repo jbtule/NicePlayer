@@ -794,7 +794,7 @@ while ((object = [enumerator nextObject])) {
     [tMenu addItem:object];
 }
 	
-	newItem = [[[NSMenuItem alloc] init] autorelease];
+ 	newItem = [[[NSMenuItem alloc] init] autorelease];
 	[newItem setTitle:NSLocalizedString(@"Playlist", @"Playlist contextual menu")];
 	[newItem setSubmenu:tMenu];
 	[myMenu addObject:newItem];
