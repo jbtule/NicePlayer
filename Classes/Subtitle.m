@@ -49,6 +49,14 @@
 
 #import <Cocoa/Cocoa.h>
 #import "Subtitle.h"
+#import <UniversalCharsetDetector/NSString+UniversalCharsetDetector.h>
+
+@interface Subtitle(private)
+-(void)_JTmeasureWidth:(NSString*)aString;
+-(void)_JTparseSubRipFile:(NSString*)aContents;
+-(void)_JTMicroDVD:(NSString*)aContents;
+-(void)_JTparseSubStationAlpha:(NSString*)aContents;
+@end
 
 @implementation Subtitle
 
@@ -67,8 +75,7 @@
 
 -(id)initWithFile:(id)aPath forMovieSeconds:(float)aSeconds{
     if ((self = [super init])){
-			NSString* theLongestLine =@"";
-			double theLongestLength=0;
+	
                         thePath = aPath;
                         [thePath retain];
             timeOffset = 0;
@@ -80,8 +87,16 @@
             for(i=0;i<intervals;i++)
                 timeVector[i] = 0;
       //NSLog(@"Array created");
-            NSString* tContents = [NSString stringWithContentsOfFile:aPath];
+			NSStringEncoding tCoding = NSUTF8StringEncoding;
+			
+			
+			NSError* tError; 
+            NSString* tContents = [NSString stringWithContentsOfFileDetectingCharset:aPath usedEncoding:&tCoding error:&tError];
 
+			NSLog(@"Encoding %d",tCoding);
+			NSLog(@"Encoding %@",tError);
+
+			
             NSString* ext= [[aPath pathExtension] lowercaseString];
 			@try{
             if([ext isEqualTo:@"srt"])

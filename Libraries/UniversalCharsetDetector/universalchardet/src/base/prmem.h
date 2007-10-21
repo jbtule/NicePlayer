@@ -1,12 +1,4 @@
-//
-//  Subtitle.h
-//  NicePlayer
-//
-//  Created by James Tuley on 11/18/04.
-//  Copyright 2004 __MyCompanyName__. All rights reserved.
-//
-
-
+/* -*- Mode: C++; tab-width: 2; indent-tabs-mode: nil; c-basic-offset: 2 -*- */
 /* ***** BEGIN LICENSE BLOCK *****
 * Version: MPL 1.1/GPL 2.0/LGPL 2.1
 *
@@ -20,16 +12,15 @@
 * for the specific language governing rights and limitations under the
 * License.
 *
-* The Original Code is NicePlayer.
+* The Original Code is Mozilla Communicator client code.
 *
 * The Initial Developer of the Original Code is
-* James Tuley & Robert Chin.
-* Portions created by the Initial Developer are Copyright (C) 2004-2005
+* Netscape Communications Corporation.
+* Portions created by the Initial Developer are Copyright (C) 1998
 * the Initial Developer. All Rights Reserved.
 *
 * Contributor(s):
-*           Robert Chin <robert@osiris.laya.com> (NicePlayer Author)
-*           James Tuley <jay+nicesource@tuley.name> (NicePlayer Author)
+*          Roine Gustafsson <roine @ mirailabs.com>
 *
 * Alternatively, the contents of this file may be used under the terms of
 * either the GNU General Public License Version 2 or later (the "GPL"), or
@@ -45,25 +36,9 @@
 *
 * ***** END LICENSE BLOCK ***** */
 
+#ifndef prmem_h__
+#define prmem_h__
 
-
-#import <Cocoa/Cocoa.h>
-
-
-@interface Subtitle : NSObject {
-    uint* timeVector;
-    int intervals;
-    float timeOffset;
-    uint lastCheck;
-    NSMutableArray* theText;
-	NSString* theLongestLine;
-	double theLongestLength;
-        NSString* thePath;
-}
--(NSString*)longestText;
--(id)initWithFile:(id)aPath forMovieSeconds:(float)aSeconds;
--(NSString*)stringForTime:(float)aTime;
-
-- (NSString*)lineEndingTypeForFileContents:(NSString *)fileContents;
-
-@end
+#define PR_Malloc malloc
+#define PR_FREEIF(x) if(x){free(x);}
+#endif

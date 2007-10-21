@@ -1,12 +1,10 @@
 //
-//  Subtitle.h
-//  NicePlayer
+//  NSString+UniversalCharsetDetector.m
+//  UniversalCharsetDetector
 //
-//  Created by James Tuley on 11/18/04.
-//  Copyright 2004 __MyCompanyName__. All rights reserved.
+//  Created by James Tuley on 10/21/07.
+//  Copyright 2007 __MyCompanyName__. All rights reserved.
 //
-
-
 /* ***** BEGIN LICENSE BLOCK *****
 * Version: MPL 1.1/GPL 2.0/LGPL 2.1
 *
@@ -20,16 +18,15 @@
 * for the specific language governing rights and limitations under the
 * License.
 *
-* The Original Code is NicePlayer.
+* The Original Code is Mozilla Communicator client code.
 *
 * The Initial Developer of the Original Code is
-* James Tuley & Robert Chin.
-* Portions created by the Initial Developer are Copyright (C) 2004-2005
+* Netscape Communications Corporation.
+* Portions created by the Initial Developer are Copyright (C) 1998
 * the Initial Developer. All Rights Reserved.
 *
 * Contributor(s):
-*           Robert Chin <robert@osiris.laya.com> (NicePlayer Author)
-*           James Tuley <jay+nicesource@tuley.name> (NicePlayer Author)
+*          James Tuley <jay+charsetdetector@tuley.name>
 *
 * Alternatively, the contents of this file may be used under the terms of
 * either the GNU General Public License Version 2 or later (the "GPL"), or
@@ -46,24 +43,18 @@
 * ***** END LICENSE BLOCK ***** */
 
 
+#import "NSString+UniversalCharsetDetector.h"
+#import "UniversalCharsetDetector.h"
 
-#import <Cocoa/Cocoa.h>
 
+@implementation NSString (UniversalCharsetDetector)
 
-@interface Subtitle : NSObject {
-    uint* timeVector;
-    int intervals;
-    float timeOffset;
-    uint lastCheck;
-    NSMutableArray* theText;
-	NSString* theLongestLine;
-	double theLongestLength;
-        NSString* thePath;
++ (id)stringWithContentsOfFileDetectingCharset:(NSString *)path usedEncoding:(NSStringEncoding *)enc error:(NSError **)error{
+	NSData* tData = [NSData dataWithContentsOfFile:path];
+	NSStringEncoding tEnc =[UniversalCharsetDetector detectWithData:tData];
+	*enc = tEnc;
+	return [[[NSString alloc]initWithData:tData encoding:tEnc] autorelease];
 }
--(NSString*)longestText;
--(id)initWithFile:(id)aPath forMovieSeconds:(float)aSeconds;
--(NSString*)stringForTime:(float)aTime;
 
-- (NSString*)lineEndingTypeForFileContents:(NSString *)fileContents;
 
 @end

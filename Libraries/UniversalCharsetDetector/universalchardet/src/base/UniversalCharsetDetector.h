@@ -1,12 +1,4 @@
-//
-//  Subtitle.h
-//  NicePlayer
-//
-//  Created by James Tuley on 11/18/04.
-//  Copyright 2004 __MyCompanyName__. All rights reserved.
-//
-
-
+/* -*- Mode: C++; tab-width: 2; indent-tabs-mode: nil; c-basic-offset: 2 -*- */
 /* ***** BEGIN LICENSE BLOCK *****
 * Version: MPL 1.1/GPL 2.0/LGPL 2.1
 *
@@ -20,16 +12,15 @@
 * for the specific language governing rights and limitations under the
 * License.
 *
-* The Original Code is NicePlayer.
+* The Original Code is Mozilla Communicator client code.
 *
 * The Initial Developer of the Original Code is
-* James Tuley & Robert Chin.
-* Portions created by the Initial Developer are Copyright (C) 2004-2005
+* Netscape Communications Corporation.
+* Portions created by the Initial Developer are Copyright (C) 1998
 * the Initial Developer. All Rights Reserved.
 *
 * Contributor(s):
-*           Robert Chin <robert@osiris.laya.com> (NicePlayer Author)
-*           James Tuley <jay+nicesource@tuley.name> (NicePlayer Author)
+*          Roine Gustafsson <roine @ mirailabs.com>
 *
 * Alternatively, the contents of this file may be used under the terms of
 * either the GNU General Public License Version 2 or later (the "GPL"), or
@@ -45,25 +36,21 @@
 *
 * ***** END LICENSE BLOCK ***** */
 
+#import <Foundation/Foundation.h>
 
+// Source available at http://chromaplayer.com/support/credit/
+//
+// Usage is quite simple; pick one of the detectWithX and point
+// it at the data. It will either return an NSStringEncoding or
+// 0 if no match was found. 
+// Note that there is no test for ISO-8859-1, which would be a good
+// choice if 0 is returned.
 
-#import <Cocoa/Cocoa.h>
+// Note that the library also has a feed-based interface, which I did
+// not bother to publish since I didn't need it, and is left as an 
+// exercise to the reader.
 
-
-@interface Subtitle : NSObject {
-    uint* timeVector;
-    int intervals;
-    float timeOffset;
-    uint lastCheck;
-    NSMutableArray* theText;
-	NSString* theLongestLine;
-	double theLongestLength;
-        NSString* thePath;
-}
--(NSString*)longestText;
--(id)initWithFile:(id)aPath forMovieSeconds:(float)aSeconds;
--(NSString*)stringForTime:(float)aTime;
-
-- (NSString*)lineEndingTypeForFileContents:(NSString *)fileContents;
-
+@interface UniversalCharsetDetector: NSObject
++ (NSStringEncoding)detectWithBuffer:(const char*)buf length:(int)len;
++ (NSStringEncoding)detectWithData:(NSData*)data;
 @end

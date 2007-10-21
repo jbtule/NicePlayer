@@ -175,6 +175,8 @@
 		697497200B56033F0030D4D2 /* TitleBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6974971E0B56033F0030D4D2 /* TitleBackgroundView.m */; };
 		69945E6E0CCA639600CE0AD3 /* inputpref.png in Resources */ = {isa = PBXBuildFile; fileRef = 69945E6C0CCA639500CE0AD3 /* inputpref.png */; };
 		69945E6F0CCA639600CE0AD3 /* windpref.png in Resources */ = {isa = PBXBuildFile; fileRef = 69945E6D0CCA639600CE0AD3 /* windpref.png */; };
+		699461F20CCBEDCF00CE0AD3 /* UniversalCharsetDetector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699461EB0CCBED9F00CE0AD3 /* UniversalCharsetDetector.framework */; };
+		699461F30CCBEDE900CE0AD3 /* UniversalCharsetDetector.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 699461EB0CCBED9F00CE0AD3 /* UniversalCharsetDetector.framework */; };
 		69B2197A0BC72AA60054E10E /* AEDescUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 69B219760BC72AA60054E10E /* AEDescUtils.h */; };
 		69B2197B0BC72AA60054E10E /* AEDescUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B219770BC72AA60054E10E /* AEDescUtils.m */; };
 		69B2197C0BC72AA60054E10E /* TCallScript.h in Headers */ = {isa = PBXBuildFile; fileRef = 69B219780BC72AA60054E10E /* TCallScript.h */; };
@@ -284,6 +286,20 @@
 			remoteGlobalIDString = 61B5F90209C4CEE200B25A18;
 			remoteInfo = "Sparkle Test App";
 		};
+		699461EA0CCBED9F00CE0AD3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 699461E30CCBED9F00CE0AD3 /* UniversalCharsetDetector.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3667D3010A0184250035467C;
+			remoteInfo = UniversalCharsetDetector;
+		};
+		699461EE0CCBEDAF00CE0AD3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 699461E30CCBED9F00CE0AD3 /* UniversalCharsetDetector.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 3667D3000A0184250035467C;
+			remoteInfo = UniversalCharsetDetector;
+		};
 		69DE19D10BE972F1009D28B9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 69DE19C80BE972F1009D28B9 /* Sparkle.xcodeproj */;
@@ -318,6 +334,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				699461F30CCBEDE900CE0AD3 /* UniversalCharsetDetector.framework in CopyFiles */,
 				69DE19D60BE97321009D28B9 /* Sparkle.framework in CopyFiles */,
 				2510A62F0B06392600CA8110 /* STEnum.framework in CopyFiles */,
 				3E5970EC09FC8DB2001ED4FA /* CocoaScriptMenu.framework in CopyFiles */,
@@ -505,6 +522,7 @@
 		6974971E0B56033F0030D4D2 /* TitleBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TitleBackgroundView.m; path = "Classes/Overlay Widgets/TitleBackgroundView.m"; sourceTree = "<group>"; };
 		69945E6C0CCA639500CE0AD3 /* inputpref.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = inputpref.png; path = Resources/inputpref.png; sourceTree = "<group>"; };
 		69945E6D0CCA639600CE0AD3 /* windpref.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = windpref.png; path = Resources/windpref.png; sourceTree = "<group>"; };
+		699461E30CCBED9F00CE0AD3 /* UniversalCharsetDetector.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UniversalCharsetDetector.xcodeproj; path = Libraries/UniversalCharsetDetector/UniversalCharsetDetector.xcodeproj; sourceTree = "<group>"; };
 		69B219760BC72AA60054E10E /* AEDescUtils.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = AEDescUtils.h; sourceTree = "<group>"; };
 		69B219770BC72AA60054E10E /* AEDescUtils.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = AEDescUtils.m; sourceTree = "<group>"; };
 		69B219780BC72AA60054E10E /* TCallScript.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = TCallScript.h; sourceTree = "<group>"; };
@@ -521,6 +539,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				699461F20CCBEDCF00CE0AD3 /* UniversalCharsetDetector.framework in Frameworks */,
 				69DE19D50BE97317009D28B9 /* Sparkle.framework in Frameworks */,
 				2510A5B80B06374400CA8110 /* QTKit.framework in Frameworks */,
 				3E5970EB09FC8DA9001ED4FA /* CocoaScriptMenu.framework in Frameworks */,
@@ -744,6 +763,7 @@
 		25C5C1E208D4B7F300987A95 /* Other Projects */ = {
 			isa = PBXGroup;
 			children = (
+				699461E30CCBED9F00CE0AD3 /* UniversalCharsetDetector.xcodeproj */,
 				69DE19C80BE972F1009D28B9 /* Sparkle.xcodeproj */,
 				3E5970CB09FC8D9A001ED4FA /* CocoaScriptMenu.xcodeproj */,
 				3EEA737109FC87FD00AABB1F /* STEnum10.4.xcodeproj */,
@@ -916,6 +936,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		699461E40CCBED9F00CE0AD3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				699461EB0CCBED9F00CE0AD3 /* UniversalCharsetDetector.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		69B219750BC72AA60054E10E /* AttachedScriptCode */ = {
 			isa = PBXGroup;
 			children = (
@@ -1021,6 +1049,7 @@
 				3EEA732509FC859000AABB1F /* PBXTargetDependency */,
 				3E5970F009FC8DBB001ED4FA /* PBXTargetDependency */,
 				3EEA730D09FC84D000AABB1F /* PBXTargetDependency */,
+				699461EF0CCBEDAF00CE0AD3 /* PBXTargetDependency */,
 			);
 			name = NicePlayer;
 			productInstallPath = "$(HOME)/Applications";
@@ -1069,6 +1098,10 @@
 				{
 					ProductGroup = 3EEA737209FC87FD00AABB1F /* Products */;
 					ProjectRef = 3EEA737109FC87FD00AABB1F /* STEnum10.4.xcodeproj */;
+				},
+				{
+					ProductGroup = 699461E40CCBED9F00CE0AD3 /* Products */;
+					ProjectRef = 699461E30CCBED9F00CE0AD3 /* UniversalCharsetDetector.xcodeproj */;
 				},
 			);
 			targets = (
@@ -1132,6 +1165,13 @@
 			fileType = wrapper.application;
 			path = "Sparkle Test App.app";
 			remoteRef = 69765B360BFBDE7600D9C23B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		699461EB0CCBED9F00CE0AD3 /* UniversalCharsetDetector.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = UniversalCharsetDetector.framework;
+			remoteRef = 699461EA0CCBED9F00CE0AD3 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		69DE19D20BE972F1009D28B9 /* Sparkle.framework */ = {
@@ -1331,6 +1371,11 @@
 			isa = PBXTargetDependency;
 			name = EncryptOC;
 			targetProxy = 3EEA732409FC859000AABB1F /* PBXContainerItemProxy */;
+		};
+		699461EF0CCBEDAF00CE0AD3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = UniversalCharsetDetector;
+			targetProxy = 699461EE0CCBEDAF00CE0AD3 /* PBXContainerItemProxy */;
 		};
 		69DE1A3F0BE97CD9009D28B9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

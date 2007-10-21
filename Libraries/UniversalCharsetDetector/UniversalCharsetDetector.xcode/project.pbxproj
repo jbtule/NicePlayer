@@ -1,0 +1,1169 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 39;
+	objects = {
+		080E96DDFE201D6D7F000001 = {
+			children = (
+				3667D27C0A017B590035467C,
+				3667D19B0A0175260035467C,
+			);
+			isa = PBXGroup;
+			name = Classes;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+//080
+//081
+//082
+//083
+//084
+//100
+//101
+//102
+//103
+//104
+		1058C7A0FEA54F0111CA2CBB = {
+			children = (
+				1058C7A1FEA54F0111CA2CBB,
+			);
+			isa = PBXGroup;
+			name = "Linked Frameworks";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		1058C7A1FEA54F0111CA2CBB = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.framework;
+			name = Cocoa.framework;
+			path = /System/Library/Frameworks/Cocoa.framework;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		1058C7A2FEA54F0111CA2CBB = {
+			children = (
+				29B97325FDCFA39411CA2CEA,
+				29B97324FDCFA39411CA2CEA,
+			);
+			isa = PBXGroup;
+			name = "Other Frameworks";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+//100
+//101
+//102
+//103
+//104
+//190
+//191
+//192
+//193
+//194
+		19C28FACFE9D520D11CA2CBB = {
+			children = (
+				3667D3010A0184250035467C,
+			);
+			isa = PBXGroup;
+			name = Products;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+//190
+//191
+//192
+//193
+//194
+//290
+//291
+//292
+//293
+//294
+		29B97313FDCFA39411CA2CEA = {
+			buildSettings = {
+			};
+			buildStyles = (
+				4A9504CCFFE6A4B311CA0CBA,
+				4A9504CDFFE6A4B311CA0CBA,
+			);
+			hasScannedForEncodings = 1;
+			isa = PBXProject;
+			mainGroup = 29B97314FDCFA39411CA2CEA;
+			projectDirPath = "";
+			targets = (
+				3667D3000A0184250035467C,
+			);
+		};
+		29B97314FDCFA39411CA2CEA = {
+			children = (
+				3667D5300A01A4C20035467C,
+				3667D5150A01A1460035467C,
+				080E96DDFE201D6D7F000001,
+				3667D15C0A0175250035467C,
+				29B97315FDCFA39411CA2CEA,
+				29B97317FDCFA39411CA2CEA,
+				29B97323FDCFA39411CA2CEA,
+				19C28FACFE9D520D11CA2CBB,
+			);
+			isa = PBXGroup;
+			name = CharEncoding;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA = {
+			children = (
+				32CA4F630368D1EE00C91783,
+			);
+			isa = PBXGroup;
+			name = "Other Sources";
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA = {
+			children = (
+				3667D3020A0184250035467C,
+			);
+			isa = PBXGroup;
+			name = Resources;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA = {
+			children = (
+				1058C7A0FEA54F0111CA2CBB,
+				1058C7A2FEA54F0111CA2CBB,
+			);
+			isa = PBXGroup;
+			name = Frameworks;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		29B97324FDCFA39411CA2CEA = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.framework;
+			name = AppKit.framework;
+			path = /System/Library/Frameworks/AppKit.framework;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		29B97325FDCFA39411CA2CEA = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.framework;
+			name = Foundation.framework;
+			path = /System/Library/Frameworks/Foundation.framework;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+//290
+//291
+//292
+//293
+//294
+//320
+//321
+//322
+//323
+//324
+		32CA4F630368D1EE00C91783 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = UniversalCharsetDetector_Prefix.pch;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+//320
+//321
+//322
+//323
+//324
+//360
+//361
+//362
+//363
+//364
+		3667D15C0A0175250035467C = {
+			children = (
+				3667D15E0A0175250035467C,
+				3667D1630A0175250035467C,
+				3667D1A40A0175260035467C,
+			);
+			isa = PBXGroup;
+			path = universalchardet;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		3667D15E0A0175250035467C = {
+			children = (
+				3667D15F0A0175250035467C,
+				3667D1600A0175250035467C,
+			);
+			isa = PBXGroup;
+			path = doc;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D15F0A0175250035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = text.html;
+			path = ChardetInterface.htm;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D1600A0175250035467C = {
+			isa = PBXFileReference;
+			lastKnownFileType = file;
+			path = UniversalCharsetDetection.doc;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D1630A0175250035467C = {
+			children = (
+				3667D1650A0175260035467C,
+				3667D19D0A0175260035467C,
+			);
+			isa = PBXGroup;
+			path = src;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D1650A0175260035467C = {
+			children = (
+				3667D1660A0175260035467C,
+				3667D1690A0175260035467C,
+				3667D16A0A0175260035467C,
+				3667D16B0A0175260035467C,
+				3667D16C0A0175260035467C,
+				3667D1670A0175260035467C,
+				3667D1680A0175260035467C,
+				3667D16D0A0175260035467C,
+				3667D16E0A0175260035467C,
+				3667D16F0A0175260035467C,
+				3667D1700A0175260035467C,
+				3667D1710A0175260035467C,
+				3667D1720A0175260035467C,
+				3667D1730A0175260035467C,
+				3667D1740A0175260035467C,
+				3667D1770A0175260035467C,
+				3667D1780A0175260035467C,
+				3667D1790A0175260035467C,
+				3667D17A0A0175260035467C,
+				3667D17B0A0175260035467C,
+				3667D17D0A0175260035467C,
+				3667D17E0A0175260035467C,
+				3667D17F0A0175260035467C,
+				3667D1800A0175260035467C,
+				3667D1810A0175260035467C,
+				3667D1820A0175260035467C,
+				3667D1830A0175260035467C,
+				3667D1840A0175260035467C,
+				3667D1850A0175260035467C,
+				3667D1860A0175260035467C,
+				3667D1870A0175260035467C,
+				3667D1880A0175260035467C,
+				3667D1890A0175260035467C,
+				3667D18A0A0175260035467C,
+				3667D18B0A0175260035467C,
+				3667D18C0A0175260035467C,
+				3667D18D0A0175260035467C,
+				3667D18E0A0175260035467C,
+				3667D18F0A0175260035467C,
+				3667D1900A0175260035467C,
+				3667D1910A0175260035467C,
+				3667D1920A0175260035467C,
+				3667D1930A0175260035467C,
+				3667D1940A0175260035467C,
+				3667D1950A0175260035467C,
+				3667D1960A0175260035467C,
+				3667D1970A0175260035467C,
+				3667D1980A0175260035467C,
+				3667D1990A0175260035467C,
+				3667D17C0A0175260035467C,
+				3667D19A0A0175260035467C,
+			);
+			isa = PBXGroup;
+			path = base;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D1660A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = Big5Freq.tab;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D1670A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			path = CharDistribution.cpp;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D1680A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CharDistribution.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D1690A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = EUCKRFreq.tab;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D16A0A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = EUCTWFreq.tab;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D16B0A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = GB2312Freq.tab;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D16C0A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = JISFreq.tab;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D16D0A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			path = JpCntx.cpp;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D16E0A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = JpCntx.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D16F0A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			path = LangBulgarianModel.cpp;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D1700A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			path = LangCyrillicModel.cpp;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D1710A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			path = LangGreekModel.cpp;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D1720A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			path = LangHebrewModel.cpp;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D1730A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			path = LangHungarianModel.cpp;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D1740A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			path = LangThaiModel.cpp;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D1770A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			path = nsBig5Prober.cpp;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D1780A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = nsBig5Prober.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D1790A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			path = nsCharSetProber.cpp;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D17A0A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = nsCharSetProber.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D17B0A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = nsCodingStateMachine.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D17C0A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = nscore.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D17D0A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			path = nsEscCharsetProber.cpp;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D17E0A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = nsEscCharsetProber.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D17F0A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			path = nsEscSM.cpp;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D1800A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			path = nsEUCJPProber.cpp;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D1810A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = nsEUCJPProber.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D1820A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			path = nsEUCKRProber.cpp;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D1830A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = nsEUCKRProber.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D1840A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			path = nsEUCTWProber.cpp;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D1850A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = nsEUCTWProber.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D1860A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			path = nsGB2312Prober.cpp;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D1870A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = nsGB2312Prober.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D1880A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			path = nsHebrewProber.cpp;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D1890A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = nsHebrewProber.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D18A0A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			path = nsLatin1Prober.cpp;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D18B0A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = nsLatin1Prober.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D18C0A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			path = nsMBCSGroupProber.cpp;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D18D0A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = nsMBCSGroupProber.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D18E0A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			path = nsMBCSSM.cpp;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D18F0A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = nsPkgInt.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D1900A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			path = nsSBCharSetProber.cpp;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D1910A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = nsSBCharSetProber.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D1920A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			path = nsSBCSGroupProber.cpp;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D1930A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = nsSBCSGroupProber.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D1940A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			path = nsSJISProber.cpp;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D1950A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = nsSJISProber.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D1960A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			path = nsUniversalDetector.cpp;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D1970A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = nsUniversalDetector.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D1980A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			path = nsUTF8Prober.cpp;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D1990A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = nsUTF8Prober.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D19A0A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = prmem.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D19B0A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.objcpp;
+			name = UniversalCharsetDetector.mm;
+			path = universalchardet/src/base/UniversalCharsetDetector.mm;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D19D0A0175260035467C = {
+			children = (
+				3667D19F0A0175260035467C,
+				3667D1A00A0175260035467C,
+				3667D1A10A0175260035467C,
+				3667D1A20A0175260035467C,
+				3667D1A30A0175260035467C,
+			);
+			isa = PBXGroup;
+			path = xpcom;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D19F0A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			path = nsUdetXPCOMWrapper.cpp;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D1A00A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = nsUdetXPCOMWrapper.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D1A10A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = nsUniversalCharDetDll.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D1A20A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			path = nsUniversalCharDetModule.cpp;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D1A30A0175260035467C = {
+			isa = PBXFileReference;
+			lastKnownFileType = "wrapper.installer-pkg";
+			path = universalchardet.pkg;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D1A40A0175260035467C = {
+			children = (
+				3667D1A70A0175260035467C,
+			);
+			isa = PBXGroup;
+			path = tests;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D1A70A0175260035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			path = UniversalChardetTest.cpp;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D27C0A017B590035467C = {
+			explicitFileType = sourcecode.c.h;
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			name = UniversalCharsetDetector.h;
+			path = universalchardet/src/base/UniversalCharsetDetector.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3667D2FC0A0184250035467C = {
+			buildActionMask = 2147483647;
+			files = (
+				3667D44F0A0186F40035467C,
+			);
+			isa = PBXHeadersBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3667D2FD0A0184250035467C = {
+			buildActionMask = 2147483647;
+			files = (
+				3667D5160A01A1460035467C,
+				3667D5310A01A4C20035467C,
+			);
+			isa = PBXResourcesBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3667D2FE0A0184250035467C = {
+			buildActionMask = 2147483647;
+			files = (
+				3667D3030A0184560035467C,
+				3667D3050A0184560035467C,
+				3667D3070A0184560035467C,
+				3667D3080A0184560035467C,
+				3667D3090A0184560035467C,
+				3667D30A0A0184560035467C,
+				3667D30B0A0184560035467C,
+				3667D30C0A0184560035467C,
+				3667D30D0A0184560035467C,
+				3667D30F0A0184560035467C,
+				3667D3130A0184560035467C,
+				3667D3150A0184560035467C,
+				3667D3160A0184560035467C,
+				3667D3180A0184560035467C,
+				3667D31A0A0184560035467C,
+				3667D31C0A0184560035467C,
+				3667D31E0A0184560035467C,
+				3667D3200A0184560035467C,
+				3667D3220A0184560035467C,
+				3667D3240A0184560035467C,
+				3667D3260A0184560035467C,
+				3667D3280A0184560035467C,
+				3667D32A0A0184560035467C,
+				3667D32C0A0184560035467C,
+				3667D32E0A0184560035467C,
+				3667D3320A0184560035467C,
+			);
+			isa = PBXSourcesBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3667D2FF0A0184250035467C = {
+			buildActionMask = 2147483647;
+			files = (
+				3667D4B60A018B360035467C,
+			);
+			isa = PBXFrameworksBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3667D3000A0184250035467C = {
+			buildPhases = (
+				3667D2FC0A0184250035467C,
+				3667D2FD0A0184250035467C,
+				3667D2FE0A0184250035467C,
+				3667D2FF0A0184250035467C,
+				36D73B010A02084C0032E0F7,
+			);
+			buildRules = (
+			);
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_MODEL_TUNING = G3;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = UniversalCharsetDetector_Prefix.pch;
+				INFOPLIST_FILE = "UniversalCharsetDetector-Info.plist";
+				INSTALL_PATH = "@executable_path/../Frameworks";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = UniversalCharsetDetector;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = "-Wmost -Wno-char-subscripts -Wno-four-char-constants -Wno-unknown-pragmas";
+			};
+			dependencies = (
+			);
+			isa = PBXNativeTarget;
+			name = UniversalCharsetDetector;
+			productName = UniversalCharacterDetector;
+			productReference = 3667D3010A0184250035467C;
+			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
+<plist version=\"1.0\">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>UniversalCharacterDetector</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.yourcompany.UniversalCharacterDetector</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundlePackageType</key>
+	<string>FMWK</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>1.0</string>
+</dict>
+</plist>
+";
+			productType = "com.apple.product-type.framework";
+		};
+		3667D3010A0184250035467C = {
+			explicitFileType = wrapper.framework;
+			includeInIndex = 0;
+			isa = PBXFileReference;
+			path = UniversalCharsetDetector.framework;
+			refType = 3;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3667D3020A0184250035467C = {
+			isa = PBXFileReference;
+			lastKnownFileType = text.xml;
+			path = "UniversalCharsetDetector-Info.plist";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		3667D3030A0184560035467C = {
+			fileRef = 3667D1670A0175260035467C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3667D3050A0184560035467C = {
+			fileRef = 3667D16D0A0175260035467C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3667D3070A0184560035467C = {
+			fileRef = 3667D16F0A0175260035467C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3667D3080A0184560035467C = {
+			fileRef = 3667D1700A0175260035467C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3667D3090A0184560035467C = {
+			fileRef = 3667D1710A0175260035467C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3667D30A0A0184560035467C = {
+			fileRef = 3667D1720A0175260035467C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3667D30B0A0184560035467C = {
+			fileRef = 3667D1730A0175260035467C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3667D30C0A0184560035467C = {
+			fileRef = 3667D1740A0175260035467C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3667D30D0A0184560035467C = {
+			fileRef = 3667D1770A0175260035467C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3667D30F0A0184560035467C = {
+			fileRef = 3667D1790A0175260035467C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3667D3130A0184560035467C = {
+			fileRef = 3667D17D0A0175260035467C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3667D3150A0184560035467C = {
+			fileRef = 3667D17F0A0175260035467C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3667D3160A0184560035467C = {
+			fileRef = 3667D1800A0175260035467C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3667D3180A0184560035467C = {
+			fileRef = 3667D1820A0175260035467C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3667D31A0A0184560035467C = {
+			fileRef = 3667D1840A0175260035467C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3667D31C0A0184560035467C = {
+			fileRef = 3667D1860A0175260035467C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3667D31E0A0184560035467C = {
+			fileRef = 3667D1880A0175260035467C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3667D3200A0184560035467C = {
+			fileRef = 3667D18A0A0175260035467C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3667D3220A0184560035467C = {
+			fileRef = 3667D18C0A0175260035467C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3667D3240A0184560035467C = {
+			fileRef = 3667D18E0A0175260035467C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3667D3260A0184560035467C = {
+			fileRef = 3667D1900A0175260035467C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3667D3280A0184560035467C = {
+			fileRef = 3667D1920A0175260035467C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3667D32A0A0184560035467C = {
+			fileRef = 3667D1940A0175260035467C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3667D32C0A0184560035467C = {
+			fileRef = 3667D1960A0175260035467C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3667D32E0A0184560035467C = {
+			fileRef = 3667D1980A0175260035467C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3667D3320A0184560035467C = {
+			fileRef = 3667D19B0A0175260035467C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3667D44F0A0186F40035467C = {
+			fileRef = 3667D27C0A017B590035467C;
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+					Public,
+				);
+			};
+		};
+		3667D4B60A018B360035467C = {
+			fileRef = 29B97325FDCFA39411CA2CEA;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3667D5150A01A1460035467C = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = text.html;
+			path = "MPL-1.1.html";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		3667D5160A01A1460035467C = {
+			fileRef = 3667D5150A01A1460035467C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3667D5300A01A4C20035467C = {
+			isa = PBXFileReference;
+			lastKnownFileType = text.rtf;
+			path = README.rtf;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		3667D5310A01A4C20035467C = {
+			fileRef = 3667D5300A01A4C20035467C;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		36D73B010A02084C0032E0F7 = {
+			buildActionMask = 8;
+			files = (
+			);
+			inputPaths = (
+				$BUILD_ROOT/$EXECUTABLE_PATH,
+			);
+			isa = PBXShellScriptBuildPhase;
+			outputPaths = (
+				$BUILD_ROOT/$EXECUTABLE_PATH,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "strip -x $BUILD_ROOT/$EXECUTABLE_PATH";
+		};
+//360
+//361
+//362
+//363
+//364
+//4A0
+//4A1
+//4A2
+//4A3
+//4A4
+		4A9504CCFFE6A4B311CA0CBA = {
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				ZERO_LINK = YES;
+			};
+			isa = PBXBuildStyle;
+			name = Development;
+		};
+		4A9504CDFFE6A4B311CA0CBA = {
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEPLOYMENT_POSTPROCESSING = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G3;
+				GCC_PREPROCESSOR_DEFINITIONS = NS_BLOCK_ASSERTIONS;
+				REZ_PREPROCESSOR_DEFINITIONS = "";
+				ZERO_LINK = NO;
+			};
+			isa = PBXBuildStyle;
+			name = Deployment;
+		};
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA;
+}
