@@ -51,7 +51,7 @@
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
 					200,
-					63,
+					364,
 					20,
 					48,
 					43,
@@ -92,7 +92,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {852, 2436}}";
 			sepNavSelRange = "{2237, 25}";
-			sepNavVisRect = "{{0, 658}, {852, 562}}";
+			sepNavVisRect = "{{0, 651}, {852, 562}}";
 			sepNavWindowFrame = "{{15, 82}, {891, 691}}";
 		};
 	};
@@ -154,7 +154,7 @@
 		fRef = 6994635D0CCBF0B700CE0AD3 /* NSString+UniversalCharsetDetector.m */;
 		name = stringWithContentsOfFileDetectingCharset;
 		rLen = 40;
-		rLoc = 2060;
+		rLoc = 2078;
 		rType = 0;
 		vrLen = 1712;
 		vrLoc = 642;

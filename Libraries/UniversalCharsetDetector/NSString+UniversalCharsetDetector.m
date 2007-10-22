@@ -3,7 +3,7 @@
 //  UniversalCharsetDetector
 //
 //  Created by James Tuley on 10/21/07.
-//  Copyright 2007 __MyCompanyName__. All rights reserved.
+//  Copyright 2007 James Tuley. All rights reserved.
 //
 /* ***** BEGIN LICENSE BLOCK *****
 * Version: MPL 1.1/GPL 2.0/LGPL 2.1
@@ -26,7 +26,7 @@
 * the Initial Developer. All Rights Reserved.
 *
 * Contributor(s):
-*          James Tuley <jay+charsetdetector@tuley.name>
+*          James Tuley <jay+charsetdetector@tuley.name> Added NSString Category
 *
 * Alternatively, the contents of this file may be used under the terms of
 * either the GNU General Public License Version 2 or later (the "GPL"), or
