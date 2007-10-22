@@ -198,7 +198,7 @@
 - (void)mouseMoved:(NSEvent *)anEvent;
 -(void)mouseUp:(NSEvent *)anEvent;
 -(void)rightMouseUp:(NSEvent *)anEvent;
--(void)mouseDoubleClick:(NSEvent *)anEvent;
+-(void)setInitialDrag:(NSEvent *)anEvent;
 -(void)scrollWheel:(NSEvent *)anEvent;
 
 #pragma mark -

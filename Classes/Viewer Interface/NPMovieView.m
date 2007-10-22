@@ -636,6 +636,8 @@
 
 - (void)mouseDoubleClick:(NSEvent *)anEvent
 {
+[((NiceWindow *)[self window]) setInitialDrag:anEvent];
+
 	switch([[Preferences mainPrefs] doubleClickMoviePref]){
 		case MAKE_WINDOW_FULL_SCREEN:
 			[((NiceWindow *)[self window]) toggleWindowFullScreen];

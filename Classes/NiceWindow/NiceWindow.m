@@ -1044,6 +1044,7 @@
     [self resizeWithSize: NSMakeSize(aScaler*[self aspectRatio].width,aScaler*[self aspectRatio].height) animate:NO];
     if (fullScreen)
         [self center];   
+	[self setInitialDrag:nil];
 }
 
 -(void)resetFillingFlags
@@ -1067,6 +1068,8 @@
     newRect = [self centerRect:newRect onScreen:aScreen];
     [self setFrame:newRect display:YES];
     [self centerOnScreen:aScreen];
+		[self setInitialDrag:nil];
+
 }
 
 
@@ -1180,6 +1183,7 @@
 /* Center on the CURRENT screen */
 - (void)center
 {
+	[self setInitialDrag:nil];
     [self centerOnScreen:[self screen]];
 }
 
@@ -1290,9 +1294,9 @@
     [theMovieView rightMouseUp:anEvent];
 }
 
--(void)mouseDoubleClick:(NSEvent *)anEvent
+-(void)setInitialDrag:(NSEvent *)anEvent
 {
-    [theMovieView mouseDoubleClick:anEvent];
+	initialDrag =[self convertScreenToBase:[NSEvent mouseLocation]];
 }
 
 -(void)scrollWheel:(NSEvent *)anEvent
