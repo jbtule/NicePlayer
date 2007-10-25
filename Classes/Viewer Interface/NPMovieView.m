@@ -505,7 +505,11 @@
 			break;
 		case NSRightArrowFunctionKey:
 			if([anEvent modifierFlags] & NSCommandKeyMask){
-			    [self playNextMovie];
+				if([[self chapters] count] == 0 
+					|| [[self chapters] count] == [[self chapters] indexOfObject:[self currentChapter]]+1)
+					[self playNextMovie];
+				else
+					[self gotoChapter:[[self chapters] indexOfObject:[self currentChapter]]+1];
 				break;
 			}
 			if([anEvent modifierFlags] & NSAlternateKeyMask){
@@ -519,7 +523,11 @@
 			break;
 		case NSLeftArrowFunctionKey:
 			if([anEvent modifierFlags] & NSCommandKeyMask){
-			    [self playPrevMovie];
+			    if([[self chapters] count] == 0 
+					||  [[self chapters] indexOfObject:[self currentChapter]]-1 < 0)
+					[self playPrevMovie];
+				else
+					[self gotoChapter:[[self chapters] indexOfObject:[self currentChapter]]-1];
 				break;
 			}
 			if([anEvent modifierFlags] & NSAlternateKeyMask){
