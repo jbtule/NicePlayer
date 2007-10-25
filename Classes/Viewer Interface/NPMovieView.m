@@ -141,6 +141,14 @@
 	trueMovieView =nil;
 }
 
+-(void)blankTrueMovieView{
+	[self clearTrueMovieView];
+
+	trueMovieView = [[BlankView alloc] initWithFrame:[self frame]];
+		[self addSubview:trueMovieView];
+
+}
+
 -(void)close
 {
 	//NSLog(@"Close MovieView");
@@ -232,7 +240,7 @@
 	@catch(NSException *exception) {
 		didOpen = NO;
 			[self clearTrueMovieView];
-		trueMovieView = [[JTMovieView alloc] initWithFrame:subview];
+		trueMovieView = [[BlankView alloc] initWithFrame:subview];
 		[self addSubview:trueMovieView];
 	}
 	@finally {
@@ -319,6 +327,22 @@
     if(NSMouseInRect(aPoint, [self frame], NO))
         return self;
     return nil;
+}
+-(id)currentChapter{
+	if([trueMovieView respondsToSelector:@selector(_currentChapter)])
+		return [trueMovieView _currentChapter];
+	return @"Unknown Chapter";
+}
+
+-(void)gotoChapter:(int)anIndex{
+	if([trueMovieView respondsToSelector:@selector(_gotoChapter:)])
+		[trueMovieView _gotoChapter:[NSNumber numberWithInt:anIndex]];
+}
+
+-(NSArray*)chapters{
+	if([trueMovieView respondsToSelector:@selector(_chapters)])
+		return [trueMovieView _chapters];
+	return [NSArray array];
 }
 
 -(BOOL)acceptsFirstResponder

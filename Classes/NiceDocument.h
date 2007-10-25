@@ -65,6 +65,7 @@
     IBOutlet NiceWindow *theWindow;
     NSURL* theCurrentURL;
     NSMutableArray* thePlaylist;
+	NSMutableArray* theDataSourceCache;
     enum defaultRepeatModeValues theRepeatMode;
     id movieMenuItem;
     NSMutableArray *menuObjects;
@@ -127,7 +128,7 @@
 
 #pragma mark -
 #pragma mark Playlist
-
+-(void)reloadPlaylist;
 -(IBAction)openPlaylistDrawerConditional:(id)sender;
 -(IBAction)togglePlaylistDrawer:(id)sender;
 -(IBAction)openPlaylistDrawer:(id)sender;

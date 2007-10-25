@@ -57,6 +57,9 @@ id rowsToFileNames(id obj, void* playList){
     return [[(id)playList objectAtIndex:[obj intValue]] path];
 }
 
+
+
+
 id collectURLToStrings(id each, void*context){
     return [each absoluteString];
 }
@@ -129,6 +132,7 @@ void findSpace(id each, void* context, BOOL* endthis){
         theSubtitle = nil;
         asffrrTimer = nil;
         thePlaylist = [[NSMutableArray alloc] init];
+		theDataSourceCache  = [[NSMutableArray alloc] init];
         theRepeatMode = [[Preferences mainPrefs] defaultRepeatMode];
         movieMenuItem = nil;
         menuObjects = nil;
@@ -138,6 +142,7 @@ void findSpace(id each, void* context, BOOL* endthis){
                                                  selector:@selector(rebuildMenu)
                                                      name:@"RebuildAllMenus"
                                                    object:nil];		
+												   
     }
     
     return self;
@@ -162,6 +167,7 @@ void findSpace(id each, void* context, BOOL* endthis){
     [thePlaylist release];
     [playlistFilename release];
     [theID release];
+	[theDataSourceCache release];
     [super dealloc];
 }
 
@@ -367,7 +373,7 @@ void findSpace(id each, void* context, BOOL* endthis){
     
     [self refreshRepeatModeGUI];
     [self calculateAspectRatio];
-
+	[self reloadPlaylist];
 	if([[Preferences mainPrefs] audioVolumeSimilarToLastWindow]){
 		NiceDocument *doc = [[NSDocumentController sharedDocumentController] currentDocument];
 		if(doc)
@@ -742,6 +748,7 @@ stuff won't work properly! */
         for(i = 0; i < (int)[pluginMenu count]; i++)
             [mSubMenu addItem:[pluginMenu objectAtIndex:i]];*/
     }[self rebuildPlaylistMenu];
+		[self reloadPlaylist];
 }
 
 -(id)window
@@ -883,6 +890,18 @@ stuff won't work properly! */
     }
 }
 
+
+-(void)reloadPlaylist{
+	[theDataSourceCache autorelease];
+	theDataSourceCache = [[NSMutableArray alloc]init];
+	
+    [thePlaylistTable reloadData];
+	
+	for(int i=0;i<[thePlaylistTable numberOfRows];i++){
+		[thePlaylistTable expandItem:[thePlaylistTable itemAtRow:i]];
+	}
+}
+
 /**
 * Responsible for controlling what to do when a playlist item is changed.
  */
@@ -891,7 +910,7 @@ stuff won't work properly! */
     id tempURL = [thePlaylist objectAtIndex:anIndex];
     [theMovieView closeReopen];
     [self loadURL:tempURL firstTime:NO];
-    [thePlaylistTable reloadData];
+	[self reloadPlaylist];
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:nil];
 
 	if(aBool){
@@ -930,8 +949,19 @@ stuff won't work properly! */
 -(IBAction)choosePlaylistItem:(id)sender
 {
     if([sender selectedRow] == -1)
-	return;
-    [self playAtIndex:[sender selectedRow] obeyingPreviousState:NO];
+		return;
+		
+	id tItem =[sender itemAtRow:[sender selectedRow]];
+	
+	if([[tItem objectForKey:@"type"] isEqualTo:@"chapter"]){
+		if(![[[tItem objectForKey:@"parent"] objectForKey:@"url"] isEqualTo:theCurrentURL]){
+			[self playAtIndex:[[[tItem objectForKey:@"parent"] objectForKey:@"index"] intValue]-1 obeyingPreviousState:NO];
+		}
+		[theMovieView gotoChapter:[[tItem objectForKey:@"index"] intValue]-1];
+	}else{
+		[self playAtIndex:[[tItem objectForKey:@"index"] intValue]-1 obeyingPreviousState:NO];
+	}
+		
 }
 
 -(IBAction)addToPlaylist:(id)sender
@@ -971,7 +1001,7 @@ stuff won't work properly! */
     if(![thePlaylist containsObject:aURL]){
         [thePlaylist insertObject:aURL atIndex:anIndex];
         
-        [thePlaylistTable reloadData];
+	[self reloadPlaylist];
 				[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:nil];
 
     }
@@ -980,24 +1010,29 @@ stuff won't work properly! */
 -(void)removeURLFromPlaylist:(NSURL*)aURL
 {
     int tempIndex = [thePlaylist indexOfObject:aURL];
-    [thePlaylist replaceObjectAtIndex:tempIndex withObject:@"URL Placeholder"];
+	if(tempIndex != NSNotFound)
+		[self removeURLFromPlaylistAtIndex:tempIndex];
 }
 
 -(void)removeURLFromPlaylistAtIndex:(int)anIndex
 {
-    [thePlaylist replaceObjectAtIndex:anIndex withObject:@"URL Placeholder"];
+	if([theCurrentURL isEqualTo:[thePlaylist objectAtIndex:anIndex]  ])
+		[self playNext];
+    [thePlaylist replaceObjectAtIndex:anIndex withObject:[NSURL URLWithString:@"placeholder://URL_Placeholder"]];
 	[self removeURLPlaceHolders];
 }
 
 -(void)removeURLPlaceHolders
 {
-    [thePlaylist removeObject:@"URL Placeholder"];
-    [thePlaylistTable reloadData];
+    [thePlaylist removeObject:[NSURL URLWithString:@"placeholder://URL_Placeholder"]];
     
     if([thePlaylist isEmpty]){
         [(NPMovieView *)theMovieView stop];
-        [theMovieView openURL:[NPMovieView blankImage]];
+        [theMovieView blankTrueMovieView];
+		theCurrentURL =nil;
     }
+		[self reloadPlaylist];
+
 }
 
 -(BOOL)isPlaylistEmpty
@@ -1032,7 +1067,7 @@ stuff won't work properly! */
                 isRandom  = [[[plist objectForKey:@"Contents"] objectForKey:@"Random"] intValue];
                 [self loadURL:[thePlaylist firstObject] firstTime:YES];
                 [self refreshRepeatModeGUI];
-                [thePlaylistTable reloadData];
+	[self reloadPlaylist];
                 [theMovieView setVolume: [[[plist objectForKey:@"Contents"] objectForKey:@"Volume"] floatValue]];
                 [[self window] updateVolume];
 
@@ -1057,36 +1092,108 @@ stuff won't work properly! */
 	return [theMovieView volume];
 }
 
+
 #pragma mark -
-#pragma mark Data Views
+#pragma mark New DataSource Methods
 
-- (int)numberOfRowsInTableView:(NSTableView *)aTableView
-{
-    return [thePlaylist count];    
+
+- (id)outlineView:(NSOutlineView *)outlineView objectValueForTableColumn:(NSTableColumn *)aTableColumn byItem:(id)item{
+	if([[aTableColumn identifier] isEqualTo:@"index"]){
+		if([[item objectForKey:@"type"] isEqualTo:@"chapter"]){
+			if( [[item objectForKey:@"url"] isEqualTo:[theMovieView currentChapter]])
+						            return [NSString stringWithFormat:@"%C", 0x2022];
+
+			return @"";
+			}
+        return [item objectForKey:@"index"];
+    }else if ([[aTableColumn identifier] isEqualTo:@"name"]){
+					if([[item objectForKey:@"type"] isEqualTo:@"chapter"]){
+								return [NSString stringWithFormat:@"   %@",[item objectForKey:@"self"],nil] ;
+
+					}
+	
+			return [item objectForKey:@"self"] ;
+    }else if ([[aTableColumn identifier] isEqualTo:@"status"]){
+		if	([[item objectForKey:@"url"]  isEqual: theCurrentURL]) 
+		            return [NSString stringWithFormat:@"%C", 0x2022];
+		else
+			return @"";
+    }else if ([[aTableColumn identifier] isEqualTo:@"none"]){
+			return @"" ;
+    }else{
+		return @"Error...";
+	}
+
 }
 
-- (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(int)rowIndex
-{
-    if([[aTableColumn identifier] isEqualTo:@"index"])
-        return [NSNumber numberWithInt:rowIndex +1];
-    else if ([[aTableColumn identifier] isEqualTo:@"name"])
-        return [[[thePlaylist objectAtIndex:rowIndex]path] lastPathComponent];
-    else if ([[aTableColumn identifier] isEqualTo:@"status"]){
-        if ([[thePlaylist objectAtIndex:rowIndex] isEqualTo:theCurrentURL])
-            return [NSString stringWithFormat:@"%C", 0x2022];
-    else
-    return @"";
-    }else
-    return @"error";
+
+
+- (id)outlineView:(NSOutlineView *)outlineView child:(int)anIndex ofItem:(id)item{
+	if(item == nil){
+		NSDictionary* tRet =[NSDictionary dictionaryWithObjectsAndKeys:
+		@"playlist",@"type",
+		[[[thePlaylist objectAtIndex:anIndex] path] lastPathComponent],@"self",
+		[NSNumber numberWithInt:anIndex+1],@"index",
+		[thePlaylist objectAtIndex:anIndex],@"url",
+		nil];
+		
+		[theDataSourceCache addObject:tRet];
+		
+		return tRet;
+
+	}else if([[item objectForKey:@"url"] isEqualTo: theCurrentURL]){
+		NSDictionary* tRet = [NSDictionary dictionaryWithObjectsAndKeys:
+		@"chapter",@"type",
+		item,@"parent",
+		[[theMovieView chapters] objectAtIndex:anIndex],@"self",
+		[NSNumber numberWithInt:anIndex+1],@"index",
+		[[theMovieView chapters] objectAtIndex:anIndex],@"url",nil];
+		[theDataSourceCache addObject:tRet];
+		return tRet;
+
+	}else{
+		return nil;
+	}
+
 }
 
-- (BOOL)tableView:(NSTableView *)tableView 
-       acceptDrop:(id <NSDraggingInfo>)info
-              row:(int)row dropOperation:(NSTableViewDropOperation)operation{
+- (BOOL)outlineView:(NSOutlineView *)outlineView isItemExpandable:(id)item{
+
+	if(item == nil){
+		return YES;
+	}else if([[item objectForKey:@"url"]  isEqual: theCurrentURL]){
+		return [[theMovieView chapters] count] > 0;
+	}else{
+		return NO;
+	}
+
+}
+
+
+- (int)outlineView:(NSOutlineView *)outlineView numberOfChildrenOfItem:(id)item{
+
+	if(item == nil){
+		return [thePlaylist count];
+	}else if([[item objectForKey:@"url"]  isEqual: theCurrentURL]){
+		return [[theMovieView chapters] count];
+	}else{
+		return 0;
+	}
+
+}
+
+
+- (BOOL)outlineView:(NSOutlineView *)outlineView 
+acceptDrop:(id <NSDraggingInfo>)info 
+item:(id)item childIndex:(int)index{
     
     NSPasteboard *pboard = [info draggingPasteboard];	// get the paste board
-    id tableSource = [[info draggingSource] dataSource];
-    
+	id tableSource = nil;
+     tableSource = [info draggingSource] ;
+	 if(tableSource !=nil && ![tableSource isKindOfClass:[NiceDocument class]]){
+	    tableSource = [tableSource dataSource];
+	 }
+	 
     if([pboard availableTypeFromArray:[NSArray arrayWithObject: NSFilenamesPboardType]]){
         NSArray *urls = [pboard propertyListForType:NSFilenamesPboardType];
         urls = [urls collectUsingFunction:NPConvertFileNamesToURLs context:nil];
@@ -1094,39 +1201,78 @@ stuff won't work properly! */
         NSEnumerator *enumerator = [urls reverseObjectEnumerator];
         id object;
         
+		int tCount =[thePlaylist count];
         while ((object = [enumerator nextObject])) {
             [tableSource removeURLFromPlaylist:object];
-            [self addURLToPlaylist:object atIndex:row];
+			if(item == nil){
+				[self addURLToPlaylist:object atIndex:tCount];
+			}else{
+				[self addURLToPlaylist:object atIndex:[[item objectForKey:@"index"] intValue] ];
+			}
         }
         
         [tableSource removeURLPlaceHolders];
         
+		
+		
         return YES;
     } 
     
     return NO;
 }
 
-- (BOOL)tableView:(NSTableView *)tableView 
-        writeRows:(NSArray *)rows 
-     toPasteboard:(NSPasteboard *)pboard
-{
-    id fileArray = [rows collectUsingFunction:rowsToFileNames context:thePlaylist];
+
+- (BOOL)outlineView:(NSOutlineView *)outlineView 
+writeItems:(NSArray *)items
+ toPasteboard:(NSPasteboard *)pboard{
+ 
+	NSMutableArray* fileArray = [NSMutableArray array];
+	
+	for(unsigned int i=0;i<[items count];i++){
+		if([[[items objectAtIndex:i] objectForKey:@"type"] isEqualTo:@"playlist"]){
+			[fileArray addObject:[[[items objectAtIndex:i] objectForKey:@"url"]path]];
+		}
+	}
+	
     [pboard declareTypes: [NSArray arrayWithObjects: NSFilenamesPboardType, nil] owner: self];
     [pboard setPropertyList:fileArray forType:NSFilenamesPboardType];
-    
-    return YES;    
-}
+	
+	
+	
+		NSImage* tImage = [[NSWorkspace sharedWorkspace] iconForFile:[fileArray objectAtIndex:0]];
+		NSPoint tPoint = [outlineView convertPoint:[[NSApp currentEvent] locationInWindow] fromView:nil];
+		tPoint.x -= 16;
+		tPoint.y += 16;
+		
+		[outlineView dragImage:tImage 
+						   at:tPoint
+					   offset:NSZeroSize
+						event:[NSApp currentEvent]
+				   pasteboard:pboard
+					   source:self
+					slideBack:YES];
+	
+    return [fileArray count] > 0;    
+	
+ 
+ }
 
 
-- (NSDragOperation) tableView: (NSTableView *) view
-                 validateDrop: (id <NSDraggingInfo>) info
-                  proposedRow: (int) row
-        proposedDropOperation: (NSTableViewDropOperation) operation
-{
-    [view setDropRow: row dropOperation: NSTableViewDropAbove];
+
+
+- (NSDragOperation)outlineView:(NSOutlineView *)tView 
+validateDrop:(id <NSDraggingInfo>)info 
+proposedItem:(id)tItem
+ proposedChildIndex:(int)anIndex{
+
+	if([[tItem objectForKey:@"type"] isEqualTo:@"chapter"])
+		tItem = [tItem objectForKey:@"parent"];
+	[tView setDropItem:tItem dropChildIndex:NSOutlineViewDropOnItemIndex];
+	
     return NSDragOperationGeneric;
 }
+
+
 
 #pragma mark -
 #pragma mark Apple Remote Delegate Method

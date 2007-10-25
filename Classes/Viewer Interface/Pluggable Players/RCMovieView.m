@@ -96,7 +96,33 @@
     return (film) ? YES : NO;
 }
 
+-(NSArray*)_chapters{
+	NSArray* tArray =[film chapterList];
+	NSMutableArray* tMutArray = [NSMutableArray array];
+	for(int i=1; i<=[tArray count];i++){
+		NSString* tName =[[tArray objectAtIndex:i-1] objectForKey:@"Name"];
+		if(tName == nil){
+			[tMutArray addObject:[NSString stringWithFormat:@"Chapter %d",i,nil]];
+		}else{
+			[tMutArray addObject:tName];
+		}
+	}
 
+	return tMutArray;
+}
+
+
+-(void)_gotoChapter:(NSNumber*)anIndex{
+	
+	id tObj = [[film chapterList] objectAtIndex:[anIndex intValue]];
+	[self setCurrentMovieTimePrecise:[[tObj objectForKey:@"StartTime"] longValue
+	]];
+		[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:self];
+}
+
+-(NSString*)_currentChapter{
+	return [[self _chapters] objectAtIndex:[film currentChapterIndex] -1];
+}
 
 -(id)initWithFrame:(NSRect)frame
 {
@@ -550,7 +576,11 @@ return tReturnMenu;
 		NSArray* tArray = [film chapterList];
 		for(unsigned int i=0;i<[tArray count];i++){
 			NSDictionary* tDict = [tArray objectAtIndex:i];
-			NSMenuItem* tItem =[[[NSMenuItem alloc] initWithTitle:[tDict objectForKey:@"Name"]
+			NSString* tString=[tDict objectForKey:@"Name"];
+			if(tString==nil)
+				tString= [NSString stringWithFormat:@"Chapter %d",i+1];
+			
+			NSMenuItem* tItem =[[[NSMenuItem alloc] initWithTitle:tString
 			action:@selector(goToChapter:)
 			keyEquivalent:@""] autorelease];
 			[tItem setRepresentedObject:tDict];
