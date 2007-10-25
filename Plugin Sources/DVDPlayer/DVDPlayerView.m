@@ -668,6 +668,29 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	return titleMenu;
 }
 
+
+
+-(NSArray*)_chapters{
+	unsigned short titleNum;
+	unsigned short chapters;
+		unsigned short i;
+
+	DVDGetTitle(&titleNum);
+	DVDGetNumChapters(titleNum, &chapters);
+
+	NSMutableArray* tMutArray = [NSMutableArray array];
+	for(i = 1; i < (chapters + 1); i++){
+		[tMutArray addObject:[NSString stringWithFormat:@"Chapter %@",[NSNumber numberWithUnsignedInt:i],nil]];
+	}
+	return tMutArray;
+}
+-(NSString*)_currentChapter{
+	unsigned short current;
+
+	DVDGetChapter(&current);
+	return [[self _chapters] objectAtIndex:current];
+}
+
 -(id)chapterMenu
 {
 	id chapterMenu = [[NSMenu alloc] initWithTitle:@"Chapter Menu"];
@@ -846,16 +869,24 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:self];
 }
 
--(void)gotoChapter:(id)anObject
-{
-	Boolean isp;
+
+
+-(void)_gotoChapter:(NSNumber*)anIndex{
+		Boolean isp;
 	DVDIsPaused(&isp);
-	DVDSetChapter([anObject tag]);
+	DVDSetChapter([anIndex unsignedShortValue]);
 	if(isp)
 		DVDPause();
 	else
 		DVDResume();
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:self];
+}
+
+
+
+-(void)gotoChapter:(id)anObject
+{
+	[self _gotoChapter:[NSNumber numberWithInt:[anObject tag]]];
 }
 
 -(void)selectAudio:(id)anObject
