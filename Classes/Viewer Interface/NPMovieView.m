@@ -523,11 +523,19 @@
 			break;
 		case NSLeftArrowFunctionKey:
 			if([anEvent modifierFlags] & NSCommandKeyMask){
+				int tInt = -1;
+				if([[self chapters]count]>0){
+				unsigned int tIndex =[[self chapters] indexOfObject:[self currentChapter]];
+				if(tIndex != NSNotFound){
+					tInt = tInt + (int)tIndex;
+				}
+				}
+				
 			    if([[self chapters] count] == 0 
-					||  [[self chapters] indexOfObject:[self currentChapter]]-1 < 0)
-					[self playPrevMovie];
+					|| tInt  < 0)
+					[[[self window]delegate] playPrevWithChapter];
 				else
-					[self gotoChapter:[[self chapters] indexOfObject:[self currentChapter]]-1];
+					[self gotoChapter:tInt];
 				break;
 			}
 			if([anEvent modifierFlags] & NSAlternateKeyMask){

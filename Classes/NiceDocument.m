@@ -887,11 +887,21 @@ stuff won't work properly! */
     
     if((anIndex >= 0) && (anIndex < (int)[thePlaylist count])){
         [self playAtIndex:anIndex obeyingPreviousState:YES];
-		if([theMovieView chapters] > 0){
-			[theMovieView gotoChapter:[[theMovieView chapters] count]-1];
+    }
+}
+
+-(void)playPrevWithChapter
+{
+    int anIndex =  [self getPrevIndex];
+    
+    if((anIndex >= 0) && (anIndex < (int)[thePlaylist count])){
+        [self playAtIndex:anIndex obeyingPreviousState:YES];
+		if([[theMovieView chapters] count] > 0){
+				[theMovieView gotoChapter:((int)[[theMovieView chapters] count])-1];
 		}
     }
 }
+
 
 
 -(void)reloadPlaylist{
