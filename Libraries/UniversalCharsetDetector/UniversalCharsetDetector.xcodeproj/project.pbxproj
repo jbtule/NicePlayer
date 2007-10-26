@@ -436,13 +436,13 @@
 				GCC_PREFIX_HEADER = UniversalCharsetDetector_Prefix.pch;
 				INFOPLIST_FILE = "UniversalCharsetDetector-Info.plist";
 				INSTALL_PATH = "@executable_path/../Frameworks";
-				OBJROOT = /Users/jay/Documents/build;
+				OBJROOT = "$(inherited)";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = UniversalCharsetDetector;
 				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/jay/Documents/build;
+				SYMROOT = "$(inherited)";
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-char-subscripts",
@@ -476,7 +476,7 @@
 				INFOPLIST_FILE = "UniversalCharsetDetector-Info.plist";
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.2;
-				OBJROOT = /Users/jay/Documents/build;
+				OBJROOT = "$(inherited)";
 				OTHER_CFLAGS = "-static-libgcc";
 				OTHER_LDFLAGS = (
 					"-nodefaultlibs",
@@ -488,7 +488,7 @@
 				PRODUCT_NAME = UniversalCharsetDetector;
 				REZ_PREPROCESSOR_DEFINITIONS = "";
 				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/jay/Documents/build;
+				SYMROOT = "$(inherited)";
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-char-subscripts",
@@ -498,38 +498,6 @@
 				ZERO_LINK = NO;
 			};
 			name = Release;
-		};
-		363A579F0A48820300A4FBE2 /* Default */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = (
-					i386,
-					ppc,
-				);
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				FRAMEWORK_VERSION = A;
-				GCC_MODEL_TUNING = G3;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = UniversalCharsetDetector_Prefix.pch;
-				INFOPLIST_FILE = "UniversalCharsetDetector-Info.plist";
-				INSTALL_PATH = "@executable_path/../Frameworks";
-				OBJROOT = /Users/jay/Documents/build;
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = UniversalCharsetDetector;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/jay/Documents/build;
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-char-subscripts",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-				);
-			};
-			name = Default;
 		};
 		363A57A10A48820300A4FBE2 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -553,17 +521,6 @@
 			};
 			name = Release;
 		};
-		363A57A30A48820300A4FBE2 /* Default */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
-			};
-			name = Default;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -572,20 +529,18 @@
 			buildConfigurations = (
 				363A579D0A48820300A4FBE2 /* Debug */,
 				363A579E0A48820300A4FBE2 /* Release */,
-				363A579F0A48820300A4FBE2 /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Default;
+			defaultConfigurationName = Release;
 		};
 		363A57A00A48820300A4FBE2 /* Build configuration list for PBXProject "UniversalCharsetDetector" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				363A57A10A48820300A4FBE2 /* Debug */,
 				363A57A20A48820300A4FBE2 /* Release */,
-				363A57A30A48820300A4FBE2 /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Default;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
