@@ -26,7 +26,7 @@
 * the Initial Developer. All Rights Reserved.
 *
 * Contributor(s):
-*          James Tuley <jay+charsetdetector@tuley.name> Added NSString Category
+*          James Tuley <jay+charsetdetector@tuley.name> Added NSString Category  - 10/21/07
 *
 * Alternatively, the contents of this file may be used under the terms of
 * either the GNU General Public License Version 2 or later (the "GPL"), or

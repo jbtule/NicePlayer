@@ -549,15 +549,15 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.95</string>
+	<string>0.96</string>
 	<key>CFBundleSignature</key>
 	<string>nIcE</string>
 	<key>CFBundleVersion</key>
 	<string>413</string>
 	<key>JTAuthorEmail</key>
 	<string>NicePlayer@osiris.laya.com</string>
-	<key>JTUpdateURL</key>
-	<string>http://niceplayer.sourceforge.net/update/niceplayer2.indyUpdate</string>
+	<key>SUFeedURL</key>
+	<string>http://niceplayer.sourceforge.net/update/NicePlayerAppCast.xml</string>
 	<key>NSAppleScriptEnabled</key>
 	<string>YES</string>
 	<key>NSMainNibFile</key>

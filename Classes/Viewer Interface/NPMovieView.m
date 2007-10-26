@@ -128,7 +128,7 @@
 	NSRect subview = NSMakeRect(0, 0, [self frame].size.width, [self frame].size.height);
 	internalVolume = [self volume];
 	[self clearTrueMovieView];
-	trueMovieView = [[JTMovieView alloc] initWithFrame:subview];
+	trueMovieView = [[BlankView alloc] initWithFrame:subview];
 	[self addSubview:trueMovieView];
 	[self finalProxyViewLoad];
 }
@@ -141,13 +141,6 @@
 	trueMovieView =nil;
 }
 
--(void)blankTrueMovieView{
-	[self clearTrueMovieView];
-
-	trueMovieView = [[BlankView alloc] initWithFrame:[self frame]];
-		[self addSubview:trueMovieView];
-
-}
 
 -(void)close
 {

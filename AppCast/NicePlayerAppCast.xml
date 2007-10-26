@@ -4,11 +4,11 @@
     <title>NicePlayer AppCast</title>
     <link>http://niceplayer.sf.net</link>
     <description>NicePlayer AppCast</description>
-    <generator>Feeder 1.4.4 http://reinventedsoftware.com/feeder/</generator>
+    <generator>Feeder 1.4.8 http://reinventedsoftware.com/feeder/</generator>
     <docs>http://blogs.law.harvard.edu/tech/rss</docs>
     <language>en</language>
-    <pubDate>Wed, 02 May 2007 21:32:47 -0500</pubDate>
-    <lastBuildDate>Wed, 02 May 2007 21:32:47 -0500</lastBuildDate>
+    <pubDate>Thu, 25 Oct 2007 22:34:18 -0500</pubDate>
+    <lastBuildDate>Thu, 25 Oct 2007 22:34:18 -0500</lastBuildDate>
     <item>
       <title>NicePlayer 0.95</title>
       <description><![CDATA[<p>Version 0.95 (v514)
@@ -34,8 +34,8 @@
 <br />• Fixed bug in auto dvd launching script
 <br />• Fixed bug that sometimes would cause movies to show up black when opened off a removable disk
 <br />• Fixed various crashes</p>]]></description>
-      <pubDate>Wed, 02 May 2007 21:32:47 -0500</pubDate>
-      <enclosure url="http://downloads.sourceforge.net/niceplayer/NicePlayer_0.95.dmg?use_mirror=easynews" length="916476" type="application/octet-stream" sparkle:version="0.95"/>
+      <pubDate>Thu, 25 Oct 2007 22:27:59 -0500</pubDate>
+      <enclosure url="http://downloads.sourceforge.net/niceplayer/NicePlayer_0.95.dmg?use_mirror=easynews" length="916476" type="application/octet-stream" sparkle:version="514"/>
       <guid isPermaLink="false">niceplayer-095</guid>
     </item>
   </channel>

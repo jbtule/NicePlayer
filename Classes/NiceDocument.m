@@ -258,6 +258,8 @@ void findSpace(id each, void* context, BOOL* endthis){
  */
 -(void)loadURL:(NSURL *)url firstTime:(BOOL)isFirst
 {
+	if([[NSURL URLWithString:@"placeholder://URL_Placeholder"] isEqualTo:url])
+		return;
     [self readFromURL:url ofType:nil];
     [self finalOpenURLFirstTime:isFirst];
     [self updateAfterLoad];
@@ -373,7 +375,7 @@ void findSpace(id each, void* context, BOOL* endthis){
     
     [self refreshRepeatModeGUI];
     [self calculateAspectRatio];
-	[self reloadPlaylist];
+					[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:nil];
 	if([[Preferences mainPrefs] audioVolumeSimilarToLastWindow]){
 		NiceDocument *doc = [[NSDocumentController sharedDocumentController] currentDocument];
 		if(doc)
@@ -749,6 +751,7 @@ stuff won't work properly! */
             [mSubMenu addItem:[pluginMenu objectAtIndex:i]];*/
     }[self rebuildPlaylistMenu];
 		[self reloadPlaylist];
+
 }
 
 -(id)window
@@ -913,6 +916,7 @@ stuff won't work properly! */
 	for(int i=0;i<[thePlaylistTable numberOfRows];i++){
 		[thePlaylistTable expandItem:[thePlaylistTable itemAtRow:i]];
 	}
+
 }
 
 /**
@@ -923,7 +927,6 @@ stuff won't work properly! */
     id tempURL = [thePlaylist objectAtIndex:anIndex];
     [theMovieView closeReopen];
     [self loadURL:tempURL firstTime:NO];
-	[self reloadPlaylist];
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:nil];
 
 	if(aBool){
@@ -1014,8 +1017,7 @@ stuff won't work properly! */
     if(![thePlaylist containsObject:aURL]){
         [thePlaylist insertObject:aURL atIndex:anIndex];
         
-	[self reloadPlaylist];
-				[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:nil];
+					[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:nil];
 
     }
 }
@@ -1046,11 +1048,13 @@ stuff won't work properly! */
     
     if([thePlaylist isEmpty]){
         [(NPMovieView *)theMovieView stop];
-        [theMovieView blankTrueMovieView];
+        [theMovieView closeReopen];
+		[theSubtitle autorelease];
+		theSubtitle =nil;
 		theCurrentURL =nil;
     }
-		[self reloadPlaylist];
-
+					[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:nil];
+	
 }
 
 -(BOOL)isPlaylistEmpty
@@ -1085,7 +1089,7 @@ stuff won't work properly! */
                 isRandom  = [[[plist objectForKey:@"Contents"] objectForKey:@"Random"] intValue];
                 [self loadURL:[thePlaylist firstObject] firstTime:YES];
                 [self refreshRepeatModeGUI];
-	[self reloadPlaylist];
+					[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:nil];
                 [theMovieView setVolume: [[[plist objectForKey:@"Contents"] objectForKey:@"Volume"] floatValue]];
                 [[self window] updateVolume];
 

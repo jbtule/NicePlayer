@@ -190,46 +190,6 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>699463880CCC01AF00CE0AD3</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>NSString+UniversalCharsetDetector.m</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>699463890CCC01AF00CE0AD3</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>NSString+UniversalCharsetDetector.m</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>6994638A0CCC01AF00CE0AD3</string>
-						<key>history</key>
-						<array>
-							<string>699463760CCBF31A00CE0AD3</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {891, 594}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>468 143 891 635 0 0 1280 778 </string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
 				<string>6994638B0CCC01AF00CE0AD3</string>
 				<key>PBXProjectModuleLabel</key>
 				<string>UniversalCharsetDetector.mm</string>
@@ -244,10 +204,10 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>6994638D0CCC01AF00CE0AD3</string>
+						<string>69DBE35B0CD18A820032EB12</string>
 						<key>history</key>
 						<array>
-							<string>699463790CCBFD9C00CE0AD3</string>
+							<string>69DBE33F0CD189740032EB12</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -345,8 +305,9 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>15</integer>
-									<integer>14</integer>
+									<integer>4</integer>
+									<integer>3</integer>
+									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
@@ -369,7 +330,7 @@
 							<real>275</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>30 123 1080 632 0 0 1280 778 </string>
+						<string>30 141 1080 632 0 0 1280 778 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -406,7 +367,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {783, 0}}</string>
 								<key>RubberWindowFrame</key>
-								<string>30 123 1080 632 0 0 1280 778 </string>
+								<string>30 141 1080 632 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -428,7 +389,7 @@
 								<key>Frame</key>
 								<string>{{0, 5}, {783, 586}}</string>
 								<key>RubberWindowFrame</key>
-								<string>30 123 1080 632 0 0 1280 778 </string>
+								<string>30 141 1080 632 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -452,9 +413,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>699463860CCC01AF00CE0AD3</string>
+				<string>69DBE3590CD18A820032EB12</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>699463870CCC01AF00CE0AD3</string>
+				<string>69DBE35A0CD18A820032EB12</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -588,13 +549,11 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>699461540CCBCA8100CE0AD3</string>
 		<string>6994638B0CCC01AF00CE0AD3</string>
-		<string>699463880CCC01AF00CE0AD3</string>
 		<string>/Users/jay/Documents/Projects/niceplayer_proj/niceplayer/Libraries/UniversalCharsetDetector/UniversalCharsetDetector.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>30 123 1080 632 0 0 1280 778 </string>
+	<string>30 141 1080 632 0 0 1280 778 </string>
 	<key>WindowTools</key>
 	<array>
 		<dict>
