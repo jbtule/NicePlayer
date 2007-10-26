@@ -1024,15 +1024,20 @@ stuff won't work properly! */
 {
     int tempIndex = [thePlaylist indexOfObject:aURL];
 	if(tempIndex != NSNotFound)
-		[self removeURLFromPlaylistAtIndex:tempIndex];
+		[self removeURLFromPlaylistHelperAtIndex:tempIndex];
 }
 
 -(void)removeURLFromPlaylistAtIndex:(int)anIndex
 {
+	[self removeURLFromPlaylistHelperAtIndex:anIndex];
+	[self removeURLPlaceHolders];
+}
+
+-(void)removeURLFromPlaylistHelperAtIndex:(int)anIndex
+{
 	if([theCurrentURL isEqualTo:[thePlaylist objectAtIndex:anIndex]  ])
 		[self playNext];
     [thePlaylist replaceObjectAtIndex:anIndex withObject:[NSURL URLWithString:@"placeholder://URL_Placeholder"]];
-	[self removeURLPlaceHolders];
 }
 
 -(void)removeURLPlaceHolders
@@ -1251,7 +1256,7 @@ writeItems:(NSArray *)items
     [pboard setPropertyList:fileArray forType:NSFilenamesPboardType];
 	
 	
-	
+		if([fileArray count]>0){
 		NSImage* tImage = [[NSWorkspace sharedWorkspace] iconForFile:[fileArray objectAtIndex:0]];
 		NSPoint tPoint = [outlineView convertPoint:[[NSApp currentEvent] locationInWindow] fromView:nil];
 		tPoint.x -= 16;
@@ -1264,6 +1269,7 @@ writeItems:(NSArray *)items
 				   pasteboard:pboard
 					   source:self
 					slideBack:YES];
+		}
 	
     return [fileArray count] > 0;    
 	

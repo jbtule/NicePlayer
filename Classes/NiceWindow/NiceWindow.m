@@ -805,6 +805,8 @@
         [(NPMovieView *)theMovieView stop];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"StopAllMovies" object:nil];
     }
+			[self setInitialDrag:nil];
+
 }
 
 -(void)presentMultiple
@@ -1264,6 +1266,8 @@
 			[self addChildWindow:theOverlayTitleBar ordered:NSWindowAbove];
 			[self addChildWindow:theOverlaySubTitleWindow ordered:NSWindowAbove];
 		}
+		
+
     }
 }
 
