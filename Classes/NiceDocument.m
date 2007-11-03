@@ -372,7 +372,9 @@ void findSpace(id each, void* context, BOOL* endthis){
     
     [thePlaylistTable setDoubleAction:@selector(choosePlaylistItem:)];
     [thePlaylistTable registerForDraggedTypes: [NSArray arrayWithObjects: NSFilenamesPboardType, nil]];
-    
+	[thePlaylistTable setDraggingSourceOperationMask:NSDragOperationEvery forLocal:YES];
+    [thePlaylistTable setDraggingSourceOperationMask:NSDragOperationEvery forLocal:NO];
+	
     [self refreshRepeatModeGUI];
     [self calculateAspectRatio];
 					[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:nil];
@@ -1026,20 +1028,28 @@ stuff won't work properly! */
 {
     int tempIndex = [thePlaylist indexOfObject:aURL];
 	if(tempIndex != NSNotFound)
-		[self removeURLFromPlaylistHelperAtIndex:tempIndex];
+		[self removeURLFromPlaylistHelperAtIndex:[NSIndexSet  indexSetWithIndex:tempIndex]];
 }
 
 -(void)removeURLFromPlaylistAtIndex:(int)anIndex
+{
+	[self removeURLFromPlaylistHelperAtIndex:[NSIndexSet  indexSetWithIndex:anIndex]];
+	[self removeURLPlaceHolders];
+}
+
+
+-(void)removeURLFromPlaylistAtIndexSet:(NSIndexSet*)anIndex
 {
 	[self removeURLFromPlaylistHelperAtIndex:anIndex];
 	[self removeURLPlaceHolders];
 }
 
--(void)removeURLFromPlaylistHelperAtIndex:(int)anIndex
+-(void)removeURLFromPlaylistHelperAtIndex:(NSIndexSet*)anIndex
 {
-	if([theCurrentURL isEqualTo:[thePlaylist objectAtIndex:anIndex]  ])
-		[self playNext];
-    [thePlaylist replaceObjectAtIndex:anIndex withObject:[NSURL URLWithString:@"placeholder://URL_Placeholder"]];
+	for(unsigned int i=0;i<[thePlaylist count];i++){
+		if([anIndex containsIndex:i])
+			[thePlaylist replaceObjectAtIndex:i withObject:[NSURL URLWithString:@"placeholder://URL_Placeholder"]];
+	}
 }
 
 -(void)removeURLPlaceHolders
@@ -1207,7 +1217,7 @@ stuff won't work properly! */
 
 - (BOOL)outlineView:(NSOutlineView *)outlineView 
 acceptDrop:(id <NSDraggingInfo>)info 
-item:(id)item childIndex:(int)index{
+item:(id)item childIndex:(int)anIndex{
     
     NSPasteboard *pboard = [info draggingPasteboard];	// get the paste board
 	id tableSource = nil;
@@ -1259,20 +1269,19 @@ writeItems:(NSArray *)items
     [pboard declareTypes: [NSArray arrayWithObjects: NSFilenamesPboardType, nil] owner: self];
     [pboard setPropertyList:fileArray forType:NSFilenamesPboardType];
 	
-	
 		if([fileArray count]>0){
-		NSImage* tImage = [[NSWorkspace sharedWorkspace] iconForFile:[fileArray objectAtIndex:0]];
-		NSPoint tPoint = [outlineView convertPoint:[[NSApp currentEvent] locationInWindow] fromView:nil];
-		tPoint.x -= 16;
-		tPoint.y += 16;
-		
-		[outlineView dragImage:tImage 
-						   at:tPoint
-					   offset:NSZeroSize
-						event:[NSApp currentEvent]
-				   pasteboard:pboard
-					   source:self
-					slideBack:YES];
+	//	NSImage* tImage = [[NSWorkspace sharedWorkspace] iconForFile:[fileArray objectAtIndex:0]];
+//		NSPoint tPoint = [outlineView convertPoint:[[NSApp currentEvent] locationInWindow] fromView:nil];
+//		tPoint.x -= 16;
+//		tPoint.y += 16;
+//		
+		//[outlineView dragImage:tImage 
+//						   at:tPoint
+//					   offset:NSZeroSize
+//						event:[NSApp currentEvent]
+//				   pasteboard:pboard
+//					   source:self
+//					slideBack:YES];
 		}
 	
     return [fileArray count] > 0;    
@@ -1281,8 +1290,15 @@ writeItems:(NSArray *)items
  }
 
 
-
-
+- (NSArray *)outlineView:(NSOutlineView *)outlineView 
+namesOfPromisedFilesDroppedAtDestination:(NSURL *)dropDestination
+		 forDraggedItems:(NSArray *)items{
+	NSMutableArray* tArray = [NSMutableArray array];
+	for(unsigned int i=0; i< [items count]; i++){
+		[tArray addObject:[[items objectAtIndex:i] lastPathComponent]];
+	}
+	return tArray;
+}
 - (NSDragOperation)outlineView:(NSOutlineView *)tView 
 validateDrop:(id <NSDraggingInfo>)info 
 proposedItem:(id)tItem
@@ -1290,7 +1306,10 @@ proposedItem:(id)tItem
 
 	if([[tItem objectForKey:@"type"] isEqualTo:@"chapter"])
 		tItem = [tItem objectForKey:@"parent"];
-	[tView setDropItem:tItem dropChildIndex:NSOutlineViewDropOnItemIndex];
+		
+	[tView setDropRow:[tView rowForItem:tItem] dropOperation:NSTableViewDropAbove];
+
+	//[tView setDropItem:tItem dropChildIndex:0];
 	
     return NSDragOperationGeneric;
 }

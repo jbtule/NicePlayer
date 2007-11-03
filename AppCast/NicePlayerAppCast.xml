@@ -7,8 +7,22 @@
     <generator>Feeder 1.4.8 http://reinventedsoftware.com/feeder/</generator>
     <docs>http://blogs.law.harvard.edu/tech/rss</docs>
     <language>en</language>
-    <pubDate>Thu, 25 Oct 2007 22:44:05 -0500</pubDate>
-    <lastBuildDate>Thu, 25 Oct 2007 22:44:05 -0500</lastBuildDate>
+    <pubDate>Fri, 26 Oct 2007 00:30:51 -0500</pubDate>
+    <lastBuildDate>Fri, 26 Oct 2007 00:30:51 -0500</lastBuildDate>
+    <item>
+      <title>NicePlayer 0.96</title>
+      <description><![CDATA[<p>Version 0.96 (v543)
+<br /> • Basic Leopard compatibility
+<br /> • Progressive movie loading progress in scrubbing area
+<br /> • Chapters expand in playlist drawer.
+<br /> • New Playlist and Volume menus
+<br /> • Fixed subtitle bugs involving parsing commas in SSA, and foreign encodings. 
+<br /> • Using Sparkle for future updates
+<br /> • Fixed Transparency behavior in regards to correctly representing opacity and transparency</p>]]></description>
+      <pubDate>Fri, 26 Oct 2007 00:29:54 -0500</pubDate>
+      <enclosure url="http://downloads.sourceforge.net/niceplayer/NicePlayer_0.96.dmg" length="1602219" type="application/x-diskcopy" sparkle:version="543"/>
+      <guid isPermaLink="false">niceplayer-096</guid>
+    </item>
     <item>
       <title>NicePlayer 0.95</title>
       <description><![CDATA[<p>Version 0.95 (v514)

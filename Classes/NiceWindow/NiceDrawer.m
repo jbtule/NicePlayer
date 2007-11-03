@@ -60,7 +60,7 @@ they ignore their public ones they inherited from super.
 @implementation NiceDrawer
 
 -(void)awakeFromNib{
-    [(NSDrawerWindow*)[self window]_setTexturedBackground:YES];  
+//[(NSDrawerWindow*)[self window]_setTexturedBackground:YES];  
 }
 
 - (void)mouseMoved:(NSEvent *)anEvent
@@ -96,7 +96,7 @@ they ignore their public ones they inherited from super.
 	   && 
 		([[anEvent characters] characterAtIndex:0] == 127
 		||[[anEvent characters] characterAtIndex:0] == 63272)){
-		[(NiceDocument *)[[[(NSDrawerWindow*)[self window] _parentWindow] windowController] document] removeURLFromPlaylistAtIndex:[playlistTable selectedRow]];
+		[(NiceDocument *)[[[(NSDrawerWindow*)[self window] _parentWindow] windowController] document] removeURLFromPlaylistAtIndexSet:[playlistTable selectedRowIndexes]];
 		return;
 	}
 	[super keyDown:anEvent];

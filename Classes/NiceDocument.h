@@ -138,8 +138,9 @@
 -(IBAction)addToPlaylist:(id)sender;
 -(void)addURLToPlaylist:(NSURL*)aURL;
 -(void)addURLToPlaylist:(NSURL*)aURL atIndex:(int)index;
--(void)removeURLFromPlaylistHelperAtIndex:(int)anIndex;
+-(void)removeURLFromPlaylistHelperAtIndex:(NSIndexSet*)anIndex;
 -(void)removeURLFromPlaylistAtIndex:(int)anIndex;
+-(void)removeURLFromPlaylistAtIndexSet:(NSIndexSet*)anIndex;
 -(void)removeURLFromPlaylist:(NSURL*)aURL;
 -(void)removeURLPlaceHolders;
 -(BOOL)isPlaylistEmpty;
