@@ -264,6 +264,14 @@
 		</dict>
 		<dict>
 			<key>CLASS</key>
+			<string>NPOutlineView</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>NSOutlineView</string>
+		</dict>
+		<dict>
+			<key>CLASS</key>
 			<string>OverlayWindow</string>
 			<key>LANGUAGE</key>
 			<string>ObjC</string>

@@ -1285,7 +1285,6 @@ writeItems:(NSArray *)items
 		}
 	
     return [fileArray count] > 0;    
-	
  
  }
 
