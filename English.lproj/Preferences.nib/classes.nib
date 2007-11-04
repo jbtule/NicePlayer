@@ -1,90 +1,188 @@
-{
-    IBClasses = (
-        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
-        {CLASS = JTPreferenceWindow; LANGUAGE = ObjC; SUPERCLASS = NSWindow; }, 
-        {
-            CLASS = PrefPluginConfig; 
-            LANGUAGE = ObjC; 
-            OUTLETS = {insertView = id; nameLabel = id; visibleView = id; }; 
-            SUPERCLASS = NSTableView; 
-        }, 
-        {
-            CLASS = Preferences; 
-            LANGUAGE = ObjC; 
-            OUTLETS = {doubleClickMoviePref = id; }; 
-            SUPERCLASS = NSObject; 
-        }, 
-        {
-            ACTIONS = {
-                audioVolumeSimilarToLastWindow = id; 
-                autoplayOnFullScreen = id; 
-                autostopOnNormalScreen = id; 
-                defaultOpenMode = id; 
-                defaultRepeatMode = id; 
-                defaultTimeDisplay = id; 
-                disableShowingOverlaysOnKeyPress = id; 
-                displayNotificationTime = id; 
-                doubleClickMoviePref = id; 
-                enableAppleRemote = id; 
-                fadeNotificationOverlays = id; 
-                fadeOverlayTime = id; 
-                fadeOverlays = id; 
-                ffSpeed = id; 
-                movieOpenedFullScreen = id; 
-                movieOpenedPlay = id; 
-                notificationColor = id; 
-                opacityWhenWindowIsTransparent = id; 
-                rightClickMoviePref = id; 
-                rrSpeed = id; 
-                scrollResizePin = id; 
-                scrollWheelHorizontalMoviePref = id; 
-                scrollWheelMoviePref = id; 
-                showInitialOverlays = id; 
-                showNotificationOverlays = id; 
-                windowAlwaysOnTop = id; 
-                windowLeaveFullScreen = id; 
-            }; 
-            CLASS = PreferencesController; 
-            LANGUAGE = ObjC; 
-            OUTLETS = {
-                audioVolumeSimilarToLastWindow = id; 
-                autoplayOnFullScreen = id; 
-                autostopOnNormalScreen = id; 
-                bundlePriorityTable = id; 
-                defaultOpenMode = id; 
-                defaultRepeatMode = id; 
-                defaultTimeDisplay = id; 
-                disableShowingOverlaysOnKeyPress = id; 
-                displayNotificationTime = id; 
-                doubleClickMoviePref = id; 
-                enableAppleRemote = id; 
-                fadeNotificationOverlays = id; 
-                fadeOverlayTime = id; 
-                fadeOverlays = id; 
-                ffSpeedSlider = id; 
-                movieOpenedFullScreen = id; 
-                movieOpenedPlay = id; 
-                notificationColor = id; 
-                opacityWhenWindowIsTransparent = id; 
-                paneActions = id; 
-                paneInput = id; 
-                paneMain = id; 
-                paneOverlays = id; 
-                paneView = id; 
-                paneWindowDefaults = id; 
-                prefWindow = id; 
-                rightClickMoviePref = id; 
-                rrSpeedSlider = id; 
-                scrollResizePin = id; 
-                scrollWheelHorizontalMoviePref = id; 
-                scrollWheelMoviePref = id; 
-                showInitialOverlays = id; 
-                showNotificationOverlays = id; 
-                windowAlwaysOnTop = id; 
-                windowLeaveFullScreen = id; 
-            }; 
-            SUPERCLASS = NSObject; 
-        }
-    ); 
-    IBVersion = 1; 
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IBClasses</key>
+	<array>
+		<dict>
+			<key>CLASS</key>
+			<string>PrefPluginConfig</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>OUTLETS</key>
+			<dict>
+				<key>insertView</key>
+				<string>id</string>
+				<key>nameLabel</key>
+				<string>id</string>
+				<key>visibleView</key>
+				<string>id</string>
+			</dict>
+			<key>SUPERCLASS</key>
+			<string>NSTableView</string>
+		</dict>
+		<dict>
+			<key>ACTIONS</key>
+			<dict>
+				<key>audioVolumeSimilarToLastWindow</key>
+				<string>id</string>
+				<key>autoplayOnFullScreen</key>
+				<string>id</string>
+				<key>autostopOnNormalScreen</key>
+				<string>id</string>
+				<key>defaultOpenMode</key>
+				<string>id</string>
+				<key>defaultRepeatMode</key>
+				<string>id</string>
+				<key>defaultTimeDisplay</key>
+				<string>id</string>
+				<key>disableShowingOverlaysOnKeyPress</key>
+				<string>id</string>
+				<key>displayNotificationTime</key>
+				<string>id</string>
+				<key>doubleClickMoviePref</key>
+				<string>id</string>
+				<key>enableAppleRemote</key>
+				<string>id</string>
+				<key>fadeNotificationOverlays</key>
+				<string>id</string>
+				<key>fadeOverlayTime</key>
+				<string>id</string>
+				<key>fadeOverlays</key>
+				<string>id</string>
+				<key>ffSpeed</key>
+				<string>id</string>
+				<key>movieOpenedFullScreen</key>
+				<string>id</string>
+				<key>movieOpenedPlay</key>
+				<string>id</string>
+				<key>notificationColor</key>
+				<string>id</string>
+				<key>opacityWhenWindowIsTransparent</key>
+				<string>id</string>
+				<key>rightClickMoviePref</key>
+				<string>id</string>
+				<key>rrSpeed</key>
+				<string>id</string>
+				<key>scrollResizePin</key>
+				<string>id</string>
+				<key>scrollWheelHorizontalMoviePref</key>
+				<string>id</string>
+				<key>scrollWheelMoviePref</key>
+				<string>id</string>
+				<key>showInitialOverlays</key>
+				<string>id</string>
+				<key>showNotificationOverlays</key>
+				<string>id</string>
+				<key>windowAlwaysOnTop</key>
+				<string>id</string>
+				<key>windowLeaveFullScreen</key>
+				<string>id</string>
+			</dict>
+			<key>CLASS</key>
+			<string>PreferencesController</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>OUTLETS</key>
+			<dict>
+				<key>audioVolumeSimilarToLastWindow</key>
+				<string>id</string>
+				<key>autoplayOnFullScreen</key>
+				<string>id</string>
+				<key>autostopOnNormalScreen</key>
+				<string>id</string>
+				<key>bundlePriorityTable</key>
+				<string>id</string>
+				<key>defaultOpenMode</key>
+				<string>id</string>
+				<key>defaultRepeatMode</key>
+				<string>id</string>
+				<key>defaultTimeDisplay</key>
+				<string>id</string>
+				<key>disableShowingOverlaysOnKeyPress</key>
+				<string>id</string>
+				<key>displayNotificationTime</key>
+				<string>id</string>
+				<key>doubleClickMoviePref</key>
+				<string>id</string>
+				<key>enableAppleRemote</key>
+				<string>id</string>
+				<key>fadeNotificationOverlays</key>
+				<string>id</string>
+				<key>fadeOverlayTime</key>
+				<string>id</string>
+				<key>fadeOverlays</key>
+				<string>id</string>
+				<key>ffSpeedSlider</key>
+				<string>id</string>
+				<key>movieOpenedFullScreen</key>
+				<string>id</string>
+				<key>movieOpenedPlay</key>
+				<string>id</string>
+				<key>notificationColor</key>
+				<string>id</string>
+				<key>opacityWhenWindowIsTransparent</key>
+				<string>id</string>
+				<key>paneActions</key>
+				<string>id</string>
+				<key>paneInput</key>
+				<string>id</string>
+				<key>paneMain</key>
+				<string>id</string>
+				<key>paneOverlays</key>
+				<string>id</string>
+				<key>paneView</key>
+				<string>id</string>
+				<key>paneWindowDefaults</key>
+				<string>id</string>
+				<key>prefWindow</key>
+				<string>id</string>
+				<key>rightClickMoviePref</key>
+				<string>id</string>
+				<key>rrSpeedSlider</key>
+				<string>id</string>
+				<key>scrollResizePin</key>
+				<string>id</string>
+				<key>scrollWheelHorizontalMoviePref</key>
+				<string>id</string>
+				<key>scrollWheelMoviePref</key>
+				<string>id</string>
+				<key>showInitialOverlays</key>
+				<string>id</string>
+				<key>showNotificationOverlays</key>
+				<string>id</string>
+				<key>windowAlwaysOnTop</key>
+				<string>id</string>
+				<key>windowLeaveFullScreen</key>
+				<string>id</string>
+			</dict>
+			<key>SUPERCLASS</key>
+			<string>NSObject</string>
+		</dict>
+		<dict>
+			<key>CLASS</key>
+			<string>JTPreferenceWindow</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>NSWindow</string>
+		</dict>
+		<dict>
+			<key>CLASS</key>
+			<string>FirstResponder</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>NSObject</string>
+		</dict>
+		<dict>
+			<key>CLASS</key>
+			<string>NSObject</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+		</dict>
+	</array>
+	<key>IBVersion</key>
+	<string>1</string>
+</dict>
+</plist>
