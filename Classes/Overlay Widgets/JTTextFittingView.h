@@ -55,5 +55,5 @@
 
 -(void)setStringValue:(NSString*)aString;
 -(NSString*)stringValue;
-
+-(void)setMaxText:(NSString*)aTextRepresentingWidth;
 @end
