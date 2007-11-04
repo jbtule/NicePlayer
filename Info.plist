@@ -1,11 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleDocumentTypes</key>
 	<array>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>nsv</string>
+			</array>
+			<key>CFBundleTypeIconFile</key>
+			<string>nsv.icns</string>
+			<key>CFBundleTypeName</key>
+			<string>Nullsoft Streaming Video</string>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>LSTypeIsPackage</key>
+			<false/>
+			<key>NSDocumentClass</key>
+			<string>NiceDocument</string>
+			<key>NSPersistentStoreTypeKey</key>
+			<string>Binary</string>
+		</dict>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>nuv</string>
+			</array>
+			<key>CFBundleTypeIconFile</key>
+			<string>ogm.icns</string>
+			<key>CFBundleTypeName</key>
+			<string>MythTV Nuppel Video</string>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>LSTypeIsPackage</key>
+			<false/>
+			<key>NSDocumentClass</key>
+			<string>NiceDocument</string>
+			<key>NSPersistentStoreTypeKey</key>
+			<string>Binary</string>
+		</dict>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>ogm</string>
+			</array>
+			<key>CFBundleTypeIconFile</key>
+			<string>ogm.icns</string>
+			<key>CFBundleTypeName</key>
+			<string>OGM Video</string>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>LSTypeIsPackage</key>
+			<false/>
+			<key>NSDocumentClass</key>
+			<string>NiceDocument</string>
+			<key>NSPersistentStoreTypeKey</key>
+			<string>Binary</string>
+		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
 			<array>
@@ -556,14 +610,14 @@
 	<string>413</string>
 	<key>JTAuthorEmail</key>
 	<string>NicePlayer@osiris.laya.com</string>
-	<key>SUFeedURL</key>
-	<string>http://niceplayer.sourceforge.net/update/NicePlayerAppCast.xml</string>
 	<key>NSAppleScriptEnabled</key>
 	<string>YES</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NPApplication</string>
+	<key>SUFeedURL</key>
+	<string>http://niceplayer.sourceforge.net/update/NicePlayerAppCast.xml</string>
 	<key>SmartCrashReports_CompanyName</key>
 	<string>NicePlayer</string>
 	<key>SmartCrashReports_URL</key>
