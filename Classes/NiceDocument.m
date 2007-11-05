@@ -1233,11 +1233,11 @@ item:(id)item childIndex:(int)anIndex{
         NSEnumerator *enumerator = [urls reverseObjectEnumerator];
         id object;
         
-		int tCount =[thePlaylist count];
+	//	int tCount =[thePlaylist count];
         while ((object = [enumerator nextObject])) {
             [tableSource removeURLFromPlaylist:object];
 			if(item == nil){
-				[self addURLToPlaylist:object atIndex:tCount];
+				[self addURLToPlaylist:object atIndex:anIndex];
 			}else{
 				[self addURLToPlaylist:object atIndex:[[item objectForKey:@"index"] intValue] ];
 			}
@@ -1269,20 +1269,7 @@ writeItems:(NSArray *)items
     [pboard declareTypes: [NSArray arrayWithObjects: NSFilenamesPboardType, nil] owner: self];
     [pboard setPropertyList:fileArray forType:NSFilenamesPboardType];
 	
-		if([fileArray count]>0){
-	//	NSImage* tImage = [[NSWorkspace sharedWorkspace] iconForFile:[fileArray objectAtIndex:0]];
-//		NSPoint tPoint = [outlineView convertPoint:[[NSApp currentEvent] locationInWindow] fromView:nil];
-//		tPoint.x -= 16;
-//		tPoint.y += 16;
-//		
-		//[outlineView dragImage:tImage 
-//						   at:tPoint
-//					   offset:NSZeroSize
-//						event:[NSApp currentEvent]
-//				   pasteboard:pboard
-//					   source:self
-//					slideBack:YES];
-		}
+
 	
     return [fileArray count] > 0;    
  
@@ -1303,15 +1290,19 @@ validateDrop:(id <NSDraggingInfo>)info
 proposedItem:(id)tItem
  proposedChildIndex:(int)anIndex{
 
-    if([[tItem objectForKey:@"type"] isEqualTo:@"chapter"]){
+    if(tItem ==nil){
+		[tView setDropItem:tItem dropChildIndex:-1];
+		[tView setDropRow:anIndex dropOperation:NSTableViewDropAbove];
+	}else if([[tItem objectForKey:@"type"] isEqualTo:@"chapter"]){
 		tItem = [tItem objectForKey:@"parent"];
-		
-	[tView setDropRow:[tView rowForItem:tItem] dropOperation:NSTableViewDropAbove];
-    }else{
-        [tView setDropRow:anIndex dropOperation:NSTableViewDropAbove];
+		[tView setDropItem:tItem dropChildIndex:-1];
+		[tView setDropRow:[tView rowForItem:tItem]  dropOperation:NSTableViewDropAbove];
+	}else{
+		[tView setDropItem:tItem dropChildIndex:-1];
+		[tView setDropRow:[tView rowForItem:tItem]  dropOperation:NSTableViewDropAbove];
+
     }
 
-	//[tView setDropItem:tItem dropChildIndex:0];
 	
     return NSDragOperationGeneric;
 }
