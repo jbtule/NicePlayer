@@ -1303,10 +1303,13 @@ validateDrop:(id <NSDraggingInfo>)info
 proposedItem:(id)tItem
  proposedChildIndex:(int)anIndex{
 
-	if([[tItem objectForKey:@"type"] isEqualTo:@"chapter"])
+    if([[tItem objectForKey:@"type"] isEqualTo:@"chapter"]){
 		tItem = [tItem objectForKey:@"parent"];
 		
 	[tView setDropRow:[tView rowForItem:tItem] dropOperation:NSTableViewDropAbove];
+    }else{
+        [tView setDropRow:anIndex dropOperation:NSTableViewDropAbove];
+    }
 
 	//[tView setDropItem:tItem dropChildIndex:0];
 	
