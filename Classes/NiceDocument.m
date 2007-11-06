@@ -133,6 +133,7 @@ void findSpace(id each, void* context, BOOL* endthis){
         asffrrTimer = nil;
         thePlaylist = [[NSMutableArray alloc] init];
 		theDataSourceCache  = [[NSMutableArray alloc] init];
+                theMainItemCache = [[NSMutableDictionary alloc] init];
         theRepeatMode = [[Preferences mainPrefs] defaultRepeatMode];
         movieMenuItem = nil;
         menuObjects = nil;
@@ -168,6 +169,7 @@ void findSpace(id each, void* context, BOOL* endthis){
     [playlistFilename release];
     [theID release];
 	[theDataSourceCache release];
+        [theMainItemCache release];
     [super dealloc];
 }
 
@@ -912,7 +914,8 @@ stuff won't work properly! */
 -(void)reloadPlaylist{
 	[theDataSourceCache autorelease];
 	theDataSourceCache = [[NSMutableArray alloc]init];
-	
+	[theMainItemCache autorelease];
+       theMainItemCache = [[NSMutableDictionary  alloc] init];
     [thePlaylistTable reloadData];
 	
 	for(int i=0;i<[thePlaylistTable numberOfRows];i++){
@@ -1170,7 +1173,7 @@ stuff won't work properly! */
 		nil];
 		
 		[theDataSourceCache addObject:tRet];
-		
+		[theMainItemCache setObject:tRet forKey:[NSNumber numberWithInt:anIndex]];
 		return tRet;
 
 	}else if([[item objectForKey:@"url"] isEqualTo: theCurrentURL]){
@@ -1291,15 +1294,16 @@ proposedItem:(id)tItem
  proposedChildIndex:(int)anIndex{
 
     if(tItem ==nil){
-		[tView setDropItem:tItem dropChildIndex:-1];
-		[tView setDropRow:anIndex dropOperation:NSTableViewDropAbove];
+        id tItemDrop =[theMainItemCache objectForKey:[NSNumber numberWithInt:anIndex]] ;
+        if(tItemDrop == nil)
+            tItemDrop = [tView itemAtRow:[tView numberOfRows] -1];
+        [tView setDropItem:tItemDrop dropChildIndex: 0];
+	//	[tView setDropItem:[self outlineView:tView child:anIndex ofItem:tItem] dropChildIndex:0];
 	}else if([[tItem objectForKey:@"type"] isEqualTo:@"chapter"]){
 		tItem = [tItem objectForKey:@"parent"];
-		[tView setDropItem:tItem dropChildIndex:-1];
-		[tView setDropRow:[tView rowForItem:tItem]  dropOperation:NSTableViewDropAbove];
+		[tView setDropItem:tItem dropChildIndex:0];
 	}else{
-		[tView setDropItem:tItem dropChildIndex:-1];
-		[tView setDropRow:[tView rowForItem:tItem]  dropOperation:NSTableViewDropAbove];
+		[tView setDropItem:tItem dropChildIndex:0];
 
     }
 

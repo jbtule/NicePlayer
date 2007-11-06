@@ -66,6 +66,7 @@
     NSURL* theCurrentURL;
     NSMutableArray* thePlaylist;
 	NSMutableArray* theDataSourceCache;
+        NSMutableDictionary* theMainItemCache;
     enum defaultRepeatModeValues theRepeatMode;
     id movieMenuItem;
     NSMutableArray *menuObjects;
