@@ -63,7 +63,6 @@
 
 -(void)createResizeTriangle
 {
-    [self addChildWindow:overlayResize ordered:NSWindowAbove];    
     [self setHasShadow:NO];
 	NSRect tRect =NSMakeRect([[self parentWindow] frame].origin.x + [[self parentWindow] frame].size.width - [((NiceWindow*)[self parentWindow])resizeWidth] ,
 							 [[self parentWindow] frame].origin.y, 
@@ -71,6 +70,9 @@
 							 [((NiceWindow*)[self parentWindow])resizeHeight]);
 	[overlayResize setFrame:tRect display:YES];
 	[overlayResize setAlphaValue:[self alphaValue]];
+        [overlayResize setLevel:[self level]];
+        [self addChildWindow:overlayResize ordered:NSWindowAbove];    
+
     [overlayResize orderFront:self];
 }
 
