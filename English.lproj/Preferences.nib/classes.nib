@@ -74,6 +74,8 @@
 				<string>id</string>
 				<key>showNotificationOverlays</key>
 				<string>id</string>
+				<key>sparkleStartCheck</key>
+				<string>id</string>
 				<key>windowAlwaysOnTop</key>
 				<string>id</string>
 				<key>windowLeaveFullScreen</key>
@@ -131,6 +133,8 @@
 				<string>id</string>
 				<key>paneOverlays</key>
 				<string>id</string>
+				<key>paneSparkle</key>
+				<string>id</string>
 				<key>paneView</key>
 				<string>id</string>
 				<key>paneWindowDefaults</key>
@@ -151,6 +155,10 @@
 				<string>id</string>
 				<key>showNotificationOverlays</key>
 				<string>id</string>
+				<key>spakleInterval</key>
+				<string>id</string>
+				<key>sparkleAuto</key>
+				<string>id</string>
 				<key>windowAlwaysOnTop</key>
 				<string>id</string>
 				<key>windowLeaveFullScreen</key>
@@ -161,19 +169,19 @@
 		</dict>
 		<dict>
 			<key>CLASS</key>
-			<string>JTPreferenceWindow</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-			<key>SUPERCLASS</key>
-			<string>NSWindow</string>
-		</dict>
-		<dict>
-			<key>CLASS</key>
 			<string>FirstResponder</string>
 			<key>LANGUAGE</key>
 			<string>ObjC</string>
 			<key>SUPERCLASS</key>
 			<string>NSObject</string>
+		</dict>
+		<dict>
+			<key>CLASS</key>
+			<string>JTPreferenceWindow</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>NSWindow</string>
 		</dict>
 		<dict>
 			<key>CLASS</key>

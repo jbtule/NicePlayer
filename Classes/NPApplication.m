@@ -50,6 +50,9 @@
 #import <CocoaScriptMenu/CocoaScriptMenu.h>
 #import "NiceUtilities.h"
 #import <HodgePodge/IndyKit.h>
+#import <Sparkle/Sparkle.h>
+
+
 BOOL selectNiceWindow(id each, void* context){
     return [each isKindOfClass:[NiceWindow class]];
 }
@@ -70,6 +73,14 @@ BOOL selectNiceWindow(id each, void* context){
 
   //  }
     
+}
+-(void)setShouldCheckAtStartup:(bool)aBool{
+	[[NSUserDefaults standardUserDefaults] setBool:aBool forKey: SUCheckAtStartupKey];
+	
+}
+-(bool)shouldCheckAtStartUp{
+	return [[NSUserDefaults standardUserDefaults] boolForKey: SUCheckAtStartupKey];
+	
 }
 
 

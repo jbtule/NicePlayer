@@ -47,11 +47,17 @@
 #import <Cocoa/Cocoa.h>
 
 #import "NiceController.h"
+@class SUUpdater;
 
 @interface NPApplication : NSApplication {
 	NSTimer *inactiveTimer;
 	NSPoint lastPoint;
+	IBOutlet SUUpdater* sparkleUpdater;
 }
+
+-(void)setShouldCheckAtStartup:(bool)aBool;
+-(bool)shouldCheckAtStartUp;
+
 
 -(void)copyDefaultScriptsToApplicationSupport;
 -(id)bestMovieWindow;

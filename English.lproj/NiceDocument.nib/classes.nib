@@ -353,6 +353,8 @@
 				<string>id</string>
 				<key>theRRButton</key>
 				<string>id</string>
+				<key>theResizeWindow</key>
+				<string>id</string>
 				<key>theScrubBar</key>
 				<string>NiceScrubber</string>
 				<key>theTimeField</key>

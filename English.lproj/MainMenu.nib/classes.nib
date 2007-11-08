@@ -1,130 +1,177 @@
-{
-    IBClasses = (
-        {
-            ACTIONS = {
-                addToPlaylist = id; 
-                center = id; 
-                doubleSize = id; 
-                fillScreenSize = id; 
-                fillWidthSize = id; 
-                halfSize = id; 
-                normalSize = id; 
-                togglePlaylistDrawer = id; 
-            }; 
-            CLASS = FirstResponder; 
-            LANGUAGE = ObjC; 
-            SUPERCLASS = NSObject; 
-        }, 
-        {
-            ACTIONS = {
-                decreaseVolume = id; 
-                increaseVolume = id; 
-                mute = id; 
-                nextPlaylist = id; 
-                previousPlaylist = id; 
-                switchRepeatMode = id; 
-                switchVolume = id; 
-                toggleRandomized = id; 
-            }; 
-            CLASS = MainDocumentProxy; 
-            LANGUAGE = ObjC; 
-            SUPERCLASS = NSObject; 
-        }, 
-        {
-            ACTIONS = {close = id; }; 
-            CLASS = MainWindowProxy; 
-            LANGUAGE = ObjC; 
-            SUPERCLASS = NSObject; 
-        }, 
-        {
-            ACTIONS = {
-                disccusionGroup = id; 
-                donateToNicePlayer = id; 
-                featureRequest = id; 
-                onlineSupportWikiFAQ = id; 
-                submitBug = id; 
-                visitAcknowlegementsPage = id; 
-                visitNicePlayerWebSite = id; 
-                visitProjectRoadmap = id; 
-            }; 
-            CLASS = NPApplication; 
-            LANGUAGE = ObjC; 
-            SUPERCLASS = NSApplication; 
-        }, 
-        {
-            ACTIONS = {checkForUpdates = id; checkForUpdates2 = id; emailAuthor = id; }; 
-            CLASS = NSApplication; 
-            LANGUAGE = ObjC; 
-            SUPERCLASS = NSResponder; 
-        }, 
-        {
-            ACTIONS = {
-                checkMouseLocation = id; 
-                newDocument = id; 
-                openDocument = id; 
-                openWebURL = id; 
-                playAll = id; 
-                presentMultiple = id; 
-                setPartiallyTransparent = id; 
-                showPreferences = id; 
-                stopAll = id; 
-                toggleAlwaysOnTop = id; 
-                toggleFixedAspectRatio = id; 
-                toggleFullScreen = id; 
-            }; 
-            CLASS = NiceController; 
-            LANGUAGE = ObjC; 
-            OUTLETS = {
-                antiSleepTimer = id; 
-                backgroundWindow = id; 
-                mainWindowProxy = id; 
-                openURLField = id; 
-                openURLWindow = id; 
-                partiallyTransparent = id; 
-                prefWindow = id; 
-                presentWindow = id; 
-                toggleFixedAspectMenuItem = id; 
-                toggleOnTopMenuItem = id; 
-            }; 
-            SUPERCLASS = NSDocumentController; 
-        }, 
-        {
-            ACTIONS = {
-                center = id; 
-                doubleSize = id; 
-                fillScreenSize = id; 
-                fillWidthSize = id; 
-                halfSize = id; 
-                normalSize = id; 
-                performClose = id; 
-                performMiniaturize = id; 
-                updateByTime = id; 
-            }; 
-            CLASS = NiceWindow; 
-            LANGUAGE = ObjC; 
-            OUTLETS = {
-                theFFButton = id; 
-                theMovieView = id; 
-                theOverlaySubTitle = id; 
-                theOverlayTitleBar = id; 
-                theOverlayVolume = id; 
-                theOverlayWindow = id; 
-                thePlayButton = id; 
-                theRRButton = id; 
-                theScrubBar = id; 
-                theTimeField = id; 
-                theTitleField = id; 
-                theVolumeView = id; 
-                timeUpdaterTimer = id; 
-            }; 
-            SUPERCLASS = NSWindow; 
-        }, 
-        {
-            ACTIONS = {checkForUpdates = id; }; 
-            CLASS = SUUpdater; 
-            LANGUAGE = ObjC; 
-            SUPERCLASS = NSObject; 
-        }
-    ); 
-    IBVersion = 1; 
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IBClasses</key>
+	<array>
+		<dict>
+			<key>ACTIONS</key>
+			<dict>
+				<key>checkForUpdates</key>
+				<string>id</string>
+				<key>checkForUpdates2</key>
+				<string>id</string>
+				<key>emailAuthor</key>
+				<string>id</string>
+			</dict>
+			<key>CLASS</key>
+			<string>NSApplication</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>NSResponder</string>
+		</dict>
+		<dict>
+			<key>ACTIONS</key>
+			<dict>
+				<key>checkMouseLocation</key>
+				<string>id</string>
+				<key>newDocument</key>
+				<string>id</string>
+				<key>openDocument</key>
+				<string>id</string>
+				<key>openWebURL</key>
+				<string>id</string>
+				<key>playAll</key>
+				<string>id</string>
+				<key>presentMultiple</key>
+				<string>id</string>
+				<key>setPartiallyTransparent</key>
+				<string>id</string>
+				<key>showPreferences</key>
+				<string>id</string>
+				<key>stopAll</key>
+				<string>id</string>
+				<key>toggleAlwaysOnTop</key>
+				<string>id</string>
+				<key>toggleFixedAspectRatio</key>
+				<string>id</string>
+				<key>toggleFullScreen</key>
+				<string>id</string>
+			</dict>
+			<key>CLASS</key>
+			<string>NiceController</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>OUTLETS</key>
+			<dict>
+				<key>antiSleepTimer</key>
+				<string>id</string>
+				<key>backgroundWindow</key>
+				<string>id</string>
+				<key>mainWindowProxy</key>
+				<string>id</string>
+				<key>openURLField</key>
+				<string>id</string>
+				<key>openURLWindow</key>
+				<string>id</string>
+				<key>partiallyTransparent</key>
+				<string>id</string>
+				<key>prefWindow</key>
+				<string>id</string>
+				<key>presentWindow</key>
+				<string>id</string>
+				<key>toggleFixedAspectMenuItem</key>
+				<string>id</string>
+				<key>toggleOnTopMenuItem</key>
+				<string>id</string>
+			</dict>
+			<key>SUPERCLASS</key>
+			<string>NSDocumentController</string>
+		</dict>
+		<dict>
+			<key>ACTIONS</key>
+			<dict>
+				<key>addToPlaylist</key>
+				<string>id</string>
+				<key>center</key>
+				<string>id</string>
+				<key>doubleSize</key>
+				<string>id</string>
+				<key>fillScreenSize</key>
+				<string>id</string>
+				<key>fillWidthSize</key>
+				<string>id</string>
+				<key>halfSize</key>
+				<string>id</string>
+				<key>normalSize</key>
+				<string>id</string>
+				<key>togglePlaylistDrawer</key>
+				<string>id</string>
+			</dict>
+			<key>CLASS</key>
+			<string>FirstResponder</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>NSObject</string>
+		</dict>
+		<dict>
+			<key>CLASS</key>
+			<string>NSObject</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+		</dict>
+		<dict>
+			<key>ACTIONS</key>
+			<dict>
+				<key>disccusionGroup</key>
+				<string>id</string>
+				<key>donateToNicePlayer</key>
+				<string>id</string>
+				<key>featureRequest</key>
+				<string>id</string>
+				<key>onlineSupportWikiFAQ</key>
+				<string>id</string>
+				<key>submitBug</key>
+				<string>id</string>
+				<key>visitAcknowlegementsPage</key>
+				<string>id</string>
+				<key>visitNicePlayerWebSite</key>
+				<string>id</string>
+				<key>visitProjectRoadmap</key>
+				<string>id</string>
+			</dict>
+			<key>CLASS</key>
+			<string>NPApplication</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>OUTLETS</key>
+			<dict>
+				<key>sparkleUpdater</key>
+				<string>id</string>
+			</dict>
+			<key>SUPERCLASS</key>
+			<string>NSApplication</string>
+		</dict>
+		<dict>
+			<key>ACTIONS</key>
+			<dict>
+				<key>checkForUpdates</key>
+				<string>id</string>
+			</dict>
+			<key>CLASS</key>
+			<string>SUUpdater</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>NSObject</string>
+		</dict>
+		<dict>
+			<key>ACTIONS</key>
+			<dict>
+				<key>close</key>
+				<string>id</string>
+			</dict>
+			<key>CLASS</key>
+			<string>MainWindowProxy</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>NSObject</string>
+		</dict>
+	</array>
+	<key>IBVersion</key>
+	<string>1</string>
+</dict>
+</plist>

@@ -57,7 +57,8 @@
     IBOutlet id theOverlayNotifier;
     IBOutlet id theVolumeView;
     IBOutlet id theTitleField;
-
+	IBOutlet id theResizeWindow;
+	
     IBOutlet NiceScrubber* theScrubBar;
     IBOutlet id theTimeField;
     IBOutlet id thePlayButton;
@@ -94,7 +95,13 @@
 	NSPoint initialDrag;
     
     id notifierTimer;
+	
 }
+-(float)resizeWidth;
+-(float)resizeHeight;
+-(float)scrubberHeight;
+
+-(float)titlebarHeight;
 
 -(void)setResizeDrag:(bool)aDrag;
 

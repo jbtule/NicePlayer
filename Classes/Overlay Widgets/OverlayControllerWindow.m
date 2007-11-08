@@ -65,7 +65,12 @@
 {
     [self addChildWindow:overlayResize ordered:NSWindowAbove];    
     [self setHasShadow:NO];
-    [overlayResize setFrame:[[self parentWindow] frame] display:NO];
+	NSRect tRect =NSMakeRect([[self parentWindow] frame].origin.x + [[self parentWindow] frame].size.width - [((NiceWindow*)[self parentWindow])resizeWidth] ,
+							 [[self parentWindow] frame].origin.y, 
+							 [((NiceWindow*)[self parentWindow])resizeWidth],
+							 [((NiceWindow*)[self parentWindow])resizeHeight]);
+	[overlayResize setFrame:tRect display:YES];
+	[overlayResize setAlphaValue:[self alphaValue]];
     [overlayResize orderFront:self];
 }
 
@@ -75,15 +80,6 @@
     [super setAlphaValue:windowAlpha];
 }
 
--(void)setFrame:(NSRect)frameRect display:(BOOL)flag
-{
-    [super setFrame:frameRect display:flag];
-
-    NSRect movieRect = [[[self parentWindow] contentView] frame];
-    movieRect.origin = [[self parentWindow] convertBaseToScreen:movieRect.origin];
-    [overlayResize setFrame:movieRect display:flag];
-    
-}
 
 -(void)setLevel:(int)newLevel
 {

@@ -44,8 +44,9 @@
 * ***** END LICENSE BLOCK ***** */
 
 #import "NiceScrubber.h"
+#import <Carbon/Carbon.h>
 
-#define OFFSET (10)
+#define OFFSET (10 * HIGetScaleFactor())
 
 @implementation NiceScrubber
 
@@ -54,9 +55,11 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code here.
-        left = [[NSImage imageNamed:@"scrubbar_left"]retain];
-		right = [[NSImage imageNamed:@"scrubbar_right"]retain];
-		center = [[NSImage imageNamed:@"scrubbar_center"]retain];
+		
+      //  left = [[NSImage imageNamed:@"scrubbar_left"]retain];
+//		right = [[NSImage imageNamed:@"scrubbar_right"]retain];
+//		center = [[NSImage imageNamed:@"scrubbar_center"]retain];
+		
 		scrubClick = [[NSImage imageNamed:@"scrubberClick"]retain];
 		scrub = [[NSImage imageNamed:@"scrubber"] retain];
 		value=0.0;
@@ -84,35 +87,35 @@
     /* I think it looks better without the pressed state -- the entire area is draggable anyway, and you can
 	click at any point and continue dragging and the entire thing will drag at that point anyway. */
     id tempImage = scrub;
-#if 0
-    if (dragging)
-        tempImage = scrubClick;
-    else 
-        tempImage = scrub;
-#endif
+//#if 0
+//    if (dragging)
+//        tempImage = scrubClick;
+//    else 
+//        tempImage = scrub;
+//#endif
     
 	if([self loadedValue] >= 0){
 		    [self lockFocus];
 
-		[left drawAtPoint:NSMakePoint(0,0) 
-				 fromRect:NSMakeRect(0, 0,
-									 [left size].width,
-									 [left size].height) 
-				operation:NSCompositeSourceOver
-				 fraction:1.0];
-    	
-		[center drawInRect:NSMakeRect(5,0,
-									  [self frame].size.width-10,
-									  [self frame].size.height)
-				  fromRect:NSMakeRect(0,0,
-									  [center size].width,
-									  [center size].height) 
-				 operation:NSCompositeSourceOver
-				  fraction:1.0];
+		//[left drawAtPoint:NSMakePoint(0,0) 
+//				 fromRect:NSMakeRect(0, 0,
+//									 [left size].width,
+//									 [left size].height) 
+//				operation:NSCompositeSourceOver
+//				 fraction:1.0];
+//    	
+//		[center drawInRect:NSMakeRect(5,0,
+//									  [self frame].size.width-10,
+//									  [self frame].size.height)
+//				  fromRect:NSMakeRect(0,0,
+//									  [center size].width,
+//									  [center size].height) 
+//				 operation:NSCompositeSourceOver
+//				  fraction:1.0];
 		
 		CGPoint points[2];
-		points[0] = CGPointMake(OFFSET + 1, floor([self frame].size.height / 2.0));
-		points[1] = CGPointMake([self frame].size.width - OFFSET - 1, floor([self frame].size.height / 2.0));
+		points[0] = CGPointMake(OFFSET , floor([self frame].size.height / 2.0));
+		points[1] = CGPointMake([self frame].size.width - OFFSET, floor([self frame].size.height / 2.0));
 		
 		points[1].x =(points[1].x - 	points[0].x) * [self loadedValue] + points[0].x;
 		
@@ -123,15 +126,15 @@
 		CGContextSetLineCap(cgRef, kCGLineCapRound);
 		CGContextStrokeLineSegments(cgRef, points, 2);
 		CGContextSetAllowsAntialiasing(cgRef, YES);
-		
-		[right drawAtPoint:NSMakePoint([self frame].size.width-5,0)
-				  fromRect:NSMakeRect(0,0,
-									  [right size].width,
-									  [right size].height) 
-				 operation:NSCompositeSourceOver
-				  fraction:1.0];
+//		
+//		[right drawAtPoint:NSMakePoint([self frame].size.width-5,0)
+//				  fromRect:NSMakeRect(0,0,
+//									  [right size].width,
+//									  [right size].height) 
+//				 operation:NSCompositeSourceOver
+//				  fraction:1.0];
     	
-		[tempImage drawAtPoint:NSMakePoint(OFFSET+([self doubleValue]*([self frame].size.width-(OFFSET * 2)))-[scrub size].width/2,[self frame].size.height/2 - [tempImage size].height/2 + 0.5)
+		[tempImage drawAtPoint:NSMakePoint(OFFSET+([self doubleValue]*([self frame].size.width-(OFFSET * 2)))-[scrub size].width/2,[self frame].size.height/2 - [tempImage size].height/2)
 					  fromRect:NSMakeRect(0,0,
 										  [tempImage size].width,
 										  [tempImage size].height) 
@@ -186,7 +189,7 @@
 
 - (void)mouseDragged:(NSEvent *)anEvent
 {
-    float loc =[self convertPoint:[anEvent locationInWindow]fromView:[[self window] contentView]].x;
+    float loc =[self convertPoint:[anEvent locationInWindow]fromView:nil].x;
     
     if(loc <= OFFSET)
         [self setDoubleValue:0.0];
@@ -212,7 +215,7 @@
 -(void)mouseDown:(NSEvent *)anEvent
 {
     dragging =YES;
-    float loc =[self convertPoint:[anEvent locationInWindow]fromView:[[self window] contentView]].x;
+    float loc =[self convertPoint:[anEvent locationInWindow]fromView:nil].x;
 	
     if(loc <= OFFSET)
         [self setDoubleValue:0.0];

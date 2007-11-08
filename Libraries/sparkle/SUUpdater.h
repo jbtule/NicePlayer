@@ -54,4 +54,7 @@
 // just want to call this every time the user changes the setting in the preferences.
 - (void)scheduleCheckWithInterval:(NSTimeInterval)interval;
 
+
+- (NSTimeInterval)storedCheckInterval;
+
 @end

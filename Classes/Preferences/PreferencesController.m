@@ -47,7 +47,8 @@
 #import "PreferencesController.h"
 #import "../Viewer Interface/NPPluginReader.h"
 #import <HodgePodge/JTPreferenceWindow.h>
-
+#import <Sparkle/Sparkle.h>
+#import "NPApplication.h"
 @implementation PreferencesController
 
 -(void)awakeFromNib
@@ -57,7 +58,9 @@
     NSString* tGeneralPrefIcon = [tempBundle pathForResource:@"GeneralPreferenceIcon" ofType:@"png"];
     NSString* tActionPrefIcon =[tempBundle pathForResource:@"ActionsPreferenceIcon" ofType:@"png"];
 
-    
+	id sparkleBundle =[NSBundle bundleForClass:[SUUpdater class]];
+	NSString* tSparklePrefIcon =[sparkleBundle pathForResource:@"Sparkle" ofType:@"icns"];
+
 	[prefWindow addPane:paneMain
                    withIcon:[[[NSImage alloc]initWithContentsOfFile:tGeneralPrefIcon] autorelease]
 		 withIdentifier:@"General"
@@ -82,6 +85,14 @@
 			  withLabel:@"Actions"
 			withToolTip:@"Actions on Movies"
 		 allowingResize:NO];
+	
+	[prefWindow addPane:paneSparkle
+			   withIcon:[[[NSImage alloc]initWithContentsOfFile:tSparklePrefIcon] autorelease]
+		 withIdentifier:@"Sparkle"
+			  withLabel:@"Auto Update"
+			withToolTip:@"Auto Update"
+		 allowingResize:NO];
+	
 	[prefWindow addPane:paneOverlays
 		   withIcon:[NSImage imageNamed:@"OverPrefIcon"] 
 	     withIdentifier:@"Overlays"
@@ -139,6 +150,12 @@
 	[audioVolumeSimilarToLastWindow setState:[[Preferences mainPrefs] audioVolumeSimilarToLastWindow]];
 	[disableShowingOverlaysOnKeyPress setState:[[Preferences mainPrefs] disableShowingOverlaysOnKeyPress]];
 	[opacityWhenWindowIsTransparent setFloatValue:[[Preferences mainPrefs] opacityWhenWindowIsTransparent]];
+	
+	if([((NPApplication*)NSApp) shouldCheckAtStartUp])
+		[sparkleAuto setState:NSOnState];
+	else		
+		[sparkleAuto setState:NSOffState];
+	
 	
 	[bundlePriorityTable setDataSource:self];
 	[bundlePriorityTable setDelegate:self];
@@ -213,6 +230,12 @@
     total += 60* 60* [[sender objectValue] hourOfDay];
     [[Preferences mainPrefs] setFfSpeed:total];
 }
+
+
+-(IBAction)sparkleStartCheck:(id)sender{
+	[NSApp setShouldCheckAtStartup:[sparkleAuto state]==NSOnState];
+}
+
 
 #pragma mark -
 

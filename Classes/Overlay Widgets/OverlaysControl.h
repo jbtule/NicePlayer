@@ -50,7 +50,7 @@
 
 +(id)control;
 -(void)mouseMovedInScreenPoint:(NSPoint)aScreenPoint;
--(BOOL)inResizeRegion:(NSPoint)aScreenPoint forWindow:(id)aWindow;
+-(BOOL)inResizeRegion:(NSPoint)aScreenPoint forWindow:(NiceWindow*)aWindow;
 -(BOOL)showOverlayForWindow:(NiceWindow *)aWindow atPoint:(NSPoint)aScreenPoint;
 
 @end

@@ -1044,11 +1044,12 @@
 				8D15AC280486D014006FF6A4 /* Headers */,
 				8D15AC2B0486D014006FF6A4 /* Resources */,
 				8D15AC300486D014006FF6A4 /* Sources */,
-				8D15AC330486D014006FF6A4 /* Frameworks */,
 				3E5302E90684096B00923E9B /* CopyFiles */,
 				259DE26B0760F769000FE804 /* CopyFiles */,
 				25295068076F804700D4B325 /* ShellScript */,
 				2513D30D07BDACBC00BB6055 /* ShellScript */,
+				8D15AC330486D014006FF6A4 /* Frameworks */,
+				691ECE150CE0362B0040AE45 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1073,6 +1074,7 @@
 		2A37F4A9FDCFA73011CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			buildConfigurationList = 251FEF770855184200D38B8E /* Build configuration list for PBXProject "NicePlayer" */;
+			compatibilityVersion = "Xcode 2.4";
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				English,
@@ -1114,6 +1116,7 @@
 					ProjectRef = 699461E30CCBED9F00CE0AD3 /* UniversalCharsetDetector.xcodeproj */;
 				},
 			);
+			projectRoot = "";
 			targets = (
 				8D15AC270486D014006FF6A4 /* NicePlayer */,
 			);
@@ -1294,6 +1297,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"$SOURCE_ROOT/Versioning/version.sh\"";
+		};
+		691ECE150CE0362B0040AE45 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "codesign -f -s NicePlayer \"$TARGET_BUILD_DIR/NicePlayer.app\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1487,10 +1503,10 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				OPTIMIZATION_CFLAGS = "-O0";
 				OTHER_LDFLAGS = (
-					"-weak_framework",
-					QTKit,
-					"-weak_framework",
-					CocoaScriptMenu,
+					"-sectcreate",
+					__TEXT,
+					__info_plist,
+					Info.plist,
 				);
 				PRODUCT_NAME = NicePlayer;
 				SECTORDER_FLAGS = "";
@@ -1537,7 +1553,12 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				MACOSX_DEPLOYMENT_TARGET = 10.4;
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-sectcreate",
+					__TEXT,
+					__info_plist,
+					Info.plist,
+				);
 				PRODUCT_NAME = NicePlayer;
 				SECTORDER_FLAGS = "";
 				WARNING_CFLAGS = (

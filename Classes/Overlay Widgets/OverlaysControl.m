@@ -82,7 +82,7 @@ static id overlayControl = nil;
 {
     if([aWindow isFullScreen]){
 	NSRect mainScreenFrame = [[NSScreen mainScreen] frame];
-	return (aScreenPoint.y <= (mainScreenFrame.origin.y + 32)
+	return (aScreenPoint.y <= (mainScreenFrame.origin.y + [aWindow scrubberHeight])
 		&& aScreenPoint.y >= (mainScreenFrame.origin.y)
 		&& aScreenPoint.x >= mainScreenFrame.origin.x
 		&& aScreenPoint.x <= mainScreenFrame.size.width);
@@ -90,7 +90,7 @@ static id overlayControl = nil;
     
     NSRect windowFrame = [aWindow frame];
     NSRect mainVisibleFrame = [[NSScreen mainScreen] visibleFrame];
-    NSRect tempRect = NSMakeRect(windowFrame.origin.x, windowFrame.origin.y, windowFrame.size.width, 32);
+    NSRect tempRect = NSMakeRect(windowFrame.origin.x, windowFrame.origin.y, windowFrame.size.width, [aWindow scrubberHeight]);
     
     if (mainVisibleFrame.origin.y < windowFrame.origin.y){
 	tempRect.origin = NSMakePoint(0, 0);
@@ -100,37 +100,36 @@ static id overlayControl = nil;
     return NSMouseInRect([aWindow convertScreenToBase:aScreenPoint], tempRect, NO);
 }
 
--(BOOL)inTitleRegion:(NSPoint)aScreenPoint forWindow:(id)aWindow
+-(BOOL)inTitleRegion:(NSPoint)aScreenPoint forWindow:(NiceWindow*)aWindow
 {
     if([aWindow isFullScreen]){
 		NSRect mainScreenFrame = [[NSScreen mainScreen] frame];
 		return (aScreenPoint.y <= (mainScreenFrame.origin.y + mainScreenFrame.size.height) 
-				&& aScreenPoint.y >= (mainScreenFrame.origin.y + mainScreenFrame.size.height - 48) 
+				&& aScreenPoint.y >= (mainScreenFrame.origin.y + mainScreenFrame.size.height - [aWindow titlebarHeight] - [NSMenuView menuBarHeight]) 
 				&& aScreenPoint.x >= mainScreenFrame.origin.x
 				&& aScreenPoint.x <= mainScreenFrame.size.width);
 	}
 	
 	NSRect windowFrame = [aWindow frame];
 	NSRect mainVisibleFrame = [[NSScreen mainScreen] visibleFrame];
-	NSRect tempRect = NSMakeRect(windowFrame.origin.x,  windowFrame.origin.y + windowFrame.size.height - 24,
-								 windowFrame.size.width, 24);
+	NSRect tempRect = NSMakeRect(windowFrame.origin.x,  windowFrame.origin.y + windowFrame.size.height - [aWindow titlebarHeight],
+								 windowFrame.size.width, [aWindow titlebarHeight]);
 	
 	if ((mainVisibleFrame.origin.y + mainVisibleFrame.size.height) > (windowFrame.origin.y + windowFrame.size.height)){	
-		tempRect.origin = NSMakePoint(0, windowFrame.size.height - 24);
+		tempRect.origin = NSMakePoint(0, windowFrame.size.height - [aWindow titlebarHeight]);
 	} else {
 	    tempRect.origin = [aWindow convertScreenToBase:NSMakePoint(windowFrame.origin.x, mainVisibleFrame.origin.y
-								       + mainVisibleFrame.size.height - 24)];
+								       + mainVisibleFrame.size.height - [aWindow titlebarHeight])];
 	}
 	return NSMouseInRect([aWindow convertScreenToBase:aScreenPoint], tempRect, NO);
 }
 
--(BOOL)inResizeRegion:(NSPoint)aScreenPoint forWindow:(id)aWindow
+-(BOOL)inResizeRegion:(NSPoint)aScreenPoint forWindow:(NiceWindow*)aWindow
 {
-    NSRect movieRect = [[aWindow contentView] frame];
-    movieRect.origin = [aWindow convertBaseToScreen:movieRect.origin];
+    NSRect movieRect = [aWindow frame];
     NSRect resizeRect;
-    resizeRect.size.height = 14;
-    resizeRect.size.width = 14;
+    resizeRect.size.height = [aWindow resizeHeight];
+    resizeRect.size.width = [aWindow resizeWidth];
     resizeRect.origin.x = movieRect.origin.x + movieRect.size.width - resizeRect.size.width;
     resizeRect.origin.y = movieRect.origin.y;
     return NSMouseInRect(aScreenPoint, resizeRect, NO);

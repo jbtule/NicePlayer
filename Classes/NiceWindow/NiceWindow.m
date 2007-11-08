@@ -60,6 +60,21 @@
 
 @implementation NiceWindow
 
+-(float)resizeHeight{
+	return [theResizeWindow frame].size.height;
+}
+-(float)resizeWidth{
+	return [theResizeWindow frame].size.width;
+}
+
+-(float)scrubberHeight{
+	return [theOverlayWindow frame].size.height;
+}
+
+-(float)titlebarHeight{
+	return [theOverlayTitleBar frame].size.height;
+}
+
 - (id)initWithContentRect:(NSRect)contentRect
                 styleMask:(unsigned int)aStyle
                   backing:(NSBackingStoreType)bufferingType
@@ -259,7 +274,9 @@
  */
 -(BOOL)inResizeLocation:(NSEvent *)anEvent
 {
-    return ([anEvent locationInWindow].x > ([self frame].size.width-16) && [anEvent locationInWindow].y < (16));
+	
+	NSRect tRect =NSMakeRect([self frame].origin.x + ([self frame].size.width-[self resizeWidth]), [self frame].origin.y, [self resizeWidth],[self resizeHeight]);
+    return NSPointInRect([self convertBaseToScreen:[anEvent locationInWindow]], tRect);
 }
 
 -(void)setResizeDrag:(bool)aDrag{
@@ -368,9 +385,9 @@
 	
 	[self putOverlay:theOverlaySubTitleWindow
              inFrame:NSMakeRect(currentFrame.origin.x,
-                                currentFrame.origin.y+32,
+                                currentFrame.origin.y+[theOverlayWindow frame].size.height,
                                 currentFrame.size.width,
-                                currentFrame.size.height - 24 - 32)
+                                currentFrame.size.height - [theOverlayTitleBar frame].size.height - [theOverlayWindow frame].size.height)
       withVisibility:NO];
 	
     [theOverlayWindow createResizeTriangle];
@@ -486,18 +503,32 @@
             [theOverlayWindow setFrame:NSMakeRect(frame.origin.x,
                                                   frame.origin.y,
                                                   frame.size.width,
-                                                  32) display:YES];
+                                                  [theOverlayWindow frame].size.height) display:YES];
+			[theResizeWindow setFrame:NSMakeRect(frame.origin.x +  frame.size.width -  [self resizeWidth], frame.origin.y , [self resizeWidth], [self resizeHeight]) display:YES];
+
         } else {
             [theOverlayWindow setFrame:NSMakeRect(intersect.origin.x,
                                                   intersect.origin.y,
                                                   intersect.size.width,
-                                                  32) display:YES];
+                                                  [theOverlayWindow frame].size.height) display:YES];
+			
+			[theResizeWindow setFrame:NSMakeRect(intersect.origin.x  +  intersect.size.width -  [self resizeWidth], intersect.origin.y , [self resizeWidth], [self resizeHeight]) display:YES];
+
         }
-    } else
+		
+		
+
+	} else{
         [theOverlayWindow setFrame:NSMakeRect(mainFrame.origin.x,
                                               mainFrame.origin.y,
                                               mainFrame.size.width,
-                                              32) display:YES];
+                                              [theOverlayWindow frame].size.height) display:YES];
+		
+		[theResizeWindow setFrame:NSMakeRect([self frame].origin.x +  [self frame].size.width -  [self resizeWidth] ,
+											 [self frame].origin.y,
+											 [self resizeWidth],
+											 [self resizeHeight]) display:YES];
+	}
 }
 
 -(void)hideOverLayWindow
@@ -508,7 +539,7 @@
         [self hideInitialWindows];
     else
         [[FadeOut fadeOut] addWindow:theOverlayWindow];
-    [self setShowsResizeIndicator:NO];
+ //   [self setShowsResizeIndicator:NO];
     windowOverlayIsShowing = NO;
 }
 
@@ -550,19 +581,19 @@
     if(!fullScreen){
 		if(NSEqualRects(intersect, frame))
 			[theOverlaySubTitleWindow setFrame:NSMakeRect(frame.origin.x,
-														  frame.origin.y+32,
+														  frame.origin.y+[theOverlayWindow frame].size.height,
 														  frame.size.width,
-														  frame.size.height- 24 - 32) display:YES];
+														  frame.size.height- [theOverlayTitleBar frame].size.height - [theOverlayWindow frame].size.height) display:YES];
 		else
 			[theOverlaySubTitleWindow setFrame:NSMakeRect(intersect.origin.x,
-														  intersect.origin.y+32,
+														  intersect.origin.y+[theOverlayWindow frame].size.height,
 														  intersect.size.width,
-														  intersect.size.height- 24 - 32) display:YES];
+														  intersect.size.height- [theOverlayTitleBar frame].size.height  - [theOverlayWindow frame].size.height) display:YES];
     } else
         [theOverlaySubTitleWindow setFrame:NSMakeRect(visibleFrame.origin.x,
-													  visibleFrame.origin.y+32,
+													  visibleFrame.origin.y+[theOverlayWindow frame].size.height,
 													  visibleFrame.size.width,
-													  visibleFrame.size.height- 24 - 32) display:YES];
+													  visibleFrame.size.height- [theOverlayTitleBar frame].size.height - [theOverlayWindow frame].size.height) display:YES];
 	
 	
 	
@@ -581,21 +612,21 @@
     if(!fullScreen){
         if(NSEqualRects(intersect, frame))
             [theOverlayTitleBar setFrame:NSMakeRect(frame.origin.x,
-                                                    frame.origin.y + frame.size.height - 24,
+                                                    frame.origin.y + frame.size.height - [theOverlayTitleBar frame].size.height,
                                                     frame.size.width,
-                                                    24) display:YES];
+                                                    [theOverlayTitleBar frame].size.height) display:YES];
         else
             [theOverlayTitleBar setFrame:NSMakeRect(intersect.origin.x,
                                                     intersect.origin.y
-                                                    + intersect.size.height - 24,
+                                                    + intersect.size.height - [theOverlayTitleBar frame].size.height,
                                                     intersect.size.width,
-                                                    24) display:YES];
+                                                    [theOverlayTitleBar frame].size.height) display:YES];
     } else{
         [theOverlayTitleBar setFrame:NSMakeRect(visibleFrame.origin.x,
                                                 visibleFrame.origin.y
-                                                + visibleFrame.size.height - 48,
+                                                + visibleFrame.size.height - [theOverlayTitleBar frame].size.height - [NSMenuView menuBarHeight],
                                                 visibleFrame.size.width,
-                                                24) display:YES];
+                                                [theOverlayTitleBar frame].size.height) display:YES];
 	}
 }
 
