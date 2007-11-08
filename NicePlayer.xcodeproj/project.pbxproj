@@ -1074,6 +1074,7 @@
 		2A37F4A9FDCFA73011CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			buildConfigurationList = 251FEF770855184200D38B8E /* Build configuration list for PBXProject "NicePlayer" */;
+			compatibilityVersion = "Xcode 2.4";
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				English,
@@ -1115,6 +1116,7 @@
 					ProjectRef = 699461E30CCBED9F00CE0AD3 /* UniversalCharsetDetector.xcodeproj */;
 				},
 			);
+			projectRoot = "";
 			targets = (
 				8D15AC270486D014006FF6A4 /* NicePlayer */,
 			);

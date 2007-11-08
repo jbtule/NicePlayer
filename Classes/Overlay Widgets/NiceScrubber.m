@@ -134,8 +134,16 @@
 //				 operation:NSCompositeSourceOver
 //				  fraction:1.0];
     	
-		[tempImage drawAtPoint:NSMakePoint(OFFSET+([self doubleValue]*([self frame].size.width-(OFFSET * 2)))-[scrub size].width/2,[self frame].size.height/2 - [tempImage size].height/2)
-					  fromRect:NSMakeRect(0,0,
+		float scrubWidth = [self frame].size.height;//width and height are equal with scrubber
+		float scrubHeight = [self frame].size.height;
+
+		
+		NSPoint tPoint =NSMakePoint(OFFSET+([self doubleValue]*([self frame].size.width-(OFFSET * 2))),[self frame].size.height/2 );
+		NSRect tScrubRect =NSMakeRect(tPoint.x, tPoint.y, scrubWidth, scrubHeight);
+		[tempImage drawInRect:NSOffsetRect(tScrubRect,- tScrubRect.size.width/2.0,-tScrubRect.size.height/2.0)
+										
+					 
+					 fromRect:NSMakeRect(0,0,
 										  [tempImage size].width,
 										  [tempImage size].height) 
 					 operation:NSCompositeSourceOver
