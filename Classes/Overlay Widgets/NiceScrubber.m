@@ -138,9 +138,11 @@
 		float scrubHeight = [self frame].size.height;
 
 		
+		[[NSGraphicsContext currentContext] saveGraphicsState];
+		[[NSGraphicsContext currentContext] setImageInterpolation:NSImageInterpolationHigh];
 		NSPoint tPoint =NSMakePoint(OFFSET+([self doubleValue]*([self frame].size.width-(OFFSET * 2))),[self frame].size.height/2 );
 		NSRect tScrubRect =NSMakeRect(tPoint.x, tPoint.y, scrubWidth, scrubHeight);
-		[tempImage drawInRect:NSOffsetRect(tScrubRect,- tScrubRect.size.width/2.0,-tScrubRect.size.height/2.0)
+		[tempImage drawInRect:NSIntegralRect(NSOffsetRect(tScrubRect,- tScrubRect.size.width/2.0,-tScrubRect.size.height/2.0))
 										
 					 
 					 fromRect:NSMakeRect(0,0,
@@ -148,7 +150,8 @@
 										  [tempImage size].height) 
 					 operation:NSCompositeSourceOver
 					  fraction:1.0];
-		
+		[[NSGraphicsContext currentContext] restoreGraphicsState];
+
 		[self unlockFocus];
 	}
     

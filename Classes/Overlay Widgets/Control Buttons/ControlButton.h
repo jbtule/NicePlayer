@@ -43,8 +43,8 @@
 
 #import <Cocoa/Cocoa.h>
 #import "NPMovieView.h"
-
-@interface ControlButton : NSButton {
+#import "NPScalingButton.h"
+@interface ControlButton : NPScalingButton {
 	id actionView;
 	BOOL start;
 	BOOL activated;

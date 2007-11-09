@@ -20,7 +20,7 @@
 				<string>id</string>
 			</dict>
 			<key>SUPERCLASS</key>
-			<string>NSButton</string>
+			<string>NPScalingButton</string>
 		</dict>
 		<dict>
 			<key>ACTIONS</key>
@@ -381,6 +381,14 @@
 			</dict>
 			<key>SUPERCLASS</key>
 			<string>NSTextField</string>
+		</dict>
+		<dict>
+			<key>CLASS</key>
+			<string>NPScalingButton</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>NSButton</string>
 		</dict>
 		<dict>
 			<key>CLASS</key>

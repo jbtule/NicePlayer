@@ -175,6 +175,10 @@
 		697496200B55F7A90030D4D2 /* titlebg.png in Resources */ = {isa = PBXBuildFile; fileRef = 6974961F0B55F7A90030D4D2 /* titlebg.png */; };
 		6974971F0B56033F0030D4D2 /* TitleBackgroundView.h in Headers */ = {isa = PBXBuildFile; fileRef = 6974971D0B56033F0030D4D2 /* TitleBackgroundView.h */; };
 		697497200B56033F0030D4D2 /* TitleBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6974971E0B56033F0030D4D2 /* TitleBackgroundView.m */; };
+		6977CC670CE3DF8B00B4EBB6 /* NPScalingButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 6977CC650CE3DF8B00B4EBB6 /* NPScalingButton.h */; };
+		6977CD5A0CE3F63000B4EBB6 /* NPScalingButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6977CD590CE3F63000B4EBB6 /* NPScalingButton.m */; };
+		6977CD6D0CE3F65A00B4EBB6 /* NPScalingButtonCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 6977CD6B0CE3F65A00B4EBB6 /* NPScalingButtonCell.h */; };
+		6977CD6E0CE3F65A00B4EBB6 /* NPScalingButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6977CD6C0CE3F65A00B4EBB6 /* NPScalingButtonCell.m */; };
 		69945E6E0CCA639600CE0AD3 /* inputpref.png in Resources */ = {isa = PBXBuildFile; fileRef = 69945E6C0CCA639500CE0AD3 /* inputpref.png */; };
 		69945E6F0CCA639600CE0AD3 /* windpref.png in Resources */ = {isa = PBXBuildFile; fileRef = 69945E6D0CCA639600CE0AD3 /* windpref.png */; };
 		699461F20CCBEDCF00CE0AD3 /* UniversalCharsetDetector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699461EB0CCBED9F00CE0AD3 /* UniversalCharsetDetector.framework */; };
@@ -525,6 +529,10 @@
 		6974961F0B55F7A90030D4D2 /* titlebg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = titlebg.png; path = Resources/titlebg.png; sourceTree = "<group>"; };
 		6974971D0B56033F0030D4D2 /* TitleBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TitleBackgroundView.h; path = "Classes/Overlay Widgets/TitleBackgroundView.h"; sourceTree = "<group>"; };
 		6974971E0B56033F0030D4D2 /* TitleBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TitleBackgroundView.m; path = "Classes/Overlay Widgets/TitleBackgroundView.m"; sourceTree = "<group>"; };
+		6977CC650CE3DF8B00B4EBB6 /* NPScalingButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NPScalingButton.h; path = "Classes/Overlay Widgets/NPScalingButton.h"; sourceTree = "<group>"; };
+		6977CD590CE3F63000B4EBB6 /* NPScalingButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NPScalingButton.m; path = "Classes/Overlay Widgets/NPScalingButton.m"; sourceTree = "<group>"; };
+		6977CD6B0CE3F65A00B4EBB6 /* NPScalingButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NPScalingButtonCell.h; path = "Classes/Overlay Widgets/NPScalingButtonCell.h"; sourceTree = "<group>"; };
+		6977CD6C0CE3F65A00B4EBB6 /* NPScalingButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NPScalingButtonCell.m; path = "Classes/Overlay Widgets/NPScalingButtonCell.m"; sourceTree = "<group>"; };
 		69945E6C0CCA639500CE0AD3 /* inputpref.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = inputpref.png; path = Resources/inputpref.png; sourceTree = "<group>"; };
 		69945E6D0CCA639600CE0AD3 /* windpref.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = windpref.png; path = Resources/windpref.png; sourceTree = "<group>"; };
 		699461E30CCBED9F00CE0AD3 /* UniversalCharsetDetector.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UniversalCharsetDetector.xcodeproj; path = Libraries/UniversalCharsetDetector/UniversalCharsetDetector.xcodeproj; sourceTree = "<group>"; };
@@ -764,6 +772,10 @@
 				697496110B55EA800030D4D2 /* OverlayTitleWindow.m */,
 				6974971D0B56033F0030D4D2 /* TitleBackgroundView.h */,
 				6974971E0B56033F0030D4D2 /* TitleBackgroundView.m */,
+				6977CC650CE3DF8B00B4EBB6 /* NPScalingButton.h */,
+				6977CD590CE3F63000B4EBB6 /* NPScalingButton.m */,
+				6977CD6B0CE3F65A00B4EBB6 /* NPScalingButtonCell.h */,
+				6977CD6C0CE3F65A00B4EBB6 /* NPScalingButtonCell.m */,
 			);
 			name = "Overlay Widgets";
 			sourceTree = "<group>";
@@ -1031,6 +1043,8 @@
 				69B2197C0BC72AA60054E10E /* TCallScript.h in Headers */,
 				692CF88F0CC2F78000DF2159 /* BlankView.h in Headers */,
 				691ECCF80CDE75B70040AE45 /* NPOutlineView.h in Headers */,
+				6977CC670CE3DF8B00B4EBB6 /* NPScalingButton.h in Headers */,
+				6977CD6D0CE3F65A00B4EBB6 /* NPScalingButtonCell.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1309,7 +1323,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#!codesign -f -s NicePlayer \"$TARGET_BUILD_DIR/NicePlayer.app\"";
+			shellScript = "if [ $CONFIGURATION == \"Release\" ]; then\ncodesign -f -s NicePlayer \"$TARGET_BUILD_DIR/NicePlayer.app\"\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1369,6 +1383,8 @@
 				69B2197D0BC72AA60054E10E /* TCallScript.m in Sources */,
 				692CF8900CC2F78200DF2159 /* BlankView.m in Sources */,
 				691ECCF90CDE75B70040AE45 /* NPOutlineView.m in Sources */,
+				6977CD5A0CE3F63000B4EBB6 /* NPScalingButton.m in Sources */,
+				6977CD6E0CE3F65A00B4EBB6 /* NPScalingButtonCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
