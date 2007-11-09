@@ -1,410 +1,167 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>IBClasses</key>
-	<array>
-		<dict>
-			<key>ACTIONS</key>
-			<dict>
-				<key>mousePressed</key>
-				<string>id</string>
-			</dict>
-			<key>CLASS</key>
-			<string>ControlButton</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-			<key>OUTLETS</key>
-			<dict>
-				<key>actionView</key>
-				<string>id</string>
-			</dict>
-			<key>SUPERCLASS</key>
-			<string>NPScalingButton</string>
-		</dict>
-		<dict>
-			<key>ACTIONS</key>
-			<dict>
-				<key>addToPlaylist</key>
-				<string>id</string>
-				<key>choosePlaylistItem</key>
-				<string>id</string>
-				<key>close</key>
-				<string>id</string>
-				<key>closePlaylistDrawer</key>
-				<string>id</string>
-				<key>decreaseVolume</key>
-				<string>id</string>
-				<key>handleDecrementVolumeCommand</key>
-				<string>id</string>
-				<key>handleFFStartCommand</key>
-				<string>id</string>
-				<key>handleFFStopCommand</key>
-				<string>id</string>
-				<key>handleIncrementVolumeCommand</key>
-				<string>id</string>
-				<key>handlePlayPauseCommand</key>
-				<string>id</string>
-				<key>handleRRStartCommand</key>
-				<string>id</string>
-				<key>handleRRStopCommand</key>
-				<string>id</string>
-				<key>handleSkipBackwardCommand</key>
-				<string>id</string>
-				<key>handleSkipForwardCommand</key>
-				<string>id</string>
-				<key>handleToggleMuteCommand</key>
-				<string>id</string>
-				<key>increaseVolume</key>
-				<string>id</string>
-				<key>mute</key>
-				<string>id</string>
-				<key>openPlaylistDrawer</key>
-				<string>id</string>
-				<key>openPlaylistDrawerConditional</key>
-				<string>id</string>
-				<key>pause</key>
-				<string>id</string>
-				<key>play</key>
-				<string>id</string>
-				<key>playNext</key>
-				<string>id</string>
-				<key>playPrev</key>
-				<string>id</string>
-				<key>switchPlaylistItem</key>
-				<string>NSMenuItem</string>
-				<key>switchRepeatMode</key>
-				<string>NSMenuItem</string>
-				<key>switchVolume</key>
-				<string>NSMenuItem</string>
-				<key>togglePlaylistDrawer</key>
-				<string>id</string>
-				<key>toggleRandomMode</key>
-				<string>id</string>
-				<key>toggleRepeatMode</key>
-				<string>id</string>
-			</dict>
-			<key>CLASS</key>
-			<string>NiceDocument</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-			<key>OUTLETS</key>
-			<dict>
-				<key>asffrrTimer</key>
-				<string>id</string>
-				<key>movieMenuItem</key>
-				<string>id</string>
-				<key>playlistFilename</key>
-				<string>id</string>
-				<key>theMovieView</key>
-				<string>NPMovieView</string>
-				<key>thePlaylistDrawer</key>
-				<string>id</string>
-				<key>thePlaylistTable</key>
-				<string>id</string>
-				<key>theRepeatButton</key>
-				<string>id</string>
-				<key>theSubtitle</key>
-				<string>id</string>
-				<key>theWindow</key>
-				<string>NiceWindow</string>
-			</dict>
-			<key>SUPERCLASS</key>
-			<string>NSDocument</string>
-		</dict>
-		<dict>
-			<key>CLASS</key>
-			<string>NiceDrawer</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-			<key>OUTLETS</key>
-			<dict>
-				<key>playlistTable</key>
-				<string>NSTableView</string>
-			</dict>
-			<key>SUPERCLASS</key>
-			<string>NSView</string>
-		</dict>
-		<dict>
-			<key>CLASS</key>
-			<string>ControlRR</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-			<key>SUPERCLASS</key>
-			<string>ControlButton</string>
-		</dict>
-		<dict>
-			<key>ACTIONS</key>
-			<dict>
-				<key>switchToPlugin</key>
-				<string>id</string>
-			</dict>
-			<key>CLASS</key>
-			<string>NPMovieView</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-			<key>OUTLETS</key>
-			<dict>
-				<key>contextMenu</key>
-				<string>id</string>
-				<key>title</key>
-				<string>id</string>
-				<key>trueMovieView</key>
-				<string>id</string>
-			</dict>
-			<key>SUPERCLASS</key>
-			<string>NSView</string>
-		</dict>
-		<dict>
-			<key>CLASS</key>
-			<string>TitleBackgroundView</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-			<key>SUPERCLASS</key>
-			<string>NSView</string>
-		</dict>
-		<dict>
-			<key>CLASS</key>
-			<string>NiceScrubber</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-			<key>OUTLETS</key>
-			<dict>
-				<key>target</key>
-				<string>id</string>
-			</dict>
-			<key>SUPERCLASS</key>
-			<string>NSControl</string>
-		</dict>
-		<dict>
-			<key>CLASS</key>
-			<string>OverlayControllerWindow</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-			<key>OUTLETS</key>
-			<dict>
-				<key>ffButton</key>
-				<string>NSButton</string>
-				<key>overlayResize</key>
-				<string>NSWindow</string>
-				<key>rrButton</key>
-				<string>NSButton</string>
-			</dict>
-			<key>SUPERCLASS</key>
-			<string>OverlayWindow</string>
-		</dict>
-		<dict>
-			<key>CLASS</key>
-			<string>ControlFF</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-			<key>SUPERCLASS</key>
-			<string>ControlButton</string>
-		</dict>
-		<dict>
-			<key>CLASS</key>
-			<string>JTTextFittingView</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-			<key>SUPERCLASS</key>
-			<string>NSView</string>
-		</dict>
-		<dict>
-			<key>ACTIONS</key>
-			<dict>
-				<key>addToPlaylist</key>
-				<string>id</string>
-			</dict>
-			<key>CLASS</key>
-			<string>FirstResponder</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-			<key>SUPERCLASS</key>
-			<string>NSObject</string>
-		</dict>
-		<dict>
-			<key>CLASS</key>
-			<string>NSObject</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-		</dict>
-		<dict>
-			<key>CLASS</key>
-			<string>OverlayTitleWindow</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-			<key>OUTLETS</key>
-			<dict>
-				<key>theNiceWindow</key>
-				<string>id</string>
-			</dict>
-			<key>SUPERCLASS</key>
-			<string>OverlayWindow</string>
-		</dict>
-		<dict>
-			<key>CLASS</key>
-			<string>ControlPlay</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-			<key>SUPERCLASS</key>
-			<string>ControlButton</string>
-		</dict>
-		<dict>
-			<key>CLASS</key>
-			<string>ClickableTextField</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-			<key>OUTLETS</key>
-			<dict>
-				<key>theNiceWindow</key>
-				<string>id</string>
-			</dict>
-			<key>SUPERCLASS</key>
-			<string>NSTextField</string>
-		</dict>
-		<dict>
-			<key>CLASS</key>
-			<string>NPOutlineView</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-			<key>SUPERCLASS</key>
-			<string>NSOutlineView</string>
-		</dict>
-		<dict>
-			<key>CLASS</key>
-			<string>OverlayWindow</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-			<key>SUPERCLASS</key>
-			<string>NSWindow</string>
-		</dict>
-		<dict>
-			<key>CLASS</key>
-			<string>VolumeView</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-			<key>SUPERCLASS</key>
-			<string>NSImageView</string>
-		</dict>
-		<dict>
-			<key>CLASS</key>
-			<string>OverlayNotifierWindow</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-			<key>OUTLETS</key>
-			<dict>
-				<key>theNotificationText</key>
-				<string>id</string>
-			</dict>
-			<key>SUPERCLASS</key>
-			<string>OverlayWindow</string>
-		</dict>
-		<dict>
-			<key>ACTIONS</key>
-			<dict>
-				<key>center</key>
-				<string>id</string>
-				<key>doubleSize</key>
-				<string>id</string>
-				<key>fillScreenSize</key>
-				<string>id</string>
-				<key>fillWidthSize</key>
-				<string>id</string>
-				<key>halfSize</key>
-				<string>id</string>
-				<key>normalSize</key>
-				<string>id</string>
-				<key>performClose</key>
-				<string>id</string>
-				<key>performMiniaturize</key>
-				<string>id</string>
-				<key>updateByTime</key>
-				<string>id</string>
-			</dict>
-			<key>CLASS</key>
-			<string>NiceWindow</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-			<key>OUTLETS</key>
-			<dict>
-				<key>initialFadeObjects</key>
-				<string>id</string>
-				<key>initialFadeTimer</key>
-				<string>id</string>
-				<key>notifierTimer</key>
-				<string>id</string>
-				<key>theFFButton</key>
-				<string>id</string>
-				<key>theMovieView</key>
-				<string>NPMovieView</string>
-				<key>theOverlayControllerWindow</key>
-				<string>id</string>
-				<key>theOverlayNotifier</key>
-				<string>id</string>
-				<key>theOverlaySubTitle</key>
-				<string>id</string>
-				<key>theOverlaySubTitleWindow</key>
-				<string>id</string>
-				<key>theOverlayTitleBar</key>
-				<string>id</string>
-				<key>theOverlayVolume</key>
-				<string>id</string>
-				<key>thePlayButton</key>
-				<string>id</string>
-				<key>theRRButton</key>
-				<string>id</string>
-				<key>theResizeWindow</key>
-				<string>id</string>
-				<key>theScrubBar</key>
-				<string>NiceScrubber</string>
-				<key>theTimeField</key>
-				<string>id</string>
-				<key>theTitleField</key>
-				<string>id</string>
-				<key>theVolumeView</key>
-				<string>id</string>
-				<key>timeUpdaterTimer</key>
-				<string>id</string>
-			</dict>
-			<key>SUPERCLASS</key>
-			<string>NSWindow</string>
-		</dict>
-		<dict>
-			<key>CLASS</key>
-			<string>TimeDisplayField</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-			<key>OUTLETS</key>
-			<dict>
-				<key>theShadow</key>
-				<string>id</string>
-			</dict>
-			<key>SUPERCLASS</key>
-			<string>NSTextField</string>
-		</dict>
-		<dict>
-			<key>CLASS</key>
-			<string>NPScalingButton</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-			<key>SUPERCLASS</key>
-			<string>NSButton</string>
-		</dict>
-		<dict>
-			<key>CLASS</key>
-			<string>ResizeTriangle</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-			<key>OUTLETS</key>
-			<dict>
-				<key>theNiceWindow</key>
-				<string>id</string>
-			</dict>
-			<key>SUPERCLASS</key>
-			<string>OverlayWindow</string>
-		</dict>
-	</array>
-	<key>IBVersion</key>
-	<string>1</string>
-</dict>
-</plist>
+{
+    IBClasses = (
+        {
+            CLASS = ClickableTextField; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {theNiceWindow = id; }; 
+            SUPERCLASS = NSTextField; 
+        }, 
+        {
+            ACTIONS = {mousePressed = id; }; 
+            CLASS = ControlButton; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {actionView = id; }; 
+            SUPERCLASS = NPScalingButton; 
+        }, 
+        {CLASS = ControlFF; LANGUAGE = ObjC; SUPERCLASS = ControlButton; }, 
+        {CLASS = ControlPlay; LANGUAGE = ObjC; SUPERCLASS = ControlButton; }, 
+        {CLASS = ControlRR; LANGUAGE = ObjC; SUPERCLASS = ControlButton; }, 
+        {
+            ACTIONS = {addToPlaylist = id; }; 
+            CLASS = FirstResponder; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = JTTextFittingView; LANGUAGE = ObjC; SUPERCLASS = NSView; }, 
+        {
+            ACTIONS = {switchToPlugin = id; }; 
+            CLASS = NPMovieView; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {contextMenu = id; title = id; trueMovieView = id; }; 
+            SUPERCLASS = NSView; 
+        }, 
+        {CLASS = NPOutlineView; LANGUAGE = ObjC; SUPERCLASS = NSOutlineView; }, 
+        {CLASS = NPScalingButton; LANGUAGE = ObjC; SUPERCLASS = NSButton; }, 
+        {CLASS = NSObject; LANGUAGE = ObjC; }, 
+        {
+            ACTIONS = {
+                addToPlaylist = id; 
+                choosePlaylistItem = id; 
+                close = id; 
+                closePlaylistDrawer = id; 
+                decreaseVolume = id; 
+                handleDecrementVolumeCommand = id; 
+                handleFFStartCommand = id; 
+                handleFFStopCommand = id; 
+                handleIncrementVolumeCommand = id; 
+                handlePlayPauseCommand = id; 
+                handleRRStartCommand = id; 
+                handleRRStopCommand = id; 
+                handleSkipBackwardCommand = id; 
+                handleSkipForwardCommand = id; 
+                handleToggleMuteCommand = id; 
+                increaseVolume = id; 
+                mute = id; 
+                openPlaylistDrawer = id; 
+                openPlaylistDrawerConditional = id; 
+                pause = id; 
+                play = id; 
+                playNext = id; 
+                playPrev = id; 
+                switchPlaylistItem = NSMenuItem; 
+                switchRepeatMode = NSMenuItem; 
+                switchVolume = NSMenuItem; 
+                togglePlaylistDrawer = id; 
+                toggleRandomMode = id; 
+                toggleRepeatMode = id; 
+            }; 
+            CLASS = NiceDocument; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                asffrrTimer = id; 
+                movieMenuItem = id; 
+                playlistFilename = id; 
+                theMovieView = NPMovieView; 
+                thePlaylistDrawer = id; 
+                thePlaylistTable = id; 
+                theRepeatButton = id; 
+                theSubtitle = id; 
+                theWindow = NiceWindow; 
+            }; 
+            SUPERCLASS = NSDocument; 
+        }, 
+        {
+            CLASS = NiceDrawer; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {playlistTable = NSTableView; }; 
+            SUPERCLASS = NSView; 
+        }, 
+        {
+            CLASS = NiceScrubber; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {target = id; }; 
+            SUPERCLASS = NSControl; 
+        }, 
+        {
+            ACTIONS = {
+                center = id; 
+                doubleSize = id; 
+                fillScreenSize = id; 
+                fillWidthSize = id; 
+                halfSize = id; 
+                normalSize = id; 
+                performClose = id; 
+                performMiniaturize = id; 
+                updateByTime = id; 
+            }; 
+            CLASS = NiceWindow; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                initialFadeObjects = id; 
+                initialFadeTimer = id; 
+                notifierTimer = id; 
+                theFFButton = id; 
+                theMovieView = NPMovieView; 
+                theOverlayControllerWindow = id; 
+                theOverlayNotifier = id; 
+                theOverlaySubTitle = id; 
+                theOverlaySubTitleWindow = id; 
+                theOverlayTitleBar = id; 
+                theOverlayVolume = id; 
+                thePlayButton = id; 
+                theRRButton = id; 
+                theResizeWindow = id; 
+                theScrubBar = NiceScrubber; 
+                theTimeField = id; 
+                theTitleField = id; 
+                theVolumeView = id; 
+                timeUpdaterTimer = id; 
+            }; 
+            SUPERCLASS = NSWindow; 
+        }, 
+        {
+            CLASS = OverlayControllerWindow; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {ffButton = NSButton; overlayResize = NSWindow; rrButton = NSButton; }; 
+            SUPERCLASS = OverlayWindow; 
+        }, 
+        {
+            CLASS = OverlayNotifierWindow; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {theNotificationText = id; }; 
+            SUPERCLASS = OverlayWindow; 
+        }, 
+        {
+            CLASS = OverlayTitleWindow; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {theNiceWindow = id; }; 
+            SUPERCLASS = OverlayWindow; 
+        }, 
+        {CLASS = OverlayWindow; LANGUAGE = ObjC; SUPERCLASS = NSWindow; }, 
+        {
+            CLASS = ResizeTriangle; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {theNiceWindow = id; }; 
+            SUPERCLASS = OverlayWindow; 
+        }, 
+        {
+            CLASS = TimeDisplayField; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {theShadow = id; }; 
+            SUPERCLASS = NSTextField; 
+        }, 
+        {CLASS = TitleBackgroundView; LANGUAGE = ObjC; SUPERCLASS = NSView; }, 
+        {CLASS = VolumeView; LANGUAGE = ObjC; SUPERCLASS = NSImageView; }
+    ); 
+    IBVersion = 1; 
+}
