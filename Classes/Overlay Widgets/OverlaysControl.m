@@ -161,13 +161,13 @@ static id overlayControl = nil;
 -(BOOL)showOverlayForWindow:(NiceWindow *)aWindow atPoint:(NSPoint)aScreenPoint
 {
     if([self inControlRegion:aScreenPoint forWindow:aWindow]){
-		[aWindow showOverLayWindow];
+		[aWindow showOverlayControlBar];
 		return YES;
     } else if([self inTitleRegion:aScreenPoint forWindow:aWindow]){
 		[aWindow showOverLayTitle];
 		return YES;
     } else if([self inResizeRegion:aScreenPoint forWindow:aWindow]){
-		[aWindow showOverLayWindow];
+		[aWindow showOverlayControlBar];
 		return YES;
     }
     return NO;

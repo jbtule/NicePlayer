@@ -49,7 +49,7 @@
 @interface NiceWindow : NSWindow
 {
     IBOutlet NPMovieView* theMovieView;
-    IBOutlet id theOverlayWindow;
+    IBOutlet id theOverlayControllerWindow;
     IBOutlet id theOverlayTitleBar;
     IBOutlet id theOverlayVolume;
 	IBOutlet id theOverlaySubTitleWindow;
@@ -65,7 +65,7 @@
     IBOutlet id theRRButton;
     IBOutlet id theFFButton;
 	
-    BOOL windowOverlayIsShowing;
+    BOOL windowOverlayControllerIsShowing;
     BOOL titleOverlayIsShowing;
 	
     BOOL resizeDrag;
@@ -124,14 +124,14 @@
 #pragma mark Overlays
 -(BOOL)scrubberInUse;
 -(void)setupOverlays;
--(void)putOverlay:(id)anOverlay inFrame:(NSRect)aFrame withVisibility:(BOOL)isVisible;
+-(void)putOverlay:(id)anOverlay asChildOf:(id)aChild inFrame:(NSRect)aFrame withVisibility:(BOOL)isVisible;
 -(void)hideOverlays;
 -(void)hideInitialWindows;
 -(void)hideAllImmediately;
 -(void)initialFadeComplete;
--(void)automaticShowOverLayWindow;
--(void)showOverLayWindow;
--(void)setOverlayWindowLocation;
+-(void)automaticShowOverlayControllerWindow;
+-(void)showOverlayControlBar;
+-(void)setOverlayControllerWindowLocation;
 -(void)hideOverLayWindow;
 -(void)showOverLayTitle;
 -(void)setOverlayTitleLocation;

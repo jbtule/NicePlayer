@@ -367,7 +367,7 @@
 -(void)ffStart
 {
     [[((NiceWindow *)[self window]) ffButton] highlight:YES];
-    [((NiceWindow *)[self window]) automaticShowOverLayWindow];
+    [((NiceWindow *)[self window]) automaticShowOverlayControllerWindow];
     [trueMovieView ffStart:[[Preferences mainPrefs] ffSpeed]];
     [((NiceWindow *)[self window]) updateByTime:nil];
 }
@@ -379,7 +379,7 @@
 
 -(void)ffDo:(int)aSeconds
 {
-    [((NiceWindow *)[self window]) automaticShowOverLayWindow];
+    [((NiceWindow *)[self window]) automaticShowOverlayControllerWindow];
     [trueMovieView ffDo:aSeconds];
     [((NiceWindow *)[self window]) updateByTime:nil];
 }
@@ -395,7 +395,7 @@
 -(void)rrStart
 {
     [[((NiceWindow *)[self window]) rrButton] highlight:YES];
-    [((NiceWindow *)[self window]) automaticShowOverLayWindow];
+    [((NiceWindow *)[self window]) automaticShowOverlayControllerWindow];
     [trueMovieView rrStart:[[Preferences mainPrefs] rrSpeed]];
     [((NiceWindow *)[self window]) updateByTime:nil];
 }
@@ -406,7 +406,7 @@
 }
 
 -(void)rrDo:(int)aSeconds{
-    [((NiceWindow *)[self window]) automaticShowOverLayWindow];
+    [((NiceWindow *)[self window]) automaticShowOverlayControllerWindow];
     [trueMovieView rrDo:aSeconds];
     [((NiceWindow *)[self window]) updateByTime:nil];
 }
@@ -493,7 +493,7 @@
 		case ' ':
 			if(![anEvent isARepeat]){
 				[[((NiceWindow *)[self window]) playButton] togglePlaying];
-				[((NiceWindow *)[self window]) automaticShowOverLayWindow];
+				[((NiceWindow *)[self window]) automaticShowOverlayControllerWindow];
 			}
 			break;
 		case NSRightArrowFunctionKey:

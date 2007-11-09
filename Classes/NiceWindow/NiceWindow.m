@@ -68,7 +68,7 @@
 }
 
 -(float)scrubberHeight{
-	return [theOverlayWindow frame].size.height;
+	return [theOverlayControllerWindow frame].size.height;
 }
 
 -(float)titlebarHeight{
@@ -108,7 +108,7 @@
         isFilling = NO;
         isWidthFilling = NO;
         miniVolume = 1;
-        windowOverlayIsShowing = NO;
+        windowOverlayControllerIsShowing = NO;
         titleOverlayIsShowing = NO;
 		fixedAspectRatio = YES;
         initialFadeTimer = nil;
@@ -168,7 +168,7 @@
 {
 	NSAutoreleasePool* tPool = [NSAutoreleasePool new];
 	[self hideNotifier];
-    [[FadeOut fadeOut] removeWindow:theOverlayWindow];
+    [[FadeOut fadeOut] removeWindow:theOverlayControllerWindow];
     [[FadeOut fadeOut] removeWindow:theOverlayTitleBar];
     [[FadeOut fadeOut] removeWindow:theOverlayVolume];
     [[FadeOut fadeOut] removeWindow:self];
@@ -198,7 +198,7 @@
 -(void)setFrame:(NSRect)frameRect display:(BOOL)displayFlag
 {
     [super setFrame:frameRect display:displayFlag];
-    [self setOverlayWindowLocation];
+    [self setOverlayControllerWindowLocation];
     [self setOverlayTitleLocation];
     [self setOverLayVolumeLocation];
 	[self setOverLaySubtitleLocation];
@@ -376,33 +376,53 @@
 	BOOL initialShow = [[Preferences mainPrefs] showInitialOverlays];
 	
     NSRect currentFrame = [self frame];
-    [self putOverlay:theOverlayWindow
+    [self putOverlay:theOverlayControllerWindow
+		   asChildOf:self
              inFrame:NSMakeRect(currentFrame.origin.x,
                                 currentFrame.origin.y,
                                 currentFrame.size.width,
-                                [theOverlayWindow frame].size.height)
+                                [theOverlayControllerWindow frame].size.height)
       withVisibility:initialShow];
 	
+	
+	[theResizeWindow setLevel:100];
+	[theResizeWindow orderFront:nil];
+	
+	[self putOverlay:theResizeWindow
+		   asChildOf:self
+             inFrame:NSMakeRect([self  frame].origin.x + [self frame].size.width - [self resizeWidth],
+								[self frame].origin.y, 
+								[self resizeWidth],
+								[self resizeHeight])
+      withVisibility:initialShow];
+	
+	
+	
 	[self putOverlay:theOverlaySubTitleWindow
+		   asChildOf:self
              inFrame:NSMakeRect(currentFrame.origin.x,
-                                currentFrame.origin.y+[theOverlayWindow frame].size.height,
+                                currentFrame.origin.y+[theOverlayControllerWindow frame].size.height,
                                 currentFrame.size.width,
-                                currentFrame.size.height - [theOverlayTitleBar frame].size.height - [theOverlayWindow frame].size.height)
+                                currentFrame.size.height - [theOverlayTitleBar frame].size.height - [theOverlayControllerWindow frame].size.height)
       withVisibility:NO];
 	
-    [theOverlayWindow createResizeTriangle];
+	
+
     [self putOverlay:theOverlayTitleBar
+		   asChildOf:self
              inFrame:NSMakeRect(currentFrame.origin.x,
                                 currentFrame.origin.y + currentFrame.size.height-[theOverlayTitleBar frame].size.height,
                                 currentFrame.size.width,
                                 [theOverlayTitleBar frame].size.height)
       withVisibility:initialShow];
     [self putOverlay:theOverlayVolume
+		   asChildOf:self
              inFrame:NSOffsetRect([theOverlayVolume frame],
                                   NSMidX(currentFrame) - NSMidX([theOverlayVolume frame]),
                                   NSMidY(currentFrame) - NSMidY([theOverlayVolume frame]))
       withVisibility:NO];
     [self putOverlay:theOverlayNotifier
+		   asChildOf:self
              inFrame:NSMakeRect(currentFrame.origin.x,
                                 currentFrame.origin.y + currentFrame.size.height
 								- [theOverlayTitleBar frame].size.height - [theOverlayNotifier frame].size.height,
@@ -412,7 +432,7 @@
 	
 	
 	if([[Preferences mainPrefs] showInitialOverlays]){
-		id initialFadeObjects = [NSMutableSet setWithObjects:theOverlayWindow, theOverlayTitleBar, nil];
+		id initialFadeObjects = [NSMutableSet setWithObjects:theOverlayControllerWindow, theOverlayTitleBar, nil];
 		NSDictionary *fadeDict = [NSDictionary dictionaryWithObjects:
 			[NSArray arrayWithObjects:self,	initialFadeObjects, @"initialFadeComplete",	nil]
 															 forKeys:
@@ -421,7 +441,7 @@
     }	
 }
 
--(void)putOverlay:(id)anOverlay inFrame:(NSRect)aFrame withVisibility:(BOOL)isVisible
+-(void)putOverlay:(id)anOverlay asChildOf:(id)aWindow inFrame:(NSRect)aFrame withVisibility:(BOOL)isVisible
 {
     [anOverlay setFrame:aFrame display:NO];
     
@@ -442,7 +462,7 @@
 
 -(void)hideInitialWindows
 {
-    [[FadeOut fadeOut] addWindow:theOverlayWindow];
+    [[FadeOut fadeOut] addWindow:theOverlayControllerWindow];
     [[FadeOut fadeOut] addWindow:theOverlayTitleBar];
     [[FadeOut fadeOut] addWindow:theOverlayVolume];
     isInitialDisplay = NO;
@@ -450,10 +470,10 @@
 
 -(void)hideAllImmediately
 {
-    [[FadeOut fadeOut] removeWindow:theOverlayWindow];
+    [[FadeOut fadeOut] removeWindow:theOverlayControllerWindow];
     [[FadeOut fadeOut] removeWindow:theOverlayTitleBar];
     [[FadeOut fadeOut] removeWindow:theOverlayVolume];
-    [theOverlayWindow setAlphaValue:0.0];
+    [theOverlayControllerWindow setAlphaValue:0.0];
     [theOverlayTitleBar setAlphaValue:0.0];
     [theOverlayVolume setAlphaValue:0.0];
     isInitialDisplay = NO;
@@ -469,22 +489,22 @@
     return [theScrubBar inUse];
 }
 
--(void)automaticShowOverLayWindow
+-(void)automaticShowOverlayControllerWindow
 {
     if(![[Preferences mainPrefs] disableShowingOverlaysOnKeyPress])
-		[self showOverLayWindow];
+		[self showOverlayControlBar];
 }
 
--(void)showOverLayWindow
+-(void)showOverlayControlBar
 {
-    if((windowOverlayIsShowing) && !(isInitialDisplay))
+    if((windowOverlayControllerIsShowing) && !(isInitialDisplay))
         return;
     
     [self updateByTime:self];
-    [self setOverlayWindowLocation];
-    [[FadeOut fadeOut] removeWindow:theOverlayWindow];
-    [theOverlayWindow setAlphaValue:1.0];
-    windowOverlayIsShowing = YES;
+    [self setOverlayControllerWindowLocation];
+    [[FadeOut fadeOut] removeWindow:theOverlayControllerWindow];
+    [theOverlayControllerWindow setAlphaValue:1.0];
+    windowOverlayControllerIsShowing = YES;
 }
 
 /**
@@ -492,7 +512,7 @@
  * location is dependant on the screen position of the window, the mode of the window, and the location
  * of the window.
  */
--(void)setOverlayWindowLocation
+-(void)setOverlayControllerWindowLocation
 {
     NSRect frame = [self frame];
     NSRect mainFrame = [[NSScreen mainScreen] visibleFrame];
@@ -500,17 +520,17 @@
 	
     if(!fullScreen){
         if(NSEqualRects(intersect, frame)){
-            [theOverlayWindow setFrame:NSMakeRect(frame.origin.x,
+            [theOverlayControllerWindow setFrame:NSMakeRect(frame.origin.x,
                                                   frame.origin.y,
                                                   frame.size.width,
-                                                  [theOverlayWindow frame].size.height) display:YES];
+                                                  [theOverlayControllerWindow frame].size.height) display:YES];
 			[theResizeWindow setFrame:NSMakeRect(frame.origin.x +  frame.size.width -  [self resizeWidth], frame.origin.y , [self resizeWidth], [self resizeHeight]) display:YES];
 
         } else {
-            [theOverlayWindow setFrame:NSMakeRect(intersect.origin.x,
+            [theOverlayControllerWindow setFrame:NSMakeRect(intersect.origin.x,
                                                   intersect.origin.y,
                                                   intersect.size.width,
-                                                  [theOverlayWindow frame].size.height) display:YES];
+                                                  [theOverlayControllerWindow frame].size.height) display:YES];
 			
 			[theResizeWindow setFrame:NSMakeRect(intersect.origin.x  +  intersect.size.width -  [self resizeWidth], intersect.origin.y , [self resizeWidth], [self resizeHeight]) display:YES];
 
@@ -519,10 +539,10 @@
 		
 
 	} else{
-        [theOverlayWindow setFrame:NSMakeRect(mainFrame.origin.x,
+        [theOverlayControllerWindow setFrame:NSMakeRect(mainFrame.origin.x,
                                               mainFrame.origin.y,
                                               mainFrame.size.width,
-                                              [theOverlayWindow frame].size.height) display:YES];
+                                              [theOverlayControllerWindow frame].size.height) display:YES];
 		
 		[theResizeWindow setFrame:NSMakeRect([self frame].origin.x +  [self frame].size.width -  [self resizeWidth] ,
 											 [self frame].origin.y,
@@ -533,14 +553,14 @@
 
 -(void)hideOverLayWindow
 {
-	if(windowOverlayIsShowing == NO)
+	if(windowOverlayControllerIsShowing == NO)
         return;
     if(isInitialDisplay)
         [self hideInitialWindows];
     else
-        [[FadeOut fadeOut] addWindow:theOverlayWindow];
+        [[FadeOut fadeOut] addWindow:theOverlayControllerWindow];
  //   [self setShowsResizeIndicator:NO];
-    windowOverlayIsShowing = NO;
+    windowOverlayControllerIsShowing = NO;
 }
 
 -(void)showOverLayTitle
@@ -581,19 +601,19 @@
     if(!fullScreen){
 		if(NSEqualRects(intersect, frame))
 			[theOverlaySubTitleWindow setFrame:NSMakeRect(frame.origin.x,
-														  frame.origin.y+[theOverlayWindow frame].size.height,
+														  frame.origin.y+[theOverlayControllerWindow frame].size.height,
 														  frame.size.width,
-														  frame.size.height- [theOverlayTitleBar frame].size.height - [theOverlayWindow frame].size.height) display:YES];
+														  frame.size.height- [theOverlayTitleBar frame].size.height - [theOverlayControllerWindow frame].size.height) display:YES];
 		else
 			[theOverlaySubTitleWindow setFrame:NSMakeRect(intersect.origin.x,
-														  intersect.origin.y+[theOverlayWindow frame].size.height,
+														  intersect.origin.y+[theOverlayControllerWindow frame].size.height,
 														  intersect.size.width,
-														  intersect.size.height- [theOverlayTitleBar frame].size.height  - [theOverlayWindow frame].size.height) display:YES];
+														  intersect.size.height- [theOverlayTitleBar frame].size.height  - [theOverlayControllerWindow frame].size.height) display:YES];
     } else
         [theOverlaySubTitleWindow setFrame:NSMakeRect(visibleFrame.origin.x,
-													  visibleFrame.origin.y+[theOverlayWindow frame].size.height,
+													  visibleFrame.origin.y+[theOverlayControllerWindow frame].size.height,
 													  visibleFrame.size.width,
-													  visibleFrame.size.height- [theOverlayTitleBar frame].size.height - [theOverlayWindow frame].size.height) display:YES];
+													  visibleFrame.size.height- [theOverlayTitleBar frame].size.height - [theOverlayControllerWindow frame].size.height) display:YES];
 	
 	
 	
@@ -828,7 +848,7 @@
     [theMovieView drawMovieFrame];
     [theOverlayTitleBar orderFront:self];
     [theOverlayVolume orderFront:self];
-    [theOverlayWindow orderFront:self];
+    [theOverlayControllerWindow orderFront:self];
 	[self setOverLaySubtitleLocation];
 	[theOverlaySubTitleWindow orderFront:self];
     [self hideOverLayWindow];

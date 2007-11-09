@@ -139,7 +139,7 @@
 			<key>OUTLETS</key>
 			<dict>
 				<key>sparkleUpdater</key>
-				<string>id</string>
+				<string>SUUpdater</string>
 			</dict>
 			<key>SUPERCLASS</key>
 			<string>NSApplication</string>
