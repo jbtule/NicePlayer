@@ -24,6 +24,16 @@
 		<dict>
 			<key>ACTIONS</key>
 			<dict>
+				<key>ALLdoubleSize</key>
+				<string>id</string>
+				<key>ALLfillScreenSize</key>
+				<string>id</string>
+				<key>ALLfillWidthSize</key>
+				<string>id</string>
+				<key>ALLhalfSize</key>
+				<string>id</string>
+				<key>ALLnormalSize</key>
+				<string>id</string>
 				<key>checkMouseLocation</key>
 				<string>id</string>
 				<key>newDocument</key>

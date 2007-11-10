@@ -4,10 +4,14 @@
 <dict>
 	<key>IBFramework Version</key>
 	<string>629</string>
+	<key>IBLastKnownRelativeProjectPath</key>
+	<string>../../NicePlayer.xcodeproj</string>
 	<key>IBOldestOS</key>
 	<integer>5</integer>
 	<key>IBOpenObjects</key>
-	<array/>
+	<array>
+		<integer>214</integer>
+	</array>
 	<key>IBSystem Version</key>
 	<string>9A581</string>
 	<key>targetFramework</key>
