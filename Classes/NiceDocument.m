@@ -701,7 +701,7 @@ void findSpace(id each, void* context, BOOL* endthis){
 		[playlistMenu removeItem:[tArray objectAtIndex:i]];
 	}
 	tArray= [self FullPlaylistMenuItems];
-	for(int i=0; i < [tArray count]; i++){
+	for(unsigned int i=0; i < [tArray count]; i++){
 		[playlistMenu addItem:[tArray objectAtIndex:i]];
 	}
 	}

@@ -60,7 +60,10 @@
 }
 
 -(void)CSM_executeOperation{
-    if([theAppleScript compileAndReturnError:nil])
-        [theAppleScript executeAndReturnError:nil];
+	NSDictionary * tError = nil;
+    if([theAppleScript compileAndReturnError:&tError])
+        [theAppleScript executeAndReturnError:&tError];
+	if(tError != nil)
+		NSRunCriticalAlertPanel([tError objectForKey:@"NSAppleScriptErrorBriefMessage"], [tError objectForKey:@"NSAppleScriptErrorMessage"], @"Okay", nil, nil);
 }
 @end

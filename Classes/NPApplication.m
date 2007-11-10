@@ -68,7 +68,10 @@ BOOL selectNiceWindow(id each, void* context){
    // if(NPIs10_4OrGreater()){
         if([[CSMScriptMenu sharedMenuGenerator] countOfScripts] == 0){
             [self copyDefaultScriptsToApplicationSupport];
-        }
+        }else{
+			[self moveOldDefaultScriptsAndCopy];
+
+		}
         [[CSMScriptMenu sharedMenuGenerator] updateScriptMenu];
 
   //  }
@@ -85,13 +88,19 @@ BOOL selectNiceWindow(id each, void* context){
 
 
 
--(NSString*)movieOldDefaultScriptsToApplicationSupport{
-  /*   NSString* tPath =[[[NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory,NSUserDomainMask,YES) firstObject] stringByAppendingPathComponent:@"NicePlayer"] stringByAppendingPathComponent:@"Scripts"];
+-(void)moveOldDefaultScriptsAndCopy{
+    NSString* tPath =[[[TTCSearchPathForDirectoriesInDomains(TTCApplicationSupportDirectory,NSUserDomainMask,YES) firstObject] stringByAppendingPathComponent:@"NicePlayer"] stringByAppendingPathComponent:@"Scripts"];
     
-    NSDictionary tDict = [NSDictionary dictionaryWithContentsOfFile:[tPath stringByAppendingPathComponent:@".info.plist"]];
+    NSDictionary* tDict = [NSDictionary dictionaryWithContentsOfFile:[tPath stringByAppendingPathComponent:@".info.plist"]];
     
-    while*/
-    return nil;
+    if ([[tDict objectForKey:@"BuildNumber"] compare:@"569"] == NSOrderedAscending){
+		NSCalendarDate* tDate =[NSCalendarDate date];
+		
+		NSString* tFormattedDate = [tDate descriptionWithCalendarFormat:@"_%Y_%m_%d"];
+		
+		[[NSFileManager defaultManager] movePath:tPath toPath:[tPath stringByAppendingString:tFormattedDate] handler:nil];
+		[self copyDefaultScriptsToApplicationSupport];
+	}
 }
 
 

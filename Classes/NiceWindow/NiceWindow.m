@@ -643,7 +643,7 @@
                                                     [theOverlayTitleBar frame].size.height) display:YES];
     } else{
         if ([[NSScreen mainScreen] isEqualTo:[[NSScreen screens] objectAtIndex:0]]){
-            NSRect visibleFrame = [[NSScreen mainScreen] frame];
+             visibleFrame = [[NSScreen mainScreen] frame];
 
             [theOverlayTitleBar setFrame:NSMakeRect(visibleFrame.origin.x,
                                                 visibleFrame.origin.y
