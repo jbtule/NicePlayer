@@ -1,5 +1,5 @@
-{\rtf1\ansi\ansicpg1252\cocoartf949
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\rtf1\mac\ansicpg10000\cocoartf824\cocoasubrtf410
+{\fonttbl\f0\fswiss\fcharset77 Helvetica-Bold;\f1\fswiss\fcharset77 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 \margl1440\margr1440\vieww13000\viewh13620\viewkind0
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural
@@ -8,242 +8,244 @@
 \fs24 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural
 
-\b0 \cf0 by Jay Tuley - jay+niceplayer@tuley.name\
+\f1\b0 \cf0 by Jay Tuley - jay+niceplayer@tuley.name\
 and Robert Chin - robert@osiris.laya.com\
 http://niceplayer.sourceforge.net\
 \
 This program aims to be a open source movie player designed for playing movies nicely for a person who likes to watch or present movies on their computer (such as the casual viewer or the video artist). This program features full screen or border-less floating windows, convenient controls for scrubbing or queuing movies, and on the fly playlist creation.\
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural
 
-\b \cf0 \
+\f0\b \cf0 \
 Requirements
-\b0  10.4.0 < PPC or Intel
-\b \
+\f1\b0  10.4.0 < PPC or Intel
+\f0\b \
 \
 Recommended Codecs 
-\b0 \
+\f1\b0 \
 	Perian (.flv,avi,divx and much more) - {\field{\*\fldinst{HYPERLINK "http://perian.org/"}}{\fldrslt http://perian.org/}}\
 	A52Codec (ac3)- {\field{\*\fldinst{HYPERLINK "http://trac.cod3r.com/a52codec/"}}{\fldrslt http://trac.cod3r.com/a52codec/}}\
 	Xiph Components (ogg)- {\field{\*\fldinst{HYPERLINK "http://xiph.org/quicktime/"}}{\fldrslt http://xiph.org/quicktime/}}
-\b \
+\f0\b \
 	
-\b0 Flip4Mac (wmv) - {\field{\*\fldinst{HYPERLINK "http://www.microsoft.com/windows/windowsmedia/player/wmcomponents.mspx"}}{\fldrslt http://www.microsoft.com/windows/windowsmedia/player/wmcomponents.mspx}}\
+\f1\b0 Flip4Mac (wmv) - {\field{\*\fldinst{HYPERLINK "http://www.microsoft.com/windows/windowsmedia/player/wmcomponents.mspx"}}{\fldrslt http://www.microsoft.com/windows/windowsmedia/player/wmcomponents.mspx}}\
 
-\b \
-Version 0.96.1 (v561)\
- \'95 
-\b0 Fixed playlist delete bug introduced 0.96.0\
- \'95 Fixed playlist drag and drop bug introduced 0.96.0\
- \'95 Added Leopard Sized Icons\
- \'95 Added Sparkle Preference Pane\
- \'95 Fixed preference bug that ignored preference changes, introduced 0.96.0\
- \'95 Code signed
-\b \
+\f0\b \
+Version 0.96.1 (v572)\
+ \'a5 
+\f1\b0 Fixed playlist delete bug - introduced 0.96.0\
+ \'a5 Fixed playlist drag and drop bug - introduced 0.96.0\
+ \'a5 Added Leopard Sized Icons\
+ \'a5 Added Sparkle Preference Pane\
+ \'a5 Fixed preference bug that ignored preference changes - introduced 0.96.0\
+ \'a5 Code signed\
+ \'a5 Resolution Independent GUI (Glitchy in Tiger, works pretty good in Leopard)\
+ \'a5 New and Updated AppleScripts for the Script Menu
+\f0\b \
 \
 Version 0.96 (v543)\
- \'95 
-\b0 Basic Leopard compatibility\
+ \'a5 
+\f1\b0 Basic Leopard compatibility\
 
-\b  \'95 
-\b0 Progressive movie loading progress in scrubbing area\
- \'95 Chapters expand in playlist drawer.\
- \'95 New Playlist and Volume menus\
- \'95 Fixed subtitle bugs involving parsing commas in SSA, and foreign encodings. \
- \'95 Using Sparkle for future updates
-\b \
- \'95 
-\b0 Fixed Transparency behavior in regards to correctly representing opacity and transparency
-\b \
+\f0\b  \'a5 
+\f1\b0 Progressive movie loading progress in scrubbing area\
+ \'a5 Chapters expand in playlist drawer.\
+ \'a5 New Playlist and Volume menus\
+ \'a5 Fixed subtitle bugs involving parsing commas in SSA, and foreign encodings. \
+ \'a5 Using Sparkle for future updates
+\f0\b \
+ \'a5 
+\f1\b0 Fixed Transparency behavior in regards to correctly representing opacity and transparency
+\f0\b \
 \
 Version 0.95 (v514)\
-\'95 
-\b0 100%
-\b  
-\b0 Open Source (MPL/LGPL/GPL)\
-\'95 Added support for Chapters, and enabling extra Audio and Video tracks for the Core Video engine
-\b \
+\'a5 
+\f1\b0 100%
+\f0\b  
+\f1\b0 Open Source (MPL/LGPL/GPL)\
+\'a5 Added support for Chapters, and enabling extra Audio and Video tracks for the Core Video engine
+\f0\b \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural
 
-\b0 \cf0 \'95 Added basic support for external subtitle files\
+\f1\b0 \cf0 \'a5 Added basic support for external subtitle files\
 	.ssa substation alpha, \
 	.srt SubRip,\
 	.sub MicroDVD\
-\'95 Added file type extension recognition for \
+\'a5 Added file type extension recognition for \
 	.divx, \
 	.vdvd (package around VIDEO_TS ala "VIrtual DVDs"), \
 	.mkv (Matroska added in anticipation for future Perian support),\
 	 .ogg( for Theora/Ogg support provided by the xiph components), \
 	.flv (for current perian support)\
-\'95 New fresh look\
-\'95 Added AppleScript-able Transparency, with a default script for applying it\
-\'95 Added preference for volume memory on creation of new windows\
-\'95 Added AppleScript vocabulary for determining full screen\
+\'a5 New fresh look\
+\'a5 Added AppleScript-able Transparency, with a default script for applying it\
+\'a5 Added preference for volume memory on creation of new windows\
+\'a5 Added AppleScript vocabulary for determining full screen\
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural
 
-\b \cf0 \'95 
-\b0 Fixed bug that caused niceplayer to hang on quit after watching a DVD on a Core2Duo Macbook\
-\'95 Fixed bug involving not being able to unmute\
-\'95 Fixed bug involving changing window level in fullscreen\
-\'95 Fixed bug in auto dvd launching script\
-\'95 Fixed bug that sometimes would cause movies to show up black when opened off a removable disk\
-\'95 Fixed various crashes\
+\f0\b \cf0 \'a5 
+\f1\b0 Fixed bug that caused niceplayer to hang on quit after watching a DVD on a Core2Duo Macbook\
+\'a5 Fixed bug involving not being able to unmute\
+\'a5 Fixed bug involving changing window level in fullscreen\
+\'a5 Fixed bug in auto dvd launching script\
+\'a5 Fixed bug that sometimes would cause movies to show up black when opened off a removable disk\
+\'a5 Fixed various crashes\
 
-\b \
+\f0\b \
 Version 0.94.1 (v437)\
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural
 
-\b0 \cf0 \'95 Fixes a crashing bug caused by the DVD plugin (can make other movies crash as well when loading)\
+\f1\b0 \cf0 \'a5 Fixes a crashing bug caused by the DVD plugin (can make other movies crash as well when loading)\
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural
 
-\b \cf0 \
+\f0\b \cf0 \
 Version 0.94 (v432)\
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural
 
-\b0 \cf0 \'95 Universal Binary\
-\'95 Supports the Apple Remote\
-\'95 Added an option to disable the scroll wheel\
-\'95 Now uses almost no CPU when idle\
-\'95 New smarter resizing (resize from screen edge)\
-\'95 Fixed DVD aspect ratio scaling framework problems\
-\'95 Fixed auto-starting of playback after minimize\
+\f1\b0 \cf0 \'a5 Universal Binary\
+\'a5 Supports the Apple Remote\
+\'a5 Added an option to disable the scroll wheel\
+\'a5 Now uses almost no CPU when idle\
+\'a5 New smarter resizing (resize from screen edge)\
+\'a5 Fixed DVD aspect ratio scaling framework problems\
+\'a5 Fixed auto-starting of playback after minimize\
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural
 
-\b \cf0 \
+\f0\b \cf0 \
 Version 0.93 (v394)\
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural
 
-\b0 \cf0 \'95 Can switch playback engines on the fly\
-\'95 Detects correct aspect ratio of DV footage (Tiger only) \
-\'95 Can open content nested content by opening it's folder\
-\'95 Integrated AppleScript Menu\
-\'95 Manually change aspect ratios via the script menu\
-\'95 General stability enhancements\
-\'95 Increased applescript vocabulary\
-\'95 Support for Smart Crash Reports if you have it installed (http://www.unsanity.com/smartcrashreports)\
-\'95 Fixed bug that caused windows to disappear\
-\'95 Fixed bug that caused NicePlayer to crash when launched on a case-sensitive file system.\
-\'95 Fixed multiple bugs with dvd playback on tiger\
-\'95 Fixed bug with playlists occasionally opening  improperly
-\b \
+\f1\b0 \cf0 \'a5 Can switch playback engines on the fly\
+\'a5 Detects correct aspect ratio of DV footage (Tiger only) \
+\'a5 Can open content nested content by opening it's folder\
+\'a5 Integrated AppleScript Menu\
+\'a5 Manually change aspect ratios via the script menu\
+\'a5 General stability enhancements\
+\'a5 Increased applescript vocabulary\
+\'a5 Support for Smart Crash Reports if you have it installed (http://www.unsanity.com/smartcrashreports)\
+\'a5 Fixed bug that caused windows to disappear\
+\'a5 Fixed bug that caused NicePlayer to crash when launched on a case-sensitive file system.\
+\'a5 Fixed multiple bugs with dvd playback on tiger\
+\'a5 Fixed bug with playlists occasionally opening  improperly
+\f0\b \
 \
 Version 0.92 (v320)\
 
-\b0 \'95 Basic Saving/Loading Playlists (.nicelist)\
-\'95 Completed plugin interface\
-\'95 Basic Core Video support (Tiger only) for improved playback\
-\'95 Option to resize width and height independently\
-\'95 Option to use scroll wheel for volume\
-\'95 Support for notification overlays\
-\'95 Smart window layout when opening new windows\
-\'95 Fixes for interface bugs.\
-\'95 Can associate WMF and ASF files with NicePlayer\
-\'95 Button in title bar for showing and hiding playlist.\
-\'95 AppleScript support for enter full screen on screen x for multiple monitors
-\b \
+\f1\b0 \'a5 Basic Saving/Loading Playlists (.nicelist)\
+\'a5 Completed plugin interface\
+\'a5 Basic Core Video support (Tiger only) for improved playback\
+\'a5 Option to resize width and height independently\
+\'a5 Option to use scroll wheel for volume\
+\'a5 Support for notification overlays\
+\'a5 Smart window layout when opening new windows\
+\'a5 Fixes for interface bugs.\
+\'a5 Can associate WMF and ASF files with NicePlayer\
+\'a5 Button in title bar for showing and hiding playlist.\
+\'a5 AppleScript support for enter full screen on screen x for multiple monitors
+\f0\b \
 \
 Version 0.91 (v251)\
 
-\b0 \'95 AppleScript Support\
-\'95 Faster Application Startup\
-\'95 Better DVD playback support\
-\'95 Context menus, especially useful for DVDs\
-\'95 New media navigation menu\
-\'95 Screen no longer sleeps during DVD playback\
-\'95 UI elements fade out and other GUI improvements\
-\'95 Option arrow keys do frame step\
-\'95 Bug Reporting website\
-\'95 Improved Japanese Localization
-\b \
+\f1\b0 \'a5 AppleScript Support\
+\'a5 Faster Application Startup\
+\'a5 Better DVD playback support\
+\'a5 Context menus, especially useful for DVDs\
+\'a5 New media navigation menu\
+\'a5 Screen no longer sleeps during DVD playback\
+\'a5 UI elements fade out and other GUI improvements\
+\'a5 Option arrow keys do frame step\
+\'a5 Bug Reporting website\
+\'a5 Improved Japanese Localization
+\f0\b \
 
-\b0 \'95 Chinese Localization\
+\f1\b0 \'a5 Chinese Localization\
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural
 
-\b \cf0 \
+\f0\b \cf0 \
 Version 0.90 (v151)\
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural
 
-\b0 \cf0 \'95 Fixed some instability\
-\'95 DVD playback\
-\'95 Smarter behavior when window content changes aspect ratio\
-\'95 New Multi-pane preferences\
+\f1\b0 \cf0 \'a5 Fixed some instability\
+\'a5 DVD playback\
+\'a5 Smarter behavior when window content changes aspect ratio\
+\'a5 New Multi-pane preferences\
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural
 
-\b \cf0 \'95 
-\b0 holding down Option when changing size from Normal, Double, Half size effects all windows\
-\'95 Added Help Files\
-\'95 Added playlist skipping
-\b \
-\'95 
-\b0 Option Scroll wheel to adjust volume of a window\
-\'95 Volume settings effect entire playlist\
-\'95 Drag and drop onto windows adds to playlist\
-\'95 Help Documentation\
-\'95 Japanese Localization
-\b \
+\f0\b \cf0 \'a5 
+\f1\b0 holding down Option when changing size from Normal, Double, Half size effects all windows\
+\'a5 Added Help Files\
+\'a5 Added playlist skipping
+\f0\b \
+\'a5 
+\f1\b0 Option Scroll wheel to adjust volume of a window\
+\'a5 Volume settings effect entire playlist\
+\'a5 Drag and drop onto windows adds to playlist\
+\'a5 Help Documentation\
+\'a5 Japanese Localization
+\f0\b \
 \
 Version 0.88:\
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural
 
-\b0 \cf0 \'95 Widgets show up when application is inactive\
-\'95 Clicking on time elapsed toggles between time remaining and time elapsed.
-\b \
+\f1\b0 \cf0 \'a5 Widgets show up when application is inactive\
+\'a5 Clicking on time elapsed toggles between time remaining and time elapsed.
+\f0\b \
 
-\b0 \'95 File icons for recognized types\
-\'95 Customizable fast forward and rewind speeds\
-\'95 Preferences for looping, time elapsed/remaining default display, fast forward/rewind speed\
-\'95 Fixes for network loading of files\
-\'95 Auto Update Check\
+\f1\b0 \'a5 File icons for recognized types\
+\'a5 Customizable fast forward and rewind speeds\
+\'a5 Preferences for looping, time elapsed/remaining default display, fast forward/rewind speed\
+\'a5 Fixes for network loading of files\
+\'a5 Auto Update Check\
 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural
 
-\b \cf0 Version 0.86:
-\b0 \
-\'95 Double click now goes to full screen, and right click toggles play/pause. (option in preference).\
-\'95 Better performance fast forward / rewind.\
-\'95 Cmd+T toggles whether a window floats on top or not.\
-\'95 Preference for centered resize or top/left resize\
-\'95 Basic playlist shuffle\
-\'95 Play on open and full screen on open (implemented as preferences)\
-\'95 Present Multiple movies blacking out all monitors.\
-\'95 Escape gets out of full screen mode.\
-\'95 Play on full screen and/or stop on un-full screen (option in preferences).\
-\'95 Play all simultaneously.\
+\f0\b \cf0 Version 0.86:
+\f1\b0 \
+\'a5 Double click now goes to full screen, and right click toggles play/pause. (option in preference).\
+\'a5 Better performance fast forward / rewind.\
+\'a5 Cmd+T toggles whether a window floats on top or not.\
+\'a5 Preference for centered resize or top/left resize\
+\'a5 Basic playlist shuffle\
+\'a5 Play on open and full screen on open (implemented as preferences)\
+\'a5 Present Multiple movies blacking out all monitors.\
+\'a5 Escape gets out of full screen mode.\
+\'a5 Play on full screen and/or stop on un-full screen (option in preferences).\
+\'a5 Play all simultaneously.\
 \
 
-\b Version 0.85:
-\b0 \
-\'95  Fixed bug with changing movies in and out of full screen loses controller on mouse over.\
-\'95 Added more volume variation (use up and down arrow keys, opt -down arrow is mute).\
-\'95 Centered movies are now vertically centered as well.\
+\f0\b Version 0.85:
+\f1\b0 \
+\'a5  Fixed bug with changing movies in and out of full screen loses controller on mouse over.\
+\'a5 Added more volume variation (use up and down arrow keys, opt -down arrow is mute).\
+\'a5 Centered movies are now vertically centered as well.\
 \
 
-\b Version 0.84:
-\b0 \
-\'95 Added mouse-over title bar.\
-\'95 Pauses movie on minimize and resumes on de-minimize.\
-\'95 Fixed bug with a fast movie window drag causing a window to resize.\
-\'95 Switched author email to gmail account for sending bugs and feature requests.\
+\f0\b Version 0.84:
+\f1\b0 \
+\'a5 Added mouse-over title bar.\
+\'a5 Pauses movie on minimize and resumes on de-minimize.\
+\'a5 Fixed bug with a fast movie window drag causing a window to resize.\
+\'a5 Switched author email to gmail account for sending bugs and feature requests.\
 \
 
-\b Version 0.83:
-\b0 \
-\'95 Loops, for movies or playlists.\
-\'95 Drag and Drop support for modifying playlists.\
-\'95 Fixed bug with mouse over and uneven multiple monitors.\
-\'95 Uses refactored classes into IndyKit framework used for NicePlayer and iEatBrainz.\
+\f0\b Version 0.83:
+\f1\b0 \
+\'a5 Loops, for movies or playlists.\
+\'a5 Drag and Drop support for modifying playlists.\
+\'a5 Fixed bug with mouse over and uneven multiple monitors.\
+\'a5 Uses refactored classes into IndyKit framework used for NicePlayer and iEatBrainz.\
 \
 
-\b Version 0.81:
-\b0 \
-\'95 Borderless windows (can be closed or minimized with keyboard shortcuts or menus)\
-\'95 Fully resizable keeping aspect ratio (drag right corner or use scroll wheel)\
-\'95 Full Screen (can move to change monitor by dragging movie to desired screen, even when in full screen mode)\
-\'95 By dropping several movies on to the NicePlayer icon in the dock will open as a playlist in one movie window.\
-\'95 Overlay controls for play/pause, fast forward (5 secs), rewind(5 secs) and scrubbing, that appear when mousing over the bottom of the movie window, (or bottom of the screen in full screen mode)\
+\f0\b Version 0.81:
+\f1\b0 \
+\'a5 Borderless windows (can be closed or minimized with keyboard shortcuts or menus)\
+\'a5 Fully resizable keeping aspect ratio (drag right corner or use scroll wheel)\
+\'a5 Full Screen (can move to change monitor by dragging movie to desired screen, even when in full screen mode)\
+\'a5 By dropping several movies on to the NicePlayer icon in the dock will open as a playlist in one movie window.\
+\'a5 Overlay controls for play/pause, fast forward (5 secs), rewind(5 secs) and scrubbing, that appear when mousing over the bottom of the movie window, (or bottom of the screen in full screen mode)\
 \
 
-\b Feature Requests\
+\f0\b Feature Requests\
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural
 
-\b0 \cf0 May be posted at:\
+\f1\b0 \cf0 May be posted at:\
 http://charon.laya.com/niceplayer/trac.cgi/wiki/FeatureRequests}
