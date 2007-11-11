@@ -47,6 +47,12 @@
 
 #import <cocoa/cocoa.h>
 
+#ifdef __MACPORTS__
+#define NPBuildingForMacPorts YES
+#else
+#define NPBuildingForMacPorts NO
+#endif
+
 extern id NPConvertFileNamesToURLs(id obj, void* context);
 extern NSArray* NPSortUrls(NSArray* anArrayOfUrls);
 extern id NPInjectNestedDirectories(id each, id injected, void* context);

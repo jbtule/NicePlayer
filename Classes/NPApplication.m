@@ -53,9 +53,13 @@
 #import <Sparkle/Sparkle.h>
 
 
+
+
 BOOL selectNiceWindow(id each, void* context){
     return [each isKindOfClass:[NiceWindow class]];
 }
+
+
 
 @implementation NPApplication
 
@@ -65,6 +69,12 @@ BOOL selectNiceWindow(id each, void* context){
     lastPoint = [NSEvent mouseLocation];
     inactiveTimer = nil;
     [self setDelegate:self];
+	
+	if(NPBuildingForMacPorts){
+		[self setShouldCheckAtStartup:NO];
+	}
+
+	
    // if(NPIs10_4OrGreater()){
         if([[CSMScriptMenu sharedMenuGenerator] countOfScripts] == 0){
             [self copyDefaultScriptsToApplicationSupport];
@@ -77,6 +87,14 @@ BOOL selectNiceWindow(id each, void* context){
   //  }
     
 }
+
+-(IBAction)checkForUpdatesMain:(id)sender{
+	if(NPBuildingForMacPorts)
+		NSRunInformationalAlertPanel(@"This copy of NicePlayer was built using MacPorts!", @"To update using the ports system on your computer.", @"Okay",nil, nil);
+	else
+		[sparkleUpdater checkForUpdates:nil];
+}
+
 -(void)setShouldCheckAtStartup:(bool)aBool{
 	[[NSUserDefaults standardUserDefaults] setBool:aBool forKey: SUCheckAtStartupKey];
 	

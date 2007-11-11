@@ -11,6 +11,8 @@
 				<string>id</string>
 				<key>checkForUpdates2</key>
 				<string>id</string>
+				<key>checkForUpdatesMain</key>
+				<string>id</string>
 				<key>emailAuthor</key>
 				<string>id</string>
 			</dict>
@@ -125,6 +127,8 @@
 		<dict>
 			<key>ACTIONS</key>
 			<dict>
+				<key>checkForUpdatesMain</key>
+				<string>id</string>
 				<key>disccusionGroup</key>
 				<string>id</string>
 				<key>donateToNicePlayer</key>

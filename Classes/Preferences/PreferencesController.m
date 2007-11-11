@@ -49,6 +49,7 @@
 #import <HodgePodge/JTPreferenceWindow.h>
 #import <Sparkle/Sparkle.h>
 #import "NPApplication.h"
+#import "NiceUtilities.h"
 @implementation PreferencesController
 
 -(void)awakeFromNib
@@ -86,12 +87,14 @@
 			withToolTip:@"Actions on Movies"
 		 allowingResize:NO];
 	
+	if(!NPBuildingForMacPorts){
 	[prefWindow addPane:paneSparkle
 			   withIcon:[[[NSImage alloc]initWithContentsOfFile:tSparklePrefIcon] autorelease]
 		 withIdentifier:@"Sparkle"
 			  withLabel:@"Auto Update"
 			withToolTip:@"Auto Update"
 		 allowingResize:NO];
+	}
 	
 	[prefWindow addPane:paneOverlays
 		   withIcon:[NSImage imageNamed:@"OverPrefIcon"] 

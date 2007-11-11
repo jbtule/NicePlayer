@@ -51,9 +51,9 @@
 #import "Pluggable Players/NPMovieProtocol.h"
 #import <HodgePodge/IndyKit.h>
 #import "NiceUtilities.h"
+#import "JTMovieView.h"
+#import "RCMovieView.h"
 
-@class RCMovieView;
-@class JTMovieView;
 @class DVDPlayerView;
 
 static NPPluginReader *pluginReader = nil;

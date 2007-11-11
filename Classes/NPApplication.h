@@ -57,6 +57,7 @@
 
 -(void)setShouldCheckAtStartup:(bool)aBool;
 -(bool)shouldCheckAtStartUp;
+-(IBAction)checkForUpdatesMain:(id)sender;
 
 
 -(void)copyDefaultScriptsToApplicationSupport;
