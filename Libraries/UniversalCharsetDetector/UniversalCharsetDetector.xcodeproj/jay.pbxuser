@@ -1,12 +1,12 @@
 // !$*UTF8*$!
 {
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeArchitecture = i386;
 		activeBuildConfigurationName = Debug;
 		activeTarget = 3667D3000A0184250035467C /* UniversalCharsetDetector */;
 		addToTargets = (
 			3667D3000A0184250035467C /* UniversalCharsetDetector */,
 		);
-		breakpointsGroup = 6994614F0CCBCA5900CE0AD3 /* XCBreakpointsBucket */;
 		codeSenseManager = 6994614E0CCBCA5900CE0AD3 /* Code sense */;
 		perUserDictionary = {
 			PBXConfiguration.PBXFileTableDataSource3.PBXErrorsWarningsDataSource = {
@@ -50,8 +50,8 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					200,
-					364,
+					504,
+					60,
 					20,
 					48,
 					43,
@@ -67,12 +67,8 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 215059028;
-			PBXWorkspaceStateSaveDate = 215059028;
-		};
-		perUserProjectItems = {
-			69DBE33F0CD189740032EB12 /* PBXTextBookmark */ = 69DBE33F0CD189740032EB12 /* PBXTextBookmark */;
-			69DBE35B0CD18A820032EB12 /* PBXTextBookmark */ = 69DBE35B0CD18A820032EB12 /* PBXTextBookmark */;
+			PBXPerProjectTemplateStateSaveDate = 217098823;
+			PBXWorkspaceStateSaveDate = 217098823;
 		};
 		sourceControlManager = 6994614D0CCBCA5900CE0AD3 /* Source Control */;
 		userBuildSettings = {
@@ -117,12 +113,6 @@
 		isa = PBXCodeSenseManager;
 		indexTemplatePath = "";
 	};
-	6994614F0CCBCA5900CE0AD3 /* XCBreakpointsBucket */ = {
-		isa = XCBreakpointsBucket;
-		name = UniversalCharsetDetector;
-		objects = (
-		);
-	};
 	6994635C0CCBF0B700CE0AD3 /* NSString+UniversalCharsetDetector.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {852, 756}}";
@@ -138,25 +128,5 @@
 			sepNavVisRect = "{{0, 0}, {852, 562}}";
 			sepNavWindowFrame = "{{468, 87}, {891, 691}}";
 		};
-	};
-	69DBE33F0CD189740032EB12 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 3667D19B0A0175260035467C /* UniversalCharsetDetector.mm */;
-		name = nsUniversalStringDetector;
-		rLen = 25;
-		rLoc = 2237;
-		rType = 0;
-		vrLen = 1129;
-		vrLoc = 2177;
-	};
-	69DBE35B0CD18A820032EB12 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 3667D19B0A0175260035467C /* UniversalCharsetDetector.mm */;
-		name = nsUniversalStringDetector;
-		rLen = 25;
-		rLoc = 2237;
-		rType = 0;
-		vrLen = 1129;
-		vrLoc = 2177;
 	};
 }

@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+
+<title>aem | 6. Building and sending events</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<style type="text/css" media="all"><!--@import url(full.css);--></style>
+
+</head>
+<body>
+
+<h1>6. Building and sending events</h1>
+
+<!-- top navigation -->
+<div class="navbar">
+	<a href="05_targettingapplications.html">Previous</a> | <a href="index.html">Up</a> | <a href="07_findapp.html">Next</a>
+</div>
+
+<!-- content -->
+<div id="content">
+
+
+
+
+<h2>The <code>Application#event</code> method</h2>
+
+<p>The <code>Application#event</code> method is used to create new Apple events targetted at the specified application.</p>
+
+<pre><code>Application -- the target application
+        ...
+
+        event(event_code, params={}, atts={}, return_id=KAE::KAutoGenerateReturnID,
+                codecs=DefaultCodecs) -- construct an Apple event
+            event_code : string -- 8-letter code indicating event's class and id,
+                    e.g. 'coregetd'
+            params : hash -- a hash of form {AE_code=&gt;anything,...} containing
+                    zero or more event parameters
+            atts : hash -- a hash of form {AE_code=&gt;anything,...} containing
+                    zero or more event attributes
+            return_id : integer  -- reply event's ID
+            codecs : Codecs -- codecs object to use when packing/unpacking
+                    attributes and parameters for this event and its reply
+            Result : Event -- a ready-to-send Apple event</code></pre>
+
+
+
+
+
+<h2>The <code>Event</code> class</h2>
+
+<p>The <code>Event</code> class represents an Apple event that has been packed and is ready to send.</p>
+
+<pre><code>Event
+
+    Methods:
+
+        send(timeout=KAE::KDefaultTimeout, flags=KAE::KAEWaitReply) -- send event
+            timeout : integer | KAE::KDefaultTimeout | KAE::KNoTimeOut -- number of
+                    ticks to wait for application reply before raising timeout error
+            flags : integer -- bitwise flags determining how event should be
+                    handled
+            Result : anything -- value returned by application, if any</code></pre>
+
+
+<p>The <code>send</code> method may be called any number of times.</p>
+
+
+<h2>Constants</h2>
+
+<p>The following constants are defined in the <code>KAE</code> module.</p>
+
+<h3>Common parameter keys</h3>
+
+<pre><code>KAE::KeyDirectObject
+KAE::KeyAERequestedType</code></pre>
+
+<p>(The value for a <code>keyAERequestedType</code> parameter should be an <code>AEType</code> instance.)</p>
+
+<p>Other parameter keys are defined by individual applications.</p>
+
+
+<h3>Attribute keys</h3>
+
+<p>Most of the following attributes are already supplied by other means (e.g. keyEventClassAttr, keyEventIDAttr are supplied separately when creating an Apple event; keyTimeoutAttr when sending it) and are only of interest if unpacking AppleEvent descriptors manually. A few  may be used when passing an attributes dict to <code>Application#event</code> (<code>EnumConsiderations</code>, <code>EnumConsidsAndIgnores</code>, <code>KeySubjectAttr</code>):</p>
+<pre><code>KAE::KeyTransactionIDAttr
+KAE::KeyReturnIDAttr
+KAE::KeyEventClassAttr
+KAE::KeyEventIDAttr
+KAE::KeyAddressAttr
+KAE::KeyOptionalKeywordAttr
+KAE::KeyTimeoutAttr
+KAE::KeyInteractLevelAttr
+KAE::KeyEventSourceAttr
+KAE::KeyOriginalAddressAttr
+KAE::KeyAcceptTimeoutAttr
+KAE::EnumConsiderations
+KAE::EnumConsidsAndIgnores
+KAE::KeySubjectAttr</code></pre>
+
+
+<p>The value of the <code>EnumConsiderations</code> attribute should be a list containing zero or more <code>AEEnum</code> instances with the following codes:</p> 
+
+<pre><code>KAE::KAECase
+KAE::KAEDiacritic
+KAE::KAEWhiteSpace
+KAE::KAEHyphens
+KAE::KAEExpansion
+KAE::KAEPunctuation
+KAE::KASConsiderReplies
+KAE::KASNumericStrings</code></pre>
+
+<p>See the <a href="http://developer.apple.com/documentation/Carbon/Reference/Apple_Event_Manager/index.html">Apple Event Manager</a> API reference for more info. Note that the <code>EnumConsiderations</code> attribute is deprecated in favour of the <code>EnumConsidsAndIgnores</code> attribute.</p>
+
+
+<p>The value of the <code>EnumConsidsAndIgnores</code> attribute should be an integer composed from the sum of zero or more of the following bit masks:</p>
+
+<pre><code>KAE::KAECaseConsiderMaskKAE::KAEDiacriticConsiderMaskKAE::KAEWhiteSpaceConsiderMaskKAE::KAEHyphensConsiderMaskKAE::KAEExpansionConsiderMaskKAE::KAEPunctuationConsiderMaskKAE::KASConsiderRepliesConsiderMaskKAE::KASNumericStringsConsiderMask
+KAE::KAECaseIgnoreMaskKAE::KAEDiacriticIgnoreMaskKAE::KAEWhiteSpaceIgnoreMaskKAE::KAEHyphensIgnoreMaskKAE::KAEExpansionIgnoreMaskKAE::KAEPunctuationIgnoreMaskKAE::KASConsiderRepliesIgnoreMaskKAE::KASNumericStringsIgnoreMask</code></pre>
+
+
+<h3>Send flag constants</h3>
+
+<p>The value of the <code>send</code> method's <code>flags</code> argument should be an integer composed from the sum of zero or more of the following bit masks:</p>
+
+<pre><code>KAE::KAENoReply
+KAE::KAEQueueReply
+KAE::KAEWaitReply
+
+KAE::KAEDontReconnect
+
+KAE::KAEWantReceipt
+
+KAE::KAENeverInteract
+KAE::KAECanInteract
+KAE::KAEAlwaysInteract
+
+KAE::KAECanSwitchLayer</code></pre>
+
+<p>See the <a href="http://developer.apple.com/documentation/Carbon/Reference/Apple_Event_Manager/apple_event_manager_ref/chapter_1.4_section_6.html">Apple Event Manager</a> API reference for details.</p>
+
+
+<h3>Other constants</h3>
+
+<pre><code>KAE::KAutoGenerateReturnID</code></pre>
+
+
+<h2>The <code>CommandError</code> class</h2>
+
+<p>The <code>CommandError</code> class is raised by <code>Event#send</code> and represents an error raised by the target application or Apple Event Manager when sending an event.</p>
+
+<pre><code>CommandError(MacOS.Error)
+
+    Methods:
+
+        number
+            Result: integer -- error number
+
+        message
+            Result: string | nil -- error message, if any</code></pre>
+
+<!-- TO DO: MacOSError notes -->
+
+
+</div>
+
+<!-- bottom navigation -->
+<div class="navbar">
+	<a href="05_targettingapplications.html">Previous</a> | <a href="index.html">Up</a> | <a href="07_findapp.html">Next</a>
+</div>
+
+<!--footer-->
+<p class="footer">&copy; 2006 HAS</p>
+</body>
+</html>

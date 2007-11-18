@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+
+<title>appscript | 7. Application Objects</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<style type="text/css" media="all"><!--@import url(full.css);--></style>
+
+</head>
+<body>
+
+<h1>7. Application Objects</h1>
+
+<!-- top navigation -->
+<div class="navbar">
+	<a href="06_classesandenums.html">Previous</a> | <a href="index.html">Up</a> | <a href="08_realvsgenericreferences.html">Next</a>
+	
+</div>
+
+<!-- content -->
+<div id="content">
+<h2>Creating application objects</h2>
+
+
+<p>Before you can communicate with a scriptable application you must create an application object by calling one of the following methods on the glue's Application class:</p>
+
+<pre><code>-initWithName:(NSString *)name; // name of local application
+                                // including .app suffix, if any
+
+-initWithBundleID:(NSString *)bundleID; // bundle ID of local application
+
+<!-- -initWithPath:(NSString *)path; // full path to local application -->
+
+-initWithURL:(NSURL *)url; // file URL for a local application, or
+                           // eppc URL for a remote process
+
+-initWithPID:(pid_t)pid; // Unix process id for a local process
+
+-initWithDescriptor:(NSAppleEventDescriptor *)desc; // AEAddressDesc
+
+-init; // the host process</code></pre>
+
+
+<p>Examples:</p>
+
+<pre><code>#import "ICalGlue.h"
+
+ICalApplication *ical = [[ICalApplication alloc] initWithName: @"iCal.app"];
+
+
+#import "TEGlue.h"
+
+TEApplication *textedit = [[TEApplication alloc]
+                            initWithBundleID: @"com.apple.textedit"];
+
+
+#import "ITunesGlue.h"
+
+NSURL *url = [NSURL URLWithString: @"eppc://Jan%20Smith@G4.local/iTunes"];
+ITunesApplication *itunes = [[ITunesApplication alloc] initWithURL: url];</code></pre>
+
+
+<p>Note that local applications will be launched if not already running when <code>-initWithName:</code>, <code>-initWithBundleID</code> or <code>-initWithURL</code> is invoked, and events will be sent to the running application according to its process ID. If the process is later terminated, that process ID is no longer valid and events sent subsequently using this application object will fail as application objects currently don't provide a 'reconnect' facility.</p>
+
+<p>If <code>-initWithURL:</code> is invoked with an <code>eppc://</code> URL, or if <code>-initWithPID:</code> or <code>-initWithDescriptor:</code> are used, the caller is responsible for ensuring the target application is running before sending any events to it.</p>
+
+
+
+<h2>Basic commands</h2>
+
+<p>All applications should respond to the following commands:</p>
+
+<pre><code>-run; -- Run an application.
+        Most applications will open an empty, untitled window.
+<!--
+-launch; - - Launch an application without sending it a 'run' event. [1]
+        Applications that normally open a new, empty document upon launch won't.
+-->
+-activate; -- Bring the application to the front.
+
+-reopen; -- Reactivate a running application.
+        Some applications will open a new untitled window if no window is open.
+
+-open: directarg; -- Open the specified object(s).
+        directarg = anything -- list of objects to open, typically an NSArray
+                            of AEMAlias
+
+-print: directarg; -- Print the specified object(s).
+        directarg = anything -- list of objects to print, typically an NSArray
+                            of AEMAlias
+
+-quit; -- Quit an application.
+    -saving: yes | ask | no -- optional parameter takes an ASConstant specifying
+                               if currently open documents should be saved
+</code></pre>
+<!--
+<p><small>[1] The <code>launch</code> command should be used before constructing references or sending other commands, otherwise appscript will run the application normally.</small></p>
+-->
+<p>Some applications may provide their own definitions of some or all of these commands, so check their terminology before use.</p>
+
+<p>Appscript also defines <code>get</code> and <code>set</code> commands for any scriptable application that doesn't supply its own definitions:</p>
+
+<pre><code>-get: reference; -- Get the data for an object.
+        reference -- the object for the command
+    Result = anything -- the reply for the command
+
+-set: reference; -- Set an object's data.
+        reference -- the object for the command
+    -to: value;
+        value = anything -- The new value.</code></pre>
+
+<p>Note that these commands are only useful in applications that define an Apple Event Object Model as part of their Apple event interface.</p>
+
+<!--
+<h2>Transaction support</h2>
+
+<p>Application objects implement three additional methods, <code>startTransaction</code>, <code>endTransaction</code> and <code>abortTransaction</code> that allow a sequence of related commands to be handled as a single operation by applications that support transactions, e.g. FileMaker Pro.</p>
+
+<p>Once the application object's <code>startTransaction</code> method is called, all subsequent commands to that application will be sent as part of the same transaction until <code>endTransaction</code> or <code>abortTransaction</code> is called.</p>
+
+<p>The <code>startTransaction</code> method takes an optional <code>session</code> argument that indicates the specific transaction session to open (in applications that support this).</p>
+
+<p class="hilitebox">Remember to call <code>endTransaction</code> or <code>abortTransaction</code> at the end of every transaction. (This includes transactions interrupted by a raised exception.) If a transaction is accidentally left open, appscript will try to end it automatically when the application object is garbage-collected, but this is not guaranteed to succeed.</p>
+-->
+
+<!--
+<h2>Local application launching notes</h2>
+
+<p>Note: the following information only applies to local applications as appscript cannot directly launch applications on a remote Mac. To control a remote application, the application must be running beforehand or else launched indirectly (e.g. by using the remote Mac's Finder to open it).</p>
+
+
+<h3>How applications are identified</h3>
+
+<p>When you create an Application object by application name, bundle id or creator type, appscript uses LaunchServices to locate an application matching that description. If you have more than one copy of the same application installed, you can identify the one you want by providing its full path, otherwise LaunchServices will identify the newest copy for you.</p>
+
+<p>Appscript identifies locally run applications by their process ids so it's possible to control multiple versions of an application running at the same time if their Application objects are created using process ids or <code>eppc://</code> URLs.</p>
+
+
+<h3>Using <code>launch</code> vs <code>run</code></h3>
+
+<p>When appscript launches a non-running application, it normally sends it a <code>run</code> command as part of the launching process. If you wish to avoid this, you should start the application by sending it a <code>launch</code> command before doing anything else. For example:</p>
+
+<pre><code>te = app('TextEdit')
+te.launch
+# other TextEdit-related code goes here...</code></pre>
+
+<p>This is useful when you want to start an application without it going through its normal startup procedure. For example, the above script will launch TextEdit without causing it to display a new, empty document (its usual behaviour).</p>
+
+<p><code>launch</code> is also useful if you need to send a non-running application an <code>open</code> command as its very first instruction. For example, to send an <code>open</code> command to a non-stay-open application that batch processes one or more dropped files then quits again, you must first start it using <code>launch</code>, then send it an <code>open</code> command with the files to process. If you forget to do this, the application will first receive a <code>run</code> command and quit again before the <code>open</code> command can be handled.</p>
+
+
+<h3>Restarting applications</h3>
+
+<p>As soon as you start to construct a reference or command using a newly created Application objects, if the application is not already running then appscript will automatically launch it in order to obtain its terminology.</p>
+
+<p>If the target application has stopped running since the Application object was created, trying to send it a command using that Application object will result in an invalid connection error (-609), unless that command is <code>run</code> or <code>launch</code>. This restriction prevents appscript accidentally restarting an application that has unexpectedly quit while a script is controlling it. Scripts can restart an application by sending an explicit <code>run</code> or <code>launch</code> command, or by creating a new Application object for it.</p>
+
+<p>Note that you can still use Application objects to control applications that have been quit <em>and</em> restarted since the Application object was created. Appscript will automatically update the Application object's process id information as needed.</p>
+
+
+<p class="hilitebox">There is a known problem with quitting and immediately relaunching an application via appscript, where the relaunch instruction is sent to the application before it has actually quit. This timing issue appears to be the OS's fault; the current workaround for scripts that need to quit and restart applications is to insert a few seconds' delay between the <code>quit</code> and <code>run</code>/<code>launch</code> using Ruby's <code>sleep</code> function.</p>
+-->
+
+</div>
+
+<!-- bottom navigation -->
+<div class="navbar">
+	<a href="06_classesandenums.html">Previous</a> | <a href="index.html">Up</a> | <a href="08_realvsgenericreferences.html">Next</a>
+	
+</div>
+
+<!--footer-->
+<p class="footer">&copy; 2007 HAS</p>
+</body>
+</html>

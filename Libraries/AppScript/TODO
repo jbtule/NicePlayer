@@ -1,0 +1,144 @@
+TO DO
+
+======= appscript =======
+
+- implement all-in-one shortcuts for get, set commands? Some possibilities:
+
+Basic get/set (note: names have 'Data' appended [c.f. keyAEGetData, keyAESetData] to help distinguish 'get' shortcut from normal -get method):
+
+	-getData
+	-getDataWithError:
+
+	-setData:
+	-setData:error:
+
+	Example:
+
+		// get text of document 1
+
+		[[[[[textedit documents] at: 1] text] get] send]
+
+		[[[[textedit documents] at: 1] text] getData]
+
+
+Basic get/set, allowing client to specify the result type for 'get' (note: these methods may be preferable to the above - need to see what users prefer):
+
+	-getAs:
+	-getAs:error:
+	-getListOf:
+	-getListOf:error:
+
+	-setTo:
+	-setTo:error:
+
+	Example:	
+
+		// get text of documents as list of strings
+
+		[[[[[textedit documents] text] get] returnListOfType: typeUnicodeText] send]
+
+		[[[textedit documents] text] getListOf: typeUnicodeText]
+
+Might also provide shortcuts for getting some common types:
+
+	-getAsString
+	-getAsStringWithError:
+	-getAsNumber
+	-getAsNumberWithError:
+	-getListOfString
+	-getListOfStringWithError:
+	etc.
+
+Might also provide shortcuts that return C ints and floats (note: any errors would be indicated by error arg only):
+
+	-getIntWithError:
+	-getUIntWithError:
+	-getDoubleWithError:
+	etc.
+
+(Note: shortcuts that return C primitives will also be useful if osaglue provides a 'strict' option for commands where numerical and boolean parameters take C ints and floats rather than NSNumbers and AEMBooleans.)
+
+
+- get developer feedback and suggestions on design of command attribute packing, e.g. should -existing -sendMode: method be augmented/replaced by task-specific methods, e.g. -waitReply/-queueReply/-ignoreReply, etc.
+
+
+- -[ASCommand description] should provide appscript-style representation of command
+
+
+======= osaglue =======
+
+- emptying py-appscript.terminology's default typebyname, typebycode tables means that type/enum/property name collisions between AEM and application won't be detected when generating XXConstant class; need to sort this
+
+- finish py-appscript.terminology support (note: hooking osaglue into nominally private py-appscript code is not ideal )
+
+- finish py-osaterminology support (should see about implementing a proper extensible plugin architecture)
+
+
+======= aem/application.h =======
+
+- transaction support
+
+- returnID support; note: returnID is an argument to AECreateAppleEvent(), so we may want to move this call into AEMEvent and defer it long enough to give clients an opportunity to call -[AEMEvent setReturnID:]. Setting returnID in -[AEMApplication eventWith...] is another option, although the appscript layer would then need to avoid instantiating AEMEvent when a command is first called, again to allow clients an opportunity to set the returnID if they wish to.
+
+- AEMApplication initialisers should have option of returning NSError indicating reason for failure (couldn't find application, couldn't launch application, etc.)
+
+
+======= aem/event.h =======
+
+- define formal protocol or abstract base class for AEMEvent class, as clients can install their own choice of event class in AEMApplication if they wish
+
+- what to do if an AEMEvent/ASCommand attribute or parameter is nil? raise error? ignore it?
+
+- include an aem-/appscript-style representation of Apple event in localizedDescription string of NSErrors returned by -[AEMEvent sendWithError:], -[ASEvent sendWithError:] ?
+
+- -[AEMEvent description] should return aem-style representation of event
+
+- check if kOSAErrorOffendingObject can be any type (the OSA API docs suggest that it may have to be an object specifier, but really aren't clear); currently, -sendWithError: returns anything for kAEMErrorOffendingObject when raising its own coercion error
+
+
+======= aem/connect.m =======
+
+- convenience wrappers for AEMLaunchApplication(): AEMLaunchApp(), AEMRunApp(), AEMOpenFilesWithApp()
+
+- add an NSError** arg to AEMFindApplication(), AEMLaunchApplication()
+
+- all these C functions should probably become class methods of AEMApplication
+
+
+======= aem query builder =======
+
+- comparison support
+
+- AEMCustomRoot
+
+- see also .h files
+
+
+======= aem type converter =======
+
+- should AEMCodecs raise exception if -pack, -unpack methods fail?
+
+- finish AEMCodecs specifier unpackers
+
+- implement unit types support
+
+- HFS path support in AEMFileBase
+
+- need to investigate AEMFSSpec on 64-bit
+
+
+======= miscellaneous =======
+
+- NSErrors should include human-readable default error description; could use GetMacOSStatusCommentString if on 10.4 or later (see Debugging.h), otherwise will need to supply a lookup table for common Carbon error codes, c.f. rb-appscript. Probably also a good idea to include a lookup table for pre-Leopard Cocoa Scripting error strings, c.f. rb-appscript.
+
+- should objc-appscript classes that are used by both aem and appscript layers be renamed to use AS prefix (e.g. AEMAlias -> ASAlias)? This might be less confusing for majority of users who use higher-level appscript API only. Should ALL classes be renamed to use 'AS' prefix, with API level indicated by secondary means?
+
+- should NSError domain - currently "AEMErrorDomain" - be renamed "ASErrorDomain"? (See above.)
+
+- i386 safety? 64-bit safety? GC (-finalize) support?
+
+- provide convenience macros, e.g.: #AEMInt(index) [NSNumber numberWithInt: index]
+
+- add 'strict' options for class and command generation to osaglue: -k option would create individual classes according to application dictionary; -c option would enforce type checking/coercion in command parameters and result. This would allow users to take advantage of ObjC static typing for applications whose dictionaries are sufficiently accurate to avoid compatibility problems.
+
+- finish aem documentation, header comments

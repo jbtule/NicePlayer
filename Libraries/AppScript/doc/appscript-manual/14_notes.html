@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+
+<title>appscript | 14. Notes</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<style type="text/css" media="all"><!--@import url(full.css);--></style>
+
+</head>
+<body>
+
+<h1>14. Notes</h1>
+
+<!-- top navigation -->
+<div class="navbar">
+	<a href="13_performanceissues.html">Previous</a> | <a href="index.html">Up</a>
+	
+</div>
+
+<!-- content -->
+<div id="content">
+
+
+<!-- TO DO
+
+<h2>Dealing with problem applications</h2>
+
+<p>Appscript provides a number of mechanisms for dealing with problematic applications. See the <a href="http://appscript.sourceforge.net">appscript website</a> for more information.</p>
+-->
+
+<h2>Security issues</h2>
+
+<p>If including user names and/or passwords in remote application URLs, please note that appscript retains these URLs in the Application and Reference objects subsequently created from those URLs. Security here is the developer's responsibility, as it's their code that creates and retains these objects.</p>
+
+
+<h2>GUI Scripting</h2>
+
+<p>Non-scriptable applications may in some cases be controlled from appscript by using System Events to manipulate their graphical user interface. Note that the &quot;Enable access for assistive devices&quot; checkbox must be selected in the Universal Access system preferences pane for GUI Scripting to work.</p>
+
+
+<h2>Type bridging limitations</h2>
+
+<p>Some applications (e.g. QuarkXpress) may return values which appscript cannot convert to equivalent Cocoa types. These values are usually of types which are defined, used and understood only by that particular application, and will be represented in ObjC as <code>NSAppleEventDescriptor</code> instances which should generally be treated as opaque values.</p>
+
+<p>A few standard but rarely used AE types are also currently unbridged with Cocoa counterparts, such as image types (<code>typePict</code>, <code>typeTIFF</code>, etc.). Some of these types might be bridged in future releases; in the meantime, client code will have to perform any necessary conversions itself.</p>
+
+
+
+<h2>Appscript and threads</h2>
+
+<p>Appscript is thread-safe and events can be sent (and their replies received) from any thread.</p>
+
+
+<h2>Credits</h2>
+
+<p>Many thanks to all those who have contributed comments, suggestions and bug reports to py-appscript, upon which objc-appscript is based.</p>
+
+
+<h2>Donations</h2>
+
+<p>You can <a href="http://sourceforge.net/donate/index.php?group_id=175009">donate to the appscript project</a> via SourceForge.net. Special thanks to all those appscript users who have already contributed.</p>
+
+
+<h2>Website</h2>
+
+<p><a href="http://appscript.sourceforge.net/objc-appscript.html">http://appscript.sourceforge.net/objc-appscript.html</a></p>
+
+
+<h2>Copyright</h2>
+
+<p>(C) 2007 HAS -- hhas -at- users - sourceforge - net</p>
+
+<p>Appscript is released under the MIT License.</p>
+
+
+</div>
+
+<!-- bottom navigation -->
+<div class="navbar">
+	<a href="13_performanceissues.html">Previous</a> | <a href="index.html">Up</a>
+	
+</div>
+
+<!--footer-->
+<p class="footer">&copy; 2007 HAS</p>
+</body>
+</html>

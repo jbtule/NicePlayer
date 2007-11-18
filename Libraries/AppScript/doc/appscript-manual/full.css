@@ -1,0 +1,20 @@
+body {font-family: sans-serif; line-height:140%; color:#000; background-color:#fff; margin: 0 10%;}/*headings*/h1 {line-height:110%; color:#fd6; background-color:#225; padding: 2em 10px 0.8em; margin-top:0; margin-bottom:0;}h2 {color:#114; background-color:transparent; padding:0 0 1px; border:solid #114; border-width: 0 0 1px; margin-top:2em;}h3 {font-size:1em; color:#114; background-color:transparent; padding:0 0 3px; border:dashed #225; border-width: 0 0 1px; margin:2em 0 0.6em 0;}h4 {font-size:1em; color:#114; background-color:transparent;}/*body text*/
+
+#content {margin:2em 0 2.25em;}p, li {margin: 1em 0;}ul li {margin:0;}pre {line-height:130%; color:#000; background-color:#fe9; padding:1.8em 2em 2em; border:dotted black 1px; margin:1.2em 0em;}dt, code {color:#225; background-color:transparent;}
+dt {font-weight:bold;}
+dl, .hilitebox {color:#000; background-color:#e8e8ff; padding:1.8em 2em 2em; border:dotted black 1px; }dd pre, .hilitebox pre {color:#000; background-color:#d8d8ff; padding:1.8em 2em 2em; margin:1.2em 2em 1.2em 0;}dd+dt {margin-top:1em;}h3+p {margin-top:-0.3em;}
+.comment {color:#666; background-color:transparent;}
+
+hr {height: 1px; background-color: #114; border: 0px solid #114;}dl hr {color:#e8e8ff; background-color:transparent; height:1px; border:dashed #ccd; border-width: 1px 0 0; margin:0 -2em;}
+
+
+table {line-height:130%; width:100%; color:#000; background-color:#e8e8ff; border:dotted black 1px; margin:1.2em 0em 2.4em; padding: 0 0 1em;}
+
+th, td {padding: 0.4em 1.6em; margin: 0; border-width: 0;}
+
+th {text-align:left; font-size:0.95em; color:#225; background-color:#ccd;}
+
+thead {background-color:#ccd;}
+/*links*/a:link {color:#225; background-color:transparent;}a:visited  {color:#555; background-color:transparent;}/*footer*/.footer {font-weight:bold; color:#fd6; background-color:#225; padding: 2.5em 10px 0.8em; margin:0; text-align:left; font-size:0.8em}/* navigation*/.navbar {font-size:0.85em; font-weight:bold; color:#114; background-color: #fe9; padding: 0.25em 10px; margin:4em 0 0; border:solid #225; border-width: 1px;}
+
+h1+.navbar {margin-top:0;}

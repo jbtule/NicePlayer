@@ -356,9 +356,11 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			buildConfigurationList = 363A57A00A48820300A4FBE2 /* Build configuration list for PBXProject "UniversalCharsetDetector" */;
+			compatibilityVersion = "Xcode 2.4";
 			hasScannedForEncodings = 1;
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CharEncoding */;
 			projectDirPath = "";
+			projectRoot = "";
 			targets = (
 				3667D3000A0184250035467C /* UniversalCharsetDetector */,
 			);

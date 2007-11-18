@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+
+<title>appscript | 6. Classes and Enumerated Types</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<style type="text/css" media="all"><!--@import url(full.css);--></style>
+
+</head>
+<body>
+
+<h1>6. Classes and Enumerated Types</h1>
+
+<!-- top navigation -->
+<div class="navbar">
+	<a href="05_keywordconversion.html">Previous</a> | <a href="index.html">Up</a> | <a href="07_applicationobjects.html">Next</a>
+	
+</div>
+
+<!-- content -->
+<div id="content">
+<h2>Appscript keywords</h2>
+
+<p>For your convenience, appscript represents Apple event type names and application-specific class and enumerator names as instances of the glue's <code>ASConstant</code> subclass. Examples:</p>
+
+<pre><code># AEM-defined data types:
+[TEConstant boolean]
+[TEConstant unicodeText]
+[TEConstant list]
+
+# Application-defined class names:
+[TEConstant document]
+[TEConstant window]
+[TEConstant disk]
+
+# Application-defined enumerators:
+[TEConstant yes]
+[TEConstant no]
+[TEConstant ask]</code></pre>
+
+<p>Occasionally an application dictionary defines a type or enumerator without providing it with a corresponding name name. In these cases, the value will be represented as a raw <code>AEMType</code> or <code>AEMEnum</code> instance instead, e.g.: <!--The aem package's documentation provides more information on these lower-level objects, should you need to use them.--></p>
+
+<pre><code>[AEMType typeWithCode: 'abcd']
+
+[AEMEnum enumWithCode: 'xyz ']</code></pre>
+
+<h2>Common AE types</h2>
+
+<table width="100%" summary="AE-Foundation type mappings">
+<thead>
+<tr><th>AE type</th><th>appscript name</th><th>Foundation/Appscript class</th></tr>
+</thead>
+<tbody>
+<tr><td><code>typeNull</code></td><td><code>null</code></td><td><code>NSNull</code></td></tr>
+<tr><td><code>typeBoolean</code></td><td><code>boolean</code></td><td><code>AEMBoolean</code></td></tr>
+<tr><td><code>typeInteger</code></td><td><code>integer</code></td><td><code>NSNumber</code></td></tr>
+<tr><td><code>typeFloat</code></td><td><code>float</code></td><td><code>NSNumber</code></td></tr>
+<tr><td><code>typeChar</code> *</td><td><code>string</code></td><td><code>NSString</code></td></tr>
+<tr><td><code>typeStyledText</code> *</td><td><code>styledText</code></td><td><code>NSString</code></td></tr>
+<tr><td><code>typeIntlText</code> *</td><td><code>internationalText</code></td><td><code>NSString</code></td></tr>
+<tr><td><code>typeUnicodeText</code></td><td><code>unicodeText</code></td><td><code>NSString</code></td></tr>
+<tr><td><code>typeAEList</code></td><td><code>list</code></td><td><code>NSArray</code></td></tr>
+<tr><td><code>typeAERecord</code></td><td><code>record</code></td><td><code>NSDictionary</code></td></tr>
+<tr><td><code>typeLongDateTime</code></td><td><code>date</code></td><td><code>NSDate</code></td></tr>
+<tr><td><code>typeAlias</code></td><td><code>alias</code></td><td><code>AEMAlias</code></td></tr>
+<tr><td><code>typeFileURL</code></td><td><code>fileURL</code></td><td><code>NSURL</code></td></tr>
+<tr><td><code>typeFSRef</code></td><td><code>fileRef</code></td><td><code>AEMFSRef</code></td></tr>
+<tr><td><code>typeFSS</code> *</td><td><code>fileSpecification</code></td><td><code>AEMFSSpec</code></td></tr>
+<tr><td><code>typeObjectSpecifier</code></td><td><code>reference</code></td><td><code>ASReference</code> **</td></tr>
+<tr><td><code>typeInsertionLoc</code></td><td><code>locationReference</code></td><td><code>ASReference</code> **</td></tr>
+<tr><td><code>typeType</code></td><td><code>typeClass</code></td><td><code>ASConstant</code> **</td></tr>
+<tr><td><code>typeEnumerated</code></td><td><code>enumerator</code></td><td><code>ASConstant</code> **</td></tr>
+<!-- <tr><td><small>unit types; e.g. </small> <code>typeFeet</code></td><td><small>unit names; e.g.</small> <code>feet</code></td><td><code>MacTypes::Units</code></td></tr> -->
+</tbody>
+</table>
+
+<p>(Note that types marked with '*' are officially deprecated and/or their use discouraged in Mac OS X. They remain supported to ensure backwards compatibility with older applications that may use them.)</p>
+
+<p>(Note that classes marked with '**' are subclassed in application glues to provide application-specific support.)</p>
+
+<h2>Type mapping notes</h2>
+
+<p>While AE-ObjC type conversions generally work quite seamlessly, it is sometimes useful to know some of the details involved, particularly when troubleshooting code that deals with older or buggy applications.</p>
+
+<h3>Numbers</h3>
+
+<p>When packing a signed integer, appscript will pack it either as a 32-bit signed integer (most preferred), 64-bit signed integer, or 64-bit float (least preferred), depending on the value's size. When packing a 32-bit unsigned integer, appscript will pack it as a 32-bit signed integer if possible.</p>
+
+
+<h3>Strings</h3>
+
+<p>When packing and unpacking <code>NSString</code> instances, appscript uses the <code>NSAppleEventDescriptor</code> class's <code>+descriptorWithString:</code> and <code>-stringValue</code> methods, both of which use AEDescs of <code>typeUnicodeText</code>, coercing other types as needed.</p>
+
+<p>Note that while <code>typeUnicodeText</code> is formally deprecated in Mac OS X 10.4+ in favour of <code>typeUTF8Text</code> and <code>typeUTF16ExternalRepresentation</code>, it is still in common usage so appscript continues to use it to ensure the broadest compatibility with existing scriptable applications.</p>
+
+
+<h3>Filesystem references</h3>
+
+<p>The <code>typeAlias</code> AE type represents a filesystem object, and will continue to point to that object even if it's renamed or moved to another location on the same disk. The <code>typeFSRef</code> and <code>typeFileURL</code> types represent a filesystem location. Both can represent existing locations; the <code>typeFileURL</code> type can also be used to specify locations that don't already exist.</p>
+
+<p>FSSpecs are also supported for sake of backwards-compatibility with older Carbon applications that sometimes still use them. They're deprecated in OS X, however, due to lack of proper Unicode and long filename support, and their use is discouraged.</p>
+
+<p>See the aem manual's <a href="../aem-manual/04_types.html">Types chapter</a> for more information on <code>AEMAlias</code>, <code>AEMFSRef</code> and <code>AEMFSSpec</code>.</p>
+
+<!-- TO DO
+<p>When asking an application to coerce a return value into a file type you must specify the exact type (<code>alias</code>, <code>fileURL</code>, <code>fileRef</code>, or <code>fileSpecification</code>) in the <code>get</code> command. e.g. To get an <code>NSURL</code> object for the current user's home folder, you would usually use:</p>
+
+<pre><code>[[[[finder home] get] resultType: [FNConstant fileURL]] send]</code></pre>
+
+<p>Also be aware that some applications may not support coercions to all AE file types; you'll need to experiment to find out which coercions are supported.</p>
+-->
+
+<h3>Records</h3>
+
+<p>The <code>typeAERecord</code> AE type is a struct-like data structure containing zero or more properties. Appscript represents AE records as <code>NSMutableDictionary</code> instances. The keys in this dictionary are usually <code>ASConstant</code> subclass instances representing appscript-style property names, e.g. <code>[TEConstant text]</code>, although they may also be <code>AEMType</code> values or strings.</p>
+
+<p>If a dictionary contains a <code>class_</code> (or <code>'pcls'</code>) key, appscript will pack the remaining items into an AE record, then coerce it to the type specified by this 'class' property. Similarly, when unpacking an record-like AEDesc with a custom type code, appscript will unpack it as a dictionary with the type represented by a <code>class_</code> entry.</p>
+
+<p>Note that <code>NSAppleEventDescriptor</code> instances <em>cannot</em> be used as dictionary keys, as their <code>-hash</code> and <code>-isEqual:</code> methods compare for object identity only.</p>
+
+<h3>Types and enumerators</h3>
+
+<p>The <code>typeType</code> and <code>typeEnumerated</code> AE types are unpacked as <code>ASConstant</code> subclass instances when the corresponding terminology is available, otherwise they are unpacked as <code>AEMType</code> and <code>AEMEnum</code> respectively.</td></tr>
+
+<!-- TO DO
+<h3>Unit types</h3>
+
+<p>Unit type values are represented by instances of the <code>MacTypes::Units</code> class, e.g. <code>MacTypes::Units.inches(3.0)</code>. See the <a href="../mactypes-manual/index.html">mactypes manual</a> for more information.</p>
+-->
+
+<h3>Miscellaneous types</h3>
+
+<p>The Apple Event Manager defines many other AE types whose names and codes are defined by appscript for completeness. A few of these types are of occasional interest to users, the rest can simply be ignored. In most cases, values of these types will be represented by <code>NSAppleEventDescriptor</code> instances as appscript doesn't automatically convert them.</p>
+
+
+</div>
+
+<!-- bottom navigation -->
+<div class="navbar">
+	<a href="05_keywordconversion.html">Previous</a> | <a href="index.html">Up</a> | <a href="07_applicationobjects.html">Next</a>
+	
+</div>
+
+<!--footer-->
+<p class="footer">&copy; 2007 HAS</p>
+</body>
+</html>

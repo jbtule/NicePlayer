@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+
+<title>appscript | 13. Performance Issues</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<style type="text/css" media="all"><!--@import url(full.css);--></style>
+
+</head>
+<body>
+
+<h1>13. Performance Issues</h1>
+
+<!-- top navigation -->
+<div class="navbar">
+	<a href="12_commandexamples.html">Previous</a> | <a href="index.html">Up</a> | <a href="14_notes.html">Next</a>
+	
+</div>
+
+<p class="hilitebox">Note: this chapter uses rb-appscript-based examples, though the general principles are the same for objc-appscript.</p>
+
+<!-- content -->
+<div id="content">
+<h2>About performance</h2>
+
+<p>Application scripting is subject to a number of potential performance bottlenecks:</p>
+
+<ul>
+<li>Sending Apple events is more expensive than calling local functions.</li>
+
+<li>There may be significant overheads in how applications resolve individual object references.</li>
+
+<li>Packing and unpacking large and/or complex values (e.g. a long list of object specifiers) can take an appreciable amount of time.</li>
+</ul>
+
+<p>Fortunately, it's often possible to minimise performance overheads by using fewer commands to do more work. Let's consider a typical example: obtaining the name of every person in <code>Address Book.app</code> who has a particular email address. There are several possible solutions to this, each with very different performance characteristics:</p>
+
+<h2>The iterative OO-style approach</h2>
+
+<p>While iterating over application objects and manipulating each in turn is a common technique, it's also the slowest by far:</p>
+<pre><code>require "appscript"
+include Appscript
+
+desiredEmail = 'sam.brown@foo.com'
+
+foundNames = []app('Address Book').people.get.each do |person|    person.emails.get.each do |email|        if email.value.get == desiredEmail            foundNames.push(person.name.get)
+        end
+    end
+end
+p foundNames</code></pre>
+<p>The above script sends one Apple event to get a list of references to all people, then one Apple event for each person to get a list of references to their emails, then one Apple event for each of those emails. Thus the time taken increases directly in proportion to the number of people in Address Book. If there's hundreds of people to search, that's hundreds of Apple events to be built, sent and individually resolved, and performance suffers as a result.</p>
+
+<p>The solution, where possible, is to use fewer, more sophisticated commands to do the same job.</p>
+
+
+<h2>The smart query-oriented approach</h2>
+
+<p>While there are some situations where iterating over and manipulating each application object individually is the only option (for example, when setting a property in each object to a different value), in this case there is plenty of room for improvement. Depending on how well an application implements its AEOM support, it's possible to construct queries that identify more than one application object at a time, allowing a single command to manipulate multiple objects in a single operation.</p>
+
+<p>In this case, the entire search can be performed using a single complex query sent to Address Book via a single Apple event:</p>
+<pre><code>require "appscript"
+include Appscript
+
+desiredEmail = 'sam.brown@foo.com'p app('Address Book').people[
+        its.emails.value.contains(desiredEmail)
+        ].name.get</code></pre>
+
+<p>To explain:</p>
+
+<ul>
+<li>The query states: find the name of every person object that passes a specific test.</li>
+
+<li>The test is: does a given value, 'sam.brown@foo.com', appear in a list that consists of the value of each email object contained by an individual person?</li>
+
+<li>The command is: evaluate that query against the AEOM and get (return) the result, which is a list of zero or more strings: the names of the people matched by the query.</li>
+</ul>
+
+
+<h2>The hybrid solution</h2>
+
+<p>While AEOM queries can be surprisingly powerful, there are still many problems too complex for the application to evaluate entirely by itself. For example, let's say that you want to obtain the name of every person who has an email addresses that uses a particular domain name. Unfortunately, this test is too complex to express as a single AEOM query; however, it can still be solved reasonably efficiently by obtaining all the data from the application up-front and processing it locally. For this we need: 1. the name of every person in the Address Book, and 2. each person's email addresses. Fortunately, each of these can be expressed in a single query, allowing all this data to be retrieved using just two <code>get</code> commands.</p>
+
+<pre><code>require "appscript"
+include Appscript
+
+desiredDomain = 'foo.com'
+
+domainPattern = Regexp.new(Regexp.escape('@'+desiredDomain) + '$')
+
+# get a list of name strings
+names = app('Address Book').people.name.get
+
+# a list of lists of email strings
+emailsOfEveryPerson = app('Address Book').people.emails.value.get
+
+result = []
+names.zip(emailsOfEveryPerson).each do |name, emails|
+    emails.each do |email|
+        if domainPattern.match(email):
+            result.push(name)
+            break
+        end
+    end
+end
+p result</code></pre>
+
+<p>This solution isn't as fast as the pure-query approach, but is still far more efficient than iterating over and manipulating each of the application objects themselves.</p>
+</div>
+
+<!-- bottom navigation -->
+<div class="navbar">
+	<a href="12_commandexamples.html">Previous</a> | <a href="index.html">Up</a> | <a href="14_notes.html">Next</a>
+	
+</div>
+
+<!--footer-->
+<p class="footer">&copy; 2007 HAS</p>
+</body>
+</html>

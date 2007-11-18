@@ -179,6 +179,18 @@
 		6977CD5A0CE3F63000B4EBB6 /* NPScalingButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6977CD590CE3F63000B4EBB6 /* NPScalingButton.m */; };
 		6977CD6D0CE3F65A00B4EBB6 /* NPScalingButtonCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 6977CD6B0CE3F65A00B4EBB6 /* NPScalingButtonCell.h */; };
 		6977CD6E0CE3F65A00B4EBB6 /* NPScalingButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6977CD6C0CE3F65A00B4EBB6 /* NPScalingButtonCell.m */; };
+		6990B4EB0CF0AA0300DA15C2 /* Appscript.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6990B4E80CF0A9D300DA15C2 /* Appscript.framework */; };
+		6990B50C0CF0B2F300DA15C2 /* SEApplicationGlue.h in Headers */ = {isa = PBXBuildFile; fileRef = 6990B5010CF0B2F300DA15C2 /* SEApplicationGlue.h */; };
+		6990B50D0CF0B2F300DA15C2 /* SEApplicationGlue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6990B5020CF0B2F300DA15C2 /* SEApplicationGlue.m */; };
+		6990B50E0CF0B2F300DA15C2 /* SECommandGlue.h in Headers */ = {isa = PBXBuildFile; fileRef = 6990B5030CF0B2F300DA15C2 /* SECommandGlue.h */; };
+		6990B50F0CF0B2F300DA15C2 /* SECommandGlue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6990B5040CF0B2F300DA15C2 /* SECommandGlue.m */; };
+		6990B5100CF0B2F300DA15C2 /* SEConstantGlue.h in Headers */ = {isa = PBXBuildFile; fileRef = 6990B5050CF0B2F300DA15C2 /* SEConstantGlue.h */; };
+		6990B5110CF0B2F300DA15C2 /* SEConstantGlue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6990B5060CF0B2F300DA15C2 /* SEConstantGlue.m */; };
+		6990B5120CF0B2F300DA15C2 /* SEGlue.h in Headers */ = {isa = PBXBuildFile; fileRef = 6990B5070CF0B2F300DA15C2 /* SEGlue.h */; };
+		6990B5130CF0B2F300DA15C2 /* SEReferenceGlue.h in Headers */ = {isa = PBXBuildFile; fileRef = 6990B5080CF0B2F300DA15C2 /* SEReferenceGlue.h */; };
+		6990B5140CF0B2F300DA15C2 /* SEReferenceGlue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6990B5090CF0B2F300DA15C2 /* SEReferenceGlue.m */; };
+		6990B5150CF0B2F300DA15C2 /* SEReferenceRendererGlue.h in Headers */ = {isa = PBXBuildFile; fileRef = 6990B50A0CF0B2F300DA15C2 /* SEReferenceRendererGlue.h */; };
+		6990B5160CF0B2F300DA15C2 /* SEReferenceRendererGlue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6990B50B0CF0B2F300DA15C2 /* SEReferenceRendererGlue.m */; };
 		69945E6E0CCA639600CE0AD3 /* inputpref.png in Resources */ = {isa = PBXBuildFile; fileRef = 69945E6C0CCA639500CE0AD3 /* inputpref.png */; };
 		69945E6F0CCA639600CE0AD3 /* windpref.png in Resources */ = {isa = PBXBuildFile; fileRef = 69945E6D0CCA639600CE0AD3 /* windpref.png */; };
 		699461F20CCBEDCF00CE0AD3 /* UniversalCharsetDetector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699461EB0CCBED9F00CE0AD3 /* UniversalCharsetDetector.framework */; };
@@ -292,6 +304,20 @@
 			proxyType = 2;
 			remoteGlobalIDString = 61B5F90209C4CEE200B25A18;
 			remoteInfo = "Sparkle Test App";
+		};
+		6990B4E70CF0A9D300DA15C2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6990B4E00CF0A9D300DA15C2 /* Appscript.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
+			remoteInfo = Appscript;
+		};
+		6990B4E90CF0A9EE00DA15C2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6990B4E00CF0A9D300DA15C2 /* Appscript.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
+			remoteInfo = Appscript;
 		};
 		699461EA0CCBED9F00CE0AD3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -481,7 +507,6 @@
 		3E9E64810661B95900B788A8 /* pauseClick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pauseClick.png; path = Resources/pauseClick.png; sourceTree = "<group>"; };
 		3EB4F72A08F62C37004692D3 /* Useful Scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Useful Scripts"; path = "Resources/Useful Scripts"; sourceTree = "<group>"; };
 		3EB4F72F08F62C4C004692D3 /* Default Scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Default Scripts"; path = "Resources/Default Scripts"; sourceTree = "<group>"; };
-		3EB6F18A06603F1F0093424C /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = /Library/Frameworks/SenTestingKit.framework; sourceTree = "<absolute>"; };
 		3EB7EC5F065F39AA0002A470 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
 		3EB7ECF9065F39BC0002A470 /* QuickTime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickTime.framework; path = /System/Library/Frameworks/QuickTime.framework; sourceTree = "<absolute>"; };
 		3EC66F13077525AD00B50A61 /* English */ = {isa = PBXFileReference; lastKnownFileType = folder; name = English; path = "English.lproj/NicePlayer Help"; sourceTree = "<group>"; };
@@ -533,6 +558,18 @@
 		6977CD590CE3F63000B4EBB6 /* NPScalingButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NPScalingButton.m; path = "Classes/Overlay Widgets/NPScalingButton.m"; sourceTree = "<group>"; };
 		6977CD6B0CE3F65A00B4EBB6 /* NPScalingButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NPScalingButtonCell.h; path = "Classes/Overlay Widgets/NPScalingButtonCell.h"; sourceTree = "<group>"; };
 		6977CD6C0CE3F65A00B4EBB6 /* NPScalingButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NPScalingButtonCell.m; path = "Classes/Overlay Widgets/NPScalingButtonCell.m"; sourceTree = "<group>"; };
+		6990B4E00CF0A9D300DA15C2 /* Appscript.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Appscript.xcodeproj; path = Libraries/AppScript/src/Appscript/Appscript.xcodeproj; sourceTree = "<group>"; };
+		6990B5010CF0B2F300DA15C2 /* SEApplicationGlue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEApplicationGlue.h; sourceTree = "<group>"; };
+		6990B5020CF0B2F300DA15C2 /* SEApplicationGlue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEApplicationGlue.m; sourceTree = "<group>"; };
+		6990B5030CF0B2F300DA15C2 /* SECommandGlue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SECommandGlue.h; sourceTree = "<group>"; };
+		6990B5040CF0B2F300DA15C2 /* SECommandGlue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SECommandGlue.m; sourceTree = "<group>"; };
+		6990B5050CF0B2F300DA15C2 /* SEConstantGlue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEConstantGlue.h; sourceTree = "<group>"; };
+		6990B5060CF0B2F300DA15C2 /* SEConstantGlue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEConstantGlue.m; sourceTree = "<group>"; };
+		6990B5070CF0B2F300DA15C2 /* SEGlue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEGlue.h; sourceTree = "<group>"; };
+		6990B5080CF0B2F300DA15C2 /* SEReferenceGlue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEReferenceGlue.h; sourceTree = "<group>"; };
+		6990B5090CF0B2F300DA15C2 /* SEReferenceGlue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEReferenceGlue.m; sourceTree = "<group>"; };
+		6990B50A0CF0B2F300DA15C2 /* SEReferenceRendererGlue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEReferenceRendererGlue.h; sourceTree = "<group>"; };
+		6990B50B0CF0B2F300DA15C2 /* SEReferenceRendererGlue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEReferenceRendererGlue.m; sourceTree = "<group>"; };
 		69945E6C0CCA639500CE0AD3 /* inputpref.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = inputpref.png; path = Resources/inputpref.png; sourceTree = "<group>"; };
 		69945E6D0CCA639600CE0AD3 /* windpref.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = windpref.png; path = Resources/windpref.png; sourceTree = "<group>"; };
 		699461E30CCBED9F00CE0AD3 /* UniversalCharsetDetector.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UniversalCharsetDetector.xcodeproj; path = Libraries/UniversalCharsetDetector/UniversalCharsetDetector.xcodeproj; sourceTree = "<group>"; };
@@ -553,6 +590,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6990B4EB0CF0AA0300DA15C2 /* Appscript.framework in Frameworks */,
 				699461F20CCBEDCF00CE0AD3 /* UniversalCharsetDetector.framework in Frameworks */,
 				69DE19D50BE97317009D28B9 /* Sparkle.framework in Frameworks */,
 				2510A5B80B06374400CA8110 /* QTKit.framework in Frameworks */,
@@ -581,7 +619,6 @@
 				25702FEF07569E3300D1EE8C /* DVDPlayback.framework */,
 				257D60130753DED700702BD0 /* Scripting.framework */,
 				257D60000753DE7C00702BD0 /* AppKitScripting.framework */,
-				3EB6F18A06603F1F0093424C /* SenTestingKit.framework */,
 				3EB7EC5F065F39AA0002A470 /* Carbon.framework */,
 				3EB7ECF9065F39BC0002A470 /* QuickTime.framework */,
 			);
@@ -783,6 +820,7 @@
 		25C5C1E208D4B7F300987A95 /* Other Projects */ = {
 			isa = PBXGroup;
 			children = (
+				6990B4E00CF0A9D300DA15C2 /* Appscript.xcodeproj */,
 				699461E30CCBED9F00CE0AD3 /* UniversalCharsetDetector.xcodeproj */,
 				69DE19C80BE972F1009D28B9 /* Sparkle.xcodeproj */,
 				3E5970CB09FC8D9A001ED4FA /* CocoaScriptMenu.xcodeproj */,
@@ -828,6 +866,7 @@
 		2A37F4AAFDCFA73011CA2CEA /* NicePlayer */ = {
 			isa = PBXGroup;
 			children = (
+				6990B4FF0CF0B2F300DA15C2 /* Glue */,
 				2A37F4ABFDCFA73011CA2CEA /* Classes */,
 				25D2E7B407BF36D5004BEF7D /* Scripting */,
 				2A37F4AFFDCFA73011CA2CEA /* Other Sources */,
@@ -957,6 +996,40 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		6990B4E10CF0A9D300DA15C2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6990B4E80CF0A9D300DA15C2 /* Appscript.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6990B4FF0CF0B2F300DA15C2 /* Glue */ = {
+			isa = PBXGroup;
+			children = (
+				6990B5000CF0B2F300DA15C2 /* SEGlue */,
+			);
+			path = Glue;
+			sourceTree = "<group>";
+		};
+		6990B5000CF0B2F300DA15C2 /* SEGlue */ = {
+			isa = PBXGroup;
+			children = (
+				6990B5010CF0B2F300DA15C2 /* SEApplicationGlue.h */,
+				6990B5020CF0B2F300DA15C2 /* SEApplicationGlue.m */,
+				6990B5030CF0B2F300DA15C2 /* SECommandGlue.h */,
+				6990B5040CF0B2F300DA15C2 /* SECommandGlue.m */,
+				6990B5050CF0B2F300DA15C2 /* SEConstantGlue.h */,
+				6990B5060CF0B2F300DA15C2 /* SEConstantGlue.m */,
+				6990B5070CF0B2F300DA15C2 /* SEGlue.h */,
+				6990B5080CF0B2F300DA15C2 /* SEReferenceGlue.h */,
+				6990B5090CF0B2F300DA15C2 /* SEReferenceGlue.m */,
+				6990B50A0CF0B2F300DA15C2 /* SEReferenceRendererGlue.h */,
+				6990B50B0CF0B2F300DA15C2 /* SEReferenceRendererGlue.m */,
+			);
+			path = SEGlue;
+			sourceTree = "<group>";
+		};
 		699461E40CCBED9F00CE0AD3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -1045,6 +1118,12 @@
 				691ECCF80CDE75B70040AE45 /* NPOutlineView.h in Headers */,
 				6977CC670CE3DF8B00B4EBB6 /* NPScalingButton.h in Headers */,
 				6977CD6D0CE3F65A00B4EBB6 /* NPScalingButtonCell.h in Headers */,
+				6990B50C0CF0B2F300DA15C2 /* SEApplicationGlue.h in Headers */,
+				6990B50E0CF0B2F300DA15C2 /* SECommandGlue.h in Headers */,
+				6990B5100CF0B2F300DA15C2 /* SEConstantGlue.h in Headers */,
+				6990B5120CF0B2F300DA15C2 /* SEGlue.h in Headers */,
+				6990B5130CF0B2F300DA15C2 /* SEReferenceGlue.h in Headers */,
+				6990B5150CF0B2F300DA15C2 /* SEReferenceRendererGlue.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1075,6 +1154,7 @@
 				3E5970F009FC8DBB001ED4FA /* PBXTargetDependency */,
 				3EEA730D09FC84D000AABB1F /* PBXTargetDependency */,
 				699461EF0CCBEDAF00CE0AD3 /* PBXTargetDependency */,
+				6990B4EA0CF0A9EE00DA15C2 /* PBXTargetDependency */,
 			);
 			name = NicePlayer;
 			productInstallPath = "$(HOME)/Applications";
@@ -1101,6 +1181,10 @@
 			mainGroup = 2A37F4AAFDCFA73011CA2CEA /* NicePlayer */;
 			projectDirPath = "";
 			projectReferences = (
+				{
+					ProductGroup = 6990B4E10CF0A9D300DA15C2 /* Products */;
+					ProjectRef = 6990B4E00CF0A9D300DA15C2 /* Appscript.xcodeproj */;
+				},
 				{
 					ProductGroup = 3E5970CC09FC8D9A001ED4FA /* Products */;
 					ProjectRef = 3E5970CB09FC8D9A001ED4FA /* CocoaScriptMenu.xcodeproj */;
@@ -1192,6 +1276,13 @@
 			fileType = wrapper.application;
 			path = "Sparkle Test App.app";
 			remoteRef = 69765B360BFBDE7600D9C23B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6990B4E80CF0A9D300DA15C2 /* Appscript.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Appscript.framework;
+			remoteRef = 6990B4E70CF0A9D300DA15C2 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		699461EB0CCBED9F00CE0AD3 /* UniversalCharsetDetector.framework */ = {
@@ -1385,6 +1476,11 @@
 				691ECCF90CDE75B70040AE45 /* NPOutlineView.m in Sources */,
 				6977CD5A0CE3F63000B4EBB6 /* NPScalingButton.m in Sources */,
 				6977CD6E0CE3F65A00B4EBB6 /* NPScalingButtonCell.m in Sources */,
+				6990B50D0CF0B2F300DA15C2 /* SEApplicationGlue.m in Sources */,
+				6990B50F0CF0B2F300DA15C2 /* SECommandGlue.m in Sources */,
+				6990B5110CF0B2F300DA15C2 /* SEConstantGlue.m in Sources */,
+				6990B5140CF0B2F300DA15C2 /* SEReferenceGlue.m in Sources */,
+				6990B5160CF0B2F300DA15C2 /* SEReferenceRendererGlue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1415,6 +1511,11 @@
 			isa = PBXTargetDependency;
 			name = EncryptOC;
 			targetProxy = 3EEA732409FC859000AABB1F /* PBXContainerItemProxy */;
+		};
+		6990B4EA0CF0A9EE00DA15C2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Appscript;
+			targetProxy = 6990B4E90CF0A9EE00DA15C2 /* PBXContainerItemProxy */;
 		};
 		699461EF0CCBEDAF00CE0AD3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

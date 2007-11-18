@@ -1,0 +1,326 @@
+// !$*UTF8*$!
+{
+	08FB7793FE84155DC02AAC07 /* Project object */ = {
+		activeArchitecture = i386;
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 4F53A3060CDBCA8C00403A46 /* AttachToMail */;
+		activeTarget = 8DD76F960486AA7600D96B5E /* AttachToMail */;
+		addToTargets = (
+			8DD76F960486AA7600D96B5E /* AttachToMail */,
+		);
+		codeSenseManager = 4F53A3110CDBCAA900403A46 /* Code sense */;
+		executables = (
+			4F53A3060CDBCA8C00403A46 /* AttachToMail */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					230,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 217077693;
+			PBXWorkspaceStateSaveDate = 217077693;
+		};
+		perUserProjectItems = {
+			4F551ED10CF0542C005661F9 = 4F551ED10CF0542C005661F9 /* PBXBookmark */;
+			4F551EFA0CF057B9005661F9 = 4F551EFA0CF057B9005661F9 /* PBXTextBookmark */;
+			4F551F050CF057D4005661F9 /* PBXTextBookmark */ = 4F551F050CF057D4005661F9 /* PBXTextBookmark */;
+			4F551F060CF057D4005661F9 /* PBXTextBookmark */ = 4F551F060CF057D4005661F9 /* PBXTextBookmark */;
+			4F551F100CF05829005661F9 /* PBXTextBookmark */ = 4F551F100CF05829005661F9 /* PBXTextBookmark */;
+			4F551F120CF058A4005661F9 /* PBXTextBookmark */ = 4F551F120CF058A4005661F9 /* PBXTextBookmark */;
+			4F551F220CF05FAF005661F9 /* PBXTextBookmark */ = 4F551F220CF05FAF005661F9 /* PBXTextBookmark */;
+			4F551F230CF05FAF005661F9 /* PBXTextBookmark */ = 4F551F230CF05FAF005661F9 /* PBXTextBookmark */;
+			4F551F250CF060BB005661F9 /* PBXTextBookmark */ = 4F551F250CF060BB005661F9 /* PBXTextBookmark */;
+			4F551F270CF060D7005661F9 /* PBXTextBookmark */ = 4F551F270CF060D7005661F9 /* PBXTextBookmark */;
+			4F551F290CF060E0005661F9 /* PBXTextBookmark */ = 4F551F290CF060E0005661F9 /* PBXTextBookmark */;
+			4F551F2B0CF0616A005661F9 /* PBXTextBookmark */ = 4F551F2B0CF0616A005661F9 /* PBXTextBookmark */;
+			4F551F2D0CF061CA005661F9 /* PBXTextBookmark */ = 4F551F2D0CF061CA005661F9 /* PBXTextBookmark */;
+			4F551F300CF06218005661F9 /* PBXTextBookmark */ = 4F551F300CF06218005661F9 /* PBXTextBookmark */;
+			4F551F320CF064E2005661F9 /* PBXTextBookmark */ = 4F551F320CF064E2005661F9 /* PBXTextBookmark */;
+			4F551F340CF064F7005661F9 /* PBXTextBookmark */ = 4F551F340CF064F7005661F9 /* PBXTextBookmark */;
+			4F551F360CF0681A005661F9 /* PBXTextBookmark */ = 4F551F360CF0681A005661F9 /* PBXTextBookmark */;
+			4F551F380CF06855005661F9 /* PBXTextBookmark */ = 4F551F380CF06855005661F9 /* PBXTextBookmark */;
+			4F551F3A0CF06865005661F9 /* PBXTextBookmark */ = 4F551F3A0CF06865005661F9 /* PBXTextBookmark */;
+			4F551F3D0CF06A16005661F9 /* PBXTextBookmark */ = 4F551F3D0CF06A16005661F9 /* PBXTextBookmark */;
+		};
+		sourceControlManager = 4F53A3100CDBCAA900403A46 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	08FB7796FE84155DC02AAC07 /* AttachToMail.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {739, 1246}}";
+			sepNavSelRange = "{313, 0}";
+			sepNavVisRange = "{0, 2412}";
+			sepNavWindowFrame = "{{828, 0}, {798, 1028}}";
+		};
+	};
+	4F53A3060CDBCA8C00403A46 /* AttachToMail */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = AttachToMail;
+		sourceDirectories = (
+		);
+	};
+	4F53A3100CDBCAA900403A46 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+		};
+	};
+	4F53A3110CDBCAA900403A46 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	4F551ED10CF0542C005661F9 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 08FB7796FE84155DC02AAC07 /* AttachToMail.m */;
+	};
+	4F551EE90CF057AE005661F9 /* MLCommandGlue.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {910, 4074}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{2427, 1142}";
+			sepNavWindowFrame = "{{15, -5}, {969, 1028}}";
+		};
+	};
+	4F551EEE0CF057AE005661F9 /* MLReferenceGlue.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {910, 23380}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{15899, 2163}";
+			sepNavWindowFrame = "{{285, 0}, {969, 1028}}";
+		};
+	};
+	4F551EFA0CF057B9005661F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 08FB7796FE84155DC02AAC07 /* AttachToMail.m */;
+		name = "AttachToMail.m: 37";
+		rLen = 0;
+		rLoc = 3238;
+		rType = 0;
+		vrLen = 1089;
+		vrLoc = 0;
+	};
+	4F551F050CF057D4005661F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 08FB7796FE84155DC02AAC07 /* AttachToMail.m */;
+		name = "AttachToMail.m: 37";
+		rLen = 0;
+		rLoc = 3238;
+		rType = 0;
+		vrLen = 1089;
+		vrLoc = 0;
+	};
+	4F551F060CF057D4005661F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 08FB7796FE84155DC02AAC07 /* AttachToMail.m */;
+		name = "AttachToMail.m: 2";
+		rLen = 0;
+		rLoc = 45;
+		rType = 0;
+		vrLen = 1087;
+		vrLoc = 0;
+	};
+	4F551F100CF05829005661F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 08FB7796FE84155DC02AAC07 /* AttachToMail.m */;
+		name = "AttachToMail.m: 24";
+		rLen = 0;
+		rLoc = 2096;
+		rType = 0;
+		vrLen = 1108;
+		vrLoc = 0;
+	};
+	4F551F120CF058A4005661F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 08FB7796FE84155DC02AAC07 /* AttachToMail.m */;
+		name = "AttachToMail.m: 25";
+		rLen = 0;
+		rLoc = 2096;
+		rType = 0;
+		vrLen = 1149;
+		vrLoc = 0;
+	};
+	4F551F220CF05FAF005661F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 08FB7796FE84155DC02AAC07 /* AttachToMail.m */;
+		name = "AttachToMail.m: 24";
+		rLen = 0;
+		rLoc = 2096;
+		rType = 0;
+		vrLen = 1132;
+		vrLoc = 0;
+	};
+	4F551F230CF05FAF005661F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 08FB7796FE84155DC02AAC07 /* AttachToMail.m */;
+		name = "AttachToMail.m: 49";
+		rLen = 0;
+		rLoc = 2668;
+		rType = 0;
+		vrLen = 1790;
+		vrLoc = 0;
+	};
+	4F551F250CF060BB005661F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 08FB7796FE84155DC02AAC07 /* AttachToMail.m */;
+		name = "AttachToMail.m: 47";
+		rLen = 0;
+		rLoc = 2599;
+		rType = 0;
+		vrLen = 2056;
+		vrLoc = 0;
+	};
+	4F551F270CF060D7005661F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 08FB7796FE84155DC02AAC07 /* AttachToMail.m */;
+		name = "AttachToMail.m: 10";
+		rLen = 0;
+		rLoc = 423;
+		rType = 0;
+		vrLen = 2061;
+		vrLoc = 0;
+	};
+	4F551F290CF060E0005661F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 08FB7796FE84155DC02AAC07 /* AttachToMail.m */;
+		name = "AttachToMail.m: 10";
+		rLen = 0;
+		rLoc = 423;
+		rType = 0;
+		vrLen = 2063;
+		vrLoc = 0;
+	};
+	4F551F2B0CF0616A005661F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 08FB7796FE84155DC02AAC07 /* AttachToMail.m */;
+		name = "AttachToMail.m: 29";
+		rLen = 0;
+		rLoc = 1454;
+		rType = 0;
+		vrLen = 2124;
+		vrLoc = 0;
+	};
+	4F551F2D0CF061CA005661F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 08FB7796FE84155DC02AAC07 /* AttachToMail.m */;
+		name = "AttachToMail.m: 29";
+		rLen = 0;
+		rLoc = 1454;
+		rType = 0;
+		vrLen = 2125;
+		vrLoc = 0;
+	};
+	4F551F300CF06218005661F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 08FB7796FE84155DC02AAC07 /* AttachToMail.m */;
+		name = "AttachToMail.m: 60";
+		rLen = 0;
+		rLoc = 3146;
+		rType = 0;
+		vrLen = 2152;
+		vrLoc = 0;
+	};
+	4F551F320CF064E2005661F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 08FB7796FE84155DC02AAC07 /* AttachToMail.m */;
+		name = "AttachToMail.m: 44";
+		rLen = 0;
+		rLoc = 2098;
+		rType = 0;
+		vrLen = 2384;
+		vrLoc = 291;
+	};
+	4F551F340CF064F7005661F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 08FB7796FE84155DC02AAC07 /* AttachToMail.m */;
+		name = "AttachToMail.m: 43";
+		rLen = 0;
+		rLoc = 2098;
+		rType = 0;
+		vrLen = 2390;
+		vrLoc = 291;
+	};
+	4F551F360CF0681A005661F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 08FB7796FE84155DC02AAC07 /* AttachToMail.m */;
+		name = "AttachToMail.m: 19";
+		rLen = 0;
+		rLoc = 589;
+		rType = 0;
+		vrLen = 2473;
+		vrLoc = 0;
+	};
+	4F551F380CF06855005661F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 08FB7796FE84155DC02AAC07 /* AttachToMail.m */;
+		name = "AttachToMail.m: 36";
+		rLen = 0;
+		rLoc = 1591;
+		rType = 0;
+		vrLen = 2295;
+		vrLoc = 707;
+	};
+	4F551F3A0CF06865005661F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 08FB7796FE84155DC02AAC07 /* AttachToMail.m */;
+		name = "AttachToMail.m: 36";
+		rLen = 0;
+		rLoc = 1591;
+		rType = 0;
+		vrLen = 2296;
+		vrLoc = 707;
+	};
+	4F551F3D0CF06A16005661F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 08FB7796FE84155DC02AAC07 /* AttachToMail.m */;
+		name = "AttachToMail.m: 11";
+		rLen = 0;
+		rLoc = 313;
+		rType = 0;
+		vrLen = 2412;
+		vrLoc = 0;
+	};
+	8DD76F960486AA7600D96B5E /* AttachToMail */ = {
+		activeExec = 0;
+		executables = (
+			4F53A3060CDBCA8C00403A46 /* AttachToMail */,
+		);
+	};
+}

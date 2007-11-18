@@ -1,0 +1,305 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+
+<title>appscript | 11. Application Commands</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<style type="text/css" media="all"><!--@import url(full.css);--></style>
+
+</head>
+<body>
+
+<h1>11. Application Commands</h1>
+
+<!-- top navigation -->
+<div class="navbar">
+	<a href="10_referenceexamples.html">Previous</a> | <a href="index.html">Up</a> | <a href="12_commandexamples.html">Next</a>
+	
+</div>
+
+<!-- content -->
+<div id="content">
+
+
+<p class="hilitebox">Note: the appscript command API is currently unfinished and may change in future. Transaction and return IDs are not yet supported, and the send mode API may be added to or replaced.</p>
+
+<p class="hilitebox">Note: error reporting for appscript commands has been revised (see <code>-sendWithError:</code>) and the previous <code>-errorNumber</code>, <code>-errorString</code> and <code>-raise</code> methods removed. Existing code should be updated to use the new API as necessary.</p>
+
+
+<h2>Using commands</h2>
+
+<p>Sending application commands in objc-appscript involves the following steps:</p>
+
+<ol>
+<li>Create a new command instance, optionally supplying a direct parameter.</li>
+<li>Add any attributes and/or keyword parameters to the command.</li>
+<li>Send the command to the application, checking for a return value and/or command error as needed.</li>
+</ol>
+
+<p>This granular approach provides plenty of power and flexibility along with a reasonably terse, efficient syntax.</p>
+
+
+<h3>Creating a command</h3>
+
+<p>Each application command is defined as a pair of methods on the glue's Application and Reference classes. One takes a value representing the command's direct parameter as its single argument, the other doesn't. For example, TextEdit's <code>duplicate</code> command is represented as:</p>
+
+<pre><code>- (TEDuplicateCommand *)duplicate;
+- (TEDuplicateCommand *)duplicate:(id)directParameter;</code></pre>
+
+<p>(Note that all commands take this form, regardless of whether the application dictionary lists them as taking a direct parameter or not; it's up to the client to use them as appropriate.)</p>
+
+<h3>Adding keyword parameters</h3>
+
+<p>Once a command object has been created, keyword parameters can be added one at a time. Each keyword parameter is represented by a method of the command object that takes a value of any class and returns <code>self</code>, allowing multiple parameter calls to be chained together for convenience. For example, TextEdit's <code>TEDuplicateCommand</code> class defines the following parameter methods:</p>
+
+<pre><code>- (TEDuplicateCommand *)to:(id)value;
+- (TEDuplicateCommand *)withProperties:(id)value</code></pre>
+
+<p>Note: all required parameters must be supplied, along with zero or more optional parameters, before the command is sent, otherwise the target application will raise a 'missing parameter' error. The application dictionary will indicate if parameters are optional or required; for example, the <code>duplicate</code> command requires a direct parameter while the <code>to</code> and <code>withProperties</code> parameters are optional:</p>
+
+<pre><strong>duplicate</strong> -- Copy object(s) and put the copies at a new location.
+    <em>reference</em> -- the object for the command
+    [<strong>to</strong> <em>locationReference</em>] -- The location for the new object(s).
+    [<strong>withProperties</strong> <em>record</em>] -- Properties to be set in the new duplicated object(s).</pre>
+
+
+<!-- TO DO: specifying considering/ignoring flags -->
+
+<h3>Specifying send mode flags</h3>
+
+<p>Every command object provides a <code>-sendMode:</code> method for specifying how the target application should handle the event:</p>
+
+<pre><code>- (id)sendMode:(AESendMode)flags;</code></pre>
+
+<p>The Apple Event Manager defines the following <code>AESendMode</code> constants:</p>
+
+<pre><code>enum {
+    kAENoReply = 0x00000001,
+    kAEQueueReply = 0x00000002,
+    kAEWaitReply = 0x00000003,
+
+    kAENeverInteract = 0x00000010,
+    kAECanInteract = 0x00000020,
+    kAEAlwaysInteract = 0x00000030,
+
+    kAECanSwitchLayer = 0x00000040,
+
+    kAEDontRecord = 0x00001000,
+    kAEDontExecute = 0x00002000,
+
+    kAEProcessNonReplyEvents = 0x00008000
+};</code></pre>
+
+<p>By default, appscript uses <code>kAEWaitReply</code> and <code>kAECanSwitchLayer</code>.</p>
+
+<p>See the Apple Event Manager documentation for more information.</p>
+
+
+
+<h3>Specifying the event timeout</h3>
+
+<p>Every command object provides a <code>-timeout:</code> method for specifying the number of seconds the sender is willing to wait for the target application to reply when the <code>kAEWaitReply</code> send mode is used:</p>
+
+<pre><code>- (id)timeout:(long)timeout_;</code></pre>
+
+<p>The Apple Event Manager defines two constants that may also be used here:</p>
+
+<pre><code>enum {
+   kAEDefaultTimeout = -1,
+   kNoTimeOut = -2
+};</code></pre>
+
+<p>See the Apple Event Manager documentation for more information.</p>
+
+
+
+<h3>Specifying the reply value's desired type</h3>
+
+<p>Where supported by the target application's event handler, the sender can use a command object's <code>-requestedType:</code> method to specify the desired type for the reply value:</p>
+
+<pre><code>- (id)requestedType:(ASConstant *)type;</code></pre>
+
+<p>The target application will attempt to coerce the reply value to this type before returning it. The argument is usually a standard AE type, e.g. <code>[ASConstant alias]</code>, though may occasionally be an application-defined type.</p>
+
+<p>Note that most applications don't support this option, and those that do usually only support it for <code>get</code> events (e.g. Finder).</p>
+
+
+<h3>Specifying how the reply value should be unpacked</h3>
+
+<p>Command objects provide the following methods to control how <code>-sendWithError:</code> unpacks the returned result descriptor:</p>
+
+<pre><code>- (id)returnType:(DescType)type;
+
+- (id)returnListOfType:(DescType)type;
+
+- (id)returnDescriptor;</code></pre>
+
+<p>The <code>-returnType:</code> method can be used to specify the AE type that the result descriptor returned by the application must be coerced to before unpacking. The default is <code>typeWildCard</code>.</p>
+
+<p>The <code>-returnListOfType:</code> method is similar, except that the returned result descriptor is first coerced to to <code>typeAEList</code>; each list item is then coerced to the specified type.<p>
+
+<p>Note that these coercions are performed on the returned value by the <code>-sendWithError:</code> method using built-in or user-installed AE coercion handlers (if available). If the coercion fails, <code>-sendWithError:</code> will return <code>nil</code> and the associated <code>NSError</code> instance will have error code -1700 (<code>errAECoercionFail</code>).</p>
+
+<p>If the <code>-returnDescriptor</code> method is invoked, <code>-sendWithError:</code> will return the result descriptor as an <code>NSAppleEventDescriptor</code> object without unpacking it.</p>
+
+<h3>Sending a command</h3>
+
+<p>To send a command, just call its <code>-sendWithError:</code> method:</p>
+
+<pre><code>- (id)sendWithError:(NSError **)error;</code></pre>
+
+<p>This will send the command to the application and return one of the following:</p>
+
+<ul>
+<li>If the command is successful and the application supplies a return value, that value is returned.</li>
+
+<li>If the command is successful and the application doesn't supply a return value, an <code>NSNull</code> instance is returned.</li>
+
+<li>If the command is unsuccessful, either due to an Apple Event Manager error or an application error, <code>nil</code> is returned.</li>
+</ul>
+
+<p>To determine if a command was successful or not, the calling code should check if the <code>-sendWithError:</code> message's result is an object or <code>nil</code>.</p>
+
+<p>Detailed error information is provided via the <code>-sendWithError:</code> method's error argument. On return, this will contain an NSError object that describes the Apple Event Manager or application error if one has occurred, or <code>nil</code> if the command was successful.</p>
+
+<p>If detailed error information is not required, pass <code>nil</code> as the <code>-sendWithError:</code> method's error argument, or invoke the command object's <code>-send</code> method which provides a convenient shortcut for this:</p>
+
+<pre><code>- (id)send;</code></pre>
+
+<p>As with <code>-sendWithError:</code>, the caller is responsible for checking the result of the <code>-send</code> message to determine if the command was successful or not.</p>
+
+
+
+<h2>Examples</h2>
+
+<pre><code>// tell application &quot;TextEdit&quot; to activate
+[[textedit activate] send]
+
+
+// tell application &quot;TextEdit&quot; to open fileRefList
+[[textedit open: fileRefList] send]
+
+
+// tell application &quot;Finder&quot; to get version
+[[[finder version] get] send]</code></pre>
+
+<pre><code>// tell application &quot;Finder&quot; to set name of file &quot;foo.txt&quot; of home to &quot;bar.txt&quot;
+[[[[[[[finder home] files] byName: @"foo.txt"] name] set] to: @"bar.txt"] send]
+
+
+// tell application &quot;TextEdit&quot; to count (text of first document) each paragraph
+[[[[[[textedit documents] first] text] count] each: [TEConstant paragraph]] send]
+
+
+// tell application &quot;TextEdit&quot; to make new document at end of documents
+[[[[[textedit documents] end] make] new_: [TEConstant document]] send]
+
+
+// tell application &quot;Finder&quot; to get items of home as alias list
+[[[[[finder home] items] get] requestedType: [TEConstant alias]] send]</code></pre>
+
+<pre><code>// tell application "TextEdit" to make new document with properties {text:"Hi!"}
+
+TEApplication *textedit;
+TEMakeCommand *makeCmd;
+id result;
+
+textedit = [[TEApplication alloc] initWithName: @"TextEdit.app"];
+
+makeCmd = [[[textedit make]
+                      new_: [TEConstant document]]
+            withProperties: [NSDictionary dictionaryWithObjectsAndKeys:
+                                      @"Hi 2!", [TEConstant text], nil]];
+[makeCmd send];</code></pre>
+
+
+<pre><code>// try
+//     tell application "TextEdit" to return text of document 2
+// on error errString number errNumber
+//     return "error:\n number: " & errNumber & "\n message: " & errString 
+// end try
+
+TEApplication *textedit;
+TEGetCommand *getCmd;
+id result;
+NSError *error;
+
+textedit = [[TEApplication alloc] initWithName: @"TextEdit.app"];
+
+getCmd = [[[textedit documents] at: 2] text];
+result = [getCmd sendWithError: &error];
+if (result) 
+    NSLog(@"result:\n%@\n\n", result);
+else
+    NSLog(@"error:\n number: %i\n message: %@\n\n",
+            [error code], [error localizedDescription]);</code></pre>
+
+
+
+<h2>Command errors</h2>
+
+<p>The <code>NSError</code> object returned by <code>-sendWithError:</code> when a command fails contains the following information:</p>
+
+<dl>
+<dt>domain</dt>
+<dd>The NSError domain string is <code>@"AEMErrorDomain"</code>.</dd>
+
+<dt>code</dt>
+<dd>This is the Carbon <code>OSStatus</code> error code returned by the Apple Event Manager, the target application, or objc-appscript itself. This value is also available as an <code>NSNumber</code> under the <code>@""</code> the <code>userInfo</code> dictionary.</dd>
+
+ <dt>localizedDescription</dt>
+<dd>This is a human-readable description of the error generated by objc-appscript.</dd>
+
+<dt>userInfo</dt>
+<dd>The <code>userInfo</code> dictionary contains an <code>@"ErrorNumber"</code> key and zero or more additional keys:
+
+	<ul>
+		<li><code>@"ErrorNumber"</code> -- the Carbon error code</code></li>
+		<li><code>@"ErrorString"</code> -- error string returned by application, if given</li>
+		<li><code>@"ErrorBriefMessage"</code> -- brief error string returned by application, if given</li>
+		<li><code>@"ErrorExpectedType"</code> -- AE type responsible for a coercion error (-1700), if given</li>
+		<li><code>@"ErrorOffendingObject"</code> -- value or object specifer responsible for error, if given</li>
+	</ul>
+</dd>
+</dl>
+
+
+<h2>Special cases</h2>
+
+<p>The following special-case behaviours are implemented for convenience:</p>
+
+<ol>
+<li><p>Commands that take a reference to one or more application objects as their direct parameter may be written in the following form:</p>
+
+<pre><code>[reference command]</code></pre>
+
+<p>The conventional  form is also supported should you ever wish (or need) to use it:</p>
+
+<pre><code>[application command: reference]</code></pre>
+
+<p>The two forms are equivalent (appscript converts the first form to the second behind the scenes) although the first form is preferred for conciseness.</p></li>
+
+
+<li><p>If a command is called on a reference object and a direct parameter is also given, i.e.:</p>
+
+<pre><code>[reference command: directParameter]</code></pre>
+
+<p>the reference upon which it is called will be packed as the Apple event's 'subject' attribute (<code>keySubjectAttr</code>).</p></li>
+
+
+</ol>
+
+
+</div>
+
+<!-- bottom navigation -->
+<div class="navbar">
+	<a href="10_referenceexamples.html">Previous</a> | <a href="index.html">Up</a> | <a href="12_commandexamples.html">Next</a>
+	
+</div>
+
+<!--footer-->
+<p class="footer">&copy; 2007 HAS</p>
+</body>
+</html>

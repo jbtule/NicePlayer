@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'AppscriptDemo' target in the 'AppscriptDemo' project.
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif

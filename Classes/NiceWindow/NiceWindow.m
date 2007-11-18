@@ -57,6 +57,12 @@
 #import "OverlayNotifierWindow.h"
 #import "NPApplication.h"
 #import "DelegateAnimation.h"
+#import "SEGlue.h"
+
+@interface NSWindow(Spaces)
+-(void)setCanBeVisibleOnAllSpaces:(BOOL)aBool;
+-(bool)canBeVisibleOnAllSpaces;
+@end
 
 @implementation NiceWindow
 
@@ -133,7 +139,26 @@
     [self setContentView:theMovieView];
     [theScrubBar setAction:@selector(scrub:)];
     [self setReleasedWhenClosed:YES];
-    [self registerForDraggedTypes:[self acceptableDragTypes]];
+	
+	if([self respondsToSelector:@selector(setCanBeVisibleOnAllSpaces:)]){
+		id tApp =[[SEApplication alloc] initWithBundleID:@"com.apple.systemevents"];
+		id tBindings =[[[[[tApp expose_preferences] spaces_preferences] application_bindings] get]send];
+		if([tBindings objectForKey:@"indy.jt.niceplayer"] !=nil 
+		   && [[tBindings objectForKey:@"indy.jt.niceplayer"] intValue] == 65544){
+		   
+		   [self setCanBeVisibleOnAllSpaces:YES];
+
+		   }else{
+		   
+		   [self setCanBeVisibleOnAllSpaces:NO];
+		   
+		   }
+		
+	}
+    
+	
+	
+	[self registerForDraggedTypes:[self acceptableDragTypes]];
     
 	id tParagraph = [[[NSParagraphStyle defaultParagraphStyle] mutableCopy] autorelease];
 	[tParagraph setAlignment:NSCenterTextAlignment];
@@ -214,6 +239,8 @@
     [super becomeKeyWindow];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:nil];
 }
+
+
 
 -(BOOL)canBecomeKeyWindow
 {
@@ -421,6 +448,7 @@
                                   NSMidX(currentFrame) - NSMidX([theOverlayVolume frame]),
                                   NSMidY(currentFrame) - NSMidY([theOverlayVolume frame]))
       withVisibility:NO];
+	
     [self putOverlay:theOverlayNotifier
 		   asChildOf:self
              inFrame:NSMakeRect(currentFrame.origin.x,
@@ -441,8 +469,13 @@
     }	
 }
 
--(void)putOverlay:(id)anOverlay asChildOf:(id)aWindow inFrame:(NSRect)aFrame withVisibility:(BOOL)isVisible
+-(void)putOverlay:(NSWindow*)anOverlay asChildOf:(NSWindow*)aWindow inFrame:(NSRect)aFrame withVisibility:(BOOL)isVisible
 {
+	//hack: Leopard spaces hack
+	if([anOverlay respondsToSelector:@selector(setCanBeVisibleOnAllSpaces:)])
+		[anOverlay setCanBeVisibleOnAllSpaces:[aWindow canBeVisibleOnAllSpaces]];
+
+	
     [anOverlay setFrame:aFrame display:NO];
     
     [anOverlay setAlphaValue:(isVisible ? 1.0 : 0.0)];

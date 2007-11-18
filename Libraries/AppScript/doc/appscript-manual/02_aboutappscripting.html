@@ -1,0 +1,269 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+
+<title>appscript | 2. About Application Scripting</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<style type="text/css" media="all"><!--@import url(full.css);--></style>
+
+</head>
+<body>
+
+<h1>2. About Application Scripting</h1>
+
+<!-- top navigation -->
+<div class="navbar">
+	<a href="01_introduction.html">Previous</a> | <a href="index.html">Up</a> | <a href="03_glues.html">Next</a>
+	
+</div>
+
+<!-- content -->
+<div id="content">
+<p>This chapter introduces the main concepts behind Apple event-based application scripting.</p>
+
+<h2>What are Apple events?</h2>
+
+<p>Apple events are a high-level message-based form of Interprocess Communication (IPC; also known as Interapplication Communication, or IAC), used to communicate between local or remote application processes (and, in some cases, within the same process).</p>
+
+<p>An Apple event contains typed data describing:</p>
+
+<ul>
+<li>how the event should be handled, such as the event's 'name' (specified by two four-letter codes [<a href="#f1">1</a>]) and whether or not a reply is required</li>
+
+<li>any data to be passed as arguments to the event handler that receives the event.</li>
+</ul>
+
+<p>For descriptive purposes, the former are referred to as 'attributes' and the latter as 'parameters'.</p>
+
+<p>Apple event datatypes include:</p>
+
+<ul>
+<li>common scalar types such as booleans, integers, floats, strings, dates and file references</li>
+
+<li>ordered lists</li>
+
+<li>records (key-value lists where each key is an four-letter code)</li>
+
+<li>object specifiers, used to construct <em>first-class queries</em>, commonly referred to as application references, that identify objects within an application. These query objects are roughly comparable to XPath or CSS selectors.</li>
+</ul>
+
+<p>For example, when the user drag-n-drops a file onto TextEdit.app in the Finder, the Finder commands TextEdit to open that file by sending it an <code>aevt/odoc</code> event with a file reference as its main parameter:</p>
+
+<p><img src="finder_to_textedit_event.gif" alt="Sending Apple event from Finder to TextEdit" /></p>
+
+<p>With suitable bindings, programming languages can also create and send Apple events. For example, when the code <code>app('iTunes').play</code> is executed in a Ruby interpreter, a <code>hook/Play</code> event is sent from the interpreter to iTunes, instructing it to start playing:</p>
+
+<p><img src="ruby_to_itunes_event.gif" alt="Sending Apple event from Ruby to iTunes"/></p>
+
+<p>Applications may respond to an incoming Apple event by sending a reply event back to the client application. The reply event may contain either a return value, if there is one, or an error description if it was unable to handle the event as requested. For example, executing the command <code>app('TextEdit').name.get</code> in a Ruby interpreter sends TextEdit a <code>code/getd</code> event containing an object specifier identifying the <code>name</code> property of its root <code>application</code> object. TextEdit processes this event, then sends a reply event containing the string '<tt>TextEdit</tt>' back to the Ruby interpreter, where it is displayed as the command's result. This exchange is usually performed synchronously, appearing to the user as a simple remote procedure call. Asynchronous messaging is also supported, though is not normally used in application scripting.</p>
+
+
+<h2>What is a scriptable application?</h2>
+
+<p>A scriptable (or 'AppleScriptable') application is an application that provides an Apple event interface intended for third-party (e.g. end-user) use. The application implements one or more event handlers that respond to corresponding events, and may also support the Apple Event Object Model. While this interface may be regarded as an API, the emphasis is on providing a high-level <em>user interface</em> that is peer to other users interfaces the application may have (GUI, CLI, web, etc.) and accessible to end-users as much as developers.</p>
+
+<p>For example, iTunes.app implements two user interfaces, one graphical and one Apple event-based, that provide access to to much the same functionality but in very different ways:</p>
+
+<p><img src="application_architecture.gif" alt="Application with Graphical and Apple event interfaces." /></p>
+
+<p>A scriptable application also contains a built-in definition of its scripting interface in the form of an <code>aete</code> or <code>sdef</code> resource. This resource can be obtained programmatically and used:</p>
+
+<ul>
+<li>to support automatic translation of human-readable terminology to four-letter codes in high-level bridges such as AppleScript and appscript</li>
+
+<li>to generate basic human-readable documentation by applications such as Script Editor and HTMLDictionary.</li>
+</ul>
+
+<p>(Note that the <code>aete</code> and <code>sdef</code> formats do not provide an exhaustive description of the application's scripting interface, and additional documentation is usually required - if not always provided - to form a complete understanding of that interface and how to use it effectively.)</p>
+
+
+<h2>What is the Apple Event Object Model?</h2>
+
+<p>The Apple Event Object Model (AEOM) is an idealised, user-oriented representation of the application's internal data model, allowing clients to identify and manipulate parts of that structure via Apple events. An incoming Apple event representing a particular command (get, set, move, etc.) is unpacked, and any object specifiers in its parameter list are evaluated against the application's AEOM to identify the user-level object(s) upon which the command should act. The command is then applied these objects, with the AEOM translating this into operations upon the application's implementation-level objects. These implementation-level objects are mostly user-data objects in the application's Model layer, plus a few GUI objects of interest to scripters (such as those representing document windows). The internal architecture of a typical scriptable desktop application might look something like this:</p>
+
+<p><img src="application_architecture2.gif" alt="Internal architecture of application with Graphical and Apple event interfaces." /></p>
+
+<div class="hilitebox">
+<p>Note: while the Apple Event Object Model is sometimes described by third-parties as being similar to DOM, this is inaccurate as AEOM operates at a much higher level of abstraction than DOM.</p>
+
+<ul>
+<li>AEOM objects are identified by high-level queries (comparable to XPath or CSS selectors), not low-level chained method calls.</li>
+
+<li>Commands operate upon objects, so a single command may invoke multiple method calls upon multiple implementation objects in order to perform relatively complex tasks.</li>
+
+<li>Where a query specifies multiple objects, the command should perform the same action on each of them [<a href="#f2">2</a>].</li>
+
+<li>AEOM objects never move across the bridge. Where a command identifies one or more AEOM objects as its result, the return value is a query (or queries) that will [hopefully] identify those objects in future, not the AEOM objects themselves.</li>
+</ul>
+</div>
+
+
+<h2>How does the AEOM work?</h2>
+
+<p>The AEOM is a tree structure made up of objects. These objects may have attributes (descriptive values such as class, name, id, size, bounds; usually primitive AE types but occasionally other application objects), e.g.:</p>
+
+<pre><code>[finder name]
+[finder version]
+[finder FinderPreferences]</code></pre>
+
+<p>and may 'contain' other objects, e.g.:</p>
+
+<pre><code>[finder FinderWindows]
+[textedit documents]</code></pre>
+
+<p>However, unlike other object models such as DOM, objects within the AEOM are associated with one another by <em>relationships</em> rather than simple physical containment. Think of AEOM as combining aspects of procedural RPC, object-oriented object model and relational database mechanics.</p>
+
+<p>Relationships between objects may be one-to-one, e.g.:</p>
+
+<pre><code>[finder home]
+[iTunes currentTrack]</code></pre>
+
+<p>or one-to-many, e.g.:</p>
+
+<pre><code>[finder folders]</code></pre>
+
+<p>While relationships often follow the containment structure of the underlying data structures, e.g.</p>
+
+<pre><code>[textedit documents]</code></pre>
+
+<p>this is not always the case. For example:</p>
+
+<pre><code>[finder files];
+
+[[finder desktop] files];
+
+[[[[[[[[[finder disks] byName: @"MacHD"]
+              folders] byName: @"Users"]
+              folders] byName: @"Jo"]
+              folders] byName: @"Desktop"]
+                files];</code></pre>
+
+<p>would all identify the same objects (files on the user's desktop), though only one of these references describes their position according to physical containment.</p>
+
+<p>Some references may identify different objects at different times, according to changes in the application's state, e.g.:</p>
+
+<pre><code>[iTunes currentTrack];</code></pre>
+
+<p>References may identify objects that do not actually exist as discreet entities within the application's underlying data structures, but are interpreted on the fly as proxies to the relevant portions of implementation-level data structures, e.g.:</p>
+
+<pre><code>[[[[textedit documents] at: 1] text] characters];
+
+[[[[textedit documents] at: 1] text] words];
+
+[[[[textedit documents] at: 1] text] paragraphs];</code></pre>
+
+<p>all refer to sections of data that's actually stored in a single <code>NSTextStorage</code> object within TextEdit's Model layer. This decoupling of the AEOM from the Model layer's structure allows applications to present data in a way that is convenient to the user, i.e. easy and intuitive to understand and use.</p>
+
+<p>Finally, one-to-many relationships may be selective in identifying a subset of related elements according to their individual class or shared superclasses. For example:</p>
+
+<pre><code>[finder items]</code></pre>
+
+<p>identifies all objects that are a subclass of class 'item' (i.e. disks, folders, document files, alias files, etc.).</p>
+
+<pre><code>[finder files]</code></pre>
+
+<p>identifies all objects that are a subclass of class 'file' (i.e. document files, alias files, etc.).</p>
+
+<pre><code>[finder documentFiles]</code></pre>
+
+<p>identifies all objects of class 'document file' only.</p>
+
+<div class="hilitebox">
+
+<p>Understanding the structure of an application's AEOM is key to successfully manipulating it. To illustrate the above concepts, here is the AEOM for a simple hypothetical text editor:</p>
+
+<p><img src="relationships_example.gif" alt="AEOM relationships in an simple text editor." /></p>
+
+<p>The program has an application object as its root, which in turn has one-to-many relationships with its document and window objects.</p>
+
+<p>Each document object has one-to-many relationships to the characters, words and paragraphs of the text it contains, each of which in turn has one-to-many relationships to the characters, words and paragraphs of the text it contains, and so on to infinity.</p>
+
+<p>Finally, each window object has a one-to-one relationship to the document object whose content it displays.</p>
+
+</div>
+
+<h2>What is appscript?</h2>
+
+<p>Appscript is a high-level ObjC-to-Apple Event Manager bridge, providing APIs for use by Cocoa application developers. The appscript architecture consists of two layers:</p>
+
+<dl>
+<dt><code>AEM</code></dt><dd>A mid-level wrapper around Mac OS X's Apple Event Manager and Foundation APIs, providing an object-oriented API for building relational AEOM queries and dispatching events.</dd>
+
+<dt><code>Appscript</code></dt><dd>A high-level wrapper around <code>AEM</code>, providing automatic translation between human-readable application terminology and corresponding four-letter codes, and representing relational AEOM queries in an OO-like syntax for ease of use.</dd>
+</dl>
+
+<p> The AEM API is largely intended for use by higher-level libraries, though may also be used by developers in cases where an application lacks terminology, or bugs within its terminology prevent its use by appscript.</p>
+
+<p>The appscript layer consists of several base classes (prefix <code>AS</code>) and a code generator, <code>osaglue</code>, which creates static glue classes for individual applications. (Once completed, an additional "appscript bridge" API will provide a foundation for implementing appscript bridges on a variety of scripting languages.)</p>
+
+
+<p>For example, to set the size of the first character of every non-empty paragraph in every document of TextEdit to 24 pt:</p>
+
+<ul>
+<li>using aem:
+
+<pre><code>#import "Appscript/Appscript.h"
+
+AEMApplication *textedit;
+AEMEvent *evt;
+AEMPropertySpecifier *ref;
+
+textedit = [[AEMApplication alloc]
+                     initWithPath: @"/Applications/TextEdit.app"];
+
+ref = [[[[[[[AEMApp elements: 'docu']
+                    property: 'ctxt']
+                    elements: 'cpar'] byTest: [AEMIts notEquals: @"\n"]]
+                    elements: 'cha '] at: 1]
+                    property: 'ptsz'];
+
+evt = [textedit eventWithEventClass: 'core' eventID: 'getd'];
+
+[evt setParameter: ref forKeyword: '----'];
+[evt setParameter: [NSNumber numberWithInt: 24] forKeyword: 'data'];
+
+[evt send];</code></pre>
+</li>
+
+<li>using appscript:
+
+<pre><code>#import "TEGlue.h"
+
+TEApplication *textedit;
+TEReference *ref;
+
+textedit = [[TEApplication alloc] initWithName: @"TextEdit"];
+
+ref = [[[[[[[textedit documents]
+                           text]
+                     paragraphs] byTest: [TEIts notEquals: @"\n"]]
+                     characters] at: 1]
+                           size];
+
+[[[ref set] to: [NSNumber numberWithInt: 24]] send];</code></pre>
+</li>
+</ul>
+
+<!--(AE equivalent not shown due to sheer length and ugliness.)-->
+
+
+<hr />
+
+<p><a name="f1"></a>[1] Really an <code>OSType</code>: a 32-bit code, often represented as a 4-character string. Used in Carbon APIs such as the Apple Event Manager. Mnemonic values are preferred, e.g. '<tt>docu</tt>' = 'document'.</p>
+
+<p><a name="f2"></a>[2] Assuming a well-implemented AEOM; in practice most AEOM implementations suffer varying degrees of limitations in their ability to operate successfully on complex multi-object references. These limitations are generally not documented but discovered through trial and error.</p>
+
+
+</div>
+
+<!-- bottom navigation -->
+<div class="navbar">
+	<a href="01_introduction.html">Previous</a> | <a href="index.html">Up</a> | <a href="03_glues.html">Next</a>
+	
+</div>
+
+<!--footer-->
+<p class="footer">&copy; 2007 HAS</p>
+</body>
+</html>

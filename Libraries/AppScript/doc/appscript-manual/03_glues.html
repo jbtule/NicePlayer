@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+
+<title>appscript | 3. Glues</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<style type="text/css" media="all"><!--@import url(full.css);--></style>
+
+</head>
+<body>
+
+
+<h1>3. Glues</h1>
+
+<!-- top navigation -->
+<div class="navbar">
+	<a href="02_aboutappscripting.html">Previous</a> | <a href="index.html">Up</a> | <a href="04_gettinghelp.html">Next</a>
+	
+</div>
+
+<!-- content -->
+<div id="content">
+
+
+<h2>About glues</h2>
+
+<p>Whereas the Python and Ruby appscript bridges retrieve application terminology at runtime and use internal lookup tables to perform name-code translations, obj-appscript relies on static glue files to provide its terminology support.</p>
+
+
+<h2>Generating a glue</h2>
+
+<p>Glues are generated using the command-line <code>osaglue</code> tool:</p>
+
+<pre><code>osaglue [-hv] [-o output-directory] prefix [application-name]</code></pre>
+
+<li>The -h option prints this help and exits immediately.</li>
+
+<li>The -v option prints osaglue's version number and exits immediately.</li>
+
+<li>The <code>-o</code> option may be used to specify the directory to which the glue files should be written. If the directory doesn't already exist, one is created. If omitted, the glue files are written to the current directory.</li>
+
+<li>The prefix argument is prepended to the names of all glue files and classes. Developers should specify a unique prefix that won't cause namespace conflicts in their project.</li>
+
+<li>The application-name argument may be the name or full path of the application for which glues should be generated. If omitted, the resulting glue files will contain only the default terminology provided by appscript.</li>
+</ul>
+
+<p>For example, to output <code>TEGlue.h</code> and associated files for TextEdit to the folder <code>TEGlue</code>:</p>
+
+<pre><code>osaglue -o TEGlue TE TextEdit</code></pre>
+
+
+<h2>Using a glue</h2>
+
+<p>To use a glue, include the generated glue files in your project and import the main <code><var>PREFIX</var>Glue.h</code> header file, where <var>PREFIX</var> is the prefix code given in the <code>osaglue</code> command. For example:</p>
+
+<pre><code>import "TEGlue.h"</code></pre>
+
+<p>Each glue contains the following classes:</p>
+
+<ul>
+<li><code><var>PREFIX</var>Constant</code> -- represents Apple event types and enumerators, e.g. <code>TEConstant</code></li>
+
+<li><code><var>PREFIX</var>Reference</code> -- represents Apple Event Object Model queries (a.k.a. application references), e.g. <code>TEReference</code></li>
+
+<li><code><var>PREFIXNAME</var>Command</code> -- represents an application command (one class for each application command), e.g. <code>TEMakeCommand</code>, <code>TEMoveCommand</code>, etc.</li>
+
+<li><code><var>PREFIX</var>Application</code> -- represents an application, e.g. <code>TEApplication</code></li>
+</ul>
+
+
+<p>Each glue also provides three macros - <code><var>PREFIX</var>App</code>, <code><var>PREFIX</var>Con</code> and <code><var>PREFIX</var>Its</code> - for use in constructing application references.</code>
+
+
+<p class="hilitebox">Note that the code examples in this manual assume the presence of suitable glues; e.g. TextEdit-based examples assume a TextEdit glue with the prefix <code>TE</code>, Finder-based examples assume a Finder glue with the prefix <code>FN</code>, etc.</p>
+
+<!--TO DO: notes on glue structure, classes and naming conventions; brief description of reference and command syntax -->
+
+
+
+
+</div>
+
+<!-- bottom navigation -->
+<div class="navbar">
+	<a href="02_aboutappscripting.html">Previous</a> | <a href="index.html">Up</a> | <a href="04_gettinghelp.html">Next</a>
+	
+</div>
+
+<!--footer-->
+<p class="footer">&copy; 2007 HAS</p>
+</body>
+</html>

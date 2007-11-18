@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+
+<title>aem | 5. Targetting Applications</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<style type="text/css" media="all"><!--@import url(full.css);--></style>
+
+</head>
+<body>
+
+<h1>5. Targetting Applications</h1>
+
+<!-- top navigation -->
+<div class="navbar">
+	<a href="04_references.html">Previous</a> | <a href="index.html">Up</a> | <a href="06_buildingandsendingevents.html">Next</a>
+</div>
+
+<!-- content -->
+<div id="content">
+
+
+
+
+<h2>The <code>Application</code> class</h2>
+
+<p>The <code>Application</code> class represents an application to which Apple events will be sent. Its constructor allows applications to be identified in one of four ways: by full path, by eppc URL, by custom <code>AEAddressDesc</code>, or the host application if no other value is given. Its main method, <code>event</code>, is used to construct the Apple events to send. Several utility methods are also provided.</p>
+
+<pre><code>Application -- the target application
+
+    Class methods:
+
+        launch(path) -- launch an application in background if not
+                already running, and send it a 'ascrnoop' event
+            path : string -- application's path, e.g. '/Applications/iCal.app'
+
+        is_running?(path) -- Is an application currently running?
+            path : string -- application's path, e.g. '/Applications/iCal.app'
+            Result : boolean
+    
+    Constructors:
+
+        by_path(path)
+            path : string -- full path to local application
+                    (e.g. '/Applications/TextEdit.app')
+
+        by_pid(pid)
+            pid : integer -- Unix process id
+
+        by_url(url)
+            url : string -- url for remote process
+                    (e.g. 'eppc://user:pass@0.0.0.1/TextEdit')
+
+        by_desc(desc)
+            desc : AEDesc -- AEAddressDesc for application
+
+        current -- the host process
+
+    Methods:
+
+        event(...) -- construct an Apple event (see next chapter for details)
+
+        start_transaction(session=nil) -- start a new transaction;
+                all Events constructed after start_transaction is
+                called will belong to the same transaction until
+                end_transaction or abort_transaction is called
+            session : anything -- optional value identifying the 
+                    specific session (where supported)
+
+        end_transaction -- end the current transaction
+
+        abort_transaction -- abort the current transaction
+
+        reconnect -- Make sure this Application object has a valid
+                AEAddressDesc for the target application, relaunching
+                the target application if it's not currently running.
+                (Note: this only works for Application objects created
+                via the by_path constructor.)</code></pre>
+
+
+<h2>Creating <code>Application</code> objects</h2>
+
+<p>When targetting a local application by path, the full path to the application (or application bundle) must be given, including a <code>.app</code> suffix if present. Note that aem identifies local applications by process serial number for reliability. If the target application is not already running when a new <code>Application</code> instance is created, it will be started automatically so that a PSN can be acquired.</p>
+
+<p>If the <code>by_url</code> constructor is used, its <code>url</code> argument should be an eppc URL string. Aem will pack this as an <code>AEDesc</code> of <code>typeApplSignature</code>. The target machine must have Remote Apple Events enabled in its Sharing preferences.</p>
+
+<p>Clients can also supply their own <code>AEAddressDesc</code> if they prefer. This should be an <code>AE::AEDesc</code> of one of the following types:</p>
+
+<pre><code>KAE::TypeApplicationBundleID
+KAE::TypeApplicationURL
+KAE::TypeApplSignature
+KAE::TypeKernelProcessID
+KAE::TypeMachPort
+KAE::TypeProcessSerialNumber</code></pre>
+
+<p>See the Apple Event Manager documentation for more information on these addressing modes.</p>
+
+
+<h2>Launching applications</h2>
+
+<p><code>Application.launch</code> is a class method attached to the <code>Application</code> class for convenience. It allows a non-running application to be launched without sending it the 'run' event (<code>aevtoapp</code>) normally sent to applications - a 'no-op' event (<code>ascrnoop</code>) is sent instead. It should be called before creating an <code>Application</code> object for the target application, otherwise the application will be launched as normal.</p>
+
+
+<h2>Transactions</h2>
+
+<p>The <code>start_transaction</code> and <code>end_transaction</code> methods are used to start and stop transaction sessions for applications that support this. All events <em>created</em> while a transaction session is active will be identified as part of that transaction.</p>
+
+<p>Note that during a transaction, sending the application an event not created during that transaction will cause an error. Similarly, sending the application an event created during a transaction after that transaction has ended will cause an error.</p>
+
+<p>The <code>end_transaction</code> method must be called to close both successful and failed transactions on completion. If a transaction session is accidentally left open, aem will attempt to close it when the <code>Application</code> object is garbage-collected, although this cannot be guaranteed to succeed.</p>
+
+
+<h2>Reconnecting to local applications</h2>
+
+<p>Because local applications are identified by process serial number, an existing <code>Application</code> object created using the <code>path</code> argument will no longer hold a valid <code>AEAddressDesc</code> if the target application quits. Sending events to an invalid address will cause a <code>CommandError</code> -600 ("application isn't running") or -609 ("connection is invalid") to be raised.</p>
+
+<p>The <code>is_running?</code> class method can be used to check if a local application is running or not, given its full path.</p>
+
+<p>Calling the <code>reconnect</code> method will create a new <code>AEAddressDesc</code> for an existing <code>Application</code> object. If the application is not running at the time, it will be started automatically.</p>
+
+<p>Note that only <code>Event</code> instances created after <code>reconnect</code> is called will receive the new <code>AEAddressDesc</code>.  Any <code>Event</code> instances created before <code>reconnect</code> is called will still contain the old <code>AEAddressDesc</code>. Also note that the <code>reconnect</code> method will only work for <code>Application</code> objects created using the <code>by_path</code> constructor.</p>
+
+
+</div>
+
+<!-- bottom navigation -->
+<div class="navbar">
+	<a href="04_references.html">Previous</a> | <a href="index.html">Up</a> | <a href="06_buildingandsendingevents.html">Next</a>
+</div>
+
+<!--footer-->
+<p class="footer">&copy; 2006 HAS</p>
+</body>
+</html>

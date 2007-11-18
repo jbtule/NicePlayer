@@ -76,6 +76,9 @@
 -(void)setPresentingWindow:(id)window
 {
     presentingWindow = window;
+	if([self respondsToSelector:@selector(setCanBeVisibleOnAllSpaces:)])
+		[self setCanBeVisibleOnAllSpaces:[window canBeVisibleOnAllSpaces]];
+
 }
 
 - (BOOL)isExcludedFromWindowsMenu

@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+
+<title>aem | 3. Packing and unpacking data</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<style type="text/css" media="all"><!--@import url(full.css);--></style>
+
+</head>
+<body>
+
+<h1>3. Packing and unpacking data</h1>
+
+<!-- top navigation -->
+<div class="navbar">
+	<a href="02_apioverview.html">Previous</a> | <a href="index.html">Up</a> | <a href="04_references.html">Next</a>
+</div>
+
+<!-- content -->
+<div id="content">
+
+
+<h2>Codecs</h2>
+
+<p>The <code>AEMCodecs</code> class provides methods for converting Cocoa objects to <code>NSAppleEventDescriptor</code> instances, and vice-versa. See <code>codecs.h</code> for API documentation.</p>
+
+<p>When using AEM to send events to other applications, clients don't normally need to work directly with this class; <code>AEMApplication</code> will automatically create an instance of <code>AEMCodecs</code> to be used by default.</p>
+
+<p><code>AEMCodecs</code> can be subclassed to modify the default packing and/or unpacking behaviour if necessary. For example, if dealing with a legacy application that requires text values to be supplied as <code>typeChar</code> instead of <code>typeUnicodeText</code> descriptors, the following subclass will modify the default packing behaviour to suit:</p>
+
+<pre><code>@interface StringCodecs : AEMCodecs
+@end
+
+@implementation StringCodecs
+
+/* Pack strings as typeChar descriptors instead of typeUnicodeText */
+- (NSAppleEventDescriptor *)pack:(id)anObject {
+    if ([anObject isKindOfClass: [NSString class]])
+        return [[NSAppleEventDescriptor descriptorWithString: anObject] 
+                coerceToDescriptorType: typeChar];
+    else
+        return [super pack:anObject];
+}
+
+@end</code></pre>
+
+<p>Instances of this custom subclass can be passed to <code>AEMApplication</code>'s <code>-eventWithEventClass: eventID:returnID:codecs:</code> and <code>-eventWithEventClass:eventID:codecs:</code> methods to be used when adding attributes and parameters that event and unpacking its reply.</p>
+
+<p><code>AEMCodecs</code> can also be used to pack and unpack Cocoa objects when working with <code>NSAppleScript</code> or similar.</p> 
+
+<!--
+
+TO DO: customisation options: subclassing and extending pack/unpack, overriding individual encoder/decoder methods and packUnknown/unpackUnknown; when to instantiate/when to modify; notes on appscript integration; notes on differences to py-appscript Codecs? notes on add_unit_types
+
+-->
+
+
+
+<h2>Custom classes</h2>
+
+<p>While aem maps most common Apple Event Manager types directly to suitable Cocoa classes, there are several AE types that lack Cocoa equivalents. Accordingly, aem defines its own ObjC equivalents; these are listed below. See <code>types.h</code> for full API documentation.</p>
+
+
+<h3>Booleans</h3>
+
+<p>The <code>AEMBoolean</code> class represents the <code>typeTrue</code> and <code>typeFalse</code> Apple event types. AEM provides two macros, <code>AEMTrue</code> and <code>AEMFalse</code>, for creating instances of this class. <code>AEMBoolean</code> also provides a <code>-boolValue</code> method for obtaining a primitive <code>BOOL</code> value from an <code>AEMBoolean</code> instance.</p>
+
+
+
+<h3>Types, enumerators, etc.</h3>
+
+<p>The Apple Event Manager defines several types for representing type/class names, enumerator names, etc. Aem represents these types as subclasses of the abstract AEMTypeBase class.</p>
+
+<pre><code>@interface AEMType : AEMTypeBase
+
++ (id)typeWithCode:(OSType)code_;
+
+@end
+
+
+@interface AEMEnum : AEMTypeBase
+
++ (id)enumWithCode:(OSType)code_;
+
+@end
+
+
+@interface AEMProperty : AEMTypeBase
+
++ (id)propertyWithCode:(OSType)code_;
+
+@end
+
+
+@interface AEMKeyword : AEMTypeBase
+
++ (id)keywordWithCode:(OSType)code_;
+
+@end
+</code></pre>
+
+<p>Examples:</p>
+
+<pre><code>[AEMType typeWithCode: 'docu']
+[AEMEnum enumWithCode: 'yes ']</code></pre>
+
+
+
+<h3>File objects</h3>
+
+<p>While Mac OS X's Foundation API  provides an <code>NSURL</code> class suitable for representing values of the <code>typeFileURL</code> Apple event type, it doesn't provide class-based wrappers for the Carbon <code>Alias</code>, <code>FSRef</code> and (obsolete) <code>FSSpec</code> types commonly used to represent filesystem objects and locations, so AEM provides its own wrapper classes to compensate for this: <code>AEMAlias</code>, <code>AEMFSRef</code> and <code>AEMFSSpec</code>. Their APIs are shown below:</p>
+
+<pre><code>//abstract base class
+
+@interface AEMFileBase : NSObject
+
+- (id)initWithPath:(NSString *)path;
+
+- (id)initWithFileURL:(NSURL *)url;
+
+- (NSString *)path;
+
+- (NSURL *)url;
+
+@end
+
+
+// concrete classes
+
+@interface AEMAlias : AEMFileBase
+
++ (id)aliasWithPath:(NSString *)path;
+
++ (id)aliasWithFileURL:(NSURL *)url;
+
+@end
+
+
+@interface AEMFSRef : AEMFileBase
+
++ (id)fsrefWithPath:(NSString *)path;
+
++ (id)fsrefWithFileURL:(NSURL *)url;
+
+@end
+
+
+@interface AEMFSSpec : AEMFileBase
+
++ (id)fsspecWithPath:(NSString *)path;
+
++ (id)fsspecWithFileURL:(NSURL *)url;
+
+@end</code></pre>
+
+<p>All paths and URLs must be absolute, and only POSIX paths and file:// URLs are accepted.</p>
+
+<p class="hilitebox">Note that most scriptable applications do not use or understand POSIX paths, and while the Apple Event Manager does provide some built-in coercions for converting between path strings and alias/file objects, these work with HFS paths only. Therefore, when specifying files and folders to scriptable applications, use <code>AEMAlias</code>, <code>AEMFSRef</code>, <code>AEMFSSpec</code> or <code>NSURL</code> objects - not path strings - unless otherwise indicated.</p>
+
+
+
+<!-- TO DO: merge existing Types chapter content -->
+
+
+</div>
+
+<!-- bottom navigation -->
+<div class="navbar">
+	<a href="02_apioverview.html">Previous</a> | <a href="index.html">Up</a> | <a href="04_references.html">Next</a>
+</div>
+
+<!--footer-->
+<p class="footer">&copy; 2006 HAS</p>
+</body>
+</html>

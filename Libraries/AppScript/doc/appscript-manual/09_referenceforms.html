@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+
+<title>appscript | 9. Reference Forms</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<style type="text/css" media="all"><!--@import url(full.css);--></style>
+
+</head>
+<body>
+
+<h1>9. Reference Forms</h1>
+
+<!-- top navigation -->
+<div class="navbar">
+	<a href="08_realvsgenericreferences.html">Previous</a> | <a href="index.html">Up</a> | <a href="10_referenceexamples.html">Next</a>
+	
+</div>
+
+<!-- content -->
+<div id="content">
+<h2>Property reference</h2>
+
+<p>A property either contains a simple value or represents a one-to-one relationship between two application objects. Properties either describe the application object (its name, class, size, color, preferences, etc.) or provide a convenient reference to other object(s) of interest to users (e.g. home, currentTrack).</p>
+
+<p>Syntax:</p>
+<pre><code>[reference property]</code></pre>
+
+<p>Examples:</p>
+<pre><code>[textedit <em>name</em>]
+[[[textedit documents] at: 1] <em>text</em>]
+[[[finder <em>home</em>] files] <em>name</em>]</code></pre>
+
+
+
+<h2>Element references</h2>
+
+<p>Elements represent a one-to-many relationship between application objects. Elements usually reflect the containment structure of the application object model and generally provide multiple ways of referencing some or all of those objects (e.g. characters/words/paragraphs of documents by index/relative-position/range/filter).</p>
+
+<h3>All Elements</h3>
+
+<p>Syntax:</p>
+<pre><code>[reference elements]</code></pre>
+
+<p>Examples:</p>
+<pre><code>[[finder home] <em>folders</em>]
+[textedit <em>windows</em>]
+[[[textedit <em>documents</em>] <em>paragraphs</em>] <em>words</em>]</code></pre>
+
+
+<h3>by Name</h3>
+	
+<p>Syntax:</p>
+<pre><code>[elements byName: selector]
+        selector = NSString -- name of object (as matches its 'name' property)</code></pre>
+		
+<p>Examples:</p>
+<pre><code>[disks byName: @"Macintosh HD"]
+[files byName: @"index.html"]</code></pre>
+
+<p class="hilitebox">Note: applications usually treat object names as case-insensitive. Where multiple element have the same name, a by-name reference only identifies the first element found with that name. (Tip: to identify <em>all</em> elements with a particular name, use a by-test reference instead.)</p>
+
+
+<h3>by Index</h3>
+	
+<p>Syntax:</p>
+<pre><code>[elements byIndex: selector]
+        selector = NSNumber -- index of object
+
+[elements at: selector]
+        selector = int -- index of object</code></pre>
+		
+<p>Examples:</p>
+<pre><code>[words byIndex: [NSNumber numberWithInt: 3]]
+[items at: -1]</code></pre>
+
+<p class="hilitebox">Note: elements are <em>one-indexed</em> (AEM-style indexing), not zero-indexed (Ruby-style indexing).</p>
+
+<p>Note that while element indexes are usually integers, some applications may accept other types (e.g. Finder accepts aliases in filesystem references).</p>
+
+
+<h3>by ID</h3>
+
+<p>Syntax:</p>
+<pre><code>[elements byID: selector]
+        selector = anything -- object's id</code></pre>
+
+<p>Examples:</p>
+<pre><code>[windows byID: 4321]</code></pre>
+
+
+<h3>by Absolute Position</h3>
+
+<p>Syntax:</p>
+<pre><code>[elements first] -- first element
+[elements middle] -- middle element
+[elements last] -- last element
+[elements any] -- random element</code></pre>
+	
+<p>Examples:</p>
+<pre><code>[documents first]
+[paragraphs last]
+[files any]</code></pre>
+
+
+<h3>by Relative Position</h3>
+
+<p>Syntax:</p>
+<pre><code>[element previous: className] -- nearest element of a given class to appear 
+                                 before the specified element
+[element next: className] -- nearest element of a given class to appear 
+                             after the specified element
+        className = ASConstant -- class of element
+                                  (see <a href="06_classesandenums.html">Classes and Enumerated Types</a>)</code></pre>
+
+<p>Examples:</p>
+<pre><code>[[words at: 3] next: [TEConstant word]]
+[[paragraphs at: -1] previous: [TEConstant character]]</code></pre>
+
+
+<h3>by Range</h3>
+
+<p>Range references select all elements between and including two references indicating the start and end of the range. The start and end references are normally declared relative to the container of the elements being selected. These references are constructed using a glue-defined 'Con' macro, e.g. <code>TECon</code>, as their root. For example, to indicate the third paragraph of the currrent container object:</p>
+
+<pre><code>[[TECon paragraphs] at: 3]</code></pre>
+
+<p>For convenience, the <code>-byRange:</code> method also allows start and end references to be written in shorthand form where their element class is the same as the elements being selected; thus:</p>
+
+<pre><code>[[ref paragraphs] byRange: [[TECon paragraphs] at: 3]
+                                      [[TECon paragraphs] at: -1]]</code></pre>
+
+<p>can also be written as:</p>
+
+<pre><code>[[ref paragraphs] byRange: [[NSNumber numberWithInt: 3]
+                                  to: [[NSNumber numberWithInt: -1]]</code></pre>
+
+<p>Where start and end points are both indexes (the most common form), this can be shortened even further by using the <code>-at:to:</code> convenience method:</p>
+
+<pre><code>[[ref paragraphs] at: 3 to: -1]</code></pre>
+
+<p>Some applications can handle more complex range references. For example, the following will work in Tex-Edit Plus:</p>
+
+<pre><code>[[ref words] byRange: [[TEPCon characters] at: 5]
+                             to: [[TEPCon paragraphs] at: -2]]</code></pre>
+
+<p>Syntax:</p>
+<pre><code>[elements byRange: start to: end]
+        start = NSNumber | NSString | ASReference -- start of range
+        end = NSNumber | NSString | ASReference -- end of range
+
+[elements at: start to: end]
+        start = int -- start of range
+        end = int -- end of range</code></pre>
+	
+<p>Examples:</p>
+<pre><code>[folders byRange: @"Documents" to: @"Movies"]
+[documents at: 1 to: 3]
+[text byRange: [[TEPCon characters] at: 5]
+           to: [[TEPCon words] at: -2]]</code></pre>
+
+
+<h3>by Test</h3>
+
+<p>A reference to each element that satisfies one or more conditions specified by a test expression:</p>
+
+<pre><code>[elements byTest: testExpression]</code></pre>
+
+<p>Test expressions consist of the following:</p>
+
+<ul>
+<li><p>A relative reference to each element being tested. This reference must be constructed using the glue's 'Its' macro as its root, e.g. <code>TEIts</code>. Its-based references support all valid reference forms, allowing you to construct references to its properties and elements. For example:</p>
+	
+<pre><code>TEIts
+[TEIts size]
+[[TEIts words] first]</code></pre></li>
+
+<li><p>One or more conditional tests, implemented as methods on the reference being tested. Each method takes a test reference or a value as their sole argument.</p>
+
+<p>Syntax:</p>
+<pre><code>[reference lessThan: value]
+[reference lessOrEquals: value]
+[reference equals: value]
+[reference notEquals: value]
+[reference greaterThan: value]
+[reference greaterOrEquals: value]
+[reference startsWith: value]
+[reference endsWith: value]
+[reference contains: value]
+[reference isIn: value]
+[reference doesNotStartWith: value]
+[reference doesNotEndWith: value]
+[reference doesNotContain: value]
+[reference isNotIn: value]
+        value = reference or value</code></pre>
+
+<p>Examples:</p>
+<pre><code>[TEIts equals: @""]
+[[FNIts size] greaterThan: [NSNumber numberWithInt: 1024]]
+[[[TEIts words] first] startsWith: @"A"]
+[[[TEIts characters] first] equals: [[TEIts characters] last]]</code></pre>
+
+<p>Note that Boolean comparison tests can be written as either <code>[reference equals: AEMTrue]</code> or just <code>reference</code>, e.g. <code>[[folderRef files] byTest: [FNIts locked]]</code></p></li>
+
+<li><p>Zero or more logical tests, implemented as properties/methods on conditional tests. The <code>-AND:</code> and <code>-OR:</code> methods take either a conditional or logic test as arguments <!-- TO DO one or more conditional or logic tests as arguments-->.</p>
+
+<p>Syntax:</p>
+<pre><code>[test AND: test]
+[test OR: test]
+[test NOT]</code></pre>
+
+<p>Examples:</p>
+<pre><code>[[TEIts equals: @""] NOT]
+
+[[[FNIts size] greaterThan: [NSNumber numberWithInt: 1024]] AND:
+        [[FNIts size] lessThan: [NSNumber numberWithInt: 10240]]<!--TO DO
+
+its.words[1].starts_with('A').or(
+    its.words[2].contains('ce'),
+    its.words[1].eq('Foo'))--></code></pre></li>
+</ul>
+
+
+
+<h2>Insertion location</h2>
+
+<p>Insertion locations can be specified at the beginning or end of all elements, or before or after a specified element or element range.</p>
+
+<p>Syntax:</p>
+<pre><code>[elements start]
+[elements end]
+[element before]
+[element after]</code></pre>
+	
+<p>Examples:</p>
+<pre><code>[documents end]
+[[paragraphs at: 1] before]</code></pre>
+
+
+
+</div>
+
+<!-- bottom navigation -->
+<div class="navbar">
+	<a href="08_realvsgenericreferences.html">Previous</a> | <a href="index.html">Up</a> | <a href="10_referenceexamples.html">Next</a>
+	
+</div>
+
+<!--footer-->
+<p class="footer">&copy; 2007 HAS</p>
+</body>
+</html>
