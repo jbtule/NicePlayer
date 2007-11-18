@@ -191,6 +191,7 @@
 		6990B5140CF0B2F300DA15C2 /* SEReferenceGlue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6990B5090CF0B2F300DA15C2 /* SEReferenceGlue.m */; };
 		6990B5150CF0B2F300DA15C2 /* SEReferenceRendererGlue.h in Headers */ = {isa = PBXBuildFile; fileRef = 6990B50A0CF0B2F300DA15C2 /* SEReferenceRendererGlue.h */; };
 		6990B5160CF0B2F300DA15C2 /* SEReferenceRendererGlue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6990B50B0CF0B2F300DA15C2 /* SEReferenceRendererGlue.m */; };
+		6990B63F0CF0CF8300DA15C2 /* Appscript.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6990B4E80CF0A9D300DA15C2 /* Appscript.framework */; };
 		69945E6E0CCA639600CE0AD3 /* inputpref.png in Resources */ = {isa = PBXBuildFile; fileRef = 69945E6C0CCA639500CE0AD3 /* inputpref.png */; };
 		69945E6F0CCA639600CE0AD3 /* windpref.png in Resources */ = {isa = PBXBuildFile; fileRef = 69945E6D0CCA639600CE0AD3 /* windpref.png */; };
 		699461F20CCBEDCF00CE0AD3 /* UniversalCharsetDetector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699461EB0CCBED9F00CE0AD3 /* UniversalCharsetDetector.framework */; };
@@ -367,6 +368,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				6990B63F0CF0CF8300DA15C2 /* Appscript.framework in CopyFiles */,
 				699461F30CCBEDE900CE0AD3 /* UniversalCharsetDetector.framework in CopyFiles */,
 				69DE19D60BE97321009D28B9 /* Sparkle.framework in CopyFiles */,
 				2510A62F0B06392600CA8110 /* STEnum.framework in CopyFiles */,
