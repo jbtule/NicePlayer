@@ -603,11 +603,11 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.96.1</string>
+	<string>0.96.2</string>
 	<key>CFBundleSignature</key>
 	<string>nIcE</string>
 	<key>CFBundleVersion</key>
-	<string>573</string>
+	<string>575</string>
 	<key>JTAuthorEmail</key>
 	<string>NicePlayer@osiris.laya.com</string>
 	<key>NSAppleScriptEnabled</key>

@@ -1136,12 +1136,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 251FEF6F0855184200D38B8E /* Build configuration list for PBXNativeTarget "NicePlayer" */;
 			buildPhases = (
+				25295068076F804700D4B325 /* ShellScript */,
 				8D15AC280486D014006FF6A4 /* Headers */,
 				8D15AC2B0486D014006FF6A4 /* Resources */,
 				8D15AC300486D014006FF6A4 /* Sources */,
 				3E5302E90684096B00923E9B /* CopyFiles */,
 				259DE26B0760F769000FE804 /* CopyFiles */,
-				25295068076F804700D4B325 /* ShellScript */,
 				2513D30D07BDACBC00BB6055 /* ShellScript */,
 				8D15AC330486D014006FF6A4 /* Frameworks */,
 				691ECE150CE0362B0040AE45 /* ShellScript */,
