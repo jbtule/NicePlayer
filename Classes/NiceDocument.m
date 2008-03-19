@@ -1316,11 +1316,11 @@ proposedItem:(id)tItem
 #pragma mark -
 #pragma mark Apple Remote Delegate Method
 
--(void)appleRemoteButton:(AppleRemoteEventIdentifier)buttonIdentifier pressedDown:(BOOL)pressedDown 
+-(void)appleRemoteButton:(RemoteControlEventIdentifier)buttonIdentifier pressedDown:(BOOL)pressedDown 
 {
 #define REMOTE_FIRING_INTERVAL (0.2)
     switch(buttonIdentifier) {
-	case kRemoteButtonVolume_Plus:
+	case kRemoteButtonPlus:
 	    if(pressedDown){
 		[theMovieView cancelPreviousPerformRequestsWithSelector:@"hideOverLayVolume"];
 		[theMovieView incrementVolume];
@@ -1336,7 +1336,7 @@ proposedItem:(id)tItem
 		[theMovieView timedHideOverlayWithSelector:@"hideOverLayVolume"];
 	    }
 	    break;
-	case kRemoteButtonVolume_Minus:
+	case kRemoteButtonMinus:
 	    if(pressedDown){
 		[theMovieView cancelPreviousPerformRequestsWithSelector:@"hideOverLayVolume"];
 		[theMovieView decrementVolume];
@@ -1352,20 +1352,31 @@ proposedItem:(id)tItem
 	    }
 	    break;			
 	case kRemoteButtonMenu:
+			if(!pressedDown){
+
 	    [[self window] toggleWindowFullScreen];
+			}
 	    break;			
 	case kRemoteButtonPlay:
+			if(!pressedDown){
 	    [[((NiceWindow *)[self window]) playButton] togglePlaying];
 	    [((NiceWindow *)[self window]) automaticShowOverlayControllerWindow];
 	    [theMovieView smartHideMouseOverOverlays];
+			}
 	    break;			
 	case kRemoteButtonRight:
+			if(!pressedDown){
+
 	    [theMovieView playNextMovie];
 	    [theMovieView smartHideMouseOverOverlays];
+			}
 	    break;			
 	case kRemoteButtonLeft:
+			if(!pressedDown){
+
 	    [theMovieView playPrevMovie];
 	    [theMovieView smartHideMouseOverOverlays];
+			}
 	    break;			
 	case kRemoteButtonRight_Hold:
 	    if(pressedDown){
@@ -1395,15 +1406,21 @@ proposedItem:(id)tItem
 		[theMovieView smartHideMouseOverOverlays];
 	    }
 	    break;			
-	case kRemoteButtonPlay_Sleep:
+	case kRemoteButtonPlay_Hold:
+			if(!pressedDown){
+
 	    [theMovieView cancelPreviousPerformRequestsWithSelector:@"hideOverLayVolume"];
 	    [theMovieView toggleMute];
 	    [theMovieView showOverLayVolume];
 	    [theMovieView timedHideOverlayWithSelector:@"hideOverLayVolume"];
+			}
 	    break;			
 	case kRemoteButtonMenu_Hold:
+			if(!pressedDown){
+
 	    [[self window] unFullScreen];
 	    [[self window] performMiniaturize:self];
+			}
 	    break;
 	case kRemoteControl_Switched:
 	    break;

@@ -110,9 +110,9 @@ id swapForWindows(id each, void* context){
                                                     selector:@selector(preventSleep:)
                                                     userInfo:nil repeats:YES];
     [NSApp setDelegate:self];
-    [[AppleRemote sharedRemote] setDelegate:self];
+	[NSApp setRemote:[[AppleRemote alloc]initWithDelegate:self]];
     if(![[Preferences mainPrefs] disableAppleRemote])
-	[[AppleRemote sharedRemote] startListening:self];
+		[[NSApp remote] startListening:self];
 }
 
 -(void)dealloc{
@@ -467,7 +467,7 @@ id swapForWindows(id each, void* context){
 #pragma mark -
 #pragma mark Apple Remote Delegate Method
 
--(void)appleRemoteButton:(AppleRemoteEventIdentifier)buttonIdentifier pressedDown:(BOOL)pressedDown 
+-(void)sendRemoteButtonEvent:(RemoteControlEventIdentifier)buttonIdentifier pressedDown:(BOOL)pressedDown  remoteControl: (RemoteControl*) remoteControl
 {
     if([[NSApp mainWindow] isKindOfClass:[NiceWindow class]])
 	[[[[NSApp mainWindow] windowController] document] appleRemoteButton:buttonIdentifier pressedDown:pressedDown];

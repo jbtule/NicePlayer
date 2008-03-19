@@ -48,12 +48,18 @@
 
 #import "NiceController.h"
 @class SUUpdater;
+@class RemoteControl;
 
 @interface NPApplication : NSApplication {
 	NSTimer *inactiveTimer;
 	NSPoint lastPoint;
 	IBOutlet SUUpdater* sparkleUpdater;
+	RemoteControl* remote;
+
 }
+
+-(RemoteControl*) remote;
+-(void)setRemote:(RemoteControl*)aRemote;
 
 -(void)setShouldCheckAtStartup:(bool)aBool;
 -(bool)shouldCheckAtStartUp;

@@ -88,6 +88,15 @@ BOOL selectNiceWindow(id each, void* context){
     
 }
 
+-(RemoteControl*) remote{
+	return remote;
+}
+
+-(void)setRemote:(RemoteControl*)aRemote{
+	remote=aRemote;
+}
+
+
 -(IBAction)checkForUpdatesMain:(id)sender{
 	if(NPBuildingForMacPorts)
 		NSRunInformationalAlertPanel(@"This copy of NicePlayer was built using MacPorts!", @"To update using the ports system on your computer.", @"Okay",nil, nil);

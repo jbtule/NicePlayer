@@ -51,8 +51,6 @@
 		257D61560753F7AD00702BD0 /* NPMovieProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 257D61540753F7AD00702BD0 /* NPMovieProtocol.h */; };
 		257D61680753F92D00702BD0 /* NPMovieView.h in Headers */ = {isa = PBXBuildFile; fileRef = 257D61660753F92D00702BD0 /* NPMovieView.h */; };
 		257D61690753F92D00702BD0 /* NPMovieView.m in Sources */ = {isa = PBXBuildFile; fileRef = 257D61670753F92D00702BD0 /* NPMovieView.m */; };
-		258C2AE80A2D69C200AC22BB /* AppleRemote.h in Headers */ = {isa = PBXBuildFile; fileRef = 258C2AE60A2D69C200AC22BB /* AppleRemote.h */; };
-		258C2AE90A2D69C200AC22BB /* AppleRemote.m in Sources */ = {isa = PBXBuildFile; fileRef = 258C2AE70A2D69C200AC22BB /* AppleRemote.m */; };
 		258C2B710A2D713E00AC22BB /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 258C2B700A2D713E00AC22BB /* IOKit.framework */; };
 		259CC53907374066001ED5FA /* NPApplication.h in Headers */ = {isa = PBXBuildFile; fileRef = 259CC53707374066001ED5FA /* NPApplication.h */; };
 		259CC53A07374066001ED5FA /* NPApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 259CC53807374066001ED5FA /* NPApplication.m */; };
@@ -202,6 +200,12 @@
 		69B2197C0BC72AA60054E10E /* TCallScript.h in Headers */ = {isa = PBXBuildFile; fileRef = 69B219780BC72AA60054E10E /* TCallScript.h */; };
 		69B2197D0BC72AA60054E10E /* TCallScript.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B219790BC72AA60054E10E /* TCallScript.m */; };
 		69BCF5510B62C4C20000ABEF /* ogg.icns in Resources */ = {isa = PBXBuildFile; fileRef = 69BCF5500B62C4C20000ABEF /* ogg.icns */; };
+		69D9B6BC0D908FD4009D30A0 /* AppleRemote.h in Headers */ = {isa = PBXBuildFile; fileRef = 69D9B6B60D908FD4009D30A0 /* AppleRemote.h */; };
+		69D9B6BD0D908FD4009D30A0 /* AppleRemote.m in Sources */ = {isa = PBXBuildFile; fileRef = 69D9B6B70D908FD4009D30A0 /* AppleRemote.m */; };
+		69D9B6BE0D908FD4009D30A0 /* HIDRemoteControlDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 69D9B6B80D908FD4009D30A0 /* HIDRemoteControlDevice.h */; };
+		69D9B6BF0D908FD4009D30A0 /* HIDRemoteControlDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 69D9B6B90D908FD4009D30A0 /* HIDRemoteControlDevice.m */; };
+		69D9B6C00D908FD4009D30A0 /* RemoteControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 69D9B6BA0D908FD4009D30A0 /* RemoteControl.h */; };
+		69D9B6C10D908FD4009D30A0 /* RemoteControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 69D9B6BB0D908FD4009D30A0 /* RemoteControl.m */; };
 		69DE19D50BE97317009D28B9 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69DE19D20BE972F1009D28B9 /* Sparkle.framework */; };
 		69DE19D60BE97321009D28B9 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 69DE19D20BE972F1009D28B9 /* Sparkle.framework */; };
 		69EFD1BC0B5C8E3400359BF4 /* divx.icns in Resources */ = {isa = PBXBuildFile; fileRef = 69EFD1BB0B5C8E3400359BF4 /* divx.icns */; };
@@ -425,8 +429,6 @@
 		257D61540753F7AD00702BD0 /* NPMovieProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NPMovieProtocol.h; path = "Classes/Viewer Interface/Pluggable Players/NPMovieProtocol.h"; sourceTree = "<group>"; };
 		257D61660753F92D00702BD0 /* NPMovieView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NPMovieView.h; path = "Classes/Viewer Interface/NPMovieView.h"; sourceTree = "<group>"; };
 		257D61670753F92D00702BD0 /* NPMovieView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NPMovieView.m; path = "Classes/Viewer Interface/NPMovieView.m"; sourceTree = "<group>"; };
-		258C2AE60A2D69C200AC22BB /* AppleRemote.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = AppleRemote.h; path = Classes/AppleRemote.h; sourceTree = "<group>"; };
-		258C2AE70A2D69C200AC22BB /* AppleRemote.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = AppleRemote.m; path = Classes/AppleRemote.m; sourceTree = "<group>"; };
 		258C2B700A2D713E00AC22BB /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
 		259CC53707374066001ED5FA /* NPApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NPApplication.h; path = Classes/NPApplication.h; sourceTree = "<group>"; };
 		259CC53807374066001ED5FA /* NPApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NPApplication.m; path = Classes/NPApplication.m; sourceTree = "<group>"; };
@@ -581,6 +583,12 @@
 		69B219780BC72AA60054E10E /* TCallScript.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = TCallScript.h; sourceTree = "<group>"; };
 		69B219790BC72AA60054E10E /* TCallScript.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = TCallScript.m; sourceTree = "<group>"; };
 		69BCF5500B62C4C20000ABEF /* ogg.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = ogg.icns; sourceTree = "<group>"; };
+		69D9B6B60D908FD4009D30A0 /* AppleRemote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppleRemote.h; path = Classes/AppleRemote/AppleRemote.h; sourceTree = "<group>"; };
+		69D9B6B70D908FD4009D30A0 /* AppleRemote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppleRemote.m; path = Classes/AppleRemote/AppleRemote.m; sourceTree = "<group>"; };
+		69D9B6B80D908FD4009D30A0 /* HIDRemoteControlDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HIDRemoteControlDevice.h; path = Classes/AppleRemote/HIDRemoteControlDevice.h; sourceTree = "<group>"; };
+		69D9B6B90D908FD4009D30A0 /* HIDRemoteControlDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HIDRemoteControlDevice.m; path = Classes/AppleRemote/HIDRemoteControlDevice.m; sourceTree = "<group>"; };
+		69D9B6BA0D908FD4009D30A0 /* RemoteControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RemoteControl.h; path = Classes/AppleRemote/RemoteControl.h; sourceTree = "<group>"; };
+		69D9B6BB0D908FD4009D30A0 /* RemoteControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RemoteControl.m; path = Classes/AppleRemote/RemoteControl.m; sourceTree = "<group>"; };
 		69DE19C80BE972F1009D28B9 /* Sparkle.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Sparkle.xcodeproj; path = Libraries/sparkle/Sparkle.xcodeproj; sourceTree = "<group>"; };
 		69EFD1BB0B5C8E3400359BF4 /* divx.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = divx.icns; sourceTree = "<group>"; };
 		8D15AC360486D014006FF6A4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -883,14 +891,13 @@
 		2A37F4ABFDCFA73011CA2CEA /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				69D9B6C20D908FDE009D30A0 /* AppleRemote */,
 				2513D22907BDA43900BB6055 /* App/Controller */,
 				257D61370753F45800702BD0 /* Viewer Interface */,
 				3E8C9A93074D78350048CB70 /* Subtitle.h */,
 				3E8C9A94074D78350048CB70 /* Subtitle.m */,
 				2513D2F307BDAC4200BB6055 /* FadeOut.h */,
 				2513D2F407BDAC4200BB6055 /* FadeOut.m */,
-				258C2AE60A2D69C200AC22BB /* AppleRemote.h */,
-				258C2AE70A2D69C200AC22BB /* AppleRemote.m */,
 				252BD45D07697C6A006CF96B /* Document/Window */,
 				257029C50734D15000967356 /* Preferences */,
 				25B912D707416725001B68D9 /* Overlay Widgets */,
@@ -1051,6 +1058,19 @@
 			path = AttachedScriptCode;
 			sourceTree = "<group>";
 		};
+		69D9B6C20D908FDE009D30A0 /* AppleRemote */ = {
+			isa = PBXGroup;
+			children = (
+				69D9B6B60D908FD4009D30A0 /* AppleRemote.h */,
+				69D9B6B70D908FD4009D30A0 /* AppleRemote.m */,
+				69D9B6B80D908FD4009D30A0 /* HIDRemoteControlDevice.h */,
+				69D9B6B90D908FD4009D30A0 /* HIDRemoteControlDevice.m */,
+				69D9B6BA0D908FD4009D30A0 /* RemoteControl.h */,
+				69D9B6BB0D908FD4009D30A0 /* RemoteControl.m */,
+			);
+			name = AppleRemote;
+			sourceTree = "<group>";
+		};
 		69DE19C90BE972F1009D28B9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -1109,7 +1129,6 @@
 				3E28CCA40808E0F000F59FF5 /* NiceWindowController.h in Headers */,
 				25CC86500831DA2A00027929 /* RCMovieView.h in Headers */,
 				3E64FA4508F2314C0010E3DA /* NicePlugin.h in Headers */,
-				258C2AE80A2D69C200AC22BB /* AppleRemote.h in Headers */,
 				2510A23B0B04B53D00CA8110 /* DelegateAnimation.h in Headers */,
 				697496120B55EA800030D4D2 /* OverlayTitleWindow.h in Headers */,
 				6974971F0B56033F0030D4D2 /* TitleBackgroundView.h in Headers */,
@@ -1126,6 +1145,9 @@
 				6990B5120CF0B2F300DA15C2 /* SEGlue.h in Headers */,
 				6990B5130CF0B2F300DA15C2 /* SEReferenceGlue.h in Headers */,
 				6990B5150CF0B2F300DA15C2 /* SEReferenceRendererGlue.h in Headers */,
+				69D9B6BC0D908FD4009D30A0 /* AppleRemote.h in Headers */,
+				69D9B6BE0D908FD4009D30A0 /* HIDRemoteControlDevice.h in Headers */,
+				69D9B6C00D908FD4009D30A0 /* RemoteControl.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1467,7 +1489,6 @@
 				3E28CCA50808E0F000F59FF5 /* NiceWindowController.m in Sources */,
 				25CC86510831DA2A00027929 /* RCMovieView.m in Sources */,
 				3E64FA4608F2314C0010E3DA /* NicePlugin.m in Sources */,
-				258C2AE90A2D69C200AC22BB /* AppleRemote.m in Sources */,
 				2510A23C0B04B53D00CA8110 /* DelegateAnimation.m in Sources */,
 				697496130B55EA800030D4D2 /* OverlayTitleWindow.m in Sources */,
 				697497200B56033F0030D4D2 /* TitleBackgroundView.m in Sources */,
@@ -1483,6 +1504,9 @@
 				6990B5110CF0B2F300DA15C2 /* SEConstantGlue.m in Sources */,
 				6990B5140CF0B2F300DA15C2 /* SEReferenceGlue.m in Sources */,
 				6990B5160CF0B2F300DA15C2 /* SEReferenceRendererGlue.m in Sources */,
+				69D9B6BD0D908FD4009D30A0 /* AppleRemote.m in Sources */,
+				69D9B6BF0D908FD4009D30A0 /* HIDRemoteControlDevice.m in Sources */,
+				69D9B6C10D908FD4009D30A0 /* RemoteControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

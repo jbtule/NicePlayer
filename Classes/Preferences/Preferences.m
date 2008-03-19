@@ -235,9 +235,9 @@
 {
     disableAppleRemote = aBool;
     if(!disableAppleRemote)
-	[[AppleRemote sharedRemote] startListening:self];
+	[[NSApp remote] startListening:self];
     else
-	[[AppleRemote sharedRemote] stopListening:self];
+	[[NSApp remote] stopListening:self];
 
     [[NSUserDefaults standardUserDefaults] setBool:aBool forKey:@"disableAppleRemote"];
 }
