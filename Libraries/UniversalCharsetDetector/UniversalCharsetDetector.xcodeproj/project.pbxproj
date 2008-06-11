@@ -110,7 +110,7 @@
 		3667D1A70A0175260035467C /* UniversalChardetTest.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; path = UniversalChardetTest.cpp; sourceTree = "<group>"; };
 		3667D27C0A017B590035467C /* UniversalCharsetDetector.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = UniversalCharsetDetector.h; path = universalchardet/src/base/UniversalCharsetDetector.h; sourceTree = "<group>"; };
 		3667D3010A0184250035467C /* UniversalCharsetDetector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UniversalCharsetDetector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3667D3020A0184250035467C /* UniversalCharsetDetector-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "UniversalCharsetDetector-Info.plist"; sourceTree = SOURCE_ROOT; };
+		3667D3020A0184250035467C /* UniversalCharsetDetector-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UniversalCharsetDetector-Info.plist"; sourceTree = SOURCE_ROOT; };
 		3667D5150A01A1460035467C /* MPL-1.1.html */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.html; path = "MPL-1.1.html"; sourceTree = SOURCE_ROOT; };
 		3667D5300A01A4C20035467C /* README.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = README.rtf; sourceTree = SOURCE_ROOT; };
 		36A5B7400A8B7A50009036AC /* libstdc++-static.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libstdc++-static.a"; path = "/usr/lib/libstdc++-static.a"; sourceTree = "<absolute>"; };

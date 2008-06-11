@@ -247,39 +247,11 @@
 			remoteGlobalIDString = 3E87022C08DD32CF0015C10A;
 			remoteInfo = UnitTests;
 		};
-		3E5970EF09FC8DBB001ED4FA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3E5970CB09FC8D9A001ED4FA /* CocoaScriptMenu.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
-			remoteInfo = CocoaScriptMenu;
-		};
-		3E5970F109FC8DC0001ED4FA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3EEA737109FC87FD00AABB1F /* STEnum10.4.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 3EBAD61C08006A950040D4A3;
-			remoteInfo = "STEnum Embedable";
-		};
-		3EC3E295092DAB20008CEE8D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 25C5C1E408D4B81400987A95 /* DVDPlayer.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
-			remoteInfo = DVDPlayer;
-		};
 		3EEA72F709FC84A700AABB1F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3EEA72EE09FC84A700AABB1F /* HodgePodge.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
-			remoteInfo = HodgePodge;
-		};
-		3EEA730C09FC84D000AABB1F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3EEA72EE09FC84A700AABB1F /* HodgePodge.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
 			remoteInfo = HodgePodge;
 		};
 		3EEA731909FC853F00AABB1F /* PBXContainerItemProxy */ = {
@@ -296,12 +268,61 @@
 			remoteGlobalIDString = 3E204881093D5C1E00305494;
 			remoteInfo = "EncryptOC Test";
 		};
-		3EEA732409FC859000AABB1F /* PBXContainerItemProxy */ = {
+		691F9D560DFF6A3F000FB98B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3E5970CB09FC8D9A001ED4FA /* CocoaScriptMenu.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216 /* CocoaScriptMenu */;
+			remoteInfo = CocoaScriptMenu;
+		};
+		691F9D580DFF6A3F000FB98B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 25C5C1E408D4B81400987A95 /* DVDPlayer.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA /* DVDPlayer */;
+			remoteInfo = DVDPlayer;
+		};
+		691F9D5A0DFF6A3F000FB98B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3EEA737109FC87FD00AABB1F /* STEnum10.4.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 3EBAD61C08006A950040D4A3 /* STEnum */;
+			remoteInfo = STEnum;
+		};
+		691F9D5C0DFF6A3F000FB98B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3EEA72EE09FC84A700AABB1F /* HodgePodge.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216 /* HodgePodge */;
+			remoteInfo = HodgePodge;
+		};
+		691F9D5E0DFF6A3F000FB98B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 69DE19C80BE972F1009D28B9 /* Sparkle.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216 /* Sparkle */;
+			remoteInfo = Sparkle;
+		};
+		691F9D600DFF6A3F000FB98B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6990B4E00CF0A9D300DA15C2 /* Appscript.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216 /* Appscript */;
+			remoteInfo = Appscript;
+		};
+		691F9D620DFF6A3F000FB98B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3EEA731409FC853F00AABB1F /* EncryptOC.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216 /* EncryptOC */;
 			remoteInfo = EncryptOC;
+		};
+		691F9D640DFF6A3F000FB98B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 699461E30CCBED9F00CE0AD3 /* UniversalCharsetDetector.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 3667D3000A0184250035467C /* UniversalCharsetDetector */;
+			remoteInfo = UniversalCharsetDetector;
 		};
 		69765B360BFBDE7600D9C23B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -317,13 +338,6 @@
 			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
 			remoteInfo = Appscript;
 		};
-		6990B4E90CF0A9EE00DA15C2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6990B4E00CF0A9D300DA15C2 /* Appscript.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
-			remoteInfo = Appscript;
-		};
 		699461EA0CCBED9F00CE0AD3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 699461E30CCBED9F00CE0AD3 /* UniversalCharsetDetector.xcodeproj */;
@@ -331,25 +345,11 @@
 			remoteGlobalIDString = 3667D3010A0184250035467C;
 			remoteInfo = UniversalCharsetDetector;
 		};
-		699461EE0CCBEDAF00CE0AD3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 699461E30CCBED9F00CE0AD3 /* UniversalCharsetDetector.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 3667D3000A0184250035467C;
-			remoteInfo = UniversalCharsetDetector;
-		};
 		69DE19D10BE972F1009D28B9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 69DE19C80BE972F1009D28B9 /* Sparkle.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
-			remoteInfo = Sparkle;
-		};
-		69DE1A3E0BE97CD9009D28B9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 69DE19C80BE972F1009D28B9 /* Sparkle.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
 			remoteInfo = Sparkle;
 		};
 /* End PBXContainerItemProxy section */
@@ -1171,14 +1171,14 @@
 			buildRules = (
 			);
 			dependencies = (
-				69DE1A3F0BE97CD9009D28B9 /* PBXTargetDependency */,
-				3EC3E296092DAB20008CEE8D /* PBXTargetDependency */,
-				3E5970F209FC8DC0001ED4FA /* PBXTargetDependency */,
-				3EEA732509FC859000AABB1F /* PBXTargetDependency */,
-				3E5970F009FC8DBB001ED4FA /* PBXTargetDependency */,
-				3EEA730D09FC84D000AABB1F /* PBXTargetDependency */,
-				699461EF0CCBEDAF00CE0AD3 /* PBXTargetDependency */,
-				6990B4EA0CF0A9EE00DA15C2 /* PBXTargetDependency */,
+				691F9D570DFF6A3F000FB98B /* PBXTargetDependency */,
+				691F9D590DFF6A3F000FB98B /* PBXTargetDependency */,
+				691F9D5B0DFF6A3F000FB98B /* PBXTargetDependency */,
+				691F9D5D0DFF6A3F000FB98B /* PBXTargetDependency */,
+				691F9D5F0DFF6A3F000FB98B /* PBXTargetDependency */,
+				691F9D610DFF6A3F000FB98B /* PBXTargetDependency */,
+				691F9D630DFF6A3F000FB98B /* PBXTargetDependency */,
+				691F9D650DFF6A3F000FB98B /* PBXTargetDependency */,
 			);
 			name = NicePlayer;
 			productInstallPath = "$(HOME)/Applications";
@@ -1513,45 +1513,45 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3E5970F009FC8DBB001ED4FA /* PBXTargetDependency */ = {
+		691F9D570DFF6A3F000FB98B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = CocoaScriptMenu;
-			targetProxy = 3E5970EF09FC8DBB001ED4FA /* PBXContainerItemProxy */;
+			targetProxy = 691F9D560DFF6A3F000FB98B /* PBXContainerItemProxy */;
 		};
-		3E5970F209FC8DC0001ED4FA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "STEnum Embedable";
-			targetProxy = 3E5970F109FC8DC0001ED4FA /* PBXContainerItemProxy */;
-		};
-		3EC3E296092DAB20008CEE8D /* PBXTargetDependency */ = {
+		691F9D590DFF6A3F000FB98B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = DVDPlayer;
-			targetProxy = 3EC3E295092DAB20008CEE8D /* PBXContainerItemProxy */;
+			targetProxy = 691F9D580DFF6A3F000FB98B /* PBXContainerItemProxy */;
 		};
-		3EEA730D09FC84D000AABB1F /* PBXTargetDependency */ = {
+		691F9D5B0DFF6A3F000FB98B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = STEnum;
+			targetProxy = 691F9D5A0DFF6A3F000FB98B /* PBXContainerItemProxy */;
+		};
+		691F9D5D0DFF6A3F000FB98B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = HodgePodge;
-			targetProxy = 3EEA730C09FC84D000AABB1F /* PBXContainerItemProxy */;
+			targetProxy = 691F9D5C0DFF6A3F000FB98B /* PBXContainerItemProxy */;
 		};
-		3EEA732509FC859000AABB1F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = EncryptOC;
-			targetProxy = 3EEA732409FC859000AABB1F /* PBXContainerItemProxy */;
-		};
-		6990B4EA0CF0A9EE00DA15C2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Appscript;
-			targetProxy = 6990B4E90CF0A9EE00DA15C2 /* PBXContainerItemProxy */;
-		};
-		699461EF0CCBEDAF00CE0AD3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = UniversalCharsetDetector;
-			targetProxy = 699461EE0CCBEDAF00CE0AD3 /* PBXContainerItemProxy */;
-		};
-		69DE1A3F0BE97CD9009D28B9 /* PBXTargetDependency */ = {
+		691F9D5F0DFF6A3F000FB98B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Sparkle;
-			targetProxy = 69DE1A3E0BE97CD9009D28B9 /* PBXContainerItemProxy */;
+			targetProxy = 691F9D5E0DFF6A3F000FB98B /* PBXContainerItemProxy */;
+		};
+		691F9D610DFF6A3F000FB98B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Appscript;
+			targetProxy = 691F9D600DFF6A3F000FB98B /* PBXContainerItemProxy */;
+		};
+		691F9D630DFF6A3F000FB98B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = EncryptOC;
+			targetProxy = 691F9D620DFF6A3F000FB98B /* PBXContainerItemProxy */;
+		};
+		691F9D650DFF6A3F000FB98B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = UniversalCharsetDetector;
+			targetProxy = 691F9D640DFF6A3F000FB98B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1644,7 +1644,6 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				MACOSX_DEPLOYMENT_TARGET = 10.4;
-				OPTIMIZATION_CFLAGS = "-O0";
 				OTHER_LDFLAGS = (
 					"-sectcreate",
 					__TEXT,

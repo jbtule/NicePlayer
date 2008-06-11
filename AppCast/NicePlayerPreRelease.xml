@@ -2,7 +2,7 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
   <channel>
     <title>NicePlayer AppCast</title>
-    <link>http://niceplayer.sf.net</link>
+    <link>http://jay.tuley.name/build/</link>
     <description>NicePlayer AppCast</description>
     <generator>Feeder 1.4.9.v2 http://reinventedsoftware.com/feeder/</generator>
     <docs>http://blogs.law.harvard.edu/tech/rss</docs>

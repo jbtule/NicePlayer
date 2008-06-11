@@ -43,7 +43,7 @@
 		3E204839093D5AE800305494 /* JTCryptKey.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = JTCryptKey.mm; sourceTree = "<group>"; };
 		3E204874093D5BF900305494 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = /System/Library/Frameworks/Security.framework; sourceTree = "<absolute>"; };
 		3E204881093D5C1E00305494 /* EncryptOC Test.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EncryptOC Test.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3E204882093D5C1E00305494 /* EncryptOC Test-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "EncryptOC Test-Info.plist"; sourceTree = "<group>"; };
+		3E204882093D5C1E00305494 /* EncryptOC Test-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EncryptOC Test-Info.plist"; sourceTree = "<group>"; };
 		3E204D40093D56E000A65713 /* JTPrivateCryptKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTPrivateCryptKey.h; sourceTree = "<group>"; };
 		3E204D41093D56E000A65713 /* JTPrivateCryptKey.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = JTPrivateCryptKey.mm; sourceTree = "<group>"; };
 		3E204D42093D56E000A65713 /* JTPublicCryptKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTPublicCryptKey.h; sourceTree = "<group>"; };
@@ -247,10 +247,12 @@
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "EncryptOC" */;
+			compatibilityVersion = "Xcode 2.4";
 			hasScannedForEncodings = 1;
 			mainGroup = 0867D691FE84028FC02AAC07 /* EncryptOC */;
 			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
 			projectDirPath = "";
+			projectRoot = "";
 			targets = (
 				8DC2EF4F0486A6940098B216 /* EncryptOC */,
 				3E204880093D5C1E00305494 /* EncryptOC Test */,
@@ -406,6 +408,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(value)",
+					"$(DEVELOPER_FRAMEWORKS_DIR_QUOTED)",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -433,6 +439,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(value)",
+					"$(DEVELOPER_FRAMEWORKS_DIR_QUOTED)",
+				);
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;

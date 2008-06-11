@@ -285,6 +285,7 @@
 			<array>
 				<string>mpg4</string>
 				<string>mp4</string>
+				<string>m4v</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
 			<string>mp4.icns</string>
@@ -607,7 +608,7 @@
 	<key>CFBundleSignature</key>
 	<string>nIcE</string>
 	<key>CFBundleVersion</key>
-	<string>575</string>
+	<string>577</string>
 	<key>JTAuthorEmail</key>
 	<string>NicePlayer@osiris.laya.com</string>
 	<key>NSAppleScriptEnabled</key>
@@ -617,7 +618,7 @@
 	<key>NSPrincipalClass</key>
 	<string>NPApplication</string>
 	<key>SUFeedURL</key>
-	<string>http://niceplayer.sourceforge.net/update/NicePlayerAppCast.xml</string>
+	<string>http://jay.tuley.name/build/update.php?app=NicePlayer</string>
 	<key>SmartCrashReports_CompanyName</key>
 	<string>NicePlayer</string>
 	<key>SmartCrashReports_URL</key>
@@ -638,6 +639,39 @@
 				<key>public.filename-extension</key>
 				<array>
 					<string>nicelist</string>
+				</array>
+			</dict>
+		</dict>
+	</array>
+	<key>UTImportedTypeDeclarations</key>
+	<array>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.avi</string>
+			</array>
+			<key>UTTypeIdentifier</key>
+			<string>indy.jt.niceplayer.divx</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>divx</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.movie</string>
+			</array>
+			<key>UTTypeIdentifier</key>
+			<string>indy.jt.niceplayer.mkv</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>mkv</string>
 				</array>
 			</dict>
 		</dict>
