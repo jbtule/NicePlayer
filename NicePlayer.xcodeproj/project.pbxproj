@@ -160,7 +160,6 @@
 		690B63920B59EB27008D13CE /* JTTextFittingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 690B63900B59EB27008D13CE /* JTTextFittingView.m */; };
 		691ECCF80CDE75B70040AE45 /* NPOutlineView.h in Headers */ = {isa = PBXBuildFile; fileRef = 691ECCF60CDE75B70040AE45 /* NPOutlineView.h */; };
 		691ECCF90CDE75B70040AE45 /* NPOutlineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 691ECCF70CDE75B70040AE45 /* NPOutlineView.m */; };
-		69219D550E49361A009C3009 /* Preferable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69219D2A0E4935AF009C3009 /* Preferable.framework */; };
 		6925B3CA0B61966E004D2A83 /* vdvd.icns in Resources */ = {isa = PBXBuildFile; fileRef = 6925B3C90B61966E004D2A83 /* vdvd.icns */; };
 		692CF88F0CC2F78000DF2159 /* BlankView.h in Headers */ = {isa = PBXBuildFile; fileRef = 692CF88D0CC2F78000DF2159 /* BlankView.h */; };
 		692CF8900CC2F78200DF2159 /* BlankView.m in Sources */ = {isa = PBXBuildFile; fileRef = 692CF88E0CC2F78000DF2159 /* BlankView.m */; };
@@ -193,7 +192,8 @@
 		699464630CCC4D3800CE0AD3 /* gvi.icns in Resources */ = {isa = PBXBuildFile; fileRef = 699464620CCC4D3800CE0AD3 /* gvi.icns */; };
 		69B11BF40E58135A005B3775 /* STEnum.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69B11BF30E581343005B3775 /* STEnum.framework */; };
 		69B11BF50E581372005B3775 /* STEnum.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 69B11BF30E581343005B3775 /* STEnum.framework */; };
-		69B11BF60E581372005B3775 /* Preferable.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 69219D2A0E4935AF009C3009 /* Preferable.framework */; };
+		69B11D1D0E5818B8005B3775 /* Preferable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69B11C6A0E5818AF005B3775 /* Preferable.framework */; };
+		69B11D1E0E5818C5005B3775 /* Preferable.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 69B11C6A0E5818AF005B3775 /* Preferable.framework */; };
 		69B2197A0BC72AA60054E10E /* AEDescUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 69B219760BC72AA60054E10E /* AEDescUtils.h */; };
 		69B2197B0BC72AA60054E10E /* AEDescUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B219770BC72AA60054E10E /* AEDescUtils.m */; };
 		69B2197C0BC72AA60054E10E /* TCallScript.h in Headers */ = {isa = PBXBuildFile; fileRef = 69B219780BC72AA60054E10E /* TCallScript.h */; };
@@ -274,20 +274,6 @@
 			remoteGlobalIDString = 3667D3000A0184250035467C;
 			remoteInfo = UniversalCharsetDetector;
 		};
-		69219D290E4935AF009C3009 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 69219D220E4935AE009C3009 /* Preferable.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
-			remoteInfo = Preferable;
-		};
-		69219D530E4935E3009C3009 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 69219D220E4935AE009C3009 /* Preferable.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
-			remoteInfo = Preferable;
-		};
 		69765B360BFBDE7600D9C23B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 69DE19C80BE972F1009D28B9 /* Sparkle.xcodeproj */;
@@ -313,8 +299,29 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 69B11BEB0E581343005B3775 /* STEnum10.4.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 3EEF53BC0ABA35D4008E80DA /* STEnum.framework */;
+			remoteGlobalIDString = 3EEF53BC0ABA35D4008E80DA;
 			remoteInfo = STEnum;
+		};
+		69B11C3B0E58161A005B3775 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 69B11BEB0E581343005B3775 /* STEnum10.4.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 3EBAD61C08006A950040D4A3 /* STEnum */;
+			remoteInfo = STEnum;
+		};
+		69B11C690E5818AF005B3775 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 69B11C600E5818AF005B3775 /* Preferable.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216 /* Preferable.framework */;
+			remoteInfo = Preferable;
+		};
+		69B11D1F0E5818DA005B3775 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 69B11C600E5818AF005B3775 /* Preferable.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216 /* Preferable */;
+			remoteInfo = Preferable;
 		};
 		69DE19D10BE972F1009D28B9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -343,8 +350,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				69B11D1E0E5818C5005B3775 /* Preferable.framework in CopyFiles */,
 				69B11BF50E581372005B3775 /* STEnum.framework in CopyFiles */,
-				69B11BF60E581372005B3775 /* Preferable.framework in CopyFiles */,
 				6990B63F0CF0CF8300DA15C2 /* Appscript.framework in CopyFiles */,
 				699461F30CCBEDE900CE0AD3 /* UniversalCharsetDetector.framework in CopyFiles */,
 				69DE19D60BE97321009D28B9 /* Sparkle.framework in CopyFiles */,
@@ -517,7 +524,6 @@
 		690B63900B59EB27008D13CE /* JTTextFittingView.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = JTTextFittingView.m; path = "Classes/Overlay Widgets/JTTextFittingView.m"; sourceTree = "<group>"; };
 		691ECCF60CDE75B70040AE45 /* NPOutlineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NPOutlineView.h; path = Classes/NiceWindow/NPOutlineView.h; sourceTree = "<group>"; };
 		691ECCF70CDE75B70040AE45 /* NPOutlineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NPOutlineView.m; path = Classes/NiceWindow/NPOutlineView.m; sourceTree = "<group>"; };
-		69219D220E4935AE009C3009 /* Preferable.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Preferable.xcodeproj; path = Libraries/Preferable/Preferable.xcodeproj; sourceTree = "<group>"; };
 		6925B3C90B61966E004D2A83 /* vdvd.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = vdvd.icns; sourceTree = "<group>"; };
 		692CF88D0CC2F78000DF2159 /* BlankView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlankView.h; path = "Classes/Viewer Interface/Pluggable Players/BlankView.h"; sourceTree = "<group>"; };
 		692CF88E0CC2F78000DF2159 /* BlankView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlankView.m; path = "Classes/Viewer Interface/Pluggable Players/BlankView.m"; sourceTree = "<group>"; };
@@ -547,6 +553,7 @@
 		699461E30CCBED9F00CE0AD3 /* UniversalCharsetDetector.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UniversalCharsetDetector.xcodeproj; path = Libraries/UniversalCharsetDetector/UniversalCharsetDetector.xcodeproj; sourceTree = "<group>"; };
 		699464620CCC4D3800CE0AD3 /* gvi.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = gvi.icns; sourceTree = "<group>"; };
 		69B11BEB0E581343005B3775 /* STEnum10.4.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = STEnum10.4.xcodeproj; path = Libraries/stenum/STEnum10.4.xcodeproj; sourceTree = "<group>"; };
+		69B11C600E5818AF005B3775 /* Preferable.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Preferable.xcodeproj; path = Libraries/preferable/Preferable.xcodeproj; sourceTree = "<group>"; };
 		69B219760BC72AA60054E10E /* AEDescUtils.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = AEDescUtils.h; sourceTree = "<group>"; };
 		69B219770BC72AA60054E10E /* AEDescUtils.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = AEDescUtils.m; sourceTree = "<group>"; };
 		69B219780BC72AA60054E10E /* TCallScript.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = TCallScript.h; sourceTree = "<group>"; };
@@ -569,8 +576,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69B11D1D0E5818B8005B3775 /* Preferable.framework in Frameworks */,
 				69B11BF40E58135A005B3775 /* STEnum.framework in Frameworks */,
-				69219D550E49361A009C3009 /* Preferable.framework in Frameworks */,
 				6990B4EB0CF0AA0300DA15C2 /* Appscript.framework in Frameworks */,
 				699461F20CCBEDCF00CE0AD3 /* UniversalCharsetDetector.framework in Frameworks */,
 				69DE19D50BE97317009D28B9 /* Sparkle.framework in Frameworks */,
@@ -799,8 +806,8 @@
 		25C5C1E208D4B7F300987A95 /* Other Projects */ = {
 			isa = PBXGroup;
 			children = (
+				69B11C600E5818AF005B3775 /* Preferable.xcodeproj */,
 				69B11BEB0E581343005B3775 /* STEnum10.4.xcodeproj */,
-				69219D220E4935AE009C3009 /* Preferable.xcodeproj */,
 				6990B4E00CF0A9D300DA15C2 /* Appscript.xcodeproj */,
 				699461E30CCBED9F00CE0AD3 /* UniversalCharsetDetector.xcodeproj */,
 				69DE19C80BE972F1009D28B9 /* Sparkle.xcodeproj */,
@@ -948,14 +955,6 @@
 			path = Resources/doc_icons;
 			sourceTree = "<group>";
 		};
-		69219D230E4935AE009C3009 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				69219D2A0E4935AF009C3009 /* Preferable.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		6990B4E10CF0A9D300DA15C2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -1002,6 +1001,14 @@
 			isa = PBXGroup;
 			children = (
 				69B11BF30E581343005B3775 /* STEnum.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		69B11C610E5818AF005B3775 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				69B11C6A0E5818AF005B3775 /* Preferable.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1135,7 +1142,8 @@
 				691F9D5F0DFF6A3F000FB98B /* PBXTargetDependency */,
 				691F9D610DFF6A3F000FB98B /* PBXTargetDependency */,
 				691F9D650DFF6A3F000FB98B /* PBXTargetDependency */,
-				69219D540E4935E3009C3009 /* PBXTargetDependency */,
+				69B11C3C0E58161A005B3775 /* PBXTargetDependency */,
+				69B11D200E5818DA005B3775 /* PBXTargetDependency */,
 			);
 			name = NicePlayer;
 			productInstallPath = "$(HOME)/Applications";
@@ -1175,8 +1183,8 @@
 					ProjectRef = 25C5C1E408D4B81400987A95 /* DVDPlayer.xcodeproj */;
 				},
 				{
-					ProductGroup = 69219D230E4935AE009C3009 /* Products */;
-					ProjectRef = 69219D220E4935AE009C3009 /* Preferable.xcodeproj */;
+					ProductGroup = 69B11C610E5818AF005B3775 /* Products */;
+					ProjectRef = 69B11C600E5818AF005B3775 /* Preferable.xcodeproj */;
 				},
 				{
 					ProductGroup = 69DE19C90BE972F1009D28B9 /* Products */;
@@ -1220,13 +1228,6 @@
 			remoteRef = 3E5970D309FC8D9A001ED4FA /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		69219D2A0E4935AF009C3009 /* Preferable.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Preferable.framework;
-			remoteRef = 69219D290E4935AF009C3009 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		69765B370BFBDE7600D9C23B /* Sparkle Test App.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
@@ -1253,6 +1254,13 @@
 			fileType = wrapper.framework;
 			path = STEnum.framework;
 			remoteRef = 69B11BF20E581343005B3775 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		69B11C6A0E5818AF005B3775 /* Preferable.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Preferable.framework;
+			remoteRef = 69B11C690E5818AF005B3775 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		69DE19D20BE972F1009D28B9 /* Sparkle.framework */ = {
@@ -1477,10 +1485,15 @@
 			name = UniversalCharsetDetector;
 			targetProxy = 691F9D640DFF6A3F000FB98B /* PBXContainerItemProxy */;
 		};
-		69219D540E4935E3009C3009 /* PBXTargetDependency */ = {
+		69B11C3C0E58161A005B3775 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = STEnum;
+			targetProxy = 69B11C3B0E58161A005B3775 /* PBXContainerItemProxy */;
+		};
+		69B11D200E5818DA005B3775 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Preferable;
-			targetProxy = 69219D530E4935E3009C3009 /* PBXContainerItemProxy */;
+			targetProxy = 69B11D1F0E5818DA005B3775 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
