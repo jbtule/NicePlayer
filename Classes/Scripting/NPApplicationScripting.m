@@ -47,6 +47,7 @@
 #import "NPApplicationScripting.h"
 #import "NicePlugin.h"
 #import "NPPluginReader.h"
+#import <STEnum/STEnum.h>
 BOOL dectectIdentifier(id each, void* context){
     return ([[each identifier] isEqualTo:(id)context]);            
 }

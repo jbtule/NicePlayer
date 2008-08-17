@@ -972,7 +972,6 @@
  */
 -(void)resizeWithSize:(NSSize)aSize animate:(BOOL)animate
 {
-#warning Fix this when Apple fixes setFrame:display:animate:
     [self setFrame:[self calcResizeSize:aSize] display:YES animate:(animate ? [theMovieView canAnimateResize] : NO)];
 }
 

@@ -45,6 +45,10 @@
 
 #import "BlackWindow.h"
 
+@interface NSWindow(Spaces)
+-(void)setCanBeVisibleOnAllSpaces:(BOOL)aBool;
+-(bool)canBeVisibleOnAllSpaces;
+@end
 
 @implementation BlackWindow
 
@@ -91,9 +95,7 @@
     if(presentingWindow != nil)
 		[presentingWindow makeKeyAndOrderFront:anEvent];
 
-	if(([anEvent type] == NSLeftMouseDown) &&  ([anEvent clickCount] > 0) && (([anEvent clickCount] % 2) == 0)){
-		[presentingWindow mouseDoubleClick:anEvent];
-	}
+		
 }
 
 -(void)mouseUp:(NSEvent *)anEvent

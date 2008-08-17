@@ -49,6 +49,7 @@
 #import "AppleRemote.h"
 #import "ControlPlay.h"
 #import "JTTextFittingView.h"
+#import <STEnum/STEnum.h>
 
 #define PLAYLIST_ITEM -42
 #define VOLUME_ITEM -43
@@ -120,6 +121,13 @@ void findSpace(id each, void* context, BOOL* endthis){
 }
 
 #import "NPApplication.h"
+
+@interface NiceDocument(Private)
+
+
+
+@end
+
 
 @implementation NiceDocument
 
@@ -281,20 +289,21 @@ void findSpace(id each, void* context, BOOL* endthis){
         hasRealMovie = YES;
     
     /* Try to load the subtitles */
-    NSString* srtPath = [[[theCurrentURL path] stringByDeletingPathExtension] stringByAppendingPathExtension:@"srt"];
+ /*   NSString* srtPath = [[[theCurrentURL path] stringByDeletingPathExtension] stringByAppendingPathExtension:@"srt"];
     NSString* subPath = [[[theCurrentURL path] stringByDeletingPathExtension] stringByAppendingPathExtension:@"sub"];
-	NSString* ssaPath = [[[theCurrentURL path] stringByDeletingPathExtension] stringByAppendingPathExtension:@"ssa"];
+	NSString* ssaPath = [[[theCurrentURL path] stringByDeletingPathExtension] stringByAppendingPathExtension:@"ssa"];*/
 
     [theSubtitle release];
-    if([[NSFileManager defaultManager] fileExistsAtPath:srtPath]){
+   /* disabled until subtitles are rewriten
+	if([[NSFileManager defaultManager] fileExistsAtPath:srtPath]){
         theSubtitle = [[Subtitle alloc] initWithFile:srtPath forMovieSeconds:(float)[theMovieView totalTime]];
     }else if ([[NSFileManager defaultManager] fileExistsAtPath:subPath]){
         theSubtitle = [[Subtitle alloc] initWithFile:subPath forMovieSeconds:(float)[theMovieView totalTime]];
     }else if ([[NSFileManager defaultManager] fileExistsAtPath:ssaPath]){
         theSubtitle = [[Subtitle alloc] initWithFile:ssaPath forMovieSeconds:(float)[theMovieView totalTime]];
-    }else{
+    }else{*/
         theSubtitle = nil;
-    }
+    //}
 	
 	if(theSubtitle != nil){
 		[[theWindow subtitleView] setMaxText:[theSubtitle longestText]];
@@ -1231,6 +1240,9 @@ item:(id)item childIndex:(int)anIndex{
 	 
     if([pboard availableTypeFromArray:[NSArray arrayWithObject: NSFilenamesPboardType]]){
         NSArray *urls = [pboard propertyListForType:NSFilenamesPboardType];
+		NSMutableArray* mutUrls= [NSMutableArray array];
+		BOOL tVerifyType = YES;
+		urls =[urls injectUsingFunction:NPInjectNestedDirectories into:mutUrls context:&tVerifyType];
         urls = [urls collectUsingFunction:NPConvertFileNamesToURLs context:nil];
         
         NSEnumerator *enumerator = [urls reverseObjectEnumerator];

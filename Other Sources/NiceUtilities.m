@@ -47,7 +47,7 @@
 
 #import "NiceUtilities.h"
 #import "NPPluginReader.h"
-#import <HodgePodge/IndyKit.h>
+#import <STEnum/STEnum.h>
 id NPConvertFileNamesToURLs(id obj, void* context){
     return [NSURL fileURLWithPath:obj];
 }

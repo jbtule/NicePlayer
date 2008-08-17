@@ -43,9 +43,11 @@
 
 #import <Cocoa/Cocoa.h>
 #import "Preferences.h"
+@class PFPreferenceWindowController;
 
 @interface PreferencesController : NSObject {
     IBOutlet id prefWindow;
+	IBOutlet PFPreferenceWindowController* prefWindowController;
     IBOutlet id paneMain;
     IBOutlet id paneActions;
     IBOutlet id paneOverlays;

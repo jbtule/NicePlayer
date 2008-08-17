@@ -52,6 +52,5 @@
     IBOutlet NSWindow* overlayResize;
 }
 
--(void)createResizeTriangle;
 
 @end

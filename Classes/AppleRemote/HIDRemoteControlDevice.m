@@ -70,7 +70,7 @@
 - (id) initWithDelegate: (id) _remoteControlDelegate {	
 	if ([[self class] isRemoteAvailable] == NO) return nil;
 	
-	if ( self = [super initWithDelegate: _remoteControlDelegate] ) {
+	if (( self = [super initWithDelegate: _remoteControlDelegate]) ) {
 		openInExclusiveMode = YES;
 		queue = NULL;
 		hidDeviceInterface = NULL;
@@ -81,7 +81,7 @@
 		NSEnumerator* enumerator = [cookieToButtonMapping objectEnumerator];
 		NSNumber* identifier;
 		supportedButtonEvents = 0;
-		while(identifier = [enumerator nextObject]) {
+		while((identifier = [enumerator nextObject])) {
 			supportedButtonEvents |= [identifier intValue];
 		}
 		
@@ -260,7 +260,7 @@ cleanup:
 	if (cookieString == nil || [cookieString length] == 0) return nil;
 	NSEnumerator* keyEnum = [[self cookieToButtonMapping] keyEnumerator];
 	NSString* key;
-	while(key = [keyEnum nextObject]) {
+	while((key = [keyEnum nextObject])) {
 		NSRange range = [cookieString rangeOfString:key];
 		if (range.location == 0) return key; 
 	}
@@ -284,7 +284,7 @@ cleanup:
 		// happen when the main thread is too busy to handle all incoming events in time.
 		NSString* subCookieString;
 		NSString* lastSubCookieString=nil;
-		while(subCookieString = [self validCookieSubstring: cookieString]) {
+		while((subCookieString = [self validCookieSubstring: cookieString])) {
 			cookieString = [cookieString substringFromIndex: [subCookieString length]];
 			lastSubCookieString = subCookieString;
 			if (processesBacklog) [self handleEventWithCookieString: subCookieString sumOfValues:sumOfValues];
@@ -412,7 +412,7 @@ static void QueueCallbackFunction(void* target,  IOReturn result, void* refcon, 
 		
 		NSEnumerator *elementsEnumerator = [elements objectEnumerator];
 		
-		while (element = [elementsEnumerator nextObject]) {						
+		while ((element = [elementsEnumerator nextObject])) {						
 			//Get cookie
 			object = [element valueForKey: (NSString*)CFSTR(kIOHIDElementCookieKey) ];
 			if (object == nil || ![object isKindOfClass:[NSNumber class]]) continue;
@@ -453,7 +453,7 @@ static void QueueCallbackFunction(void* target,  IOReturn result, void* refcon, 
 			IOHIDElementCookie cookie;
 			NSEnumerator *allCookiesEnumerator = [allCookies objectEnumerator];
 			
-			while (cookie = (IOHIDElementCookie)[[allCookiesEnumerator nextObject] intValue]) {
+			while ((cookie = (IOHIDElementCookie)[[allCookiesEnumerator nextObject] intValue])) {
 				(*queue)->addElement(queue, cookie, 0);
 			}
 									  

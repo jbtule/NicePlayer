@@ -141,6 +141,8 @@
 				<string>id</string>
 				<key>prefWindow</key>
 				<string>id</string>
+				<key>prefWindowController</key>
+				<string>PFPreferenceWindowController</string>
 				<key>rightClickMoviePref</key>
 				<string>id</string>
 				<key>rrSpeedSlider</key>
@@ -169,25 +171,17 @@
 		</dict>
 		<dict>
 			<key>CLASS</key>
+			<string>NSObject</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+		</dict>
+		<dict>
+			<key>CLASS</key>
 			<string>FirstResponder</string>
 			<key>LANGUAGE</key>
 			<string>ObjC</string>
 			<key>SUPERCLASS</key>
 			<string>NSObject</string>
-		</dict>
-		<dict>
-			<key>CLASS</key>
-			<string>JTPreferenceWindow</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-			<key>SUPERCLASS</key>
-			<string>NSWindow</string>
-		</dict>
-		<dict>
-			<key>CLASS</key>
-			<string>NSObject</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
 		</dict>
 	</array>
 	<key>IBVersion</key>

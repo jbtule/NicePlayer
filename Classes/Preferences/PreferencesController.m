@@ -46,15 +46,15 @@
 
 #import "PreferencesController.h"
 #import "../Viewer Interface/NPPluginReader.h"
-#import <HodgePodge/JTPreferenceWindow.h>
 #import <Sparkle/Sparkle.h>
 #import "NPApplication.h"
 #import "NiceUtilities.h"
+#import <Preferable/Preferable.h>
 @implementation PreferencesController
 
 -(void)awakeFromNib
 {
-    id tempBundle =[NSBundle bundleForClass:[JTPreferenceWindow self]];
+    id tempBundle =[NSBundle bundleForClass:[PFPreferenceModule self]];
     
     NSString* tGeneralPrefIcon = [tempBundle pathForResource:@"GeneralPreferenceIcon" ofType:@"png"];
     NSString* tActionPrefIcon =[tempBundle pathForResource:@"ActionsPreferenceIcon" ofType:@"png"];
@@ -62,25 +62,25 @@
 	id sparkleBundle =[NSBundle bundleForClass:[SUUpdater class]];
 	NSString* tSparklePrefIcon =[sparkleBundle pathForResource:@"Sparkle" ofType:@"icns"];
 
-	[prefWindow addPane:paneMain
+	[prefWindowController addPane:paneMain
                    withIcon:[[[NSImage alloc]initWithContentsOfFile:tGeneralPrefIcon] autorelease]
 		 withIdentifier:@"General"
 			  withLabel:@"General"
 			withToolTip:@"The General Preference Settings"
 		 allowingResize:NO];
-	[prefWindow addPane:paneInput
+	[prefWindowController addPane:paneInput
                    withIcon:[NSImage imageNamed:@"inputpref"] 
 		 withIdentifier:@"Input"
 			  withLabel:@"Input"
 			withToolTip:@"The Input Preference Settings"
 		 allowingResize:NO];
-	[prefWindow addPane:paneWindowDefaults
+	[prefWindowController addPane:paneWindowDefaults
                    withIcon:[NSImage imageNamed:@"windpref"] 
 		 withIdentifier:@"Window Defaults"
 			  withLabel:@"Window Defaults"
 			withToolTip:@"The Window Default Preference Settings"
 		 allowingResize:NO];
-	[prefWindow addPane:paneActions
+	[prefWindowController addPane:paneActions
 			   withIcon:[[[NSImage alloc]initWithContentsOfFile:tActionPrefIcon] autorelease]
 		 withIdentifier:@"Actions"
 			  withLabel:@"Actions"
@@ -88,7 +88,7 @@
 		 allowingResize:NO];
 	
 	if(!NPBuildingForMacPorts){
-	[prefWindow addPane:paneSparkle
+	[prefWindowController addPane:paneSparkle
 			   withIcon:[[[NSImage alloc]initWithContentsOfFile:tSparklePrefIcon] autorelease]
 		 withIdentifier:@"Sparkle"
 			  withLabel:@"Auto Update"
@@ -96,13 +96,13 @@
 		 allowingResize:NO];
 	}
 	
-	[prefWindow addPane:paneOverlays
+	[prefWindowController addPane:paneOverlays
 		   withIcon:[NSImage imageNamed:@"OverPrefIcon"] 
 	     withIdentifier:@"Overlays"
 		  withLabel:@"Overlays"
 		withToolTip:@"Various Information and Interaction Displays"
 	     allowingResize:YES];
-	[prefWindow addPane:paneView
+	[prefWindowController addPane:paneView
 			   withIcon:[NSImage imageNamed:@"ViewerPrefIcon"]
 		 withIdentifier:@"Viewer"
 			  withLabel:@"Viewer"

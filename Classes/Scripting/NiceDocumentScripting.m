@@ -48,6 +48,7 @@
 #import "NiceMovie.h"
 #import "NiceDocumentScripting.h"
 #import "NicePlugin.h"
+#import <STEnum/STEnum.h>
 
 id collectMovies(id each, void* context){
     return [NiceMovie movieWithURL:each andPlaylist:(NiceDocument*)context];

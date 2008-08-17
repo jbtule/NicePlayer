@@ -124,21 +124,21 @@ SUCH DAMAGE.
 	NSAppleEventDescriptor *theAddress;
 	
 		/* create the target address descriptor specifying our own process as the target */
-	if ( theAddress = [NSAppleEventDescriptor descriptorWithDescriptorType:typeProcessSerialNumber 
-			bytes:&PSN length:sizeof(PSN)] ) {
+	if ( (theAddress = [NSAppleEventDescriptor descriptorWithDescriptorType:typeProcessSerialNumber 
+			bytes:&PSN length:sizeof(PSN)]) ) {
 		NSAppleEventDescriptor *theEvent;
 			
 			/* create a new Apple event of type typeAppleScript/kASSubroutineEvent */
-		if ( theEvent = [NSAppleEventDescriptor appleEventWithEventClass:typeAppleScript 
+		if (( theEvent = [NSAppleEventDescriptor appleEventWithEventClass:typeAppleScript 
 						eventID:kASSubroutineEvent targetDescriptor:theAddress 
-						returnID:kAutoGenerateReturnID transactionID:kAnyTransactionID] ) {
+						returnID:kAutoGenerateReturnID transactionID:kAnyTransactionID]) ) {
 			NSAppleEventDescriptor* theHandlerName;
 					
 					/* create a descriptor containing the handler's name.  AppleScript handler
 					names must be converted to lowercase before including them in a call
 					subroutine Apple event.  */
-			if ( theHandlerName = [NSAppleEventDescriptor descriptorWithString:
-													[handlerName lowercaseString]] ) {
+			if ( (theHandlerName = [NSAppleEventDescriptor descriptorWithString:
+													[handlerName lowercaseString]]) ) {
 				NSDictionary *errorInfo;
 				NSAppleEventDescriptor *theResult;
 				
@@ -198,7 +198,7 @@ SUCH DAMAGE.
 	NSStrings, or NSAppleEventDescriptors.  */
 - (NSAppleEventDescriptor*) callHandler:(NSString *)handlerName withParameters: (id) firstParameter, ... {
 	va_list args;
-	int index = 1;
+	int tIndex = 1;
 	id nthID;
 	NSAppleEventDescriptor* paramList = [NSAppleEventDescriptor listDescriptor];
 	
@@ -209,20 +209,20 @@ SUCH DAMAGE.
 		if ( [nthID isKindOfClass: [NSNumber class]] ) {
 		
 			[paramList insertDescriptor:
-					[NSAppleEventDescriptor descriptorWithInt32:[nthID longValue]] atIndex:(index++)];
+					[NSAppleEventDescriptor descriptorWithInt32:[nthID longValue]] atIndex:(tIndex++)];
 					
 		} else if ( [nthID isKindOfClass: [NSString class]] ) {
 		
 			[paramList insertDescriptor:
-					[NSAppleEventDescriptor descriptorWithString:nthID] atIndex:(index++)];
+					[NSAppleEventDescriptor descriptorWithString:nthID] atIndex:(tIndex++)];
 					
 		} else if ( [nthID isKindOfClass: [NSAppleEventDescriptor class]] ) {
 		
-			[paramList insertDescriptor: nthID atIndex:(index++)];
+			[paramList insertDescriptor: nthID atIndex:(tIndex++)];
 			
 		} else {
 		
-			NSLog(@"unrecognized parameter type for parameter %d in callHandler:withParameters:", index);
+			NSLog(@"unrecognized parameter type for parameter %d in callHandler:withParameters:", tIndex);
 			return nil; /* bad parameter */
 			
 		}

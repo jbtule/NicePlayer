@@ -52,6 +52,8 @@
 #import "AppleRemote.h"
 #import "Preferences.h"
 #import "NiceDocument.h"
+#import <Preferable/Preferable.h>
+#import <STEnum/STEnum.h>
 id controller;
 
 BOOL detectIsPlaying(id each, void* context){
@@ -292,7 +294,7 @@ id swapForWindows(id each, void* context){
 -(IBAction)showPreferences:(id)sender
 {
     if(prefWindow ==nil)
-	prefWindow = [[[NSWindowController alloc] initWithWindowNibName:@"Preferences"] retain];
+	prefWindow = [[[PFPreferenceWindowController alloc] initWithWindowNibName:@"Preferences"] retain];
     [prefWindow showWindow:self];
     if(fullScreenMode)
 	[self exitFullScreen];

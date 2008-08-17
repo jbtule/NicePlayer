@@ -291,7 +291,7 @@
 - (SEReference *)data_rate;
 - (SEReference *)data_size;
 - (SEReference *)default_application;
-- (SEReference *)description;
+//- (SEReference *)description;
 - (SEReference *)desk_accessory_file;
 - (SEReference *)desktop_folder;
 - (SEReference *)desktop_pictures_folder;

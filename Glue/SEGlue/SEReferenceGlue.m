@@ -2552,14 +2552,14 @@
 
 // by-index, by-name, by-id selectors
  
-- (SEReference *)at:(long)index {
+- (SEReference *)at:(long)anIndex {
     return [SEReference referenceWithAppData: AS_appData
-                                 aemReference: [AS_aemReference at: index]];
+                                 aemReference: [AS_aemReference at: anIndex]];
 }
 
-- (SEReference *)byIndex:(id)index { // index is normally NSNumber, but may occasionally be other types
+- (SEReference *)byIndex:(id)anIndex { // index is normally NSNumber, but may occasionally be other types
     return [SEReference referenceWithAppData: AS_appData
-                                 aemReference: [AS_aemReference byIndex: index]];
+                                 aemReference: [AS_aemReference byIndex: anIndex]];
 }
 
 - (SEReference *)byName:(NSString *)name {

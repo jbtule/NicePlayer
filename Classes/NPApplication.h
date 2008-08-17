@@ -57,6 +57,7 @@
 	RemoteControl* remote;
 
 }
+-(IBAction)emailAuthor:(id)sender;
 
 -(RemoteControl*) remote;
 -(void)setRemote:(RemoteControl*)aRemote;

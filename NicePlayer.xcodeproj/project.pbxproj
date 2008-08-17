@@ -10,7 +10,6 @@
 		2510A23B0B04B53D00CA8110 /* DelegateAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 2510A2390B04B53D00CA8110 /* DelegateAnimation.h */; };
 		2510A23C0B04B53D00CA8110 /* DelegateAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2510A23A0B04B53D00CA8110 /* DelegateAnimation.m */; };
 		2510A5B80B06374400CA8110 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25CC866D0831DDA800027929 /* QTKit.framework */; };
-		2510A62F0B06392600CA8110 /* STEnum.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 255B5C520B02ECF000595952 /* STEnum.framework */; };
 		2513D00407BC659800BB6055 /* Plugins.rtf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2513CDAE07BC658900BB6055 /* Plugins.rtf */; };
 		2513D2F507BDAC4200BB6055 /* FadeOut.h in Headers */ = {isa = PBXBuildFile; fileRef = 2513D2F307BDAC4200BB6055 /* FadeOut.h */; };
 		2513D2F607BDAC4200BB6055 /* FadeOut.m in Sources */ = {isa = PBXBuildFile; fileRef = 2513D2F407BDAC4200BB6055 /* FadeOut.m */; };
@@ -140,10 +139,6 @@
 		3EDA267F065C8D620000CCEE /* rr.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EDA267D065C8D620000CCEE /* rr.png */; };
 		3EDA2682065C8E570000CCEE /* OverlayWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EDA2680065C8E570000CCEE /* OverlayWindow.h */; };
 		3EDA2683065C8E570000CCEE /* OverlayWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDA2681065C8E570000CCEE /* OverlayWindow.m */; };
-		3EEA731009FC851A00AABB1F /* HodgePodge.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3EEA72F809FC84A700AABB1F /* HodgePodge.framework */; };
-		3EEA731109FC853000AABB1F /* HodgePodge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EEA72F809FC84A700AABB1F /* HodgePodge.framework */; };
-		3EEA731D09FC854E00AABB1F /* EncryptOC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EEA731A09FC853F00AABB1F /* EncryptOC.framework */; };
-		3EEA731E09FC856100AABB1F /* EncryptOC.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3EEA731A09FC853F00AABB1F /* EncryptOC.framework */; };
 		3EEB7DBB076B754F0090E740 /* NiceUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EEB7DB7076B754F0090E740 /* NiceUtilities.h */; };
 		3EEB7DBC076B754F0090E740 /* NiceUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB7DB8076B754F0090E740 /* NiceUtilities.m */; };
 		3EEB7F3A076BB1F60090E740 /* ViewerPrefIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EEB7F38076BB1F60090E740 /* ViewerPrefIcon.png */; };
@@ -165,6 +160,7 @@
 		690B63920B59EB27008D13CE /* JTTextFittingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 690B63900B59EB27008D13CE /* JTTextFittingView.m */; };
 		691ECCF80CDE75B70040AE45 /* NPOutlineView.h in Headers */ = {isa = PBXBuildFile; fileRef = 691ECCF60CDE75B70040AE45 /* NPOutlineView.h */; };
 		691ECCF90CDE75B70040AE45 /* NPOutlineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 691ECCF70CDE75B70040AE45 /* NPOutlineView.m */; };
+		69219D550E49361A009C3009 /* Preferable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69219D2A0E4935AF009C3009 /* Preferable.framework */; };
 		6925B3CA0B61966E004D2A83 /* vdvd.icns in Resources */ = {isa = PBXBuildFile; fileRef = 6925B3C90B61966E004D2A83 /* vdvd.icns */; };
 		692CF88F0CC2F78000DF2159 /* BlankView.h in Headers */ = {isa = PBXBuildFile; fileRef = 692CF88D0CC2F78000DF2159 /* BlankView.h */; };
 		692CF8900CC2F78200DF2159 /* BlankView.m in Sources */ = {isa = PBXBuildFile; fileRef = 692CF88E0CC2F78000DF2159 /* BlankView.m */; };
@@ -195,6 +191,9 @@
 		699461F20CCBEDCF00CE0AD3 /* UniversalCharsetDetector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699461EB0CCBED9F00CE0AD3 /* UniversalCharsetDetector.framework */; };
 		699461F30CCBEDE900CE0AD3 /* UniversalCharsetDetector.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 699461EB0CCBED9F00CE0AD3 /* UniversalCharsetDetector.framework */; };
 		699464630CCC4D3800CE0AD3 /* gvi.icns in Resources */ = {isa = PBXBuildFile; fileRef = 699464620CCC4D3800CE0AD3 /* gvi.icns */; };
+		69B11BF40E58135A005B3775 /* STEnum.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69B11BF30E581343005B3775 /* STEnum.framework */; };
+		69B11BF50E581372005B3775 /* STEnum.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 69B11BF30E581343005B3775 /* STEnum.framework */; };
+		69B11BF60E581372005B3775 /* Preferable.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 69219D2A0E4935AF009C3009 /* Preferable.framework */; };
 		69B2197A0BC72AA60054E10E /* AEDescUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 69B219760BC72AA60054E10E /* AEDescUtils.h */; };
 		69B2197B0BC72AA60054E10E /* AEDescUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B219770BC72AA60054E10E /* AEDescUtils.m */; };
 		69B2197C0BC72AA60054E10E /* TCallScript.h in Headers */ = {isa = PBXBuildFile; fileRef = 69B219780BC72AA60054E10E /* TCallScript.h */; };
@@ -219,13 +218,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		255B5C510B02ECF000595952 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3EEA737109FC87FD00AABB1F /* STEnum10.4.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3EEF53BC0ABA35D4008E80DA;
-			remoteInfo = STEnum;
-		};
 		25C5C1E808D4B81400987A95 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 25C5C1E408D4B81400987A95 /* DVDPlayer.xcodeproj */;
@@ -247,82 +239,54 @@
 			remoteGlobalIDString = 3E87022C08DD32CF0015C10A;
 			remoteInfo = UnitTests;
 		};
-		3EEA72F709FC84A700AABB1F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3EEA72EE09FC84A700AABB1F /* HodgePodge.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
-			remoteInfo = HodgePodge;
-		};
-		3EEA731909FC853F00AABB1F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3EEA731409FC853F00AABB1F /* EncryptOC.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
-			remoteInfo = EncryptOC;
-		};
-		3EEA731B09FC853F00AABB1F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3EEA731409FC853F00AABB1F /* EncryptOC.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3E204881093D5C1E00305494;
-			remoteInfo = "EncryptOC Test";
-		};
 		691F9D560DFF6A3F000FB98B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3E5970CB09FC8D9A001ED4FA /* CocoaScriptMenu.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 8DC2EF4F0486A6940098B216 /* CocoaScriptMenu */;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
 			remoteInfo = CocoaScriptMenu;
 		};
 		691F9D580DFF6A3F000FB98B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 25C5C1E408D4B81400987A95 /* DVDPlayer.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 8D5B49AC048680CD000E48DA /* DVDPlayer */;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
 			remoteInfo = DVDPlayer;
-		};
-		691F9D5A0DFF6A3F000FB98B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3EEA737109FC87FD00AABB1F /* STEnum10.4.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 3EBAD61C08006A950040D4A3 /* STEnum */;
-			remoteInfo = STEnum;
-		};
-		691F9D5C0DFF6A3F000FB98B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3EEA72EE09FC84A700AABB1F /* HodgePodge.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 8DC2EF4F0486A6940098B216 /* HodgePodge */;
-			remoteInfo = HodgePodge;
 		};
 		691F9D5E0DFF6A3F000FB98B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 69DE19C80BE972F1009D28B9 /* Sparkle.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 8DC2EF4F0486A6940098B216 /* Sparkle */;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
 			remoteInfo = Sparkle;
 		};
 		691F9D600DFF6A3F000FB98B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6990B4E00CF0A9D300DA15C2 /* Appscript.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 8DC2EF4F0486A6940098B216 /* Appscript */;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
 			remoteInfo = Appscript;
-		};
-		691F9D620DFF6A3F000FB98B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3EEA731409FC853F00AABB1F /* EncryptOC.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 8DC2EF4F0486A6940098B216 /* EncryptOC */;
-			remoteInfo = EncryptOC;
 		};
 		691F9D640DFF6A3F000FB98B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 699461E30CCBED9F00CE0AD3 /* UniversalCharsetDetector.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 3667D3000A0184250035467C /* UniversalCharsetDetector */;
+			remoteGlobalIDString = 3667D3000A0184250035467C;
 			remoteInfo = UniversalCharsetDetector;
+		};
+		69219D290E4935AF009C3009 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 69219D220E4935AE009C3009 /* Preferable.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
+			remoteInfo = Preferable;
+		};
+		69219D530E4935E3009C3009 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 69219D220E4935AE009C3009 /* Preferable.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
+			remoteInfo = Preferable;
 		};
 		69765B360BFBDE7600D9C23B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -344,6 +308,13 @@
 			proxyType = 2;
 			remoteGlobalIDString = 3667D3010A0184250035467C;
 			remoteInfo = UniversalCharsetDetector;
+		};
+		69B11BF20E581343005B3775 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 69B11BEB0E581343005B3775 /* STEnum10.4.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3EEF53BC0ABA35D4008E80DA /* STEnum.framework */;
+			remoteInfo = STEnum;
 		};
 		69DE19D10BE972F1009D28B9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -372,13 +343,12 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				69B11BF50E581372005B3775 /* STEnum.framework in CopyFiles */,
+				69B11BF60E581372005B3775 /* Preferable.framework in CopyFiles */,
 				6990B63F0CF0CF8300DA15C2 /* Appscript.framework in CopyFiles */,
 				699461F30CCBEDE900CE0AD3 /* UniversalCharsetDetector.framework in CopyFiles */,
 				69DE19D60BE97321009D28B9 /* Sparkle.framework in CopyFiles */,
-				2510A62F0B06392600CA8110 /* STEnum.framework in CopyFiles */,
 				3E5970EC09FC8DB2001ED4FA /* CocoaScriptMenu.framework in CopyFiles */,
-				3EEA731E09FC856100AABB1F /* EncryptOC.framework in CopyFiles */,
-				3EEA731009FC851A00AABB1F /* HodgePodge.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,9 +493,6 @@
 		3EDA267D065C8D620000CCEE /* rr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rr.png; path = Resources/rr.png; sourceTree = "<group>"; };
 		3EDA2680065C8E570000CCEE /* OverlayWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OverlayWindow.h; path = "Classes/Overlay Widgets/OverlayWindow.h"; sourceTree = "<group>"; };
 		3EDA2681065C8E570000CCEE /* OverlayWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OverlayWindow.m; path = "Classes/Overlay Widgets/OverlayWindow.m"; sourceTree = "<group>"; };
-		3EEA72EE09FC84A700AABB1F /* HodgePodge.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = HodgePodge.xcodeproj; path = Libraries/hodgepodge/HodgePodge.xcodeproj; sourceTree = "<group>"; };
-		3EEA731409FC853F00AABB1F /* EncryptOC.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EncryptOC.xcodeproj; path = Libraries/hodgepodge/lib/encryptoc/EncryptOC.xcodeproj; sourceTree = "<group>"; };
-		3EEA737109FC87FD00AABB1F /* STEnum10.4.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = STEnum10.4.xcodeproj; path = Libraries/hodgepodge/lib/stenum/STEnum10.4.xcodeproj; sourceTree = "<group>"; };
 		3EEB7DB7076B754F0090E740 /* NiceUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NiceUtilities.h; path = "Other Sources/NiceUtilities.h"; sourceTree = "<group>"; };
 		3EEB7DB8076B754F0090E740 /* NiceUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NiceUtilities.m; path = "Other Sources/NiceUtilities.m"; sourceTree = "<group>"; };
 		3EEB7F38076BB1F60090E740 /* ViewerPrefIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ViewerPrefIcon.png; path = Resources/ViewerPrefIcon.png; sourceTree = "<group>"; };
@@ -550,6 +517,7 @@
 		690B63900B59EB27008D13CE /* JTTextFittingView.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = JTTextFittingView.m; path = "Classes/Overlay Widgets/JTTextFittingView.m"; sourceTree = "<group>"; };
 		691ECCF60CDE75B70040AE45 /* NPOutlineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NPOutlineView.h; path = Classes/NiceWindow/NPOutlineView.h; sourceTree = "<group>"; };
 		691ECCF70CDE75B70040AE45 /* NPOutlineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NPOutlineView.m; path = Classes/NiceWindow/NPOutlineView.m; sourceTree = "<group>"; };
+		69219D220E4935AE009C3009 /* Preferable.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Preferable.xcodeproj; path = Libraries/Preferable/Preferable.xcodeproj; sourceTree = "<group>"; };
 		6925B3C90B61966E004D2A83 /* vdvd.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = vdvd.icns; sourceTree = "<group>"; };
 		692CF88D0CC2F78000DF2159 /* BlankView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlankView.h; path = "Classes/Viewer Interface/Pluggable Players/BlankView.h"; sourceTree = "<group>"; };
 		692CF88E0CC2F78000DF2159 /* BlankView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlankView.m; path = "Classes/Viewer Interface/Pluggable Players/BlankView.m"; sourceTree = "<group>"; };
@@ -578,6 +546,7 @@
 		69945E6D0CCA639600CE0AD3 /* windpref.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = windpref.png; path = Resources/windpref.png; sourceTree = "<group>"; };
 		699461E30CCBED9F00CE0AD3 /* UniversalCharsetDetector.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UniversalCharsetDetector.xcodeproj; path = Libraries/UniversalCharsetDetector/UniversalCharsetDetector.xcodeproj; sourceTree = "<group>"; };
 		699464620CCC4D3800CE0AD3 /* gvi.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = gvi.icns; sourceTree = "<group>"; };
+		69B11BEB0E581343005B3775 /* STEnum10.4.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = STEnum10.4.xcodeproj; path = Libraries/stenum/STEnum10.4.xcodeproj; sourceTree = "<group>"; };
 		69B219760BC72AA60054E10E /* AEDescUtils.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = AEDescUtils.h; sourceTree = "<group>"; };
 		69B219770BC72AA60054E10E /* AEDescUtils.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = AEDescUtils.m; sourceTree = "<group>"; };
 		69B219780BC72AA60054E10E /* TCallScript.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = TCallScript.h; sourceTree = "<group>"; };
@@ -600,13 +569,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69B11BF40E58135A005B3775 /* STEnum.framework in Frameworks */,
+				69219D550E49361A009C3009 /* Preferable.framework in Frameworks */,
 				6990B4EB0CF0AA0300DA15C2 /* Appscript.framework in Frameworks */,
 				699461F20CCBEDCF00CE0AD3 /* UniversalCharsetDetector.framework in Frameworks */,
 				69DE19D50BE97317009D28B9 /* Sparkle.framework in Frameworks */,
 				2510A5B80B06374400CA8110 /* QTKit.framework in Frameworks */,
 				3E5970EB09FC8DA9001ED4FA /* CocoaScriptMenu.framework in Frameworks */,
-				3EEA731D09FC854E00AABB1F /* EncryptOC.framework in Frameworks */,
-				3EEA731109FC853000AABB1F /* HodgePodge.framework in Frameworks */,
 				3EB7EC60065F39AA0002A470 /* Carbon.framework in Frameworks */,
 				3EB7ECFA065F39BC0002A470 /* QuickTime.framework in Frameworks */,
 				257D60020753DE7C00702BD0 /* AppKitScripting.framework in Frameworks */,
@@ -830,13 +799,12 @@
 		25C5C1E208D4B7F300987A95 /* Other Projects */ = {
 			isa = PBXGroup;
 			children = (
+				69B11BEB0E581343005B3775 /* STEnum10.4.xcodeproj */,
+				69219D220E4935AE009C3009 /* Preferable.xcodeproj */,
 				6990B4E00CF0A9D300DA15C2 /* Appscript.xcodeproj */,
 				699461E30CCBED9F00CE0AD3 /* UniversalCharsetDetector.xcodeproj */,
 				69DE19C80BE972F1009D28B9 /* Sparkle.xcodeproj */,
 				3E5970CB09FC8D9A001ED4FA /* CocoaScriptMenu.xcodeproj */,
-				3EEA737109FC87FD00AABB1F /* STEnum10.4.xcodeproj */,
-				3EEA731409FC853F00AABB1F /* EncryptOC.xcodeproj */,
-				3EEA72EE09FC84A700AABB1F /* HodgePodge.xcodeproj */,
 				25C5C1E408D4B81400987A95 /* DVDPlayer.xcodeproj */,
 			);
 			name = "Other Projects";
@@ -980,27 +948,10 @@
 			path = Resources/doc_icons;
 			sourceTree = "<group>";
 		};
-		3EEA72EF09FC84A700AABB1F /* Products */ = {
+		69219D230E4935AE009C3009 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3EEA72F809FC84A700AABB1F /* HodgePodge.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		3EEA731509FC853F00AABB1F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				3EEA731A09FC853F00AABB1F /* EncryptOC.framework */,
-				3EEA731C09FC853F00AABB1F /* EncryptOC Test.octest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		3EEA737209FC87FD00AABB1F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				255B5C520B02ECF000595952 /* STEnum.framework */,
+				69219D2A0E4935AF009C3009 /* Preferable.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1043,6 +994,14 @@
 			isa = PBXGroup;
 			children = (
 				699461EB0CCBED9F00CE0AD3 /* UniversalCharsetDetector.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		69B11BEC0E581343005B3775 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				69B11BF30E581343005B3775 /* STEnum.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1173,12 +1132,10 @@
 			dependencies = (
 				691F9D570DFF6A3F000FB98B /* PBXTargetDependency */,
 				691F9D590DFF6A3F000FB98B /* PBXTargetDependency */,
-				691F9D5B0DFF6A3F000FB98B /* PBXTargetDependency */,
-				691F9D5D0DFF6A3F000FB98B /* PBXTargetDependency */,
 				691F9D5F0DFF6A3F000FB98B /* PBXTargetDependency */,
 				691F9D610DFF6A3F000FB98B /* PBXTargetDependency */,
-				691F9D630DFF6A3F000FB98B /* PBXTargetDependency */,
 				691F9D650DFF6A3F000FB98B /* PBXTargetDependency */,
+				69219D540E4935E3009C3009 /* PBXTargetDependency */,
 			);
 			name = NicePlayer;
 			productInstallPath = "$(HOME)/Applications";
@@ -1218,20 +1175,16 @@
 					ProjectRef = 25C5C1E408D4B81400987A95 /* DVDPlayer.xcodeproj */;
 				},
 				{
-					ProductGroup = 3EEA731509FC853F00AABB1F /* Products */;
-					ProjectRef = 3EEA731409FC853F00AABB1F /* EncryptOC.xcodeproj */;
-				},
-				{
-					ProductGroup = 3EEA72EF09FC84A700AABB1F /* Products */;
-					ProjectRef = 3EEA72EE09FC84A700AABB1F /* HodgePodge.xcodeproj */;
+					ProductGroup = 69219D230E4935AE009C3009 /* Products */;
+					ProjectRef = 69219D220E4935AE009C3009 /* Preferable.xcodeproj */;
 				},
 				{
 					ProductGroup = 69DE19C90BE972F1009D28B9 /* Products */;
 					ProjectRef = 69DE19C80BE972F1009D28B9 /* Sparkle.xcodeproj */;
 				},
 				{
-					ProductGroup = 3EEA737209FC87FD00AABB1F /* Products */;
-					ProjectRef = 3EEA737109FC87FD00AABB1F /* STEnum10.4.xcodeproj */;
+					ProductGroup = 69B11BEC0E581343005B3775 /* Products */;
+					ProjectRef = 69B11BEB0E581343005B3775 /* STEnum10.4.xcodeproj */;
 				},
 				{
 					ProductGroup = 699461E40CCBED9F00CE0AD3 /* Products */;
@@ -1246,13 +1199,6 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		255B5C520B02ECF000595952 /* STEnum.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = STEnum.framework;
-			remoteRef = 255B5C510B02ECF000595952 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		25C5C1E908D4B81400987A95 /* DVDPlayer.nicebundle */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
@@ -1274,25 +1220,11 @@
 			remoteRef = 3E5970D309FC8D9A001ED4FA /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		3EEA72F809FC84A700AABB1F /* HodgePodge.framework */ = {
+		69219D2A0E4935AF009C3009 /* Preferable.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
-			path = HodgePodge.framework;
-			remoteRef = 3EEA72F709FC84A700AABB1F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		3EEA731A09FC853F00AABB1F /* EncryptOC.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = EncryptOC.framework;
-			remoteRef = 3EEA731909FC853F00AABB1F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		3EEA731C09FC853F00AABB1F /* EncryptOC Test.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "EncryptOC Test.octest";
-			remoteRef = 3EEA731B09FC853F00AABB1F /* PBXContainerItemProxy */;
+			path = Preferable.framework;
+			remoteRef = 69219D290E4935AF009C3009 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		69765B370BFBDE7600D9C23B /* Sparkle Test App.app */ = {
@@ -1314,6 +1246,13 @@
 			fileType = wrapper.framework;
 			path = UniversalCharsetDetector.framework;
 			remoteRef = 699461EA0CCBED9F00CE0AD3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		69B11BF30E581343005B3775 /* STEnum.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = STEnum.framework;
+			remoteRef = 69B11BF20E581343005B3775 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		69DE19D20BE972F1009D28B9 /* Sparkle.framework */ = {
@@ -1523,16 +1462,6 @@
 			name = DVDPlayer;
 			targetProxy = 691F9D580DFF6A3F000FB98B /* PBXContainerItemProxy */;
 		};
-		691F9D5B0DFF6A3F000FB98B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = STEnum;
-			targetProxy = 691F9D5A0DFF6A3F000FB98B /* PBXContainerItemProxy */;
-		};
-		691F9D5D0DFF6A3F000FB98B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = HodgePodge;
-			targetProxy = 691F9D5C0DFF6A3F000FB98B /* PBXContainerItemProxy */;
-		};
 		691F9D5F0DFF6A3F000FB98B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Sparkle;
@@ -1543,15 +1472,15 @@
 			name = Appscript;
 			targetProxy = 691F9D600DFF6A3F000FB98B /* PBXContainerItemProxy */;
 		};
-		691F9D630DFF6A3F000FB98B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = EncryptOC;
-			targetProxy = 691F9D620DFF6A3F000FB98B /* PBXContainerItemProxy */;
-		};
 		691F9D650DFF6A3F000FB98B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = UniversalCharsetDetector;
 			targetProxy = 691F9D640DFF6A3F000FB98B /* PBXContainerItemProxy */;
+		};
+		69219D540E4935E3009C3009 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Preferable;
+			targetProxy = 69219D530E4935E3009C3009 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1657,6 +1586,7 @@
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
 					"-Wno-protocol",
+					"-Wno-trigraphs",
 				);
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
@@ -1708,6 +1638,7 @@
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
 					"-Wno-protocol",
+					"-Wno-trigraphs",
 				);
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
@@ -1717,22 +1648,26 @@
 		251FEF780855184200D38B8E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				OTHER_CFLAGS = "-D__DEBUG__=1";
 				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 				STRIP_INSTALLED_PRODUCT = NO;
+				VALID_ARCHS = "i386 ppc";
+				WARNING_CFLAGS = "-Wtrigraphs";
 			};
 			name = Debug;
 		};
 		251FEF790855184200D38B8E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				VALID_ARCHS = "i386 ppc";
+				WARNING_CFLAGS = "-Wtrigraphs";
 			};
 			name = Release;
 		};

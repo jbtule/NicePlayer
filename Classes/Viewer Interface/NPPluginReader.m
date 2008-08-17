@@ -49,10 +49,10 @@
 
 #import "NPPluginReader.h"
 #import "Pluggable Players/NPMovieProtocol.h"
-#import <HodgePodge/IndyKit.h>
 #import "NiceUtilities.h"
 #import "JTMovieView.h"
 #import "RCMovieView.h"
+#import <STEnum/STEnum.h>
 
 @class DVDPlayerView;
 

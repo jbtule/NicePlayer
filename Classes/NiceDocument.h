@@ -46,11 +46,11 @@
 
 #import <Cocoa/Cocoa.h>
 #import <Carbon/Carbon.h>
-#import <HodgePodge/IndyKit.h>
 #import "Viewer Interface/NPMovieView.h"
 #import "NiceWindow/NiceWindow.h"
 #import "Preferences/Preferences.h"
 #import "Subtitle.h"
+#import "AppleRemote.h"
 
 @class NiceWindow;
 @class NPMovieView;
@@ -79,6 +79,8 @@
     BOOL isRandom;
     BOOL wasPlayingBeforeMini;	
 }
+
+-(void)appleRemoteButton:(RemoteControlEventIdentifier)buttonIdentifier pressedDown:(BOOL)pressedDown;
 
 -(NSString*)identifier;
 -(NSData *)dataRepresentationOfType:(NSString *)aType;
@@ -124,6 +126,7 @@
 -(unsigned)getNextIndex;
 -(void)playNext;
 -(void)playPrev;
+-(void)playPrevWithChapter;
 -(unsigned)getPrevIndex;
 -(BOOL)loadPlaylistFromURL:(NSURL *)aURL;
 

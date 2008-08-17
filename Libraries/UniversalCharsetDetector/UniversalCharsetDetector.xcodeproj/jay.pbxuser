@@ -1,7 +1,7 @@
 // !$*UTF8*$!
 {
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
-		activeBuildConfigurationName = Debug;
+		activeBuildConfigurationName = Release;
 		activeTarget = 3667D3000A0184250035467C /* UniversalCharsetDetector */;
 		addToTargets = (
 			3667D3000A0184250035467C /* UniversalCharsetDetector */,
@@ -66,11 +66,22 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 234842558;
-			PBXWorkspaceStateSaveDate = 234842558;
+			PBXPerProjectTemplateStateSaveDate = 240636059;
+			PBXWorkspaceStateSaveDate = 240636059;
+		};
+		perUserProjectItems = {
+			69BA5A6A0E57D0D9001E7BCF /* PBXTextBookmark */ = 69BA5A6A0E57D0D9001E7BCF /* PBXTextBookmark */;
+			69BA5A6D0E57D107001E7BCF /* PBXTextBookmark */ = 69BA5A6D0E57D107001E7BCF /* PBXTextBookmark */;
 		};
 		sourceControlManager = 6994614D0CCBCA5900CE0AD3 /* Source Control */;
 		userBuildSettings = {
+		};
+	};
+	3667D1680A0175260035467C /* CharDistribution.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {733, 3388}}";
+			sepNavSelRange = "{1944, 2}";
+			sepNavVisRange = "{1913, 41}";
 		};
 	};
 	3667D1920A0175260035467C /* nsSBCSGroupProber.cpp */ = {
@@ -127,5 +138,23 @@
 			sepNavVisRect = "{{0, 0}, {852, 562}}";
 			sepNavWindowFrame = "{{468, 87}, {891, 691}}";
 		};
+	};
+	69BA5A6A0E57D0D9001E7BCF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "warning: 'class CharDistributionAnalysis' has virtual functions but non-virtual destructor";
+		fRef = 3667D1680A0175260035467C /* CharDistribution.h */;
+		rLen = 1;
+		rLoc = 45;
+		rType = 1;
+	};
+	69BA5A6D0E57D107001E7BCF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3667D1680A0175260035467C /* CharDistribution.h */;
+		name = "CharDistribution.h: 46";
+		rLen = 2;
+		rLoc = 1944;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
 	};
 }

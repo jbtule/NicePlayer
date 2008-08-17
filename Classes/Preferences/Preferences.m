@@ -46,6 +46,7 @@
 #import "Preferences.h"
 #import "../Viewer Interface/NPPluginReader.h"
 #import "AppleRemote.h"
+#import "NPApplication.h"
 
 @implementation Preferences
 
@@ -235,9 +236,9 @@
 {
     disableAppleRemote = aBool;
     if(!disableAppleRemote)
-	[[NSApp remote] startListening:self];
+	[[(NPApplication*)NSApp remote] startListening:self];
     else
-	[[NSApp remote] stopListening:self];
+	[[(NPApplication*)NSApp remote] stopListening:self];
 
     [[NSUserDefaults standardUserDefaults] setBool:aBool forKey:@"disableAppleRemote"];
 }

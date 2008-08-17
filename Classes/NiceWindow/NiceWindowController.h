@@ -48,7 +48,6 @@
 
 
 #import <Cocoa/Cocoa.h>
-#import <HodgePodge/IndyKit.h>
 
 @interface NiceWindowController : NSWindowController {
 

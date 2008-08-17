@@ -59,9 +59,17 @@
 #import "NPPluginReader.h"
 #import "Preferences.h"
 #import "BlankView.h"
-
-@class JTMovieView;
+#import "NiceDocument.h"
+#import "JTMovieView.h"
 @class NPPluginReader;
+
+@interface NPMovieView(private)
+-(NSNumber*)_percentLoaded;
+-(void)clearTrueMovieView;
+-(NSString*)_currentChapter;
+-(void)_gotoChapter:(NSNumber*)anIndex;
+-(NSArray*)_chapters;
+@end
 
 @implementation NPMovieView
 
@@ -724,7 +732,7 @@
 -(BOOL)canAnimateResize
 {
     if([trueMovieView respondsToSelector:@selector(canAnimateResize)])
-	return [trueMovieView canAnimateResize];
+		return [trueMovieView canAnimateResize];
     return YES;
 }
 
@@ -818,11 +826,11 @@
 	[newItem setState:[((NiceWindow *)[self window]) windowIsFloating]];
 	[myMenu addObject:newItem];
 
-	[myMenu addObject:[[[self window]document] volumeMenu]];
+	[myMenu addObject:[[[[self window]windowController]document] volumeMenu]];
 
 	NSMenu* tMenu = [[[NSMenu alloc]init]autorelease];
 	
-	NSEnumerator *enumerator = [[[[self window] document] BasicPlaylistMenuItems] objectEnumerator];
+	NSEnumerator *enumerator = [[[[[self window]windowController] document] BasicPlaylistMenuItems] objectEnumerator];
 id object;
  
 while ((object = [enumerator nextObject])) {
@@ -893,7 +901,7 @@ while ((object = [enumerator nextObject])) {
 	[allChoiceMenu addItem:[[newItem copy]autorelease]];
     }
     
-    if([[[self window]document] subTitle] !=NULL){
+    if([[[[self window]windowController]document] subTitle] !=NULL){
        /* NSString* aName =[[[[self window]document] subTitle] path];
         aName = [aName lastPathComponent*/
         

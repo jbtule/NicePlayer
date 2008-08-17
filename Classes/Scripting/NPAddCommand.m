@@ -47,6 +47,7 @@
 #import "NPAddCommand.h"
 #import "NiceMovie.h"
 #import "NiceDocument.h"
+#import <STEnum/STEnum.h>
 
 id evaluatedSpecicfier(id each, void* context){
     if ([each isKindOfClass: [NSScriptObjectSpecifier class]])

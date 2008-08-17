@@ -45,7 +45,6 @@
 #import <Carbon/Carbon.h>
 #import "Overlay Widgets/BlackWindow.h"
 #import "NiceWindow/NiceWindow.h"
-#import <HodgePodge/IndyKit.h>
 
 @interface NiceController : NSDocumentController {
     IBOutlet id mainWindowProxy;

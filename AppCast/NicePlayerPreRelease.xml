@@ -1,74 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
   <channel>
-    <title>NicePlayer AppCast</title>
+    <title>NicePlayer PreRelease</title>
     <link>http://jay.tuley.name/build/</link>
-    <description>NicePlayer AppCast</description>
+    <description>NicePlayer PreRelease AppCast</description>
     <generator>Feeder 1.4.9.v2 http://reinventedsoftware.com/feeder/</generator>
     <docs>http://blogs.law.harvard.edu/tech/rss</docs>
     <language>en</language>
-    <pubDate>Fri, 16 Nov 2007 16:28:51 -0600</pubDate>
-    <lastBuildDate>Fri, 16 Nov 2007 16:28:51 -0600</lastBuildDate>
+    <pubDate>Tue, 10 Jun 2008 22:10:54 -0500</pubDate>
+    <lastBuildDate>Tue, 10 Jun 2008 22:10:54 -0500</lastBuildDate>
     
-    <atom:link href="http://niceplayer.sf.net/update/NicePlayerAppCast.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="http://jay.tuley.name/build/update.php?app=NicePlayer" rel="self" type="application/rss+xml"/>
     <item>
-      <title>NicePlayer 0.96.1</title>
-      <link>http://niceplayer.sf.net</link>
-      <description><![CDATA[<p>Version 0.96.1 (v572)
-<br /> • Fixed playlist delete bug - introduced 0.96.0
-<br /> • Fixed playlist drag and drop bug - introduced 0.96.0
-<br /> • Added Leopard Sized Icons
-<br /> • Added Sparkle Preference Pane
-<br /> • Fixed preference bug that ignored preference changes - introduced 0.96.0
-<br /> • Code signed
-<br /> • Resolution Independent GUI (Glitchy in Tiger, works pretty good in Leopard)
-<br /> • New and Updated AppleScripts for the Script Menu</p>]]></description>
-      <pubDate>Sat, 10 Nov 2007 00:37:06 -0600</pubDate>
-      <enclosure url="http://downloads.sourceforge.net/niceplayer/NicePlayer_0.96.1.dmg" length="2775377" type="application/x-diskcopy" sparkle:version="572"/>
+      <title>NicePlayer 0.96.2 Preview (v579) </title>
+      <link>http://jay.tuley.name/build/</link>
+      <description><![CDATA[<p>Version 0.96.2 Preview (v579)
+<br /> • QuickLook support for mkv and divx file extensions
+<br /> • m4v file extension document association added.</p>
+
+<p>Help Request for Previewers:
+<br /> • Report NicePlayer bugs in relation to QuickLook and Document Associations
+<br /> • Report NicePlayer bugs in 10.5.3
+<br /> • Report NicePlayer in relation to 10.4 compatibility with this preview.</p>]]></description>
+      <pubDate>Tue, 10 Jun 2008 22:07:45 -0500</pubDate>
+      <enclosure url="http://$$/NicePlayer/NicePlayer_Preview_579.zip!!" length="2586778" type="application/zip" sparkle:version="579"/>
+      <guid isPermaLink="false">niceplayer-0962-preview-v579</guid>
+    </item>
+    <item>
+      <title>NicePlayer 0.96.2 Preview (v577)</title>
+      <link>http://jay.tuley.name/build</link>
+      <description><![CDATA[<p>Version 0.96.2 Preview (v577)
+<br /> • NicePlayer Apple Remote code has been updated for Leopard</p>
+
+<p>Help Request for Previewers:
+<br /> • Report NicePlayer bugs in relation to Spaces with this preview.
+<br /> • Report NicePlayer bugs in relation to Apple Remote control.
+<br /> • Report NicePlayer in relation to 10.4 compatibility with this preview.</p>]]></description>
+      <pubDate>Tue, 25 Mar 2008 20:52:35 -0500</pubDate>
+      <enclosure url="http://$$/NicePlayer/NicePlayer_Preview_577.zip!!" length="2631456" type="application/zip" sparkle:version="577"/>
+      <guid isPermaLink="false">niceplayer-0962-preview-v577</guid>
+    </item>
+    <item>
+      <title>NicePlayer 0.96.2 Preview (v575)</title>
+      <link>http://jay/tuley.name/build</link>
+      <description><![CDATA[<p>Version 0.96.2 Preview (v575)
+<br /> • NicePlayer can now be set on every screen in Leopard Spaces</p>
+
+<p>Help Request for Previewers:
+<br /> • Report NicePlayer bugs in relation to Spaces with this preview.
+<br /> • Report NicePlayer in relation to 10.4 compatibility with this preview.</p>]]></description>
+      <pubDate>Sun, 18 Nov 2007 17:49:00 -0600</pubDate>
+      <enclosure url="http://$$/NicePlayer/NicePlayer_Preview_575.zip!!" length="2805151" type="application/zip" sparkle:version="575"/>
       <guid isPermaLink="false">niceplayer-096-1</guid>
-    </item>
-    <item>
-      <title>NicePlayer 0.96</title>
-      <description><![CDATA[<p>Version 0.96 (v543)
-<br /> • Basic Leopard compatibility
-<br /> • Progressive movie loading progress in scrubbing area
-<br /> • Chapters expand in playlist drawer.
-<br /> • New Playlist and Volume menus
-<br /> • Fixed subtitle bugs involving parsing commas in SSA, and foreign encodings. 
-<br /> • Using Sparkle for future updates
-<br /> • Fixed Transparency behavior in regards to correctly representing opacity and transparency</p>]]></description>
-      <pubDate>Fri, 26 Oct 2007 00:29:54 -0500</pubDate>
-      <enclosure url="http://downloads.sourceforge.net/niceplayer/NicePlayer_0.96.dmg" length="1602219" type="application/x-diskcopy" sparkle:version="543"/>
-      <guid isPermaLink="false">niceplayer-096</guid>
-    </item>
-    <item>
-      <title>NicePlayer 0.95</title>
-      <description><![CDATA[<p>Version 0.95 (v514)
-<br />• 100% Open Source (MPL/LGPL/GPL)
-<br />• Added support for Chapters, and enabling extra Audio and Video tracks for the Core Video engine
-<br />• Added basic support for external subtitle files
-<br />	.ssa substation alpha, 
-<br />	.srt SubRip,
-<br />	.sub MicroDVD
-<br />• Added file type extension recognition for 
-<br />	.divx, 
-<br />	.vdvd (package around VIDEO_TS ala "VIrtual DVDs"), 
-<br />	.mkv (Matroska added in anticipation for future Perian support),
-<br />	 .ogg( for Theora/Ogg support provided by the xiph components), 
-<br />	.flv (for current perian support)
-<br />• New fresh look
-<br />• Added AppleScript-able Transparency, with a default script for applying it
-<br />• Added preference for volume memory on creation of new windows
-<br />• Added AppleScript vocabulary for determining full screen
-<br />• Fixed bug that caused niceplayer to hang on quit after watching a DVD on a Core2Duo Macbook
-<br />• Fixed bug involving not being able to unmute
-<br />• Fixed bug involving changing window level in fullscreen
-<br />• Fixed bug in auto dvd launching script
-<br />• Fixed bug that sometimes would cause movies to show up black when opened off a removable disk
-<br />• Fixed various crashes</p>]]></description>
-      <pubDate>Thu, 25 Oct 2007 22:27:59 -0500</pubDate>
-      <enclosure url="http://downloads.sourceforge.net/niceplayer/NicePlayer_0.95.dmg?use_mirror=easynews" length="916476" type="application/octet-stream" sparkle:version="514"/>
-      <guid isPermaLink="false">niceplayer-095</guid>
     </item>
   </channel>
 </rss>

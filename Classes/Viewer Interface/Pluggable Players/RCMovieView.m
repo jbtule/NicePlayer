@@ -99,7 +99,7 @@
 -(NSArray*)_chapters{
 	NSArray* tArray =[film chapterList];
 	NSMutableArray* tMutArray = [NSMutableArray array];
-	for(int i=1; i<=[tArray count];i++){
+	for(uint i=1; i<=[tArray count];i++){
 		NSString* tName =[[tArray objectAtIndex:i-1] objectForKey:@"Name"];
 		if(tName == nil){
 			[tMutArray addObject:[NSString stringWithFormat:@"Chapter %d",i,nil]];

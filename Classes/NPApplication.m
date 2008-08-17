@@ -49,8 +49,8 @@
 #import "NPApplication.h"
 #import <CocoaScriptMenu/CocoaScriptMenu.h>
 #import "NiceUtilities.h"
-#import <HodgePodge/IndyKit.h>
 #import <Sparkle/Sparkle.h>
+#import <STEnum/STEnum.h>
 
 
 
@@ -75,7 +75,6 @@ BOOL selectNiceWindow(id each, void* context){
 	}
 
 	
-   // if(NPIs10_4OrGreater()){
         if([[CSMScriptMenu sharedMenuGenerator] countOfScripts] == 0){
             [self copyDefaultScriptsToApplicationSupport];
         }else{
@@ -83,8 +82,6 @@ BOOL selectNiceWindow(id each, void* context){
 
 		}
         [[CSMScriptMenu sharedMenuGenerator] updateScriptMenu];
-
-  //  }
     
 }
 
@@ -265,6 +262,17 @@ BOOL selectNiceWindow(id each, void* context){
     }
     return tempWindow;
     
+}
+
+-(IBAction)emailAuthor:(id)sender{
+    id tempInfo =[[NSBundle mainBundle] infoDictionary];
+    id tempEmail =[tempInfo objectForKey:@"JTAuthorEmail"];
+    if(tempEmail == nil){
+        NSRunAlertPanel(@"Email", @"Contact email address not provided by author.", @"Okay",nil,nil);
+    }else{
+        NSLog([NSString stringWithFormat:@"mailto:%@?subject=%@/%@(v%@)",tempEmail,[tempInfo objectForKey:@"CFBundleName"],[tempInfo objectForKey:@"CFBundleShortVersionString"],[tempInfo objectForKey:@"CFBundleVersion"],nil]);
+        [[NSWorkspace sharedWorkspace ]openURL: [NSURL URLWithString:[NSString stringWithFormat:@"mailto:%@?subject=%@/%@(v%@)",tempEmail,[tempInfo objectForKey:@"CFBundleName"],[tempInfo objectForKey:@"CFBundleShortVersionString"],[tempInfo objectForKey:@"CFBundleVersion"],nil]]];
+    }
 }
 
 #pragma mark -
