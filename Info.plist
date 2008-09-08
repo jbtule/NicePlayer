@@ -618,7 +618,7 @@
 	<key>CFBundleSignature</key>
 	<string>nIcE</string>
 	<key>CFBundleVersion</key>
-	<string>580</string>
+	<string>581</string>
 	<key>JTAuthorEmail</key>
 	<string>NicePlayer@osiris.laya.com</string>
 	<key>NSAppleScriptEnabled</key>
@@ -628,11 +628,7 @@
 	<key>NSPrincipalClass</key>
 	<string>NPApplication</string>
 	<key>SUFeedURL</key>
-	<string>http://jay.tuley.name/build/update.php?app=NicePlayer</string>
-	<key>SmartCrashReports_CompanyName</key>
-	<string>NicePlayer</string>
-	<key>SmartCrashReports_URL</key>
-	<string>http://niceplayer.sourceforge.net/bug/BugReceiver.php</string>
+	<string>http://niceplayer.googlecode.com/svn/appcast/index.xml</string>
 	<key>UTExportedTypeDeclarations</key>
 	<array>
 		<dict>

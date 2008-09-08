@@ -7,10 +7,21 @@
     <generator>Feeder 1.4.9.v2 http://reinventedsoftware.com/feeder/</generator>
     <docs>http://blogs.law.harvard.edu/tech/rss</docs>
     <language>en</language>
-    <pubDate>Tue, 10 Jun 2008 22:10:54 -0500</pubDate>
-    <lastBuildDate>Tue, 10 Jun 2008 22:10:54 -0500</lastBuildDate>
-    
-    <atom:link href="http://jay.tuley.name/build/update.php?app=NicePlayer" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 17 Aug 2008 11:41:27 -0500</pubDate>
+    <lastBuildDate>Sun, 17 Aug 2008 11:41:27 -0500</lastBuildDate>
+    <item>
+      <title>NicePlayer 0.96.2 Preview (v581) </title>
+      <link>http://jay.tuley.name/build/</link>
+      <description><![CDATA[<p>Version 0.96.2 Preview (v581)
+<br /> • Fix for PPC bug introduced 579.
+<br /> • Fix for lack of folder expansion when dragging directly to the playlist</p>
+
+<p>Help Request for Previewers:
+<br /> • Any show stopping bugs, this is a release candidate.</p>]]></description>
+      <pubDate>Sun, 17 Aug 2008 11:19:58 -0500</pubDate>
+      <enclosure url="http://$$/NicePlayer/NicePlayer_Preview_581.zip!!" length="2534508" type="application/zip" sparkle:version="581"/>
+      <guid isPermaLink="false">niceplayer-0962-preview-v580</guid>
+    </item>
     <item>
       <title>NicePlayer 0.96.2 Preview (v579) </title>
       <link>http://jay.tuley.name/build/</link>

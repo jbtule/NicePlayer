@@ -306,21 +306,21 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 69B11BEB0E581343005B3775 /* STEnum10.4.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 3EBAD61C08006A950040D4A3 /* STEnum */;
+			remoteGlobalIDString = 3EBAD61C08006A950040D4A3;
 			remoteInfo = STEnum;
 		};
 		69B11C690E5818AF005B3775 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 69B11C600E5818AF005B3775 /* Preferable.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 8DC2EF5B0486A6940098B216 /* Preferable.framework */;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
 			remoteInfo = Preferable;
 		};
 		69B11D1F0E5818DA005B3775 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 69B11C600E5818AF005B3775 /* Preferable.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 8DC2EF4F0486A6940098B216 /* Preferable */;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
 			remoteInfo = Preferable;
 		};
 		69DE19D10BE972F1009D28B9 /* PBXContainerItemProxy */ = {

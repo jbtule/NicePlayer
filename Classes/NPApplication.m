@@ -289,37 +289,37 @@ BOOL selectNiceWindow(id each, void* context){
 -(IBAction)visitNicePlayerWebSite:(id)sender
 {
     [[NSWorkspace sharedWorkspace] openURL:
-        [NSURL URLWithString:@"http://niceplayer.sourceforge.net/"]];
+        [NSURL URLWithString:@"http://code.google.com/p/niceplayer/"]];
 }
 
 -(IBAction)visitProjectRoadmap:(id)sender
 {
     [[NSWorkspace sharedWorkspace] openURL:
-        [NSURL URLWithString:@"http://charon.laya.com/niceplayer/trac.cgi/roadmap"]];
+        [NSURL URLWithString:@"http://code.google.com/p/niceplayer/issues/list"]];
 }
 
 -(IBAction)donateToNicePlayer:(id)sender
 {
     [[NSWorkspace sharedWorkspace] openURL:
-        [NSURL URLWithString:@"http://sourceforge.net/donate/index.php?group_id=170266"]];
+        [NSURL URLWithString:@"http://code.google.com/p/niceplayer/wiki/Donations"]];
 }
 
 -(IBAction)onlineSupportWikiFAQ:(id)sender
 {
     [[NSWorkspace sharedWorkspace] openURL:
-        [NSURL URLWithString:@"http://charon.laya.com/niceplayer/trac.cgi/wiki/"]];
+        [NSURL URLWithString:@"http://code.google.com/p/niceplayer/w/list"]];
 }
 
 -(IBAction)submitBug:(id)sender
 {
     [[NSWorkspace sharedWorkspace] openURL:
-        [NSURL URLWithString:@"http://charon.laya.com/niceplayer/trac.cgi/newticket"]];
+        [NSURL URLWithString:@"http://code.google.com/p/niceplayer/issues/list"]];
 }
 
 -(IBAction)featureRequest:(id)sender
 {
     [[NSWorkspace sharedWorkspace] openURL:
-	[NSURL URLWithString:@"http://charon.laya.com/niceplayer/trac.cgi/newticket"]];
+	[NSURL URLWithString:@"http://code.google.com/p/niceplayer/issues/list"]];
 }
 
 -(IBAction)disccusionGroup:(id)sender

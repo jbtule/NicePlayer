@@ -2,15 +2,26 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
   <channel>
     <title>NicePlayer AppCast</title>
-    <link>http://niceplayer.sf.net</link>
+    <link>http://jay.tuley.name/build/</link>
     <description>NicePlayer AppCast</description>
     <generator>Feeder 1.4.9.v2 http://reinventedsoftware.com/feeder/</generator>
     <docs>http://blogs.law.harvard.edu/tech/rss</docs>
     <language>en</language>
-    <pubDate>Fri, 16 Nov 2007 16:28:51 -0600</pubDate>
-    <lastBuildDate>Fri, 16 Nov 2007 16:28:51 -0600</lastBuildDate>
-    
-    <atom:link href="http://niceplayer.sf.net/update/NicePlayerAppCast.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 22 Aug 2008 09:43:47 -0500</pubDate>
+    <lastBuildDate>Fri, 22 Aug 2008 09:43:47 -0500</lastBuildDate>
+    <item>
+      <title>NicePlayer 0.96.2</title>
+      <link>http://code.google.com/p/niceplaer</link>
+      <description><![CDATA[<p>Version 0.96.2 (v581)
+<br />• Fix for lack of folder expansion when dragging directly to the playlist
+<br />• QuickLook support for mkv and divx file extensions
+<br />• m4v file extension document association added.
+<br />• NicePlayer Apple Remote code has been updated for Leopard
+<br />• NicePlayer can now be set on every screen in Leopard Spaces</p>]]></description>
+      <pubDate>Fri, 22 Aug 2008 09:43:24 -0500</pubDate>
+      <enclosure url="http://niceplayer.googlecode.com/files/NicePlayer_0.96.2.dmg" length="3444481" type="application/x-diskcopy" sparkle:version="581"/>
+      <guid isPermaLink="false">niceplayer-0962</guid>
+    </item>
     <item>
       <title>NicePlayer 0.96.1</title>
       <link>http://niceplayer.sf.net</link>
