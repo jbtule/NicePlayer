@@ -1,1 +1,0 @@
-For information see blog entry "My Sunday Project - Reusable Cocoa Script Menu" at http://indyjt.com/blog
