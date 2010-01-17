@@ -2,6 +2,7 @@
 {
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Release;
+		activeSDKPreference = macosx10.5;
 		activeTarget = 3667D3000A0184250035467C /* UniversalCharsetDetector */;
 		addToTargets = (
 			3667D3000A0184250035467C /* UniversalCharsetDetector */,
@@ -66,12 +67,8 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 240636059;
-			PBXWorkspaceStateSaveDate = 240636059;
-		};
-		perUserProjectItems = {
-			69BA5A6A0E57D0D9001E7BCF /* PBXTextBookmark */ = 69BA5A6A0E57D0D9001E7BCF /* PBXTextBookmark */;
-			69BA5A6D0E57D107001E7BCF /* PBXTextBookmark */ = 69BA5A6D0E57D107001E7BCF /* PBXTextBookmark */;
+			PBXPerProjectTemplateStateSaveDate = 285457494;
+			PBXWorkspaceStateSaveDate = 285457494;
 		};
 		sourceControlManager = 6994614D0CCBCA5900CE0AD3 /* Source Control */;
 		userBuildSettings = {
@@ -116,6 +113,9 @@
 		fallbackIsa = XCSourceControlManager;
 		isSCMEnabled = 0;
 		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
 		};
 		scmType = "";
 	};
@@ -138,23 +138,5 @@
 			sepNavVisRect = "{{0, 0}, {852, 562}}";
 			sepNavWindowFrame = "{{468, 87}, {891, 691}}";
 		};
-	};
-	69BA5A6A0E57D0D9001E7BCF /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		comments = "warning: 'class CharDistributionAnalysis' has virtual functions but non-virtual destructor";
-		fRef = 3667D1680A0175260035467C /* CharDistribution.h */;
-		rLen = 1;
-		rLoc = 45;
-		rType = 1;
-	};
-	69BA5A6D0E57D107001E7BCF /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 3667D1680A0175260035467C /* CharDistribution.h */;
-		name = "CharDistribution.h: 46";
-		rLen = 2;
-		rLoc = 1944;
-		rType = 0;
-		vrLen = 0;
-		vrLoc = 0;
 	};
 }

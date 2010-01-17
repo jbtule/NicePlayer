@@ -1,2 +1,5 @@
 .DS_Store
 .*\.svn.*
+.*\.pbxuser$
+.*\.mode1v3$
+

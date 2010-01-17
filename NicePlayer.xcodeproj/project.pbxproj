@@ -83,8 +83,6 @@
 		3E49DCB307C96EFD009BA150 /* NPApplicationScripting.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF15F3607C8405700AE56D7 /* NPApplicationScripting.m */; };
 		3E49DCB407C96F01009BA150 /* NiceMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF158C807C7F9CA00AE56D7 /* NiceMovie.m */; };
 		3E4DF83706630D50001B9AC5 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 3E4DF83506630D50001B9AC5 /* Credits.html */; };
-		3E5970EB09FC8DA9001ED4FA /* CocoaScriptMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E5970D209FC8D9A001ED4FA /* CocoaScriptMenu.framework */; };
-		3E5970EC09FC8DB2001ED4FA /* CocoaScriptMenu.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3E5970D209FC8D9A001ED4FA /* CocoaScriptMenu.framework */; };
 		3E64FA4508F2314C0010E3DA /* NicePlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E64FA4108F2314C0010E3DA /* NicePlugin.h */; };
 		3E64FA4608F2314C0010E3DA /* NicePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E64FA4208F2314C0010E3DA /* NicePlugin.m */; };
 		3E6E26A7067FC53600854100 /* repeat_list.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6E26A4067FC53600854100 /* repeat_list.png */; };
@@ -198,6 +196,7 @@
 		69B2197B0BC72AA60054E10E /* AEDescUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B219770BC72AA60054E10E /* AEDescUtils.m */; };
 		69B2197C0BC72AA60054E10E /* TCallScript.h in Headers */ = {isa = PBXBuildFile; fileRef = 69B219780BC72AA60054E10E /* TCallScript.h */; };
 		69B2197D0BC72AA60054E10E /* TCallScript.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B219790BC72AA60054E10E /* TCallScript.m */; };
+		69B8425A1103C3D7002E604D /* CocoaScriptMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69B8424C1103C3B0002E604D /* CocoaScriptMenu.framework */; };
 		69BCF5510B62C4C20000ABEF /* ogg.icns in Resources */ = {isa = PBXBuildFile; fileRef = 69BCF5500B62C4C20000ABEF /* ogg.icns */; };
 		69D9B6BC0D908FD4009D30A0 /* AppleRemote.h in Headers */ = {isa = PBXBuildFile; fileRef = 69D9B6B60D908FD4009D30A0 /* AppleRemote.h */; };
 		69D9B6BD0D908FD4009D30A0 /* AppleRemote.m in Sources */ = {isa = PBXBuildFile; fileRef = 69D9B6B70D908FD4009D30A0 /* AppleRemote.m */; };
@@ -224,27 +223,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = 8D5B49B6048680CD000E48DA;
 			remoteInfo = DVDPlayer;
-		};
-		3E5970D109FC8D9A001ED4FA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3E5970CB09FC8D9A001ED4FA /* CocoaScriptMenu.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
-			remoteInfo = CocoaScriptMenu;
-		};
-		3E5970D309FC8D9A001ED4FA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3E5970CB09FC8D9A001ED4FA /* CocoaScriptMenu.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3E87022C08DD32CF0015C10A;
-			remoteInfo = UnitTests;
-		};
-		691F9D560DFF6A3F000FB98B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3E5970CB09FC8D9A001ED4FA /* CocoaScriptMenu.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
-			remoteInfo = CocoaScriptMenu;
 		};
 		691F9D580DFF6A3F000FB98B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -323,6 +301,27 @@
 			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
 			remoteInfo = Preferable;
 		};
+		69B8424B1103C3B0002E604D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 69B842431103C3B0002E604D /* CocoaScriptMenu.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
+			remoteInfo = CocoaScriptMenu;
+		};
+		69B8424D1103C3B0002E604D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 69B842431103C3B0002E604D /* CocoaScriptMenu.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3E87022C08DD32CF0015C10A;
+			remoteInfo = UnitTests;
+		};
+		69B8425B1103C3E8002E604D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 69B842431103C3B0002E604D /* CocoaScriptMenu.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
+			remoteInfo = CocoaScriptMenu;
+		};
 		69DE19D10BE972F1009D28B9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 69DE19C80BE972F1009D28B9 /* Sparkle.xcodeproj */;
@@ -355,7 +354,6 @@
 				6990B63F0CF0CF8300DA15C2 /* Appscript.framework in CopyFiles */,
 				699461F30CCBEDE900CE0AD3 /* UniversalCharsetDetector.framework in CopyFiles */,
 				69DE19D60BE97321009D28B9 /* Sparkle.framework in CopyFiles */,
-				3E5970EC09FC8DB2001ED4FA /* CocoaScriptMenu.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,7 +443,6 @@
 		3E44F89C065F06A300E48395 /* TimelineControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimelineControl.m; path = "Classes/Overlay Widgets/TimelineControl.m"; sourceTree = "<group>"; };
 		3E452FF00664719D00BC91B0 /* NiceIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = NiceIcon.icns; path = Resources/NiceIcon.icns; sourceTree = "<group>"; };
 		3E4DF83606630D50001B9AC5 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = English; path = English.lproj/Credits.html; sourceTree = "<group>"; };
-		3E5970CB09FC8D9A001ED4FA /* CocoaScriptMenu.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CocoaScriptMenu.xcodeproj; path = Libraries/cocoascriptmenu/CocoaScriptMenu.xcodeproj; sourceTree = "<group>"; };
 		3E64FA4108F2314C0010E3DA /* NicePlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NicePlugin.h; sourceTree = "<group>"; };
 		3E64FA4208F2314C0010E3DA /* NicePlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NicePlugin.m; sourceTree = "<group>"; };
 		3E6E26A4067FC53600854100 /* repeat_list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = repeat_list.png; path = Resources/repeat_list.png; sourceTree = "<group>"; };
@@ -558,6 +555,7 @@
 		69B219770BC72AA60054E10E /* AEDescUtils.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = AEDescUtils.m; sourceTree = "<group>"; };
 		69B219780BC72AA60054E10E /* TCallScript.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = TCallScript.h; sourceTree = "<group>"; };
 		69B219790BC72AA60054E10E /* TCallScript.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = TCallScript.m; sourceTree = "<group>"; };
+		69B842431103C3B0002E604D /* CocoaScriptMenu.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CocoaScriptMenu.xcodeproj; path = Libraries/cocoascriptmenu/CocoaScriptMenu.xcodeproj; sourceTree = "<group>"; };
 		69BCF5500B62C4C20000ABEF /* ogg.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = ogg.icns; sourceTree = "<group>"; };
 		69D9B6B60D908FD4009D30A0 /* AppleRemote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppleRemote.h; path = Classes/AppleRemote/AppleRemote.h; sourceTree = "<group>"; };
 		69D9B6B70D908FD4009D30A0 /* AppleRemote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppleRemote.m; path = Classes/AppleRemote/AppleRemote.m; sourceTree = "<group>"; };
@@ -576,13 +574,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69B8425A1103C3D7002E604D /* CocoaScriptMenu.framework in Frameworks */,
 				69B11D1D0E5818B8005B3775 /* Preferable.framework in Frameworks */,
 				69B11BF40E58135A005B3775 /* STEnum.framework in Frameworks */,
 				6990B4EB0CF0AA0300DA15C2 /* Appscript.framework in Frameworks */,
 				699461F20CCBEDCF00CE0AD3 /* UniversalCharsetDetector.framework in Frameworks */,
 				69DE19D50BE97317009D28B9 /* Sparkle.framework in Frameworks */,
 				2510A5B80B06374400CA8110 /* QTKit.framework in Frameworks */,
-				3E5970EB09FC8DA9001ED4FA /* CocoaScriptMenu.framework in Frameworks */,
 				3EB7EC60065F39AA0002A470 /* Carbon.framework in Frameworks */,
 				3EB7ECFA065F39BC0002A470 /* QuickTime.framework in Frameworks */,
 				257D60020753DE7C00702BD0 /* AppKitScripting.framework in Frameworks */,
@@ -806,12 +804,12 @@
 		25C5C1E208D4B7F300987A95 /* Other Projects */ = {
 			isa = PBXGroup;
 			children = (
+				69B842431103C3B0002E604D /* CocoaScriptMenu.xcodeproj */,
 				69B11C600E5818AF005B3775 /* Preferable.xcodeproj */,
 				69B11BEB0E581343005B3775 /* STEnum10.4.xcodeproj */,
 				6990B4E00CF0A9D300DA15C2 /* Appscript.xcodeproj */,
 				699461E30CCBED9F00CE0AD3 /* UniversalCharsetDetector.xcodeproj */,
 				69DE19C80BE972F1009D28B9 /* Sparkle.xcodeproj */,
-				3E5970CB09FC8D9A001ED4FA /* CocoaScriptMenu.xcodeproj */,
 				25C5C1E408D4B81400987A95 /* DVDPlayer.xcodeproj */,
 			);
 			name = "Other Projects";
@@ -921,15 +919,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		3E5970CC09FC8D9A001ED4FA /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				3E5970D209FC8D9A001ED4FA /* CocoaScriptMenu.framework */,
-				3E5970D409FC8D9A001ED4FA /* UnitTests.octest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		3E8C96C1073EF4730048CB70 /* doc_icons */ = {
 			isa = PBXGroup;
 			children = (
@@ -1022,6 +1011,15 @@
 				69B219790BC72AA60054E10E /* TCallScript.m */,
 			);
 			path = AttachedScriptCode;
+			sourceTree = "<group>";
+		};
+		69B842441103C3B0002E604D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				69B8424C1103C3B0002E604D /* CocoaScriptMenu.framework */,
+				69B8424E1103C3B0002E604D /* UnitTests.octest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		69D9B6C20D908FDE009D30A0 /* AppleRemote */ = {
@@ -1124,7 +1122,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 251FEF6F0855184200D38B8E /* Build configuration list for PBXNativeTarget "NicePlayer" */;
 			buildPhases = (
-				25295068076F804700D4B325 /* ShellScript */,
 				8D15AC280486D014006FF6A4 /* Headers */,
 				8D15AC2B0486D014006FF6A4 /* Resources */,
 				8D15AC300486D014006FF6A4 /* Sources */,
@@ -1137,13 +1134,13 @@
 			buildRules = (
 			);
 			dependencies = (
-				691F9D570DFF6A3F000FB98B /* PBXTargetDependency */,
 				691F9D590DFF6A3F000FB98B /* PBXTargetDependency */,
 				691F9D5F0DFF6A3F000FB98B /* PBXTargetDependency */,
 				691F9D610DFF6A3F000FB98B /* PBXTargetDependency */,
 				691F9D650DFF6A3F000FB98B /* PBXTargetDependency */,
 				69B11C3C0E58161A005B3775 /* PBXTargetDependency */,
 				69B11D200E5818DA005B3775 /* PBXTargetDependency */,
+				69B8425C1103C3E8002E604D /* PBXTargetDependency */,
 			);
 			name = NicePlayer;
 			productInstallPath = "$(HOME)/Applications";
@@ -1175,8 +1172,8 @@
 					ProjectRef = 6990B4E00CF0A9D300DA15C2 /* Appscript.xcodeproj */;
 				},
 				{
-					ProductGroup = 3E5970CC09FC8D9A001ED4FA /* Products */;
-					ProjectRef = 3E5970CB09FC8D9A001ED4FA /* CocoaScriptMenu.xcodeproj */;
+					ProductGroup = 69B842441103C3B0002E604D /* Products */;
+					ProjectRef = 69B842431103C3B0002E604D /* CocoaScriptMenu.xcodeproj */;
 				},
 				{
 					ProductGroup = 25C5C1E508D4B81400987A95 /* Products */;
@@ -1214,20 +1211,6 @@
 			remoteRef = 25C5C1E808D4B81400987A95 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		3E5970D209FC8D9A001ED4FA /* CocoaScriptMenu.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = CocoaScriptMenu.framework;
-			remoteRef = 3E5970D109FC8D9A001ED4FA /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		3E5970D409FC8D9A001ED4FA /* UnitTests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = UnitTests.octest;
-			remoteRef = 3E5970D309FC8D9A001ED4FA /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		69765B370BFBDE7600D9C23B /* Sparkle Test App.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
@@ -1261,6 +1244,20 @@
 			fileType = wrapper.framework;
 			path = Preferable.framework;
 			remoteRef = 69B11C690E5818AF005B3775 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		69B8424C1103C3B0002E604D /* CocoaScriptMenu.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CocoaScriptMenu.framework;
+			remoteRef = 69B8424B1103C3B0002E604D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		69B8424E1103C3B0002E604D /* UnitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = UnitTests.octest;
+			remoteRef = 69B8424D1103C3B0002E604D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		69DE19D20BE972F1009D28B9 /* Sparkle.framework */ = {
@@ -1361,19 +1358,6 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/bin/sdp -f st -o \"$TARGET_BUILD_DIR/NicePlayer.app/Contents/Resources\" \"$SOURCE_ROOT/Resources/NicePlayer.sdef\"";
 		};
-		25295068076F804700D4B325 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"$SOURCE_ROOT/Versioning/version.sh\"";
-		};
 		691ECE150CE0362B0040AE45 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1460,11 +1444,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		691F9D570DFF6A3F000FB98B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CocoaScriptMenu;
-			targetProxy = 691F9D560DFF6A3F000FB98B /* PBXContainerItemProxy */;
-		};
 		691F9D590DFF6A3F000FB98B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = DVDPlayer;
@@ -1494,6 +1473,11 @@
 			isa = PBXTargetDependency;
 			name = Preferable;
 			targetProxy = 69B11D1F0E5818DA005B3775 /* PBXContainerItemProxy */;
+		};
+		69B8425C1103C3E8002E604D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CocoaScriptMenu;
+			targetProxy = 69B8425B1103C3E8002E604D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1663,9 +1647,9 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
 				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
-				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				OTHER_CFLAGS = "-D__DEBUG__=1";
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
 				STRIP_INSTALLED_PRODUCT = NO;
 				VALID_ARCHS = "i386 ppc";
 				WARNING_CFLAGS = "-Wtrigraphs";
@@ -1677,8 +1661,8 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
 				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
-				MACOSX_DEPLOYMENT_TARGET = 10.4;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
 				VALID_ARCHS = "i386 ppc";
 				WARNING_CFLAGS = "-Wtrigraphs";
 			};

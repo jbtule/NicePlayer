@@ -328,7 +328,7 @@
 	}
 	@catch (NSException *e)
 	{
-		NSLog([e reason]);
+		//NSLog([e reason]);
 		updateInProgress = NO;
 		if (verbose)
 			[self showUpdateErrorAlertWithInfo:SULocalizedString(@"An error occurred in retrieving update information. Please try again later.", nil)];
@@ -429,7 +429,7 @@
 		[unarchiver unarchivePath:downloadPath]; // asynchronous extraction!
 	}
 	@catch(NSException *e) {
-		NSLog([e reason]);
+		//NSLog([e reason]);
 		[self showUpdateErrorAlertWithInfo:SULocalizedString(@"An error occurred while extracting the archive. Please try again later.", nil)];
 		[self abandonUpdate];
 	}	
@@ -500,7 +500,7 @@
 	}
 	@catch(NSException *e) 
 	{
-		NSLog([e reason]);
+		//NSLog([e reason]);
 		[self showUpdateErrorAlertWithInfo:SULocalizedString(@"An error occurred during installation. Please try again later.", nil)];
 		[self abandonUpdate];		
 	}
