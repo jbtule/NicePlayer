@@ -61,7 +61,7 @@
 {
     NSArray *extensions = [NSArray arrayWithObjects:
         /* File extensions */
-        @"avi", @"mov", @"qt", @"mpg", @"mpeg", @"m15", @"m75", @"m2v", @"3gpp", @"mpg4", @"mp4",
+        @"avi", @"mov", @"qt", @"mpg", @"mpeg", @"m15", @"m75", @"m2v", @"3gpp", @"mpg4", @"mp4",@"m4v",
         //Commenting out image types as this view isn't design well for them,even though it will display them
         // @"png", @"gif", @"bmp", @"tif", @"pic", @"pct", @"pict", @"jpg", @"jpeg", @"qtif",
          @"swf", @"fli", @"flc", @"dv", @"wmv",@"asf",
