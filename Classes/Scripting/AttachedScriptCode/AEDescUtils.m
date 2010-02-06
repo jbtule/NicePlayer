@@ -88,7 +88,7 @@ SUCH DAMAGE.
 	for (ix=0; ix<N; ix++) {
 			
 			/* get the nth descriptor's content as a string */
-		NSString* theString = [[[self descriptorAtIndex:(ix+1)] stringValue] retain];
+		NSString* theString = [[self descriptorAtIndex:(ix+1)] stringValue];
 		
 			/* append the object to the items in the array */
 		[theArray addObject:theString];

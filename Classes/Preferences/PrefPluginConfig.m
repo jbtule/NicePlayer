@@ -70,7 +70,7 @@
 	}
 		
 	id itemClass = [self classForRow:[self selectedRow]];
-	if((itemClass = [self classForRow:[self selectedRow]]) == nil)
+	if(itemClass == nil)
 		return;
 
 	if(![itemClass hasConfigurableNib]){

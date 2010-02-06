@@ -665,7 +665,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 		[titleMenu addItem:newItem];
 	}
 	
-	return titleMenu;
+	return [titleMenu autorelease];
 }
 
 
@@ -716,7 +716,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 		[chapterMenu addItem:newItem];
 	}
 		
-	return chapterMenu;
+	return [chapterMenu autorelease];
 }
 -(id)audioMenu
 {
@@ -754,7 +754,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 		[audioMenu addItem:newItem];
 	}
 	
-	return audioMenu;
+	return [audioMenu autorelease];
 }
 
 -(id)angleMenu
@@ -780,7 +780,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 		[angleMenu addItem:newItem];
 	}
 	
-	return angleMenu;
+	return [angleMenu autorelease];
 }
 
 -(id)subPictureMenu
@@ -826,7 +826,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 		[subPicturesMenu addItem:newItem];
 	}
 	
-	return subPicturesMenu;
+	return [subPicturesMenu autorelease];
 }
 
 #pragma mark -
@@ -964,7 +964,7 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 		[bookmarksMenu addItem:newItem];
 	}
 	
-	return bookmarksMenu;
+	return [bookmarksMenu autorelease];
 }
 
 -(id)bookmarksForCurrentDisc
@@ -1368,7 +1368,7 @@ NSString *stringForLanguageCode(DVDLanguageCode language){
 	case kDVDLanguageCodeNone:
 	    return [NSString stringWithUTF8String:"None"];
         default:
-            tString =(NSString*) UTCreateStringForOSType(language);
+            tString =(NSString*) [UTCreateStringForOSType(language) autorelease];
             tString = [tString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
             tName = [[tClass currentLocale] displayNameForKey:NSLocaleLanguageCode value:tString];
            // NSLog(@"%@ ?= %@",tString,tName);

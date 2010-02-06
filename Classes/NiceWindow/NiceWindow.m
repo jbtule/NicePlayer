@@ -141,7 +141,7 @@
     [self setReleasedWhenClosed:YES];
 	
 	if([self respondsToSelector:@selector(setCanBeVisibleOnAllSpaces:)]){
-		id tApp =[[SEApplication alloc] initWithBundleID:@"com.apple.systemevents"];
+		id tApp =[[[SEApplication alloc] initWithBundleID:@"com.apple.systemevents"] autorelease];
 		id tBindings =[[[[[tApp expose_preferences] spaces_preferences] application_bindings] get]send];
 		if([tBindings objectForKey:@"indy.jt.niceplayer"] !=nil 
 		   && [[tBindings objectForKey:@"indy.jt.niceplayer"] intValue] == 65544){
@@ -374,8 +374,10 @@
             break;
     }
     /* Update rest of UI */
-    [theScrubBar setDoubleValue:[theMovieView scrubLocation:sender]];
-	[theScrubBar setLoadedValue:[theMovieView perecntLoaded]];
+	if(theMovieView !=nil){
+		[theScrubBar setDoubleValue:[theMovieView scrubLocation:sender]];
+		[theScrubBar setLoadedValue:[theMovieView perecntLoaded]];
+	}
     [theScrubBar setNeedsDisplay:YES];
 }
 
@@ -1050,7 +1052,6 @@
     float newWidth = ([self aspectRatio].width/[self aspectRatio].height)*newHeight;
     
     if(newHeight <= [self minSize].height) {
-        deltaHeight = 0;
         newHeight =[self frame].size.height;
         newWidth= [self frame].size.width;
     }

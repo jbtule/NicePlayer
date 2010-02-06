@@ -112,7 +112,7 @@ id swapForWindows(id each, void* context){
                                                     selector:@selector(preventSleep:)
                                                     userInfo:nil repeats:YES];
     [NSApp setDelegate:self];
-	[NSApp setRemote:[[AppleRemote alloc]initWithDelegate:self]];
+	[NSApp setRemote:[[[AppleRemote alloc]initWithDelegate:self] autorelease]];
     if(![[Preferences mainPrefs] disableAppleRemote])
 		[[NSApp remote] startListening:self];
 }

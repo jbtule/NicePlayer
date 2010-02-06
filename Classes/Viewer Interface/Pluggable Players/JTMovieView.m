@@ -327,7 +327,7 @@
     int sampleSize =5;
     OSType myTypes[1];
     Movie tempMovie = [[self movie] QTMovie];
-    TimeValue newTime;
+    TimeValue newTime = 1;
     TimeValue tempTime = 0;
     myTypes[0] =VisualMediaCharacteristic;      // we want video samples
     int myCount =0;

@@ -90,7 +90,7 @@ BOOL selectNiceWindow(id each, void* context){
 }
 
 -(void)setRemote:(RemoteControl*)aRemote{
-	remote=aRemote;
+	remote=[aRemote retain];
 }
 
 
