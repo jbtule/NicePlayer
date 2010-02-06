@@ -7,22 +7,23 @@
 		<string key="IBDocument.AppKitVersion">1038.25</string>
 		<string key="IBDocument.HIToolboxVersion">458.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
-			<bool key="EncodedWithXMLCoder">YES</bool>
-			<object class="NSArray" key="dict.sortedKeys" id="0">
-				<bool key="EncodedWithXMLCoder">YES</bool>
-			</object>
-			<object class="NSMutableArray" key="dict.values">
-				<bool key="EncodedWithXMLCoder">YES</bool>
-			</object>
+			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
+			<string key="NS.object.0">759</string>
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
 			<integer value="372"/>
+			<integer value="268"/>
 		</object>
-		<reference key="IBDocument.PluginDependencies" ref="0"/>
+		<object class="NSArray" key="IBDocument.PluginDependencies">
+			<bool key="EncodedWithXMLCoder">YES</bool>
+			<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+		</object>
 		<object class="NSMutableDictionary" key="IBDocument.Metadata">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<reference key="dict.sortedKeys" ref="0"/>
+			<object class="NSArray" key="dict.sortedKeys" id="0">
+				<bool key="EncodedWithXMLCoder">YES</bool>
+			</object>
 			<object class="NSMutableArray" key="dict.values">
 				<bool key="EncodedWithXMLCoder">YES</bool>
 			</object>
@@ -381,14 +382,14 @@
 				<string key="NSExtension">NSResponder</string>
 			</object>
 			<object class="NSCustomView" id="955207668">
-				<nil key="NSNextResponder"/>
+				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">256</int>
 				<object class="NSMutableArray" key="NSSubviews">
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<object class="NSButton" id="744021913">
 						<reference key="NSNextResponder" ref="955207668"/>
 						<int key="NSvFlags">256</int>
-						<string key="NSFrame">{{30, 188}, {180, 18}}</string>
+						<string key="NSFrame">{{30, 190}, {180, 18}}</string>
 						<reference key="NSSuperview" ref="955207668"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="1068489947">
@@ -415,7 +416,7 @@
 					<object class="NSButton" id="115046740">
 						<reference key="NSNextResponder" ref="955207668"/>
 						<int key="NSvFlags">256</int>
-						<string key="NSFrame">{{30, 166}, {182, 18}}</string>
+						<string key="NSFrame">{{30, 143}, {182, 18}}</string>
 						<reference key="NSSuperview" ref="955207668"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="26346179">
@@ -437,7 +438,7 @@
 					<object class="NSButton" id="648890292">
 						<reference key="NSNextResponder" ref="955207668"/>
 						<int key="NSvFlags">256</int>
-						<string key="NSFrame">{{30, 105}, {88, 18}}</string>
+						<string key="NSFrame">{{23, 96}, {88, 18}}</string>
 						<reference key="NSSuperview" ref="955207668"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="127266782">
@@ -459,7 +460,7 @@
 					<object class="NSButton" id="643232112">
 						<reference key="NSNextResponder" ref="955207668"/>
 						<int key="NSvFlags">256</int>
-						<string key="NSFrame">{{30, 83}, {157, 18}}</string>
+						<string key="NSFrame">{{23, 74}, {157, 18}}</string>
 						<reference key="NSSuperview" ref="955207668"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="373352119">
@@ -478,10 +479,26 @@
 							<int key="NSPeriodicInterval">25</int>
 						</object>
 					</object>
+					<object class="NSTextField" id="633712802">
+						<reference key="NSNextResponder" ref="955207668"/>
+						<int key="NSvFlags">256</int>
+						<string key="NSFrame">{{10, 167}, {209, 17}}</string>
+						<reference key="NSSuperview" ref="955207668"/>
+						<bool key="NSEnabled">YES</bool>
+						<object class="NSTextFieldCell" key="NSCell" id="579554952">
+							<int key="NSCellFlags">67239424</int>
+							<int key="NSCellFlags2">4194304</int>
+							<string key="NSContents">When Movie Exits Full Screen:</string>
+							<reference key="NSSupport" ref="487203488"/>
+							<reference key="NSControlView" ref="633712802"/>
+							<reference key="NSBackgroundColor" ref="1028095567"/>
+							<reference key="NSTextColor" ref="662150787"/>
+						</object>
+					</object>
 					<object class="NSTextField" id="664752611">
 						<reference key="NSNextResponder" ref="955207668"/>
 						<int key="NSvFlags">256</int>
-						<string key="NSFrame">{{17, 212}, {209, 17}}</string>
+						<string key="NSFrame">{{17, 214}, {209, 17}}</string>
 						<reference key="NSSuperview" ref="955207668"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSTextFieldCell" key="NSCell" id="710350430">
@@ -497,7 +514,7 @@
 					<object class="NSTextField" id="357459962">
 						<reference key="NSNextResponder" ref="955207668"/>
 						<int key="NSvFlags">256</int>
-						<string key="NSFrame">{{17, 129}, {164, 17}}</string>
+						<string key="NSFrame">{{10, 120}, {164, 17}}</string>
 						<reference key="NSSuperview" ref="955207668"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSTextFieldCell" key="NSCell" id="502448915">
@@ -513,7 +530,7 @@
 					<object class="NSTextField" id="56693776">
 						<reference key="NSNextResponder" ref="955207668"/>
 						<int key="NSvFlags">256</int>
-						<string key="NSFrame">{{17, 51}, {194, 17}}</string>
+						<string key="NSFrame">{{10, 42}, {194, 17}}</string>
 						<reference key="NSSuperview" ref="955207668"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSTextFieldCell" key="NSCell" id="409936891">
@@ -529,7 +546,7 @@
 					<object class="NSButton" id="927845184">
 						<reference key="NSNextResponder" ref="955207668"/>
 						<int key="NSvFlags">256</int>
-						<string key="NSFrame">{{30, 27}, {299, 18}}</string>
+						<string key="NSFrame">{{23, 18}, {299, 18}}</string>
 						<reference key="NSSuperview" ref="955207668"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="593073400">
@@ -549,7 +566,8 @@
 						</object>
 					</object>
 				</object>
-				<string key="NSFrameSize">{347, 250}</string>
+				<string key="NSFrameSize">{320, 252}</string>
+				<reference key="NSSuperview"/>
 				<string key="NSClassName">NSView</string>
 				<string key="NSExtension">NSResponder</string>
 			</object>
@@ -2670,13 +2688,14 @@
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="744021913"/>
-							<reference ref="115046740"/>
-							<reference ref="648890292"/>
-							<reference ref="643232112"/>
 							<reference ref="664752611"/>
-							<reference ref="357459962"/>
-							<reference ref="56693776"/>
+							<reference ref="115046740"/>
 							<reference ref="927845184"/>
+							<reference ref="56693776"/>
+							<reference ref="357459962"/>
+							<reference ref="643232112"/>
+							<reference ref="648890292"/>
+							<reference ref="633712802"/>
 						</object>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">Actions</string>
@@ -3756,245 +3775,581 @@
 						<reference key="object" ref="145569283"/>
 						<reference key="parent" ref="272464540"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">981</int>
+						<reference key="object" ref="633712802"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="579554952"/>
+						</object>
+						<reference key="parent" ref="955207668"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">982</int>
+						<reference key="object" ref="579554952"/>
+						<reference key="parent" ref="633712802"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<object class="NSArray" key="dict.sortedKeys">
 					<bool key="EncodedWithXMLCoder">YES</bool>
+					<string>-3.IBPluginDependency</string>
 					<string>-3.ImportedFromIB2</string>
 					<string>17.ImportedFromIB2</string>
+					<string>236.IBPluginDependency</string>
 					<string>236.ImportedFromIB2</string>
+					<string>243.IBPluginDependency</string>
 					<string>243.ImportedFromIB2</string>
+					<string>248.IBPluginDependency</string>
 					<string>248.ImportedFromIB2</string>
+					<string>249.IBPluginDependency</string>
 					<string>249.ImportedFromIB2</string>
+					<string>253.IBPluginDependency</string>
 					<string>253.ImportedFromIB2</string>
+					<string>259.IBPluginDependency</string>
 					<string>259.ImportedFromIB2</string>
+					<string>262.IBPluginDependency</string>
 					<string>262.ImportedFromIB2</string>
+					<string>263.IBPluginDependency</string>
 					<string>263.ImportedFromIB2</string>
+					<string>268.IBEditorWindowLastContentRect</string>
+					<string>268.IBPluginDependency</string>
 					<string>268.ImportedFromIB2</string>
+					<string>270.IBPluginDependency</string>
 					<string>270.ImportedFromIB2</string>
+					<string>273.IBPluginDependency</string>
 					<string>273.ImportedFromIB2</string>
+					<string>274.IBPluginDependency</string>
 					<string>274.ImportedFromIB2</string>
+					<string>276.IBPluginDependency</string>
 					<string>276.ImportedFromIB2</string>
+					<string>277.IBPluginDependency</string>
 					<string>277.ImportedFromIB2</string>
+					<string>278.IBPluginDependency</string>
 					<string>278.ImportedFromIB2</string>
+					<string>280.IBPluginDependency</string>
 					<string>280.ImportedFromIB2</string>
+					<string>282.IBPluginDependency</string>
 					<string>282.ImportedFromIB2</string>
+					<string>283.IBPluginDependency</string>
 					<string>283.ImportedFromIB2</string>
 					<string>284.CustomClassName</string>
+					<string>284.IBPluginDependency</string>
 					<string>284.ImportedFromIB2</string>
+					<string>285.IBPluginDependency</string>
 					<string>285.ImportedFromIB2</string>
+					<string>286.IBPluginDependency</string>
 					<string>286.ImportedFromIB2</string>
+					<string>316.IBPluginDependency</string>
 					<string>316.ImportedFromIB2</string>
+					<string>318.IBPluginDependency</string>
 					<string>318.ImportedFromIB2</string>
+					<string>319.IBPluginDependency</string>
 					<string>319.ImportedFromIB2</string>
+					<string>322.IBPluginDependency</string>
 					<string>322.ImportedFromIB2</string>
+					<string>323.IBPluginDependency</string>
 					<string>323.ImportedFromIB2</string>
+					<string>324.IBPluginDependency</string>
 					<string>324.ImportedFromIB2</string>
+					<string>326.IBPluginDependency</string>
 					<string>326.ImportedFromIB2</string>
+					<string>327.IBPluginDependency</string>
 					<string>327.ImportedFromIB2</string>
+					<string>347.IBPluginDependency</string>
 					<string>347.ImportedFromIB2</string>
+					<string>348.IBPluginDependency</string>
 					<string>348.ImportedFromIB2</string>
+					<string>349.IBPluginDependency</string>
 					<string>349.ImportedFromIB2</string>
+					<string>350.IBPluginDependency</string>
 					<string>350.ImportedFromIB2</string>
+					<string>357.IBPluginDependency</string>
 					<string>357.ImportedFromIB2</string>
+					<string>358.IBPluginDependency</string>
 					<string>358.ImportedFromIB2</string>
+					<string>359.IBPluginDependency</string>
 					<string>359.ImportedFromIB2</string>
+					<string>360.IBPluginDependency</string>
 					<string>360.ImportedFromIB2</string>
+					<string>361.IBPluginDependency</string>
 					<string>361.ImportedFromIB2</string>
 					<string>372.IBEditorWindowLastContentRect</string>
+					<string>372.IBPluginDependency</string>
 					<string>372.ImportedFromIB2</string>
+					<string>373.IBPluginDependency</string>
 					<string>373.ImportedFromIB2</string>
+					<string>377.IBPluginDependency</string>
 					<string>377.ImportedFromIB2</string>
+					<string>381.IBPluginDependency</string>
 					<string>381.ImportedFromIB2</string>
+					<string>382.IBPluginDependency</string>
 					<string>382.ImportedFromIB2</string>
+					<string>383.IBPluginDependency</string>
 					<string>383.ImportedFromIB2</string>
+					<string>386.IBPluginDependency</string>
 					<string>386.ImportedFromIB2</string>
+					<string>388.IBPluginDependency</string>
 					<string>388.ImportedFromIB2</string>
+					<string>400.IBPluginDependency</string>
 					<string>400.ImportedFromIB2</string>
+					<string>402.IBPluginDependency</string>
 					<string>402.ImportedFromIB2</string>
+					<string>403.IBPluginDependency</string>
 					<string>403.ImportedFromIB2</string>
+					<string>408.IBPluginDependency</string>
 					<string>408.ImportedFromIB2</string>
+					<string>409.IBPluginDependency</string>
 					<string>409.ImportedFromIB2</string>
+					<string>410.IBPluginDependency</string>
 					<string>410.ImportedFromIB2</string>
+					<string>412.IBPluginDependency</string>
 					<string>412.ImportedFromIB2</string>
+					<string>415.IBPluginDependency</string>
 					<string>415.ImportedFromIB2</string>
+					<string>416.IBPluginDependency</string>
 					<string>416.ImportedFromIB2</string>
+					<string>419.IBPluginDependency</string>
 					<string>419.ImportedFromIB2</string>
+					<string>441.IBPluginDependency</string>
 					<string>441.ImportedFromIB2</string>
+					<string>449.IBPluginDependency</string>
 					<string>449.ImportedFromIB2</string>
+					<string>450.IBPluginDependency</string>
 					<string>450.ImportedFromIB2</string>
+					<string>451.IBPluginDependency</string>
 					<string>451.ImportedFromIB2</string>
+					<string>452.IBPluginDependency</string>
 					<string>452.ImportedFromIB2</string>
+					<string>453.IBPluginDependency</string>
 					<string>453.ImportedFromIB2</string>
+					<string>454.IBPluginDependency</string>
 					<string>454.ImportedFromIB2</string>
+					<string>455.IBPluginDependency</string>
 					<string>455.ImportedFromIB2</string>
+					<string>456.IBPluginDependency</string>
 					<string>456.ImportedFromIB2</string>
+					<string>457.IBPluginDependency</string>
 					<string>457.ImportedFromIB2</string>
+					<string>458.IBPluginDependency</string>
 					<string>458.ImportedFromIB2</string>
+					<string>459.IBPluginDependency</string>
 					<string>459.ImportedFromIB2</string>
+					<string>460.IBPluginDependency</string>
 					<string>460.ImportedFromIB2</string>
+					<string>461.IBPluginDependency</string>
 					<string>461.ImportedFromIB2</string>
+					<string>462.IBPluginDependency</string>
 					<string>462.ImportedFromIB2</string>
+					<string>463.IBPluginDependency</string>
 					<string>463.ImportedFromIB2</string>
+					<string>464.IBPluginDependency</string>
 					<string>464.ImportedFromIB2</string>
+					<string>465.IBPluginDependency</string>
 					<string>465.ImportedFromIB2</string>
+					<string>466.IBPluginDependency</string>
 					<string>466.ImportedFromIB2</string>
+					<string>467.IBPluginDependency</string>
 					<string>467.ImportedFromIB2</string>
+					<string>468.IBPluginDependency</string>
 					<string>468.ImportedFromIB2</string>
+					<string>469.IBPluginDependency</string>
 					<string>469.ImportedFromIB2</string>
+					<string>470.IBPluginDependency</string>
 					<string>470.ImportedFromIB2</string>
+					<string>471.IBPluginDependency</string>
 					<string>471.ImportedFromIB2</string>
+					<string>472.IBPluginDependency</string>
 					<string>472.ImportedFromIB2</string>
+					<string>473.IBPluginDependency</string>
 					<string>473.ImportedFromIB2</string>
+					<string>474.IBPluginDependency</string>
 					<string>474.ImportedFromIB2</string>
+					<string>475.IBPluginDependency</string>
 					<string>475.ImportedFromIB2</string>
+					<string>476.IBPluginDependency</string>
 					<string>476.ImportedFromIB2</string>
+					<string>477.IBPluginDependency</string>
 					<string>477.ImportedFromIB2</string>
+					<string>478.IBPluginDependency</string>
 					<string>478.ImportedFromIB2</string>
+					<string>479.IBPluginDependency</string>
 					<string>479.ImportedFromIB2</string>
+					<string>480.IBPluginDependency</string>
 					<string>480.ImportedFromIB2</string>
+					<string>481.IBPluginDependency</string>
 					<string>481.ImportedFromIB2</string>
+					<string>482.IBPluginDependency</string>
 					<string>482.ImportedFromIB2</string>
+					<string>483.IBPluginDependency</string>
 					<string>483.ImportedFromIB2</string>
+					<string>484.IBPluginDependency</string>
 					<string>484.ImportedFromIB2</string>
+					<string>485.IBPluginDependency</string>
 					<string>485.ImportedFromIB2</string>
+					<string>486.IBPluginDependency</string>
 					<string>486.ImportedFromIB2</string>
+					<string>487.IBPluginDependency</string>
 					<string>487.ImportedFromIB2</string>
+					<string>488.IBPluginDependency</string>
 					<string>488.ImportedFromIB2</string>
+					<string>489.IBPluginDependency</string>
 					<string>489.ImportedFromIB2</string>
+					<string>490.IBPluginDependency</string>
 					<string>490.ImportedFromIB2</string>
+					<string>5.IBPluginDependency</string>
 					<string>5.ImportedFromIB2</string>
+					<string>563.IBPluginDependency</string>
 					<string>563.ImportedFromIB2</string>
+					<string>565.IBPluginDependency</string>
 					<string>565.ImportedFromIB2</string>
+					<string>6.IBPluginDependency</string>
 					<string>6.ImportedFromIB2</string>
 					<string>6.windowTemplate.hasMinSize</string>
 					<string>6.windowTemplate.minSize</string>
+					<string>623.IBPluginDependency</string>
 					<string>623.ImportedFromIB2</string>
+					<string>624.IBPluginDependency</string>
 					<string>624.ImportedFromIB2</string>
+					<string>930.IBPluginDependency</string>
+					<string>931.IBPluginDependency</string>
+					<string>932.IBPluginDependency</string>
+					<string>933.IBPluginDependency</string>
+					<string>934.IBPluginDependency</string>
+					<string>935.IBPluginDependency</string>
+					<string>936.IBPluginDependency</string>
+					<string>937.IBPluginDependency</string>
+					<string>938.IBPluginDependency</string>
+					<string>939.IBPluginDependency</string>
+					<string>940.IBPluginDependency</string>
+					<string>941.IBPluginDependency</string>
+					<string>942.IBPluginDependency</string>
+					<string>943.IBPluginDependency</string>
+					<string>944.IBPluginDependency</string>
+					<string>945.IBPluginDependency</string>
+					<string>946.IBPluginDependency</string>
+					<string>947.IBPluginDependency</string>
+					<string>948.IBPluginDependency</string>
+					<string>949.IBPluginDependency</string>
+					<string>950.IBPluginDependency</string>
+					<string>951.IBPluginDependency</string>
+					<string>952.IBPluginDependency</string>
+					<string>953.IBPluginDependency</string>
+					<string>954.IBPluginDependency</string>
+					<string>955.IBPluginDependency</string>
+					<string>956.IBPluginDependency</string>
+					<string>957.IBPluginDependency</string>
+					<string>958.IBPluginDependency</string>
+					<string>959.IBPluginDependency</string>
+					<string>960.IBPluginDependency</string>
+					<string>961.IBPluginDependency</string>
+					<string>962.IBPluginDependency</string>
+					<string>963.IBPluginDependency</string>
+					<string>964.IBPluginDependency</string>
+					<string>965.IBPluginDependency</string>
+					<string>966.IBPluginDependency</string>
+					<string>967.IBPluginDependency</string>
+					<string>968.IBPluginDependency</string>
+					<string>969.IBPluginDependency</string>
+					<string>970.IBPluginDependency</string>
+					<string>971.IBPluginDependency</string>
+					<string>972.IBPluginDependency</string>
+					<string>973.IBPluginDependency</string>
+					<string>974.IBPluginDependency</string>
+					<string>975.IBPluginDependency</string>
+					<string>976.IBPluginDependency</string>
+					<string>977.IBPluginDependency</string>
 					<string>977.IBShouldRemoveOnLegacySave</string>
+					<string>978.IBPluginDependency</string>
 					<string>978.IBShouldRemoveOnLegacySave</string>
+					<string>979.IBPluginDependency</string>
 					<string>979.IBShouldRemoveOnLegacySave</string>
+					<string>980.IBPluginDependency</string>
 					<string>980.IBShouldRemoveOnLegacySave</string>
+					<string>981.IBPluginDependency</string>
+					<string>981.ImportedFromIB2</string>
+					<string>982.IBPluginDependency</string>
 				</object>
 				<object class="NSMutableArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>{{0, 482}, {320, 252}}</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
 					<string>PrefPluginConfig</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
 					<string>{{0, 448}, {400, 275}}</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
 					<boolean value="YES"/>
 					<string>{452, 241}</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<boolean value="YES"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="unlocalizedProperties">
@@ -4013,7 +4368,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">980</int>
+			<int key="maxID">982</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
