@@ -740,7 +740,10 @@ stuff won't work properly! */
         menuObjects = nil;
     }
     
-    movieMenuItem = [[NSMenuItem alloc] initWithTitle:[theMovieView menuTitle]
+	id tMenuTitle =[theMovieView menuTitle];
+	if(tMenuTitle == nil)
+		tMenuTitle = @"Untitled Movie";
+    movieMenuItem = [[NSMenuItem alloc] initWithTitle:tMenuTitle
                                                action:nil
                                         keyEquivalent:@""];
     
@@ -1241,7 +1244,7 @@ item:(id)item childIndex:(int)anIndex{
     if([pboard availableTypeFromArray:[NSArray arrayWithObject: NSFilenamesPboardType]]){
         NSArray *urls = [pboard propertyListForType:NSFilenamesPboardType];
 		NSMutableArray* mutUrls= [NSMutableArray array];
-		BOOL tVerifyType = YES;
+		BOOL tVerifyType = NO;
 		urls =[urls injectUsingFunction:NPInjectNestedDirectories into:mutUrls context:&tVerifyType];
         urls = [urls collectUsingFunction:NPConvertFileNamesToURLs context:nil];
         

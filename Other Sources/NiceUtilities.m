@@ -76,6 +76,9 @@ id appendToEach(id aLastPath,void* aPrefix){
 }
 
 id NPInjectNestedDirectories(id each, id injected, void* verifyBool){
+	BOOL tVerify = *(BOOL*)verifyBool;
+	if([[each lastPathComponent] hasPrefix:@"."])
+	   return injected;
     if([[each pathExtension] isEqualToString:@""]){
         BOOL tBool = NO;
         if([[NSFileManager defaultManager] fileExistsAtPath:each isDirectory:&tBool] && tBool){
@@ -86,16 +89,15 @@ id NPInjectNestedDirectories(id each, id injected, void* verifyBool){
                 [injected addObject:each];
             }else{
 
-             
+				BOOL tNestedVerify = YES;
                 tSubPaths = [tSubPaths collectUsingFunction:appendToEach context:(void*)each];
-                BOOL tVerifyType = YES;
-                injected =[tSubPaths injectUsingFunction:NPInjectNestedDirectories into:injected context:&tVerifyType];
+                injected =[tSubPaths injectUsingFunction:NPInjectNestedDirectories into:injected context:&tNestedVerify];
             }
 
-        }else if(! *(BOOL*)verifyBool || [[[NPPluginReader pluginReader] allowedExtensions] containsObject: NSHFSTypeOfFile(each)] ){
+        }else if(!tVerify || [[[NPPluginReader pluginReader] allowedExtensions] containsObject: NSHFSTypeOfFile(each)] ){
             [injected addObject:each];
         }
-    } else if(!*(BOOL*)verifyBool || [[[NPPluginReader pluginReader] allowedExtensions] containsObject: [each pathExtension]] ){
+    } else if(!tVerify || [[[NPPluginReader pluginReader] allowedExtensions] containsObject: [each pathExtension]] ){
             [injected addObject:each];
     }
     return injected;

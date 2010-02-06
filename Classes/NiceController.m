@@ -158,14 +158,20 @@ id swapForWindows(id each, void* context){
 
 -(void)openURLs:(NSArray *)files
 {
+
     id tempDoc = nil;
     unsigned i;
     for (i = 0; i < [files count]; i++){
+		NSError* tError = nil;
         id tempURL = [files objectAtIndex:i];
         if(([[Preferences mainPrefs] defaultOpenMode] == OPEN_WINDOWS 
-           || ([[[[tempURL path] pathExtension] lowercaseString] isEqualTo:@"nicelist"]))
+			|| ([@"nicelist" isEqualTo:[[[tempURL path] pathExtension] lowercaseString]]))
            && i !=0 ){
-            [self openDocumentWithContentsOfURL:tempURL display:YES];
+            [self openDocumentWithContentsOfURL:tempURL display:YES error:&tError];
+			if (tError) {
+				[NSApp presentError:tError];
+				return;
+			}
             continue;
         }
         if(i==0){
@@ -175,11 +181,11 @@ id swapForWindows(id each, void* context){
                 if(([document isKindOfClass:[NiceDocument class]]) && ![document isActive])
                     tempDoc = document;
                 else
-                    tempDoc = [self openDocumentWithContentsOfURL:tempURL display:YES];
+                    tempDoc = [self openDocumentWithContentsOfURL:tempURL display:YES error:&tError];
             } else
-                tempDoc = [self openDocumentWithContentsOfURL:tempURL display:YES];
+                tempDoc = [self openDocumentWithContentsOfURL:tempURL display:YES error:&tError];
             
-            if(![[[[tempURL path] pathExtension] lowercaseString] isEqualTo:@"nicelist"])
+            if(![@"nicelist" isEqualTo:[[[tempURL path] pathExtension] lowercaseString]])
                 [tempDoc loadURL:tempURL firstTime:YES];
             else if(![tempDoc isActive])
                 [tempDoc loadPlaylistFromURL:tempURL];
@@ -192,6 +198,11 @@ id swapForWindows(id each, void* context){
             }
         } else
             [tempDoc addURLToPlaylist:tempURL];
+		
+		if (tError) {
+			[NSApp presentError:tError];
+			return;
+		}
     }
     
 
