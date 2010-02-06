@@ -600,9 +600,9 @@
 	<key>CFBundleExecutable</key>
 	<string>NicePlayer</string>
 	<key>CFBundleHelpBookFolder</key>
-	<string>NicePlayer Help</string>
+	<string>NicePlayer.help</string>
 	<key>CFBundleHelpBookName</key>
-	<string>NicePlayer Help</string>
+	<string>indy.jt.niceplayer.help</string>
 	<key>CFBundleIconFile</key>
 	<string>NiceIcon</string>
 	<key>CFBundleIdentifier</key>

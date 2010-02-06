@@ -310,16 +310,22 @@ BOOL selectNiceWindow(id each, void* context){
         [NSURL URLWithString:@"http://code.google.com/p/niceplayer/w/list"]];
 }
 
+-(IBAction)customHelp:(id)sender
+{
+    [[NSWorkspace sharedWorkspace] openURL:
+	 [NSURL URLWithString:@"http://code.google.com/p/niceplayer/wiki/NicePlayerHelp"]];
+}
+
 -(IBAction)submitBug:(id)sender
 {
     [[NSWorkspace sharedWorkspace] openURL:
-        [NSURL URLWithString:@"http://code.google.com/p/niceplayer/issues/list"]];
+        [NSURL URLWithString:@"http://code.google.com/p/niceplayer/issues/entry?template=User%20defect%20report"]];
 }
 
 -(IBAction)featureRequest:(id)sender
 {
     [[NSWorkspace sharedWorkspace] openURL:
-	[NSURL URLWithString:@"http://code.google.com/p/niceplayer/issues/list"]];
+	[NSURL URLWithString:@"http://code.google.com/p/niceplayer/issues/entry?template=User%20feature%20request"]];
 }
 
 -(IBAction)disccusionGroup:(id)sender

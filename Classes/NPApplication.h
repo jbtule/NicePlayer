@@ -77,6 +77,8 @@
 -(IBAction)donateToNicePlayer:(id)sender;
 -(IBAction)onlineSupportWikiFAQ:(id)sender;
 -(IBAction)submitBug:(id)sender;
+-(IBAction)customHelp:(id)sender;
+
 -(IBAction)featureRequest:(id)sender;
 -(IBAction)visitAcknowlegementsPage:(id)sender;
 -(IBAction)disccusionGroup:(id)sender;
