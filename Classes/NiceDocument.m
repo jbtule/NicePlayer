@@ -363,10 +363,7 @@ void findSpace(id each, void* context, BOOL* endthis){
     // Add any code here that needs to be executed once the windowController has loaded the document's window.
     if(theCurrentURL == nil){
         [NSApp addWindowsItem:theWindow title:@"NicePlayer" filename:NO];
-    } else {
-		// Why was this here? It's make NP crash.
-        //[self finalOpenURLFirstTime:YES];
-    }
+    } 
     
     [self updateAfterLoad];
 	[self repositionAfterLoad];
@@ -778,9 +775,9 @@ stuff won't work properly! */
 - (NSSize)calculateAspectRatio
 {
     NSSize aSize = [theMovieView naturalSize];
-    [theWindow setAspectRatio:aSize];
-    [theWindow setMinSize:NSMakeSize((aSize.width/aSize.height)*150,150)];
-    return aSize;
+		[theWindow setAspectRatio:aSize];
+		[theWindow setMinSize:NSMakeSize((aSize.width/aSize.height)*150,150)];
+	return aSize;
 }
 
 #pragma mark Interface

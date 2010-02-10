@@ -790,6 +790,7 @@
 		[self setResizeIncrements:NSMakeSize(1.0,1.0)];
     } else{
 		[self setAspectRatio:aspectRatio];
+		_lastSize=NSMakeSize(0, 0);
         [self resizeToAspectRatio];
     }
 }
@@ -1257,6 +1258,8 @@
  */
 -(void)initialDefaultSize
 {
+	_lastSize = [theMovieView naturalSize];
+
     [self resizeWithSize:NSMakeSize([self aspectRatio].width,[self aspectRatio].height) animate:YES];
     if (fullScreen)
         [self center];	
@@ -1267,10 +1270,15 @@
  */
 -(void)resizeToAspectRatio
 {
+	NSSize tSize = [theMovieView naturalSize];
     [self setAspectRatio:[theMovieView naturalSize]];
-    NSSize aSize = [self getResizeAspectRatioSize];
-    [self resizeWithSize:aSize animate:YES];
-    [self _JTRefitFills];
+	if (!NSEqualSizes(_lastSize, tSize)) {
+		NSSize aSize = [self getResizeAspectRatioSize];
+		[self resizeWithSize:aSize animate:YES];
+		[self _JTRefitFills];
+		_lastSize = tSize;
+	}
+   
 }
 
 - (IBAction)center:(id)sender

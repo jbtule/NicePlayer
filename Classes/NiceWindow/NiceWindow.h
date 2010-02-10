@@ -95,6 +95,8 @@
 	NSPoint initialDrag;
     
     id notifierTimer;
+	NSSize _lastSize;
+
 	
 }
 -(float)resizeWidth;
