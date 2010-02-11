@@ -142,6 +142,7 @@ void findSpace(id each, void* context, BOOL* endthis){
         thePlaylist = [[NSMutableArray alloc] init];
 		theDataSourceCache  = [[NSMutableArray alloc] init];
                 theMainItemCache = [[NSMutableDictionary alloc] init];
+		_randomList = [[NSMutableArray alloc] init];
         theRepeatMode = [[Preferences mainPrefs] defaultRepeatMode];
         movieMenuItem = nil;
         menuObjects = nil;
@@ -175,9 +176,11 @@ void findSpace(id each, void* context, BOOL* endthis){
     [theCurrentURL release];
     [thePlaylist release];
     [playlistFilename release];
+	
     [theID release];
 	[theDataSourceCache release];
         [theMainItemCache release];
+	[_randomList release];
     [super dealloc];
 }
 
@@ -780,18 +783,41 @@ stuff won't work properly! */
 	return aSize;
 }
 
+-(void)resetRandom{
+	if( [thePlaylist count] <= 1)
+		return;
+	[_randomList removeAllObjects];
+	id tArray = [NSMutableArray arrayWithNumbersForRange:NSMakeRange(0, [thePlaylist count])];	
+	NSUInteger tCurrent =[thePlaylist indexOfObject:theCurrentURL];
+	[tArray removeObjectAtIndex:tCurrent];
+	[_randomList addObject:[NSNumber numberWithInt:tCurrent]];
+	_randomIndex =1;
+	while([tArray count]>1){
+		int i = ((float)random()/RAND_MAX) * [tArray count]; 
+		id tItem = [tArray objectAtIndex:i];
+		[_randomList addObject:tItem];
+		[tArray removeObjectAtIndex:i];
+	}
+	 [_randomList addObject:[tArray lastObject]];
+
+}
+
 #pragma mark Interface
 
 -(IBAction)toggleRandomMode:(id)sender
 {
+	
     if(isRandom)
         isRandom = NO;
-    else
+    else{
         isRandom = YES;
+		[self resetRandom];
+	}
 		
 			[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:nil];
 
 }
+
 
 -(IBAction)toggleRepeatMode:(id)sender
 {
@@ -819,6 +845,10 @@ stuff won't work properly! */
             [theMovieView setLoopMode: NSQTMovieNormalPlayback];
             break;
     }
+	
+	[theRandomButton setState:isRandom ? NSOnState : NSOffState];
+
+	
 			[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:nil];
 
 }
@@ -846,13 +876,21 @@ stuff won't work properly! */
 
 -(unsigned)getNextIndex
 {
-    int anIndex = [thePlaylist indexOfObject:theCurrentURL];
+    unsigned int anIndex = [thePlaylist indexOfObject:theCurrentURL];
     
     if([thePlaylist isEmpty])
         return -1;
     
     if(isRandom){
-        anIndex = ((float)random()/RAND_MAX)*[thePlaylist count];
+		if(_randomIndex >= [_randomList count]){
+			if (REPEAT_LIST == theRepeatMode){
+				[self resetRandom];
+			}else {
+			    return -1;
+			}
+		}
+		anIndex = [[_randomList objectAtIndex:_randomIndex] unsignedIntValue];
+		_randomIndex++;
     }else{
         anIndex++;
     }
@@ -1110,6 +1148,7 @@ stuff won't work properly! */
                 theRepeatMode = [[[plist objectForKey:@"Contents"] objectForKey:@"Repeat"] intValue];
                 isRandom  = [[[plist objectForKey:@"Contents"] objectForKey:@"Random"] intValue];
                 [self loadURL:[thePlaylist firstObject] firstTime:YES];
+				[self resetRandom];
                 [self refreshRepeatModeGUI];
 					[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:nil];
                 [theMovieView setVolume: [[[plist objectForKey:@"Contents"] objectForKey:@"Volume"] floatValue]];

@@ -62,8 +62,11 @@
     IBOutlet id thePlaylistDrawer;
     IBOutlet id thePlaylistTable;
     IBOutlet id theRepeatButton;
+	IBOutlet id theRandomButton;
     IBOutlet NiceWindow *theWindow;
     NSURL* theCurrentURL;
+	unsigned int _randomIndex;
+	NSMutableArray* _randomList;
     NSMutableArray* thePlaylist;
 	NSMutableArray* theDataSourceCache;
         NSMutableDictionary* theMainItemCache;
