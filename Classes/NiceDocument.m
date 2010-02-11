@@ -403,6 +403,12 @@ void findSpace(id each, void* context, BOOL* endthis){
 
 - (void)repositionAfterLoad{
     
+	NSString* tPosition =[[Preferences mainPrefs] windowPosition];
+	if([[NSApp movieWindows] count] == 1 && tPosition != nil){
+		[[self window] setFrameOrigin:NSPointFromString(tPosition)];
+		return;
+	}
+	
     int tScreenPref = -1;
     
     NSScreen* tScreen = [NSScreen mainScreen];
@@ -814,7 +820,7 @@ stuff won't work properly! */
 		[self resetRandom];
 	}
 		
-			[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:nil];
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:nil];
 
 }
 

@@ -194,6 +194,16 @@
 	[[NSUserDefaults standardUserDefaults] setInteger:anInt forKey:@"scrollResizePin"];
 }
 
+-(void)setWindowPosition:(NSPoint) aPoint
+{
+	[[NSUserDefaults standardUserDefaults] setObject:NSStringFromPoint(aPoint) forKey:@"windowOrigin"];
+}
+
+-(NSString*)windowPosition
+{
+	return [[NSUserDefaults standardUserDefaults] valueForKey:@"windowOrigin"];
+}
+
 -(enum defaultTimeDisplayValues)defaultTimeDisplay
 {
 	return defaultTimeDisplay;

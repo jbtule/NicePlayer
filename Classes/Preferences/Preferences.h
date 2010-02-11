@@ -157,6 +157,8 @@ enum defaultOpenModeValues { OPEN_PLAYLIST, OPEN_WINDOWS };
 -(void)setDisableShowingOverlaysOnKeyPress:(BOOL)aBool;
 -(float)opacityWhenWindowIsTransparent;
 -(void)setOpacityWhenWindowIsTransparent:(float)aFloat;
+-(NSString*)windowPosition;
+-(void)setWindowPosition:(NSPoint) aPoint;
 
 -(void)integrateViewerPluginPrefs;
 -(NSMutableArray *)viewerPluginPrefs;

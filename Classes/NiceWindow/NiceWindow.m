@@ -223,10 +223,16 @@
 -(void)setFrame:(NSRect)frameRect display:(BOOL)displayFlag
 {
     [super setFrame:frameRect display:displayFlag];
+	[[Preferences mainPrefs] setWindowPosition:[self frame].origin];
     [self setOverlayControllerWindowLocation];
     [self setOverlayTitleLocation];
     [self setOverLayVolumeLocation];
 	[self setOverLaySubtitleLocation];
+}
+
+-(void)setFrameOrigin:(NSPoint)orign{
+	[[Preferences mainPrefs] setWindowPosition:orign];
+	[super setFrameOrigin:orign];
 }
 
 -(BOOL)canBecomeMainWindow

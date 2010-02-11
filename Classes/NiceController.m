@@ -140,6 +140,7 @@ id swapForWindows(id each, void* context){
                            forTypes:[[NPPluginReader pluginReader] allowedExtensions]];
 }
 
+
 /**
 * Takes an array of NSString files, converts them to NSURLs and opens them, adding subsequent files to the
  *	playlist.
