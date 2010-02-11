@@ -135,18 +135,19 @@
 {
 	NSRect subview = NSMakeRect(0, 0, [self frame].size.width, [self frame].size.height);
 	internalVolume = [self volume];
-	[self clearTrueMovieView];
+	id oldMovieView = trueMovieView;
 	trueMovieView = [[BlankView alloc] initWithFrame:subview];
-	[self addSubview:trueMovieView];
+	[self replaceSubview:oldMovieView with:trueMovieView];
+
+	[oldMovieView unregisterDraggedTypes];
+	[oldMovieView close];
+	[oldMovieView release];
+	oldMovieView =nil;
 	[self finalProxyViewLoad];
 }
 
 -(void)clearTrueMovieView{
-	[trueMovieView removeFromSuperviewWithoutNeedingDisplay];
-	[trueMovieView unregisterDraggedTypes];
-	[trueMovieView close];
-	[trueMovieView release];
-	trueMovieView =nil;
+	
 }
 
 

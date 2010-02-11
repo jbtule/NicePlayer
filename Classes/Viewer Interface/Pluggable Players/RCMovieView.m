@@ -130,6 +130,7 @@
 	return nil;
 
     if((self = [super initWithFrame:frame])){
+		
 	qtView = [[QTMovieView alloc] initWithFrame:frame];
 	[self addSubview:qtView];
         oldPlayState = STATE_INACTIVE;
