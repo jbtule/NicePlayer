@@ -797,7 +797,7 @@ stuff won't work properly! */
 	NSUInteger tCurrent =[thePlaylist indexOfObject:theCurrentURL];
 	[tArray removeObjectAtIndex:tCurrent];
 	[_randomList addObject:[NSNumber numberWithInt:tCurrent]];
-	_randomIndex =1;
+	_randomIndex =0;
 	while([tArray count]>1){
 		int i = ((float)random()/RAND_MAX) * [tArray count]; 
 		id tItem = [tArray objectAtIndex:i];
@@ -888,15 +888,16 @@ stuff won't work properly! */
         return -1;
     
     if(isRandom){
-		if(_randomIndex >= [_randomList count]){
+		if(!(_randomIndex < [_randomList count] -1)){
 			if (REPEAT_LIST == theRepeatMode){
 				[self resetRandom];
 			}else {
 			    return -1;
 			}
 		}
-		anIndex = [[_randomList objectAtIndex:_randomIndex] unsignedIntValue];
 		_randomIndex++;
+
+		anIndex = [[_randomList objectAtIndex:_randomIndex] unsignedIntValue];
     }else{
         anIndex++;
     }
@@ -932,6 +933,21 @@ stuff won't work properly! */
 {
     int anIndex = [thePlaylist indexOfObject:theCurrentURL];
     
+	if(isRandom && [_randomList count] !=0){
+		if(_randomIndex == 0){
+			if (REPEAT_LIST == theRepeatMode){
+				_randomIndex = [_randomList count];
+			}else {
+			    return -1;
+			}
+		}
+		_randomIndex--;
+		anIndex = [[_randomList objectAtIndex:_randomIndex] unsignedIntValue];
+	
+		return anIndex;
+    }
+	
+	
     if(anIndex ==0){
         if ([thePlaylist isEmpty])
             return -1;
