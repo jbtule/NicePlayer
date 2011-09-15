@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02D35B0714223BC00037140C /* CocoaScriptMenu.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 69B8424C1103C3B0002E604D /* CocoaScriptMenu.framework */; };
 		2510A23B0B04B53D00CA8110 /* DelegateAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 2510A2390B04B53D00CA8110 /* DelegateAnimation.h */; };
 		2510A23C0B04B53D00CA8110 /* DelegateAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2510A23A0B04B53D00CA8110 /* DelegateAnimation.m */; };
 		2510A5B80B06374400CA8110 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25CC866D0831DDA800027929 /* QTKit.framework */; };
@@ -348,6 +349,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				02D35B0714223BC00037140C /* CocoaScriptMenu.framework in CopyFiles */,
 				69B11D1E0E5818C5005B3775 /* Preferable.framework in CopyFiles */,
 				69B11BF50E581372005B3775 /* STEnum.framework in CopyFiles */,
 				6990B63F0CF0CF8300DA15C2 /* Appscript.framework in CopyFiles */,
@@ -359,6 +361,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		02D35B05142234C10037140C /* NicePlayer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = NicePlayer.entitlements; sourceTree = "<group>"; };
 		089C1660FE840EACC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2510A2390B04B53D00CA8110 /* DelegateAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DelegateAnimation.h; path = Classes/DelegateAnimation.h; sourceTree = "<group>"; };
 		2510A23A0B04B53D00CA8110 /* DelegateAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DelegateAnimation.m; path = Classes/DelegateAnimation.m; sourceTree = "<group>"; };
@@ -847,6 +850,7 @@
 		2A37F4AAFDCFA73011CA2CEA /* NicePlayer */ = {
 			isa = PBXGroup;
 			children = (
+				02D35B05142234C10037140C /* NicePlayer.entitlements */,
 				6990B4FF0CF0B2F300DA15C2 /* Glue */,
 				2A37F4ABFDCFA73011CA2CEA /* Classes */,
 				25D2E7B407BF36D5004BEF7D /* Scripting */,
@@ -1126,7 +1130,7 @@
 				259DE26B0760F769000FE804 /* CopyFiles */,
 				2513D30D07BDACBC00BB6055 /* ShellScript */,
 				8D15AC330486D014006FF6A4 /* Frameworks */,
-				691ECE150CE0362B0040AE45 /* ShellScript */,
+				691ECE150CE0362B0040AE45 /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -1358,18 +1362,19 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/bin/sdp -f st -o \"$TARGET_BUILD_DIR/NicePlayer.app/Contents/Resources\" \"$SOURCE_ROOT/Resources/NicePlayer.sdef\"";
 		};
-		691ECE150CE0362B0040AE45 /* ShellScript */ = {
+		691ECE150CE0362B0040AE45 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Run Script";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ $CONFIGURATION == \"Release\" ]; then\ncodesign -f -s NicePlayer \"$TARGET_BUILD_DIR/NicePlayer.app\"\nfi";
+			shellScript = "# Not signing code for now\n# if [ $CONFIGURATION == \"Release\" ]; then\n# codesign -f -s NicePlayer \"$TARGET_BUILD_DIR/NicePlayer.app\"\n# fi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1529,6 +1534,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUILD_VARIANTS = normal;
+				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
 				DEPLOYMENT_POSTPROCESSING = YES;
@@ -1584,6 +1590,7 @@
 		251FEF710855184200D38B8E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = YES;
 				DEPLOYMENT_POSTPROCESSING = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1642,7 +1649,7 @@
 				SDKROOT = macosx;
 				STRINGS_FILE_OUTPUT_ENCODING = "UTF-16";
 				STRIP_INSTALLED_PRODUCT = NO;
-				VALID_ARCHS = "i386 x86_64";
+				VALID_ARCHS = i386;
 				WARNING_CFLAGS = "-Wtrigraphs";
 			};
 			name = Debug;
@@ -1655,7 +1662,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				SDKROOT = macosx;
 				STRINGS_FILE_OUTPUT_ENCODING = "UTF-16";
-				VALID_ARCHS = "i386 x86_64";
+				VALID_ARCHS = i386;
 				WARNING_CFLAGS = "-Wtrigraphs";
 			};
 			name = Release;
