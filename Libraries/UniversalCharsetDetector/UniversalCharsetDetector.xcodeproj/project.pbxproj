@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 42;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -37,7 +37,6 @@
 		3667D4B60A018B360035467C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29B97325FDCFA39411CA2CEA /* Foundation.framework */; };
 		3667D5160A01A1460035467C /* MPL-1.1.html in Resources */ = {isa = PBXBuildFile; fileRef = 3667D5150A01A1460035467C /* MPL-1.1.html */; };
 		3667D5310A01A4C20035467C /* README.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 3667D5300A01A4C20035467C /* README.rtf */; };
-		36A5B7710A8B7EB4009036AC /* libstdc++-static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 36A5B7400A8B7A50009036AC /* libstdc++-static.a */; };
 		36A5B7760A8B7EDE009036AC /* libSystem.B.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 36A5B7750A8B7EDE009036AC /* libSystem.B.dylib */; };
 		6994635E0CCBF0B700CE0AD3 /* NSString+UniversalCharsetDetector.h in Headers */ = {isa = PBXBuildFile; fileRef = 6994635C0CCBF0B700CE0AD3 /* NSString+UniversalCharsetDetector.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6994635F0CCBF0B700CE0AD3 /* NSString+UniversalCharsetDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 6994635D0CCBF0B700CE0AD3 /* NSString+UniversalCharsetDetector.m */; };
@@ -125,7 +124,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3667D4B60A018B360035467C /* Foundation.framework in Frameworks */,
-				36A5B7710A8B7EB4009036AC /* libstdc++-static.a in Frameworks */,
 				36A5B7760A8B7EDE009036AC /* libSystem.B.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -355,9 +353,16 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0410;
+			};
 			buildConfigurationList = 363A57A00A48820300A4FBE2 /* Build configuration list for PBXProject "UniversalCharsetDetector" */;
-			compatibilityVersion = "Xcode 2.4";
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CharEncoding */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -420,31 +425,32 @@
 		363A579D0A48820300A4FBE2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					i386,
-					ppc,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)";
 				COPY_PHASE_STRIP = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = G3;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = UniversalCharsetDetector_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
 				INFOPLIST_FILE = "UniversalCharsetDetector-Info.plist";
 				INSTALL_PATH = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OBJROOT = "$(inherited)";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
+				OTHER_TEST_FLAGS = "";
 				PRODUCT_NAME = UniversalCharsetDetector;
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				SYMROOT = "$(inherited)";
+				VALID_ARCHS = "i386 x86_64";
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-char-subscripts",
@@ -458,10 +464,7 @@
 		363A579E0A48820300A4FBE2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					i386,
-					ppc,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)";
 				COPY_PHASE_STRIP = YES;
 				DEAD_CODE_STRIPPING = YES;
@@ -470,27 +473,25 @@
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
 				GCC_DEBUGGING_SYMBOLS = full;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = UniversalCharsetDetector_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = NS_BLOCK_ASSERTIONS;
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
 				INFOPLIST_FILE = "UniversalCharsetDetector-Info.plist";
 				INSTALL_PATH = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.2;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OBJROOT = "$(inherited)";
-				OTHER_CFLAGS = "-static-libgcc";
-				OTHER_LDFLAGS = (
-					"-nodefaultlibs",
-					"-static-libgcc",
-					"-lgcc_static",
-					"-lgcc_eh",
-				);
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
+				OTHER_TEST_FLAGS = "";
 				PRODUCT_NAME = UniversalCharsetDetector;
 				REZ_PREPROCESSOR_DEFINITIONS = "";
+				SDKROOT = macosx;
 				SECTORDER_FLAGS = "";
 				SYMROOT = "$(inherited)";
+				VALID_ARCHS = "i386 x86_64";
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-char-subscripts",
@@ -504,11 +505,10 @@
 		363A57A10A48820300A4FBE2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
-				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_WARN_INHIBIT_ALL_WARNINGS = YES;
-				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
-				VALID_ARCHS = "i386 ppc";
+				SDKROOT = macosx;
+				VALID_ARCHS = "i386 x86_64";
 				WARNING_CFLAGS = "";
 			};
 			name = Debug;
@@ -516,11 +516,10 @@
 		363A57A20A48820300A4FBE2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
-				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_WARN_INHIBIT_ALL_WARNINGS = YES;
-				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
-				VALID_ARCHS = "i386 ppc";
+				SDKROOT = macosx;
+				VALID_ARCHS = "i386 x86_64";
 				WARNING_CFLAGS = "";
 			};
 			name = Release;
