@@ -361,7 +361,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		02D35B05142234C10037140C /* NicePlayer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = NicePlayer.entitlements; sourceTree = "<group>"; };
 		089C1660FE840EACC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2510A2390B04B53D00CA8110 /* DelegateAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DelegateAnimation.h; path = Classes/DelegateAnimation.h; sourceTree = "<group>"; };
 		2510A23A0B04B53D00CA8110 /* DelegateAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DelegateAnimation.m; path = Classes/DelegateAnimation.m; sourceTree = "<group>"; };
@@ -850,7 +849,6 @@
 		2A37F4AAFDCFA73011CA2CEA /* NicePlayer */ = {
 			isa = PBXGroup;
 			children = (
-				02D35B05142234C10037140C /* NicePlayer.entitlements */,
 				6990B4FF0CF0B2F300DA15C2 /* Glue */,
 				2A37F4ABFDCFA73011CA2CEA /* Classes */,
 				25D2E7B407BF36D5004BEF7D /* Scripting */,
@@ -1534,7 +1532,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUILD_VARIANTS = normal;
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
+				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
 				DEPLOYMENT_POSTPROCESSING = YES;
@@ -1590,7 +1588,7 @@
 		251FEF710855184200D38B8E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
+				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = YES;
 				DEPLOYMENT_POSTPROCESSING = YES;
 				FRAMEWORK_SEARCH_PATHS = (
