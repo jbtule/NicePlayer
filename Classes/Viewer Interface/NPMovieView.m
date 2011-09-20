@@ -147,7 +147,8 @@
 }
 
 -(void)clearTrueMovieView{
-	
+	[trueMovieView release];
+    trueMovieView = nil;
 }
 
 

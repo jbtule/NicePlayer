@@ -44,7 +44,7 @@
 
 
 #import <Cocoa/Cocoa.h>
-
+#import "Preferences.h"
 
 @class ControlPlay;
 @class NiceWindow;

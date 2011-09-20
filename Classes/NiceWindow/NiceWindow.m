@@ -244,6 +244,7 @@
 {
     [super becomeKeyWindow];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"RebuildAllMenus" object:nil];
+    [self setupOverlays];
 }
 
 
