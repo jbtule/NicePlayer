@@ -75,7 +75,7 @@
 
 +(id)blankImage
 {
-	return [JTMovieView blankImage];
+	return [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"black" ofType:@"png"]];
 }
 
 -(id)initWithFrame:(NSRect)aRect
@@ -188,7 +188,7 @@
     BOOL isDir;
     [[NSFileManager defaultManager] fileExistsAtPath:[url path] isDirectory:&isDir];
     if(isDir){
-	fileExtension = [NSString stringWithString:@"public.folder"];
+	fileExtension = @"public.folder";
 	fileType = nil;
     }
     if((fileType) && ([fileType length] == 0))
@@ -369,7 +369,7 @@
 {
     wasPlaying = NO;
     
-    [(<NPMoviePlayer>)trueMovieView stop];
+    [(id<NPMoviePlayer>)trueMovieView stop];
     [[((NiceWindow *)[self window]) playButton] changeToProperButton:[trueMovieView isPlaying]];
 }
 
@@ -528,7 +528,7 @@
 			if([anEvent modifierFlags] & NSCommandKeyMask){
 				int tInt = -1;
 				if([[self chapters]count]>0){
-				unsigned int tIndex =[[self chapters] indexOfObject:[self currentChapter]];
+				NSUInteger tIndex =[[self chapters] indexOfObject:[self currentChapter]];
 				if(tIndex != NSNotFound){
 					tInt = tInt + (int)tIndex;
 				}
@@ -635,7 +635,7 @@
 
 -(void)hideOverlayWithSelector:(NSString *)aStringSelector
 {
-	[[self window] performSelector:sel_registerName([aStringSelector cString])];
+	[[self window] performSelector:sel_registerName([aStringSelector UTF8String])];
 }
 
 #pragma mark Mouse Events

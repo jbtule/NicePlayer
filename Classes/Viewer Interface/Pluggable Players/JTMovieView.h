@@ -53,6 +53,8 @@
 #import "../../NiceWindow/NiceWindow.h"
 #import "NPPluginView.h"
 
+#if !__LP64__
+
 @interface JTMovieView : NSMovieView <NPMoviePlayer>
 {
 	enum play_states oldPlayState;
@@ -72,3 +74,5 @@
 -(void)stepFrameInDirection:(int)aDirection;
 
 @end
+
+#endif

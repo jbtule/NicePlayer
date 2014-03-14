@@ -12,7 +12,7 @@
 @implementation NPOutlineView
 - (NSImage *)dragImageForRowsWithIndexes:(NSIndexSet *)dragRows tableColumns:(NSArray *)tableColumns event:(NSEvent*)dragEvent offset:(NSPointPointer)dragImageOffset{
 	NSMutableArray* tArray =[NSMutableArray array];
-	unsigned current_index = [dragRows firstIndex];
+	NSUInteger current_index = [dragRows firstIndex];
     while (current_index != NSNotFound)
     {
 		id tItem = [self itemAtRow:current_index];

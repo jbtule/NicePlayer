@@ -49,7 +49,7 @@
 
 @implementation ResizeTriangle
 
-- (id)initWithContentRect:(NSRect)contentRect styleMask:(unsigned int)aStyle backing:(NSBackingStoreType)bufferingType defer:(BOOL)flag
+- (id)initWithContentRect:(NSRect)contentRect styleMask:(NSUInteger)aStyle backing:(NSBackingStoreType)bufferingType defer:(BOOL)flag
 {
     if((self = [super initWithContentRect:contentRect
 			       styleMask:NSBorderlessWindowMask

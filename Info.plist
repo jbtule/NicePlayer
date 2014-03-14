@@ -614,9 +614,11 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.97.1-cctest</string>
+	<string>0.98-rc</string>
 	<key>CFBundleSignature</key>
 	<string>nIcE</string>
+	<key>CFBundleURLTypes</key>
+	<array/>
 	<key>CFBundleVersion</key>
 	<string>601</string>
 	<key>JTAuthorEmail</key>
@@ -627,6 +629,8 @@
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NPApplication</string>
+	<key>NSServices</key>
+	<array/>
 	<key>SUFeedURL</key>
 	<string>http://niceplayer.googlecode.com/svn/appcast/index.xml</string>
 	<key>UTExportedTypeDeclarations</key>

@@ -191,49 +191,7 @@
 
 -(NSSize)naturalSize
 {
-    Rect aRect;
-    GetMovieNaturalBoundsRect([film quickTimeMovie], &aRect);
-    NSSize tSize = NSMakeSize((float)(aRect.right - aRect.left),
-                              (float)(aRect.bottom - aRect.top));
-    SampleDescriptionHandle anImageDesc = NULL;
-    
-    @try{
-        NSArray* tArray = [film tracksOfMediaType:QTMediaTypeVideo];
-	QTTrack* tTrack = nil;
-	if([tArray count] > 0)
-	    tTrack = [tArray objectAtIndex:0];
-        
-        if(tTrack != nil ){
-            anImageDesc = (SampleDescriptionHandle)NewHandle(sizeof(SampleDescription));
-            GetMediaSampleDescription([[tTrack media] quickTimeMedia], 1, anImageDesc);    
-            
-            
-            NSString* tName = (NSString *)CFStringCreateWithPascalString(NULL,
-		(*(ImageDescriptionHandle)anImageDesc)->name, kCFStringEncodingMacRoman);
-
-            if([tName hasPrefix:@"DV/DVCPRO"]){
-                PixelAspectRatioImageDescriptionExtension pixelAspectRatio;
-                OSStatus status;
-                
-                status = ICMImageDescriptionGetProperty((ImageDescriptionHandle)anImageDesc, // image description
-                                                        kQTPropertyClass_ImageDescription, // class
-                                                                                           // 'pasp' image description extention property
-                                                        kICMImageDescriptionPropertyID_PixelAspectRatio,
-                                                        sizeof(pixelAspectRatio), // size
-                                                        &pixelAspectRatio,        // returned value
-                                                        NULL);                    // byte count
-                float tRatio = ((float)(pixelAspectRatio.hSpacing)) / pixelAspectRatio.vSpacing;
-                    tSize = NSMakeSize(tRatio* tSize.width,tSize.height);
-            }
-			[tName release];
-        }
-    }@catch(NSException *exception) {}
-    @finally{
-	if(anImageDesc)
-	    DisposeHandle((Handle)anImageDesc);
-        return tSize;
-    }
-    
+	return [[film attributeForKey:QTMovieNaturalSizeAttribute] sizeValue];
 }
 
 //-(void)setLoopMode:
@@ -346,21 +304,15 @@
 
 -(void)stepFrameInDirection:(int)aDirection
 {
-    OSType myTypes[1];
-    Movie tempMovie = [film quickTimeMovie];
-    TimeRecord tempRecord;
-    TimeValue newTime;
-    TimeValue tempTime = GetMovieTime(tempMovie, &tempRecord);
-    myTypes[0] =VisualMediaCharacteristic;      // we want video samples
-    GetMovieNextInterestingTime(tempMovie, nextTimeStep, 1, myTypes, tempTime, aDirection, &newTime, nil);
-    SetMovieTimeValue(tempMovie, newTime);
+	if(aDirection == 1)
+		[film stepForward];
+	else
+		[film stepBackward];
 }
 
 -(BOOL)hasEnded:(id)sender
 {
-    Movie tempMovie = [film quickTimeMovie];
-    
-    return IsMovieDone(tempMovie);
+	return [film currentTime].timeValue == [film duration].timeValue;
 }
 
 #pragma mark -
@@ -384,8 +336,7 @@
 
 -(double)totalTimePrecise
 {
-    Movie tempMovie = [film quickTimeMovie];
-    return GetMovieDuration(tempMovie);
+	return [film duration].timeValue;
 }
 
 
@@ -406,6 +357,8 @@
 }
 
 -(double)currentMovieFrameRate{
+	return 30;
+#if 0
     int sampleSize =5;
     OSType myTypes[1];
     Movie tempMovie = [film quickTimeMovie];
@@ -424,24 +377,25 @@
     
     
     return (double)myCount /((double)newTime/[self currentMovieTimeScale]);
+#endif
 }
 
 -(long)currentMovieTimeScale
 {
-    Movie tempMovie = [film quickTimeMovie];
-    return GetMovieTimeScale(tempMovie);
+	return [film duration].timeScale;
 }
 
 -(long)currentMovieTimePrecise
 {
-    Movie tempMovie = [film quickTimeMovie];
-    return  GetMovieTime(tempMovie, NULL);
+	return [film duration].timeValue;
 }
 
 -(void)setCurrentMovieTimePrecise:(long)newMovieTime
 {
-    Movie tempMovie = [film quickTimeMovie];
-    SetMovieTimeValue(tempMovie, newMovieTime);
+	QTTime time;
+	time.timeValue = newMovieTime;
+	time.timeScale = [self currentMovieTimeScale];
+	[film setCurrentTime:time];
 }
 
 -(void)incrementMovieTime:(long)timeDifference inDirection:(enum direction)aDirection;

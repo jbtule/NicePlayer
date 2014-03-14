@@ -64,6 +64,7 @@
     IBOutlet id theRepeatButton;
 	IBOutlet id theRandomButton;
     IBOutlet NiceWindow *theWindow;
+	IBOutlet NSOutlineView *playlistOutlineView;
     NSURL* theCurrentURL;
 	unsigned int _randomIndex;
 	NSMutableArray* _randomList;

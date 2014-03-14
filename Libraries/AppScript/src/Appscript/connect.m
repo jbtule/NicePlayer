@@ -79,7 +79,6 @@ extern OSStatus AEMLaunchApplication(NSURL *fileURL,
 									 pid_t *pid) {
 	OSStatus err;
 	FSRef fsRef;
-	FSSpec fss;
 	AEDesc paraDesc;
 	Size paraSize;
 	AppParametersPtr paraData;
@@ -88,8 +87,6 @@ extern OSStatus AEMLaunchApplication(NSURL *fileURL,
 	
 	// Get FSSpec from NSURL
 	if (!CFURLGetFSRef((CFURLRef)fileURL, &fsRef)) return fnfErr;
-	err = FSGetCatalogInfo(&fsRef, kFSCatInfoNone, NULL, NULL, &fss, NULL);
-	if (err) return err;
 	// Get Apple event data
 	if (firstEvent) {
 		err = AECoerceDesc([firstEvent aeDesc], typeAppParameters, &paraDesc);
@@ -104,7 +101,7 @@ extern OSStatus AEMLaunchApplication(NSURL *fileURL,
 	launchParams.launchEPBLength = extendedBlockLen;
 	launchParams.launchFileFlags = 0;
 	launchParams.launchControlFlags = launchFlags;
-	launchParams.launchAppSpec = &fss;
+	launchParams.launchAppRef = &fsRef;
 	launchParams.launchAppParameters = paraData;
 	err = LaunchApplication(&launchParams);
 	if (err) return err; // Can't launch application.

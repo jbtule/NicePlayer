@@ -204,7 +204,7 @@
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0410;
+				LastUpgradeCheck = 0420;
 			};
 			buildConfigurationList = 3E16C62B085689D500D2AF17 /* Build configuration list for PBXProject "STEnum10.4" */;
 			compatibilityVersion = "Xcode 3.2";

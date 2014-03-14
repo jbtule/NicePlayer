@@ -117,12 +117,12 @@ BOOL selectNiceWindow(id each, void* context){
     
     NSDictionary* tDict = [NSDictionary dictionaryWithContentsOfFile:[tPath stringByAppendingPathComponent:@".info.plist"]];
     
-    if ([[tDict objectForKey:@"BuildNumber"] compare:@"569"] == NSOrderedAscending){
+	if ([[tDict objectForKey:@"BuildNumber"] compare:@"569" options:0] == NSOrderedAscending){
 		NSCalendarDate* tDate =[NSCalendarDate date];
 		
 		NSString* tFormattedDate = [tDate descriptionWithCalendarFormat:@"_%Y_%m_%d"];
 		
-		[[NSFileManager defaultManager] movePath:tPath toPath:[tPath stringByAppendingString:tFormattedDate] handler:nil];
+		[[NSFileManager defaultManager] moveItemAtPath:tPath toPath:[tPath stringByAppendingString:tFormattedDate] error:nil];
 		[self copyDefaultScriptsToApplicationSupport];
 	}
 }
@@ -133,10 +133,10 @@ BOOL selectNiceWindow(id each, void* context){
     NSString* tPath =[[[TTCSearchPathForDirectoriesInDomains(TTCApplicationSupportDirectory,NSUserDomainMask,YES) firstObject] stringByAppendingPathComponent:@"NicePlayer"] stringByAppendingPathComponent:@"Scripts"];
     
     if([[NSFileManager defaultManager] fileExistsAtPath:tPath]){
-        [[NSFileManager defaultManager] removeFileAtPath:tPath handler:nil];
+        [[NSFileManager defaultManager] removeItemAtPath:tPath error:nil];
     }
     
-    [[NSFileManager defaultManager] copyPath:[[NSBundle mainBundle] pathForResource:@"Default Scripts" ofType:@""] toPath:tPath   handler:nil];
+    [[NSFileManager defaultManager] copyItemAtPath:[[NSBundle mainBundle] pathForResource:@"Default Scripts" ofType:@""] toPath:tPath   error:nil];
     [[NSDictionary dictionaryWithObjectsAndKeys:[[[NSBundle mainBundle] infoDictionary] objectForKey:
              @"CFBundleVersion"],@"BuildNumber",[[[NSBundle mainBundle] infoDictionary] objectForKey:
                  @"CFBundleShortVersionString"],@"VersionNumber",nil] writeToFile:[tPath stringByAppendingPathComponent:@".info.plist"] atomically:NO];
@@ -251,7 +251,12 @@ BOOL selectNiceWindow(id each, void* context){
 
 -(NSArray *)movieWindows
 {
-    return [[super orderedWindows] selectUsingFunction:selectNiceWindow context:nil];
+	NSMutableArray *returnArray = [NSMutableArray array];
+	[[[super orderedWindows] selectUsingFunction:selectNiceWindow context:nil] enumerateObjectsUsingBlock:^(id obj, NSUInteger index, BOOL *stop){
+		if([obj isVisible])
+			[returnArray addObject:obj];
+	}];
+	return returnArray;
 }
 
 -(id)bestMovieWindow
@@ -270,7 +275,7 @@ BOOL selectNiceWindow(id each, void* context){
     if(tempEmail == nil){
         NSRunAlertPanel(@"Email", @"Contact email address not provided by author.", @"Okay",nil,nil);
     }else{
-        NSLog([NSString stringWithFormat:@"mailto:%@?subject=%@/%@(v%@)",tempEmail,[tempInfo objectForKey:@"CFBundleName"],[tempInfo objectForKey:@"CFBundleShortVersionString"],[tempInfo objectForKey:@"CFBundleVersion"],nil]);
+        NSLog(@"%@", [NSString stringWithFormat:@"mailto:%@?subject=%@/%@(v%@)",tempEmail,[tempInfo objectForKey:@"CFBundleName"],[tempInfo objectForKey:@"CFBundleShortVersionString"],[tempInfo objectForKey:@"CFBundleVersion"],nil]);
         [[NSWorkspace sharedWorkspace ]openURL: [NSURL URLWithString:[NSString stringWithFormat:@"mailto:%@?subject=%@/%@(v%@)",tempEmail,[tempInfo objectForKey:@"CFBundleName"],[tempInfo objectForKey:@"CFBundleShortVersionString"],[tempInfo objectForKey:@"CFBundleVersion"],nil]]];
     }
 }

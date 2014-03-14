@@ -88,7 +88,7 @@
 
 @end
 
-
+#if !__LP64__
 @interface AEMFSSpec : AEMFileBase
 
 + (id)fsspecWithPath:(NSString *)path;
@@ -98,6 +98,7 @@
 + (id)fsspecWithDescriptor:(NSAppleEventDescriptor *)desc_;
 
 @end
+#endif
 
 
 /**********************************************************************/

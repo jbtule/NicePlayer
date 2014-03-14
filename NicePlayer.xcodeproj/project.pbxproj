@@ -172,7 +172,6 @@
 		6977CD5A0CE3F63000B4EBB6 /* NPScalingButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6977CD590CE3F63000B4EBB6 /* NPScalingButton.m */; };
 		6977CD6D0CE3F65A00B4EBB6 /* NPScalingButtonCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 6977CD6B0CE3F65A00B4EBB6 /* NPScalingButtonCell.h */; };
 		6977CD6E0CE3F65A00B4EBB6 /* NPScalingButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6977CD6C0CE3F65A00B4EBB6 /* NPScalingButtonCell.m */; };
-		6990B4EB0CF0AA0300DA15C2 /* Appscript.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6990B4E80CF0A9D300DA15C2 /* Appscript.framework */; };
 		6990B50C0CF0B2F300DA15C2 /* SEApplicationGlue.h in Headers */ = {isa = PBXBuildFile; fileRef = 6990B5010CF0B2F300DA15C2 /* SEApplicationGlue.h */; };
 		6990B50D0CF0B2F300DA15C2 /* SEApplicationGlue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6990B5020CF0B2F300DA15C2 /* SEApplicationGlue.m */; };
 		6990B50E0CF0B2F300DA15C2 /* SECommandGlue.h in Headers */ = {isa = PBXBuildFile; fileRef = 6990B5030CF0B2F300DA15C2 /* SECommandGlue.h */; };
@@ -214,6 +213,7 @@
 		8D15AC2F0486D014006FF6A4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165FFE840EACC02AAC07 /* InfoPlist.strings */; };
 		8D15AC310486D014006FF6A4 /* NiceDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4ACFDCFA73011CA2CEA /* NiceDocument.m */; settings = {ATTRIBUTES = (); }; };
 		8D15AC320486D014006FF6A4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4B0FDCFA73011CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
+		99E2B74B18D14E0D00946C16 /* Appscript.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6990B4E80CF0A9D300DA15C2 /* Appscript.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -577,7 +577,6 @@
 				69B8425A1103C3D7002E604D /* CocoaScriptMenu.framework in Frameworks */,
 				69B11D1D0E5818B8005B3775 /* Preferable.framework in Frameworks */,
 				69B11BF40E58135A005B3775 /* STEnum.framework in Frameworks */,
-				6990B4EB0CF0AA0300DA15C2 /* Appscript.framework in Frameworks */,
 				699461F20CCBEDCF00CE0AD3 /* UniversalCharsetDetector.framework in Frameworks */,
 				69DE19D50BE97317009D28B9 /* Sparkle.framework in Frameworks */,
 				2510A5B80B06374400CA8110 /* QTKit.framework in Frameworks */,
@@ -586,6 +585,7 @@
 				257D60020753DE7C00702BD0 /* AppKitScripting.framework in Frameworks */,
 				257D60140753DED700702BD0 /* Scripting.framework in Frameworks */,
 				25702FF007569E3300D1EE8C /* DVDPlayback.framework in Frameworks */,
+				99E2B74B18D14E0D00946C16 /* Appscript.framework in Frameworks */,
 				251FEFB7085670D800D38B8E /* Cocoa.framework in Frameworks */,
 				258C2B710A2D713E00AC22BB /* IOKit.framework in Frameworks */,
 			);
@@ -1153,7 +1153,7 @@
 		2A37F4A9FDCFA73011CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0410;
+				LastUpgradeCheck = 0420;
 			};
 			buildConfigurationList = 251FEF770855184200D38B8E /* Build configuration list for PBXProject "NicePlayer" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1640,14 +1640,11 @@
 		251FEF780855184200D38B8E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALTERNATE_PERMISSIONS_FILES = i386;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_CFLAGS = "-D__DEBUG__=1";
 				SDKROOT = macosx;
 				STRINGS_FILE_OUTPUT_ENCODING = "UTF-16";
 				STRIP_INSTALLED_PRODUCT = NO;
-				VALID_ARCHS = i386;
 				WARNING_CFLAGS = "-Wtrigraphs";
 			};
 			name = Debug;
@@ -1655,12 +1652,9 @@
 		251FEF790855184200D38B8E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALTERNATE_PERMISSIONS_FILES = i386;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				SDKROOT = macosx;
 				STRINGS_FILE_OUTPUT_ENCODING = "UTF-16";
-				VALID_ARCHS = i386;
 				WARNING_CFLAGS = "-Wtrigraphs";
 			};
 			name = Release;

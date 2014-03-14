@@ -53,12 +53,12 @@ id NPConvertFileNamesToURLs(id obj, void* context){
 }
 
 BOOL NPIs10_4OrGreater(){
-    long vers;
+    SInt32 vers;
     Gestalt( gestaltSystemVersion, &vers);
     return !(vers < 0x00001040);
 }
 
-int urlSort(id url1, id url2, void *context){
+NSInteger urlSort(id url1, id url2, void *context){
     
     NSString* v1 = [[url1 path] lastPathComponent];
     NSString*  v2 = [[url2 path]lastPathComponent];
@@ -82,7 +82,7 @@ id NPInjectNestedDirectories(id each, id injected, void* verifyBool){
     if([[each pathExtension] isEqualToString:@""]){
         BOOL tBool = NO;
         if([[NSFileManager defaultManager] fileExistsAtPath:each isDirectory:&tBool] && tBool){
-            NSArray* tSubPaths =[[NSFileManager defaultManager] directoryContentsAtPath:each];
+					NSArray* tSubPaths =[[NSFileManager defaultManager] contentsOfDirectoryAtPath:each error:nil];
             if([[each lastPathComponent] isEqualToString:@"VIDEO_TS"]){
                 [injected addObject:[each stringByDeletingLastPathComponent]];
             } else if([tSubPaths containsObject:@"VIDEO_TS"]){

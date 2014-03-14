@@ -45,6 +45,7 @@
 
 #import "OverlaysControl.h"
 #import "NiceWindow.h"
+#import <AppKit/AppKit.h>
 
 static id overlayControl = nil;
 
@@ -105,7 +106,7 @@ static id overlayControl = nil;
     if([aWindow isFullScreen]){
 		NSRect mainScreenFrame = [[NSScreen mainScreen] frame];
 		return (aScreenPoint.y <= (mainScreenFrame.origin.y + mainScreenFrame.size.height) 
-				&& aScreenPoint.y >= (mainScreenFrame.origin.y + mainScreenFrame.size.height - [aWindow titlebarHeight] - [NSMenuView menuBarHeight]) 
+				&& aScreenPoint.y >= (mainScreenFrame.origin.y + mainScreenFrame.size.height - [aWindow titlebarHeight] - [[NSApp mainMenu] menuBarHeight])
 				&& aScreenPoint.x >= mainScreenFrame.origin.x
 				&& aScreenPoint.x <= mainScreenFrame.size.width);
 	}

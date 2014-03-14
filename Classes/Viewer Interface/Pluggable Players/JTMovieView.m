@@ -50,6 +50,8 @@
 
 #define FLOAT_TO_FIXED(f) ((short) ((f) * 65536.0))
 
+#if !__LP64__
+
 @implementation JTMovieView
 
 +(id)blankImage
@@ -436,3 +438,4 @@
 }
 
 @end
+#endif

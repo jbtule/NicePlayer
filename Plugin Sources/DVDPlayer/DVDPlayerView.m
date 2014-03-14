@@ -34,8 +34,8 @@ Point convertNSPointToQDPoint(NSPoint inPoint, NSRect windowRect){
 }
 
 NSString *stringForLanguageCode(DVDLanguageCode language);
-void fatalError(DVDErrorCode inError, UInt32 inRefCon);
-void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEventValue2, UInt32 inRefCon);
+void fatalError(DVDErrorCode inError, void *inRefCon);;
+void aspectChange(DVDEventCode inEventCode, DVDEventValue inEventValue1, DVDEventValue inEventValue2, void *inRefCon);
 
 @implementation DVDPlayerView
 
@@ -129,18 +129,11 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 -(void)updateBounds
 {
     NSRect content = [[[self window] contentView] bounds];
-    NSRect frame = [[self window] frame];
-    
-    /* create an equivalent QuickDraw rectangle with window local coordinates */
-    Rect qdRect;
-    qdRect.left = 0;
-    qdRect.right = content.size.width - 1;
-    qdRect.bottom = frame.size.height - 1;
-    qdRect.top = frame.size.height - content.size.height;
+    NSRect frame = [[self window] frameRectForContentRect:content];
     
     /* set the video area */
-    OSStatus result = DVDSetVideoBounds (&qdRect);
-    NSAssert1 (!result, @"DVDSetVideoBounds returned %d", result);
+    OSStatus result = DVDSetVideoCGBounds (&frame);
+    NSAssert1 (!result, @"DVDSetVideoCGBounds returned %d", result);
 }
 
 -(void)resizeToAspect
@@ -232,9 +225,9 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 	[self setVideoDisplay];
 	[self updateBounds];
 	
-	DVDSetFatalErrorCallBack(fatalError, (UInt32)self);
+	DVDSetFatalErrorCallBack((DVDFatalErrCallBackFunctionPtr)fatalError, (void *)self);
 	DVDEventCode eventCodes[] = { kDVDEventDisplayMode, kDVDEventTitle, kDVDEventVideoStandard };
-	DVDRegisterEventCallBack(aspectChange, eventCodes, sizeof(eventCodes)/sizeof(DVDEventCode), (UInt32)self, &cid);
+	DVDRegisterEventCallBack((DVDEventCallBackFunctionPtr)aspectChange, eventCodes, sizeof(eventCodes)/sizeof(DVDEventCode), (void *)self, &cid);
 	FSRef fsref;
 	CFURLGetFSRef((CFURLRef)myURL, &fsref);
 
@@ -314,16 +307,17 @@ void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEvent
 {
 	SInt32 pointIndex;
 	if([anEvent type] == NSLeftMouseDown){
-		Point point = convertNSPointToQDPoint([anEvent locationInWindow], [self frame]);
-		DVDDoMenuClick(point, &pointIndex);
+		SInt32 pointIndex;
+		CGPoint point = [anEvent locationInWindow];
+		DVDDoMenuCGClick(&point, &pointIndex);
 	}
 }
 
 -(void)mouseMoved:(NSEvent *)anEvent
 {
 	SInt32 pointIndex;
-	Point point = convertNSPointToQDPoint([anEvent locationInWindow], [self frame]);
-	DVDDoMenuMouseOver(point, &pointIndex);
+	CGPoint point = [anEvent locationInWindow];
+	DVDDoMenuCGClick(&point, &pointIndex);
 }
 
 -(void)drawMovieFrame
@@ -1378,12 +1372,12 @@ NSString *stringForLanguageCode(DVDLanguageCode language){
 }
 
 
-void fatalError(DVDErrorCode inError, UInt32 inRefCon)
+void fatalError(DVDErrorCode inError, void *inRefCon)
 {
     NSLog(@"Fatal Error in DVD Framework");
 }
 
-void aspectChange(DVDEventCode inEventCode, UInt32 inEventValue1, UInt32 inEventValue2, UInt32 inRefCon)
+void aspectChange(DVDEventCode inEventCode, DVDEventValue inEventValue1, DVDEventValue inEventValue2, void *inRefCon)
 {
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     [(id)inRefCon performSelectorOnMainThread:@selector(aspectRatioChanged)

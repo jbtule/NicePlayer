@@ -166,6 +166,7 @@ static AEMBoolean *falseValue;
 
 @end
 
+#if !__LP64__
 
 @implementation AEMFSSpec
 
@@ -186,7 +187,7 @@ static AEMBoolean *falseValue;
 }
 
 @end
-
+#endif
 
 /**********************************************************************/
 // types, enums, etc.

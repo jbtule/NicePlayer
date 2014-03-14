@@ -45,6 +45,7 @@
 
 @class NPMovieView;
 @class NiceScrubber;
+@class JTTextFittingView;
 
 @interface NiceWindow : NSWindow
 {
@@ -53,7 +54,7 @@
     IBOutlet id theOverlayTitleBar;
     IBOutlet id theOverlayVolume;
 	IBOutlet id theOverlaySubTitleWindow;
-    IBOutlet id theOverlaySubTitle;
+    IBOutlet JTTextFittingView *theOverlaySubTitle;
     IBOutlet id theOverlayNotifier;
     IBOutlet id theVolumeView;
     IBOutlet id theTitleField;
@@ -89,7 +90,7 @@
     float miniVolume;
     NSRect beforeFullScreen;
 
-    id initialFadeTimer;
+	NSTimer *initialFadeTimer;
 	
     NSSize aspectRatio;
 	NSPoint initialDrag;
@@ -171,7 +172,7 @@
 -(void)floatWindow;
 -(void)unfloatWindow;
 -(BOOL)isFullScreen;
--(void)setLevel:(int)windowLevel;
+-(void)setLevel:(NSInteger)windowLevel;
 -(void)resizeWithSize:(NSSize)aSize animate:(BOOL)animate;
 -(NSRect)calcResizeSize:(NSSize)aSize;
 -(void)resize:(float)amount animate:(BOOL)animate;
@@ -218,5 +219,7 @@
 -(id)ffButton;
 
 -(NSArray *)acceptableDragTypes;
+
+@property(readwrite,retain) NSTimer *initialFadeTimer;
 
 @end

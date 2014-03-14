@@ -143,8 +143,7 @@ static id fadeOutInstance = nil;
 
 -(void)updateAlphaValues
 {
-	id anObject, e = [windowSet objectEnumerator];
-	while((anObject = [e nextObject])){
+	for(id anObject in windowSet){
 		float newValue = [anObject alphaValue] - ALPHA_VALUE_DELTA;
 		newValue = (newValue < 0.0) ? 0.0 : newValue;
 		[anObject setAlphaValue:newValue];
@@ -156,8 +155,7 @@ static id fadeOutInstance = nil;
 -(void)testForRemoval
 {
 	id newSet = [NSMutableSet set];
-	id anObject, e = [windowSet objectEnumerator];
-	while((anObject = [e nextObject])){
+	for(id anObject in windowSet){
 		if([anObject alphaValue] > 0.0)
 			[newSet addObject:anObject];
 	}

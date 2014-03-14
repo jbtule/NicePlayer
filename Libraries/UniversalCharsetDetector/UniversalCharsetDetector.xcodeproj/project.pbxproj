@@ -354,7 +354,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0410;
+				LastUpgradeCheck = 0420;
 			};
 			buildConfigurationList = 363A57A00A48820300A4FBE2 /* Build configuration list for PBXProject "UniversalCharsetDetector" */;
 			compatibilityVersion = "Xcode 3.2";

@@ -62,14 +62,14 @@
 }
 
 
--(void)setAlphaValue:(float)windowAlpha
+-(void)setAlphaValue:(CGFloat)windowAlpha
 {
     [overlayResize setAlphaValue:windowAlpha];
     [super setAlphaValue:windowAlpha];
 }
 
 
--(void)setLevel:(int)newLevel
+-(void)setLevel:(NSInteger)newLevel
 {
     [overlayResize setLevel:newLevel];
     [super setLevel:newLevel];

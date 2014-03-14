@@ -180,10 +180,14 @@ id injectAllowedTypesOfEnabledPlugins(id each, id allowedExt,void* context){
 
 -(id)builtinPlayerClasses
 {
+#if __LP64__
+	return [NSArray arrayWithObjects:[RCMovieView class], nil];
+#else
     if(NPIs10_4OrGreater())
         return [NSArray arrayWithObjects:[RCMovieView class], [JTMovieView class], nil];
     else
 	return [NSArray arrayWithObjects:[JTMovieView class], nil];
+#endif
 
 }
 

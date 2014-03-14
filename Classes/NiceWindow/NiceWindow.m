@@ -82,7 +82,7 @@
 }
 
 - (id)initWithContentRect:(NSRect)contentRect
-                styleMask:(unsigned int)aStyle
+                styleMask:(NSUInteger)aStyle
                   backing:(NSBackingStoreType)bufferingType
                     defer:(BOOL)flag
 {
@@ -99,11 +99,11 @@
                                                      name:@"unPresentMultiple"
                                                    object:nil];
         
-        timeUpdaterTimer = [NSTimer scheduledTimerWithTimeInterval:1
+        timeUpdaterTimer = [[NSTimer scheduledTimerWithTimeInterval:1
                                                             target:self
                                                           selector:@selector(updateByTime:)
                                                           userInfo:nil
-                                                           repeats:YES];
+                                                           repeats:YES] retain];
         [self setBackgroundColor:[NSColor blackColor]];
         [self setOpaque:YES];
         [self useOptimizedDrawing:YES];
@@ -117,7 +117,8 @@
         windowOverlayControllerIsShowing = NO;
         titleOverlayIsShowing = NO;
 		fixedAspectRatio = YES;
-        initialFadeTimer = nil;
+			[initialFadeTimer release];
+        self.initialFadeTimer = nil;
         isInitialDisplay = [[Preferences mainPrefs] showInitialOverlays];
         timeDisplayStyle = [[Preferences mainPrefs] defaultTimeDisplay];
 		[[Preferences mainPrefs] addObserver:self
@@ -181,8 +182,8 @@
     oldWindowLevel =[self level];
     
     [thePlayButton setKeyEquivalent:@" "];
-    [theRRButton setKeyEquivalent:[NSString stringWithFormat:@"%C",NSLeftArrowFunctionKey,nil]];
-    [theFFButton setKeyEquivalent:[NSString stringWithFormat:@"%C",NSRightArrowFunctionKey,nil]];
+    [theRRButton setKeyEquivalent:[NSString stringWithFormat:@"%C",(unichar)NSLeftArrowFunctionKey,nil]];
+    [theFFButton setKeyEquivalent:[NSString stringWithFormat:@"%C",(unichar)NSRightArrowFunctionKey,nil]];
     
     [thePlayButton setActionView:theMovieView];
     [theRRButton setActionView:theMovieView];
@@ -197,9 +198,11 @@
     [[FadeOut fadeOut] removeWindow:theOverlayTitleBar];
     [[FadeOut fadeOut] removeWindow:theOverlayVolume];
     [[FadeOut fadeOut] removeWindow:self];
-    if(initialFadeTimer)
-        [initialFadeTimer invalidate];
+		[self.initialFadeTimer invalidate];
+		self.initialFadeTimer = nil;
     [timeUpdaterTimer invalidate];
+	[timeUpdaterTimer release];
+	timeUpdaterTimer = nil;
 	
 	
 	isClosing = YES;
@@ -209,6 +212,15 @@
     [super close];
 	
 	[tPool release];
+}
+
+- (void)dealloc
+{
+	[[FadeOut fadeOut] removeWindow:theOverlayControllerWindow];
+	[[FadeOut fadeOut] removeWindow:theOverlayTitleBar];
+	[[FadeOut fadeOut] removeWindow:theOverlayVolume];
+	[[FadeOut fadeOut] removeWindow:self];
+	[super dealloc];
 }
 
 #pragma mark Overriden Methods
@@ -474,7 +486,7 @@
 			[NSArray arrayWithObjects:self,	initialFadeObjects, @"initialFadeComplete",	nil]
 															 forKeys:
 			[NSArray arrayWithObjects:@"Window", @"Fade", @"Selector", nil]];
-		initialFadeTimer = [[FadeOut fadeOut] initialFadeForDict:fadeDict];
+		self.initialFadeTimer = [[FadeOut fadeOut] initialFadeForDict:fadeDict];
     }	
 }
 
@@ -524,7 +536,7 @@
 -(void)initialFadeComplete
 {
     isInitialDisplay = NO;
-    initialFadeTimer = nil;
+    self.initialFadeTimer = nil;
 }
 
 -(BOOL)scrubberInUse{
@@ -689,7 +701,7 @@
 
             [theOverlayTitleBar setFrame:NSMakeRect(visibleFrame.origin.x,
                                                 visibleFrame.origin.y
-                                                + visibleFrame.size.height - [theOverlayTitleBar frame].size.height - [NSMenuView menuBarHeight],
+                                                + visibleFrame.size.height - [theOverlayTitleBar frame].size.height - [[NSApp mainMenu] menuBarHeight],
                                                 visibleFrame.size.width,
                                                 [theOverlayTitleBar frame].size.height) display:YES];
             
@@ -964,7 +976,7 @@
 /**
 * Sets the window level by setting all of the windows and child windows to their own proper window levels.
  */
--(void)setLevel:(int)windowLevel
+-(void)setLevel:(NSInteger)windowLevel
 {
     id enumerator = [[self childWindows] objectEnumerator];
     id object;
@@ -1489,5 +1501,7 @@
 {
     return [NSArray arrayWithObjects:NSFilenamesPboardType,nil];
 }
+
+@synthesize initialFadeTimer;
 
 @end

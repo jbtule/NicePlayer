@@ -93,7 +93,7 @@
 			NSError* tError; 
             NSString* tContents = [NSString stringWithContentsOfFileDetectingCharset:aPath usedEncoding:&tCoding error:&tError];
 
-			NSLog(@"Encoding %d",tCoding);
+			NSLog(@"Encoding %lu",(unsigned long)tCoding);
 			NSLog(@"Encoding %@",tError);
 
 			

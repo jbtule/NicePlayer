@@ -50,7 +50,7 @@
 @class SUUpdater;
 @class RemoteControl;
 
-@interface NPApplication : NSApplication {
+@interface NPApplication : NSApplication<NSApplicationDelegate> {
 	NSTimer *inactiveTimer;
 	NSPoint lastPoint;
 	IBOutlet SUUpdater* sparkleUpdater;

@@ -10,7 +10,6 @@
 
 /**********************************************************************/
 
-
 @implementation ASConstant
 
 + (id)constantWithName:(NSString *)name_ type:(DescType)type_ code:(OSType)code_ {

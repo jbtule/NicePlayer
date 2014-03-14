@@ -45,6 +45,8 @@
 
 #import <Cocoa/Cocoa.h>
 #import "Preferences.h"
+#import <AppKit/AppKit.h>
+#import "NPMovieProtocol.h"
 
 @class ControlPlay;
 @class NiceWindow;

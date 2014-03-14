@@ -51,8 +51,17 @@
 
 #import <Cocoa/Cocoa.h>
 #import <AppKit/NSDragging.h>
+#import <AppKit/AppKit.h>
 
 enum direction { DIRECTION_BACKWARD = -1, DIRECTION_FORWARD = 1};
+
+#if __LP64__
+typedef enum {
+	NSQTMovieNormalPlayback,
+	NSQTMovieLoopingPlayback,
+	NSQTMovieLoopingBackAndForthPlayback
+} NSQTMovieLoopMode;
+#endif
 
 @protocol NPMoviePlayer
 

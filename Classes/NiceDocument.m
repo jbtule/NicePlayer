@@ -70,7 +70,7 @@ BOOL rejectSelf(id each,void* context){
     return [each isEqual:[(NiceDocument*)context window]];
 }
 
-int sortByMain(id v1, id v2, void* context){
+NSInteger sortByMain(id v1, id v2, void* context){
     if([v1 isEqualTo:v2])
         return NSOrderedSame;
     if([[NSScreen mainScreen] isEqualTo: v1]){
@@ -181,6 +181,7 @@ void findSpace(id each, void* context, BOOL* endthis){
 	[theDataSourceCache release];
         [theMainItemCache release];
 	[_randomList release];
+	[playlistOutlineView setDataSource:nil];
     [super dealloc];
 }
 
@@ -221,7 +222,7 @@ void findSpace(id each, void* context, BOOL* endthis){
     NSData* tData = [NSPropertyListSerialization dataFromPropertyList:tDict format:NSPropertyListXMLFormat_v1_0 errorDescription:&tErrror];
     
     if(tData == nil)
-        NSLog(tErrror);
+        NSLog(@"%@", tErrror);
     
     return  tData;
 
@@ -1098,7 +1099,7 @@ stuff won't work properly! */
 
 -(void)removeURLFromPlaylist:(NSURL*)aURL
 {
-    int tempIndex = [thePlaylist indexOfObject:aURL];
+    NSUInteger tempIndex = [thePlaylist indexOfObject:aURL];
 	if(tempIndex != NSNotFound)
 		[self removeURLFromPlaylistHelperAtIndex:[NSIndexSet  indexSetWithIndex:tempIndex]];
 }
@@ -1206,7 +1207,7 @@ stuff won't work properly! */
 	if([[aTableColumn identifier] isEqualTo:@"index"]){
 		if([[item objectForKey:@"type"] isEqualTo:@"chapter"]){
 			if( [[item objectForKey:@"url"] isEqualTo:[theMovieView currentChapter]])
-						            return [NSString stringWithFormat:@"%C", 0x2022];
+						            return [NSString stringWithFormat:@"%C", (unichar)0x2022];
 
 			return @"";
 			}
@@ -1220,7 +1221,7 @@ stuff won't work properly! */
 			return [item objectForKey:@"self"] ;
     }else if ([[aTableColumn identifier] isEqualTo:@"status"]){
 		if	([[item objectForKey:@"url"]  isEqual: theCurrentURL]) 
-		            return [NSString stringWithFormat:@"%C", 0x2022];
+		            return [NSString stringWithFormat:@"%C", (unichar)0x2022];
 		else
 			return @"";
     }else if ([[aTableColumn identifier] isEqualTo:@"none"]){

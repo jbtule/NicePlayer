@@ -245,8 +245,10 @@
 			return url;
 		case typeFSRef:
 			return [AEMFSRef fsrefWithDescriptor: desc];
+#if !__LP64__
 		case typeFSS:
 			return [AEMFSSpec fsspecWithDescriptor: desc];
+#endif
 		case typeType:
 			return [self unpackType: desc];
 		case typeEnumerated:

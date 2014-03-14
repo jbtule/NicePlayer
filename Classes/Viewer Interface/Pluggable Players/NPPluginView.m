@@ -94,32 +94,32 @@
 -(void)ffStart:(int)seconds
 {
 	if(oldPlayState == STATE_INACTIVE)
-		oldPlayState = [(<NPMoviePlayer>)self isPlaying] ? STATE_PLAYING : STATE_STOPPED;
-	[(<NPMoviePlayer>)self stop];
+		oldPlayState = [(id<NPMoviePlayer>)self isPlaying] ? STATE_PLAYING : STATE_STOPPED;
+	[(id<NPMoviePlayer>)self stop];
 }
 
 -(void)ffEnd
 {
 	if(oldPlayState == STATE_PLAYING)
-		[(<NPMoviePlayer>)self start];
+		[(id<NPMoviePlayer>)self start];
 	else
-		[(<NPMoviePlayer>)self stop];
+		[(id<NPMoviePlayer>)self stop];
 	oldPlayState = STATE_INACTIVE;
 }
 
 -(void)rrStart:(int)seconds
 {
 	if(oldPlayState == STATE_INACTIVE)
-		oldPlayState = [(<NPMoviePlayer>)self isPlaying] ? STATE_PLAYING : STATE_STOPPED;
-	[(<NPMoviePlayer>)self stop];
+		oldPlayState = [(id<NPMoviePlayer>)self isPlaying] ? STATE_PLAYING : STATE_STOPPED;
+	[(id<NPMoviePlayer>)self stop];
 }
 
 -(void)rrEnd
 {
 	if(oldPlayState == STATE_PLAYING)
-		[(<NPMoviePlayer>)self start];
+		[(id<NPMoviePlayer>)self start];
 	else
-		[(<NPMoviePlayer>)self stop];
+		[(id<NPMoviePlayer>)self stop];
 	oldPlayState = STATE_INACTIVE;
 }
 
