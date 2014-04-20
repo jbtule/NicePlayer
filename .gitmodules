@@ -1,0 +1,6 @@
+[submodule "Libraries/preferable"]
+	path = Libraries/preferable
+	url = https://github.com/jbtule/preferable.git
+[submodule "Libraries/cocoascriptmenu"]
+	path = Libraries/cocoascriptmenu
+	url = https://github.com/jbtule/CocoaScriptMenu.git
